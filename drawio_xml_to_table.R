@@ -6,7 +6,7 @@ library(tidyverse)
 # Select all -> File -> Export -> choose "XML", 
 # click until "all pages" is selected and save the xml file 
 
-# Get the XML content of the records
+# load the entity relational model in XML format
 xml <- read_xml("Entity_relational_model_June_7_2023.drawio.xml")
 
 
