@@ -142,7 +142,7 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadata$Column_Name
   
-  TaskMetadataStartingDate = "Surveillance Task  Starting Date",                         
+  TaskMetadataStartingDate = "Surveillance Task Starting Date",                         
   TaskMetadataEndingDate = "Surveillance Task Ending Date",                           
   TaskMetadataOrganizationAICUC = "Organization Providing AICUC",                    
   TaskMetadataAICUCCode = "AICUC Code",
@@ -175,14 +175,22 @@ gui_labels<- list(
 
   WildlifeHealth_TaskMetadataRelevantURL = "Relevant Links",
   
-  #fields_by_table$WildlifeHealth_SurveillanceTaskTarget$Column_Name
   
-  WildlifeHealth_SurveillanceTaskTarget = "Hazard Targeted",
-  
-  #fields_by_table$WildlifeHealth_SurveillanceTaskTarget$Column_Name
+  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataOtherTaskAssociated$Column_Name
   
   TaskMetadataOtherSurveillanceTaskAssociated = "Other Surveillance Tasks Associated",      
   TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Tasks Are Associated",
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskTarget$Column_Name
+  
+  WildlifeHealth_SurveillanceTaskTargetID = "Surveillance Task Hazard Target Identifier",
+  WildlifeHealth_SurveillanceTaskTarget = "Hazard Targeted",
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskTargetTests$Column_Name
+  
+  WildlifeHealth_SurveillanceTaskTargetTestID = "Target Test Identifier",
+  TestMetadataTestName = "Test Name",
+  TestMetadataType = "Test Type",
   
   #fields_by_table$WildlifeHealth_Outbreak$Column_Name
   
@@ -191,7 +199,6 @@ gui_labels<- list(
   OutbreakStartDate = "Outbreak Start Date",
   OutbreakEndDate = "Outbreak End Date",
   OutbreakDiagnosis = "Outbreak Diagnosis",
-  
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskObservationsMetadata$Column_Name
   
@@ -237,12 +244,14 @@ gui_labels<- list(
   AnimalSourceMetadataAnimalSpecimenCodeStructure = "Structure of the Animal Specimen Code",                          
   AnimalSourceMetadataAnimalSpecimenTypes = "Animal Specimen Types",                            
   AnimalSourceMetadataAnimalSpecimenPooling = "Are Animal Specimens Pooled?",                          
-  AnimalSourceMetadataAnimalSpecimenPoolingStrategy = "Strategy to Pooled Animal Specimens",                  
+  AnimalSourceMetadataAnimalSpecimenPoolingStrategy = "Strategy to Pooled Animal Specimens", 
+  AnimalSourceMetadataAnimalsSpecimenTested = "Are Animal Specimens Tested?", 
   AnimalSourceMetadataAnimalSpecimenDiagnosticsUsed = "Diagnostics Used in Animal Specimens",                 
   AnimalSourceMetadataAnimalSpecimenDiagnosticUsedReferences = "Bibliographic References Diagnostics Used in Animal Specimens",          
   AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCase = "Case Definition Animal Specimen",              
   AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Animal Specimen",  
-  
+  AnimalSourceMetadataAnimalSpecimenTestCriteriaPositiveCase = "Case Definition Tests in Animal Specimen",   
+  AnimalSourceMetadataAnimalSpecimenTestCriteriaPositiveCaseReference = "Bibliographic References Case Definition Animal Specimen Test",  
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskEnvironmentalSourceMetadata$Column_Name
   
@@ -267,11 +276,14 @@ gui_labels<- list(
   EnvironmentalSourceMetadataEnvironmentalSpecimenCodeStructure = "Structure of the Environmental Specimen Code",  
   EnvironmentalSourceMetadataEnvironmentalSpecimenPooling = "Are Environmental Specimens Pooled?",
   EnvironmentalSourceMetadataEnvironmentalSpecimenPoolingStrategy = "Strategy to Pooled Environmental Specimens",
+  EnvironmentalSourceMetadataAnimalsSpecimenTested = "Are Environmental Specimens Tested?", 
   EnvironmentalSourceMetadataEnvironmentalSpecimenDiagnosticsUsed = "Diagnostics Used in Environmental Specimens",
   EnvironmentalSourceMetadataEnvironmentalSpecimenDiagnosticUsedReferences = "Bibliographic References Diagnostics Used in Environmental Specimens",          
   EnvironmentalSourceMetadataEnvironmentalSpecimenCriteriaPositiveCase = "Case Definition Environmental Specimen",              
   EnvironmentalSourceMetadataEnvironmentalSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Environmental Specimen",  
-                          
+  EnvironmentalSourceMetadataEnvironmentalSpecimenTestCriteriaPositiveCase = "Case Definition Tests in Environmental Specimen",   
+  EnvironmentalSourceMetadataEnvironmentalSpecimenTestCriteriaPositiveCaseReference = "Bibliographic References Case Definition Environmental Specimen Test",  
+  
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskInvertebrateSourceMetadata$Column_Name
   
@@ -294,30 +306,14 @@ gui_labels<- list(
   InvertebrateSourceMetadataInvertebrateSpecimenDescription = "Describe What is an Invertebrate Specimen for the Current Surveillance Task",
   InvertebrateSourceMetadataInvertebrateSpecimenPooling = "Are Invertebrate Specimens Pooled?",
   InvertebrateSourceMetadataInvertebrateSpecimenPoolingStrategy = "Strategy to Pooled Invertebrate Specimens",
+  InvertebrateSourceMetadataAnimalsSpecimenTested = "Are Invertebrate Specimens Tested?", 
   InvertebrateSourceMetadataInvertebrateSpecimenDiagnosticsUsed = "Diagnostics Used in Invertebrate Specimens",
   InvertebrateSourceMetadataInvertebrateSpecimenDiagnosticUsedReferences = "Bibliographic References Diagnostics Used in Invertebrate Specimens",          
   InvertebrateSourceMetadataInvertebrateSpecimenCriteriaPositiveCase = "Case Definition Invertebrate Specimen",              
   InvertebrateSourceMetadataInvertebrateSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Invertebrate Specimen",  
+  InvertebrateSourceMetadataInvertebrateSpecimenTestCriteriaPositiveCase = "Case Definition Tests in Invertebrate Specimen",   
+  InvertebrateSourceMetadataInvertebrateSpecimenTestCriteriaPositiveCaseReference = "Bibliographic References Case Definition Invertebrate Specimen Test",  
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  TestMetadataAnimalsSpecimensTested = " ",                    
-  TestMetadataEnvironmentalSpecimensTested = " ",               
-  TestMetadataInvertebrateSpecimensTested = " ",               
-  TestMetadataPooledSpecimensTested = " ",                  
-  TestMetadataCriteriaPositiveTestAnimalSpecimens = " ",        
-  TestMetadataCriteriaPositiveTestEnvironmentalSpecimens = " ",  
-  TestMetadataCriteriaPositiveTestInvertebrateSpecimens = " ",   
-  TestMetadataCriteriaPositiveTestReferences = " ",  
-
-
   
   #OBSERVATION
   
