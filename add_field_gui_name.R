@@ -317,6 +317,8 @@ gui_labels<- list(
   
   #OBSERVATION
   
+  #fields_by_table$WildlifeHealth_Observation$Column_Name
+  
   WildlifeHealth_ObservationID  = "Observation Identifier",
   ObservationCode  = "Observation User Code",
   ObservationCrossID  = "Observation Cross Identifier",
@@ -339,19 +341,33 @@ gui_labels<- list(
   ObservationNumberUnknownAgeSexHealthy  = "Number of Healthy Individuals of Unknown Age and Sex",
   ObservationNumberUnknownAgeSexSickInjured  = "Number of Sick or Injured Individuals of Unknown Age and Sex",
   ObservationNumberUnknownAgeSexDead  = "Number of Dead Individuals of Unknown Age and Sex",
-  ObservationCaptivityCategory = "Captivity Categories Observed Animals",
-  ObservationAnomaly = "Anomalies in Observed Animals",
-  ObservationPotentialCauseInjuryDiseaseDeath = "Potential Causes of Death in Observed Animals",
-  ObservationGroupingLevel1Code  = "Level 1 Group Code",
-  ObservationGroupingLevel2Code  = "Level 2 Group Code",
-  ObservationGroupingLevel3Code  = "Level 3 Group Code",
-  ObservationGroupingLevel4Code  = "Level 4 Group Code",
-  ObservationGroupingLevel5Code  = "Level 5 Group Code",
+  ObservationOtherAnomalies = "Other Anomalies Observed",
+  ObservationGroupingLevel1Code = "Level 1 Group Code",
+  ObservationGroupingLevel2Code = "Level 2 Group Code",
+  ObservationGroupingLevel3Code = "Level 3 Group Code",
+  ObservationGroupingLevel4Code = "Level 4 Group Code",
+  ObservationGroupingLevel5Code = "Level 5 Group Code",
   ObservationComments  = "Comments",
+  
+  #fields_by_table$WildlifeHealth_ObservationCaptivityCategory$Column_Name
+  
+  ObservationCaptivityCategory = "Captivity Category Observed Animals",
+  
+  #fields_by_table$WildlifeHealth_ObservationAnomaly$Column_Name
+  
+  ObservationAnomalyInjuredSickDead = "Anomalies in Observed Animals",
+  
+  #fields_by_table$WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeath$Column_Name
+  
+  ObservationPotentialCauseInjuryDiseaseDeath = "Potential Cause Injury Disease or Death in Observed Animals",
+  ObservationPotentialCauseInjuryDiseaseDeathBy = "Potential Cause Provided By",
+  ObservationPotentialCauseInjuryDiseaseDeathPathogen = "Suspected Pathogen",
+  ObservationPotentialCauseInjuryDiseaseDeathPathogenBasedOn = "Reason to Suspect in the Pathogen"
   
   
   # ANIMAL SOURCE 
   
+  #fields_by_table$WildlifeHealth_Observation$Column_Name
   
   WildlifeHealth_AnimalSourceID  = "Animal Identifier",
   AnimalSourceCode  = "Animal User Code",
@@ -544,6 +560,12 @@ gui_labels<- list(
   AnimalSpecimenDiagnosticTestTargetSupportingInformation = "Supporting Information",
   
 
+  
+  
+  
+  
+  
+  
   # LABORATORY
   
   
