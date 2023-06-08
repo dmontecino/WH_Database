@@ -93,6 +93,8 @@ gui_labels<- list(
   IncidentBySector = "Sector of the Incident Recorder",
   IncidentSmartSource = "Incident Collected Using SMART",
   
+  # fields_by_table$WildlifeHealth_IncidentSpatialInfo$Column_Name
+  
   IncidentCountry = "Incident Country",
   IncidentState = "Incident State",
   IncidentProvince = "Incident Province",
@@ -109,6 +111,9 @@ gui_labels<- list(
   IncidentOtherSpatialUnit = "Incident Other Spatial Unit Code",
   IncidentLongitude = "Incident Longitude",
   IncidentLatitude = "Incident Latitude",
+  
+  # fields_by_table$WildlifeHealth_IncidentTemporalInfo$Column_Name
+  
   IncidentStudyYear  = "Incident Study Year",
   IncidentStudySeason  = "Incident Study Season",
   IncidentStudyMonth  = "Incident Study Month",
@@ -119,8 +124,7 @@ gui_labels<- list(
   IncidentOtherTemporalUnit  = "Incident Other Temporal Unit",
   IncidentTimeAssembled  = "Time Incident Capture Device Assembled",
   IncidentTimeDisassembled  = "Time Incident Capture Device Disassembled",
-  IncidentOtherTemporalUnit  = "Incident Other Temporal Unit",
-  
+
   
   #SURVEILLANCE TASK 
   
