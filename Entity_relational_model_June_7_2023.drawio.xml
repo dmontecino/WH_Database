@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-06-08T16:24:27.012Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="HvcwQe1Z8GKWfUzOJ-My" version="21.3.4" type="device">
+<mxfile host="app.diagrams.net" modified="2023-06-08T16:34:41.120Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="d36VrJx8kTHvdW5YzLF-" version="21.3.4" type="device">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="19844" dy="702" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="9300" pageHeight="14681" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="20341" dy="983" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="9300" pageHeight="14681" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -8498,7 +8498,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-725" value="WildlifeHealth_SurveillanceTaskEnvironmentalSourceMetadata" style="shape=table;startSize=20;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fillColor=#97D077;" parent="1" vertex="1">
-          <mxGeometry x="-13380" y="1390" width="720" height="802" as="geometry">
+          <mxGeometry x="-13380" y="1344" width="720" height="802" as="geometry">
             <mxRectangle x="120" y="120" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
