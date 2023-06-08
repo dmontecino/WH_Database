@@ -185,7 +185,7 @@ gui_labels<- list(
   TaskMetadataOtherSurveillanceTaskAssociated = "Other Surveillance Tasks Associated",      
   TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Tasks Are Associated",
   
-  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskObservationsMetadata$Column_Name
   
   ObservationMetadataObservationsIncluded = "Are Observations Part of the Surveillance Task?",
   ObservationMetadataObservationCodeStructure =  "Structure of the User Observation Code",       
@@ -193,6 +193,9 @@ gui_labels<- list(
   ObservationMetadataExclusionCriteriaObservedAnimals = "Criteria to Exclude Observed-only Animals",
   ObservationMetadataObservationGrouping = "Are Observations Grouped Beyond Incident?",
   ObservationMetadataObservationGroupingStructure = "How Are Observations Grouped Beyond Incident?",
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskAnimalSourceMetadata$Column_Name
+  
   AnimalSourceMetadataAnimalSourceIncluded = "Are Animal Sources Part of the Surveillance Task?",                          
   AnimalSourceMetadataAnimalSourceCodeStructure = "Structure of the User Animal Source Code",                      
   AnimalSourceMetadataCarcassesCollected = "Are Carcasses of Individual Animals Collected",                          
@@ -208,7 +211,7 @@ gui_labels<- list(
   AnimalSourceMetadataMarkingMethod = "How Are Animal Sources Marked",                                  
   AnimalSourceMetadataMarkingMethodReferences = "Bibliographic References Animal Source Marking Method",                        
   AnimalSourceMetadataRecapture = "Are Animal Sources Recaptured?",                                       
-  AnimalSourceMetadataFateAfterRecapture = "Fate of Animal Source after Capture or Recapture",                              
+  AnimalSourceMetadataFateAfterCaptureRecapture = "Fate of Animal Source after Capture or Recapture",                              
   AnimalSourceMetadataEuthanasiaMethod = "Euthanasia Method of Animal Source",                                
   AnimalSourceMetadataEuthanasiaMethodReferences = "Bibliographic References Euthanasia of Animal Source",                    
   AnimalSourceMetadataDiagnosticsUsed = "Diagnostics used in Animal Sources",                              
@@ -231,6 +234,9 @@ gui_labels<- list(
   AnimalSourceMetadataAnimalSpecimenDiagnosticUsedReferences = "Bibliographic References Diagnostics Used in Animal Source Specimens",          
   AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCase = "Case Definition Animal Source Specimen",              
   AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Animal Source Specimen",  
+  
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskAnimalSourceMetadata$Column_Name
   
   
   
