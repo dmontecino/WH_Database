@@ -202,8 +202,8 @@ gui_labels<- list(
   AnimalSourceMetadataTaxaIncluded = "Taxa of Animals Included as Animal Sources",                                    
   AnimalSourceMetadataInclusionCriteria = "Criteria to Include Animal Source Individuals",
   AnimalSourceMetadataExclusionCriteria = "Criteria to Exclude Animal Source Individuals",                              
-  AnimalSourceMetadataGrouping = "Are Observations Grouped Beyond Incident?",                                       
-  AnimalSourceMetadataGroupingStructure = "How Are Observations Grouped Beyond Incident?",                              
+  AnimalSourceMetadataGrouping = "Are Animal Sources Grouped Beyond Incident?",                                       
+  AnimalSourceMetadataGroupingStructure = "How Are Animal Sources Grouped Beyond Incident?",                              
   AnimalSourceMetadataHowObtained = "How Are Animal Sources Obtained?",                                     
   AnimalSourceMetadataCaptureProtocol = "Animal Source Capture Protocol",                                
   AnimalSourceMetadataCaptureProtocolReferences = "Bibliographic References Animal Source Capture Protocol",                       
@@ -236,10 +236,36 @@ gui_labels<- list(
   AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Animal Source Specimen",  
   
   
-  #fields_by_table$WildlifeHealth_SurveillanceTaskAnimalSourceMetadata$Column_Name
+  #fields_by_table$WildlifeHealth_SurveillanceTaskEnvironmentalSourceMetadata$Column_Name
   
+  EnvironmentalSourceMetadataEnvironmentalSourceIncluded = "Are Environmental Sources Part of the Surveillance Task?",
+  EnvironmentalSourceMetadataEnvironmentalSourceCodeStructure = "Structure of the User Environmental Source Code",
+  EnvironmentalSourceMetadataBioticEnvironmentalSourceIncluded = "Are Biotic Environmental Sources Included?",
+  EnvironmentalSourceMetadataAbioticEnvironmentalSourceIncluded = "Are Abiotic Environmental Sources Included?",
+  EnvironmentalSourceMetadataTaxaIncluded = "Taxa of Animals Providing Environmental Source",   
+  EnvironmentalSourceMetadataBioticTypesIncluded = "Type of Biotic Environmental Source Included",
+  EnvironmentalSourceMetadataAbioticTypesIncluded = "Type of Abiotic Environmental Source Included",
+  EnvironmentalSourceMetadataInclusionCriteria = "Criteria to Include Environmental Sources",
+  EnvironmentalSourceMetadataExclusionCriteria = "Criteria to Exclude Environmental Sources",
+  EnvironmentalSourceMetadataGrouping = "Are Environmental Sources Grouped Beyond Incident?",
+  EnvironmentalSourceMetadataGroupingStructure = "How Are Environmental Sources Grouped Beyond Incident?",
+  EnvironmentalSourceMetadataHowObtained = "How Are Environmental Sources Obtained?",    
+  EnvironmentalSourceMetadataMarking = "Are Environmental Sources Marked?",
+  EnvironmentalSourceMetadataMarkingMethod = "How Are Environmental Sources Marked",  
+  EnvironmentalSourceMetadataRecordCriteriaPositiveCase = "Environmental Source Case Definition",
+  EnvironmentalSourceMetadataRecordCriteriaPositiveCaseReferences = "Bibliographic References Environmental Source Case Definition",
+  EnvironmentalSourceMetadataEnvironmentalSpecimenCollectionMethod = "Environmental Source Specimen Collection Method",
+  EnvironmentalSourceMetadataEnvironmentalSpecimenCollectionReferences = "Bibliographic References Environmental Source Specimen Collection Method",
+  EnvironmentalSourceMetadataEnvironmentalSpecimenCodeStructure = "Structure of the Environmental Specimen Code",  
+  EnvironmentalSourceMetadataEnvironmentalSpecimenPooling = "Are Environmental Source Specimens Pooled?",
+  EnvironmentalSourceMetadataEnvironmentalSpecimenPoolingStrategy = "Strategy to Pooled Environmental Source Specimens",
+  EnvironmentalSourceMetadataEnvironmentalSpecimenDiagnosticsUsed = "Diagnostics Used in Environmental Source Specimens",
+  EnvironmentalSourceMetadataEnvironmentalSpecimenDiagnosticUsedReferences = "Bibliographic References Diagnostics Used in Environmental Source Specimens",          
+  EnvironmentalSourceMetadataEnvironmentalSpecimenCriteriaPositiveCase = "Case Definition Environmental Source Specimen",              
+  EnvironmentalSourceMetadataEnvironmentalSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Environmental Source Specimen",  
+                          
   
-  
+
   
   TestMetadataAnimalsSpecimensTested = " ",                    
   TestMetadataEnvironmentalSpecimensTested = " ",               
