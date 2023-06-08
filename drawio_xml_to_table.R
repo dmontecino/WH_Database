@@ -7,7 +7,7 @@ library(tidyverse)
 # click until "all pages" is selected and save the xml file 
 
 # Get the XML content of the records
-xml <- read_xml("/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/Entity_relationship_model/Entity_relational_model_May_25_2023.drawio.xml")
+xml <- read_xml("Entity_relational_model_June_7_2023.drawio.xml")
 
 
 data_to_id_tables_and_columns_within<-
