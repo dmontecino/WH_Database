@@ -130,7 +130,6 @@ gui_labels<- list(
   
   # fields_by_table$WildlifeHealth_SurveillanceTask$Column_Name
   
-  
   WildlifeHealth_SurveillanceTaskID = "Surveillance Task Identifier",
   SurveillanceTaskName = "Surveillance Task Name",              
   SurveillanceTaskCrossID = "Surveillance Task Cross Identifier",
@@ -153,11 +152,28 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataCountry$Column_Name
   
-  TaskMetadataCountryInvolved = "Countries Involved", 
+  WildlifeHealth_TaskMetadataCountryInvolved = "Countries Involved", 
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataStudySite$Column_Name
   
-  TaskMetadataStudySite = "Study Sites", 
+  WildlifeHealth_TaskMetadataStudySite = "Study Sites", 
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataOrganizationInvolved$Column_Name 
+  
+  WildlifeHealth_TaskMetadataOrganizationInvolved = "Other Organizations Involved",
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataOtherTaskAssociated$Column_Name 
+  
+  WildlifeHealth_TaskMetadataOtherSurveillanceTaskAssociated = "Other Surveillance Tasks Associated",
+  TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Task Are Associated",
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataPublications$Column_Name 
+
+  WildlifeHealth_TaskMetadataRelevantPublication = "Relevant Publications",    
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataURL$Column_Name 
+
+  WildlifeHealth_TaskMetadataRelevantURL = "Relevant Links",
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskTarget$Column_Name
   
@@ -170,9 +186,7 @@ gui_labels<- list(
   TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Tasks Are Associated",
   
   
-  TaskMetadataRelevantPublication = "Surveillance Task Publications",                  
-  TaskMetadataOrganizationInvolved = "Organizations Involved in the Surveillance Task",                 
-  TaskMetadataRelevantURL = "Surveillance Task Relevant URLs",
+  
   ObservationMetadataObservationsIncluded = "Are Observations Part of the Surveillance Task?",
   ObservationMetadataObservationCodeStructure =  "Structure of the User Observation Code",       
   ObservationMetadataInclusionCriteriaObservedAnimals = "Criteria to Include Observed-only Animals",
