@@ -341,7 +341,7 @@ gui_labels<- list(
   ObservationNumberUnknownAgeSexHealthy  = "Number of Healthy Individuals of Unknown Age and Sex",
   ObservationNumberUnknownAgeSexSickInjured  = "Number of Sick or Injured Individuals of Unknown Age and Sex",
   ObservationNumberUnknownAgeSexDead  = "Number of Dead Individuals of Unknown Age and Sex",
-  ObservationOtherAnomalies = "Other Anomalies Observed",
+  ObservationOtherAnomalies = "Other Anomalies",
   ObservationGroupingLevel1Code = "Level 1 Group Code",
   ObservationGroupingLevel2Code = "Level 2 Group Code",
   ObservationGroupingLevel3Code = "Level 3 Group Code",
@@ -351,15 +351,15 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_ObservationCaptivityCategory$Column_Name
   
-  ObservationCaptivityCategory = "Captivity Category Observed Animals",
+  WildlifeHealth_ObservationCaptivityCategory = "Captivity Category Observed Animals",
   
   #fields_by_table$WildlifeHealth_ObservationAnomaly$Column_Name
   
-  ObservationAnomalyInjuredSickDead = "Anomalies in Observed Animals",
+  WildlifeHealth_ObservationAnomalyInjuredSickDead = "Anomalies in Observed Animals",
   
   #fields_by_table$WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeath$Column_Name
   
-  ObservationPotentialCauseInjuryDiseaseDeath = "Potential Cause Injury Disease or Death in Observed Animals",
+  WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeath = "Potential Cause Injury Disease or Death in Observed Animals",
   ObservationPotentialCauseInjuryDiseaseDeathBy = "Potential Cause Provided By",
   ObservationPotentialCauseInjuryDiseaseDeathPathogen = "Suspected Pathogen",
   ObservationPotentialCauseInjuryDiseaseDeathPathogenBasedOn = "Reason to Suspect in the Pathogen",
@@ -374,7 +374,7 @@ gui_labels<- list(
   AnimalSourceCrossID  = "Animal Cross Identifier",
   AnimalSourceSpecies  = "Animal Species",
   AnimalSourceSex  = "Animal Sex",
-
+  AnimalSourceDateOfDeath = "Animal Date of Death",
   
   # ANIMAL SOURCE RECORD
   
@@ -389,6 +389,7 @@ gui_labels<- list(
   AnimalSourceRecordMarkingCode  = "Animal Marking Code",
   AnimalSourceRecordMarkingCodeChange  = "Change of Marking Code",
   AnimalSourceRecordMarkingCodeChangingReason  = "Reason of Marking Code Change",
+  AnimalSourceRecordOtherAnomalies ="Other Anomalies",
   AnimalSourceRecordGroupingLevel1Code  = "Level 1 Group Code",
   AnimalSourceRecordGroupingLevel2Code  = "Level 2 Group Code",
   AnimalSourceRecordGroupingLevel3Code  = "Level 3 Group Code",
@@ -397,19 +398,27 @@ gui_labels<- list(
   AnimalSourceRecordSpecimensCollected  = "Specimens Collected?",
   AnimalSourceRecordComments  = "Animal Record Comments",
   
+  #fields_by_table$WildlifeHealth_AnimalSourceRecordAnomaly$Column_Name
   
+  WildlifeHealth_AnimalSourceRecordAnomalyInjuredSickDead = "Anomaly in Animal",
   
-  WildlifeHealth_AnimalSourceRecordAnomaly  = "List of Anomalies in Animal",
-  AnimalSourceRecordOtherAnomalies  = "Other Anomalies in Animal",
-  WildlifeHealth_AnimalSourceRecordPotentialCauseInjuryDisease  = "Potential Causes of Injury or Disease in Animal",
-  AnimalSourceRecordDateDeath  = "Date of Death",
+  #fields_by_table$WildlifeHealth_AnimalSourceRecordPotentialCauseInjuryDisease$Column_Name
+  
+  WildlifeHealth_AnimalSourceRecordPotentialCauseInjuryDisease  = "Potential Cause of Injury or Disease in Animal",
+  AnimalSourceRecordPotentialCauseInjuryDiseaseBy = "Potential Cause of Injury or Disease Provided By",
+  AnimalSourceRecordPotentialCauseInjuryDiseasePathogen = "Suspected Pathogen Causing Disease",
+  AnimalSourceRecordPotentialCauseInjuryDiseasePathogenBasedOn = "Reason to Suspect in the Pathogen",
+  
+  #fields_by_table$WildlifeHealth_AnimalSourceRecordPotentialCauseDeath$Column_Name
+  
+  WildlifeHealth_AnimalSourceRecordPotentialCauseDeath = "Potential Causes of Animal Death",
+  AnimalSourceRecordPotentialCauseDeathBy = "Potential Cause Provided By",
+  AnimalSourceRecordPotentialCauseDeathPathogen = "Suspected Pathogen",
+  AnimalSourceRecordPotentialCauseDeathPathogenBasedOn = "Reason to Suspect in the Pathogen",
   AnimalSourceRecordEuthanasiaMethod  = "Euthanasia Method",
   AnimalSourceRecordCarcassCollected  = "Carcass Collected",
   AnimalSourceRecordFieldStorageCarcass  = "Carcass Field Storage Method",
-  WildlifeHealth_AnimalSourceRecordPotentialCauseDeath  = "Potential Causes of Animal Death",
-  
-  
-  
+
   # PRIMARY NECROPSY
   
   
