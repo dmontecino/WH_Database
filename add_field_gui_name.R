@@ -49,7 +49,7 @@ gui_labels<- list(
 
   #fields_by_table$WildlifeHealth_ProjectOtherOrganizationsInvolved$Column_Name
   
-  ProjectOtherOrganizationsInvolved = "Other Organizations Involved",
+  WildlifeHealth_ProjectOtherOrganizationsInvolved = "Other Organizations Involved",
   
   #fields_by_table$WildlifeHealth_ProjectAnimalTaxon$Column_Name
   
@@ -59,13 +59,13 @@ gui_labels<- list(
   
   WildlifeHealth_ProjectTargetedAgent = "Disease Agents of Interest",
   
-  # fields_by_table$WildlifeHealth_ProjectURL$Column_Name
+  #fields_by_table$WildlifeHealth_ProjectURL$Column_Name
   
-  ProjectRelevantUrl = "Relevant Links",
+  WildlifeHealth_ProjectRelevantUrl = "Relevant Links",
   
   #ACTIVITY
   
-  # fields_by_table$WildlifeHealth_FieldActivity$Column_Name
+  #fields_by_table$WildlifeHealth_FieldActivity$Column_Name
   
   WildlifeHealth_ActivityID = "Activity Identifier",
   ActivityName = "Name of the Activity",
@@ -108,7 +108,7 @@ gui_labels<- list(
   IncidentVendorCode = "Incident Vendor Code",
   IncidentTrapCode = "Incident Trap Code",
   IncidentMistNetCode = "Incident Mist Net Code",
-  IncidentOtherSpatialUnit = "Incident Other Spatial Unit Code",
+  IncidentOtherSpatialUnitCode = "Incident Other Spatial Unit Code",
   IncidentLongitude = "Incident Longitude",
   IncidentLatitude = "Incident Latitude",
   
@@ -128,6 +128,8 @@ gui_labels<- list(
   
   #SURVEILLANCE TASK 
   
+  # fields_by_table$WildlifeHealth_SurveillanceTask$Column_Name
+  
   
   WildlifeHealth_SurveillanceTaskID = "Surveillance Task Identifier",
   SurveillanceTaskName = "Surveillance Task Name",              
@@ -138,17 +140,36 @@ gui_labels<- list(
   SurveillanceTaskToxinChemicalTargeted = "Is a Toxic Substance or Heavy Metal Targeted?",
   SurveillanceTaskPhysicalThreatTargeted = "Is a Physical Threat Targeted?",
   SurveillanceTaskPhysiologicalProblemTargeted = "Is a Physiological Problem Targeted?",
-  WildlifeHealth_SurveillanceTaskTarget = "Hazard Targeted",
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadata$Column_Name
+  
   TaskMetadataStartingDate = "Surveillance Task  Starting Date",                         
   TaskMetadataEndingDate = "Surveillance Task Ending Date",                           
   TaskMetadataOrganizationAICUC = "Organization Providing AICUC",                    
   TaskMetadataAICUCCode = "AICUC Code",
   TaskMetadataIncidentGrouping = "Are Incidents Grouped?",                     
   TaskMetadataIncidentGroupingStructure = "How Are Incidents Grouped?",
-  TaskMetadataStudySite = "Study Sites",                            
-  TaskMetadataCountryInvolved = "Countries Involved",                      
+  
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataCountry$Column_Name
+  
+  TaskMetadataCountryInvolved = "Countries Involved", 
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataStudySite$Column_Name
+  
+  TaskMetadataStudySite = "Study Sites", 
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskTarget$Column_Name
+  
+  WildlifeHealth_SurveillanceTaskTarget = "Hazard Targeted",
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskTarget$Column_Name
+  
+  
   TaskMetadataOtherSurveillanceTaskAssociated = "Other Surveillance Tasks Associated",      
   TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Tasks Are Associated",
+  
+  
   TaskMetadataRelevantPublication = "Surveillance Task Publications",                  
   TaskMetadataOrganizationInvolved = "Organizations Involved in the Surveillance Task",                 
   TaskMetadataRelevantURL = "Surveillance Task Relevant URLs",
