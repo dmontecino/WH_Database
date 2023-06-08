@@ -10,6 +10,8 @@ library(tidyverse)
 xml <- read_xml("Entity_relational_model_June_7_2023.drawio.xml")
 
 
+#create first dataset containing the names of the tables and fields and other properties
+
 data_to_id_tables_and_columns_within<-
   
   data.frame(
@@ -31,20 +33,34 @@ data_to_id_tables_and_columns_within<-
   )
 
 
-
+#remove information about arrows connecting tables
 
 data_to_id_tables_and_columns_within<-
   data_to_id_tables_and_columns_within %>% 
   filter(style!="edgeStyle=orthogonalEdgeStyle") 
 
-test=lapply(unique(data_to_id_tables_and_columns_within$parent),
-       function(x)
-         data_to_id_tables_and_columns_within %>% 
-         filter(parent==x))
 
-test=test[sapply(test, nrow)==4]
+# split the data by parent
 
-parents_per_row<-sapply(test, function(x) unique(x$parent), simplify = T)
+data_to_id_tables_and_columns_within_by_parent<-
+  split(data_to_id_tables_and_columns_within,
+        data_to_id_tables_and_columns_within$parent)
+
+# test=lapply(unique(data_to_id_tables_and_columns_within$parent),
+#        function(x)
+#          data_to_id_tables_and_columns_within %>% 
+#          filter(parent==x))
+
+
+#filtering the objects with four rows
+data_to_id_tables_and_columns_within_by_parent<-
+  data_to_id_tables_and_columns_within_by_parent[
+    sapply(data_to_id_tables_and_columns_within_by_parent, nrow)==4]
+
+#id each parent 
+parents_per_row<-sapply(data_to_id_tables_and_columns_within_by_parent, 
+                        function(x) 
+                          unique(x$parent), simplify = T, USE.NAMES = F)
 
 parents_of_parents<-
   map_vec(parents_per_row, function(x)
@@ -54,7 +70,10 @@ parents_of_parents<-
 
 
 #rows per table
-all_rows<-data.frame(do.call(rbind, lapply(test, function(x) x %>% pull(name))))
+all_rows<-data.frame(do.call(rbind, 
+                             lapply(data_to_id_tables_and_columns_within_by_parent,
+                                    function(x) 
+                                      x %>% pull(name))))
 
 #table parents
 table_parents<-parents_of_parents$parent
@@ -78,10 +97,10 @@ full_table$Table_Parent_Name<-
 
 names(full_table)[1]<-"Table_Name"
 
-head(full_table)
-
-nrow(full_table)
+# head(full_table)
+# 
+# nrow(full_table)
 
 full_table[is.na(full_table$Notes),]$Notes<-""
 
-
+row.names(full_table)<-1:nrow(full_table)
