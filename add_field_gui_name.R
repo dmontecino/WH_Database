@@ -7,14 +7,14 @@
 # but every item in the "Column_Name" table must be converted to an actual 
 # column. 
 
-library(labelled)
-
-col_gui<-data.frame(Column_Name=unique(full_table$Column_Name, incomparables = FALSE))
-
-col_gui<- col_gui %>% 
-  mutate(row_index = row_number()) %>% 
-  pivot_wider(names_from = Column_Name, values_from = row_index)
-
+# library(labelled)
+# 
+# col_gui<-data.frame(Column_Name=unique(full_table$Column_Name, incomparables = FALSE))
+# 
+# col_gui<- col_gui %>% 
+#   mutate(row_index = row_number()) %>% 
+#   pivot_wider(names_from = Column_Name, values_from = row_index)
+# 
 
 
 
@@ -23,16 +23,49 @@ col_gui<- col_gui %>%
 # GUI column name #
 # --------------- #
 
-col_gui<-data.frame(Column_Name=unique(full_table$Column_Name, incomparables = FALSE))
+#split data by table to easily find the fields by table
+fields_by_table<-split(full_table, full_table$Table_Name)
 
 
+#add the labels per field
 gui_labels<- list(
   
   #PROJECT
   
+  #fields_by_table$WildlifeHealth_Project$Column_Name
+  
   WildlifeHealth_ProjectID = "Project Identifier",
+  ProjectName = "Project Name", 
+  ProjectCrossID = "Project Cross ID", 
+  ProjectFunder = "Project Funder",
+  ProjectLeadingOrganization = "Leading Organization",
+  ProjectPurpose = "Project Purpose",
+  ProjectStart = "Project Start Date",
+  ProjectEnd ="Project End Date",
+  
+  #fields_by_table$WildlifeHealth_ProjectCountry$Column_Name
+  
+  WildlifeHealth_ProjectCountry = "Countries Involved",
+
+  #fields_by_table$WildlifeHealth_ProjectOtherOrganizationsInvolved$Column_Name
+  
+  ProjectOtherOrganizationsInvolved = "Other Organizations Involved",
+  
+  #fields_by_table$WildlifeHealth_ProjectAnimalTaxon$Column_Name
+  
+  WildlifeHealth_ProjectAnimalTaxon = "Animal Taxa Involved",
+  
+  #fields_by_table$WildlifeHealth_ProjectTargetedAgent$Column_Name
+  
+  WildlifeHealth_ProjectTargetedAgent = "Disease Agents of Interest",
+  
+  # fields_by_table$WildlifeHealth_ProjectURL$Column_Name
+  
+  ProjectRelevantUrl = "Relevant Links",
   
   #ACTIVITY
+  
+  # fields_by_table$WildlifeHealth_FieldActivity$Column_Name
   
   WildlifeHealth_ActivityID = "Activity Identifier",
   ActivityName = "Name of the Activity",
@@ -42,11 +75,14 @@ gui_labels<- list(
   ActivityHistory = "History of the Activity",
   ActivityStartDate = "Date Activity Started",
   ActivityEndDate = "Date Activity Ended",
-  WildlifeHealth_ActivityLocationName = "Current Location",
   
+  #fields_by_table$WildlifeHealth_FieldActivityLocation$Column_Name
+  
+  WildlifeHealth_ActivityLocationName = "Current Location",
   
   # INCIDENT
   
+  #fields_by_table$WildlifeHealth_IncidentGeneralInfo$Column_Name
   
   WildlifeHealth_IncidentID = "Incident Identifier",
   IncidentCrossID = "Incident Cross Identifier",
@@ -56,6 +92,7 @@ gui_labels<- list(
   IncidentBy = "Incident Recorder",
   IncidentBySector = "Sector of the Incident Recorder",
   IncidentSmartSource = "Incident Collected Using SMART",
+  
   IncidentCountry = "Incident Country",
   IncidentState = "Incident State",
   IncidentProvince = "Incident Province",
