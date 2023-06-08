@@ -1,0 +1,419 @@
+# -------------------------- # 
+# Adding the Column GUI Name #
+# -------------------------- # 
+
+# the advantage of using labelled is that the full data dictionary can 
+# be ready to be published online with its metadata. 
+# but every item in the "Column_Name" table must be converted to an actual 
+# column. 
+
+library(labelled)
+
+col_gui<-data.frame(Column_Name=unique(full_table$Column_Name, incomparables = FALSE))
+
+col_gui<- col_gui %>% 
+  mutate(row_index = row_number()) %>% 
+  pivot_wider(names_from = Column_Name, values_from = row_index)
+
+
+
+
+
+# --------------- #
+# GUI column name #
+# --------------- #
+
+col_gui<-data.frame(Column_Name=unique(full_table$Column_Name, incomparables = FALSE))
+
+
+gui_labels<- list(
+  
+  #PROJECT
+  
+  WildlifeHealth_ProjectID = "Project Identifier",
+  
+  #ACTIVITY
+  
+  WildlifeHealth_ActivityID = "Activity Identifier",
+  ActivityName = "Name of the Activity",
+  ActivityCrossID = "Activity Cross Identifier",
+  ActivityLeadName = "Leader of the Activity",
+  ActivityLeadAffiliiation = "Affiliation of the Activity Leader",
+  ActivityHistory = "History of the Activity",
+  ActivityStartDate = "Date Activity Started",
+  ActivityEndDate = "Date Activity Ended",
+  WildlifeHealth_ActivityLocationName = "Current Location",
+  
+  
+  # INCIDENT
+  
+  
+  WildlifeHealth_IncidentID = "Incident Identifier",
+  IncidentCrossID = "Incident Cross Identifier",
+  IncidentDate = "Date of the Incident",
+  IncidentType = "Type of Incident",
+  IncidentUnit = "What does the Incident Represent?",
+  IncidentBy = "Incident Recorder",
+  IncidentBySector = "Sector of the Incident Recorder",
+  IncidentSmartSource = "Incident Collected Using SMART",
+  IncidentCountry = "Incident Country",
+  IncidentState = "Incident State",
+  IncidentProvince = "Incident Province",
+  IncidentSiteCode = "Incident Site Code",
+  IncidentZoneCode = "Incident Zone Code",
+  IncidentMarketCode = "Incident Market Code",
+  IncidentGridCode = "Incident Grid Code",
+  IncidentGridCellCode = "Incident Grid Cell Code",
+  IncidentStationCode = "Incident Station Code",
+  IncidentTransectCode = "Incident Transect Code",
+  IncidentVendorCode = "Incident Vendor Code",
+  IncidentTrapCode = "Incident Trap Code",
+  IncidentMistNetCode = "Incident Mist Net Code",
+  IncidentOtherSpatialUnit = "Incident Other Spatial Unit Code",
+  IncidentLongitude = "Incident Longitude",
+  IncidentLatitude = "Incident Latitude",
+  IncidentStudyYear  = "Incident Study Year",
+  IncidentStudySeason  = "Incident Study Season",
+  IncidentStudyMonth  = "Incident Study Month",
+  IncidentStudyWeek  = "Incident Study Week",
+  IncidentStudyDay  = "Incident Study Day",
+  IncidentStudyDayPeriod  = "Incident Study Day Period",
+  IncidentStudyHour  = "Incident Study Hour",
+  IncidentOtherTemporalUnit  = "Incident Other Temporal Unit",
+  IncidentTimeAssembled  = "Time Incident Capture Device Assembled",
+  IncidentTimeDisassembled  = "Time Incident Capture Device Disassembled",
+  IncidentOtherTemporalUnit  = "Incident Other Temporal Unit",
+  
+  
+  #SURVEILLANCE TASK 
+  
+  
+  WildlifeHealth_SurveillanceTaskID = "Surveillance Task Identifier",
+  SurveillanceTaskName = "Surveillance Task Name",              
+  SurveillanceTaskCrossID = "Surveillance Task Cross Identifier",
+  SurveillanceTaskType = "Surveillance Task Type",                            
+  SurveillanceTaskPurpose = "Surveillance Task Purpose",
+  SurveillanceTaskPathogenTargeted = "Is a Pathogen Targeted?",
+  SurveillanceTaskToxinChemicalTargeted = "Is a Toxic Substance or Heavy Metal Targeted?",
+  SurveillanceTaskPhysicalThreatTargeted = "Is a Physical Threat Targeted?",
+  SurveillanceTaskPhysiologicalProblemTargeted = "Is a Physiological Problem Targeted?",
+  WildlifeHealth_SurveillanceTaskTarget = "Hazard Targeted",
+  TaskMetadataStartingDate = "Surveillance Task  Starting Date",                         
+  TaskMetadataEndingDate = "Surveillance Task Ending Date",                           
+  TaskMetadataOrganizationAICUC = "Organization Providing AICUC",                    
+  TaskMetadataAICUCCode = "AICUC Code",
+  TaskMetadataIncidentGrouping = "Are Incidents Grouped?",                     
+  TaskMetadataIncidentGroupingStructure = "How Are Incidents Grouped?",
+  TaskMetadataStudySite = "Study Sites",                            
+  TaskMetadataCountryInvolved = "Countries Involved",                      
+  TaskMetadataOtherSurveillanceTaskAssociated = "Other Surveillance Tasks Associated",      
+  TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Tasks Are Associated",
+  TaskMetadataRelevantPublication = "Surveillance Task Publications",                  
+  TaskMetadataOrganizationInvolved = "Organizations Involved in the Surveillance Task",                 
+  TaskMetadataRelevantURL = "Surveillance Task Relevant URLs",
+  ObservationMetadataObservationsIncluded = "Are Observations Part of the Surveillance Task?",
+  ObservationMetadataObservationCodeStructure =  "Structure of the User Observation Code",       
+  ObservationMetadataInclusionCriteriaObservedAnimals = "Criteria to Include Observed-only Animals",
+  ObservationMetadataExclusionCriteriaObservedAnimals = "Criteria to Exclude Observed-only Animals",
+  ObservationMetadataObservationGrouping = "Are Observations Grouped Beyond Incident?",
+  ObservationMetadataObservationGroupingStructure = "How Are Observations Grouped Beyond Incident?",
+  AnimalSourceMetadataAnimalSourceIncluded = "Are Animal Sources Part of the Surveillance Task?",                          
+  AnimalSourceMetadataAnimalSourceCodeStructure = "Structure of the User Animal Source Code",                      
+  AnimalSourceMetadataCarcassesCollected = "Are Carcasses of Individual Animals Collected",                          
+  AnimalSourceMetadataTaxaIncluded = "Taxa of Animals Included as Animal Sources",                                    
+  AnimalSourceMetadataInclusionCriteria = "Criteria to Include Animal Source Individuals",
+  AnimalSourceMetadataExclusionCriteria = "Criteria to Exclude Animal Source Individuals",                              
+  AnimalSourceMetadataGrouping = "Are Observations Grouped Beyond Incident?",                                       
+  AnimalSourceMetadataGroupingStructure = "How Are Observations Grouped Beyond Incident?",                              
+  AnimalSourceMetadataHowObtained = "How Are Animal Sources Obtained?",                                     
+  AnimalSourceMetadataCaptureProtocol = "Animal Source Capture Protocol",                                
+  AnimalSourceMetadataCaptureProtocolReferences = "Bibliographic References Animal Source Capture Protocol",                       
+  AnimalSourceMetadataMarking = "Are Animal Sources Marked?",                                         
+  AnimalSourceMetadataMarkingMethod = "How Are Animal Sources Marked",                                  
+  AnimalSourceMetadataMarkingMethodReferences = "Bibliographic References Animal Source Marking Method",                        
+  AnimalSourceMetadataRecapture = "Are Animal Sources Recaptured?",                                       
+  AnimalSourceMetadataFateAfterRecapture = "Fate of Animal Source after Capture or Recapture",                              
+  AnimalSourceMetadataEuthanasiaMethod = "Euthanasia Method of Animal Source",                                
+  AnimalSourceMetadataEuthanasiaMethodReferences = "Bibliographic References Euthanasia of Animal Source",                    
+  AnimalSourceMetadataDiagnosticsUsed = "Diagnostics used in Animal Sources",                              
+  AnimalSourceMetadataDiagnosticsUsedReferences = "Bibliographic References Diagnostics in Animal Source",                      
+  AnimalSourceMetadataRecordCriteriaPositiveCase = "Animal Source Case Definition",
+  AnimalSourceMetadataRecordCriteriaPositiveCaseReferences = "Bibliographic References Animal Source Case Definition",            
+  AnimalSourceMetadataNecropsyCarcass = "Are Carcasses Necropsied?",                                 
+  AnimalSourceMetadataNecropsyCarcassProtocol = "Carcass Necropsy Protocol",                         
+  AnimalSourceMetadataNecropsyCarcassReferences = "Bibliographic References Carcass Necropsy Protocol",                      
+  AnimalSourceMetadataAnimalSpecimenCollection = "Are Animal Source Specimens Collected?",                       
+  AnimalSourceMetadataAnimalSpecimenCollectionMethod = "Animal Source Specimen Collection Method",                  
+  AnimalSourceMetadataAnimalSpecimenCollectionReferences = "Bibliographic References Animal Source Specimen Collection Method",             
+  AnimalSourceMetadataAnimalSpecimenCollectionAtRecapture = "Are Animal Source Specimens Collected at Recapture?",            
+  AnimalSourceMetadataAnimalSpecimenCollectionIncludesParasitesVectors = "Animal Source Specimens Include Parasites?",
+  AnimalSourceMetadataAnimalSpecimenCodeStructure = "Structure of the Animal Specimen Code",                          
+  AnimalSourceMetadataAnimalSpecimenTypes = "Animal Source Specimen Types",                            
+  AnimalSourceMetadataAnimalSpecimenPooling = "Are Animal Source Specimens Pooled?",                          
+  AnimalSourceMetadataAnimalSpecimenPoolingStrategy = "Strategy to Pooled Animal Source Specimens",                  
+  AnimalSourceMetadataAnimalSpecimenDiagnosticsUsed = "Diagnostics Used in Animal Source Specimens",                 
+  AnimalSourceMetadataAnimalSpecimenDiagnosticUsedReferences = "Bibliographic References Diagnostics Used in Animal Source Specimens",          
+  AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCase = "Case Definition Animal Source Specimen",              
+  AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Animal Source Specimen",  
+  
+  
+  
+  
+  TestMetadataAnimalsSpecimensTested = " ",                    
+  TestMetadataEnvironmentalSpecimensTested = " ",               
+  TestMetadataInvertebrateSpecimensTested = " ",               
+  TestMetadataPooledSpecimensTested = " ",                  
+  TestMetadataCriteriaPositiveTestAnimalSpecimens = " ",        
+  TestMetadataCriteriaPositiveTestEnvironmentalSpecimens = " ",  
+  TestMetadataCriteriaPositiveTestInvertebrateSpecimens = " ",   
+  TestMetadataCriteriaPositiveTestReferences = " ",  
+
+
+  
+  #OBSERVATION
+  
+  WildlifeHealth_ObservationID  = "Observation Identifier",
+  ObservationCode  = "Observation User Code",
+  ObservationCrossID  = "Observation Cross Identifier",
+  ObservationSpecies  = "Observation Species",
+  ObservationNumberAdultMaleHealthy  = "Number of Healthy Adult Males",
+  ObservationNumberAdultFemaleHealthy  = "Number of Healthy Adult Females",
+  ObservationNumberAdultUnknownSexHealthy  = "Number of Healthy Adults of Unknown Sex",
+  ObservationNumberAdultMaleSickOrInjured  = "Number of Sick or Injured Adult Males",
+  ObservationNumberAdultFemaleSickOrInjured  = "Number of Sick or Injured Adult Females",
+  ObservationNumberAdultUnknownSexSickOrInjured  = "Number of Sick or Injured Adults of Unknown Sex",
+  ObservationNumberAdultMaleDead  = "Number of Dead Adult Males",
+  ObservationNumberAdultFemaleDead  = "Number of Dead Adult Females",
+  ObservationNumberAdultUnknownSexDead  = "Number of Dead Adults of Unknown Sex",
+  ObservationNumberJuvenileHealthy  = "Number of Healthy Juveniles",
+  ObservationNumberJuvenileSickInjured  = "Number of Sick or Injured Juveniles",
+  ObservationNumberJuvenileDead  = "Number of Dead Juveniles",
+  ObservationNumberFetusHealthy  = "Number of Healthy Fetuses",
+  ObservationNumberFetusSickInjured  = "Number of Sick or Injured Fetuses",
+  ObservationNumberFetusDead  = "Number of Dead Fetuses",
+  ObservationNumberUnknownAgeSexHealthy  = "Number of Healthy Individuals of Unknown Age and Sex",
+  ObservationNumberUnknownAgeSexSickInjured  = "Number of Sick or Injured Individuals of Unknown Age and Sex",
+  ObservationNumberUnknownAgeSexDead  = "Number of Dead Individuals of Unknown Age and Sex",
+  ObservationCaptivityCategory = "Captivity Categories Observed Animals",
+  ObservationAnomaly = "Anomalies in Observed Animals",
+  ObservationPotentialCauseInjuryDiseaseDeath = "Potential Causes of Death in Observed Animals",
+  ObservationGroupingLevel1Code  = "Level 1 Group Code",
+  ObservationGroupingLevel2Code  = "Level 2 Group Code",
+  ObservationGroupingLevel3Code  = "Level 3 Group Code",
+  ObservationGroupingLevel4Code  = "Level 4 Group Code",
+  ObservationGroupingLevel5Code  = "Level 5 Group Code",
+  ObservationComments  = "Comments",
+  
+  
+  # ANIMAL SOURCE 
+  
+  
+  WildlifeHealth_AnimalSourceID  = "Animal Identifier",
+  AnimalSourceCode  = "Animal User Code",
+  AnimalSourceCrossID  = "Animal Cross Identifier",
+  AnimalSourceSpecies  = "Animal Species",
+  AnimalSourceSex  = "Animal Sex",
+
+  
+  # ANIMAL SOURCE RECORD
+  
+  
+  WildlifeHealth_AnimalSourceRecordID  = "Animal Record Identifier",
+  WildlifeHealth_AnimalSourceRecordNumber  = "Animal Record Number",
+  AnimalSourceRecordAgeCategory  = "Animal Age Category",
+  AnimalSourceRecordCaptivityCategory  = "Animal Captivity Category",
+  AnimalSourceRecordInitialHealthStatus  = "Animal Initial Health Status",
+  AnimalSourceRecordHealthConditionRelease  = "Animal Health Status at Release",
+  WildlifeHealth_AnimalSourceRecordAnomaly  = "List of Anomalies in Animal",
+  AnimalSourceRecordOtherAnomalies  = "Other Anomalies in Animal",
+  WildlifeHealth_AnimalSourceRecordPotentialCauseInjuryDisease  = "Potential Causes of Injury or Disease in Animal",
+  AnimalSourceRecordDateDeath  = "Date of Death",
+  AnimalSourceRecordEuthanasiaMethod  = "Euthanasia Method",
+  AnimalSourceRecordCarcassCollected  = "Carcass Collected",
+  AnimalSourceRecordFieldStorageCarcass  = "Carcass Field Storage Method",
+  WildlifeHealth_AnimalSourceRecordPotentialCauseDeath  = "Potential Causes of Animal Death",
+  AnimalSourceRecordMarkingCode  = "Animal Marking Code",
+  AnimalSourceRecordMarkingCodeChange  = "Change of Marking Code",
+  AnimalSourceRecordMarkingCodeChangingReason  = "Reason of Marking Code Change",
+  AnimalSourceRecordGroupingLevel1Code  = "Level 1 Group Code",
+  AnimalSourceRecordGroupingLevel2Code  = "Level 2 Group Code",
+  AnimalSourceRecordGroupingLevel3Code  = "Level 3 Group Code",
+  AnimalSourceRecordGroupingLevel4Code  = "Level 4 Group Code",
+  AnimalSourceRecordGroupingLevel5Code  = "Level 5 Group Code",
+  AnimalSourceRecordSpecimensCollected  = "Specimens Collected",
+  AnimalSourceRecordComments  = "Animal Record Comments",
+  
+  
+  # PRIMARY NECROPSY
+  
+  
+  WildlifeHealth_PrimaryNecropsyID  = "Primary Necropsy Identifier",
+  PrimaryNecropsyCrossID  = "Necropsy Cross Identifier",
+  PrimaryNecropsyDate  = "Necropsy Date",
+  PrimaryNecropsyLocation  = "Necropsy Location",
+  PrimaryNecropsyLab  = "Necropsy Pathology Lab",
+  PrimaryNecropsyBy  = "Necropsy By",
+  PrimaryNecropsyCarcassCondition  = "Carcass Condition",
+  PrimaryNecropsyCarcassStorage  = "Carcass Storage Method",
+  PrimaryNecropsyExternalSigns  = "External Signs", 
+  PrimaryNecropsyBodyCondition  = "Body Condition", 
+  PrimaryNecropsyEyes  = "Eyes",
+  PrimaryNecropsyEars  = "Ears",
+  PrimaryNecropsyNostrils  = "Nostrils",
+  PrimaryNecropsyMouth = "Mouth",
+  PrimaryNecropsySkin/Hair/Coat/Nails  = "Skin/Hair/Coat/Nails", 
+  PrimaryNecropsyWounds/Scars  = "Wounds/Scars", 
+  PrimaryNecropsyExternalParasites  = "ExternalParasites", 
+  PrimaryNecropsyInternalParasites  = "InternalParasites",  
+  PrimaryNecropsyAnus/Perineum/Cloaca  = "Anus/Perineum/Cloaca",
+  PrimaryNecropsySubcutaneousFat  = "Subcutaneous Fat",
+  PrimaryNecropsyMuscleMass  = "Muscle Mass", 
+  PrimaryNecropsyMusculoskeletalSyst  = "Musculoeskeletal  System",
+  PrimaryNecropsyBodyCavities  = "Body Cavities",
+  PrimaryNecropsyCardiovascularSyst  = "Cardiovascular  System",
+  PrimaryNecropsyRespiratorySyst  = "Respiratory  System",
+  PrimaryNecropsyGastrointestinalSyst  = "Gastrointestinal  System",
+  PrimaryNecropsyUrinarySyst  = "Urinary  System",
+  PrimaryNecropsyReproductiveSyst  = "Reproductive System",
+  PrimaryNecropsyLymphaticSyst  = "Lymphatic  System",
+  PrimaryNecropsyEndocrineSyst  = "Endocrine  System",
+  PrimaryNecropsyNervousSyst  = "Nervous System",
+  PrimaryNecropsyConclusion  = "Conclusion",
+  PrimaryNecropsyComments  = "Comments",
+  PrimaryNecropsyNeedsPathologistReview  = "Necropsy Needs Pathologist Review",
+  
+  
+  # SECONDARY NECROPSY
+  
+  
+  WildlifeHealth_SecondaryNecropsyID  = "Secondary Necropsy Identifier",
+  SecondaryNecropsyCrossID  = "Necropsy Cross Identifier",
+  SecondaryNecropsyDate  = "Necropsy Date",
+  SecondaryNecropsyLocation  = "Necropsy Location",
+  SecondaryNecropsyLab  = "Necropsy Pathology Lab",
+  SecondaryNecropsyBy  = "Necropsy By",
+  SecondaryNecropsyCarcassCondition  = "Carcass Condition",
+  SecondaryNecropsyCarcassStorage  = "Carcass Storage Method",
+  SecondaryNecropsyExternalSigns  = "External Signs", 
+  SecondaryNecropsyBodyCondition  = "Body Condition", 
+  SecondaryNecropsyEyes  = "Eyes",
+  SecondaryNecropsyEars  = "Ears",
+  SecondaryNecropsyNostrils  = "Nostrils",
+  SecondaryNecropsyMouth = "Mouth",
+  SecondaryNecropsySkin/Hair/Coat/Nails  = "Skin/Hair/Coat/Nails", 
+  SecondaryNecropsyWounds/Scars  = "Wounds/Scars", 
+  SecondaryNecropsyExternalParasites  = "ExternalParasites", 
+  SecondaryNecropsyInternalParasites  = "InternalParasites",  
+  SecondaryNecropsyAnus/Perineum/Cloaca  = "Anus/Perineum/Cloaca",
+  SecondaryNecropsySubcutaneousFat  = "Subcutaneous Fat",
+  SecondaryNecropsyMuscleMass  = "Muscle Mass", 
+  SecondaryNecropsyMusculoskeletalSyst  = "Musculoeskeletal  System",
+  SecondaryNecropsyBodyCavities  = "Body Cavities",
+  SecondaryNecropsyCardiovascularSyst  = "Cardiovascular  System",
+  SecondaryNecropsyRespiratorySyst  = "Respiratory  System",
+  SecondaryNecropsyGastrointestinalSyst  = "Gastrointestinal  System",
+  SecondaryNecropsyUrinarySyst  = "Urinary  System",
+  SecondaryNecropsyReproductiveSyst  = "Reproductive System",
+  SecondaryNecropsyLymphaticSyst  = "Lymphatic  System",
+  SecondaryNecropsyEndocrineSyst  = "Endocrine  System",
+  SecondaryNecropsyNervousSyst  = "Nervous System",
+  SecondaryNecropsyConclusion  = "Conclusion",
+  SecondaryNecropsyComments  = "Comments",
+
+  
+  # ANIMAL SOURCE RECORD DIAGNOSIS
+  
+ 
+  WildlifeHealth_AnimalSourceRecordDiagnosisID  = "Animal Record Diagnosis Identifier",
+  AnimalSourceRecordDiagnosisTarget  = "Agent Diagnosed",
+  AnimalSourceRecordDiagnosis  = "Diagnosis",
+  AnimalSourceRecordDiagnosisDate  = "Diagnosis Date",
+  AnimalSourceRecordDiagnosisBy  = "Diagnosis By",
+  AnimalSourceRecordDiagnosisComments  = "Comments",
+  
+  
+  #ANIMAL SPECIMEN
+ 
+  
+  WildlifeHealth_AnimalSpecimenID = "Specimen Identifier",                              
+  AnimalSpecimenCode = "Specimen User Code",                                                  
+  AnimalSpecimenCrossID = "Specimen Cross Identifier",                                                 
+  AnimalSpecimenType = "Specimen Type",                                                   
+  AnimalSpecimenMedium = "Medium",                                       
+  AnimalSpecimenOriginalQuantity = "Original Quantity (number)",                                      
+  AnimalSpecimenOriginalQuantityUnit = "Original Quantity Unit",                               
+  AnimalSpecimenQuantityStored = "Current Quantity Stored (number)",                                        
+  AnimalSpecimenQuantityStoredUnit = "Current Quantity Unit",                                                                    
+  AnimalSpecimenReasonQuantityDifference = "Reason Difference Between Original and Current Quantity Stored",                              
+  AnimalSpecimenFieldStorageType = "Specimen Field Storage Method",                                     
+  AnimalSpecimenLabStorageType = "Storage Method in Laboratory",                                        
+  AnimalSpecimenInContainer = "Is the Specimen Stored with other Specimens in the Same Container?",
+  AnimalSpecimenContainerCode = "Code of the Container with the Specimen",                                        
+  AnimalSpecimenLocation = "Institution where the Specimen is Stored",                                             
+  AnimalSpecimenLocationBuilding = "Building where the Specimen is Stored",                                      
+  AnimalSpecimenLocationRoom = "Room Number where the Specimen is Stored",                                                                                
+  AnimalSpecimenLocationStorage = "Storage Unit where the Specimen is Stored",                                   
+  AnimalSpecimenLocationShelf = "Shelf where the Specimen is Stored",                                          
+  AnimalSpecimenLocationRack = "Rack where the Specimen is Stored",                                                                                    
+  AnimalSpecimenLocationBox = "Box where the Specimen is Stored",                                           
+  AnimalSpecimenLocationRow = "Row where the Specimen is Stored",                
+  AnimalSpecimenAvailable = "Is the Specimen Available for Testing",                                             
+  AnimalSpecimenOwner = "Specimen Owner",                                                 
+  AnimalSpecimenComments = "Comments", 
+  
+  
+  # ANIMAL SPECIMEN DIAGNOSIS
+  
+  
+  WildlifeHealth_AnimalSpecimenDiagnosisID = "Specimen Diagnosis Identifier", 
+  AnimalSpecimenDiagnosisTarget = "Agent Diagnosed",
+  AnimalSpecimenDiagnosis = "Diagnosis",              
+  AnimalSpecimenDiagnosisDate = "Diagnosis Date",
+  AnimalSpecimenDiagnosisBy = "Diagnosis By",               
+  AnimalSpecimenDiagnosisComments = "Comments",
+  
+  
+  # ANIMAL SPECIMEN DIAGNOSTIC TEST
+  
+  
+  WildlifeHealth_AnimalSpecimenDiagnosticTestID = "Specimen Test Identifier",
+  AnimalSpecimenDiagnosticTestWithinLabCode = "Specimen Test Laboratory Code", 
+  AnimalSpecimenDiagnosticTestType = "Specimen Test Type",
+  AnimalSpecimenDiagnosticTestMethod = "Specimen Test Method",                    
+  AnimalSpecimenDiagnosticTestDateSentForTesting = "Date Test Requested",          
+  AnimalSpecimenDiagnosticTestResultsReceived = "Test Results Received",              
+  AnimalSpecimenDiagnosticTestDateResultsReceived = "Date Test Results Received", 
+  AnimalSpecimenDiagnosticTestComments = "Comments",                    
+  
+    
+  # ANIMAL SPECIMEN DIAGNOSTIC TEST TARGETS
+    
+    
+  WildlifeHealth_AnimalSpecimenDiagnosticTestTargetID = "Diagnostic Test Target Identifier",    
+  AnimalSpecimenDiagnosticTestTarget = "Agent Targeted",                     
+  AnimalSpecimenDiagnosticTestTargetResult = "Result",                
+  AnimalSpecimenDiagnosticTestTargetResultModified = "Result Modified",      
+  AnimalSpecimenDiagnosticTestTargetDateResultModified =  "Date Result Was Modified",
+  AnimalSpecimenDiagnosticTestTargetReasonResultModified = "Reason Result Was Modified",  
+  AnimalSpecimenDiagnosticTestTargetComments = "Comments",              
+  AnimalSpecimenDiagnosticTestTargetSupportingInformation = "Supporting Information",
+  
+
+  # LABORATORY
+  
+  
+  
+)
+
+
+# add labels to the full table
+
+gui_labels_dataframe <- data.frame(Column_Name = names(gui_labels), 
+                                   GUI_Name = unlist(gui_labels),
+                                   stringsAsFactors = FALSE, 
+                                   row.names = seq_along(gui_labels))
+
+
+full_table<-left_join(full_table, gui_labels_dataframe, by = "Column_Name")
+          
+write_csv(full_table, file = "~/OneDrive - Wildlife Conservation Society/DATABASE/Database_structure_Steven_June_1_2023.csv")
