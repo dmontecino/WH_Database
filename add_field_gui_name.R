@@ -181,9 +181,17 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskTarget$Column_Name
   
-  
   TaskMetadataOtherSurveillanceTaskAssociated = "Other Surveillance Tasks Associated",      
   TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Tasks Are Associated",
+  
+  #fields_by_table$WildlifeHealth_Outbreak$Column_Name
+  
+  WildlifeHealth_OutbreakID = "Outbreak Identifier",
+  OutbreakName = "Outbreak User Name", 
+  OutbreakStartDate = "Outbreak Start Date",
+  OutbreakEndDate = "Outbreak End Date",
+  OutbreakDiagnosis = "Outbreak Diagnosis",
+  
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskObservationsMetadata$Column_Name
   
@@ -265,7 +273,17 @@ gui_labels<- list(
   EnvironmentalSourceMetadataEnvironmentalSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Environmental Source Specimen",  
                           
   
-
+  #fields_by_table$WildlifeHealth_SurveillanceTaskInvertebrateSourceMetadata$Column_Name
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   TestMetadataAnimalsSpecimensTested = " ",                    
   TestMetadataEnvironmentalSpecimensTested = " ",               
