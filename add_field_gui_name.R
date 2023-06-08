@@ -362,12 +362,12 @@ gui_labels<- list(
   ObservationPotentialCauseInjuryDiseaseDeath = "Potential Cause Injury Disease or Death in Observed Animals",
   ObservationPotentialCauseInjuryDiseaseDeathBy = "Potential Cause Provided By",
   ObservationPotentialCauseInjuryDiseaseDeathPathogen = "Suspected Pathogen",
-  ObservationPotentialCauseInjuryDiseaseDeathPathogenBasedOn = "Reason to Suspect in the Pathogen"
+  ObservationPotentialCauseInjuryDiseaseDeathPathogenBasedOn = "Reason to Suspect in the Pathogen",
   
   
   # ANIMAL SOURCE 
   
-  #fields_by_table$WildlifeHealth_Observation$Column_Name
+  #fields_by_table$WildlifeHealth_AnimalSource$Column_Name
   
   WildlifeHealth_AnimalSourceID  = "Animal Identifier",
   AnimalSourceCode  = "Animal User Code",
@@ -378,21 +378,14 @@ gui_labels<- list(
   
   # ANIMAL SOURCE RECORD
   
+  #fields_by_table$WildlifeHealth_AnimalSourceRecord$Column_Name
   
   WildlifeHealth_AnimalSourceRecordID  = "Animal Record Identifier",
-  WildlifeHealth_AnimalSourceRecordNumber  = "Animal Record Number",
+  AnimalSourceRecordNumber  = "Animal Record Number",
   AnimalSourceRecordAgeCategory  = "Animal Age Category",
   AnimalSourceRecordCaptivityCategory  = "Animal Captivity Category",
   AnimalSourceRecordInitialHealthStatus  = "Animal Initial Health Status",
   AnimalSourceRecordHealthConditionRelease  = "Animal Health Status at Release",
-  WildlifeHealth_AnimalSourceRecordAnomaly  = "List of Anomalies in Animal",
-  AnimalSourceRecordOtherAnomalies  = "Other Anomalies in Animal",
-  WildlifeHealth_AnimalSourceRecordPotentialCauseInjuryDisease  = "Potential Causes of Injury or Disease in Animal",
-  AnimalSourceRecordDateDeath  = "Date of Death",
-  AnimalSourceRecordEuthanasiaMethod  = "Euthanasia Method",
-  AnimalSourceRecordCarcassCollected  = "Carcass Collected",
-  AnimalSourceRecordFieldStorageCarcass  = "Carcass Field Storage Method",
-  WildlifeHealth_AnimalSourceRecordPotentialCauseDeath  = "Potential Causes of Animal Death",
   AnimalSourceRecordMarkingCode  = "Animal Marking Code",
   AnimalSourceRecordMarkingCodeChange  = "Change of Marking Code",
   AnimalSourceRecordMarkingCodeChangingReason  = "Reason of Marking Code Change",
@@ -401,8 +394,20 @@ gui_labels<- list(
   AnimalSourceRecordGroupingLevel3Code  = "Level 3 Group Code",
   AnimalSourceRecordGroupingLevel4Code  = "Level 4 Group Code",
   AnimalSourceRecordGroupingLevel5Code  = "Level 5 Group Code",
-  AnimalSourceRecordSpecimensCollected  = "Specimens Collected",
+  AnimalSourceRecordSpecimensCollected  = "Specimens Collected?",
   AnimalSourceRecordComments  = "Animal Record Comments",
+  
+  
+  
+  WildlifeHealth_AnimalSourceRecordAnomaly  = "List of Anomalies in Animal",
+  AnimalSourceRecordOtherAnomalies  = "Other Anomalies in Animal",
+  WildlifeHealth_AnimalSourceRecordPotentialCauseInjuryDisease  = "Potential Causes of Injury or Disease in Animal",
+  AnimalSourceRecordDateDeath  = "Date of Death",
+  AnimalSourceRecordEuthanasiaMethod  = "Euthanasia Method",
+  AnimalSourceRecordCarcassCollected  = "Carcass Collected",
+  AnimalSourceRecordFieldStorageCarcass  = "Carcass Field Storage Method",
+  WildlifeHealth_AnimalSourceRecordPotentialCauseDeath  = "Potential Causes of Animal Death",
+  
   
   
   # PRIMARY NECROPSY
