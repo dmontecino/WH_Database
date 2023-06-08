@@ -416,4 +416,4 @@ gui_labels_dataframe <- data.frame(Column_Name = names(gui_labels),
 
 full_table<-left_join(full_table, gui_labels_dataframe, by = "Column_Name")
           
-write_csv(full_table, file = "~/OneDrive - Wildlife Conservation Society/DATABASE/Database_structure_Steven_June_1_2023.csv")
+#write_csv(full_table, "Database_structure_June_7_2023.csv")
