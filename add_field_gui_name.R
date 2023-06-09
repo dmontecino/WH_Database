@@ -135,10 +135,10 @@ gui_labels<- list(
   SurveillanceTaskCrossID = "Surveillance Task Cross Identifier",
   SurveillanceTaskType = "Surveillance Task Type",                            
   SurveillanceTaskPurpose = "Surveillance Task Purpose",
-  SurveillanceTaskPathogenTargeted = "Is a Pathogen Targeted?",
-  SurveillanceTaskToxinChemicalTargeted = "Is a Toxic Substance or Heavy Metal Targeted?",
-  SurveillanceTaskPhysicalThreatTargeted = "Is a Physical Threat Targeted?",
-  SurveillanceTaskPhysiologicalProblemTargeted = "Is a Physiological Problem Targeted?",
+  SurveillanceTaskPathogenTargeted = "Is a Pathogen Hazard Targeted?",
+  SurveillanceTaskToxinChemicalTargeted = "Is a Chemical Hazard Targeted?",
+  SurveillanceTaskPhysicalThreatTargeted = "Is a Physical Hazard Targeted?",
+  SurveillanceTaskPhysiologicalProblemTargeted = "Is a Physiological Hazard Targeted?",
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadata$Column_Name
   
@@ -502,9 +502,10 @@ gui_labels<- list(
   
   # ANIMAL SOURCE RECORD DIAGNOSIS
   
- 
+  #fields_by_table$WildlifeHealth_AnimalSourceRecordDiagnosis$Column_Name
+  
   WildlifeHealth_AnimalSourceRecordDiagnosisID  = "Animal Record Diagnosis Identifier",
-  AnimalSourceRecordDiagnosisTarget  = "Agent Diagnosed",
+  AnimalSourceRecordDiagnosisTarget  = "Hazard Diagnosed",
   AnimalSourceRecordDiagnosis  = "Diagnosis",
   AnimalSourceRecordDiagnosisDate  = "Diagnosis Date",
   AnimalSourceRecordDiagnosisBy  = "Diagnosis By",
