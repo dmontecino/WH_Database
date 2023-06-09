@@ -45,23 +45,28 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_ProjectCountry$Column_Name
   
+  WildlifeHealth_ProjectCountryID = "Project Country Identifier",
   WildlifeHealth_ProjectCountry = "Countries Involved",
-
+  
   #fields_by_table$WildlifeHealth_ProjectOtherOrganizationsInvolved$Column_Name
   
-  WildlifeHealth_ProjectOtherOrganizationsInvolved = "Other Organizations Involved",
+  WildlifeHealth_ProjectOtherOrganizationInvolvedID = "Organization Identifier",
+  ProjectOtherOrganizationsInvolved = "Other Organizations Involved",
   
   #fields_by_table$WildlifeHealth_ProjectAnimalTaxon$Column_Name
   
-  WildlifeHealth_ProjectAnimalTaxon = "Animal Taxa Involved",
+  WildlifeHealth_AnimalTaxaID = "Animal Taxa Identifier",
+  AnimalTaxaID = "Animal Taxa Included",
   
   #fields_by_table$WildlifeHealth_ProjectTargetedAgent$Column_Name
   
-  WildlifeHealth_ProjectTargetedAgent = "Disease Agents of Interest",
+  WildlifeHealth_TargetedHazardID = "Hazard Identifier",
+  WildlifeHealth_TargetedHazard = "Hazard of Interest",
   
   #fields_by_table$WildlifeHealth_ProjectURL$Column_Name
   
-  WildlifeHealth_ProjectRelevantUrl = "Relevant Links",
+  WildlifeHealth_ProjectRelevantUrlID = "URL Identifier",
+  ProjectRelevantUrl = "Relevant Links",
   
   #ACTIVITY
   
@@ -548,7 +553,6 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_AnimalSpecimenDiagnosis$Column_Name
   
-  
   WildlifeHealth_AnimalSpecimenDiagnosisID = "Specimen Diagnosis Identifier", 
   AnimalSpecimenDiagnosisTarget = "Agent Diagnosed",
   AnimalSpecimenDiagnosis = "Diagnosis",              
@@ -559,6 +563,7 @@ gui_labels<- list(
   
   # ANIMAL SPECIMEN DIAGNOSTIC TEST
   
+  #fields_by_table$WildlifeHealth_AnimalSpecimenDiagnosticTest$Column_Name
   
   WildlifeHealth_AnimalSpecimenDiagnosticTestID = "Specimen Test Identifier",
   AnimalSpecimenDiagnosticTestWithinLabCode = "Specimen Test Laboratory Code", 
