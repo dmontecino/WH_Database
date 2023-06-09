@@ -154,58 +154,58 @@ gui_labels<- list(
   SurveillanceTaskToxinChemicalTargeted = "Is a Chemical Hazard Targeted?",
   SurveillanceTaskPhysicalThreatTargeted = "Is a Physical Hazard Targeted?",
   SurveillanceTaskPhysiologicalProblemTargeted = "Is a Physiological Hazard Targeted?",
-  
-  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadata$Column_Name
-  
   SurveillanceTaskMetadataStartingDate = "Surveillance Task Starting Date",                         
   SurveillanceTaskMetadataEndingDate = "Surveillance Task Ending Date",                           
   SurveillanceTaskMetadataOrganizationAICUC = "Organization Providing AICUC",                    
   SurveillanceTaskMetadataAICUCCode = "AICUC Code",
+  SurveillanceTaskMetadataObservationIncluded = "Are Observed-only Animals Included?",
+  SurveillanceTaskMetadataAnimalSourceIncluded = "Are Animals Sources Included?",
+  SurveillanceTaskMetadataEnvironmentalSourceIncluded = "Are Environmental Sources Included?",
+  SurveillanceTaskMetadataInvertebrateSourceIncluded = "Are Invertebrate Sources Included?",
   SurveillanceTaskMetadataIncidentGrouping = "Are Incidents Grouped?",                     
   SurveillanceTaskMetadataIncidentGroupingStructure = "How Are Incidents Grouped?",
   
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataCountry$Column_Name
   
-  WildlifeHealth_TaskMetadataCountryInvolved = "Countries Involved", 
+  WildlifeHealth_SurveillanceTaskMetadataCountryID = "Surveillance Task Country Identifier",
+  SurveillanceTaskMetadataCountry = "Surveillance Task Country", 
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataStudySite$Column_Name
   
-  WildlifeHealth_TaskMetadataStudySite = "Study Sites", 
-  
+  WildlifeHealth_TaskMetadataStudySiteID = "Study Site Identifier", 
+  SurveillanceTaskMetadataStudySite = "Study Site", 
+
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataOrganizationInvolved$Column_Name 
   
-  WildlifeHealth_TaskMetadataOrganizationInvolved = "Other Organizations Involved",
+  WildlifeHealth_TaskMetadataOrganizationInvolvedID = "Other Organization Involved Identifier",
+  SurveillanceTaskOrganizationInvolved = "Other Organizations Involved",
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataOtherTaskAssociated$Column_Name 
   
-  WildlifeHealth_TaskMetadataOtherSurveillanceTaskAssociated = "Other Surveillance Tasks Associated",
-  TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Task Are Associated",
+  WildlifeHealth_SurveillanceTaskMetadataOtherTaskAssociatedID = "Other Surveillance Task Associated Identifier",
+  SurveillanceTaskOtherSurveillanceTaskAssociated = "Other Surveillance Task Associated",
+  SurveillanceTaskReasonOtherSurveillanceTaskAssociated = "Reason Surveillance Task Is Associated",
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataPublications$Column_Name 
 
-  WildlifeHealth_TaskMetadataRelevantPublication = "Relevant Publications",    
+  WildlifeHealth_SurveillanceTaskMetadataPublicationID = "Relevant Publication Identifier",
+  SurveillanceTaskPublication = "Relevant Publication",    
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataURL$Column_Name 
 
-  WildlifeHealth_TaskMetadataRelevantURL = "Relevant Links",
   
+  WildlifeHealth_SurveillanceTaskMetadataRelevantUrlID = "Surveillance Task URL Identifier",
+  SurveillanceTaskRelevantUrl = "Relevant Link",
   
-  #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataOtherTaskAssociated$Column_Name
+  #fields_by_table$WildlifeHealth_SurveillanceTaskTargetedHazard$Column_Name
   
-  TaskMetadataOtherSurveillanceTaskAssociated = "Other Surveillance Tasks Associated",      
-  TaskMetadataReasonOtherSurveillanceTaskAssociated = "Reason Other Surveillance Tasks Are Associated",
-  
-  #fields_by_table$WildlifeHealth_SurveillanceTaskTarget$Column_Name
-  
-  WildlifeHealth_SurveillanceTaskTargetID = "Surveillance Task Hazard Target Identifier",
-  WildlifeHealth_SurveillanceTaskTarget = "Hazard Targeted",
+  WildlifeHealth_SurveillanceTaskTargetedHazardID = "Surveillance Task Targeted Hazard Identifier",
+  SurveillanceTaskTargetedHazard = "Hazard Targeted",
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskTargetTests$Column_Name
   
-  WildlifeHealth_SurveillanceTaskTargetTestID = "Target Test Identifier",
-  TestMetadataTestName = "Test Name",
-  TestMetadataType = "Test Type",
+  WildlifeHealth_SurveillanceTaskTargetedHazardTestID = "Targeted Hazard Test Identifier",
   
   #fields_by_table$WildlifeHealth_Outbreak$Column_Name
   
@@ -215,18 +215,16 @@ gui_labels<- list(
   OutbreakEndDate = "Outbreak End Date",
   OutbreakDiagnosis = "Outbreak Diagnosis",
   
-  #fields_by_table$WildlifeHealth_SurveillanceTaskObservationsMetadata$Column_Name
+  #fields_by_table$WildlifeHealth_SurveillanceTask$Column_Name
   
-  SurveillanceTaskMetadataObservationsIncluded = "Are Observations Part of the Surveillance Task?",
-  SurveillanceTasknMetadataObservationCodeStructure =  "Structure of the User Observation Code",       
-  SurveillanceTaskMetadataInclusionCriteriaObservedAnimals = "Criteria to Include Observed-only Animals",
-  SurveillanceTaskMetadataExclusionCriteriaObservedAnimals = "Criteria to Exclude Observed-only Animals",
+  SurveillanceTaskMetadataObservationCodeStructure =  "Structure of the User Observation Code",       
+  SurveillanceTaskMetadataObservationInclusionCriteria = "Criteria to Include Observed-only Animals",
+  SurveillanceTaskMetadataObservationExclusionCriteria = "Criteria to Exclude Observed-only Animals",
   SurveillanceTaskMetadataObservationGrouping = "Are Observations Grouped Beyond Incident?",
   SurveillanceTaskMetadataObservationGroupingStructure = "How Are Observations Grouped Beyond Incident?",
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskAnimalSourceMetadata$Column_Name
   
-  AnimalSourceMetadataAnimalSourceIncluded = "Are Animal Sources Part of the Surveillance Task?",                          
   AnimalSourceMetadataAnimalSourceCodeStructure = "Structure of the User Animal Source Code",                      
   AnimalSourceMetadataCarcassesCollected = "Are Carcasses of Individual Animals Collected",                          
   AnimalSourceMetadataTaxaIncluded = "Taxa of Animals Included as Animal Sources",                                    
@@ -270,7 +268,6 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskEnvironmentalSourceMetadata$Column_Name
   
-  EnvironmentalSourceMetadataEnvironmentalSourceIncluded = "Are Environmental Sources Part of the Surveillance Task?",
   EnvironmentalSourceMetadataEnvironmentalSourceCodeStructure = "Structure of the User Environmental Source Code",
   EnvironmentalSourceMetadataBioticEnvironmentalSourceIncluded = "Are Biotic Environmental Sources Included?",
   EnvironmentalSourceMetadataAbioticEnvironmentalSourceIncluded = "Are Abiotic Environmental Sources Included?",
@@ -302,7 +299,6 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskInvertebrateSourceMetadata$Column_Name
   
-  InvertebrateSourceMetadataInvertebrateSourceIncluded = "Are Invertebrate Sources Part of the Surveillance Task?",
   InvertebrateSourceMetadataInvertebrateSourceCodeStructure = "Structure of the User Invertebrate Source Code",
   InvertebrateSourceMetadataTaxaTargeted = "Invertebrate Taxa Targeted",   
   InvertebrateSourceMetadataInclusionCriteria = "Criteria to Include Invertebrate Taxa",
@@ -334,7 +330,6 @@ gui_labels<- list(
   
   WildlifeHealth_SurveillanceTaskTargetedHazardID = "Targeted Hazard Identifier",
   SurveillanceTaskTargetedHazard = "Targeted Hazard",
-  
   
   #OBSERVATION
   
