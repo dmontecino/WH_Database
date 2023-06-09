@@ -514,6 +514,8 @@ gui_labels<- list(
   
   #ANIMAL SPECIMEN
  
+  #fields_by_table$WildlifeHealth_AnimalSpecimen$Column_Name
+  
   
   WildlifeHealth_AnimalSpecimenID = "Specimen Identifier",                              
   AnimalSpecimenCode = "Specimen User Code",                                                  
@@ -537,12 +539,14 @@ gui_labels<- list(
   AnimalSpecimenLocationRack = "Rack where the Specimen is Stored",                                                                                    
   AnimalSpecimenLocationBox = "Box where the Specimen is Stored",                                           
   AnimalSpecimenLocationRow = "Row where the Specimen is Stored",                
-  AnimalSpecimenAvailable = "Is the Specimen Available for Testing",                                             
+  AnimalSpecimenAvailable = "Is the Specimen Available for Testing?",                                             
   AnimalSpecimenOwner = "Specimen Owner",                                                 
   AnimalSpecimenComments = "Comments", 
   
   
   # ANIMAL SPECIMEN DIAGNOSIS
+  
+  #fields_by_table$WildlifeHealth_AnimalSpecimenDiagnosis$Column_Name
   
   
   WildlifeHealth_AnimalSpecimenDiagnosisID = "Specimen Diagnosis Identifier", 
