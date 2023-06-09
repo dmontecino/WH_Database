@@ -419,8 +419,10 @@ gui_labels<- list(
   AnimalSourceRecordCarcassCollected  = "Carcass Collected",
   AnimalSourceRecordFieldStorageCarcass  = "Carcass Field Storage Method",
 
+  
   # PRIMARY NECROPSY
   
+  #fields_by_table$WildlifeHealth_PrimaryNecropsy$Column_Name
   
   WildlifeHealth_PrimaryNecropsyID  = "Primary Necropsy Identifier",
   PrimaryNecropsyCrossID  = "Necropsy Cross Identifier",
@@ -459,6 +461,8 @@ gui_labels<- list(
   
   
   # SECONDARY NECROPSY
+  
+  #fields_by_table$WildlifeHealth_SecondaryNecropsy$Column_Name
   
   
   WildlifeHealth_SecondaryNecropsyID  = "Secondary Necropsy Identifier",
