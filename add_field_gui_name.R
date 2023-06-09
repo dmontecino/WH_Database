@@ -45,8 +45,8 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_ProjectCountry$Column_Name
   
-  WildlifeHealth_ProjectCountryID = "Project Country Identifier",
-  WildlifeHealth_ProjectCountry = "Countries Involved",
+  WildlifeHealth_CountryID = "Project Country Identifier",
+  Country = "Countries Involved",
   
   #fields_by_table$WildlifeHealth_ProjectOtherOrganizationsInvolved$Column_Name
   
@@ -61,7 +61,7 @@ gui_labels<- list(
   #fields_by_table$WildlifeHealth_ProjectTargetedAgent$Column_Name
   
   WildlifeHealth_TargetedHazardID = "Hazard Identifier",
-  WildlifeHealth_TargetedHazard = "Hazard of Interest",
+  TargetedHazard = "Hazard of Interest",
   
   #fields_by_table$WildlifeHealth_ProjectURL$Column_Name
   
@@ -72,7 +72,7 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_FieldActivity$Column_Name
   
-  WildlifeHealth_ActivityID = "Activity Identifier",
+  WildlifeHealth_FieldActivityID = "Activity Identifier",
   ActivityName = "Name of the Activity",
   ActivityCrossID = "Activity Cross Identifier",
   ActivityLeadName = "Leader of the Activity",
@@ -83,11 +83,12 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_FieldActivityLocation$Column_Name
   
-  WildlifeHealth_ActivityLocationName = "Current Location",
+  WildlifeHealth_FieldActivityLocationID = "Location Identifier",
+  FieldActivityLocation = "Current Location",
   
   # INCIDENT
   
-  #fields_by_table$WildlifeHealth_IncidentGeneralInfo$Column_Name
+  #fields_by_table$WildlifeHealth_Incident$Column_Name
   
   WildlifeHealth_IncidentID = "Incident Identifier",
   IncidentCrossID = "Incident Cross Identifier",
@@ -98,11 +99,11 @@ gui_labels<- list(
   IncidentBySector = "Sector of the Incident Recorder",
   IncidentSmartSource = "Incident Collected Using SMART",
   
-  # fields_by_table$WildlifeHealth_IncidentSpatialInfo$Column_Name
+  # fields_by_table$WildlifeHealth_IncidentID$Column_Name
   
-  IncidentCountry = "Incident Country",
-  IncidentState = "Incident State",
-  IncidentProvince = "Incident Province",
+  WildlifeHealth_CountryID = "Incident Country",
+  WildlifeHealth_State = "Incident State",
+  WildlifeHealth_Province = "Incident Province",
   IncidentSiteCode = "Incident Site Code",
   IncidentZoneCode = "Incident Zone Code",
   IncidentMarketCode = "Incident Market Code",
@@ -117,7 +118,7 @@ gui_labels<- list(
   IncidentLongitude = "Incident Longitude",
   IncidentLatitude = "Incident Latitude",
   
-  # fields_by_table$WildlifeHealth_IncidentTemporalInfo$Column_Name
+  # fields_by_table$WildlifeHealth_Incident$Column_Name
   
   IncidentStudyYear  = "Incident Study Year",
   IncidentStudySeason  = "Incident Study Season",
@@ -130,6 +131,15 @@ gui_labels<- list(
   IncidentTimeAssembled  = "Time Incident Capture Device Assembled",
   IncidentTimeDisassembled  = "Time Incident Capture Device Disassembled",
 
+  # fields_by_table$WildlifeHealth_IncidentFinding$Column_Name
+  
+  WildlifeHealth_IncidentFindingID  = "Incident Finding Identifier",
+  IncidentFinding  = "Finding",
+
+  # fields_by_table$WildlifeHealth_IncidentFinding$Column_Name
+  
+  WildlifeHealth_IncidentLandscapeTypeID  = "Incident Landscape Type Identifier",
+  IncidentLandscape  = "Landscape Type",
   
   #SURVEILLANCE TASK 
   
