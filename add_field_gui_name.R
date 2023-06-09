@@ -101,7 +101,7 @@ gui_labels<- list(
   
   # fields_by_table$WildlifeHealth_IncidentID$Column_Name
   
-  WildlifeHealth_CountryID = "Incident Country",
+  WildlifeHealth_IncidentCountryID = "Incident Country",
   WildlifeHealth_State = "Incident State",
   WildlifeHealth_Province = "Incident Province",
   IncidentSiteCode = "Incident Site Code",
@@ -157,12 +157,12 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadata$Column_Name
   
-  TaskMetadataStartingDate = "Surveillance Task Starting Date",                         
-  TaskMetadataEndingDate = "Surveillance Task Ending Date",                           
-  TaskMetadataOrganizationAICUC = "Organization Providing AICUC",                    
-  TaskMetadataAICUCCode = "AICUC Code",
-  TaskMetadataIncidentGrouping = "Are Incidents Grouped?",                     
-  TaskMetadataIncidentGroupingStructure = "How Are Incidents Grouped?",
+  SurveillanceTaskMetadataStartingDate = "Surveillance Task Starting Date",                         
+  SurveillanceTaskMetadataEndingDate = "Surveillance Task Ending Date",                           
+  SurveillanceTaskMetadataOrganizationAICUC = "Organization Providing AICUC",                    
+  SurveillanceTaskMetadataAICUCCode = "AICUC Code",
+  SurveillanceTaskMetadataIncidentGrouping = "Are Incidents Grouped?",                     
+  SurveillanceTaskMetadataIncidentGroupingStructure = "How Are Incidents Grouped?",
   
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskMetadataCountry$Column_Name
@@ -217,12 +217,12 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskObservationsMetadata$Column_Name
   
-  ObservationMetadataObservationsIncluded = "Are Observations Part of the Surveillance Task?",
-  ObservationMetadataObservationCodeStructure =  "Structure of the User Observation Code",       
-  ObservationMetadataInclusionCriteriaObservedAnimals = "Criteria to Include Observed-only Animals",
-  ObservationMetadataExclusionCriteriaObservedAnimals = "Criteria to Exclude Observed-only Animals",
-  ObservationMetadataObservationGrouping = "Are Observations Grouped Beyond Incident?",
-  ObservationMetadataObservationGroupingStructure = "How Are Observations Grouped Beyond Incident?",
+  SurveillanceTaskMetadataObservationsIncluded = "Are Observations Part of the Surveillance Task?",
+  SurveillanceTasknMetadataObservationCodeStructure =  "Structure of the User Observation Code",       
+  SurveillanceTaskMetadataInclusionCriteriaObservedAnimals = "Criteria to Include Observed-only Animals",
+  SurveillanceTaskMetadataExclusionCriteriaObservedAnimals = "Criteria to Exclude Observed-only Animals",
+  SurveillanceTaskMetadataObservationGrouping = "Are Observations Grouped Beyond Incident?",
+  SurveillanceTaskMetadataObservationGroupingStructure = "How Are Observations Grouped Beyond Incident?",
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskAnimalSourceMetadata$Column_Name
   
@@ -328,6 +328,12 @@ gui_labels<- list(
   InvertebrateSourceMetadataInvertebrateSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Invertebrate Specimen",  
   InvertebrateSourceMetadataInvertebrateSpecimenTestCriteriaPositiveCase = "Case Definition Tests in Invertebrate Specimen",   
   InvertebrateSourceMetadataInvertebrateSpecimenTestCriteriaPositiveCaseReference = "Bibliographic References Case Definition Invertebrate Specimen Test",  
+  
+  
+  #fields_by_table$WildlifeHealth_SurveillanceTaskTargetedHazard$Column_Name
+  
+  WildlifeHealth_SurveillanceTaskTargetedHazardID = "Targeted Hazard Identifier",
+  SurveillanceTaskTargetedHazard = "Targeted Hazard",
   
   
   #OBSERVATION
