@@ -5,4 +5,4 @@ Entity_relational_model_Month_day_year.drawio.xml is the XML with the entity rel
 
 drawio_xml_to_table.R Script to create a dataframe/table with the contents of the XML file from drawio.
 
-add_field_gui_name.R Script to add the GUI names to database fields following the drawio XML and converted to a table using the previous script.
+add_field_gui_name.R Script to add the GUI names to database fields following the drawio XML converted to a table using the previous script.
