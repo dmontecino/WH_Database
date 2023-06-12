@@ -1,0 +1,9 @@
+Each Surveillance Task can involve multiple Hazards. 
+  Why asking then if a Pathogen, Chemical, Biological, or Physiological Hazard
+  is targeted? 
+    Because, the a user can look for all the Surveillance Tasks aimed to a 
+    specific type of Hazard.
+
+All Outbreak Investigations are a Surveillance Task. An Outbreak Investigation
+may include more than one Hazard through the grouping of various Surveillance 
+Tasks.
