@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-06-12T16:04:06.914Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="P_cQUucjsH8F_YDyByXP" version="21.3.4" type="device">
+<mxfile host="app.diagrams.net" modified="2023-06-12T17:48:18.810Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="AFpLVZTjR231KnCrkwSS" version="21.3.4" type="device">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="20975" dy="1505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="9300" pageHeight="14681" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="21865" dy="2070" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="9300" pageHeight="14681" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2729,7 +2729,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-703" value="WilldlifeHealth_TargetedHazardID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-701">
+        <mxCell id="dfzbYtGBYChKSACfdMnl-703" value="WilldlifeHealth_TargetedHazardID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#66FF40;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-701">
           <mxGeometry x="30" width="360" height="30" as="geometry">
             <mxRectangle width="360" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -7592,7 +7592,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-285" value="WildlifeHealth_SurveillanceTaskMetadataObservation" style="shape=table;startSize=20;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fillColor=#97D077;" parent="1" vertex="1">
-          <mxGeometry x="-14660" y="2200.5" width="570" height="249.5" as="geometry">
+          <mxGeometry x="-14660" y="2200.5" width="570" height="289.5" as="geometry">
             <mxRectangle x="120" y="120" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -7665,8 +7665,31 @@
             <mxRectangle width="80" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="dfzbYtGBYChKSACfdMnl-789" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-285">
+          <mxGeometry y="120" width="570" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dfzbYtGBYChKSACfdMnl-790" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-789">
+          <mxGeometry width="50" height="40" as="geometry">
+            <mxRectangle width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dfzbYtGBYChKSACfdMnl-791" value="WildlifeHealth_AnimalTaxaID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#26FF17;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-789">
+          <mxGeometry x="50" width="340" height="40" as="geometry">
+            <mxRectangle width="340" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dfzbYtGBYChKSACfdMnl-792" value="int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-789">
+          <mxGeometry x="390" width="100" height="40" as="geometry">
+            <mxRectangle width="100" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dfzbYtGBYChKSACfdMnl-793" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-789">
+          <mxGeometry x="490" width="80" height="40" as="geometry">
+            <mxRectangle width="80" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-301" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-285" vertex="1">
-          <mxGeometry y="120" width="570" height="30" as="geometry" />
+          <mxGeometry y="160" width="570" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-302" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-301" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -7689,7 +7712,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-306" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-285" vertex="1">
-          <mxGeometry y="150" width="570" height="30" as="geometry" />
+          <mxGeometry y="190" width="570" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-307" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-306" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -7712,7 +7735,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-311" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-285" vertex="1">
-          <mxGeometry y="180" width="570" height="30" as="geometry" />
+          <mxGeometry y="220" width="570" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-312" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-311" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -7735,7 +7758,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-316" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-285" vertex="1">
-          <mxGeometry y="210" width="570" height="30" as="geometry" />
+          <mxGeometry y="250" width="570" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-317" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-316" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -7758,7 +7781,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-463" value="WildlifeHealth_SurveillanceTaskMetadataAnimalSource" style="shape=table;startSize=20;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fillColor=#97D077;" parent="1" vertex="1">
-          <mxGeometry x="-14070" y="1175" width="660" height="1275" as="geometry">
+          <mxGeometry x="-14070" y="1175" width="660" height="1220" as="geometry">
             <mxRectangle x="120" y="120" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -7771,13 +7794,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-466" value="WildlifeHealth_SurveillanceTaskMetadataAnimalSourceID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;" parent="OwfNoq22FNjdNCLlaUgR-464" vertex="1">
-          <mxGeometry x="50" width="420" height="20" as="geometry">
-            <mxRectangle width="420" height="20" as="alternateBounds" />
+          <mxGeometry x="50" width="440" height="20" as="geometry">
+            <mxRectangle width="440" height="20" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-467" value="int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;" parent="OwfNoq22FNjdNCLlaUgR-464" vertex="1">
-          <mxGeometry x="470" width="110" height="20" as="geometry">
-            <mxRectangle width="110" height="20" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="20" as="geometry">
+            <mxRectangle width="90" height="20" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-468" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=1;" parent="OwfNoq22FNjdNCLlaUgR-464" vertex="1">
@@ -7794,13 +7817,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-457" value="WildlifeHealth_SurveillanceTaskID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-455">
-          <mxGeometry x="50" width="420" height="40" as="geometry">
-            <mxRectangle width="420" height="40" as="alternateBounds" />
+          <mxGeometry x="50" width="440" height="40" as="geometry">
+            <mxRectangle width="440" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-458" value="int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-455">
-          <mxGeometry x="470" width="110" height="40" as="geometry">
-            <mxRectangle width="110" height="40" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="40" as="geometry">
+            <mxRectangle width="90" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-459" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-455">
@@ -7816,14 +7839,14 @@
             <mxRectangle width="50" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-476" value="AnimalSourceMetadataAnimalSourceCodeStructure" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-474" vertex="1">
-          <mxGeometry x="50" width="420" height="40" as="geometry">
-            <mxRectangle width="420" height="40" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-476" value="SurveillanceTaskMetadataAnimalSourceCodeStructure" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-474" vertex="1">
+          <mxGeometry x="50" width="440" height="40" as="geometry">
+            <mxRectangle width="440" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-477" value="nvarchar(2000)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-474" vertex="1">
-          <mxGeometry x="470" width="110" height="40" as="geometry">
-            <mxRectangle width="110" height="40" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="40" as="geometry">
+            <mxRectangle width="90" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-478" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-474" vertex="1">
@@ -7832,44 +7855,44 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-479" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="120" width="660" height="30" as="geometry" />
+          <mxGeometry y="120" width="660" height="35" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-480" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-479" vertex="1">
-          <mxGeometry width="50" height="30" as="geometry">
-            <mxRectangle width="50" height="30" as="alternateBounds" />
+          <mxGeometry width="50" height="35" as="geometry">
+            <mxRectangle width="50" height="35" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-481" value="AnimalSourceMetadataCarcassesCollected" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-479" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-481" value="SurveillanceTaskMetadataAnimalSourceCarcassesCollected" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-479" vertex="1">
+          <mxGeometry x="50" width="440" height="35" as="geometry">
+            <mxRectangle width="440" height="35" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-482" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-479" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="35" as="geometry">
+            <mxRectangle width="90" height="35" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-483" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-479" vertex="1">
-          <mxGeometry x="580" width="80" height="30" as="geometry">
-            <mxRectangle width="80" height="30" as="alternateBounds" />
+          <mxGeometry x="580" width="80" height="35" as="geometry">
+            <mxRectangle width="80" height="35" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-484" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="150" width="660" height="30" as="geometry" />
+          <mxGeometry y="155" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-485" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-484" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-486" value="WildlifeHealth_AnimalTaxaID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-484" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-486" value="WildlifeHealth_AnimalTaxaID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#40FF80;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-484" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-487" value="nvarchar(2000)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-484" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-487" value="int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-484" vertex="1">
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-488" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-484" vertex="1">
@@ -7878,21 +7901,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-489" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="180" width="660" height="30" as="geometry" />
+          <mxGeometry y="185" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-490" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-489" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-491" value="AnimalSourceMetadataInclusionCriteria" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-489" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-491" value="SurveillanceTaskMetadataAnimalSourceInclusionCriteria" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-489" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-492" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-489" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-493" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-489" vertex="1">
@@ -7901,21 +7924,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-494" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="210" width="660" height="30" as="geometry" />
+          <mxGeometry y="215" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-495" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-494" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-496" value="AnimalSourceMetadataExclusionCriteria" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-494" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-496" value="SurveillanceTaskMetadataAnimalSourceExclusionCriteria" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-494" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-497" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-494" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-498" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-494" vertex="1">
@@ -7924,21 +7947,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-499" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="240" width="660" height="30" as="geometry" />
+          <mxGeometry y="245" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-500" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-499" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-501" value="AnimalSourceMetadataGrouping " style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-499" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-501" value="SurveillanceTaskMetadataAnimalSourceGrouping " style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-499" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-502" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-499" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-503" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-499" vertex="1">
@@ -7947,21 +7970,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-504" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="270" width="660" height="30" as="geometry" />
+          <mxGeometry y="275" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-505" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-504" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-506" value="AnimalSourceMetadataGroupingStructure" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-504" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-506" value="SurveillanceTaskMetadataAnimalSourceGroupingStructure" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-504" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-507" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-504" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-508" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-504" vertex="1">
@@ -7970,21 +7993,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-509" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="300" width="660" height="30" as="geometry" />
+          <mxGeometry y="305" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-510" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-509" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-511" value="AnimalSourceMetadataHowObtained" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-509" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-511" value="SurveillanceTaskMetadataAnimalSourceHowObtained" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-509" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-512" value="nvarchar(2000)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-509" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-513" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-509" vertex="1">
@@ -7993,21 +8016,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-514" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="330" width="660" height="30" as="geometry" />
+          <mxGeometry y="335" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-515" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-514" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-516" value="AnimalSourceMetadataCaptureProtocol" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-514" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-516" value="SurveillanceTaskMetadataAnimalSourceCaptureProtocol" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-514" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-517" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-514" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-518" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-514" vertex="1">
@@ -8016,21 +8039,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-519" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="360" width="660" height="30" as="geometry" />
+          <mxGeometry y="365" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-520" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-519" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-521" value="AnimalSourceMetadataCaptureProtocolReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-519" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-521" value="SurveillanceTaskMetadataAnimalSourceCaptureProtocolReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-519" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-522" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-519" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-523" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-519" vertex="1">
@@ -8039,21 +8062,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-674" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="390" width="660" height="30" as="geometry" />
+          <mxGeometry y="395" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-675" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-674" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-676" value="AnimalSourceMetadataMarking" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-674" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-676" value="SurveillanceTaskMetadataAnimalSourceMarking" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-674" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-677" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-674" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-678" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-674" vertex="1">
@@ -8062,21 +8085,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-524" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="420" width="660" height="30" as="geometry" />
+          <mxGeometry y="425" width="660" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-525" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-524" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-525" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-524" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-526" value="WildlifeHealth_MarkingMethodID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-524" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-526" value="SurveillanceTaskMetadataAnimalSourceMarkingMethod" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-524" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-527" value="nvarchar(255)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-524" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-527" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-524" vertex="1">
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-528" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-524" vertex="1">
@@ -8085,21 +8108,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-529" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="450" width="660" height="30" as="geometry" />
+          <mxGeometry y="455" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-530" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-529" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-531" value="AnimalSourceMetadataMarkingMethodReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-529" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-531" value="SurveillanceTaskMetadataAnimalSourceMarkingMethodReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-529" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-532" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-529" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-533" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-529" vertex="1">
@@ -8108,21 +8131,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-574" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="480" width="660" height="30" as="geometry" />
+          <mxGeometry y="485" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-575" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-574" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-576" value="AnimalSourceMetadataRecapture" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-574" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-576" value="SurveillanceTaskMetadataAnimalSourceRecapture" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-574" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-577" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-574" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-578" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-574" vertex="1">
@@ -8131,21 +8154,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-569" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="510" width="660" height="30" as="geometry" />
+          <mxGeometry y="515" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-570" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-569" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-571" value="AnimalSourceMetadataFateAfterCaptureRecapture" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-569" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-571" value="SurveillanceTaskMetadataAnimalSourceFateAfterCaptureRecapture" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-569" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-572" value="nvarchar(255)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-569" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-573" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-569" vertex="1">
@@ -8154,21 +8177,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-564" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="540" width="660" height="30" as="geometry" />
+          <mxGeometry y="545" width="660" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-565" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-564" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-565" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-564" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-566" value="WildlifeHealth_EuthanasiaMethodID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-564" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-566" value="SurveillanceTaskMetadataAnimalSourceEuthanasia" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-564" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-567" value="nvarchar(255)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-564" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-568" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-564" vertex="1">
@@ -8177,21 +8200,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-559" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="570" width="660" height="30" as="geometry" />
+          <mxGeometry y="575" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-560" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-559" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-561" value="AnimalSourceMetadataEuthanasiaMethodReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-559" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-561" value="SurveillanceTaskMetadataAnimalSourceEuthanasiaMethodReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-559" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-562" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-559" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-563" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-559" vertex="1">
@@ -8200,21 +8223,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-554" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="600" width="660" height="30" as="geometry" />
+          <mxGeometry y="605" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-555" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-554" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-556" value="AnimalSourceMetadataDiagnosticsUsed" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-554" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-556" value="SurveillanceTaskMetadataAnimalSourceDiagnosticsUsed" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-554" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-557" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-554" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-558" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-554" vertex="1">
@@ -8223,21 +8246,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-549" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="630" width="660" height="30" as="geometry" />
+          <mxGeometry y="635" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-550" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-549" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-551" value="AnimalSourceMetadataDiagnosticsUsedReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-549" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-551" value="SurveillanceTaskMetadataAnimalSourceDiagnosticsUsedReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-549" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-552" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-549" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-553" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-549" vertex="1">
@@ -8246,21 +8269,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-544" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="660" width="660" height="30" as="geometry" />
+          <mxGeometry y="665" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-545" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-544" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-546" value="AnimalSourceMetadataRecordCriteriaPositiveCase" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-544" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-546" value="SurveillanceTaskMetadataAnimalSourceRecordCriteriaPositiveCase" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-544" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-547" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-544" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-548" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-544" vertex="1">
@@ -8269,21 +8292,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-539" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="690" width="660" height="30" as="geometry" />
+          <mxGeometry y="695" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-540" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-539" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-541" value="AnimalSourceMetadataRecordCriteriaPositiveCaseReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-539" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-541" value="SurveillanceTaskMetadataAnimalSourceRecordCriteriaPositiveCaseReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-539" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-542" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-539" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-543" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-539" vertex="1">
@@ -8292,21 +8315,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-534" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="720" width="660" height="30" as="geometry" />
+          <mxGeometry y="725" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-535" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-534" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-536" value="AnimalSourceMetadataNecropsyCarcass" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-534" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-536" value="SurveillanceTaskMetadataAnimalSourceNecropsyCarcass" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-534" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-537" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-534" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-538" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-534" vertex="1">
@@ -8315,21 +8338,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-659" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="750" width="660" height="30" as="geometry" />
+          <mxGeometry y="755" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-660" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-659" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-661" value="AnimalSourceMetadataNecropsyCarcassProtocol" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-659" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-661" value="SurveillanceTaskMetadataAnimalSourceNecropsyCarcassProtocol" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-659" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-662" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-659" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-663" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-659" vertex="1">
@@ -8338,21 +8361,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-654" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="780" width="660" height="30" as="geometry" />
+          <mxGeometry y="785" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-655" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-654" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-656" value="AnimalSourceMetadataNecropsyCarcassReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-654" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-656" value="SurveillanceTaskMetadataAnimalSourceNecropsyCarcassReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-654" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-657" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-654" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-658" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-654" vertex="1">
@@ -8361,21 +8384,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-649" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="810" width="660" height="30" as="geometry" />
+          <mxGeometry y="815" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-650" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-649" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-651" value="AnimalSourceMetadataAnimalSpecimenCollection" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-649" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-651" value="SurveillanceTaskMetadataAnimalSpecimenCollection" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-649" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-652" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-649" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-653" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-649" vertex="1">
@@ -8384,21 +8407,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-644" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="840" width="660" height="30" as="geometry" />
+          <mxGeometry y="845" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-645" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-644" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-646" value="AnimalSourceMetadataAnimalSpecimenCollectionMethod" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-644" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-646" value="SurveillanceTaskMetadataAnimalSpecimenCollectionMethod" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-644" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-647" value="nvarchar(2000)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-644" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-648" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-644" vertex="1">
@@ -8407,21 +8430,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-639" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="870" width="660" height="30" as="geometry" />
+          <mxGeometry y="875" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-640" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-639" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-641" value="AnimalSourceMetadataAnimalSpecimenCollectionReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-639" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-641" value="SurveillanceTaskMetadataAnimalSpecimenCollectionReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-639" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-642" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-639" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-643" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-639" vertex="1">
@@ -8430,21 +8453,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-634" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="900" width="660" height="30" as="geometry" />
+          <mxGeometry y="905" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-635" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-634" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-636" value="AnimalSourceMetadataAnimalSpecimenCollectionAtRecapture" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-634" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-636" value="SurveillanceTaskMetadataAnimalSpecimenCollectionAtRecapture" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-634" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-637" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-634" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-638" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-634" vertex="1">
@@ -8453,21 +8476,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-629" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="930" width="660" height="30" as="geometry" />
+          <mxGeometry y="935" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-630" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-629" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-631" value="AnimalSourceMetadataAnimalSpecimenCollectionIncludesParasitesVectors" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-629" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-631" value="SurveillanceTaskMetadataAnimalSpecimenCollectionIncludesParasitesVectors" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-629" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-632" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-629" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-633" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-629" vertex="1">
@@ -8476,21 +8499,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-624" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="960" width="660" height="30" as="geometry" />
+          <mxGeometry y="965" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-625" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-624" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-626" value="AnimalSourceMetadataAnimalSpecimenCodeStructure" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-624" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-626" value="SurveillanceTaskMetadataAnimalSpecimenCodeStructure" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-624" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-627" value="nvarchar(2000)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-624" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-628" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-624" vertex="1">
@@ -8499,21 +8522,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-619" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="990" width="660" height="30" as="geometry" />
+          <mxGeometry y="995" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-620" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-619" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-621" value="WildlifeHealth_SpecimenTypeID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-619" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-621" value="WildlifeHealth_AnimalSpecimenMetadataAnimalSpecimenTypeID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#38FF4C;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-619" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-622" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-619" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-622" value="int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-619" vertex="1">
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-623" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-619" vertex="1">
@@ -8522,21 +8545,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-614" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="1020" width="660" height="30" as="geometry" />
+          <mxGeometry y="1025" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-615" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-614" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-616" value="AnimalSourceMetadataAnimalSpecimenPooling" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-614" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-616" value="SurveillanceTaskMetadataAnimalSpecimenSpecimenPooling" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-614" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-617" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-614" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-618" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-614" vertex="1">
@@ -8545,21 +8568,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-609" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="1050" width="660" height="30" as="geometry" />
+          <mxGeometry y="1055" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-610" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-609" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-611" value="AnimalSourceMetadataAnimalSpecimenPoolingStrategy" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-609" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-611" value="SurveillanceTaskMetadataAnimalSpecimenPoolingStrategy" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-609" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-612" value="nvarchar(2000)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-609" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-613" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-609" vertex="1">
@@ -8567,68 +8590,22 @@
             <mxRectangle width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-81" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-463">
-          <mxGeometry y="1080" width="660" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-82" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-81">
-          <mxGeometry width="50" height="30" as="geometry">
-            <mxRectangle width="50" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-83" value="AnimalSourceMetadataAnimalsSpecimenTested" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#FFFFFF;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-81">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-84" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-81">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-85" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-81">
-          <mxGeometry x="580" width="80" height="30" as="geometry">
-            <mxRectangle width="80" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-604" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="1110" width="660" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-605" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-604" vertex="1">
-          <mxGeometry width="50" height="30" as="geometry">
-            <mxRectangle width="50" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-606" value="WildlifeHealth_SurveillanceTaskTargetedHazardTestID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#37FF21;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-604" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-607" value="int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-604" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-608" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-604" vertex="1">
-          <mxGeometry x="580" width="80" height="30" as="geometry">
-            <mxRectangle width="80" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-594" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="1140" width="660" height="30" as="geometry" />
+          <mxGeometry y="1085" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-595" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-594" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-596" value="AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCase" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-594" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-596" value="SurveillanceTaskMetadataAnimalSpecimenCriteriaPositiveCase" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-594" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-597" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-594" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-598" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-594" vertex="1">
@@ -8637,21 +8614,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-669" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-463" vertex="1">
-          <mxGeometry y="1170" width="660" height="30" as="geometry" />
+          <mxGeometry y="1115" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-670" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-669" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-671" value="AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCaseReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-669" vertex="1">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-671" value="SurveillanceTaskMetadataAnimalSpecimenCriteriaPositiveCaseReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-669" vertex="1">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-672" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-669" vertex="1">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-673" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-669" vertex="1">
@@ -8660,21 +8637,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-101" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-463">
-          <mxGeometry y="1200" width="660" height="30" as="geometry" />
+          <mxGeometry y="1145" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-102" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-101">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-103" value="AnimalSourceMetadataAnimalSpecimenTestCriteriaPositiveCase" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-101">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="dfzbYtGBYChKSACfdMnl-103" value="SurveillanceTaskMetadataAnimalSpecimenTestCriteriaPositiveCase" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-101">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-104" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-101">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-105" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-101">
@@ -8683,21 +8660,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-111" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-463">
-          <mxGeometry y="1230" width="660" height="30" as="geometry" />
+          <mxGeometry y="1175" width="660" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-112" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-111">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-113" value="AnimalSourceMetadataAnimalSpecimenTestCriteriaPositiveCaseReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-111">
-          <mxGeometry x="50" width="420" height="30" as="geometry">
-            <mxRectangle width="420" height="30" as="alternateBounds" />
+        <mxCell id="dfzbYtGBYChKSACfdMnl-113" value="SurveillanceTaskMetadataAnimalSpecimenTestCriteriaPositiveCaseReferences" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-111">
+          <mxGeometry x="50" width="440" height="30" as="geometry">
+            <mxRectangle width="440" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-114" value="nvarchar(MAX)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-111">
-          <mxGeometry x="470" width="110" height="30" as="geometry">
-            <mxRectangle width="110" height="30" as="alternateBounds" />
+          <mxGeometry x="490" width="90" height="30" as="geometry">
+            <mxRectangle width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-115" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-111">
@@ -8706,7 +8683,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-725" value="WildlifeHealth_SurveillanceTaskMetadataEnvironmentalSource" style="shape=table;startSize=20;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fillColor=#97D077;" parent="1" vertex="1">
-          <mxGeometry x="-13380" y="900" width="720" height="872" as="geometry">
+          <mxGeometry x="-13380" y="900" width="720" height="842" as="geometry">
             <mxRectangle x="120" y="120" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -8805,17 +8782,17 @@
         <mxCell id="OwfNoq22FNjdNCLlaUgR-746" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-725" vertex="1">
           <mxGeometry y="138" width="720" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-747" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-746" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-747" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-746" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-748" value="EnvironmentalSourceMetadataTaxaIncluded" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-746" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-748" value="WildlifeHealth_AnimalTaxaID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#76FF26;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-746" vertex="1">
           <mxGeometry x="50" width="490" height="30" as="geometry">
             <mxRectangle width="490" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-749" value="nvarchar(2000)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-746" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-749" value="int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-746" vertex="1">
           <mxGeometry x="540" width="100" height="30" as="geometry">
             <mxRectangle width="100" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -8833,7 +8810,7 @@
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-933" value="EnvironmentalSourceMetadataBioticTypesIncluded" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-931" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-933" value="WildlifeHealth_MetadataAnimalSpecimenTypeID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#2BFF79;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-931" vertex="1">
           <mxGeometry x="50" width="490" height="30" as="geometry">
             <mxRectangle width="490" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -8856,7 +8833,7 @@
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-928" value="EnvironmentalSourceMetadataAbioticTypesIncluded" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-926" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-928" value="WildlifeHealth_MetadataAnimalSpecimenTypeID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-926" vertex="1">
           <mxGeometry x="50" width="490" height="30" as="geometry">
             <mxRectangle width="490" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -9193,31 +9170,8 @@
             <mxRectangle width="80" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-86" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-725">
-          <mxGeometry y="648" width="720" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-87" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-86">
-          <mxGeometry width="50" height="30" as="geometry">
-            <mxRectangle width="50" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-88" value="EnvironmentalSourceMetadataEnvironmentalSpecimenTested" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#FFFFFF;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-86">
-          <mxGeometry x="50" width="490" height="30" as="geometry">
-            <mxRectangle width="490" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-89" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-86">
-          <mxGeometry x="540" width="100" height="30" as="geometry">
-            <mxRectangle width="100" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-90" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-86">
-          <mxGeometry x="640" width="80" height="30" as="geometry">
-            <mxRectangle width="80" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-901" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-725" vertex="1">
-          <mxGeometry y="678" width="720" height="30" as="geometry" />
+          <mxGeometry y="648" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-902" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-901" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9240,7 +9194,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-906" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-725" vertex="1">
-          <mxGeometry y="708" width="720" height="30" as="geometry" />
+          <mxGeometry y="678" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-907" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-906" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9263,7 +9217,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-911" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-725" vertex="1">
-          <mxGeometry y="738" width="720" height="30" as="geometry" />
+          <mxGeometry y="708" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-912" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-911" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9286,7 +9240,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-916" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-725" vertex="1">
-          <mxGeometry y="768" width="720" height="30" as="geometry" />
+          <mxGeometry y="738" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-917" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-916" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9309,7 +9263,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-122" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-725">
-          <mxGeometry y="798" width="720" height="30" as="geometry" />
+          <mxGeometry y="768" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-123" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-122">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9332,7 +9286,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-117" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-725">
-          <mxGeometry y="828" width="720" height="30" as="geometry" />
+          <mxGeometry y="798" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-118" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-117">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9355,7 +9309,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-936" value="WildlifeHealth_SurveillanceTaskMetadataInvertebrateSource" style="shape=table;startSize=20;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fillColor=#97D077;" parent="1" vertex="1">
-          <mxGeometry x="-12880" y="1800" width="720" height="824" as="geometry">
+          <mxGeometry x="-12880" y="1800" width="720" height="794" as="geometry">
             <mxRectangle x="120" y="120" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -9408,17 +9362,17 @@
         <mxCell id="OwfNoq22FNjdNCLlaUgR-952" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-936" vertex="1">
           <mxGeometry y="78" width="720" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-953" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-952" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-953" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-952" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
             <mxRectangle width="50" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-954" value="InvertebrateSourceMetadataTaxaTargeted" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-952" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-954" value="WildlifeHealth_ArthropodTaxaID" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#1CFF60;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-952" vertex="1">
           <mxGeometry x="50" width="470" height="30" as="geometry">
             <mxRectangle width="470" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-955" value="nvarchar(2000)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-952" vertex="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-955" value="int" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="OwfNoq22FNjdNCLlaUgR-952" vertex="1">
           <mxGeometry x="520" width="120" height="30" as="geometry">
             <mxRectangle width="120" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -9796,31 +9750,8 @@
             <mxRectangle width="80" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-91" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-936">
-          <mxGeometry y="600" width="720" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-92" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-91">
-          <mxGeometry width="50" height="30" as="geometry">
-            <mxRectangle width="50" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-93" value="InvertebrateSourceMetadataInvertebrateSpecimenTested" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=#FFFFFF;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-91">
-          <mxGeometry x="50" width="470" height="30" as="geometry">
-            <mxRectangle width="470" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-94" value="boolean" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-91">
-          <mxGeometry x="520" width="120" height="30" as="geometry">
-            <mxRectangle width="120" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="dfzbYtGBYChKSACfdMnl-95" value="NOT_NULL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-91">
-          <mxGeometry x="640" width="80" height="30" as="geometry">
-            <mxRectangle width="80" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1037" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-936" vertex="1">
-          <mxGeometry y="630" width="720" height="30" as="geometry" />
+          <mxGeometry y="600" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1038" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-1037" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9843,7 +9774,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1042" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-936" vertex="1">
-          <mxGeometry y="660" width="720" height="30" as="geometry" />
+          <mxGeometry y="630" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1043" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-1042" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9866,7 +9797,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1047" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-936" vertex="1">
-          <mxGeometry y="690" width="720" height="30" as="geometry" />
+          <mxGeometry y="660" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1048" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-1047" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9889,7 +9820,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1052" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" parent="OwfNoq22FNjdNCLlaUgR-936" vertex="1">
-          <mxGeometry y="720" width="720" height="30" as="geometry" />
+          <mxGeometry y="690" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1053" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="OwfNoq22FNjdNCLlaUgR-1052" vertex="1">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9912,7 +9843,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-132" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-936">
-          <mxGeometry y="750" width="720" height="30" as="geometry" />
+          <mxGeometry y="720" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-133" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-132">
           <mxGeometry width="50" height="30" as="geometry">
@@ -9935,7 +9866,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-127" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="OwfNoq22FNjdNCLlaUgR-936">
-          <mxGeometry y="780" width="720" height="30" as="geometry" />
+          <mxGeometry y="750" width="720" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dfzbYtGBYChKSACfdMnl-128" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="dfzbYtGBYChKSACfdMnl-127">
           <mxGeometry width="50" height="30" as="geometry">
@@ -10361,7 +10292,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="OwfNoq22FNjdNCLlaUgR-1186" value="WildlifeHealth_AnimalSourceRecordPotentialCauseDeath" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fillColor=#00CCCC;" parent="1" vertex="1">
-          <mxGeometry x="-16160" y="4050" width="650" height="270" as="geometry">
+          <mxGeometry x="-16161" y="3985" width="650" height="270" as="geometry">
             <mxRectangle x="120" y="120" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -12645,12 +12576,12 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwfNoq22FNjdNCLlaUgR-1833" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=ERzeroToOne;endFill=0;startArrow=ERmandOne;startFill=0;dashed=1;" parent="1" edge="1">
+        <mxCell id="OwfNoq22FNjdNCLlaUgR-1833" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=ERzeroToOne;endFill=0;startArrow=ERmandOne;startFill=0;dashed=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="OwfNoq22FNjdNCLlaUgR-936" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-12440" y="2620" as="targetPoint" />
             <Array as="points">
               <mxPoint x="-14920" y="2960" />
-              <mxPoint x="-12440" y="2960" />
+              <mxPoint x="-12520" y="2960" />
             </Array>
             <mxPoint x="-14920" y="2880" as="sourcePoint" />
           </mxGeometry>
