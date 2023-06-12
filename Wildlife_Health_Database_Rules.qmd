@@ -1,9 +1,35 @@
+
+# Surveillance Task
+
+What is the Objective to Record and Collect Observations and Sources? 
+
+They are applied to tag Observations and Sources at time t. 
+
+Observations and Source Records can receive multiple Surveillance Tasks and 
+Surveillance Tasks can include multiple Observations and Sources.
+
+Surveillance Tasks Apply only for Targeted Surveillance and Scanning Surveillance
+Initiatives. Including Scanning Surveillance allows to have specific metadata
+for the methods used in this type of surveillance strategy
+
+Observations and Source Records collected originally through Scanning 
+Surveillance initiatives may be included  future targeted surveillance 
+initiatives. For example, test pangolins for SARS-CoV-2 in 2023, using samples 
+collected by rangers patrolling a protected area in 2017. In this case, the 
+collection of pangolin specimens by rangers is scanning surveillance; however,
+a new task can be targeting SARS-CoV-2 specifically and using these specimens.
+
 Each Surveillance Task can involve multiple Hazards. 
   Why asking then if a Pathogen, Chemical, Biological, or Physiological Hazard
   is targeted? 
-    Because, the a user can look for all the Surveillance Tasks aimed to a 
-    specific type of Hazard.
+  Because, the a user can look for all the Surveillance Tasks aimed to a 
+  specific type of Hazard.
+
+Each Surveillance Task has many Observations, Animal Source, 
+Environmental Source, and Invertebrate Source metadata. The metadata for each
+Surveillance Task is provided by taxa (observations, animal sources, 
+environmental sources, and invertebrate sources). The taxon could be as general
+as "Arthropod" or specific to a species (Genus species).
 
 All Outbreak Investigations are a Surveillance Task. An Outbreak Investigation
-may include more than one Hazard through the grouping of various Surveillance 
-Tasks.
+may target several hazards.
