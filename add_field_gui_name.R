@@ -352,7 +352,6 @@ gui_labels<- list(
   WildlifeHealth_ObservationID  = "Observation Identifier",
   ObservationCode  = "Observation User Code",
   ObservationCrossID  = "Observation Cross Identifier",
-  ObservationSpecies  = "Observation Species",
   ObservationNumberAdultMaleHealthy  = "Number of Healthy Adult Males",
   ObservationNumberAdultFemaleHealthy  = "Number of Healthy Adult Females",
   ObservationNumberAdultUnknownSexHealthy  = "Number of Healthy Adults of Unknown Sex",
@@ -379,6 +378,11 @@ gui_labels<- list(
   ObservationGroupingLevel5Code = "Level 5 Group Code",
   ObservationComments  = "Comments",
   
+  #fields_by_table$WildlifeHealth_ObservationSpecies$Column_Name
+  
+  WildlifeHealth_ObservationCaptivityCategoryID = "Observation Species Identifier",
+  ObservationSpecies = "Observed Species",
+  
   #fields_by_table$WildlifeHealth_ObservationCaptivityCategory$Column_Name
   
   WildlifeHealth_ObservationCaptivityCategoryID = "Observation Captivity Category Identifier",
@@ -392,11 +396,23 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeath$Column_Name
   
-  WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeath = "Potential Cause Injury Disease or Death in Observed Animals",
-  ObservationPotentialCauseInjuryDiseaseDeathBy = "Potential Cause Provided By",
-  ObservationPotentialCauseInjuryDiseaseDeathPathogen = "Suspected Pathogen",
-  ObservationPotentialCauseInjuryDiseaseDeathPathogenBasedOn = "Reason to Suspect in the Pathogen",
+  WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeathID = "Potential Cause Injury Disease or Death in Observed Animals Identifier",
+  ObservationPotentialCauseInjuryDiseaseDeath = "Potential Cause Injury Disease or Death in Observed Animals",
+
+  #fields_by_table$WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeathBy$Column_Name
   
+  WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeathByID = "Potential Cause Injury Disease or Death in Observed Animals Identifier",
+  ObservationPotentialCauseInjuryDiseaseDeathBy = "Provider of the Potential Cause Injury Disease or Death in Observed Animals",
+  
+  #fields_by_table$WildlifeHealth_ObservationPotentialCauseDiseaseDeathPathogen$Column_Name
+  
+  WildlifeHeath_ObservationPotentialCauseDiseaseDeathPathogenID = "Suspected Pathogen Identifier",
+  ObservationPotentialCauseDiseaseDeathPathogen = "Suspected Pathogen",
+  
+  #fields_by_table$WildlifeHealth_PotentialCauseDiseaseDeathPathogenBasedOn$Column_Name
+  
+  WildlifeHealth_PotentialCauseDiseaseDeathPathogenBasedOnID = "Reason to Suspect in the Pathogen Identifier",
+  PotentialCauseDiseaseDeathPathogenBasedOn = "Reason to Suspect in the Pathogen",
   
   # ANIMAL SOURCE 
   
