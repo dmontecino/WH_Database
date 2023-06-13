@@ -40,28 +40,17 @@ gui_labels<- list(
   ProjectFunder = "Project Funder",
   ProjectLeadingOrganization = "Leading Organization",
   ProjectPurpose = "Project Purpose",
+  WildlifeHealth_ProjectCountryID = "Country Identifier",
+  WildlifeHealth_AnimalTaxaID = "Animal Taxa Identifier",
+  WildlifeHealth_TargetedHazardID  ="Targeted Hazard Identifier",
   ProjectStart = "Project Start Date",
   ProjectEnd ="Project End Date",
   
-  #fields_by_table$WildlifeHealth_ProjectCountry$Column_Name
-  
-  WildlifeHealth_CountryID = "Project Country Identifier",
-  Country = "Countries Involved",
   
   #fields_by_table$WildlifeHealth_ProjectOtherOrganizationsInvolved$Column_Name
   
   WildlifeHealth_ProjectOtherOrganizationInvolvedID = "Organization Identifier",
   ProjectOtherOrganizationsInvolved = "Other Organizations Involved",
-  
-  #fields_by_table$WildlifeHealth_ProjectAnimalTaxon$Column_Name
-  
-  WildlifeHealth_AnimalTaxaID = "Animal Taxa Identifier",
-  AnimalTaxaID = "Animal Taxa Included",
-  
-  #fields_by_table$WildlifeHealth_ProjectTargetedAgent$Column_Name
-  
-  WildlifeHealth_TargetedHazardID = "Hazard Identifier",
-  TargetedHazard = "Hazard of Interest",
   
   #fields_by_table$WildlifeHealth_ProjectURL$Column_Name
   
@@ -77,7 +66,8 @@ gui_labels<- list(
   ActivityCrossID = "Activity Cross Identifier",
   ActivityLeadName = "Leader of the Activity",
   ActivityLeadAffiliiation = "Affiliation of the Activity Leader",
-  ActivityHistory = "History of the Activity",
+  ActivityType = "Activity Type", # scheduled activity, outbreak response activity, patrolling,
+  ActivityHistory = "History of the Activity", what does it include? (bat sampling in X, bird sampling in market, etc.)
   ActivityStartDate = "Date Activity Started",
   ActivityEndDate = "Date Activity Ended",
   
@@ -150,10 +140,10 @@ gui_labels<- list(
   SurveillanceTaskCrossID = "Surveillance Task Cross Identifier",
   SurveillanceTaskType = "Surveillance Task Type",                            
   SurveillanceTaskPurpose = "Surveillance Task Purpose",
-  SurveillanceTaskPathogenTargeted = "Is a Pathogen Hazard Targeted?",
-  SurveillanceTaskToxinChemicalTargeted = "Is a Chemical Hazard Targeted?",
-  SurveillanceTaskPhysicalThreatTargeted = "Is a Physical Hazard Targeted?",
-  SurveillanceTaskPhysiologicalProblemTargeted = "Is a Physiological Hazard Targeted?",
+  SurveillanceTaskPathogenHazardsTargeted = "Is a Pathogen Hazard Targeted?",
+  SurveillanceTaskToxinChemicalHazardsTargeted = "Is a Chemical Hazard Targeted?",
+  SurveillanceTaskPhysicalThreatHarzardsTargeted = "Is a Physical Hazard Targeted?",
+  SurveillanceTaskPhysiologicalHazardsTargeted = "Is a Physiological Hazard Targeted?",
   SurveillanceTaskMetadataStartingDate = "Surveillance Task Starting Date",                         
   SurveillanceTaskMetadataEndingDate = "Surveillance Task Ending Date",                           
   SurveillanceTaskMetadataOrganizationAICUC = "Organization Providing AICUC",                    
@@ -217,6 +207,7 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTask$Column_Name
   
+  WildlifeHealth_SurveillanceTaskMetadataObservationID = "Surveillance Task Observation Metadata Identifier",
   SurveillanceTaskMetadataObservationCodeStructure =  "Structure of the User Observation Code",       
   SurveillanceTaskMetadataObservationInclusionCriteria = "Criteria to Include Observed-only Animals",
   SurveillanceTaskMetadataObservationExclusionCriteria = "Criteria to Exclude Observed-only Animals",
@@ -225,9 +216,10 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskAnimalSourceMetadata$Column_Name
   
+  WildlifeHealth_SurveillanceTaskMetadataAnimalSourceID = "Surveillance Task Animal Source Metadata Identifier",
   AnimalSourceMetadataAnimalSourceCodeStructure = "Structure of the User Animal Source Code",                      
   AnimalSourceMetadataCarcassesCollected = "Are Carcasses of Individual Animals Collected",                          
-  AnimalSourceMetadataTaxaIncluded = "Taxa of Animals Included as Animal Sources",                                    
+  WildlifeHealth_TaxaID = "Taxa of Animals Included as Animal Sources",                                    
   AnimalSourceMetadataInclusionCriteria = "Criteria to Include Animal Source Individuals",
   AnimalSourceMetadataExclusionCriteria = "Criteria to Exclude Animal Source Individuals",                              
   AnimalSourceMetadataGrouping = "Are Animal Sources Grouped Beyond Incident?",                                       
@@ -236,30 +228,30 @@ gui_labels<- list(
   AnimalSourceMetadataCaptureProtocol = "Animal Source Capture Protocol",                                
   AnimalSourceMetadataCaptureProtocolReferences = "Bibliographic References Animal Source Capture Protocol",                       
   AnimalSourceMetadataMarking = "Are Animal Sources Marked?",                                         
-  AnimalSourceMetadataMarkingMethod = "How Are Animal Sources Marked",                                  
+  WildlifeHealth_MarkingMethodID = "How Are Animal Sources Marked",                                  
   AnimalSourceMetadataMarkingMethodReferences = "Bibliographic References Animal Source Marking Method",                        
   AnimalSourceMetadataRecapture = "Are Animal Sources Recaptured?",                                       
   AnimalSourceMetadataFateAfterCaptureRecapture = "Fate of Animal Source after Capture or Recapture",                              
-  AnimalSourceMetadataEuthanasiaMethod = "Euthanasia Method of Animal Source",                                
+  WildlifeHealth_EuthanasiaMethodID = "Euthanasia Method of Animal Source",                                
   AnimalSourceMetadataEuthanasiaMethodReferences = "Bibliographic References Euthanasia of Animal Source",                    
   AnimalSourceMetadataDiagnosticsUsed = "Diagnostics used in Animal Sources",                              
   AnimalSourceMetadataDiagnosticsUsedReferences = "Bibliographic References Diagnostics in Animal Source",                      
   AnimalSourceMetadataRecordCriteriaPositiveCase = "Animal Source Case Definition",
   AnimalSourceMetadataRecordCriteriaPositiveCaseReferences = "Bibliographic References Animal Source Case Definition",            
-  AnimalSourceMetadataNecropsyCarcass = "Are Carcasses Necropsied?",                                 
-  AnimalSourceMetadataNecropsyCarcassProtocol = "Carcass Necropsy Protocol",                         
-  AnimalSourceMetadataNecropsyCarcassReferences = "Bibliographic References Carcass Necropsy Protocol",                      
+  AnimalSourceMetadataNecropsy = "Are Carcasses Necropsied?",                                 
+  AnimalSourceMetadataNecropsyProtocol = "Carcass Necropsy Protocol",                         
+  AnimalSourceMetadataNecropsyReferences = "Bibliographic References Carcass Necropsy Protocol",                      
   AnimalSourceMetadataAnimalSpecimenCollection = "Are Animal Specimens Collected?",                       
   AnimalSourceMetadataAnimalSpecimenCollectionMethod = "Animal Specimen Collection Method",                  
   AnimalSourceMetadataAnimalSpecimenCollectionReferences = "Bibliographic References Animal Specimen Collection Method",             
   AnimalSourceMetadataAnimalSpecimenCollectionAtRecapture = "Are Animal Specimens Collected at Recapture?",            
   AnimalSourceMetadataAnimalSpecimenCollectionIncludesParasitesVectors = "Animal Specimens Include Parasites?",
   AnimalSourceMetadataAnimalSpecimenCodeStructure = "Structure of the Animal Specimen Code",                          
-  AnimalSourceMetadataAnimalSpecimenTypes = "Animal Specimen Types",                            
+  WildlifeHealth_SpecimenTypeID = "Animal Specimen Type Identifier",                            
   AnimalSourceMetadataAnimalSpecimenPooling = "Are Animal Specimens Pooled?",                          
   AnimalSourceMetadataAnimalSpecimenPoolingStrategy = "Strategy to Pooled Animal Specimens", 
   AnimalSourceMetadataAnimalsSpecimenTested = "Are Animal Specimens Tested?", 
-  AnimalSourceMetadataAnimalSpecimenDiagnosticsUsed = "Diagnostics Used in Animal Specimens",                 
+  WildlifeHealth_SurveillanceTaskTargetedHazardTestID = "Diagnostics Used in Animal Specimens",                 
   AnimalSourceMetadataAnimalSpecimenDiagnosticUsedReferences = "Bibliographic References Diagnostics Used in Animal Specimens",          
   AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCase = "Case Definition Animal Specimen",              
   AnimalSourceMetadataAnimalSpecimenCriteriaPositiveCaseReferences = "Bibliographic References Case Definition Animal Specimen",  
@@ -268,6 +260,7 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskEnvironmentalSourceMetadata$Column_Name
   
+  WildlifeHealth_SurveillanceTaskMetadataEnvironmentalSourceID = "Surveillance Task Environmental Source Metadata Identifier",
   EnvironmentalSourceMetadataEnvironmentalSourceCodeStructure = "Structure of the User Environmental Source Code",
   EnvironmentalSourceMetadataBioticEnvironmentalSourceIncluded = "Are Biotic Environmental Sources Included?",
   EnvironmentalSourceMetadataAbioticEnvironmentalSourceIncluded = "Are Abiotic Environmental Sources Included?",
@@ -288,7 +281,7 @@ gui_labels<- list(
   EnvironmentalSourceMetadataEnvironmentalSpecimenCodeStructure = "Structure of the Environmental Specimen Code",  
   EnvironmentalSourceMetadataEnvironmentalSpecimenPooling = "Are Environmental Specimens Pooled?",
   EnvironmentalSourceMetadataEnvironmentalSpecimenPoolingStrategy = "Strategy to Pooled Environmental Specimens",
-  EnvironmentalSourceMetadataAnimalsSpecimenTested = "Are Environmental Specimens Tested?", 
+  EnvironmentalSourceMetadataEnvironmentalSpecimenTested = "Are Environmental Specimens Tested?", 
   EnvironmentalSourceMetadataEnvironmentalSpecimenDiagnosticsUsed = "Diagnostics Used in Environmental Specimens",
   EnvironmentalSourceMetadataEnvironmentalSpecimenDiagnosticUsedReferences = "Bibliographic References Diagnostics Used in Environmental Specimens",          
   EnvironmentalSourceMetadataEnvironmentalSpecimenCriteriaPositiveCase = "Case Definition Environmental Specimen",              
@@ -299,6 +292,7 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_SurveillanceTaskInvertebrateSourceMetadata$Column_Name
   
+  WildlifeHealth_SurveillanceTaskMetadataInvertebrateSourceID = "Surveillance Task Invertebrate Source Metadata Identifier",
   InvertebrateSourceMetadataInvertebrateSourceCodeStructure = "Structure of the User Invertebrate Source Code",
   InvertebrateSourceMetadataTaxaTargeted = "Invertebrate Taxa Targeted",   
   InvertebrateSourceMetadataInclusionCriteria = "Criteria to Include Invertebrate Taxa",
@@ -326,10 +320,30 @@ gui_labels<- list(
   InvertebrateSourceMetadataInvertebrateSpecimenTestCriteriaPositiveCaseReference = "Bibliographic References Case Definition Invertebrate Specimen Test",  
   
   
+  # GENERAL TABLES
+  
+  #fields_by_table$WildlifeHealth_ProjectCountry$Column_Name
+  
+  WildlifeHealth_CountryID = "Project Country Identifier",
+  Country = "Country Involved",
+  
+  #fields_by_table$WildlifeHealth_ProjectAnimalTaxon$Column_Name
+  
+  WildlifeHealth_AnimalTaxaID = "Animal Taxa Identifier",
+  AnimalTaxaID = "Animal Taxa Included",
+  
+  #fields_by_table$WildlifeHealth_ProjectTargetedAgent$Column_Name
+  
+  WildlifeHealth_TargetedHazardID = "Hazard Identifier",
+  TargetedHazard = "Hazard of Interest",
+  
   #fields_by_table$WildlifeHealth_SurveillanceTaskTargetedHazard$Column_Name
   
   WildlifeHealth_SurveillanceTaskTargetedHazardID = "Targeted Hazard Identifier",
   SurveillanceTaskTargetedHazard = "Targeted Hazard",
+  
+  
+  
   
   #OBSERVATION
   
@@ -367,11 +381,14 @@ gui_labels<- list(
   
   #fields_by_table$WildlifeHealth_ObservationCaptivityCategory$Column_Name
   
-  WildlifeHealth_ObservationCaptivityCategory = "Captivity Category Observed Animals",
+  WildlifeHealth_ObservationCaptivityCategoryID = "Observation Captivity Category Identifier",
+  ObservationCaptivityCategory = "Captivity Category Observed Animals",
+  
   
   #fields_by_table$WildlifeHealth_ObservationAnomaly$Column_Name
   
-  WildlifeHealth_ObservationAnomalyInjuredSickDead = "Anomalies in Observed Animals",
+  WildlifeHealth_ObservationAnomalyID = "Observation Anomaly Identifier",
+  ObservationAnomaly = "Anomalies in Observed Animals",
   
   #fields_by_table$WildlifeHealth_ObservationPotentialCauseInjuryDiseaseDeath$Column_Name
   
