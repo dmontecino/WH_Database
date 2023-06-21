@@ -1,9 +1,38 @@
+# PROJECT
 
-# Surveillance Task
+It is a surveillance initiative funded by specific entities, during specific 
+times in specific locations (e.g., the PREDICT Project or a minimum of a 
+cross-sectional study with total n=2 collected during a single field visit 
+in a single location, or rangers recording observations-only during their 
+patrols).
+
+
+If no new Field activities are added by the Project and the Surveillance Task(s)
+associated with the Project do not add new Observations, Animal Source Records, 
+Environmental Source Records, or Invertebrate Source Records, it means that the 
+Project is relying on Source Records or Specimens already available and entered 
+in the Wildlife Health Database. Basically, the Project is conducting necropsies
+and diagnostics with available Specimens, or creating new Pooled Specimens
+to run diagnostics
+
+# FIELD ACTIVITY
+
+Activity to Observations, Animal Sources, Environmental Sources, 
+Invertebrate Sources recorded; the Animal Specimens, Environmental Specimens, 
+and Invertebrate Specimens collected
+
+A Project can contain many Field Activities
+
+# SURVEILLANCE TASK
 
 What is the Objective to Record and Collect Observations and Sources? 
+How were the Observations, Animal Sources, Environmental Sources, 
+Invertebrate Sources recorded; the Animal Specimens, Environmental Specimens, 
+and Invertebrate Specimens collected, 
 
-They are applied to tag Observations and Sources at time t. 
+
+They are applied to tag Observations and Sources at time t collected to be tested
+for specific hazards
 
 Observations and Source Records can receive multiple Surveillance Tasks and 
 Surveillance Tasks can include multiple Observations and Source Records.
@@ -33,5 +62,11 @@ Surveillance Task is provided by taxa (observations, animal sources,
 environmental sources, and invertebrate sources). The taxon could be as general
 as "Arthropod" or specific to a species (Genus species).
 
-All Outbreak Investigations are a Surveillance Task. An Outbreak Investigation
-may target several hazards.
+All Outbreak Investigations are a Surveillance Task. An Outbreak Investigation may target several hazards.
+
+
+# SOURCES
+
+## Invertebrate Sources
+
+Designed to contain data of a collection of invertebrates. If the interest is at the individual level (e.g., bees with problems in their wings), then the data should be recorded as Animal Source
