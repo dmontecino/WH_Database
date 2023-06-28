@@ -7,7 +7,7 @@ library(tidyverse)
 # click until "all pages" is selected and save the xml file 
 
 # load the entity relational model in XML format
-xml <- read_xml("Entity_relational_model_June_7_2023.drawio.xml")
+xml <- read_xml("Entity_relational_model_June_20_2023.drawio.xml")
 
 
 #create first dataset containing the names of the tables and fields and other properties
