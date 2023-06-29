@@ -956,6 +956,24 @@ data_dictionary[["Animal_Source"]]<-
       Label="Animal source previous marking code",
       Definition="The previous marking code of the animal source",
       Type="String",
-      Mandatory="Yes if 'Previous marking code' is TRUE"),
+      Mandatory="Yes if 'Previous marking code' is TRUE"))
+
+
+# Environmental Source
+
+data_dictionary[["Environmental_Source"]]<-
+  
+  list(
+
+    data.frame(
+      Variable="WildlifeHealth_EnvironmentalSourceID",
+      Label="Environmental source identifier",
+      Definition="System-provided environmental source identifier",
+      Type="Integer",
+      Mandatory="Yes"))
+
+
+    
+    
     
   )
