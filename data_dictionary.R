@@ -382,8 +382,31 @@ data_dictionary[["Surveillance_Objective"]]<-
       Type="String",
       Mandatory="Yes, but this field becomes available only when 'Incidents of the surveillance objective are grouped' is True"))
     
-   
+#Outbreak
+
+data_dictionary[["Outbreak"]]<-
+  
+  list(
     
+    data.frame(
+      Variable="OutbreakName",
+      Label="Outbreak name",
+      Definition="The name provided to the outbreak",
+      Type="String",
+      Mandatory="Yes, if the surveillance objective type is 'Outbreak'"),
+    
+    data.frame(
+      Variable="OutbreakDiagnosis",
+      Label="Outbreak Diagnosis",
+      Definition="The diagnosis provided to the outbreak",
+      Type="String",
+      Mandatory="No"))
+
+
+
+
+
+  map(data_dictionary, \(x) do.call(rbind, x))
     
     
 
