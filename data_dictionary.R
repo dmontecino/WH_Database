@@ -757,7 +757,7 @@ data_dictionary[["WildlifeHealth_Source"]]<-
       Label="Source Type", 
       Definition="The source type (e.g., 'Observaiton', 'Animal', 'Environmental', 'Invertebrate'",
       Type="String",
-      Mandatory="No"), 
+      Mandatory="Yes"), 
     
     data.frame(
       Variable="SourceSpecies",
@@ -917,3 +917,45 @@ data_dictionary[["WildlifeHealth_ObservationSource"]]<-
     
   )
 
+# Animal Source
+
+data_dictionary[["Animal_Source"]]<-
+  
+  list(
+
+    data.frame(
+      Variable="WildlifeHealth_AnimalSourceID",
+      Label="Animal source identifier",
+      Definition="System-provided animal source identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_AnimalSourceSex",
+      Label="Animal source sex",
+      Definition="Sex of the animal source",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="AnimalSourceDateOfDeath",
+      Label="Animal source death date",
+      Definition="Date the animal source died or was found dead",
+      Type="Date",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="AnimalSourceAnyPreviousMarkingCode",
+      Label="Previous marking code",
+      Definition="Answer to the question: 'Did the animal source have any previous marking?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="AnimalSourcePreviousMarkingCode",
+      Label="Animal source previous marking code",
+      Definition="The previous marking code of the animal source",
+      Type="String",
+      Mandatory="Yes if 'Previous marking code' is TRUE"),
+    
+  )
