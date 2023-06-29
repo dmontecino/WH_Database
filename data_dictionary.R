@@ -419,7 +419,7 @@ data_dictionary[["Field_Activity"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="WildlifeHealth_FieldActivityActivityType",
+      Variable="WildlifeHealth_FieldActivityType",
       Label="Field activity type", 
       Definition="The type of field activity (e.g., 'Market', 'Free-ranging', 'Ranger patroling')",
       Type="Multiple selection",
@@ -463,7 +463,266 @@ data_dictionary[["Field_Activity_Location"]]<-
       Definition="The name of the field activity location" ,
       Type="String",
       Mandatory="Yes"))
-    
 
+
+#Wildlife Health Incident
+
+data_dictionary[["WildlifeHealth_Incident"]]<-
+    
+  list(
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentID",
+      Label="Incident identifier",
+      Definition="System-provided incident identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="IncidentCrossID",
+      Label="Incident cross identifier", 
+      Definition="The identifier of an incident under another nomenclature system",
+      Type="String",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="IncidentDate",
+      Label="Incident date", 
+      Definition="The date of the incident",
+      Type="String",
+      Mandatory="Yes"),   
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentType",
+      Label="Incident type", 
+      Definition="The date of the incident",
+      Type="String",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="IncidentUnit",
+      Label="Incident unit", 
+      Definition="Explanation of what the incident represents (e.g., a field finding, a market, a vendor, a cage, a grid cell, a point in a transect, a mist net, etc.)",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentFinding",
+      Label="Incident finding", 
+      Definition="Specific set of findings at the incident",
+      Type="Multiple selection",
+      Mandatory="Yes"),     
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentLandscapeType",
+      Label="Incident landscape type", 
+      Definition="Specific features of the landscape at the incident",
+      Type="Multiple selection",
+      Mandatory="No"),        
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentBy",
+      Label="Incident reported by", 
+      Definition="The person that reported the incident",
+      Type="Single selection",
+      Mandatory="Yes"),        
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentBySector",
+      Label="Sector of the reporter", 
+      Definition="The sector of the person that reported the incident",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="IncidentSmartSource",
+      Label="Incident from SMART", 
+      Definition="Answer to the question: 'Was the incident recorded using SMART?'",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="IncidentLongitude",
+      Label="Longitude", 
+      Definition="Longitude coordinate. Non decimal degree coordinates are automatically converted. If coordinates are provided in UTM, then the UTM zone must be provided",
+      Type="Float",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="IncidentLatitude",
+      Label="Latitude", 
+      Definition="Latitude coordinate. Non decimal degree coordinates are automatically converted. If coordinates are provided in UTM, then the UTM zone must be provided",
+      Type="Float",
+      Mandatory="Yes"), 
+  
+    data.frame(
+      Variable="IncidentUTMZone",
+      Label="UTM Zone", 
+      Definition="UTM Zone. See https://www.dmap.co.uk/utmworld.htm",
+      Type="Float",
+      Mandatory="Yes if longitude and latitude are supplies in UTM coordinates"),   
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentCountry",
+      Label="Country", 
+      Definition="Country where the incident happens",
+      Type="Single selection",
+      Mandatory="Yes"),  
+  
+    data.frame(
+      Variable="WildliHealth_IncidentState",
+      Label="State", 
+      Definition="State where the incident happens",
+      Type="Single selection",
+      Mandatory="No"),      
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentProvince",
+      Label="Province", 
+      Definition="Province where the incident happens",
+      Type="Single selection",
+      Mandatory="No"),   
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentSiteCode",
+      Label="Site code", 
+      Definition="The site the incidents are grouped by site",
+      Type="Single selection",
+      Mandatory="No"),   
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentZoneCode",
+      Label="Zone code", 
+      Definition="The zone the incidents are grouped by zone",
+      Type="Single selection",
+      Mandatory="No"),  
+
+    data.frame(
+      Variable="WildlifeHealth_IncidentMarketCode",
+      Label="Market code", 
+      Definition="The market the incidents are grouped by market",
+      Type="Single selection",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentGridCode",
+      Label="Grid code", 
+      Definition="The grid code the when incidents are grouped by grid",
+      Type="Single selection",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentGridCellCode",
+      Label="Grid cell code", 
+      Definition="The grid cell code when incidents are grouped by grid cell",
+      Type="Single selection",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentStationCode",
+      Label="Station code", 
+      Definition="The station code when incidents are grouped by station",
+      Type="Single selection",
+      Mandatory="No"),  
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentTransectCode",
+      Label="Transect code", 
+      Definition="The transect code when incidents are grouped by transect",
+      Type="Single selection",
+      Mandatory="No"),     
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentVendorCode",
+      Label="Vendor code", 
+      Definition="The vendor code when incidents are grouped by vendor",
+      Type="Single selection",
+      Mandatory="No"),  
+
+    data.frame(
+      Variable="WildlifeHealth_IncidentTrapCode",
+      Label="Trap code", 
+      Definition="The vendor code when incidents are grouped by trap",
+      Type="Single selection",
+      Mandatory="No"),      
+ 
+    data.frame(
+      Variable="WildlifeHealth_IncidentMistNetCode",
+      Label="Mist net code", 
+      Definition="The mist net code when incidents are grouped by mist net code",
+      Type="Single selection",
+      Mandatory="No"),     
+    
+    data.frame(
+      Variable="IncidentOtherSpatialUnitCode",
+      Label="Other spatial unit code", 
+      Definition="The spatial unit code when incidents are grouped by another spatial unit",
+      Type="Single selection",
+      Mandatory="No"), 
+
+    data.frame(
+      Variable="WildlifeHealth_IncidentStudyYear",
+      Label="The study year", 
+      Definition="The temporal unit code when incidents are grouped by year unit",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentStudySeason",
+      Label="The study season", 
+      Definition="The temporal unit code when incidents are grouped by study season",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentStudyMonth",
+      Label="The study month", 
+      Definition="The temporal unit code when incidents are grouped by month",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentStudyWeek",
+      Label="The study week", 
+      Definition="The temporal unit code when incidents are grouped by week",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentStudyDayPeriod",
+      Label="The study day period", 
+      Definition="The temporal unit code when incidents are grouped by study day",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="WildlifeHealth_IncidentStudyHour",
+      Label="The study hour", 
+      Definition="The temporal unit code when incidents are grouped by study hour",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="IncidentOtherTemporalUnit",
+      Label="Other spatial temporal unit code", 
+      Definition="The temporal unit code when incidents are grouped by another temporal unit",
+      Type="Single selection",
+      Mandatory="No"), 
+
+    data.frame(
+      Variable="IncidentTimeAssembled",
+      Label="Time assembled", 
+      Definition="The time a trap or similar representing an incident is set up",
+      Type="Datetime",
+      Mandatory="No"),    
+    
+    data.frame(
+      Variable="IncidentTimeDisassembled",
+      Label="Time disassembled", 
+      Definition="The time a trap or similar representing an incident is dissamsembled",
+      Type="Datetime",
+      Mandatory="No"),     
+
+)
 
 
