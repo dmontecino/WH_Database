@@ -1,22 +1,3 @@
-# -------------------------- # 
-# Adding the Column GUI Name #
-# -------------------------- # 
-
-# the advantage of using labelled is that the full data dictionary can 
-# be ready to be published online with its metadata. 
-# but every item in the "Column_Name" table must be converted to an actual 
-# column. 
-
-# library(labelled)
-# 
-# col_gui<-data.frame(Column_Name=unique(full_table$Column_Name, incomparables = FALSE))
-# 
-# col_gui<- col_gui %>% 
-#   mutate(row_index = row_number()) %>% 
-#   pivot_wider(names_from = Column_Name, values_from = row_index)
-# 
-
-
 
 # ------------------#
 # Create Dictionary #
@@ -88,7 +69,7 @@ data_dictionary[["Project_Table"]]<-
     
     data.frame(
       Variable="WilldifeHealth_ProjectLeader",
-      Label="Project Leader", 
+      Label="Project leader", 
       Definition="The head of the project",
       Type="Single selection",
       Mandatory="Yes"),
@@ -403,11 +384,70 @@ data_dictionary[["Outbreak"]]<-
       Mandatory="No"))
 
 
+#Field Activity
 
-
-
-  map(data_dictionary, \(x) do.call(rbind, x))
+data_dictionary[["Field_Activity"]]<-
+  
+  list(
     
+    data.frame(
+      Variable="WildlifeHealth_FieldActivityID",
+      Label="Field activity identifier",
+      Definition="System-provided field activity identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="FieldActivityCode",
+      Label="Field activity code",
+      Definition="User-provided field activity code",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="FieldActivityCrossID",
+      Label="Field Activity Cross Identifier", 
+      Definition="The identifier of the field activity under another nomenclature system",
+      Type="String",
+      Mandatory="No"),    
+    
+    data.frame(
+      Variable="WildlifeHealth_FieldActivityLeaderName",
+      Label="Field activity leader name", 
+      Definition="The leader of the field activity of the surveillance project",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_FieldActivityActivityType",
+      Label="Field activity type", 
+      Definition="The type of field activity (e.g., 'Market', 'Free-ranging', 'Ranger patroling')",
+      Type="Multiple selection",
+      Mandatory="Yes"), 
+
+    data.frame(
+      Variable="FieldActivityHistory",
+      Label="Field activity history",
+      Definition="The background of the field activity (e.g., why, who, how, where, what for)" ,
+      Type="Date",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="FieldActivityStartDate",
+      Label="Field activity start date",
+      Definition="The date the field activity started" ,
+      Type="Date",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="FieldActivityEndDate",
+      Label="Field activity end date",
+      Definition="The date the field activity ended" ,
+      Type="Date",
+      Mandatory="Yes"))
+   
+
+
     
 
 
