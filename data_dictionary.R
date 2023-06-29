@@ -725,4 +725,53 @@ data_dictionary[["WildlifeHealth_Incident"]]<-
 
 )
 
+#Wildlife Health Source
+
+data_dictionary[["WildlifeHealth_Source"]]<-
+  
+  list(
+    
+    data.frame(
+      Variable="SourceID",
+      Label="Source identifier",
+      Definition="System-provided source identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceCode",
+      Label="Source code",
+      Definition="User-provided source code",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceCrossID",
+      Label="Source cross identifier", 
+      Definition="The identifier of the source under another nomenclature system",
+      Type="String",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="SourceType",
+      Label="Source Type", 
+      Definition="The source type (e.g., 'Observaiton', 'Animal', 'Environmental', 'Invertebrate'",
+      Type="String",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="SourceSpecies",
+      Label="Source Species", 
+      Definition="The source species. Only one for each observation, animal, and environmental sources, but several can apply for invertebrate sources",
+      Type="Single selection for Observation, Animal, and Environmental Sources. Multiple selection for Invertebrate sources.",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="Source Comments",
+      Label="Comments", 
+      Definition="Any comments regarding the source",
+      Type="String",
+      Mandatory="No"),
+    
+  )
 
