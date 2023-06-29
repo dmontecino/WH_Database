@@ -18,23 +18,193 @@
 
 
 
+# ------------------#
+# Create Dictionary #
+# ------------------#
 
-# --------------- #
-# GUI column name #
-# --------------- #
 
-#split data by table to easily find the fields by table
+
+#tables in the .xml of the db diagram
 fields_by_table<-split(full_table, full_table$Table_Name)
 
 
-#add the labels per field
-gui_labels<- list(
+# Example entries
+data_dictionary<-vector(mode = "list")
   
+
+#Project Table
+
+data_dictionary[["Project_Table"]]<-
+  
+  list(
+    data.frame(
+      Variable="WildlifeHealth_ProjectID",
+      Label="Project Identifier", 
+      Definition="System-provided project identifier",
+      Type="integer",
+      Mandatory="System-assigned"), 
+  
+    data.frame(
+      Variable="ProjectName",
+      Label="Project Name", 
+      Definition="User-provided project name",
+      Type="string",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ProjectCrossID",
+      Label="Project Cross Identifier", 
+      Definition="The identifier of the project under another nomenclature system",
+      Type="string",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectFunder",
+      Label="Project Funder", 
+      Definition="The funding sources of the project",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectFunder",
+      Label="Project Funder", 
+      Definition="The funding sources of the project",
+      Type="Multiple selection",
+      Mandatory="Yes. Provide at least one option"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectLeadingOrganization",
+      Label="Project Leading Organization", 
+      Definition="The organizations leading the project",
+      Type="Multiple selection",
+      Mandatory="Yes. Provide at least one option"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectOtherOrganization",
+      Label="Other Organizations in the project", 
+      Definition="Other organizations/partners associated with the project",
+      Type="Multiple selection",
+      Mandatory="Yes. Provide at least one option"),
+    
+    data.frame(
+      Variable="WilldifeHealth_ProjectLeader",
+      Label="Project Leader", 
+      Definition="The head of the project",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ProjectPurpose",
+      Label="Project Purpose", 
+      Definition="The full objective of the project",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ProjectNewFieldActivities",
+      Label="Field visits are part of the project", 
+      Definition="Answer to the question: 'Does the project involve field visits?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectAnimalTaxa",
+      Label="Animal species considered in the project",
+      Definition="The animal species of interest for the project",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectEnvironmentalSource",
+      Label="Environmental sources considered in the project",
+      Definition="The environmental sources of interest for the project",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectInvertebrateSource",
+      Label="Invertebrate sources considered in the project",
+      Definition="The invertebrate sources of interest for the project",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectHazardType",
+      Label="Health hazard types targeted",
+      Definition="The general type of health hazard targeted under the project (e.g., 'Biological', 'Chemical', 'Physical', 'Physiological')",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectHazardName",
+      Label="Specific health hazard targeted",
+      Definition="The specific health hazards targeted under the project (e.g., 'coronaviridae', 'Brucella abortus')" ,
+      Type="Multiple selection",
+      Mandatory="Yes. Options available are conditional to the health hazard types selected"),
+    
+    data.frame(
+      Variable="ProjectStartDate",
+      Label="Project Start Date",
+      Definition="The date the project oficially started" ,
+      Type="Date",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ProjectEndDate",
+      Label="Project End Date",
+      Definition="The date the project is projected to end or oficially ended",
+      Type="Date",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_ProjectUrl",
+      Label="Project URLs",
+      Definition="URLs of the project, associated with the project, or organizations leading the project",
+      Type="Date",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SurveillanceObjective",
+      Label="Surveillance objectives",
+      Definition="The surveillance objectives of the project. A surveillance objective has a set of activities with a common surveillance goal using the same methodology",
+      Type="Date",
+      Mandatory="Yes"))
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #Other table
+  list(
+    data.frame(
+      Variable="WildlifeHealth_ProjectID",
+      Label="Project Identifier", 
+      Definition="System provided project identifier")))
+  
+add_entry("ProjectName", "This is the second variable.", "Additional information for Variable2.")
+add_entry("Variable3", "This is the third variable.", "Additional information for Variable3.")
+
+# View the data dictionary
+print(data_dictionary)
+
+
+
+
   #PROJECT
   
   #fields_by_table$WildlifeHealth_Project$Column_Name
   
-  WildlifeHealth_ProjectID = "Project Identifier",
+fields_gui_and_definition[[1]]<-
+  
+  c(WildlifeHealth_ProjectID,"Project Identifier",
   ProjectName = "Project Name", 
   ProjectCrossID = "Project Cross ID", 
   ProjectFunder = "Project Funder",
@@ -44,7 +214,7 @@ gui_labels<- list(
   WildlifeHealth_AnimalTaxaID = "Animal Taxa Identifier",
   WildlifeHealth_TargetedHazardID  ="Targeted Hazard Identifier",
   ProjectStart = "Project Start Date",
-  ProjectEnd ="Project End Date",
+  ProjectEnd ="Project End Date")
   
   
   #fields_by_table$WildlifeHealth_ProjectOtherOrganizationsInvolved$Column_Name
