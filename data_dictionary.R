@@ -771,7 +771,149 @@ data_dictionary[["WildlifeHealth_Source"]]<-
       Label="Comments", 
       Definition="Any comments regarding the source",
       Type="String",
-      Mandatory="No"),
+      Mandatory="No")
+  )
+    
+#Wildlife Health Source
+
+data_dictionary[["WildlifeHealth_ObservationSource"]]<-
+  
+  list(
+    
+    data.frame(
+      Variable="WildlifeHealth_ObservationSourceID",
+      Label="Observation identifier",
+      Definition="System-provided observation identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultMaleHealthy",
+      Label="Number of healthy male adults",
+      Definition="The number of healhty male adults observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultFemaleHealthy",
+      Label="Number of healthy female adults",
+      Definition="The number of healhty female adults observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultUnknownSexHealthy",
+      Label="Number of healthy adults of unknown sex",
+      Definition="The number of healhty adults of unknown sex observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultMaleSickOrInjured",
+      Label="Number of sick or injured male adults",
+      Definition="The number of sick or injured male adults observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultFemaleSickOrInjured",
+      Label="Number of sick or injured female adults",
+      Definition="The number of sick or injured female adults observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultUnknownSexSickOrInjured",
+      Label="Number of sick or injured adults of unknown sex",
+      Definition="The number of sick or injured adults of unknown sex observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultMaleDead",
+      Label="Number of dead male adults",
+      Definition="The number of dead male adults observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultFemaleDead",
+      Label="Number of dead female adults",
+      Definition="The number of dead female adults observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberAdultUnknownSexDead",
+      Label="Number of dead adults of unknown sex",
+      Definition="The number of dead adults of unknown sex observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="ObservationNumberJuvenileHealthy",
+      Label="Number of healthy juveniles",
+      Definition="The number of healthy juveniles observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberJuvenileSickInjured",
+      Label="Number of sick or injured juveniles",
+      Definition="The number of sick or injured juveniles observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberJuvenileDead",
+      Label="Number of dead juveniles",
+      Definition="The number of dead juveniles observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+
+    
+    data.frame(
+      Variable="ObservationNumberFetusHealthy",
+      Label="Number of healthy fetuses",
+      Definition="The number of healthy fetuses observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberFetusSickInjured",
+      Label="Number of sick or injured fetuses",
+      Definition="The number of sick or injured fetuses observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberFetusDead",
+      Label="Number of dead fetuses",
+      Definition="The number of dead fetuses observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberUnknownAgeSexHealthy",
+      Label="Number of healthy individuals of unknown age and sex",
+      Definition="The number of healthy individuals of unknown age and sex observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberUnknownAgeSexSickInjured",
+      Label="Number of sick or injured individuals of unknown age and sex",
+      Definition="The number of sick or injured individuals of unknown age and sex observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="ObservationNumberUnknownAgeSexDead",
+      Label="Number of dead individuals of unknown age and sex",
+      Definition="The number of dead individuals of unknown age and sex observed for the current species",
+      Type="Integer",
+      Mandatory="Yes"),
     
   )
 
