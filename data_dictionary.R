@@ -429,7 +429,7 @@ data_dictionary[["Field_Activity"]]<-
       Variable="FieldActivityHistory",
       Label="Field activity history",
       Definition="The background of the field activity (e.g., why, who, how, where, what for)" ,
-      Type="Date",
+      Type="String",
       Mandatory="Yes"),
     
     data.frame(
@@ -446,8 +446,23 @@ data_dictionary[["Field_Activity"]]<-
       Type="Date",
       Mandatory="Yes"))
    
-
-
+data_dictionary[["Field_Activity_Location"]]<-
+  
+  list(
+    
+    data.frame(
+      Variable="WildlifeHealth_FieldActivityLocationID",
+      Label="Field activity location cross identifier", 
+      Definition="The identifier of the field activity location under another nomenclature system",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="FieldActivityLocation",
+      Label="Field activity location name",
+      Definition="The name of the field activity location" ,
+      Type="String",
+      Mandatory="Yes"))
     
 
 
