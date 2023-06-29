@@ -972,8 +972,24 @@ data_dictionary[["Environmental_Source"]]<-
       Type="Integer",
       Mandatory="Yes"))
 
+# Invertebrate Source
+
+data_dictionary[["Invertebrate_Source"]]<-
+  
+  list(
+    
+    data.frame(
+      Variable="WildlifeHealth_InvertebrateSourceID",
+      Label="Invertebrate source identifier",
+      Definition="System-provided invertebrate source identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_InvertebrateSourceTrapType",
+      Label="Trap type",
+      Definition="The trap type used to get the invertebrates",
+      Type="Single selection",
+      Mandatory="Yes"))
 
     
-    
-    
-  )
