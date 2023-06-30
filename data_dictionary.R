@@ -723,7 +723,7 @@ data_dictionary[["WildlifeHealth_Incident"]]<-
       Label="Time disassembled", 
       Definition="The time a trap or similar representing an incident is dissamsembled",
       Type="Datetime",
-      Mandatory="No"),     
+      Mandatory="No")     
 
 )
 
@@ -922,7 +922,7 @@ data_dictionary[["WildlifeHealth_ObservationSource"]]<-
       Label="Number of dead individuals of unknown age and sex",
       Definition="The number of dead individuals of unknown age and sex observed for the current species",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="Yes")
     
   )
 
@@ -1132,4 +1132,82 @@ data_dictionary[["Source_Record"]]<-
       Type="String",
       Mandatory="Yes"))
 
+
+#  Animal Source Record
+
+data_dictionary[["Source_Record"]]<-
+  
+  list(
+    
+    data.frame(
+      Variable="WildlifeHealth_AnimalSourceRecordID",
+      Label="Animal source record identifier",
+      Definition="System-provided animal source record identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_AnimalSourceRecordAgeCategory",
+      Label="Age category",
+      Definition="The age category of the animal source record",
+      Type="Single selection",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="WildlifeHealth_AnimalSourceRecordInitialHealthStatus",
+      Label="Initial health status",
+      Definition="The initial health status of the animal source record",
+      Type="Single selection",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="WildlifeHealth_AnimalSourceRecordHealthConditionReleased",
+      Label="Health status at release",
+      Definition="The health status of the animal source record at release",
+      Type="Single selection. This field is automatically assigned 'Dead' if the initial health status is 'Dead'",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_AnimalSourceRecordEuthanasiaMethod",
+      Label="Euthanaasia method",
+      Definition="The euthanasia method used in the animal source",
+      Type="Single selection. It applies if the animal source's 'Health status at release' is 'Dead' at time t",
+      Mandatory="No"),  
+    
+    data.frame(
+      Variable="AnimalSourceRecordCarcassCollected",
+      Label="Carcass collected",
+      Definition="Answer to the question: 'Was the carcass of the animal collected?'",
+      Type="Boolean",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="WildlifeHealth_AnimalSourceRecordFieldStorageCarcass",
+      Label="Field storage carcass",
+      Definition="The method to store the carcass in the field while in transit to a proper facility",
+      Type="Single selection but available only if 'Carcass collected' is true",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="AnimalSourceRecordMarkingCode",
+      Label="Record marking code",
+      Definition="The marking of the animal source at time t",
+      Type="String",
+      Mandatory="No"), 
+
+    data.frame(
+      Variable="AnimalSourceRecordMarkingCodeChange",
+      Label="Marking code change",
+      Definition="Answer to the question: 'Has the marking code, if any, being changed at time t?'",
+      Type="Boolean",
+      Mandatory="No"),     
+    
+    data.frame(
+      Variable="AnimalSourceRecordMarkingCodeChangingReason",
+      Label="Marking code change reason",
+      Definition="Explanation of the reason why the marking code has been changed",
+      Type="String",
+      Mandatory="No"),     
+
+map(data_dictionary, \(x) do.call(rbind,x))
     
