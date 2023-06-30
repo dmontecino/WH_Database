@@ -1207,7 +1207,264 @@ data_dictionary[["Source_Record"]]<-
       Label="Marking code change reason",
       Definition="Explanation of the reason why the marking code has been changed",
       Type="String",
-      Mandatory="No"),     
+      Mandatory="No"))
+
+
+#  Animal Necropsy
+
+data_dictionary[["Animal_Necropsy"]]<-
+  
+  list(
+
+    data.frame(
+      Variable="WildlifeHealth_NecropsyID",
+      Label="Necropsy identifier",
+      Definition="System-provided necropsy identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="NecropsyCrossID",
+      Label="Necropsy cross identifier", 
+      Definition="The identifier of the necropsy under another nomenclature system",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyDate",
+      Label="Necropsy date", 
+      Definition="The date the necropsy was conducted",
+      Type="String",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="WildlifeHealth_PrimarySecondaryNecropsy",
+      Label="Primary or secondary", 
+      Definition="Answer to the question: 'Is this a primary or secondary necropsy?'",
+      Type="Boolean",
+      Mandatory="Yes"),  
+   
+    data.frame(
+      Variable="WildlifeHealth_NecropsyType",
+      Label="Necropsy type", 
+      Definition="The type of necropsy (e.g., 'Field necropsy', 'Partial necropsy', 'Full necropsy')",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="NecropsyLab",
+      Label="Necropsy laboratory", 
+      Definition="The laboratory where the necropsy was conducted",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="WildlifeHealth_NecropsyBy",
+      Label="Necropsy conducted by", 
+      Definition="The person who conducted the necropsy",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="WildlifeHealth_NecropsyCarcassCondition",
+      Label="Carcass condition", 
+      Definition="The condition of the carcass by the time of the necropsy",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_NecropsyCarcassStorage",
+      Label="Carcass storage", 
+      Definition="The storage method of the carcass in the laboratory",
+      Type="Single selection but it does not apply to 'Field necropsy'",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="NecropsyExternalSigns",
+      Label="External signs", 
+      Definition="The external signs observed in the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyBodyCondition",
+      Label="Body condition", 
+      Definition="The body condition observed in the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyEyes",
+      Label="Eyes", 
+      Definition="Findings in the eyes of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyEars",
+      Label="Ears", 
+      Definition="Findings in the ears of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyNostrils",
+      Label="Nostrils", 
+      Definition="Findings in the nostrils of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyMouth",
+      Label="Mouth", 
+      Definition="Findings in the mouth of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsySkin/Hair/Coat/Nails",
+      Label="Skin, hair, coat, nails", 
+      Definition="Findings in the skin, hair, coat, or nails of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyWoundsScars",
+      Label="Wounds or scars", 
+      Definition="Wounds and scars in the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyExternalParasites",
+      Label="External parasites", 
+      Definition="External parasites on the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyInternalParasites",
+      Label="Internal parasites", 
+      Definition="Internal parasites in the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyAnus/Perineum/Cloaca",
+      Label="Anus, perineum, or cloaca", 
+      Definition="Findings in the anus, perineum, or cloaca of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    
+    
+    
+    
+    data.frame(
+      Variable="NecropsySubcutaneousFat",
+      Label="Subcutaneous fat", 
+      Definition="The amount of subcutaneous fat of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyMuscleMass",
+      Label="Muscles mass", 
+      Definition="The characteristics of the muscle mass of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyMusculoskeletalSyst",
+      Label="Musculoeskeletal system", 
+      Definition="Findings in the muskuloeskeletal system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyBodyCavities",
+      Label="Body cavities", 
+      Definition="Findings in the body cavities of the carcass (e.g., 'abdominal', 'thoracic')",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyCardiovascularSyst",
+      Label="Cardiovascular system", 
+      Definition="Findings in the cardiovascular system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyRespiratorySyst",
+      Label="Respiratory system", 
+      Definition="Findings in the respiratory system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyGastrointestinalSyst",
+      Label="Gastrointestinal system", 
+      Definition="Findings in the gastrointestinal system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyUrinarySyst",
+      Label="Urinary system", 
+      Definition="Findings in the urinary system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyReproductiveSyst",
+      Label="Reproductive system", 
+      Definition="Findings in the reproductive system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyLymphaticSyst",
+      Label="Lymphatic system", 
+      Definition="Findings in the lymphatic system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyEndocrineSyst",
+      Label="Endocrine system", 
+      Definition="Findings in the endocrine system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyNervousSyst",
+      Label="Nervous system", 
+      Definition="Findings in the nervous system of the carcass",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyComments",
+      Label="Comments", 
+      Definition="Comments regarding the necropsy",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyConclusion",
+      Label="Conclusion", 
+      Definition="The conclusion of the necropsy",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyNeedsPathologistReview",
+      Label="Needs pathologist review", 
+      Definition="Answer to the quesstion: 'Does the necropsy needs a pathologist review?'",
+      Type="Boolean",
+      Mandatory="No"),
+    
 
 map(data_dictionary, \(x) do.call(rbind,x))
     
