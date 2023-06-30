@@ -779,7 +779,7 @@ data_dictionary[["WildlifeHealth_Source"]]<-
       Variable="WildlifeHealth_SurveillanceObjective",
       Label="Surveillance objective", 
       Definition="The surveillance objectives that the source is part of",
-      Type="String",
+      Type="Multiple selection",
       Mandatory="No") 
   )
     
@@ -1129,7 +1129,7 @@ data_dictionary[["Source_Record"]]<-
       Variable="WildlifeHealth_SurveillanceObjective",
       Label="Surveillance objective", 
       Definition="The surveillance objectives that the source record is part of",
-      Type="String",
+      Type="Multiple selection",
       Mandatory="Yes"))
 
 
@@ -1674,7 +1674,14 @@ data_dictionary[["Source_Record_Specimen"]]<-
       Label="Comments", 
       Definition="Any comments regarding the specimen",
       Type="String",
-      Mandatory="No"))
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SurveillanceObjective",
+      Label="Surveillance objective", 
+      Definition="The surveillance objectives that the source record is part of",
+      Type="Mutiple selection",
+      Mandatory="Yes"))
 
 #Specimen diagnostic
 
@@ -1800,8 +1807,111 @@ data_dictionary[["Source_Record_Specimen_Diagnostic"]]<-
       Definition="Any supporting information regarding the diagnostic",
       Type="String",
       Mandatory="No"),
-  )
+    
+    data.frame(
+      Variable="WildlifeHealth_SurveillanceObjective",
+      Label="Surveillance objective", 
+      Definition="The surveillance objectives that the diagnostic is part of",
+      Type="Mutiple selection",
+      Mandatory="Yes"))
 
+#Laboratory
+
+data_dictionary[["Laboratory"]]<-
+  
+  list(   
+
+    data.frame(
+      Variable="LabName",
+      Label="Laboratory name",
+      Definition="The name of the laboratory",
+      Type="String",
+      Mandatory="Yes"),
+  
+    data.frame(
+      Variable="WildlifeHealth_LabCountryID",
+      Label="Laboratory country",
+      Definition="The country of the laboratory",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LabAddress",
+      Label="Laboratory address",
+      Definition="The address of the laboratory",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="LabManager",
+      Label="Laboratory manager",
+      Definition="The manager of the laboratory",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="LabManagerEmail",
+      Label="Laboratory manager email",
+      Definition="The email address of the manager of the laboratory",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="LabPointContactName",
+      Label="Laboratory contact",
+      Definition="The name of the best contact point for the laboratory",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LabPointContactEmail",
+      Label="Laboratory contact email",
+      Definition="The email address of the best contact point for the laboratory",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LabPointContactAffiliation",
+      Label="Laboratory contact affiliation",
+      Definition="The affiliation of the best contact point for the laboratory",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_LabDiagnosticMethodAvailable",
+      Label="Diagnostics available",
+      Definition="The diagnostic methods available in the laboratory",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_LabMaxBiosafetyLevel",
+      Label="Maximum biosafety level",
+      Definition="The maximum biosafety level avalable in the laboratory",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_LabCertification",
+      Label="Certifications",
+      Definition="The certifications accomplished by the laboratory",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LabStorageCapacity",
+      Label="Storage capacity",
+      Definition="The capacity of the laboratory to store specimens",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LabDataManagementSystem",
+      Label="Information system",
+      Definition="The information system used in the laboratory to track diagnositci information",
+      Type="String",
+      Mandatory="Yes"))
+    
         
-map(data_dictionary, \(x) do.call(rbind,x))
+map(data_dictionary, \(x) do.call(rbind,x)) %>% list_rbind()
     
