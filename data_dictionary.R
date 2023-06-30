@@ -446,6 +446,8 @@ data_dictionary[["Field_Activity"]]<-
       Type="Date",
       Mandatory="Yes"))
    
+# Field Activity Location
+
 data_dictionary[["Field_Activity_Location"]]<-
   
   list(
@@ -465,7 +467,7 @@ data_dictionary[["Field_Activity_Location"]]<-
       Mandatory="Yes"))
 
 
-#Wildlife Health Incident
+#Incident
 
 data_dictionary[["WildlifeHealth_Incident"]]<-
     
@@ -725,7 +727,7 @@ data_dictionary[["WildlifeHealth_Incident"]]<-
 
 )
 
-#Wildlife Health Source
+#Source
 
 data_dictionary[["WildlifeHealth_Source"]]<-
   
@@ -762,19 +764,26 @@ data_dictionary[["WildlifeHealth_Source"]]<-
     data.frame(
       Variable="SourceSpecies",
       Label="Source Species", 
-      Definition="The source species. Only one for each observation, animal, and environmental sources, but several can apply for invertebrate sources",
+      Definition="The source species. Only one for each observation, animal, and environmental sources, but several can apply to invertebrate sources",
       Type="Single selection for Observation, Animal, and Environmental Sources. Multiple selection for Invertebrate sources.",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="Source Comments",
+      Variable="SourceComments",
       Label="Comments", 
       Definition="Any comments regarding the source",
       Type="String",
-      Mandatory="No")
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SurveillanceObjective",
+      Label="Surveillance objective", 
+      Definition="The surveillance objectives that the source is part of",
+      Type="String",
+      Mandatory="No") 
   )
     
-#Wildlife Health Source
+#Observation Source
 
 data_dictionary[["WildlifeHealth_ObservationSource"]]<-
   
@@ -990,6 +999,137 @@ data_dictionary[["Invertebrate_Source"]]<-
       Label="Trap type",
       Definition="The trap type used to get the invertebrates",
       Type="Single selection",
+      Mandatory="Yes"))
+
+#  Source Record
+
+data_dictionary[["Source_Record"]]<-
+  
+  list(
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordID",
+      Label="Source record identifier",
+      Definition="System-provided source record identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordNumber",
+      Label="Source record number",
+      Definition="The ith recording of the same source (the first time the source is recorded = 1, second time the source is recorded = 2, and so on).
+                  For observations it is always 1.",
+      Type="Integer",
+      Mandatory="Yes, but for observation it is automatically assigned to be 1"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimensCollected",
+      Label="Specimens collected",
+      Definition="Answer to the question: 'Were specimens collected from this source at time t?'",
+      Type="Boolean",
+      Mandatory="Yes, but it does not apply to observation source records"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordInvertebrateSpecies",
+      Label="Invertebrate species",
+      Definition="The invertebrate species in an invertebrate source record at time t",
+      Type="Single selection. It does not apply for observation, animal, or environmental source records",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordInvertebrateNumberOfIndividuals",
+      Label="Number of invertebrates",
+      Definition="The number of invertebrate individuals in an invertebrate source record at time t",
+      Type="Integer. It does not apply for observation, animal, or environmental source records",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordCaptivityCategoryID",
+      Label="Captivity category",
+      Definition="Captivity categories of the animals belonging to an observation source (observation source record 1) or the captivity category of an animal source at time t",
+      Type="Multiple selection for observation sources (observation sources record 1) and single selection for animal source records. It does not apply to environmental or invertebrate source records",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordAnomaly",
+      Label="Anomalies",
+      Definition="The anomalies detected in the animals belonging to an observation source (observation source record 1) or the anomalies detected in an animal source at time t",
+      Type="Multiple selection for observation sources (observation source record 1) and single selection for animal source records. It does not apply to environmental or invertebrate source records",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="OtherAnomalies",
+      Label="Other Anomalies",
+      Definition="Other anomalies not listed in the previous field in animals belonging to an observation source (observation source record 1) or the anomalies detected in an animal source at time t",
+      Type="Multiple selection for observations sources (observation source record 1) and animal source records. It does not apply to environmental or invertebrate source records",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordPotentialCauseInjuryDisease",
+      Label="Potential causes of injury of disease",
+      Definition="The potential causes of injury or disease in animals belonging to an observation source (observation source record 1) or the potential causes of injury or disease in an animal source at time t",
+      Type="Multiple selection for observations sources (observation source record 1) and animal source records. It does not apply to environmental or invertebrate source records",
+      Mandatory="Yes if there are sick or injured observed animals or the animal source is dead at time t"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordPotentialCauseDeath",
+      Label="Potential causes of death",
+      Definition="The potential causes of death in animals belonging to an observation source (observation source record 1) or the potential causes of death in an animal source at time t",
+      Type="Multiple selection for observations sources (observation source record 1) and animal source records. It does not apply to environmental or invertebrate source records",
+      Mandatory="Yes if there are dead observed animals or the animal source is dead at time t"),
+    
+    data.frame(
+      Variable="Grouping1",
+      Label="Group tag 1",
+      Definition="A tag grouping source records in a unit below the incident at time t (e.g., a cage, a pen, a vendor, etc).
+                  It can group records from observation, animal, environmental, or invertebrate sources",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="Grouping2",
+      Label="Group tag 2",
+      Definition="A tag grouping source records in a second level unit below the incident at time t (e.g., a cage, a pen, a vendor, etc).
+                  It can group records from observation, animal, environmental, or invertebrate sources",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="Grouping3",
+      Label="Group tag 3",
+      Definition="A tag grouping source records in a third level unit below the incident at time t (e.g., a cage, a pen, a vendor, etc).
+                  It can group records from observation, animal, environmental, or invertebrate sources",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="Grouping4",
+      Label="Group tag 4",
+      Definition="A tag grouping source records in a fourth level unit below the incident at time t (e.g., a cage, a pen, a vendor, etc).
+                  It can group records from observation, animal, environmental, or invertebrate sources",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="Grouping5",
+      Label="Group tag 5",
+      Definition="A tag grouping source records in a fifth level unit below the incident at time t (e.g., a cage, a pen, a vendor, etc).
+                  It can group records from observation, animal, environmental, or invertebrate sources",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordComments",
+      Label="Comments", 
+      Definition="Any comments regarding the source record",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SurveillanceObjective",
+      Label="Surveillance objective", 
+      Definition="The surveillance objectives that the source record is part of",
+      Type="String",
       Mandatory="Yes"))
 
     
