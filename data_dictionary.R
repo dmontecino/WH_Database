@@ -1913,5 +1913,16 @@ data_dictionary[["Laboratory"]]<-
       Mandatory="Yes"))
     
         
-map(data_dictionary, \(x) do.call(rbind,x)) %>% list_rbind()
+# map(data_dictionary, \(x) do.call(rbind,x)) %>% list_rbind()
     
+data_dictionary<-map(data_dictionary, \(x) do.call(rbind,x)) 
+
+for(i in seq_along(data_dictionary)){
+  data_dictionary[[i]]$Component<-names(data_dictionary[i])}
+
+data_dictionary<-data_dictionary %>% 
+  list_rbind() %>% 
+  select(Component, Variable, Label, Definition, Type, Mandatory)
+
+
+write_csv(data_dictionary, file = "data_dictionary_June_30_2023.csv")
