@@ -1675,6 +1675,133 @@ data_dictionary[["Source_Record_Specimen"]]<-
       Definition="Any comments regarding the specimen",
       Type="String",
       Mandatory="No"))
+
+#Specimen diagnostic
+
+data_dictionary[["Source_Record_Specimen_Diagnostic"]]<-
+  
+  list(    
     
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenDiagnosticID",
+      Label="Diagnostic identifier", 
+      Definition="System-provided diagnostic identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticWithinLabCode",
+      Label="Laboratory diagnostic identifier", 
+      Definition="System-provided diagnostic identifier",
+      Type="String",
+      Mandatory="Yes"),   
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardType",
+      Label="Diagnostic hazard type", 
+      Definition="The general type of health hazard targeted by the diagnostic (e.g., 'Biological', 'Chemical', 'Physical', 'Physiological')",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardName",
+      Label="Specific health hazard targeted",
+      Definition="The specific health hazard targeted by the diagnostic (e.g., 'coronaviridae', 'Brucella abortus')" ,
+      Type="Single selection",
+      Mandatory="Yes. Options available are conditional on the health hazard types selected"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardName",
+      Label="Specific health hazard targeted",
+      Definition="The specific health hazard targeted by the diagnostic (e.g., 'coronaviridae', 'Brucella abortus')" ,
+      Type="Single selection",
+      Mandatory="Yes. Options available are conditional on the health hazard types selected"),
+    
+    data.frame(
+      Variable="WildlifeHealth_LaboratoryID",
+      Label="Laboratory identifier", 
+      Definition="System-provided laboratory identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_DiagnosticMethod",
+      Label="Diagnostic method", 
+      Definition="The general method used to conduct the diagnostic (e.g., 'histopathology', 'molecular diagnostics', etc)",
+      Type="Single selection",
+      Mandatory="Yes"),
+
+    data.frame(
+      Variable="WildlifeHealth_DiagnosticType",
+      Label="Diagnostic type",
+      Definition="The general method used to conduct the diagnostic (e.g., 'immunofluorescence', 'PCR', etc)",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticDateSentForTesting",
+      Label="Date sent for testing",
+      Definition="The date the diagnostic was requested",
+      Type="Date",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticResultsReceived",
+      Label="Results received",
+      Definition="Answer to the question: 'Have the diagnostic results been received?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticDateResultsReceived",
+      Label="Date results received",
+      Definition="The date the diagnostic results were received",
+      Type="Date",
+      Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenDiagnosticResult",
+      Label="Diagnostic result",
+      Definition="The result of the diagnostic",
+      Type="Single selection",
+      Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticResultModified",
+      Label="Diagnostic result modified",
+      Definition="Answer to the question:'Have the results been modified?'",
+      Type="Boolean",
+      Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticDateResultModified",
+      Label="Date diagnostic result modified",
+      Definition="The date when the diagnostic results was modified",
+      Type="Date",
+      Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticReasonResultModified",
+      Label="Reason diagnostic result modified",
+      Definition="The reason explaining the diagnostic result modification",
+      Type="String",
+      Mandatory="Yes, but this field becomes available only when 'Diagnostic result modified' is True"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticComments",
+      Label="Diagnostic comments",
+      Definition="Any comments regarding the diagnostic",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenDiagnosticSupportingInformation",
+      Label="Supporting information",
+      Definition="Any supporting information regarding the diagnostic",
+      Type="String",
+      Mandatory="No"),
+  )
+
+        
 map(data_dictionary, \(x) do.call(rbind,x))
     
