@@ -1,27 +1,13 @@
 # PROJECT
 
 It is a surveillance initiative funded by specific entities, during specific 
-times in specific locations (e.g., the PREDICT Project or a minimum of a 
+time in specific locations (e.g., the PREDICT Project or a minimum of a 
 cross-sectional study with total n=2 collected during a single field visit 
-in a single location, or rangers recording observations-only during their 
-patrols).
+in a single location. Rangers recording observations-only during their patrols are part of a National Wildlife Health Surveillance and the ranger recording observations are part of a surveillance objective [see below]).
 
 
-If no new Field activities are added by the Project and the Surveillance Task(s)
-associated with the Project do not add new Observations, Animal Source Records, 
-Environmental Source Records, or Invertebrate Source Records, it means that the 
-Project is relying on Source Records or Specimens already available and entered 
-in the Wildlife Health Database. Basically, the Project is conducting necropsies
-and diagnostics with available Specimens, or creating new Pooled Specimens
-to run diagnostics
+A Project contains the Surveillance Objectives.
 
-# FIELD ACTIVITY
-
-Activity to Observations, Animal Sources, Environmental Sources, 
-Invertebrate Sources recorded; the Animal Specimens, Environmental Specimens, 
-and Invertebrate Specimens collected
-
-A Project can contain many Field Activities
 
 # SURVEILLANCE TASK
 
@@ -63,6 +49,21 @@ environmental sources, and invertebrate sources). The taxon could be as general
 as "Arthropod" or specific to a species (Genus species).
 
 All Outbreak Investigations are a Surveillance Task. An Outbreak Investigation may target several hazards.
+
+associated with the Project do not add new Observations, Animal Source Records, 
+Environmental Source Records, or Invertebrate Source Records, it means that the 
+Project is relying on Source Records or Specimens already available and entered 
+in the Wildlife Health Database. Basically, the Project is conducting necropsies
+and diagnostics with available Specimens, or creating new Pooled Specimens
+to run diagnostics
+
+# FIELD ACTIVITY
+
+Activity to Observations, Animal Sources, Environmental Sources, 
+Invertebrate Sources recorded; the Animal Specimens, Environmental Specimens, 
+and Invertebrate Specimens collected
+
+A Project can contain many Field Activities
 
 
 # SOURCES
