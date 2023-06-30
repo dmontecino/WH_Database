@@ -17,7 +17,7 @@ Project_Table,WildlifeHealth_ProjectHazardName,Specific health hazard targeted,"
 Project_Table,ProjectStartDate,Project Start Date,The date the project oficially started,Date,Yes
 Project_Table,ProjectEndDate,Project End Date,The date the project is projected to end or oficially ended,Date,Yes
 Project_Table,WildlifeHealth_ProjectUrl,Project URLs,"URLs of the project, associated with the project, or organizations leading the project",String,No
-Surveillance_Objective,WildlifeHealth_SurveillanceObjectiveID,Surveillance objective identifier,System-provided project identifier,Integer,Yes
+Surveillance_Objective,WildlifeHealth_SurveillanceObjectiveID,Surveillance objective identifier,System-provided project identifier,Integer,System-assigned
 Surveillance_Objective,SurveillanceObjectiveName,Surveillance objective name,User-provided surveillance objective name,String,Yes
 Surveillance_Objective,SurveillanceObjectiveCrossID,Surveillance Objective Cross Identifier,The identifier of the surveillance project under another nomenclature system,String,No
 Surveillance_Objective,WildlifeHealth_SurveillanceObjectiveType,Surveillance objective type,"The type of surveillance (e.g., Targeted, Scanning, Outbreak Investigation, or Research)",Single selection,Yes
@@ -49,7 +49,7 @@ Surveillance_Objective,SurveillanceObjectiveMetadataIncidentGrouping,Incidents o
 Surveillance_Objective,SurveillanceObjectiveMetadataIncidentGroupingStructure,Grouping of incidents,Explain the grouping structure of the incidents below 'location',String,"Yes, but this field becomes available only when 'Incidents of the surveillance objective are grouped' is True"
 Outbreak,OutbreakName,Outbreak name,The name provided to the outbreak,String,"Yes, if the surveillance objective type is 'Outbreak'"
 Outbreak,OutbreakDiagnosis,Outbreak Diagnosis,The diagnosis provided to the outbreak,String,No
-Field_Activity,WildlifeHealth_FieldActivityID,Field activity identifier,System-provided field activity identifier,Integer,Yes
+Field_Activity,WildlifeHealth_FieldActivityID,Field activity identifier,System-provided field activity identifier,Integer,System-assigned
 Field_Activity,FieldActivityCode,Field activity code,User-provided field activity code,String,Yes
 Field_Activity,FieldActivityCrossID,Field Activity Cross Identifier,The identifier of the field activity under another nomenclature system,String,No
 Field_Activity,WildlifeHealth_FieldActivityLeaderName,Field activity leader name,The leader of the field activity of the surveillance project,Single selection,Yes
@@ -59,7 +59,7 @@ Field_Activity,FieldActivityStartDate,Field activity start date,The date the fie
 Field_Activity,FieldActivityEndDate,Field activity end date,The date the field activity ended,Date,Yes
 Field_Activity_Location,WildlifeHealth_FieldActivityLocationID,Field activity location cross identifier,The identifier of the field activity location under another nomenclature system,String,Yes
 Field_Activity_Location,FieldActivityLocation,Field activity location name,The name of the field activity location,String,Yes
-WildlifeHealth_Incident,WildlifeHealth_IncidentID,Incident identifier,System-provided incident identifier,Integer,Yes
+WildlifeHealth_Incident,WildlifeHealth_IncidentID,Incident identifier,System-provided incident identifier,Integer,System-assigned
 WildlifeHealth_Incident,IncidentCrossID,Incident cross identifier,The identifier of an incident under another nomenclature system,String,No
 WildlifeHealth_Incident,IncidentDate,Incident date,The date of the incident,String,Yes
 WildlifeHealth_Incident,WildlifeHealth_IncidentType,Incident type,The date of the incident,String,No
@@ -95,14 +95,14 @@ WildlifeHealth_Incident,WildlifeHealth_IncidentStudyHour,The study hour,The temp
 WildlifeHealth_Incident,IncidentOtherTemporalUnit,Other spatial temporal unit code,The temporal unit code when incidents are grouped by another temporal unit,Single selection,No
 WildlifeHealth_Incident,IncidentTimeAssembled,Time assembled,The time a trap or similar representing an incident is set up,Datetime,No
 WildlifeHealth_Incident,IncidentTimeDisassembled,Time disassembled,The time a trap or similar representing an incident is dissamsembled,Datetime,No
-WildlifeHealth_Source,SourceID,Source identifier,System-provided source identifier,Integer,Yes
+WildlifeHealth_Source,SourceID,Source identifier,System-provided source identifier,Integer,System-assigned
 WildlifeHealth_Source,SourceCode,Source code,User-provided source code,String,Yes
 WildlifeHealth_Source,SourceCrossID,Source cross identifier,The identifier of the source under another nomenclature system,String,No
 WildlifeHealth_Source,SourceType,Source Type,"The source type (e.g., 'Observaiton', 'Animal', 'Environmental', 'Invertebrate'",String,Yes
 WildlifeHealth_Source,SourceSpecies,Source Species,"The source species. Only one for each observation, animal, and environmental sources, but several can apply to invertebrate sources","Single selection for Observation, Animal, and Environmental Sources. Multiple selection for Invertebrate sources.",Yes
 WildlifeHealth_Source,SourceComments,Comments,Any comments regarding the source,String,No
 WildlifeHealth_Source,WildlifeHealth_SurveillanceObjective,Surveillance objective,The surveillance objectives that the source is part of,Multiple selection,No
-WildlifeHealth_ObservationSource,WildlifeHealth_ObservationSourceID,Observation identifier,System-provided observation identifier,Integer,Yes
+WildlifeHealth_ObservationSource,WildlifeHealth_ObservationSourceID,Observation identifier,System-provided observation identifier,Integer,System-assigned
 WildlifeHealth_ObservationSource,ObservationNumberAdultMaleHealthy,Number of healthy male adults,The number of healhty male adults observed for the current species,Integer,Yes
 WildlifeHealth_ObservationSource,ObservationNumberAdultFemaleHealthy,Number of healthy female adults,The number of healhty female adults observed for the current species,Integer,Yes
 WildlifeHealth_ObservationSource,ObservationNumberAdultUnknownSexHealthy,Number of healthy adults of unknown sex,The number of healhty adults of unknown sex observed for the current species,Integer,Yes
@@ -121,15 +121,15 @@ WildlifeHealth_ObservationSource,ObservationNumberFetusDead,Number of dead fetus
 WildlifeHealth_ObservationSource,ObservationNumberUnknownAgeSexHealthy,Number of healthy individuals of unknown age and sex,The number of healthy individuals of unknown age and sex observed for the current species,Integer,Yes
 WildlifeHealth_ObservationSource,ObservationNumberUnknownAgeSexSickInjured,Number of sick or injured individuals of unknown age and sex,The number of sick or injured individuals of unknown age and sex observed for the current species,Integer,Yes
 WildlifeHealth_ObservationSource,ObservationNumberUnknownAgeSexDead,Number of dead individuals of unknown age and sex,The number of dead individuals of unknown age and sex observed for the current species,Integer,Yes
-Animal_Source,WildlifeHealth_AnimalSourceID,Animal source identifier,System-provided animal source identifier,Integer,Yes
+Animal_Source,WildlifeHealth_AnimalSourceID,Animal source identifier,System-provided animal source identifier,Integer,System-assigned
 Animal_Source,WildlifeHealth_AnimalSourceSex,Animal source sex,Sex of the animal source,Single selection,Yes
 Animal_Source,AnimalSourceDateOfDeath,Animal source death date,Date the animal source died or was found dead,Date,No
 Animal_Source,AnimalSourceAnyPreviousMarkingCode,Previous marking code,Answer to the question: 'Did the animal source have any previous marking?',Boolean,Yes
 Animal_Source,AnimalSourcePreviousMarkingCode,Animal source previous marking code,The previous marking code of the animal source,String,Yes if 'Previous marking code' is TRUE
-Environmental_Source,WildlifeHealth_EnvironmentalSourceID,Environmental source identifier,System-provided environmental source identifier,Integer,Yes
-Invertebrate_Source,WildlifeHealth_InvertebrateSourceID,Invertebrate source identifier,System-provided invertebrate source identifier,Integer,Yes
+Environmental_Source,WildlifeHealth_EnvironmentalSourceID,Environmental source identifier,System-provided environmental source identifier,Integer,System-assigned
+Invertebrate_Source,WildlifeHealth_InvertebrateSourceID,Invertebrate source identifier,System-provided invertebrate source identifier,Integer,System-assigned
 Invertebrate_Source,WildlifeHealth_InvertebrateSourceTrapType,Trap type,The trap type used to get the invertebrates,Single selection,Yes
-Source_Record,WildlifeHealth_SourceRecordID,Source record identifier,System-provided source record identifier,Integer,Yes
+Source_Record,WildlifeHealth_SourceRecordID,Source record identifier,System-provided source record identifier,Integer,System-assigned
 Source_Record,SourceRecordNumber,Source record number,"The ith recording of the same source (the first time the source is recorded = 1, second time the source is recorded = 2, and so on).
                   For observations it is always 1.",Integer,"Yes, but for observation it is automatically assigned to be 1"
 Source_Record,SourceRecordSpecimensCollected,Specimens collected,Answer to the question: 'Were specimens collected from this source at time t?',Boolean,"Yes, but it does not apply to observation source records"
@@ -152,7 +152,7 @@ Source_Record,Grouping5,Group tag 5,"A tag grouping source records in a fifth le
                   It can group records from observation, animal, environmental, or invertebrate sources",String,No
 Source_Record,SourceRecordComments,Comments,Any comments regarding the source record,String,No
 Source_Record,WildlifeHealth_SurveillanceObjective,Surveillance objective,The surveillance objectives that the source record is part of,Multiple selection,Yes
-Animal_Source_Record,WildlifeHealth_AnimalSourceRecordID,Animal source record identifier,System-provided animal source record identifier,Integer,Yes
+Animal_Source_Record,WildlifeHealth_AnimalSourceRecordID,Animal source record identifier,System-provided animal source record identifier,Integer,System-assigned
 Animal_Source_Record,WildlifeHealth_AnimalSourceRecordAgeCategory,Age category,The age category of the animal source record,Single selection,Yes
 Animal_Source_Record,WildlifeHealth_AnimalSourceRecordInitialHealthStatus,Initial health status,The initial health status of the animal source record,Single selection,Yes
 Animal_Source_Record,WildlifeHealth_AnimalSourceRecordHealthConditionReleased,Health status at release,The health status of the animal source record at release,Single selection. This field is automatically assigned 'Dead' if the initial health status is 'Dead',Yes
@@ -162,7 +162,7 @@ Animal_Source_Record,WildlifeHealth_AnimalSourceRecordFieldStorageCarcass,Field 
 Animal_Source_Record,AnimalSourceRecordMarkingCode,Record marking code,The marking of the animal source at time t,String,No
 Animal_Source_Record,AnimalSourceRecordMarkingCodeChange,Marking code change,"Answer to the question: 'Has the marking code, if any, being changed at time t?'",Boolean,No
 Animal_Source_Record,AnimalSourceRecordMarkingCodeChangingReason,Marking code change reason,Explanation of the reason why the marking code has been changed,String,No
-Animal_Necropsy,WildlifeHealth_NecropsyID,Necropsy identifier,System-provided necropsy identifier,Integer,Yes
+Animal_Necropsy,WildlifeHealth_NecropsyID,Necropsy identifier,System-provided necropsy identifier,Integer,System-assigned
 Animal_Necropsy,NecropsyCrossID,Necropsy cross identifier,The identifier of the necropsy under another nomenclature system,String,No
 Animal_Necropsy,NecropsyDate,Necropsy date,The date the necropsy was conducted,String,Yes
 Animal_Necropsy,WildlifeHealth_PrimarySecondaryNecropsy,Primary or secondary,Answer to the question: 'Is this a primary or secondary necropsy?',Boolean,Yes
@@ -197,11 +197,11 @@ Animal_Necropsy,NecropsyNervousSyst,Nervous system,Findings in the nervous syste
 Animal_Necropsy,NecropsyComments,Comments,Any comments regarding the necropsy,String,No
 Animal_Necropsy,NecropsyConclusion,Conclusion,The conclusion of the necropsy,String,No
 Animal_Necropsy,NecropsyNeedsPathologistReview,Needs pathologist review,Answer to the quesstion: 'Does the necropsy needs a pathologist review?',Boolean,Yes
-Environmental_Source_Record,WildlifeHealth_EnvironmentalSourceRecordID,Environmental source record identifier,System-provided environmental source record identifier,Integer,Yes
-Invertebrate_Source_Record,WildlifeHealth_InvertebrateSourceRecordID,Invertebrate source record identifier,System-provided invertebrate source record identifier,Integer,Yes
+Environmental_Source_Record,WildlifeHealth_EnvironmentalSourceRecordID,Environmental source record identifier,System-provided environmental source record identifier,Integer,System-assigned
+Invertebrate_Source_Record,WildlifeHealth_InvertebrateSourceRecordID,Invertebrate source record identifier,System-provided invertebrate source record identifier,Integer,System-assigned
 Invertebrate_Source_Record,WildlifeHealth_InvertebrateSourceRecordSpecies,Invertebrate source record species,The invertebrate species in the invertebrate source record,Single selection,Yes
 Invertebrate_Source_Record,InvertebrateSourceRecordSpeciesNumberOfIndividuals,Number of individuals,The number of invertebrates of the corresponding species in the source record,Single selection,Yes
-Source_Record_Specimen,WildlifeHealth_SourceRecordSpecimenID,Specimen identifier,System-provided specimen identifier,Integer,Yes
+Source_Record_Specimen,WildlifeHealth_SourceRecordSpecimenID,Specimen identifier,System-provided specimen identifier,Integer,System-assigned
 Source_Record_Specimen,SourceRecordSpecimenCode,Specimen code,User-provided specimen code,String,Yes
 Source_Record_Specimen,SourceRecordSpecimenCrossID,Specimen cross identifier,The identifier of the specimen under another nomenclature system,String,No
 Source_Record_Specimen,WildlifeHealth_SourceRecordSpecimenType,Specimen type,The type of the specimen. It can be a full carcass,Single selection,Yes
@@ -226,12 +226,12 @@ Source_Record_Specimen,SourceRecordSpecimenAvailable,Specimen available,Answer t
 Source_Record_Specimen,SourceRecordSpecimenOwner,Specimen owner,The organization or individual that owns the specimen,String,Yes
 Source_Record_Specimen,SourceRecordSpecimenComments,Comments,Any comments regarding the specimen,String,No
 Source_Record_Specimen,WildlifeHealth_SurveillanceObjective,Surveillance objective,The surveillance objectives that the source record is part of,Mutiple selection,Yes
-Source_Record_Specimen_Diagnostic,WildlifeHealth_SourceRecordSpecimenDiagnosticID,Diagnostic identifier,System-provided diagnostic identifier,Integer,Yes
+Source_Record_Specimen_Diagnostic,WildlifeHealth_SourceRecordSpecimenDiagnosticID,Diagnostic identifier,System-provided diagnostic identifier,Integer,System-assigned
 Source_Record_Specimen_Diagnostic,SourceRecordSpecimenDiagnosticWithinLabCode,Laboratory diagnostic identifier,System-provided diagnostic identifier,String,Yes
 Source_Record_Specimen_Diagnostic,WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardType,Diagnostic hazard type,"The general type of health hazard targeted by the diagnostic (e.g., 'Biological', 'Chemical', 'Physical', 'Physiological')",Single selection,Yes
 Source_Record_Specimen_Diagnostic,WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardName,Specific health hazard targeted,"The specific health hazard targeted by the diagnostic (e.g., 'coronaviridae', 'Brucella abortus')",Single selection,Yes. Options available are conditional on the health hazard types selected
 Source_Record_Specimen_Diagnostic,WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardName,Specific health hazard targeted,"The specific health hazard targeted by the diagnostic (e.g., 'coronaviridae', 'Brucella abortus')",Single selection,Yes. Options available are conditional on the health hazard types selected
-Source_Record_Specimen_Diagnostic,WildlifeHealth_LaboratoryID,Laboratory identifier,System-provided laboratory identifier,Integer,Yes
+Source_Record_Specimen_Diagnostic,WildlifeHealth_LaboratoryID,Laboratory identifier,System-provided laboratory identifier,Integer,System-assigned
 Source_Record_Specimen_Diagnostic,WildlifeHealth_DiagnosticMethod,Diagnostic method,"The general method used to conduct the diagnostic (e.g., 'histopathology', 'molecular diagnostics', etc)",Single selection,Yes
 Source_Record_Specimen_Diagnostic,WildlifeHealth_DiagnosticType,Diagnostic type,"The general method used to conduct the diagnostic (e.g., 'immunofluorescence', 'PCR', etc)",Single selection,Yes
 Source_Record_Specimen_Diagnostic,SourceRecordSpecimenDiagnosticDateSentForTesting,Date sent for testing,The date the diagnostic was requested,Date,Yes
