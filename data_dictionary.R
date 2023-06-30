@@ -1135,7 +1135,7 @@ data_dictionary[["Source_Record"]]<-
 
 #  Animal Source Record
 
-data_dictionary[["Source_Record"]]<-
+data_dictionary[["Animal_Source_Record"]]<-
   
   list(
     
@@ -1356,10 +1356,6 @@ data_dictionary[["Animal_Necropsy"]]<-
       Type="String",
       Mandatory="No"),
     
-    
-    
-    
-    
     data.frame(
       Variable="NecropsySubcutaneousFat",
       Label="Subcutaneous fat", 
@@ -1463,8 +1459,24 @@ data_dictionary[["Animal_Necropsy"]]<-
       Label="Needs pathologist review", 
       Definition="Answer to the quesstion: 'Does the necropsy needs a pathologist review?'",
       Type="Boolean",
-      Mandatory="No"),
+      Mandatory="Yes"))
+
+
+#Environmental source record
+
+data_dictionary[["Environmental_Source_Record"]]<-
+  
+  list(
     
+    data.frame(
+      Variable="WildlifeHealth_EnvironmentalSourceRecordID",
+      Label="Environmental source record identifier", 
+      Definition="System-provided environmental source record identifier",
+      Type="Integer",
+      Mandatory="Yes"))
+    
+
+
 
 map(data_dictionary, \(x) do.call(rbind,x))
     
