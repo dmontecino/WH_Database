@@ -3,10 +3,11 @@
 # Create Dictionary #
 # ------------------#
 
+library("kableExtra")
+library(tidyverse)
 
-
-#tables in the .xml of the db diagram
-fields_by_table<-split(full_table, full_table$Table_Name)
+# #tables in the .xml of the db diagram
+# fields_by_table<-split(full_table, full_table$Table_Name)
 
 
 # Example entries
@@ -158,7 +159,7 @@ data_dictionary[["Surveillance_Objective"]]<-
       Label="Surveillance objective identifier",
       Definition="System-provided project identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="SurveillanceObjectiveName",
@@ -395,7 +396,7 @@ data_dictionary[["Field_Activity"]]<-
       Label="Field activity identifier",
       Definition="System-provided field activity identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="FieldActivityCode",
@@ -478,7 +479,7 @@ data_dictionary[["WildlifeHealth_Incident"]]<-
       Label="Incident identifier",
       Definition="System-provided incident identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="IncidentCrossID",
@@ -738,7 +739,7 @@ data_dictionary[["WildlifeHealth_Source"]]<-
       Label="Source identifier",
       Definition="System-provided source identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="SourceCode",
@@ -794,7 +795,7 @@ data_dictionary[["WildlifeHealth_ObservationSource"]]<-
       Label="Observation identifier",
       Definition="System-provided observation identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="ObservationNumberAdultMaleHealthy",
@@ -937,7 +938,7 @@ data_dictionary[["Animal_Source"]]<-
       Label="Animal source identifier",
       Definition="System-provided animal source identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="WildlifeHealth_AnimalSourceSex",
@@ -979,8 +980,8 @@ data_dictionary[["Environmental_Source"]]<-
       Label="Environmental source identifier",
       Definition="System-provided environmental source identifier",
       Type="Integer",
-      Mandatory="Yes"))
-
+      Mandatory="System-assigned")) 
+    
 # Invertebrate Source
 
 data_dictionary[["Invertebrate_Source"]]<-
@@ -992,7 +993,7 @@ data_dictionary[["Invertebrate_Source"]]<-
       Label="Invertebrate source identifier",
       Definition="System-provided invertebrate source identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="WildlifeHealth_InvertebrateSourceTrapType",
@@ -1012,7 +1013,7 @@ data_dictionary[["Source_Record"]]<-
       Label="Source record identifier",
       Definition="System-provided source record identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="SourceRecordNumber",
@@ -1144,7 +1145,7 @@ data_dictionary[["Animal_Source_Record"]]<-
       Label="Animal source record identifier",
       Definition="System-provided animal source record identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="WildlifeHealth_AnimalSourceRecordAgeCategory",
@@ -1221,7 +1222,7 @@ data_dictionary[["Animal_Necropsy"]]<-
       Label="Necropsy identifier",
       Definition="System-provided necropsy identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="NecropsyCrossID",
@@ -1473,8 +1474,8 @@ data_dictionary[["Environmental_Source_Record"]]<-
       Label="Environmental source record identifier", 
       Definition="System-provided environmental source record identifier",
       Type="Integer",
-      Mandatory="Yes"))
-
+      Mandatory="System-assigned"))
+    
 #Invertebrate source record
 
 data_dictionary[["Invertebrate_Source_Record"]]<-
@@ -1486,7 +1487,7 @@ data_dictionary[["Invertebrate_Source_Record"]]<-
       Label="Invertebrate source record identifier", 
       Definition="System-provided invertebrate source record identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="WildlifeHealth_InvertebrateSourceRecordSpecies",
@@ -1513,7 +1514,7 @@ data_dictionary[["Source_Record_Specimen"]]<-
       Label="Specimen identifier", 
       Definition="System-provided specimen identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="SourceRecordSpecimenCode",
@@ -1694,7 +1695,7 @@ data_dictionary[["Source_Record_Specimen_Diagnostic"]]<-
       Label="Diagnostic identifier", 
       Definition="System-provided diagnostic identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="SourceRecordSpecimenDiagnosticWithinLabCode",
@@ -1729,7 +1730,7 @@ data_dictionary[["Source_Record_Specimen_Diagnostic"]]<-
       Label="Laboratory identifier", 
       Definition="System-provided laboratory identifier",
       Type="Integer",
-      Mandatory="Yes"),
+      Mandatory="System-assigned"), 
     
     data.frame(
       Variable="WildlifeHealth_DiagnosticMethod",
@@ -1924,5 +1925,6 @@ data_dictionary<-data_dictionary %>%
   list_rbind() %>% 
   select(Component, Variable, Label, Definition, Type, Mandatory)
 
+kbl(data_dictionary)
 
 write_csv(data_dictionary, file = "data_dictionary_June_30_2023.csv")
