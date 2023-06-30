@@ -1275,7 +1275,7 @@ data_dictionary[["Animal_Necropsy"]]<-
     data.frame(
       Variable="WildlifeHealth_NecropsyCarcassStorage",
       Label="Carcass storage", 
-      Definition="The storage method of the carcass in the laboratory",
+      Definition="The method to store the carcass in the laboratory",
       Type="Single selection but it does not apply to 'Field necropsy'",
       Mandatory="Yes"),
     
@@ -1443,7 +1443,7 @@ data_dictionary[["Animal_Necropsy"]]<-
     data.frame(
       Variable="NecropsyComments",
       Label="Comments", 
-      Definition="Comments regarding the necropsy",
+      Definition="Any comments regarding the necropsy",
       Type="String",
       Mandatory="No"),
     
@@ -1502,6 +1502,179 @@ data_dictionary[["Invertebrate_Source_Record"]]<-
       Type="Single selection",
       Mandatory="Yes"))
 
+#Source record specimen
 
+data_dictionary[["Source_Record_Specimen"]]<-
+  
+  list(    
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenID",
+      Label="Specimen identifier", 
+      Definition="System-provided specimen identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenCode",
+      Label="Specimen code", 
+      Definition="User-provided specimen code",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenCrossID",
+      Label="Specimen cross identifier", 
+      Definition="The identifier of the specimen under another nomenclature system",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenType",
+      Label="Specimen type", 
+      Definition="The type of the specimen. It can be a full carcass",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenMedium",
+      Label="Medium", 
+      Definition="The medium in which the specimen is contained on",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenOriginalQuantity",
+      Label="Original quantity", 
+      Definition="The original quantity of specimen",
+      Type="Float",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenOriginalQuantityUnit",
+      Label="Quantity unit", 
+      Definition="The unit of the original quantity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenQuantityStored",
+      Label="Quantity stored", 
+      Definition="The amount of specimen currently stored",
+      Type="Float",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SourceRecordSpecimenReasonQuantityDifference",
+      Label="Reason for quantity difference", 
+      Definition="The explanantion for the difference between the original specimen amount and the stored specimen amount",
+      Type="String",
+      Mandatory="Yes, if 'Quantity stored' and 'Quantity difference' are different"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenFieldStorage",
+      Label="Field storage", 
+      Definition="The method to store the specimen in the field while in transit to a proper facility",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenLabStorage",
+      Label="Laboratory storage", 
+      Definition="The method to store the specimen in the laboratory",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenInContainer",
+      Label="Specimen container", 
+      Definition="Answer to the question: 'Is the specimen stored in a container mixed with other specimens?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenContainerCode",
+      Label="Container label", 
+      Definition="The container with the current specimen and other specimens",
+      Type="String",
+      Mandatory="Yes, but this field becomes available to complete when the previous field is TRUE"),
+
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenLocation",
+      Label="Location", 
+      Definition="The institution where the specimen is currently stored",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenBuilding",
+      Label="Building", 
+      Definition="The specific building within the institution where the specimen is located",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenRoom",
+      Label="Room", 
+      Definition="The specific room within the building where the specimen is located",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenStorage",
+      Label="Storage", 
+      Definition="The specific unit within the room (e.g., refrigerator) where the specimen is located",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenShelf",
+      Label="Shelf", 
+      Definition="The specific shelf within the unit (e.g., refrigerator) where the specimen is located",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenRack",
+      Label="Rack", 
+      Definition="The specific rack within the shelf where the specimen is located",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenBox",
+      Label="Box", 
+      Definition="The specific box of the rack where the specimen is located",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenRow",
+      Label="Row", 
+      Definition="The specific row of the box where the specimen is located",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenAvailable",
+      Label="Specimen available", 
+      Definition="Answer to the question:'Is the specimen available for testing or shipping?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenOwner",
+      Label="Specimen owner", 
+      Definition="The organization or individual that owns the specimen",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenComments",
+      Label="Comments", 
+      Definition="Any comments regarding the specimen",
+      Type="String",
+      Mandatory="No"))
+    
 map(data_dictionary, \(x) do.call(rbind,x))
     
