@@ -1474,8 +1474,33 @@ data_dictionary[["Environmental_Source_Record"]]<-
       Definition="System-provided environmental source record identifier",
       Type="Integer",
       Mandatory="Yes"))
-    
 
+#Invertebrate source record
+
+data_dictionary[["Invertebrate_Source_Record"]]<-
+  
+  list(    
+
+    data.frame(
+      Variable="WildlifeHealth_InvertebrateSourceRecordID",
+      Label="Invertebrate source record identifier", 
+      Definition="System-provided invertebrate source record identifier",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_InvertebrateSourceRecordSpecies",
+      Label="Invertebrate source record species", 
+      Definition="The invertebrate species in the invertebrate source record",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="InvertebrateSourceRecordSpeciesNumberOfIndividuals",
+      Label="Number of individuals", 
+      Definition="The number of invertebrates of the corresponding species in the source record",
+      Type="Single selection",
+      Mandatory="Yes"))
 
 
 map(data_dictionary, \(x) do.call(rbind,x))
