@@ -1,69 +1,137 @@
-# PROJECT
+# THE WILDHEALTHDAT DATABASE
 
-It is a surveillance initiative funded by specific entities, during specific 
-time in specific locations (e.g., the PREDICT Project or a minimum of a 
-cross-sectional study with total n=2 collected during a single field visit 
-in a single location. Rangers recording observations-only during their patrols are part of a National Wildlife Health Surveillance and the ranger recording observations are part of a surveillance objective [see below]).
+WildlifeHealthDat is a flexible database built to track wildlife health data 
+collected from a wide range of surveillance efforts, including citizen observations
+of dead or sick animals, specific studies, national or local wildlife health 
+surveillance initiatives, outbreak investigations, and global wildlife health 
+surveillance projects involving several countries, hazards and host species. 
+
+The database has been built using the decades-long accumulated experience of 
+the Wildlife Conservation Society - Health Program. This experience includes
+wildlife health surveillance activities covering dozens of countries; cross-
+sectional and longitudinal studies; the establishment of wildlife health surveillance
+networks; many biological, chemical, and physical hazards; studying dangerous 
+zoonotic pathogens, such as Ebola virus disease  and SARS-CoV-2; emerging 
+vector-borne pathogens such as West Nile virus; the inclusion of rangers in 
+protected areas and surrounding communities as eyes-on-the-ground; the logistics
+needed and challenges faced to properly manage, store, and track specimens 
+collected in the field; necropsies; and different kinds of diagnostic tests.
+
+The database is modular, adjusting its complexity to the specific needs that 
+surveillance initiatives and their participants have depending on the wildlife 
+health surveillance goals and the subsequent type of data generated. The 
+information to be stored in the database ranges from a specific projects up to 
+specimen management and diagnostic tests.
+
+The database has a general hierarchical structure: i)  Projects >> 
+Surveillance Objectives >> Field Activities >> Locations >> Incidents >> 
+Sources >> Records >> Specimens >> Diagnostics. Each one of these units is explained 
+below.
+
+## PROJECT
+
+It is a surveillance initiative supported by specific entities. For example,
+the PREDICT Project funded by USAID, an isolated cross-sectional study with a 
+single field visit to a single location (sample collection in a market), or 
+a national or local wildlife health surveillance network lead by the corresponding
+government unit. Projects are the highest hierarchical unit in the database 
+containing at least one surveillance objective. 
+
+## SURVEILLANCE OBJECTIVE
+
+It is a set of activities established to collect data in order to detect, quantify, 
+or assess trends regarding specific hazards in a specific population and using a
+specific methodology to records Sources and collect and test Specimens. For example,
+a capture-mark-recapture study targeting lead accumulation in a specific population
+of vulturesthat involves blood collection and testing at every capture and the same
+diagnostic technique. Each Surveillance Objective should have a specific hazard target, 
+Source or Specimen Collection methods, and Diagnostics. 
+
+Surveillance Objectives contain very specific metadata, describing their goals and 
+methods used, including targeted species, populations, and hazards; the type of 
+Sources and Specimens included; collection methods; and case definitions for 
+specific Diagnostics, Specimens, and Sources. Some pieces of the metadata are provided 
+by Source type (Observation, Animal Source, Environmental Source, and Invertebrate
+Source). Following the modular properties of the database, the Source type data 
+requested to users will depend on the methods of each Surveillance Objective. 
+
+Surveillance Objectives that involve the active recording of  
+Sources at time t and the collections of Specimens have at least one Field 
+Activity, Location, Incident, and Source. However, a Surveillance Objective
+"B" might use Source Records or Specimens collected under Surveillance Objective
+"A" to quantify other hazards, re-test specimens, or test for other hazards. 
+In this case, Surveillance Objective "B" does not generate a new Field Activity, 
+Location, or Incident; but it does use Source Records and Specimens. Therefore, 
+Field Activities, Locations, and  Incidents, can only have one Surveillance 
+Objective ("A" in the example), but Source Records, Specimens, and Diagnostics
+can have more than one ("A" and "B" in the example). Specimens previously collected 
+under Surveillance Project "A" that are pooled (generating a new Pooled Specimen
+in the database) under a new Surveillance Objective "B" must also be assigned to
+both Surveillance Objectives.
+
+Furthermore, a single Field Activity and the corresponding Location(s) and 
+Incident(s) can be associated with the collection or Source Records or Specimens
+that will be used to assess different hazards. This scenario translates into 
+different Surveillance Objectives (for different hazards); therefore, Field 
+Activities, Location, and Incidents can have more than one Surveillance Objective
+also.
+
+Finally, not all the Specimens from Surveillance Objective "A" will necessarily
+be part of Surveillance Objective "B" and similar with other higher units (Source
+Records, Incidents, etc). So adding a Surveillance Objective "B" to a Source Record
+does not have a cascade effect (adding a Surveillance Objective "B" to a Source
+Record DOES NOT populate the corresponding Specimens, if any, of the corresponding
+Source).
+
+Surveillance Objectives can be linked to each other through "Project" 
+(different Surveillance Objectives under the same Project), but they could also be
+linked through their use in the same Field Activities, Locations, Incidents, Source 
+Records or Specimens. This second type of connection is provided in the metadata
+of the corresponding Surveillance Objectives and it is is also evident in the exported
+data such that each unit (Field Activity,..., Specimens) is represented by one row 
+per Surveillance Objective (if a unit has two Surveillance Objectives, then the unit 
+is represented by two rows with differet values in the Surveillance Objective column). 
+
+In summary, Field Activities, Locations, Incidents, Source Records and Specimens
+can belong to multiple Surveillance Objectives and a single Surveillance Objective
+can include multiple Field Activities, Locations, Incidentes, Source Records and
+Specimens.
+
+Surveillance Objectives apply for targeted surveillance and scanning surveillance
+initiatives so both types can be described through the metadata. Source Records 
+and Specimens from scanning surveillance efforts can be included
+in future targeted surveillance initiatives. For example, using pangolin 
+specimens collected by rangers patrolling a protected area in 2017 under a scanning
+surveillance strategy that are test in 2023 for SARS-CoV-2 specifically. 
+
+All Outbreak Investigations are a Surveillance Objective, although the outbreak 
+information (name and diagnosis) can be provided later and not immediately after the 
+Surveillance Objective creation in the database.
+
+## FIELD ACTIVITY
+
+A Field Activity correspond to a field visit with a start and end date. Each one 
+of these Field Visits could involve more than one Surveillance Objective (e.g., 
+sampling the same hosts for different hazards) and the visit to different types
+of places such as markets, natural areas, rehabilitation centers, caves, etc. A 
+Field Activity can encompass one or several types of places.
+
+## LOCATIONS
+
+A Location is a general place where Incidents, Source Records, and Specimens are
+collected during a Field Activity. For example, a single Field Visit could involve
+different places: two rehabilitation centers, one cave in a protected area, and 
+three areas of another protected area. These examples include six Locations. A 
+Location groups data in a more general manner than the exact longitude and latitude
+of the data collection (see 'Incidents' below that contain the latitude and longitude
+information) but that is more specific than the 'Field Activity'. 
+
+In the examples provided in the previous paragraph, a 'market' could be a 'Location'
+or an 'Incident' by itself (see below) depending on what the user considers the 
+best choice for corresponding Surveillance Objective. More detail about what an
+Incident represents is provided in the next section.
 
 
-A Project contains the Surveillance Objectives.
-
-
-# SURVEILLANCE TASK
-
-What is the Objective to Record and Collect Observations and Sources? 
-How were the Observations, Animal Sources, Environmental Sources, 
-Invertebrate Sources recorded; the Animal Specimens, Environmental Specimens, 
-and Invertebrate Specimens collected, 
-
-
-They are applied to tag Observations and Sources at time t collected to be tested
-for specific hazards
-
-Observations and Source Records can receive multiple Surveillance Tasks and 
-Surveillance Tasks can include multiple Observations and Source Records.
-
-Surveillance Tasks Apply only for Targeted Surveillance and Scanning Surveillance
-Initiatives. Including Scanning Surveillance allows to have specific metadata
-for the methods used in this type of surveillance strategy
-
-Observations and Source Records may be included in future targeted surveillance 
-initiatives. For example, test pangolins for SARS-CoV-2 in 2023, using samples 
-collected by rangers patrolling a protected area in 2017. In this case, the 
-collection of pangolin specimens by rangers is scanning surveillance; however,
-a new task can be targeting SARS-CoV-2 specifically and using these specimens.
-
-Each Surveillance Task can involve multiple Hazards. 
-  Why asking then if a Pathogen, Chemical, Biological, or Physiological Hazard
-  is targeted? 
-  Because, the a user can look for all the Surveillance Tasks aimed to a 
-  specific type of Hazard.
-
-The targeted hazards are a Surveillance Task property and not Observation, 
-Animal Source, Environmental Source, or Invertebrate Source property.
-
-Each Surveillance Task can have many Observations, Animal Source, 
-Environmental Source, and Invertebrate Source metadata. The metadata for each
-Surveillance Task is provided by taxa (observations, animal sources, 
-environmental sources, and invertebrate sources). The taxon could be as general
-as "Arthropod" or specific to a species (Genus species).
-
-All Outbreak Investigations are a Surveillance Task. An Outbreak Investigation may target several hazards.
-
-associated with the Project do not add new Observations, Animal Source Records, 
-Environmental Source Records, or Invertebrate Source Records, it means that the 
-Project is relying on Source Records or Specimens already available and entered 
-in the Wildlife Health Database. Basically, the Project is conducting necropsies
-and diagnostics with available Specimens, or creating new Pooled Specimens
-to run diagnostics
-
-# FIELD ACTIVITY
-
-Activity to Observations, Animal Sources, Environmental Sources, 
-Invertebrate Sources recorded; the Animal Specimens, Environmental Specimens, 
-and Invertebrate Specimens collected
-
-A Project can contain many Field Activities
 
 
 # SOURCES
