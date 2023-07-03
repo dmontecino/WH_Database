@@ -3,7 +3,7 @@
 # Create Dictionary #
 # ------------------#
 
-library("kableExtra")
+library(kableExtra)
 library(tidyverse)
 
 # #tables in the .xml of the db diagram
