@@ -75,14 +75,36 @@ Sources at time t and the collections of Specimens have at least one Field Activ
 <section id="locations" class="level2">
 <h2 class="anchored" data-anchor-id="locations">LOCATIONS</h2>
 <p>A Location is a general place where Incidents, Source Records, and Specimens are collected during a Field Activity. For example, a single Field Visit could involve different places: two rehabilitation centers, one cave in a protected area, and three areas of another protected area. These examples include six Locations. A Location groups data in a more general manner than the exact longitude and latitude of the data collection (see ‘Incidents’ below that contain the latitude and longitude information) but that is more specific than the ‘Field Activity’.</p>
-<p>In the examples provided in the previous paragraph, a ‘market’ could be a ‘Location’ or an ‘Incident’ by itself (see below) depending on what the user considers the best choice for corresponding Surveillance Objective. More detail about what an Incident represents is provided in the next section.</p>
+<p>In the examples provided in the previous paragraph, a ‘market’ could be a ‘Location’ or an ‘Incident’ by itself (see below) depending on what the user considers the best choice for the corresponding Surveillance Objective. More detail about what an Incident represents is provided in the next section.</p>
 </section>
+<section id="incidents" class="level2">
+<h2 class="anchored" data-anchor-id="incidents">INCIDENTS</h2>
+<p>An Incident is a specific wildlife health event at a specific spatial coordinate that receives a longitude and a latitude information that occurs in a specific date.</p>
+<p>The definition of what a wildlife health event (and therefore of ‘Incident’ in the database) depends on the Surveillance Objective methodology. In targeted surveillance efforts, an Incident could imply just healthy animals sampled in a specific time-space unit to test them for the targeted hazard. Non-sampled individuals may or may not be included as part of the Incident. If samples are collected from a river, then the ‘Incident’ can be equivalent to the location where water is extracted at. For the surveillance of vector-borne diseases, an ‘Incident’ could be a point in time and space where one to several traps for vectors have been placed. For scanning surveillance, an ‘Incident’ could require the presence of at least one injured, sick, or dead animal, or an stranded individual. The ‘Incident’ can also include the healthy individuals found nearby.</p>
+<p>In the case of beached fish, an Incident could represent each dead or sick fish in one extreme up to the count count of dead or sick fish as a single point representing the entire in the other extreme.None of these strategies seem ideal for logistic purposes in the former and the loss of valuable information in the latter. So an Incident should represent a concept in between. Similarly, an entire market could be a ‘Location’ and a single ‘Incident’ that has data from several vendors, cages, and animals within. On the other hand, a market could be a ‘Location’ and each vendor within the market could be an ‘Incident’ with a longitude and latitude. Finally, a structured study can involve several levels of hierarchy and one of them receives the temporo-spatial coordinate. A similar structured study (zone, grid, area, trap, etc.) might provide the spatial coordinate to a different unit (for example the area in one case and the trap in another case). Therefore, in our experience, an Incident can represent a wide range of units depending on the methodology used to record data; therefore, it is necessary to provide flexibility to what an Incident is and for the same reason it is also necessary to declare as part of the Incident data what an Incident represents.</p>
+<p>In the market example or structured studies, it could be desired to group Incidents more specifically than under the general ‘Location’. For example, a market can be a ‘Location’ and each cage could represent an ‘Incident’. It is possible that users want to group cages by vendors and vendors by area within the market, Similarly, it is possible that in a structured study the ‘Incident’ represents a trap, and the researchers want to group traps (Incidents) by area, grid cell, zone, and season. For this reason, the database contains several ‘Incident’ tags to group them temporally, spatially, or both. Specific tags can be requested by users.</p>
+<p>Incidents must have at least one Source Record from one Source type (see below) and as many Source Records of any type if needed (depending on what is found/recorded in each specific Incident).</p>
+<p>add environental features…</p>
 </section>
-<section id="sources" class="level1">
-<h1>SOURCES</h1>
-<section id="invertebrate-sources" class="level2">
-<h2 class="anchored" data-anchor-id="invertebrate-sources">Invertebrate Sources</h2>
+<section id="sources-and-source-records" class="level2">
+<h2 class="anchored" data-anchor-id="sources-and-source-records">SOURCES AND SOURCE RECORDS</h2>
+<p>A Source is an entity of interest within each Incident from which health information is collected or generated. Each Source is recorded at least once (Source Records) but depending on their type they could be recorded multiple times over time (e.g., capture-mark-recapture studies with pathogen testing at each capture instance). Most Sources can provide Specimens such as full carcasses, body parts, fluids, tumors, blood, water, sediment, invertebrates, etc.</p>
+<p>There are four classes of Sources with different properties: Observations, Animal Source, Environmental Source, and Invertebrate Source. See below for a full description of each type.</p>
+<section id="observations" class="level3">
+<h3 class="anchored" data-anchor-id="observations">Observations</h3>
+<p>Observations correspond to <u>observed-only animals</u> present at one Incident <u>grouped by species</u>. For example, five animals are found in a wetland, two of them of species “A” and three of them of species “B”. One animal of species “A” is sick. If they are only observed and the Surveillance Objective is not interested in individual animal-level data, then this set of findings is a wildlife health ‘Incident’ with two ‘Observations’. One ‘Observation’ representing species “A” with one healthy individual and one sick animal, and another ‘Observation’ representing species “B” with three healthy individuals.</p>
+<p>Each Observation generates one and only one Source Record. If the same set of animals are believed to be found five days latter, then a new Observation must be created because there is not certainty that they are the same individuals. If the animals can be identified, observed multiple times, and longitudinal records are of interest they can be added as individual animals and tracked over time using the ‘Animal Source’ type (see below).</p>
+</section>
+<section id="animal-sources" class="level3">
+<h3 class="anchored" data-anchor-id="animal-sources">Animal Sources</h3>
+</section>
+<section id="environmental-sources" class="level3">
+<h3 class="anchored" data-anchor-id="environmental-sources">Environmental Sources</h3>
+</section>
+<section id="invertebrate-sources" class="level3">
+<h3 class="anchored" data-anchor-id="invertebrate-sources">Invertebrate Sources</h3>
 <p>Designed to contain data of a collection of invertebrates. If the interest is at the individual level (e.g., bees with problems in their wings), then the data should be recorded as Animal Source</p>
+</section>
 </section>
 </section>
 
