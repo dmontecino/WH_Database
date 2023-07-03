@@ -128,14 +128,49 @@ information) but that is more specific than the 'Field Activity'.
 
 In the examples provided in the previous paragraph, a 'market' could be a 'Location'
 or an 'Incident' by itself (see below) depending on what the user considers the 
-best choice for corresponding Surveillance Objective. More detail about what an
+best choice for the corresponding Surveillance Objective. More detail about what an
 Incident represents is provided in the next section.
 
+## INCIDENTS
 
+An Incident is a specific spatial coordinate that receives a longitude and a latitude
+and they occur in a specific date.
 
+In our experience, an Incident can represent a wide range of units depending on 
+the methodology used to record data. For example, in the case of beached fish, 
+an Incident could represent each dead or sick fish in one extreme up to the count
+count of dead or sick fish as a single point representing the entire in the other
+extreme.None of these strategies seem ideal for logistic purposes in the former 
+and the loss of valuable information in the latter. So an Incident should represent
+a concept in between. Similarly, an entire market could be a 'Location' and a single
+'Incident' that has data from several vendors, cages, and animals within. On the
+other hand, a market could be a 'Location' and each vendor within the market could
+be an 'Incident' with a longitude and latitude. Finally, a structured study can 
+involve several levels of hierarchy and one of them receives the spatial coordinate.
+Similar structured studies involving a zone, grid, area, trap, etc. might provide
+the spatial coordinates to a different unit (for example the area in one case and
+the trap in another case). Following these examples, it is necessary to provide 
+flexibility to what an Incident is but it is also necessary to declare 
+what the Incident represents.
 
-# SOURCES
+In the market example or structured studies, it could be desired to group Incidents
+below the general 'Location' through a set of tags. For example, a market can be
+a 'Location' and each cage could represent an 'Incident'. It is possible that users
+want to group cages by vendors and vendors by area within the market, or another
+combinations. Similarly, it is possible that in a structured study the 'Incident'
+represents a trap, and the researchers want to group traps (Incidents) by area, 
+grid cell, zone, and season. For this reason, the database contains several 'Incident'
+tags to geroup them temporally, spatially, or both. New tags can be requested by 
+specific users.
 
-## Invertebrate Sources
+## SOURCES
+
+### Observations
+
+### Animal Sources
+
+### Environmental Sources
+
+### Invertebrate Sources
 
 Designed to contain data of a collection of invertebrates. If the interest is at the individual level (e.g., bees with problems in their wings), then the data should be recorded as Animal Source
