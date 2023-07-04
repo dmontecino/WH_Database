@@ -766,7 +766,7 @@ data_dictionary[["WildlifeHealth_Source"]]<-
       Variable="SourceSpecies",
       Label="Source Species", 
       Definition="The source species. Only one for each observation, animal, and environmental sources, but several can apply to invertebrate sources",
-      Type="Single selection for Observation, Animal, and Environmental Sources. Multiple selection for Invertebrate sources.",
+      Type="Single selection for Observation, Animal, and Environmental Sources. Does not apply for Invertebrate sources.",
       Mandatory="Yes"),
     
     data.frame(
