@@ -370,5 +370,34 @@ specific origin than Incident.
 
 ## SPECIMENS
 
-Inv specimens are expected to be poolsof the same species.
+Specimens correspond to material collected from Source Records to conduct Diagnostics
+in order to identify hazards (Biological, Chemical, Physical) or Physiological
+problems. The material collected can range from the full body to conduct an ultrasound
+in a live animal up to a trace of tissue to conduct a highly technological assay.
+Invertebrate Source Records can have multiple species; however, it is expected that
+invertebrates in their Specimens belong to the same species (if the Specimen 
+contains more than one invertebrate).
+
+Specimens are characterized by an identifier, the type of material (water, hair,
+kidney, animal), the original amount (e.g., 'full animal' or 0.35 mm), the solution
+used to maintain them, and their storage type in the laboratory. Moreover, the 
+database tracks the Specimen location (building, laboratory name, refrigerator 
+name, etc), their availability, ownership, and current amount. The original amount
+and the current amount can differ if certain quantity of the specimen has already
+been used for previous Diagnostics.
+
+Animal Specimens that are equivalent to the Animal Source Record (both are the 
+'full animal') must be given information at the Source Record level and at the 
+Specimen level. The Source Record and Specimen could have the same identifier or
+different. The amount of the Specimen should be 'full animal'. 
+
+Specimens whose current amount is zero must not be deleted and the data of their
+last location should remain in the database.
+
+It is possible that for lack of space or materials, more than one Specimen is stored
+in the same container. This strategy can cause cross contamination and make Specimen
+tracing more complicated. For this reason, Specimens can have a 'Container' identifier
+that is the same among Specimens sharing the same container. The Specimen identifier
+of each Specimen within the Container should be different.
+
 
