@@ -227,9 +227,9 @@ healthy individuals).
 Incidents can include Observations (species) with healthy animals only, as long
 as they are part of a wildlife health event.
 
-Each Observation generates one and only one Source Record. In that unique Record 
-for the Observation animals are categorized by sex, age and health status. The
-captivity categories of the corresponding animals; their anomalies; and potential
+Each Observation generates one and only one Source Record with immutable data. 
+In that unique Source Record animals are categorized by sex, age and health status.
+The captivity categories of the corresponding animals; their anomalies; and potential
 causes of injury, disease, or dead can be provided.
 
 If the same set of only-observed animals are believed to be found five days latter,
@@ -252,25 +252,25 @@ Previous marking codes (if any has been used) are immutable; however, current ma
 codes are considered mutable and are provided in the corresponding Animal Source
 Record (see below).
 
-#### Animal Source Record
+##### Animal Source Record
 
 Each Animal Source has at least one Source Record. This first Source Record corresponds
 to the unique record of an unidentified individual animal or to the first record
 of an individually identified animal. Individually identified animals can potentially
 be tracked over time and have as many Source Records as needed.  
 
-Mutable data of an Animal Source over time that has to be provided for each Source
-Record are the captivity category, the health status, the age, and the marking code. 
-These are one option features per Animal Source Record. Other mutable data for 
-Animal Sources that can have multiple values in each Animal Source record are 
-the anomalies found and the potential causes of injury, disease, or death. Obviously, 
-the time t the Animal Source is recorded is also mutable.
+Mutable data of an Animal Source over time needs to be provided for each Source
+Record. Mutable data includes the captivity category, the health status, the age,
+and the marking code. These are one option features per Animal Source Record.
+Other mutable data for Animal Sources that can have multiple values in each Animal
+Source record are the anomalies found and the potential causes of injury, disease,
+or death. Obviously, the time t when the Animal Source is recorded is also mutable.
 
 The last Animal Source Record for an animal is not necessarily the last time t when
 it was found dead because it is possible to collect Specimens from the carcass (dead 
 Animal Source) over a period of time while the carcass is rooting. 
 
-#### Necropsies
+##### Necropsies
 
 Necropsies are associated with the specific Animal Source Record when the carcass
 was collected. However, the Necropsy date can be any date since the corresponding
@@ -293,17 +293,19 @@ primary or secondary Necropsy based on the information collected in Specimens
 An Environmental Source represents an entity that provides Specimens that: i) 
 are abiotic (e.g., a location of a frozen pond that is sampled for Avian influenza), 
 or ii) are biotic but it is not possible to identify the corresponding Animal Source
-(e.g., feces found in the field). 
+(e.g., feces found in the field). Environmental Sources do not have sex or date 
+of death.
 
-Immutable data of Environmental Sources are the type of Environmental Source. 
-Setting the Environmental Source type determines the Specimen type provided for 
-those Sources. For example, feces can only yield feces as Specimens, and water 
-in a pond can only provide water. 
+Immutable data of Environmental Sources are the species (in the case of type of 
+biotic Environmental Sources) and the Environmental Source type. Setting the 
+Environmental Source type determines the Specimen type provided for those Sources
+(see 'Specimens' below). For example, feces can only yield feces as Specimens, 
+and water in a pond can only provide water. 
 
-#### Environmental Source Record
+##### Environmental Source Record
 
 Each Environmental Source has at least one Source Record. This first Source Record
-corresponds to the unique record of an unidentified Environmental Source (e.g., 
+corresponds to the unique collection from an unidentified Environmental Source (e.g., 
 feces on the ground) or to the first record of an individually identified 
 Environmental Source (e.g., water collected at a specific place in the
 pond). Individually Environmental Sources can potentially be tracked over time 
@@ -313,11 +315,34 @@ Environmental Sources do not have mutable data except the time t when they are s
 
 ### Invertebrate Sources
 
-Designed to contain data of a collection of invertebrates. If the interest is at
-the individual level (e.g., bees with problems in their wings), then the data 
-should be recorded as Animal Source
+An Invertebrate Source is an invertebrate trap (e.g., CO2 traps, flag
+traps, etc.) placed in specific coordinates Invertebrate Sources can be added 
+because the Surveillance Objective aims to collect invertebrates and potentially
+test them for vector-borne diseases. 
 
+The only immutable data of Invertebrate Sources is the trap. If the same type of
+trap is placed in the same coordinates, then Invertebrate Sources can be tracked
+longitudinally; however, the invertebrate species collected each time the trap is 
+set can be different. Invertebrate Sources do not have sex, age, captivity category,
+anomalies, health status, potential cause of death, etc.
 
+Invertebrate Sources are designed to contain data of a collection of invertebrates. 
+If the interest is at the individual level (e.g., bees with problems in their wings),
+then the user should add Animal Sources.
+
+##### Invertebrate Source Record
+
+Each Invertebrate Source has at least one Source Record. This first Source Record
+corresponds to setting the type of trap in specific coordinates. As mentioned in
+the previous section, if the same type of invertebrate trap is placed in the same
+coordinates, then Invertebrate Sources can be tracked over time and have as many
+Source Records as needed. If the type of trap changes, then it is a different 
+Invertebrate Source.
+
+Mutable data of an Invertebrate Sources needs to be provided for each Source
+Record. The mutable data of Invertebrate Sources is the species captured (probably
+more than one). Obviously, the time t when the Invertebrate Source is recorded is
+also mutable.
 
 ## FINAL COMMENT ON SOURCES AND SOURCE RECORDS
 
@@ -342,3 +367,8 @@ tags per user request that allow to label Sources Records that belong to units l
 than Incidents and keep them linked in the data. In the example, the three Source
 Records can receive the same tag ("cage1") in order to track that they have a more
 specific origin than Incident.
+
+## SPECIMENS
+
+Inv specimens are expected to be poolsof the same species.
+
