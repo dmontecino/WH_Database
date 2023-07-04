@@ -980,7 +980,14 @@ data_dictionary[["Environmental_Source"]]<-
       Label="Environmental source identifier",
       Definition="System-provided environmental source identifier",
       Type="Integer",
-      Mandatory="System-assigned")) 
+      Mandatory="System-assigned"),
+    
+    data.frame(
+      Variable="WildlifeHealth_EnvironmentalSourceType",
+      Label="Environmental source type",
+      Definition="The type of environmental source. For environmental sources, this field deteermines the Specimen type in the Specimen table",
+      Type="Single selection",
+      Mandatory="Yes")) 
     
 # Invertebrate Source
 
