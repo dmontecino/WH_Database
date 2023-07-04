@@ -1531,6 +1531,20 @@ data_dictionary[["Source_Record_Specimen"]]<-
       Mandatory="No"),
     
     data.frame(
+      Variable="SourceRecordSpecimenCollectedPrimaryNecropsy",
+      Label="Primary Necropsy Specimen", 
+      Definition="Answer to the question: 'Is the Specimen collected during the Primary Necropsy?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenCollectedSecondaryNecropsy",
+      Label="Secondary Necropsy Specimen", 
+      Definition="Answer to the question: 'Is the Specimen collected during the Secondary Necropsy?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+
+    data.frame(
       Variable="WildlifeHealth_SourceRecordSpecimenType",
       Label="Specimen type", 
       Definition="The type of the specimen. It can be a full carcass",
