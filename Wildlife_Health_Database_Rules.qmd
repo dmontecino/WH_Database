@@ -2,129 +2,129 @@
 
 WildlifeHealthDat is a flexible database built to track wildlife health data 
 collected from a wide range of surveillance efforts, including citizen observations
-of dead or sick animals, specific studies, national or local wildlife health 
+of dead, injured or sick animals, specific research, national or local wildlife health 
 surveillance initiatives, outbreak investigations, and global wildlife health 
-surveillance projects involving several countries, hazards and host species. 
+surveillance projects involving several countries, hazards, and host species. 
 
-The database has been built using the decades-long accumulated experience of 
-the Wildlife Conservation Society - Health Program. This experience includes
-wildlife health surveillance activities covering dozens of countries; cross-
-sectional and longitudinal studies; the establishment of wildlife health surveillance
-networks; many biological, chemical, and physical hazards; studying dangerous 
-zoonotic pathogens, such as Ebola virus disease  and SARS-CoV-2; emerging 
-vector-borne pathogens such as West Nile virus; the inclusion of rangers in 
-protected areas and surrounding communities as eyes-on-the-ground; the logistics
-needed and challenges faced to properly manage, store, and track specimens 
-collected in the field; necropsies; and different kinds of diagnostic tests.
+The database is based on the decades-long experience of the Wildlife Conservation
+Society - Health Program. This experience includes wildlife health surveillance
+activities covering dozens of countries; cross-sectional and longitudinal studies;
+the establishment of wildlife health surveillance networks; many biological, 
+chemical, and physical hazards; studying dangerous zoonotic pathogens, such as Ebola
+virus disease  and SARS-CoV-2; emerging  vector-borne pathogens such as West Nile
+virus; the inclusion of rangers in protected areas and surrounding communities 
+as eyes-on-the-ground for health surveillance; the logistics needed and challenges
+faced to properly manage, store, and track specimens collected in the field; 
+necropsies; different kinds of diagnostic tests; and previous experiences managing
+wildlife health data using different Information Managament Systems.
 
-The database is modular, adjusting its complexity to the specific needs that 
-surveillance initiatives and their participants have depending on the wildlife 
-health surveillance goals and the subsequent type of data generated. The 
-information to be stored in the database ranges from a specific projects up to 
-specimen management and diagnostic tests.
-
-The database has a general hierarchical structure: i)  Projects >> 
+The wildlife health information is stored in the database following structured 
+components ranging from Surveillance Objective up to Specimens and Diagnostic 
+tests. The hierarchical  structure of the databse components is: i)  Projects >> 
 Surveillance Objectives >> Field Activities >> Locations >> Incidents >> 
-Sources >> Records >> Specimens >> Diagnostics. Each one of these units is explained 
-below.
+Sources >> Records >> Specimens >> Diagnostics. There are four types of Sources; 
+however, the database is modular, adjusting and selecting those components 
+needed specifically for each surveillance initiatives and their participants have.
+
+Each one of these components is explained below.
+
 
 ## PROJECT
 
 It is a surveillance initiative supported by specific entities. For example,
 the PREDICT Project funded by USAID, an isolated cross-sectional study with a 
 single field visit to a single location (sample collection in a market), or 
-a national or local wildlife health surveillance network lead by the corresponding
-government unit. Projects are the highest hierarchical unit in the database 
-containing at least one surveillance objective. 
+a national or local wildlife health surveillance network lead by a
+government agency. Projects are the highest hierarchical unit in the database 
+and they contain at least one surveillance objective. 
 
 ## SURVEILLANCE OBJECTIVE
 
 It is a set of activities established to collect data in order to detect, quantify, 
-or assess trends regarding specific hazards in a specific population and using a
-specific methodology to records Sources and collect and test Specimens. For example,
-a capture-mark-recapture study targeting lead accumulation in a specific population
-of vulturesthat involves blood collection and testing at every capture and the same
-diagnostic technique. Each Surveillance Objective should have a specific hazard target, 
-Source or Specimen Collection methods, and Diagnostics. 
+or assess trends regarding specific health hazards in specific populations under a
+common methodology. Each Surveillance Objective should have a specific population
+and hazard target, Source or Specimen Collection methods, and Diagnostics. For 
+example, a capture-mark-recapture study targeting lead accumulation in a specific
+population of vultures that involves blood collection and testing at every capture
+using the same diagnostic technique. Surveillance Objective is the most complicated
+component of the database. Read this section carefully.
 
 Surveillance Objectives contain very specific metadata, describing their goals and 
 methods used, including targeted species, populations, and hazards; the type of 
 Sources and Specimens included; collection methods; and case definitions for 
 specific Diagnostics, Specimens, and Sources. Some pieces of the metadata are provided 
 by Source type (Observation, Animal Source, Environmental Source, and Invertebrate
-Source). Following the modular properties of the database, the Source type data 
-requested to users will depend on the methods of each Surveillance Objective. 
-
-Surveillance Objectives that involve the active recording of  
-Sources at time t and the collections of Specimens have at least one Field 
-Activity, Location, Incident, and Source. However, a Surveillance Objective
-"B" might use Source Records or Specimens collected under Surveillance Objective
-"A" to quantify other hazards, re-test specimens, or test for other hazards. 
-In this case, Surveillance Objective "B" does not generate a new Field Activity, 
-Location, or Incident; but it does use Source Records and Specimens. Therefore, 
-Field Activities, Locations, and  Incidents, can only have one Surveillance 
-Objective ("A" in the example), but Source Records, Specimens, and Diagnostics
-can have more than one ("A" and "B" in the example). Specimens previously collected 
-under Surveillance Project "A" that are pooled (generating a new Pooled Specimen
-in the database) under a new Surveillance Objective "B" must also be assigned to
-both Surveillance Objectives.
-
-Furthermore, a single Field Activity and the corresponding Location(s) and 
-Incident(s) can be associated with the collection or Source Records or Specimens
-that will be used to assess different hazards. This scenario translates into 
-different Surveillance Objectives (for different hazards); therefore, Field 
-Activities, Location, and Incidents can have more than one Surveillance Objective
-also.
-
-Finally, not all the Specimens from Surveillance Objective "A" will necessarily
-be part of Surveillance Objective "B" and similar with other higher units (Source
-Records, Incidents, etc). So adding a Surveillance Objective "B" to a Source Record
-does not have a cascade effect (adding a Surveillance Objective "B" to a Source
-Record DOES NOT populate the corresponding Specimens, if any, of the corresponding
-Source).
-
-Surveillance Objectives can be linked to each other through "Project" 
-(different Surveillance Objectives under the same Project), but they could also be
-linked through their use in the same Field Activities, Locations, Incidents, Source 
-Records or Specimens. This second type of connection is provided in the metadata
-of the corresponding Surveillance Objectives and it is is also evident in the exported
-data such that each unit (Field Activity,..., Specimens) is represented by one row 
-per Surveillance Objective (if a unit has two Surveillance Objectives, then the unit 
-is represented by two rows with differet values in the Surveillance Objective column). 
-
-In summary, Field Activities, Locations, Incidents, Source Records and Specimens
-can belong to multiple Surveillance Objectives and a single Surveillance Objective
-can include multiple Field Activities, Locations, Incidentes, Source Records and
-Specimens.
+Source, [see below]).
 
 Surveillance Objectives apply for targeted surveillance and scanning surveillance
-initiatives so both types can be described through the metadata. Source Records 
-and Specimens from scanning surveillance efforts can be included
-in future targeted surveillance initiatives. For example, using pangolin 
-specimens collected by rangers patrolling a protected area in 2017 under a scanning
-surveillance strategy that are test in 2023 for SARS-CoV-2 specifically. 
+initiatives so both types can be described through the metadata. All Outbreak 
+Investigations are a Surveillance Objective, although the outbreak information 
+(name and diagnosis) can be provided later and not immediately after the Surveillance
+Objective creation in the database.
 
-All Outbreak Investigations are a Surveillance Objective, although the outbreak 
-information (name and diagnosis) can be provided later and not immediately after the 
-Surveillance Objective creation in the database.
+
+Usually, Field Activities, Locations, Incidents, Sources, Records, and Diagnostics
+belong to a single Surveillance Objective. This Surveillance Objective
+is the one that originally requested the Field Activity at different Locations to 
+record the corresponding Incidents, collect the Sources and Specimens, and perform 
+Diagnostics for a specific hazard. In this case, the Surveillance Objective is 
+provided automatically to each corresponding component.
+
+However, there are exceptions to this rule, except for Diagnostics, and the exceptions
+have different justifications for each component. Field Activities, Locations,
+Incidents, Source Records, and Specimens can be originally requested by different 
+Surveillance Objectives planning the same activities and methods but that differ 
+in the targeted hazard. For example, rodents sampled using the same methodology
+that will be tested for Coronaviruses and Rickettsia sp. It is the user responsibility
+to add the second Surveillance Objective to the corresponding Field Activities, 
+Locations, Incidents, Source Records, and Specimens.
+
+Another exception can occur when Source Records and Specimens collected under
+scanning surveillance efforts are included in future targeted surveillance initiatives.
+For example, using pangolin Specimens collected by rangers patrolling a protected 
+area in 2017 under a scanning surveillance strategy that are  tested in 2023 for
+SARS-CoV-2 as part of a targeted surveillance initiative. In this case, the 
+corresponding Specimens tested for SARS-CoV-2 and their Sources will have more than
+one Surveillance Objective. The one that originally demanded conducting the Field
+Activity to collect the Source Record and Specimens, and the new Surveillance 
+Objective targeting SARS-CoV-2. This last Surveillance Objective [DOES NOT]{.underline}
+generate new Field Activities, Locations, or Incidents. Finally, each Diagnostic 
+remains having a single Surveillance Objective (new Diagnostics targeting 
+SARS-CoV-2 receive the SARS-CoV-2-related Surveillance Objective only).
+
+Moreover, during Surveillance Objective targeting SARS-CoV-2 new Necropsies might
+be conducted, new Specimens could be created (from larger stored Specimens, such
+as a carcass or an organ), or new Pooled Specimens could be produced. All these 
+components receive the Surveillance Objective targeting SARS-CoV-2 only. Again,
+it is the user responsibility secondary Surveillance Objective to the corresponding
+Source Records, Specimens and Diagnostics.
+
+Therefore, a Surveillance Objective can be linked to others because they belong
+to the same Project; they requested the same Field Activities, Locations, 
+and  Incidents; or they have Sources and Specimens in common. If Surveillance 
+Objectives are connected for the second and third reason, then this connection must
+be provided in the metadata of the corresponding Surveillance Objectives. The 
+connections will be also evident in the exported data such that each component with
+more than one Surveillance Objective (Field Activity,..., Specimens) will be
+represented by one row per Surveillance Objective.
+
 
 ## FIELD ACTIVITY
 
 A Field Activity correspond to a field visit with a start and end date. Each one 
-of these Field Visits could involve more than one Surveillance Objective (e.g., 
-sampling the same hosts for different hazards) and the visit to different types
-of places such as markets, natural areas, rehabilitation centers, caves, etc. A 
-Field Activity can encompass one or several types of places.
+of these Field Visits could involve more than one Surveillance Objective (see above)
+and Locations (see below) of different types such as markets, natural areas, 
+rehabilitation centers, caves, etc.
 
 ## LOCATIONS
 
 A Location is a general place where Incidents, Source Records, and Specimens are
-collected during a Field Activity. For example, a single Field Visit could involve
-different places: two rehabilitation centers, one cave in a protected area, and 
-three areas of another protected area. These examples include six Locations. A 
-Location groups data in a more general manner than the exact longitude and latitude
-of the data collection (see 'Incidents' below that contain the latitude and longitude
-information) but that is more specific than the 'Field Activity'. 
+collected. For example, a single Field Visit could involve different places: 
+two rehabilitation centers, one cave in a protected area, and  three areas of another
+protected area. These examples include six Locations. A Location groups data in a
+more general manner than the exact longitude and latitude of the data collection 
+(see 'Incidents' below that contain the latitude and longitude information) 
+but that is more specific than 'Field Activity'. 
 
 In the examples provided in the previous paragraph, a 'market' could be a 'Location'
 or an 'Incident' by itself (see below) depending on what the user considers the 
@@ -133,65 +133,71 @@ Incident represents is provided in the next section.
 
 ## INCIDENTS
 
-An Incident is a specific wildlife health event at a specific spatial coordinate 
-that receives a longitude and a latitude information that occurs in a specific date.
+An Incident is a specific wildlife health event at specific longitude and latitude
+and that occurs in a specific date.
 
-The definition of what a wildlife health event (and therefore of 'Incident' in the
-database) depends on the Surveillance Objective methodology. In targeted surveillance
+The definition of what a wildlife health event (and therefore of the 'Incident'
+component) depends on the Surveillance Objective methodology. In targeted surveillance
 efforts, an Incident could imply just healthy animals sampled in a specific 
-time-space unit to test them for the targeted hazard. Non-sampled individuals may
-or may not be included as part of the Incident. If samples are collected from a river,
-then the 'Incident' can be equivalent to the location where water is extracted at.
-For the surveillance of vector-borne diseases, an 'Incident' could be a point in
-time and space where one to several traps for vectors have been placed. For 
-scanning surveillance, an 'Incident' could require the presence of at least one 
-injured, sick, or dead animal, or an stranded individual. The 'Incident' can also
-include the healthy individuals found nearby.
+time-space unit to test them for the targeted hazard. Non-sampled individuals,
+injured, sick, or dead may or may not be included as part of the Incident. 
+If samples are collected from a river, then the 'Incident' can be equivalent to
+the location where water is extracted at. For the surveillance of vector-borne 
+diseases, an 'Incident' could be a point in time and space where one to several
+traps for vectors have been placed. For scanning surveillance, an 'Incident' could
+require the presence of at least one injured, sick, or dead animal, or an stranded
+individual. The 'Incident' can also include the healthy individuals found nearby.
 
-In the case of beached fish, an Incident could represent each dead or sick fish 
-in one extreme up to the count count of dead or sick fish as a single point 
-representing the entire in the other extreme.None of these strategies seem ideal
-for logistic purposes in the former and the loss of valuable information in the 
-latter. So an Incident should represent a concept in between. Similarly, an entire
-market could be a 'Location' and a single 'Incident' that has data from several 
-vendors, cages, and animals within. On the other hand, a market could be a 'Location'
-and each vendor within the market could be an 'Incident' with a longitude and latitude.
-Finally, a structured study can involve several levels of hierarchy and one of 
-them receives the temporo-spatial coordinate. A similar structured study (zone, 
+In the case of beached fish, an Incident could represent each dead fish 
+in one extreme. On the other extreme an Incident can represent to the full count
+of dead fish across the beach as a single point in time and space. None of these
+strategies seem ideal. The former, for logistic purposes and the latter, for the 
+loss of valuable information (distribution of the dead fish across the beach). 
+So an Incident should represent a unit in between. 
+
+Similarly, an entire market could represent a 'Location' and a single 'Incident' 
+at the same time. This Incident can gather data from several vendors, cages, and
+animals within cages. On the other hand, a market could be a 'Location' and each
+vendor within the market could be an 'Incident'. Finally, a structured
+study can involve several levels of hierarchy and one of them receives the 
+temporo-spatial coordinate. Another similar structured study (zone, 
 grid, area, trap, etc.) might provide the spatial coordinate to a different unit 
-(for example the area in one case and the trap in another case). Therefore, in our
-experience, an Incident can represent a wide range of units depending on 
-the methodology used to record data; therefore, it is necessary to provide 
-flexibility to what an Incident is and for the same reason it is also necessary
-to declare as part of the Incident data what an Incident represents.
+(for example the area in one case and the trap in another case). Therefore, 
+an Incident can represent a wide range of units depending on the methodology used
+to record health ata. For this reason, it is necessary to provide flexibility to what
+an Incident is per surveillance design and it is also necessary to request and 
+explicitly declare what an Incident represents as part of its data.
 
 In the market example or structured studies, it could be desired to group Incidents
 more specifically than under the general 'Location'. For example, a market can be
 a 'Location' and each cage could represent an 'Incident'. It is possible that users
 want to group cages by vendors and vendors by area within the market, Similarly,
 it is possible that in a structured study the 'Incident' represents a trap, and 
-the researchers want to group traps (Incidents) by area, grid cell, zone, and season.
-For this reason, the database contains several 'Incident' tags to group them 
-temporally, spatially, or both. Specific tags can be requested by users.
+the researchers want to group traps these Incidents by area, grid cell, zone, and
+season. For this reason, the database contains several 'Incident' tags to group 
+them temporally, spatially, or both in a finer scale than Location. Specific tags
+can be requested by users.
 
 Incidents must have at least one Source Record from one Source type (see below) 
-and as many Source Records of any type if needed (depending on what is found/recorded
-in each specific Incident).
-
-add environental features...
+and as many Source Records of any type as needed (depending on what is found/recorded
+in each specific Incident and what is the interest of the corresponding Surveillance 
+Objective).
 
 ## SOURCES AND SOURCE RECORDS
 
 A Source is an entity of interest within each Incident from which health information
-is collected or generated. Each Source is recorded at least once (Source Records)
-but depending on their type they could be recorded multiple times over time (e.g.,
-capture-mark-recapture studies with pathogen testing at each capture instance). 
-Most Sources can provide Specimens such as full carcasses, body parts, fluids, tumors, 
-blood, water, sediment, invertebrates, etc. 
+is collected or generated. There are four classes of Sources with different properties:
+Observations, Animal Source, Environmental Source, and Invertebrate Source (see below
+for a full description of each type). The Source types available depend on the 
+Surveillance Objective methods and goals. Following the modular properties of the 
+database, Source types become available on a Surveillance Objective basis per user
+request.
 
-There are four classes of Sources with different properties: Observations, 
-Animal Source, Environmental Source, and Invertebrate Source. See below for a full
-description of each type.
+Each Source is recorded at least once (Source Records) but depending on their type
+they could be recorded multiple times over time (e.g.,capture-mark-recapture studies
+with pathogen testing at each capture instance). Most Sources can provide Specimens
+such as full carcasses, body parts, fluids, tumors, blood, water, sediment, 
+invertebrates, etc.
 
 ### Observations
 
@@ -211,7 +217,10 @@ If the animals can be identified, observed multiple times, and longitudinal
 records are of interest they can be added as individual animals and tracked 
 over time using the 'Animal Source' type (see below).
 
-### Animal Sources
+### Animal Source
+
+Animal Source is an animal in an Incident providing individual-level health
+data. Each Animal Source has at least one Source Record  
 
 ### Environmental Sources
 
