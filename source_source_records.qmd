@@ -63,7 +63,7 @@ Each Invertebrate Source has at least one Source Record. This first Source Recor
 
 Mutable data of an Invertebrate Sources needs to be provided for each Source Record. The mutable data of Invertebrate Sources is the species captured (probably more than one). Obviously, the time t when the Invertebrate Source is recorded is also mutable.
 
-Final Comment on Sources an Source Records
+## Final Comment on Sources an Source Records
 
 Users can group Source Records from different Sources beyond the Incident they belong to. For example, a Surveillance Objective design involves sampling animals and cages in a market as part of targeted surveillance efforts. One of the potential options to structure these data is to set the market as the Location and set each vendor within the market as an 'Incident'. Let's pretend that in one of the Incidents (a vendor) a sample of feces is collected from the bottom of a cage, the cage has three animals of the same species, and only one of those animals is sampled (one oral swab sample).
 
