@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - project.qmd
     - Wildlife_Health_Database_Rules.qmd
     - summary.qmd
     - references.qmd
