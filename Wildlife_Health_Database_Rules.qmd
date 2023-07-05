@@ -26,7 +26,7 @@ Sources >> Records >> Specimens >> Diagnostics. There are four types of Sources;
 however, the database is modular, adjusting and selecting those components 
 needed specifically for each surveillance initiatives and their participants have.
 
-Each one of these components is explained below.
+Each one of these components is explained in the next chapters.
 
 
 ## PROJECT
