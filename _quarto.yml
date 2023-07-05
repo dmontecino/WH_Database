@@ -9,6 +9,7 @@ book:
     - index.qmd
     - intro.qmd
     - project.qmd
+    - surveillance_objective.qmd
     - Wildlife_Health_Database_Rules.qmd
     - summary.qmd
     - references.qmd
