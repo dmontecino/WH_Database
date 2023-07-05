@@ -13,6 +13,7 @@ book:
     - field_activity.qmd
     - location.qmd
     - incident.qmd
+    - source_source_records.qmd
     - Wildlife_Health_Database_Rules.qmd
     - data_dictionary.qmd
     - references.qmd
