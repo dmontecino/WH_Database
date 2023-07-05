@@ -1,4 +1,4 @@
-Specimens
+# Specimens
 
 Specimens correspond to material collected from Source Records to conduct. Diagnostics in order to identify hazards (Biological, Chemical, Physical) or Physiological problems. The material collected can range from the full body to conduct an ultrasound in a live animal up to a trace of tissue to perform a highly technological assay. Invertebrate Source Records can have multiple species; however, it is expected that their Specimens do contain invertebrates belonging to the same species.
 
