@@ -23,7 +23,7 @@ book:
 
 toc-title: On this page
 
-bibliography: references.bib
+# bibliography: references.bib
 
 format:
   html:
