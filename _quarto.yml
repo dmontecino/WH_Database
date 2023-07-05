@@ -16,8 +16,12 @@ book:
     - source_source_records.qmd
     - specimen.qmd
     - data_dictionary.qmd
+  # search: true
+  repo-url: https://github.com/dmontecino/WH_Database
+  repo-actions: [edit]
+  downloads: [pdf, epub]
 
-bibliography: references.bib
+# bibliography: references.bib
 
 format:
   html:
