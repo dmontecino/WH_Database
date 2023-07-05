@@ -27,7 +27,7 @@ toc-title: On this page
 
 format:
   html:
-    theme: cerulean
+    theme:  cerulean
   pdf:
     documentclass: scrreprt
 
