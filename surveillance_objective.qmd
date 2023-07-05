@@ -1,4 +1,4 @@
-# Surveillance Objective
+# Surveillance Objective {.unnumbered}
 
 Surveillance Objective a set of activities established to collect data in order to detect, quantify, or assess trends regarding specific health hazards in specific populations under a common methodology. Each Surveillance Objective should have a specific population and hazard target, Source or Specimen Collection methods, and Diagnostics. For example, a capture-mark-recapture study targeting lead accumulation in a specific population of vultures that involves blood collection and testing at every capture using the same diagnostic technique. Surveillance Objective is the most complicated component of the database. Read this section carefully.
 

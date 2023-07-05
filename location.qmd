@@ -1,4 +1,4 @@
-# Location
+# Location {.unnumbered}
 
 A Location is a general place where Incidents, Source Records, and Specimens are collected. For example, a single Field Visit could involve different places: two rehabilitation centers, one cave in a protected area, and three areas of another protected area. These examples include six Locations. A Location groups data in a more general manner than the exact longitude and latitude of the data collection (see 'Incidents' below that contain the latitude and longitude information) but that is more specific than 'Field Activity'.
 

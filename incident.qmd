@@ -1,4 +1,4 @@
-# Incidents
+# Incidents {.unnumbered}
 
 An Incident is a specific wildlife health event at specific longitude and latitude and that occurs in a specific date.
 

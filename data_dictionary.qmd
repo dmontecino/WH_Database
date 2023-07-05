@@ -1,4 +1,4 @@
-# Data Dictionary
+# Data Dictionary {.unnumbered}
 
 ```{r data dictionary, echo=FALSE, eval=T, message=FALSE, cache=TRUE}
 

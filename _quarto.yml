@@ -16,16 +16,18 @@ book:
     - source_source_records.qmd
     - specimen.qmd
     - data_dictionary.qmd
-  # search: true
-  # repo-url: https://github.com/dmontecino/WH_Database
-  # #repo-actions: [edit]
-  # downloads: [pdf, epub]
+  search: true
+  repo-url: https://github.com/dmontecino/WH_Database
+  #repo-actions: [edit]
+  downloads: [pdf, epub]
+
+toc-title: On this page
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmos
+    theme: cerulean
   pdf:
     documentclass: scrreprt
 

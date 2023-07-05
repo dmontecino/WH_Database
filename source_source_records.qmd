@@ -1,4 +1,4 @@
-# Sources and Source Records
+# Sources and Source Records {.unnumbered}
 
 ## Observation
 
@@ -22,12 +22,9 @@ Immutable data of Animal Sources are the sex, the species, and the date of death
 
 Each Animal Source has at least one Source Record. This first Source Record corresponds to the unique record of an unidentified individual animal or to the first record of an individually identified animal. Individually identified animals can potentially be tracked over time and have as many Source Records as needed.
 
-Mutable data of an Animal Source over time needs to be provided for each Source Record. Mutable data includes the captivity category, the health status, the age, and the marking code. These are one option features per Animal Source Record. Other mutable data for Animal Sources that can have multiple values in each Animal Source record are the anomalies found and the potential causes of injury, disease,
-or death. Obviously, the time t when the Animal Source is recorded is also mutable.
+Mutable data of an Animal Source over time needs to be provided for each Source Record. Mutable data includes the captivity category, the health status, the age, and the marking code. These are one option features per Animal Source Record. Other mutable data for Animal Sources that can have multiple values in each Animal Source record are the anomalies found and the potential causes of injury, disease, or death. Obviously, the time t when the Animal Source is recorded is also mutable.
 
-The last Animal Source Record for an animal is not necessarily the last time t when
-it was found dead because it is possible to collect Specimens from the carcass (dead
-Animal Source) over a period of time while the carcass is rooting.
+The last Animal Source Record for an animal is not necessarily the last time t when it was found dead because it is possible to collect Specimens from the carcass (dead Animal Source) over a period of time while the carcass is rooting.
 
 ### Necropsy
 
