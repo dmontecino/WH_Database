@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WildHealthDat - 1&nbsp; Introduction</title>
+<title>WildHealthDat - 5&nbsp; Location</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./project.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./Wildlife_Health_Database_Rules.html" rel="next">
+<link href="./field_activity.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./location.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Location</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./location.html" class="sidebar-item-text sidebar-link">
+  <a href="./location.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Location</span></span></a>
   </div>
 </li>
@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Location</span></h1>
 </div>
 
 
@@ -180,9 +180,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>WildlifeHealthDat is a flexible database built to track wildlife health data collected from a wide range of surveillance efforts, including citizen observations of dead, injured or sick animals, specific research, national or local wildlife health surveillance initiatives, outbreak investigations, and global wildlife health surveillance projects involving several countries, hazards, and host species.</p>
-<p>The database is based on the decades-long experience of the Wildlife Conservation Society - Health Program. This experience includes wildlife health surveillance activities covering dozens of countries; cross-sectional and longitudinal studies; the establishment of wildlife health surveillance networks; many biological, chemical, and physical hazards; studying dangerous zoonotic pathogens, such as Ebola virus disease and SARS-CoV-2; emerging vector-borne pathogens such as West Nile virus; the inclusion of rangers in protected areas and surrounding communities as eyes-on-the-ground for health surveillance; the logistics needed and challenges faced to properly manage, store, and track specimens collected in the field; necropsies; different kinds of diagnostic tests; and previous experiences managing wildlife health data using different Information Managament Systems.</p>
-<p>The wildlife health information is stored in the database following structured components ranging from Surveillance Objective up to Specimens and Diagnostic tests. The hierarchical structure of the databse components is: i) Projects &gt;&gt; Surveillance Objectives &gt;&gt; Field Activities &gt;&gt; Locations &gt;&gt; Incidents &gt;&gt; Sources &gt;&gt; Records &gt;&gt; Specimens &gt;&gt; Diagnostics. There are four types of Sources; however, the database is modular, adjusting and selecting those components needed specifically for each surveillance initiatives. Each one of these components is explained in the next chapters.</p>
+<p>A Location is a general place where Incidents, Source Records, and Specimens are collected. For example, a single Field Visit could involve different places: two rehabilitation centers, one cave in a protected area, and three areas of another protected area. These examples include six Locations. A Location groups data in a more general manner than the exact longitude and latitude of the data collection (see ‘Incidents’ below that contain the latitude and longitude information) but that is more specific than ‘Field Activity’.</p>
+<p>In the examples provided in the previous paragraph, a ‘market’ could be a ‘Location’ or an ‘Incident’ by itself (see below) depending on what the user considers the best choice for the corresponding Surveillance Objective. More detail about what an Incident represents is provided in the next section.</p>
 
 
 
@@ -422,13 +421,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./field_activity.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Field Activity</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./project.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Wildlife_Health_Database_Rules.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LOCATIONS</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
