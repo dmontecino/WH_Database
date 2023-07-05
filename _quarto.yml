@@ -15,6 +15,7 @@ book:
     - incident.qmd
     - source_source_records.qmd
     - specimen.qmd
+    - diagnostics.qmd
     - data_dictionary.qmd
   search: true
   repo-url: https://github.com/dmontecino/WH_Database
