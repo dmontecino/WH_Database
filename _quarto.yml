@@ -11,7 +11,7 @@ book:
     - project.qmd
     - surveillance_objective.qmd
     - Wildlife_Health_Database_Rules.qmd
-    - summary.qmd
+    - data_dictionary.qmd
     - references.qmd
 
 bibliography: references.bib
