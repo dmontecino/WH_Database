@@ -16,7 +16,6 @@ book:
     - source_source_records.qmd
     - specimen.qmd
     - data_dictionary.qmd
-    - references.qmd
 
 bibliography: references.bib
 
