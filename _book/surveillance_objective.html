@@ -127,13 +127,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project</span></span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -145,31 +145,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./field_activity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Field Activity</span></span></a>
+ <span class="menu-text">Field Activity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./location.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Location</span></span></a>
+ <span class="menu-text">Location</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./incident.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Incidents</span></span></a>
+ <span class="menu-text">Incidents</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./source_source_records.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sources and Source Records</span></span></a>
+ <span class="menu-text">Sources and Source Records</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./specimen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Specimens</span></span></a>
+ <span class="menu-text">Specimens</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./diagnostics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diagnostics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -216,8 +222,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Surveillance Objectives contain very specific metadata, describing their goals and methods used, including targeted species, populations, and hazards; the type of Sources and Specimens included; collection methods; and case definitions for specific Diagnostics, Specimens, and Sources. Some pieces of the metadata are provided by Source type (Observation, Animal Source, Environmental Source, and Invertebrate Source, [see below]).</p>
 <p>Surveillance Objectives apply for targeted surveillance and scanning surveillance initiatives so both types can be described through the metadata.</p>
 <p>Usually, Field Activities, Locations, Incidents, Sources, Records, and Diagnostics belong to a single Surveillance Objective. This Surveillance Objective is the one that originally requested the Field Activity at different Locations to record the corresponding Incidents, collect the Sources and Specimens, and perform Diagnostics for a specific hazard. In this case, the Surveillance Objective is provided automatically to each corresponding component.</p>
-<p>However, there are exceptions to this rule, except for Diagnostics, and the exceptions have different justifications for each component. Field Activities, Locations, Incidents, Source Records, and Specimens can be originally requested by different Surveillance Objectives planning the same activities and methods but that differ in the targeted hazard. For example, rodents sampled using the same methodology that will be tested for Coronaviruses and Rickettsia sp. It is the user responsibility to add the second Surveillance Objective to the corresponding Field Activities, Locations, Incidents, Source Records, and Specimens.</p>
-<p>Another exception can occur when Source Records and Specimens collected under scanning surveillance efforts are included in future targeted surveillance initiatives. For example, using pangolin Specimens collected by rangers patrolling a protected area in 2017 under a scanning surveillance strategy that are tested in 2023 for SARS-CoV-2 as part of a targeted surveillance initiative. In this case, the corresponding Specimens tested for SARS-CoV-2 and their Sources will have more than one Surveillance Objective. The one that originally demanded conducting the Field Activity to collect the Source Record and Specimens, and the new Surveillance Objective targeting SARS-CoV-2. This last Surveillance Objective [DOES NOT]{.underline} generate new Field Activities, Locations, or Incidents. Finally, each Diagnostic remains having a single Surveillance Objective (new Diagnostics targeting SARS-CoV-2 receive the SARS-CoV-2-related Surveillance Objective only).</p>
+<p>However, there are exceptions to this rule, except for Diagnostics, that have different justifications for each component. Field Activities, Locations, Incidents, Source Records, and Specimens can be originally requested by different Surveillance Objectives planning the same activities and methods but that differ in the targeted hazard. For example, rodents sampled using the same methodology that will be tested for both Coronaviruses and Rickettsia sp. It is the user responsibility to add the second Surveillance Objective to the corresponding Field Activities, Locations, Incidents, Source Records, and Specimens.</p>
+<p>Another exception can occur when Source Records and Specimens collected during past surveillance efforts are included in future surveillance initiatives. For example, using pangolin Specimens collected by rangers patrolling a protected area in 2017 under a scanning surveillance strategy that are tested in 2023 for SARS-CoV-2 as part of a targeted surveillance initiative. In this case, the corresponding Specimens tested for SARS-CoV-2 and their Sources will have more than one Surveillance Objective. The one that originally demanded conducting the Field Activity to collect the Source Record and Specimens, and the new Surveillance Objective targeting SARS-CoV-2. This last Surveillance Objective DOES NOT generate new Field Activities, Locations, or Incidents. Finally, each Diagnostic remains having a single Surveillance Objective (new Diagnostics targeting SARS-CoV-2 receive the SARS-CoV-2-related Surveillance Objective only). Surveillance Objectives added to a Diagnostic will be automatically provided to the corresponding Specimen, Source Record, and Source.</p>
 <p>Moreover, during Surveillance Objective targeting SARS-CoV-2 new Necropsies might be conducted, new Specimens could be created (from larger stored Specimens, such as a carcass or an organ), or new Pooled Specimens could be produced. All these components receive the Surveillance Objective targeting SARS-CoV-2 only. Again, it is the user responsibility secondary Surveillance Objective to the corresponding Source Records, Specimens and Diagnostics.</p>
 <p>Therefore, a Surveillance Objective can be linked to others because they belong to the same Project; they requested the same Field Activities, Locations, and Incidents; or they have Sources and Specimens in common. If Surveillance Objectives are connected for the second and third reason, then this connection must be provided in the metadata of the corresponding Surveillance Objectives. The connections will be also evident in the exported data such that each component with more than one Surveillance Objective (Field Activity,…, Specimens) will be represented by one row per Surveillance Objective.</p>
 <section id="outbreak-investigation" class="level2">
@@ -464,12 +470,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./project.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./field_activity.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Field Activity</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Field Activity</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
