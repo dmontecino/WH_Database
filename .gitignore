@@ -5,4 +5,5 @@
 WH_DATABASE.Rproj
 ._book
 .data_dictionary
+.data_dictionary_cache
 /.quarto/
