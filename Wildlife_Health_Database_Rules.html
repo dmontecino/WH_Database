@@ -95,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <p>An Observation corresponds to <u>observed-only animal(s)</u> present at one Incident <u>grouped by species</u>. For example, a wildlife health event involving a single isolated injured animal. If this individual is observed only, then the Incident has a single Observation representing a single species. The animal count for that single species is one.</p>
 <p>Another example: five animals are found in a wetland, two of them of species “A” and three of them of species “B”. One animal of species “A” is sick. If they are only observed and the Surveillance Objective is not interested in individual animal-level data,then this set of findings is a wildlife health ‘Incident’ with two ‘Observations’. One ‘Observation’ represents species “A” (one healthy individual and one sick animal), and another ‘Observation’ represents species “B” (three healthy individuals).</p>
 <p>Incidents can include Observations (species) with healthy animals only, as long as they are part of a wildlife health event.</p>
-<p>Each Observation generates one and only one Source Record. In that unique Record for the Observation animals are categorized by sex, age and health status. The captivity categories of the corresponding animals; their anomalies; and potential causes of injury, disease, or dead can be provided.</p>
+<p>Each Observation generates one and only one Source Record with immutable data. In that unique Source Record animals are categorized by sex, age and health status. The captivity categories of the corresponding animals; their anomalies; and potential causes of injury, disease, or dead can be provided.</p>
 <p>If the same set of only-observed animals are believed to be found five days latter, then a new Observation must be created because there is not certainty that they are the same individuals. If users want to track the animals longitudinally, they should be added singly to the database as ‘Animal Source’ (see below).</p>
 </section>
 <section id="animal-source" class="level3">
@@ -105,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="animal-source-record" class="level5">
 <h5 class="anchored" data-anchor-id="animal-source-record">Animal Source Record</h5>
 <p>Each Animal Source has at least one Source Record. This first Source Record corresponds to the unique record of an unidentified individual animal or to the first record of an individually identified animal. Individually identified animals can potentially be tracked over time and have as many Source Records as needed.</p>
-<p>Mutable data of an Animal Source over time that has to be provided for each Source Record are the captivity category, the health status, the age, and the marking code. These are one option features per Animal Source Record. Other mutable data for Animal Sources that can have multiple values in each Animal Source record are the anomalies found and the potential causes of injury, disease, or death. Obviously, the time t the Animal Source is recorded is also mutable.</p>
+<p>Mutable data of an Animal Source over time needs to be provided for each Source Record. Mutable data includes the captivity category, the health status, the age, and the marking code. These are one option features per Animal Source Record. Other mutable data for Animal Sources that can have multiple values in each Animal Source record are the anomalies found and the potential causes of injury, disease, or death. Obviously, the time t when the Animal Source is recorded is also mutable.</p>
 <p>The last Animal Source Record for an animal is not necessarily the last time t when it was found dead because it is possible to collect Specimens from the carcass (dead Animal Source) over a period of time while the carcass is rooting.</p>
 </section>
 <section id="necropsies" class="level5">
@@ -117,17 +117,24 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="environmental-sources" class="level3">
 <h3 class="anchored" data-anchor-id="environmental-sources">Environmental Sources</h3>
-<p>An Environmental Source represents an entity that provides Specimens that: i) are abiotic (e.g., a location of a frozen pond that is sampled for Avian influenza), or ii) are biotic but it is not possible to identify the corresponding Animal Source (e.g., feces found in the field).</p>
-<p>Immutable data of Environmental Sources are the type of Environmental Source. Setting the Environmental Source type determines the Specimen type provided for those Sources. For example, feces can only yield feces as Specimens, and water in a pond can only provide water.</p>
+<p>An Environmental Source represents an entity that provides Specimens that: i) are abiotic (e.g., a location of a frozen pond that is sampled for Avian influenza), or ii) are biotic but it is not possible to identify the corresponding Animal Source (e.g., feces found in the field). Environmental Sources do not have sex or date of death.</p>
+<p>Immutable data of Environmental Sources are the species (in the case of type of biotic Environmental Sources) and the Environmental Source type. Setting the Environmental Source type determines the Specimen type provided for those Sources (see ‘Specimens’ below). For example, feces can only yield feces as Specimens, and water in a pond can only provide water.</p>
 <section id="environmental-source-record" class="level5">
 <h5 class="anchored" data-anchor-id="environmental-source-record">Environmental Source Record</h5>
-<p>Each Environmental Source has at least one Source Record. This first Source Record corresponds to the unique record of an unidentified Environmental Source (e.g., feces on the ground) or to the first record of an individually identified Environmental Source (e.g., water collected at a specific place in the pond). Individually Environmental Sources can potentially be tracked over time and have as many Source Records as needed.</p>
+<p>Each Environmental Source has at least one Source Record. This first Source Record corresponds to the unique collection from an unidentified Environmental Source (e.g., feces on the ground) or to the first record of an individually identified Environmental Source (e.g., water collected at a specific place in the pond). Individually Environmental Sources can potentially be tracked over time and have as many Source Records as needed.</p>
 <p>Environmental Sources do not have mutable data except the time t when they are sampled.</p>
 </section>
 </section>
 <section id="invertebrate-sources" class="level3">
 <h3 class="anchored" data-anchor-id="invertebrate-sources">Invertebrate Sources</h3>
-<p>Designed to contain data of a collection of invertebrates. If the interest is at the individual level (e.g., bees with problems in their wings), then the data should be recorded as Animal Source</p>
+<p>An Invertebrate Source is an invertebrate trap (e.g., CO2 traps, flag traps, etc.) placed in specific coordinates Invertebrate Sources can be added because the Surveillance Objective aims to collect invertebrates and potentially test them for vector-borne diseases.</p>
+<p>The only immutable data of Invertebrate Sources is the trap. If the same type of trap is placed in the same coordinates, then Invertebrate Sources can be tracked longitudinally; however, the invertebrate species collected each time the trap is set can be different. Invertebrate Sources do not have sex, age, captivity category, anomalies, health status, potential cause of death, etc.</p>
+<p>Invertebrate Sources are designed to contain data of a collection of invertebrates. If the interest is at the individual level (e.g., bees with problems in their wings), then the user should add Animal Sources.</p>
+<section id="invertebrate-source-record" class="level5">
+<h5 class="anchored" data-anchor-id="invertebrate-source-record">Invertebrate Source Record</h5>
+<p>Each Invertebrate Source has at least one Source Record. This first Source Record corresponds to setting the type of trap in specific coordinates. As mentioned in the previous section, if the same type of invertebrate trap is placed in the same coordinates, then Invertebrate Sources can be tracked over time and have as many Source Records as needed. If the type of trap changes, then it is a different Invertebrate Source.</p>
+<p>Mutable data of an Invertebrate Sources needs to be provided for each Source Record. The mutable data of Invertebrate Sources is the species captured (probably more than one). Obviously, the time t when the Invertebrate Source is recorded is also mutable.</p>
+</section>
 </section>
 </section>
 <section id="final-comment-on-sources-and-source-records" class="level2">
@@ -138,6 +145,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="specimens" class="level2">
 <h2 class="anchored" data-anchor-id="specimens">SPECIMENS</h2>
+<p>Specimens correspond to material collected from Source Records to conduct Diagnostics in order to identify hazards (Biological, Chemical, Physical) or Physiological problems. The material collected can range from the full body to conduct an ultrasound in a live animal up to a trace of tissue to perform a highly technological assay. Invertebrate Source Records can have multiple species; however, it is expected that their Specimens do contain invertebrates belonging to the same species.</p>
+<p>Specimens are characterized by an identifier, the type of material (water, hair, kidney, animal), the original amount (e.g., ‘full animal’ or 0.35 mm), the solution used to maintain them, and their storage type in the laboratory. Moreover, the database tracks the Specimen location (building, laboratory name, refrigerator name, etc), their availability, ownership, and current amount. The original amount and the current amount can differ if certain quantity of the original Specimen has already been used for previous Diagnostics.</p>
+<p>Animal Specimens that are equivalent to the Animal Source Record (both are the ‘full animal’) must be given information at the Source Record level and at the Specimen level. The Source Record and Specimen could have the same identifier or a different one. The amount of the Specimen in those cases should be ‘full animal’.</p>
+<p>Specimens whose current amount is zero must not be deleted from the database and their last location should remain.</p>
+<p>It is possible that for lack of space or materials, more than one Specimen is stored in the same container. This strategy can cause cross contamination and make Specimen tracing more complicated. For this reason, Specimens can have a ‘Container’ identifier that is the same among Specimens sharing the same container. Although Specimens within the same container might not be labeled individually, a unique Specimen identifier must be provided in the database. This identifier can be the same as the container identifier plus an “organ name” or a numeric string at the end: “.1”, “.2”, etc. A description of each specific ‘Specimen’ within the container can be provided in ‘Comments’ allowing the identification of each tissue in the container as the corresponding Specimen.</p>
 </section>
 </section>
 
