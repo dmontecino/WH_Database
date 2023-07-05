@@ -1,6 +1,7 @@
 # Data Dictionary {.unnumbered}
 
-```{r data dictionary, echo=FALSE, eval=T, message=FALSE, cache=TRUE}
+```{r data dictionary, echo=FALSE, eval=T, message=FALSE, cache=FALSE}
+#| tbl-colwidths: [1,5]
 
 
 # ------------------#
@@ -1950,7 +1951,14 @@ data_dictionary<-data_dictionary %>%
   list_rbind() %>% 
   select(Component, Variable, Label, Definition, Type, Mandatory)
 
-kbl(data_dictionary)
+# need to find how to change the font size to improve the column width
+
+  kableExtra::kable(data_dictionary, booktabs = TRUE)%>%
+    # kableExtra::kable_paper(full_width = F) %>% 
+  kable_styling(bootstrap_options = c("basic"), font_size = 2) %>% 
+    kableExtra::column_spec(column = 1:5, border_right = T) 
+    # kableExtra::text_spec(format="html", font_size="xx-small")
+
 
 # write_csv(data_dictionary, file = "data_dictionary_June_30_2023.csv")
 
