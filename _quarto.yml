@@ -17,15 +17,15 @@ book:
     - specimen.qmd
     - data_dictionary.qmd
   # search: true
-  repo-url: https://github.com/dmontecino/WH_Database
-  repo-actions: [edit]
-  downloads: [pdf, epub]
+  # repo-url: https://github.com/dmontecino/WH_Database
+  # #repo-actions: [edit]
+  # downloads: [pdf, epub]
 
-# bibliography: references.bib
+bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: cosmos
   pdf:
     documentclass: scrreprt
 
