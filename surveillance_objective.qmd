@@ -1,0 +1,55 @@
+# Surveillance Objective
+
+Surveillance Objective a set of activities established to collect data in order to detect, quantify, or assess trends regarding specific health hazards in specific populations under a common methodology. Each Surveillance Objective should have a specific population and hazard target, Source or Specimen Collection methods, and Diagnostics. For example, a capture-mark-recapture study targeting lead accumulation in a specific population of vultures that involves blood collection and testing at every capture using the same diagnostic technique. Surveillance Objective is the most complicated component of the database. Read this section carefully.
+
+Surveillance Objectives contain very specific metadata, describing their goals and
+methods used, including targeted species, populations, and hazards; the type of
+Sources and Specimens included; collection methods; and case definitions for
+specific Diagnostics, Specimens, and Sources. Some pieces of the metadata are provided by Source type (Observation, Animal Source, Environmental Source, and Invertebrate Source, \[see below\]).
+
+Surveillance Objectives apply for targeted surveillance and scanning surveillance
+initiatives so both types can be described through the metadata. All Outbreak
+Investigations are a Surveillance Objective, although the outbreak information
+(name and diagnosis) can be provided later and not immediately after the Surveillance
+Objective creation in the database.
+
+Usually, Field Activities, Locations, Incidents, Sources, Records, and Diagnostics
+belong to a single Surveillance Objective. This Surveillance Objective
+is the one that originally requested the Field Activity at different Locations to
+record the corresponding Incidents, collect the Sources and Specimens, and perform
+Diagnostics for a specific hazard. In this case, the Surveillance Objective is
+provided automatically to each corresponding component.
+
+However, there are exceptions to this rule, except for Diagnostics, and the exceptions
+have different justifications for each component. Field Activities, Locations,
+Incidents, Source Records, and Specimens can be originally requested by different
+Surveillance Objectives planning the same activities and methods but that differ
+in the targeted hazard. For example, rodents sampled using the same methodology
+that will be tested for Coronaviruses and Rickettsia sp. It is the user responsibility
+to add the second Surveillance Objective to the corresponding Field Activities,
+Locations, Incidents, Source Records, and Specimens.
+
+Another exception can occur when Source Records and Specimens collected under
+scanning surveillance efforts are included in future targeted surveillance initiatives.
+For example, using pangolin Specimens collected by rangers patrolling a protected
+area in 2017 under a scanning surveillance strategy that are tested in 2023 for
+SARS-CoV-2 as part of a targeted surveillance initiative. In this case, the
+corresponding Specimens tested for SARS-CoV-2 and their Sources will have more than one Surveillance Objective. The one that originally demanded conducting the Field Activity to collect the Source Record and Specimens, and the new Surveillance
+Objective targeting SARS-CoV-2. This last Surveillance Objective \[DOES NOT\]{.underline} generate new Field Activities, Locations, or Incidents. Finally, each Diagnostic remains having a single Surveillance Objective (new Diagnostics targeting
+SARS-CoV-2 receive the SARS-CoV-2-related Surveillance Objective only).
+
+Moreover, during Surveillance Objective targeting SARS-CoV-2 new Necropsies might
+be conducted, new Specimens could be created (from larger stored Specimens, such
+as a carcass or an organ), or new Pooled Specimens could be produced. All these
+components receive the Surveillance Objective targeting SARS-CoV-2 only. Again,
+it is the user responsibility secondary Surveillance Objective to the corresponding
+Source Records, Specimens and Diagnostics.
+
+Therefore, a Surveillance Objective can be linked to others because they belong
+to the same Project; they requested the same Field Activities, Locations,
+and Incidents; or they have Sources and Specimens in common. If Surveillance
+Objectives are connected for the second and third reason, then this connection must
+be provided in the metadata of the corresponding Surveillance Objectives. The
+connections will be also evident in the exported data such that each component with
+more than one Surveillance Objective (Field Activity,..., Specimens) will be
+represented by one row per Surveillance Objective.
