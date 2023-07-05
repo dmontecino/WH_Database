@@ -1,9 +1,3 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
+This is the documentation of the WildHealthDat database. The documentation includes an explanation of the data structure (see Chapters) and the data dictionary.
