@@ -1,6 +1,6 @@
 # Data Dictionary
 
-```{r data dictionary, echo=FALSE, eval=T}
+```{r data dictionary, echo=FALSE, eval=T, message=FALSE}
 
 
 # ------------------#

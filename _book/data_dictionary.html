@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>WildHealthDat - 5&nbsp; Data Dictionary</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./Wildlife_Health_Database_Rules.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_dictionary.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Dictionary</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">WildHealthDat</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./surveillance_objective.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Surveillance Objective</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Wildlife_Health_Database_Rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">FIELD ACTIVITY</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_dictionary.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Dictionary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Dictionary</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Component</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Label</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Definition</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectID</td>
+<td style="text-align: left;">Project Identifier</td>
+<td style="text-align: left;">System-provided project identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">ProjectName</td>
+<td style="text-align: left;">Project Name</td>
+<td style="text-align: left;">User-provided project name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">ProjectCrossID</td>
+<td style="text-align: left;">Project Cross Identifier</td>
+<td style="text-align: left;">The identifier of the project under another nomenclature system</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectFunder</td>
+<td style="text-align: left;">Project Funder</td>
+<td style="text-align: left;">The funding sources of the project</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes. Provide at least one option</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectCountry</td>
+<td style="text-align: left;">Country</td>
+<td style="text-align: left;">The countries included in the project</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes. Provide at least one option</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectLeadingOrganization</td>
+<td style="text-align: left;">Project Leading Organization</td>
+<td style="text-align: left;">The organizations leading the project</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes. Provide at least one option</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectOtherOrganization</td>
+<td style="text-align: left;">Other Organizations in the project</td>
+<td style="text-align: left;">Other organizations/partners associated with the project</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes. Provide at least one option</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WilldifeHealth_ProjectLeader</td>
+<td style="text-align: left;">Project leader</td>
+<td style="text-align: left;">The head of the project</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">ProjectPurpose</td>
+<td style="text-align: left;">Project Purpose</td>
+<td style="text-align: left;">The full objective of the project</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">ProjectNewFieldActivities</td>
+<td style="text-align: left;">Field visits are part of the project</td>
+<td style="text-align: left;">Answer to the question: 'Does the project involve field visits?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectAnimalTaxa</td>
+<td style="text-align: left;">Animal species considered in the project</td>
+<td style="text-align: left;">The animal species of interest for the project</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectEnvironmentalSource</td>
+<td style="text-align: left;">Environmental sources considered in the project</td>
+<td style="text-align: left;">The environmental sources of interest for the project</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectInvertebrateSource</td>
+<td style="text-align: left;">Invertebrate sources considered in the project</td>
+<td style="text-align: left;">The invertebrate sources of interest for the project</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectHazardType</td>
+<td style="text-align: left;">Health hazard types targeted</td>
+<td style="text-align: left;">The general type of health hazard targeted under the project (e.g., 'Biological', 'Chemical', 'Physical', 'Physiological')</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectHazardName</td>
+<td style="text-align: left;">Specific health hazard targeted</td>
+<td style="text-align: left;">The specific health hazards targeted under the project (e.g., 'coronaviridae', 'Brucella abortus')</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes. Options available are conditional on the health hazard types selected</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">ProjectStartDate</td>
+<td style="text-align: left;">Project Start Date</td>
+<td style="text-align: left;">The date the project oficially started</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">ProjectEndDate</td>
+<td style="text-align: left;">Project End Date</td>
+<td style="text-align: left;">The date the project is projected to end or oficially ended</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Project_Table</td>
+<td style="text-align: left;">WildlifeHealth_ProjectUrl</td>
+<td style="text-align: left;">Project URLs</td>
+<td style="text-align: left;">URLs of the project, associated with the project, or organizations leading the project</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjectiveID</td>
+<td style="text-align: left;">Surveillance objective identifier</td>
+<td style="text-align: left;">System-provided project identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveName</td>
+<td style="text-align: left;">Surveillance objective name</td>
+<td style="text-align: left;">User-provided surveillance objective name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveCrossID</td>
+<td style="text-align: left;">Surveillance Objective Cross Identifier</td>
+<td style="text-align: left;">The identifier of the surveillance project under another nomenclature system</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjectiveType</td>
+<td style="text-align: left;">Surveillance objective type</td>
+<td style="text-align: left;">The type of surveillance (e.g., Targeted, Scanning, Outbreak Investigation, or Research)</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjectiveOrganizationInvolved</td>
+<td style="text-align: left;">Surveillance objective organizations</td>
+<td style="text-align: left;">The organizations involved in the surveillance objective</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjectiveCountry</td>
+<td style="text-align: left;">Surveillance objective countries</td>
+<td style="text-align: left;">The countries included in the surveillance objective</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectivePurpose</td>
+<td style="text-align: left;">Surveillance objective purpose</td>
+<td style="text-align: left;">The specific goal of the surveillance objective</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjectiveHazardType</td>
+<td style="text-align: left;">Surveillance objective hazard type</td>
+<td style="text-align: left;">The general type of health hazard targeted by the surveillance objective (e.g., 'Biological', 'Chemical', 'Physical', 'Physiological')</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjectiveHazardName</td>
+<td style="text-align: left;">Surveillance objective hazard name</td>
+<td style="text-align: left;">The specific health hazard targeted under the surveillance project (e.g., 'coronaviridae', 'Brucella abortus')</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes. Options available are conditional on the health hazard type selected</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveStartDate</td>
+<td style="text-align: left;">Surveillance objective end date</td>
+<td style="text-align: left;">The date the surveillance objective oficially started</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveEndDate</td>
+<td style="text-align: left;">Surveillance objective end date</td>
+<td style="text-align: left;">The date the project is projected to end or oficially ended</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveOrganizationAICUC</td>
+<td style="text-align: left;">Organization providing the AICUC</td>
+<td style="text-align: left;">The organization providing the AICUC approving the methodology of the surveillance objective</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveAICUCCode</td>
+<td style="text-align: left;">AICUC Code</td>
+<td style="text-align: left;">The code of the AICUC approving the methodology of the surveillance objective</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveNewFieldActivityAdded</td>
+<td style="text-align: left;">Field visits are part of the surveillance objective</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective involve field visits?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveObservationsIncluded</td>
+<td style="text-align: left;">The surveillance objective includes observed-only animals</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective include observed-only animals grouped by species?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveAnimalSourcesIncluded</td>
+<td style="text-align: left;">The surveillance objective includes data from individual animals</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective include information from individual animals?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveEnvironmentalSourcesIncluded</td>
+<td style="text-align: left;">The surveillance objective includes specimens from environmental sources</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective include specimens from environmental sources (e.g., water)?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveInvertebrateSourcesIncluded</td>
+<td style="text-align: left;">The surveillance objective includes specimens from invertebrate sources</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective include specimens from invertebrate sources (e.g., CO2 traps)?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveNewObservationsAdded</td>
+<td style="text-align: left;">The surveillance objective adds new observations</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective involve the recording of new observations?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveNewAnimalSourceRecordsAdded</td>
+<td style="text-align: left;">The surveillance objective adds new animal records</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective involve the collection of new animal records?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveNewEnvironmentalSourceRecordsAdded</td>
+<td style="text-align: left;">The surveillance objective adds new environmental source records</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective include the collection of new specimens from environmental sources (e.g., water)?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveNewInvertebrateSourceRecordsAdded</td>
+<td style="text-align: left;">The surveillance objective adds new invertebrate source records</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective include the collection of new specimens from invertebrate sources (e.g., mosquitoes)?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveNewPooledSpecimensAdded</td>
+<td style="text-align: left;">The surveillance objective creates new pooled specimens</td>
+<td style="text-align: left;">Answer to the question: 'Does the surveillance objective creates new pooled specimens?</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjectiveLab</td>
+<td style="text-align: left;">Surveillance objective laboratories</td>
+<td style="text-align: left;">The laboratories associated with the surveillance objective</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveOtherSurveillanceObjectiveAssociated</td>
+<td style="text-align: left;">Other Surveillance objectives associated</td>
+<td style="text-align: left;">Answer to the question: 'Are there other surveillance objectives associated with the current surveillance project?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveReasonOtherSurveillanceObjectiveAssociated</td>
+<td style="text-align: left;">Reason surveillance objective are associated</td>
+<td style="text-align: left;">The reason why other surveillance objective are associated with the current surveillance objective (e.g., the other surveillance objective holds the field activies sourcing the specimens used in the current surveillance objective)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes, but this field becomes available only when 'Reason surveillance objective are associated' is True</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveMetadataRelevantUrl</td>
+<td style="text-align: left;">Surveillance objective URLs</td>
+<td style="text-align: left;">URLs of the surveillance objective, associated with the surveillance objective, or organizations leading the surveillance objective</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveMetadataPublication</td>
+<td style="text-align: left;">Surveillance objective publication</td>
+<td style="text-align: left;">Publication references associated with the surveillance objective</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveMetadataIncidentGrouping</td>
+<td style="text-align: left;">Incidents of the surveillance objective are grouped</td>
+<td style="text-align: left;">Answer to the question: 'Are incidents associated with the current surveillance project grouped in units smaller than 'location'?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surveillance_Objective</td>
+<td style="text-align: left;">SurveillanceObjectiveMetadataIncidentGroupingStructure</td>
+<td style="text-align: left;">Grouping of incidents</td>
+<td style="text-align: left;">Explain the grouping structure of the incidents below 'location'</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes, but this field becomes available only when 'Incidents of the surveillance objective are grouped' is True</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Outbreak</td>
+<td style="text-align: left;">OutbreakName</td>
+<td style="text-align: left;">Outbreak name</td>
+<td style="text-align: left;">The name provided to the outbreak</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes, if the surveillance objective type is 'Outbreak'</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Outbreak</td>
+<td style="text-align: left;">OutbreakDiagnosis</td>
+<td style="text-align: left;">Outbreak Diagnosis</td>
+<td style="text-align: left;">The diagnosis provided to the outbreak</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Field_Activity</td>
+<td style="text-align: left;">WildlifeHealth_FieldActivityID</td>
+<td style="text-align: left;">Field activity identifier</td>
+<td style="text-align: left;">System-provided field activity identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Field_Activity</td>
+<td style="text-align: left;">FieldActivityCode</td>
+<td style="text-align: left;">Field activity code</td>
+<td style="text-align: left;">User-provided field activity code</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Field_Activity</td>
+<td style="text-align: left;">FieldActivityCrossID</td>
+<td style="text-align: left;">Field Activity Cross Identifier</td>
+<td style="text-align: left;">The identifier of the field activity under another nomenclature system</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Field_Activity</td>
+<td style="text-align: left;">WildlifeHealth_FieldActivityLeaderName</td>
+<td style="text-align: left;">Field activity leader name</td>
+<td style="text-align: left;">The leader of the field activity of the surveillance project</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Field_Activity</td>
+<td style="text-align: left;">WildlifeHealth_FieldActivityType</td>
+<td style="text-align: left;">Field activity type</td>
+<td style="text-align: left;">The type of field activity (e.g., 'Market', 'Free-ranging', 'Ranger patroling')</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Field_Activity</td>
+<td style="text-align: left;">FieldActivityHistory</td>
+<td style="text-align: left;">Field activity history</td>
+<td style="text-align: left;">The background of the field activity (e.g., why, who, how, where, what for)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Field_Activity</td>
+<td style="text-align: left;">FieldActivityStartDate</td>
+<td style="text-align: left;">Field activity start date</td>
+<td style="text-align: left;">The date the field activity started</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Field_Activity</td>
+<td style="text-align: left;">FieldActivityEndDate</td>
+<td style="text-align: left;">Field activity end date</td>
+<td style="text-align: left;">The date the field activity ended</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Field_Activity_Location</td>
+<td style="text-align: left;">WildlifeHealth_FieldActivityLocationID</td>
+<td style="text-align: left;">Field activity location cross identifier</td>
+<td style="text-align: left;">The identifier of the field activity location under another nomenclature system</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Field_Activity_Location</td>
+<td style="text-align: left;">FieldActivityLocation</td>
+<td style="text-align: left;">Field activity location name</td>
+<td style="text-align: left;">The name of the field activity location</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentID</td>
+<td style="text-align: left;">Incident identifier</td>
+<td style="text-align: left;">System-provided incident identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentCrossID</td>
+<td style="text-align: left;">Incident cross identifier</td>
+<td style="text-align: left;">The identifier of an incident under another nomenclature system</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentDate</td>
+<td style="text-align: left;">Incident date</td>
+<td style="text-align: left;">The date of the incident</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentType</td>
+<td style="text-align: left;">Incident type</td>
+<td style="text-align: left;">The date of the incident</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentUnit</td>
+<td style="text-align: left;">Incident unit</td>
+<td style="text-align: left;">Explanation of what the incident represents (e.g., a field finding, a market, a vendor, a cage, a grid cell, a point in a transect, a mist net, etc.)</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentFinding</td>
+<td style="text-align: left;">Incident finding</td>
+<td style="text-align: left;">Specific set of findings at the incident</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentLandscapeType</td>
+<td style="text-align: left;">Incident landscape type</td>
+<td style="text-align: left;">Specific features of the landscape at the incident</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentBy</td>
+<td style="text-align: left;">Incident reported by</td>
+<td style="text-align: left;">The person that reported the incident</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentBySector</td>
+<td style="text-align: left;">Sector of the reporter</td>
+<td style="text-align: left;">The sector of the person that reported the incident</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentSmartSource</td>
+<td style="text-align: left;">Incident from SMART</td>
+<td style="text-align: left;">Answer to the question: 'Was the incident recorded using SMART?'</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentLongitude</td>
+<td style="text-align: left;">Longitude</td>
+<td style="text-align: left;">Longitude coordinate. Non decimal degree coordinates are automatically converted. If coordinates are provided in UTM, then the UTM zone must be provided</td>
+<td style="text-align: left;">Float</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentLatitude</td>
+<td style="text-align: left;">Latitude</td>
+<td style="text-align: left;">Latitude coordinate. Non decimal degree coordinates are automatically converted. If coordinates are provided in UTM, then the UTM zone must be provided</td>
+<td style="text-align: left;">Float</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentUTMZone</td>
+<td style="text-align: left;">UTM Zone</td>
+<td style="text-align: left;">UTM Zone. See https://www.dmap.co.uk/utmworld.htm</td>
+<td style="text-align: left;">Float</td>
+<td style="text-align: left;">Yes if longitude and latitude are supplies in UTM coordinates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentCountry</td>
+<td style="text-align: left;">Country</td>
+<td style="text-align: left;">Country where the incident happens</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildliHealth_IncidentState</td>
+<td style="text-align: left;">State</td>
+<td style="text-align: left;">State where the incident happens</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentProvince</td>
+<td style="text-align: left;">Province</td>
+<td style="text-align: left;">Province where the incident happens</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentSiteCode</td>
+<td style="text-align: left;">Site code</td>
+<td style="text-align: left;">The site the incidents are grouped by site</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentZoneCode</td>
+<td style="text-align: left;">Zone code</td>
+<td style="text-align: left;">The zone the incidents are grouped by zone</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentMarketCode</td>
+<td style="text-align: left;">Market code</td>
+<td style="text-align: left;">The market the incidents are grouped by market</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentGridCode</td>
+<td style="text-align: left;">Grid code</td>
+<td style="text-align: left;">The grid code the when incidents are grouped by grid</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentGridCellCode</td>
+<td style="text-align: left;">Grid cell code</td>
+<td style="text-align: left;">The grid cell code when incidents are grouped by grid cell</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentStationCode</td>
+<td style="text-align: left;">Station code</td>
+<td style="text-align: left;">The station code when incidents are grouped by station</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentTransectCode</td>
+<td style="text-align: left;">Transect code</td>
+<td style="text-align: left;">The transect code when incidents are grouped by transect</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentVendorCode</td>
+<td style="text-align: left;">Vendor code</td>
+<td style="text-align: left;">The vendor code when incidents are grouped by vendor</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentTrapCode</td>
+<td style="text-align: left;">Trap code</td>
+<td style="text-align: left;">The vendor code when incidents are grouped by trap</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentMistNetCode</td>
+<td style="text-align: left;">Mist net code</td>
+<td style="text-align: left;">The mist net code when incidents are grouped by mist net code</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentOtherSpatialUnitCode</td>
+<td style="text-align: left;">Other spatial unit code</td>
+<td style="text-align: left;">The spatial unit code when incidents are grouped by another spatial unit</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentStudyYear</td>
+<td style="text-align: left;">The study year</td>
+<td style="text-align: left;">The temporal unit code when incidents are grouped by year unit</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentStudySeason</td>
+<td style="text-align: left;">The study season</td>
+<td style="text-align: left;">The temporal unit code when incidents are grouped by study season</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentStudyMonth</td>
+<td style="text-align: left;">The study month</td>
+<td style="text-align: left;">The temporal unit code when incidents are grouped by month</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentStudyWeek</td>
+<td style="text-align: left;">The study week</td>
+<td style="text-align: left;">The temporal unit code when incidents are grouped by week</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentStudyDayPeriod</td>
+<td style="text-align: left;">The study day period</td>
+<td style="text-align: left;">The temporal unit code when incidents are grouped by study day</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">WildlifeHealth_IncidentStudyHour</td>
+<td style="text-align: left;">The study hour</td>
+<td style="text-align: left;">The temporal unit code when incidents are grouped by study hour</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentOtherTemporalUnit</td>
+<td style="text-align: left;">Other spatial temporal unit code</td>
+<td style="text-align: left;">The temporal unit code when incidents are grouped by another temporal unit</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentTimeAssembled</td>
+<td style="text-align: left;">Time assembled</td>
+<td style="text-align: left;">The time a trap or similar representing an incident is set up</td>
+<td style="text-align: left;">Datetime</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Incident</td>
+<td style="text-align: left;">IncidentTimeDisassembled</td>
+<td style="text-align: left;">Time disassembled</td>
+<td style="text-align: left;">The time a trap or similar representing an incident is dissamsembled</td>
+<td style="text-align: left;">Datetime</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Source</td>
+<td style="text-align: left;">SourceID</td>
+<td style="text-align: left;">Source identifier</td>
+<td style="text-align: left;">System-provided source identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Source</td>
+<td style="text-align: left;">SourceCode</td>
+<td style="text-align: left;">Source code</td>
+<td style="text-align: left;">User-provided source code</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Source</td>
+<td style="text-align: left;">SourceCrossID</td>
+<td style="text-align: left;">Source cross identifier</td>
+<td style="text-align: left;">The identifier of the source under another nomenclature system</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Source</td>
+<td style="text-align: left;">SourceType</td>
+<td style="text-align: left;">Source Type</td>
+<td style="text-align: left;">The source type (e.g., 'Observaiton', 'Animal', 'Environmental', 'Invertebrate'</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Source</td>
+<td style="text-align: left;">SourceSpecies</td>
+<td style="text-align: left;">Source Species</td>
+<td style="text-align: left;">The source species. Only one for each observation, animal, and environmental sources, but several can apply to invertebrate sources</td>
+<td style="text-align: left;">Single selection for Observation, Animal, and Environmental Sources. Does not apply for Invertebrate sources.</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_Source</td>
+<td style="text-align: left;">SourceComments</td>
+<td style="text-align: left;">Comments</td>
+<td style="text-align: left;">Any comments regarding the source</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_Source</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjective</td>
+<td style="text-align: left;">Surveillance objective</td>
+<td style="text-align: left;">The surveillance objectives that the source is part of</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">WildlifeHealth_ObservationSourceID</td>
+<td style="text-align: left;">Observation identifier</td>
+<td style="text-align: left;">System-provided observation identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultMaleHealthy</td>
+<td style="text-align: left;">Number of healthy male adults</td>
+<td style="text-align: left;">The number of healhty male adults observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultFemaleHealthy</td>
+<td style="text-align: left;">Number of healthy female adults</td>
+<td style="text-align: left;">The number of healhty female adults observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultUnknownSexHealthy</td>
+<td style="text-align: left;">Number of healthy adults of unknown sex</td>
+<td style="text-align: left;">The number of healhty adults of unknown sex observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultMaleSickOrInjured</td>
+<td style="text-align: left;">Number of sick or injured male adults</td>
+<td style="text-align: left;">The number of sick or injured male adults observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultFemaleSickOrInjured</td>
+<td style="text-align: left;">Number of sick or injured female adults</td>
+<td style="text-align: left;">The number of sick or injured female adults observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultUnknownSexSickOrInjured</td>
+<td style="text-align: left;">Number of sick or injured adults of unknown sex</td>
+<td style="text-align: left;">The number of sick or injured adults of unknown sex observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultMaleDead</td>
+<td style="text-align: left;">Number of dead male adults</td>
+<td style="text-align: left;">The number of dead male adults observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultFemaleDead</td>
+<td style="text-align: left;">Number of dead female adults</td>
+<td style="text-align: left;">The number of dead female adults observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberAdultUnknownSexDead</td>
+<td style="text-align: left;">Number of dead adults of unknown sex</td>
+<td style="text-align: left;">The number of dead adults of unknown sex observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberJuvenileHealthy</td>
+<td style="text-align: left;">Number of healthy juveniles</td>
+<td style="text-align: left;">The number of healthy juveniles observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberJuvenileSickInjured</td>
+<td style="text-align: left;">Number of sick or injured juveniles</td>
+<td style="text-align: left;">The number of sick or injured juveniles observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberJuvenileDead</td>
+<td style="text-align: left;">Number of dead juveniles</td>
+<td style="text-align: left;">The number of dead juveniles observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberFetusHealthy</td>
+<td style="text-align: left;">Number of healthy fetuses</td>
+<td style="text-align: left;">The number of healthy fetuses observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberFetusSickInjured</td>
+<td style="text-align: left;">Number of sick or injured fetuses</td>
+<td style="text-align: left;">The number of sick or injured fetuses observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberFetusDead</td>
+<td style="text-align: left;">Number of dead fetuses</td>
+<td style="text-align: left;">The number of dead fetuses observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberUnknownAgeSexHealthy</td>
+<td style="text-align: left;">Number of healthy individuals of unknown age and sex</td>
+<td style="text-align: left;">The number of healthy individuals of unknown age and sex observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberUnknownAgeSexSickInjured</td>
+<td style="text-align: left;">Number of sick or injured individuals of unknown age and sex</td>
+<td style="text-align: left;">The number of sick or injured individuals of unknown age and sex observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WildlifeHealth_ObservationSource</td>
+<td style="text-align: left;">ObservationNumberUnknownAgeSexDead</td>
+<td style="text-align: left;">Number of dead individuals of unknown age and sex</td>
+<td style="text-align: left;">The number of dead individuals of unknown age and sex observed for the current species</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Source</td>
+<td style="text-align: left;">WildlifeHealth_AnimalSourceID</td>
+<td style="text-align: left;">Animal source identifier</td>
+<td style="text-align: left;">System-provided animal source identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Source</td>
+<td style="text-align: left;">WildlifeHealth_AnimalSourceSex</td>
+<td style="text-align: left;">Animal source sex</td>
+<td style="text-align: left;">Sex of the animal source</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Source</td>
+<td style="text-align: left;">AnimalSourceDateOfDeath</td>
+<td style="text-align: left;">Animal source death date</td>
+<td style="text-align: left;">Date the animal source died or was found dead</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Source</td>
+<td style="text-align: left;">AnimalSourceAnyPreviousMarkingCode</td>
+<td style="text-align: left;">Previous marking code</td>
+<td style="text-align: left;">Answer to the question: 'Did the animal source have any previous marking?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Source</td>
+<td style="text-align: left;">AnimalSourcePreviousMarkingCode</td>
+<td style="text-align: left;">Animal source previous marking code</td>
+<td style="text-align: left;">The previous marking code of the animal source</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes if 'Previous marking code' is TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Environmental_Source</td>
+<td style="text-align: left;">WildlifeHealth_EnvironmentalSourceID</td>
+<td style="text-align: left;">Environmental source identifier</td>
+<td style="text-align: left;">System-provided environmental source identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Environmental_Source</td>
+<td style="text-align: left;">WildlifeHealth_EnvironmentalSourceType</td>
+<td style="text-align: left;">Environmental source type</td>
+<td style="text-align: left;">The type of environmental source. For environmental sources, this field deteermines the Specimen type in the Specimen table</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Invertebrate_Source</td>
+<td style="text-align: left;">WildlifeHealth_InvertebrateSourceID</td>
+<td style="text-align: left;">Invertebrate source identifier</td>
+<td style="text-align: left;">System-provided invertebrate source identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Invertebrate_Source</td>
+<td style="text-align: left;">WildlifeHealth_InvertebrateSourceTrapType</td>
+<td style="text-align: left;">Trap type</td>
+<td style="text-align: left;">The trap type used to get the invertebrates</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordID</td>
+<td style="text-align: left;">Source record identifier</td>
+<td style="text-align: left;">System-provided source record identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">SourceRecordNumber</td>
+<td style="text-align: left;">Source record number</td>
+<td style="text-align: left;">The ith recording of the same source (the first time the source is recorded = 1, second time the source is recorded = 2, and so on). For observations it is always 1.</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">Yes, but for observation it is automatically assigned to be 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">SourceRecordSpecimensCollected</td>
+<td style="text-align: left;">Specimens collected</td>
+<td style="text-align: left;">Answer to the question: 'Were specimens collected from this source at time t?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes, but it does not apply to observation source records</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordInvertebrateSpecies</td>
+<td style="text-align: left;">Invertebrate species</td>
+<td style="text-align: left;">The invertebrate species in an invertebrate source record at time t</td>
+<td style="text-align: left;">Single selection. It does not apply for observation, animal, or environmental source records</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">SourceRecordInvertebrateNumberOfIndividuals</td>
+<td style="text-align: left;">Number of invertebrates</td>
+<td style="text-align: left;">The number of invertebrate individuals in an invertebrate source record at time t</td>
+<td style="text-align: left;">Integer. It does not apply for observation, animal, or environmental source records</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordCaptivityCategoryID</td>
+<td style="text-align: left;">Captivity category</td>
+<td style="text-align: left;">Captivity categories of the animals belonging to an observation source (observation source record 1) or the captivity category of an animal source at time t</td>
+<td style="text-align: left;">Multiple selection for observation sources (observation sources record 1) and single selection for animal source records. It does not apply to environmental or invertebrate source records</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordAnomaly</td>
+<td style="text-align: left;">Anomalies</td>
+<td style="text-align: left;">The anomalies detected in the animals belonging to an observation source (observation source record 1) or the anomalies detected in an animal source at time t</td>
+<td style="text-align: left;">Multiple selection for observation sources (observation source record 1) and single selection for animal source records. It does not apply to environmental or invertebrate source records</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">OtherAnomalies</td>
+<td style="text-align: left;">Other Anomalies</td>
+<td style="text-align: left;">Other anomalies not listed in the previous field in animals belonging to an observation source (observation source record 1) or the anomalies detected in an animal source at time t</td>
+<td style="text-align: left;">Multiple selection for observations sources (observation source record 1) and animal source records. It does not apply to environmental or invertebrate source records</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordPotentialCauseInjuryDisease</td>
+<td style="text-align: left;">Potential causes of injury of disease</td>
+<td style="text-align: left;">The potential causes of injury or disease in animals belonging to an observation source (observation source record 1) or the potential causes of injury or disease in an animal source at time t</td>
+<td style="text-align: left;">Multiple selection for observations sources (observation source record 1) and animal source records. It does not apply to environmental or invertebrate source records</td>
+<td style="text-align: left;">Yes if there are sick or injured observed animals or the animal source is dead at time t</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordPotentialCauseDeath</td>
+<td style="text-align: left;">Potential causes of death</td>
+<td style="text-align: left;">The potential causes of death in animals belonging to an observation source (observation source record 1) or the potential causes of death in an animal source at time t</td>
+<td style="text-align: left;">Multiple selection for observations sources (observation source record 1) and animal source records. It does not apply to environmental or invertebrate source records</td>
+<td style="text-align: left;">Yes if there are dead observed animals or the animal source is dead at time t</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">Grouping1</td>
+<td style="text-align: left;">Group tag 1</td>
+<td style="text-align: left;">A tag grouping source records in a unit below the incident at time t (e.g., a cage, a pen, a vendor, etc). It can group records from observation, animal, environmental, or invertebrate sources</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">Grouping2</td>
+<td style="text-align: left;">Group tag 2</td>
+<td style="text-align: left;">A tag grouping source records in a second level unit below the incident at time t (e.g., a cage, a pen, a vendor, etc). It can group records from observation, animal, environmental, or invertebrate sources</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">Grouping3</td>
+<td style="text-align: left;">Group tag 3</td>
+<td style="text-align: left;">A tag grouping source records in a third level unit below the incident at time t (e.g., a cage, a pen, a vendor, etc). It can group records from observation, animal, environmental, or invertebrate sources</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">Grouping4</td>
+<td style="text-align: left;">Group tag 4</td>
+<td style="text-align: left;">A tag grouping source records in a fourth level unit below the incident at time t (e.g., a cage, a pen, a vendor, etc). It can group records from observation, animal, environmental, or invertebrate sources</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">Grouping5</td>
+<td style="text-align: left;">Group tag 5</td>
+<td style="text-align: left;">A tag grouping source records in a fifth level unit below the incident at time t (e.g., a cage, a pen, a vendor, etc). It can group records from observation, animal, environmental, or invertebrate sources</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">SourceRecordComments</td>
+<td style="text-align: left;">Comments</td>
+<td style="text-align: left;">Any comments regarding the source record</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjective</td>
+<td style="text-align: left;">Surveillance objective</td>
+<td style="text-align: left;">The surveillance objectives that the source record is part of</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_AnimalSourceRecordID</td>
+<td style="text-align: left;">Animal source record identifier</td>
+<td style="text-align: left;">System-provided animal source record identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_AnimalSourceRecordAgeCategory</td>
+<td style="text-align: left;">Age category</td>
+<td style="text-align: left;">The age category of the animal source record</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_AnimalSourceRecordInitialHealthStatus</td>
+<td style="text-align: left;">Initial health status</td>
+<td style="text-align: left;">The initial health status of the animal source record</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_AnimalSourceRecordHealthConditionReleased</td>
+<td style="text-align: left;">Health status at release</td>
+<td style="text-align: left;">The health status of the animal source record at release</td>
+<td style="text-align: left;">Single selection. This field is automatically assigned 'Dead' if the initial health status is 'Dead'</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_AnimalSourceRecordEuthanasiaMethod</td>
+<td style="text-align: left;">Euthanaasia method</td>
+<td style="text-align: left;">The euthanasia method used in the animal source</td>
+<td style="text-align: left;">Single selection. It applies if the animal source's 'Health status at release' is 'Dead' at time t</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">AnimalSourceRecordCarcassCollected</td>
+<td style="text-align: left;">Carcass collected</td>
+<td style="text-align: left;">Answer to the question: 'Was the carcass of the animal collected?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_AnimalSourceRecordFieldStorageCarcass</td>
+<td style="text-align: left;">Field storage carcass</td>
+<td style="text-align: left;">The method to store the carcass in the field while in transit to a proper facility</td>
+<td style="text-align: left;">Single selection but available only if 'Carcass collected' is true</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">AnimalSourceRecordMarkingCode</td>
+<td style="text-align: left;">Record marking code</td>
+<td style="text-align: left;">The marking of the animal source at time t</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">AnimalSourceRecordMarkingCodeChange</td>
+<td style="text-align: left;">Marking code change</td>
+<td style="text-align: left;">Answer to the question: 'Has the marking code, if any, being changed at time t?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Source_Record</td>
+<td style="text-align: left;">AnimalSourceRecordMarkingCodeChangingReason</td>
+<td style="text-align: left;">Marking code change reason</td>
+<td style="text-align: left;">Explanation of the reason why the marking code has been changed</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">WildlifeHealth_NecropsyID</td>
+<td style="text-align: left;">Necropsy identifier</td>
+<td style="text-align: left;">System-provided necropsy identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyCrossID</td>
+<td style="text-align: left;">Necropsy cross identifier</td>
+<td style="text-align: left;">The identifier of the necropsy under another nomenclature system</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyDate</td>
+<td style="text-align: left;">Necropsy date</td>
+<td style="text-align: left;">The date the necropsy was conducted</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">WildlifeHealth_PrimarySecondaryNecropsy</td>
+<td style="text-align: left;">Primary or secondary</td>
+<td style="text-align: left;">Answer to the question: 'Is this a primary or secondary necropsy?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">WildlifeHealth_NecropsyType</td>
+<td style="text-align: left;">Necropsy type</td>
+<td style="text-align: left;">The type of necropsy (e.g., 'Field necropsy', 'Partial necropsy', 'Full necropsy')</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyLab</td>
+<td style="text-align: left;">Necropsy laboratory</td>
+<td style="text-align: left;">The laboratory where the necropsy was conducted</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">WildlifeHealth_NecropsyBy</td>
+<td style="text-align: left;">Necropsy conducted by</td>
+<td style="text-align: left;">The person who conducted the necropsy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">WildlifeHealth_NecropsyCarcassCondition</td>
+<td style="text-align: left;">Carcass condition</td>
+<td style="text-align: left;">The condition of the carcass by the time of the necropsy</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">WildlifeHealth_NecropsyCarcassStorage</td>
+<td style="text-align: left;">Carcass storage</td>
+<td style="text-align: left;">The method to store the carcass in the laboratory</td>
+<td style="text-align: left;">Single selection but it does not apply to 'Field necropsy'</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyExternalSigns</td>
+<td style="text-align: left;">External signs</td>
+<td style="text-align: left;">The external signs observed in the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyBodyCondition</td>
+<td style="text-align: left;">Body condition</td>
+<td style="text-align: left;">The body condition observed in the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyEyes</td>
+<td style="text-align: left;">Eyes</td>
+<td style="text-align: left;">Findings in the eyes of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyEars</td>
+<td style="text-align: left;">Ears</td>
+<td style="text-align: left;">Findings in the ears of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyNostrils</td>
+<td style="text-align: left;">Nostrils</td>
+<td style="text-align: left;">Findings in the nostrils of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyMouth</td>
+<td style="text-align: left;">Mouth</td>
+<td style="text-align: left;">Findings in the mouth of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsySkin/Hair/Coat/Nails</td>
+<td style="text-align: left;">Skin, hair, coat, nails</td>
+<td style="text-align: left;">Findings in the skin, hair, coat, or nails of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyWoundsScars</td>
+<td style="text-align: left;">Wounds or scars</td>
+<td style="text-align: left;">Wounds and scars in the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyExternalParasites</td>
+<td style="text-align: left;">External parasites</td>
+<td style="text-align: left;">External parasites on the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyInternalParasites</td>
+<td style="text-align: left;">Internal parasites</td>
+<td style="text-align: left;">Internal parasites in the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyAnus/Perineum/Cloaca</td>
+<td style="text-align: left;">Anus, perineum, or cloaca</td>
+<td style="text-align: left;">Findings in the anus, perineum, or cloaca of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsySubcutaneousFat</td>
+<td style="text-align: left;">Subcutaneous fat</td>
+<td style="text-align: left;">The amount of subcutaneous fat of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyMuscleMass</td>
+<td style="text-align: left;">Muscles mass</td>
+<td style="text-align: left;">The characteristics of the muscle mass of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyMusculoskeletalSyst</td>
+<td style="text-align: left;">Musculoeskeletal system</td>
+<td style="text-align: left;">Findings in the muskuloeskeletal system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyBodyCavities</td>
+<td style="text-align: left;">Body cavities</td>
+<td style="text-align: left;">Findings in the body cavities of the carcass (e.g., 'abdominal', 'thoracic')</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyCardiovascularSyst</td>
+<td style="text-align: left;">Cardiovascular system</td>
+<td style="text-align: left;">Findings in the cardiovascular system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyRespiratorySyst</td>
+<td style="text-align: left;">Respiratory system</td>
+<td style="text-align: left;">Findings in the respiratory system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyGastrointestinalSyst</td>
+<td style="text-align: left;">Gastrointestinal system</td>
+<td style="text-align: left;">Findings in the gastrointestinal system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyUrinarySyst</td>
+<td style="text-align: left;">Urinary system</td>
+<td style="text-align: left;">Findings in the urinary system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyReproductiveSyst</td>
+<td style="text-align: left;">Reproductive system</td>
+<td style="text-align: left;">Findings in the reproductive system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyLymphaticSyst</td>
+<td style="text-align: left;">Lymphatic system</td>
+<td style="text-align: left;">Findings in the lymphatic system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyEndocrineSyst</td>
+<td style="text-align: left;">Endocrine system</td>
+<td style="text-align: left;">Findings in the endocrine system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyNervousSyst</td>
+<td style="text-align: left;">Nervous system</td>
+<td style="text-align: left;">Findings in the nervous system of the carcass</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyComments</td>
+<td style="text-align: left;">Comments</td>
+<td style="text-align: left;">Any comments regarding the necropsy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyConclusion</td>
+<td style="text-align: left;">Conclusion</td>
+<td style="text-align: left;">The conclusion of the necropsy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Animal_Necropsy</td>
+<td style="text-align: left;">NecropsyNeedsPathologistReview</td>
+<td style="text-align: left;">Needs pathologist review</td>
+<td style="text-align: left;">Answer to the quesstion: 'Does the necropsy needs a pathologist review?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Environmental_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_EnvironmentalSourceRecordID</td>
+<td style="text-align: left;">Environmental source record identifier</td>
+<td style="text-align: left;">System-provided environmental source record identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Invertebrate_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_InvertebrateSourceRecordID</td>
+<td style="text-align: left;">Invertebrate source record identifier</td>
+<td style="text-align: left;">System-provided invertebrate source record identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Invertebrate_Source_Record</td>
+<td style="text-align: left;">WildlifeHealth_InvertebrateSourceRecordSpecies</td>
+<td style="text-align: left;">Invertebrate source record species</td>
+<td style="text-align: left;">The invertebrate species in the invertebrate source record</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Invertebrate_Source_Record</td>
+<td style="text-align: left;">InvertebrateSourceRecordSpeciesNumberOfIndividuals</td>
+<td style="text-align: left;">Number of individuals</td>
+<td style="text-align: left;">The number of invertebrates of the corresponding species in the source record</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenID</td>
+<td style="text-align: left;">Specimen identifier</td>
+<td style="text-align: left;">System-provided specimen identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenCode</td>
+<td style="text-align: left;">Specimen code</td>
+<td style="text-align: left;">User-provided specimen code</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenCrossID</td>
+<td style="text-align: left;">Specimen cross identifier</td>
+<td style="text-align: left;">The identifier of the specimen under another nomenclature system</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenCollectedPrimaryNecropsy</td>
+<td style="text-align: left;">Primary Necropsy Specimen</td>
+<td style="text-align: left;">Answer to the question: 'Is the Specimen collected during the Primary Necropsy?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenCollectedSecondaryNecropsy</td>
+<td style="text-align: left;">Secondary Necropsy Specimen</td>
+<td style="text-align: left;">Answer to the question: 'Is the Specimen collected during the Secondary Necropsy?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenType</td>
+<td style="text-align: left;">Specimen type</td>
+<td style="text-align: left;">The type of the specimen. It can be a full carcass</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenMedium</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">The medium in which the specimen is contained on</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenOriginalQuantity</td>
+<td style="text-align: left;">Original quantity</td>
+<td style="text-align: left;">The original quantity of specimen</td>
+<td style="text-align: left;">Float</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenOriginalQuantityUnit</td>
+<td style="text-align: left;">Quantity unit</td>
+<td style="text-align: left;">The unit of the original quantity</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenQuantityStored</td>
+<td style="text-align: left;">Quantity stored</td>
+<td style="text-align: left;">The amount of specimen currently stored</td>
+<td style="text-align: left;">Float</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenReasonQuantityDifference</td>
+<td style="text-align: left;">Reason for quantity difference</td>
+<td style="text-align: left;">The explanantion for the difference between the original specimen amount and the stored specimen amount</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes, if 'Quantity stored' and 'Quantity difference' are different</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenFieldStorage</td>
+<td style="text-align: left;">Field storage</td>
+<td style="text-align: left;">The method to store the specimen in the field while in transit to a proper facility</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenLabStorage</td>
+<td style="text-align: left;">Laboratory storage</td>
+<td style="text-align: left;">The method to store the specimen in the laboratory</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenInContainer</td>
+<td style="text-align: left;">Specimen container</td>
+<td style="text-align: left;">Answer to the question: 'Is the specimen stored in a container mixed with other specimens?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenContainerCode</td>
+<td style="text-align: left;">Container label</td>
+<td style="text-align: left;">The container with the current specimen and other specimens</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes, but this field becomes available to complete when the previous field is TRUE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenLocation</td>
+<td style="text-align: left;">Location</td>
+<td style="text-align: left;">The institution where the specimen is currently stored</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenBuilding</td>
+<td style="text-align: left;">Building</td>
+<td style="text-align: left;">The specific building within the institution where the specimen is located</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenRoom</td>
+<td style="text-align: left;">Room</td>
+<td style="text-align: left;">The specific room within the building where the specimen is located</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenStorage</td>
+<td style="text-align: left;">Storage</td>
+<td style="text-align: left;">The specific unit within the room (e.g., refrigerator) where the specimen is located</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenShelf</td>
+<td style="text-align: left;">Shelf</td>
+<td style="text-align: left;">The specific shelf within the unit (e.g., refrigerator) where the specimen is located</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenRack</td>
+<td style="text-align: left;">Rack</td>
+<td style="text-align: left;">The specific rack within the shelf where the specimen is located</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenBox</td>
+<td style="text-align: left;">Box</td>
+<td style="text-align: left;">The specific box of the rack where the specimen is located</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenRow</td>
+<td style="text-align: left;">Row</td>
+<td style="text-align: left;">The specific row of the box where the specimen is located</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenAvailable</td>
+<td style="text-align: left;">Specimen available</td>
+<td style="text-align: left;">Answer to the question:'Is the specimen available for testing or shipping?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenOwner</td>
+<td style="text-align: left;">Specimen owner</td>
+<td style="text-align: left;">The organization or individual that owns the specimen</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">SourceRecordSpecimenComments</td>
+<td style="text-align: left;">Comments</td>
+<td style="text-align: left;">Any comments regarding the specimen</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjective</td>
+<td style="text-align: left;">Surveillance objective</td>
+<td style="text-align: left;">The surveillance objectives that the source record is part of</td>
+<td style="text-align: left;">Mutiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenDiagnosticID</td>
+<td style="text-align: left;">Diagnostic identifier</td>
+<td style="text-align: left;">System-provided diagnostic identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticWithinLabCode</td>
+<td style="text-align: left;">Laboratory diagnostic identifier</td>
+<td style="text-align: left;">System-provided diagnostic identifier</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardType</td>
+<td style="text-align: left;">Diagnostic hazard type</td>
+<td style="text-align: left;">The general type of health hazard targeted by the diagnostic (e.g., 'Biological', 'Chemical', 'Physical', 'Physiological')</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardName</td>
+<td style="text-align: left;">Specific health hazard targeted</td>
+<td style="text-align: left;">The specific health hazard targeted by the diagnostic (e.g., 'coronaviridae', 'Brucella abortus')</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes. Options available are conditional on the health hazard types selected</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardName</td>
+<td style="text-align: left;">Specific health hazard targeted</td>
+<td style="text-align: left;">The specific health hazard targeted by the diagnostic (e.g., 'coronaviridae', 'Brucella abortus')</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes. Options available are conditional on the health hazard types selected</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_LaboratoryID</td>
+<td style="text-align: left;">Laboratory identifier</td>
+<td style="text-align: left;">System-provided laboratory identifier</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">System-assigned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_DiagnosticMethod</td>
+<td style="text-align: left;">Diagnostic method</td>
+<td style="text-align: left;">The general method used to conduct the diagnostic (e.g., 'histopathology', 'molecular diagnostics', etc)</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_DiagnosticType</td>
+<td style="text-align: left;">Diagnostic type</td>
+<td style="text-align: left;">The general method used to conduct the diagnostic (e.g., 'immunofluorescence', 'PCR', etc)</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticDateSentForTesting</td>
+<td style="text-align: left;">Date sent for testing</td>
+<td style="text-align: left;">The date the diagnostic was requested</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticResultsReceived</td>
+<td style="text-align: left;">Results received</td>
+<td style="text-align: left;">Answer to the question: 'Have the diagnostic results been received?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticDateResultsReceived</td>
+<td style="text-align: left;">Date results received</td>
+<td style="text-align: left;">The date the diagnostic results were received</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Yes, but this field becomes available only when 'Results received' is True</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_SourceRecordSpecimenDiagnosticResult</td>
+<td style="text-align: left;">Diagnostic result</td>
+<td style="text-align: left;">The result of the diagnostic</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes, but this field becomes available only when 'Results received' is True</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticResultModified</td>
+<td style="text-align: left;">Diagnostic result modified</td>
+<td style="text-align: left;">Answer to the question:'Have the results been modified?'</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Yes, but this field becomes available only when 'Results received' is True</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticDateResultModified</td>
+<td style="text-align: left;">Date diagnostic result modified</td>
+<td style="text-align: left;">The date when the diagnostic results was modified</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Yes, but this field becomes available only when 'Results received' is True</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticReasonResultModified</td>
+<td style="text-align: left;">Reason diagnostic result modified</td>
+<td style="text-align: left;">The reason explaining the diagnostic result modification</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes, but this field becomes available only when 'Diagnostic result modified' is True</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticComments</td>
+<td style="text-align: left;">Diagnostic comments</td>
+<td style="text-align: left;">Any comments regarding the diagnostic</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">SourceRecordSpecimenDiagnosticSupportingInformation</td>
+<td style="text-align: left;">Supporting information</td>
+<td style="text-align: left;">Any supporting information regarding the diagnostic</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Source_Record_Specimen_Diagnostic</td>
+<td style="text-align: left;">WildlifeHealth_SurveillanceObjective</td>
+<td style="text-align: left;">Surveillance objective</td>
+<td style="text-align: left;">The surveillance objectives that the diagnostic is part of</td>
+<td style="text-align: left;">Mutiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabName</td>
+<td style="text-align: left;">Laboratory name</td>
+<td style="text-align: left;">The name of the laboratory</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">WildlifeHealth_LabCountryID</td>
+<td style="text-align: left;">Laboratory country</td>
+<td style="text-align: left;">The country of the laboratory</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabAddress</td>
+<td style="text-align: left;">Laboratory address</td>
+<td style="text-align: left;">The address of the laboratory</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabManager</td>
+<td style="text-align: left;">Laboratory manager</td>
+<td style="text-align: left;">The manager of the laboratory</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabManagerEmail</td>
+<td style="text-align: left;">Laboratory manager email</td>
+<td style="text-align: left;">The email address of the manager of the laboratory</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabPointContactName</td>
+<td style="text-align: left;">Laboratory contact</td>
+<td style="text-align: left;">The name of the best contact point for the laboratory</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabPointContactEmail</td>
+<td style="text-align: left;">Laboratory contact email</td>
+<td style="text-align: left;">The email address of the best contact point for the laboratory</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabPointContactAffiliation</td>
+<td style="text-align: left;">Laboratory contact affiliation</td>
+<td style="text-align: left;">The affiliation of the best contact point for the laboratory</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">WildlifeHealth_LabDiagnosticMethodAvailable</td>
+<td style="text-align: left;">Diagnostics available</td>
+<td style="text-align: left;">The diagnostic methods available in the laboratory</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">WildlifeHealth_LabMaxBiosafetyLevel</td>
+<td style="text-align: left;">Maximum biosafety level</td>
+<td style="text-align: left;">The maximum biosafety level avalable in the laboratory</td>
+<td style="text-align: left;">Single selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">WildlifeHealth_LabCertification</td>
+<td style="text-align: left;">Certifications</td>
+<td style="text-align: left;">The certifications accomplished by the laboratory</td>
+<td style="text-align: left;">Multiple selection</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabStorageCapacity</td>
+<td style="text-align: left;">Storage capacity</td>
+<td style="text-align: left;">The capacity of the laboratory to store specimens</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laboratory</td>
+<td style="text-align: left;">LabDataManagementSystem</td>
+<td style="text-align: left;">Information system</td>
+<td style="text-align: left;">The information system used in the laboratory to track diagnositci information</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Wildlife_Health_Database_Rules.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">FIELD ACTIVITY</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
