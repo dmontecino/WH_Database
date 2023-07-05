@@ -1,7 +1,5 @@
 # Introduction
 
-\# THE WILDHEALTHDAT DATABASE
-
 WildlifeHealthDat is a flexible database built to track wildlife health data 
 collected from a wide range of surveillance efforts, including citizen observations
 of dead, injured or sick animals, specific research, national or local wildlife health 
