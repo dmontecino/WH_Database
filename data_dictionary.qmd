@@ -1,15 +1,18 @@
 # Data Dictionary {.unnumbered}
 
 ```{r data dictionary, echo=FALSE, eval=T, message=FALSE, cache=T}
-#| tbl-colwidths: [1,5]
+#| tbl-colwidths: false
+
 
 
 # ------------------#
 # Create Dictionary #
 # ------------------#
 
-library(kableExtra)
+#library(kableExtra)
 library(tidyverse)
+library(gt)
+library(reactable)
 
 # #tables in the .xml of the db diagram
 # fields_by_table<-split(full_table, full_table$Table_Name)
@@ -1953,12 +1956,22 @@ data_dictionary<-data_dictionary %>%
 
 # need to find how to change the font size to improve the column width
 
-  kableExtra::kable(data_dictionary, booktabs = TRUE)%>%
-    # kableExtra::kable_paper(full_width = F) %>% 
-  kable_styling(bootstrap_options = c("basic"), font_size = 2) %>% 
-    kableExtra::column_spec(column = 1:5, border_right = T) 
-    # kableExtra::text_spec(format="html", font_size="xx-small")
+  # kableExtra::kable(data_dictionary, booktabs = TRUE)%>%
+  # kable_styling(bootstrap_options = c("basic"), font_size = 2) %>% 
+  #   kableExtra::column_spec(column = 1:5, border_right = T) 
 
+  data_dictionary %>%
+  gt::gt() %>%
+  gt::tab_options(table.font.size = 9) %>%
+  gt::cols_width(Variable ~ gt::pct(5),
+                 Label ~ gt::pct(20),
+                 Definition ~ gt::pct(25),
+                 Type~ gt::pct(25),
+                 Mandatory~ gt::pct(25)) %>%
+  gt::tab_style(
+  style = cell_text(size = px(16), weight = "bold"),
+  locations = cells_column_labels())
+ 
 
 # write_csv(data_dictionary, file = "data_dictionary_June_30_2023.csv")
 
