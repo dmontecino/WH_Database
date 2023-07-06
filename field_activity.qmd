@@ -1,3 +1,3 @@
 # Field Activity {.unnumbered}
 
-A Field Activity corresponds to a field visit with a start and end date. Each one of these Field Visits could involve more than one Surveillance Objective (see above) and Locations (see below) of different types such as markets, natural areas, rehabilitation centers, caves, etc.
+A Field Activity corresponds to a field visit with start and end dates. Each one of these Field Visits could involve more than one Surveillance Objective (see above) and Locations (see below) of different types such as markets, natural areas, rehabilitation centers, caves, etc.
