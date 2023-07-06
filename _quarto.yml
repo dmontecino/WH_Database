@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: _book
 
 book:
   title: "WildHealthDat"
@@ -17,10 +18,17 @@ book:
     - specimen.qmd
     - diagnostics.qmd
     - data_dictionary.qmd
-  search: true
+  search:
+    type: textbox
+    location: sidebar
   repo-url: https://github.com/dmontecino/WH_Database
   #repo-actions: [edit]
-  downloads: [pdf, epub]
+  downloads: [pdf]
+  #output-file: "WildHealthDat.pdf"
+  #output-file: "puto_libro"
+# file:
+#   format: "pdf"
+# #   url: "https://example.com/book.pdf"
 
 toc-title: On this page
 
@@ -28,9 +36,18 @@ toc-title: On this page
 
 format:
   html:
-    theme:  cerulean
+    theme:  
+      - cerulean
+    # number-depth: 9
+    page-layout: full
   pdf:
     documentclass: scrreprt
+  # epub:
+  #   toc:
+  #     true
+  #   lang:
+  #     en-US
+  #   date:
+  #     "2023-03-01"
 
 editor: visual
-
