@@ -1,6 +1,6 @@
 # Data Dictionary {.unnumbered}
 
-```{r data dictionary, echo=FALSE, eval=T, message=FALSE, cache=FALSE}
+```{r data dictionary, echo=FALSE, eval=T, message=FALSE, cache=T}
 #| tbl-colwidths: [1,5]
 
 
