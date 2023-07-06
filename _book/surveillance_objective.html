@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -91,23 +91,7 @@ ul.task-list li input[type="checkbox"] {
       <a href="./">WildHealthDat</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/dmontecino/WH_Database" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./puto_libro.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./puto_libro.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="./WildHealthDat.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -199,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -218,17 +202,18 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Surveillance Objective a set of activities established to collect data in order to detect, quantify, or assess trends regarding specific health hazards in specific populations under a common methodology. Each Surveillance Objective should have a specific population and hazard target, Source or Specimen Collection methods, and Diagnostics. For example, a capture-mark-recapture study targeting lead accumulation in a specific population of vultures that involves blood collection and testing at every capture using the same diagnostic technique. Surveillance Objective is the most complicated component of the database. Read this section carefully.</p>
-<p>Surveillance Objectives contain very specific metadata, describing their goals and methods used, including targeted species, populations, and hazards; the type of Sources and Specimens included; collection methods; and case definitions for specific Diagnostics, Specimens, and Sources. Some pieces of the metadata are provided by Source type (Observation, Animal Source, Environmental Source, and Invertebrate Source, [see below]).</p>
-<p>Surveillance Objectives apply for targeted surveillance and scanning surveillance initiatives so both types can be described through the metadata.</p>
-<p>Usually, Field Activities, Locations, Incidents, Sources, Records, and Diagnostics belong to a single Surveillance Objective. This Surveillance Objective is the one that originally requested the Field Activity at different Locations to record the corresponding Incidents, collect the Sources and Specimens, and perform Diagnostics for a specific hazard. In this case, the Surveillance Objective is provided automatically to each corresponding component.</p>
-<p>However, there are exceptions to this rule, except for Diagnostics, that have different justifications for each component. Field Activities, Locations, Incidents, Source Records, and Specimens can be originally requested by different Surveillance Objectives planning the same activities and methods but that differ in the targeted hazard. For example, rodents sampled using the same methodology that will be tested for both Coronaviruses and Rickettsia sp. It is the user responsibility to add the second Surveillance Objective to the corresponding Field Activities, Locations, Incidents, Source Records, and Specimens.</p>
-<p>Another exception can occur when Source Records and Specimens collected during past surveillance efforts are included in future surveillance initiatives. For example, using pangolin Specimens collected by rangers patrolling a protected area in 2017 under a scanning surveillance strategy that are tested in 2023 for SARS-CoV-2 as part of a targeted surveillance initiative. In this case, the corresponding Specimens tested for SARS-CoV-2 and their Sources will have more than one Surveillance Objective. The one that originally demanded conducting the Field Activity to collect the Source Record and Specimens, and the new Surveillance Objective targeting SARS-CoV-2. This last Surveillance Objective DOES NOT generate new Field Activities, Locations, or Incidents. Finally, each Diagnostic remains having a single Surveillance Objective (new Diagnostics targeting SARS-CoV-2 receive the SARS-CoV-2-related Surveillance Objective only). Surveillance Objectives added to a Diagnostic will be automatically provided to the corresponding Specimen, Source Record, and Source.</p>
-<p>Moreover, during Surveillance Objective targeting SARS-CoV-2 new Necropsies might be conducted, new Specimens could be created (from larger stored Specimens, such as a carcass or an organ), or new Pooled Specimens could be produced. All these components receive the Surveillance Objective targeting SARS-CoV-2 only. Again, it is the user responsibility secondary Surveillance Objective to the corresponding Source Records, Specimens and Diagnostics.</p>
-<p>Therefore, a Surveillance Objective can be linked to others because they belong to the same Project; they requested the same Field Activities, Locations, and Incidents; or they have Sources and Specimens in common. If Surveillance Objectives are connected for the second and third reason, then this connection must be provided in the metadata of the corresponding Surveillance Objectives. The connections will be also evident in the exported data such that each component with more than one Surveillance Objective (Field Activity,…, Specimens) will be represented by one row per Surveillance Objective.</p>
+<p>A Surveillance Objective refers to a set of activities established to collect data with the aim of detecting, quantifying, or assessing trends related to specific health hazards within specific populations, using a standardized methodology. Each Surveillance Objective should specify the target populations, hazard, Source and Specimen collection methods, and Diagnostics. For example, a capture-mark-recapture study targeting lead accumulation in a specific vulture population involving the collection of blood samples and conducting tests using the same Diagnostic for every capture.</p>
+<p>Surveillance Objectives include targeted surveillance and scanning surveillance initiatives and they are the most complex component of the database, so it is essential to read this section carefully.</p>
+<p>Surveillance Objectives include detailed metadata that describe their objectives and methods. This metadata includes information on the targeted species, populations, and hazards, as well as the types of Sources and Specimens included, collection methods, and case definitions for specific Diagnostics, Specimens, and Sources. Some metadata elements are provided for each Source type, such as Observation, Animal Source, Environmental Source, and Invertebrate Source (see next sections).</p>
+<p>Typically, Field Activities, Locations, Incidents, Sources, Records, and Diagnostics belong to a single Surveillance Objective. This Surveillance Objective is the one that initially requested Field Activities at different Locations to record Incidents, collect Sources and Specimens, and perform Diagnostics for a specific hazard. In such cases, the Surveillance Objective is automatically assigned to each corresponding component.</p>
+<p>However, there are exceptions to this rule, except for Diagnostics, which have different justifications for each component. Field Activities, Locations, Incidents, Source Records, and Specimens can be originally requested by different Surveillance Objectives planning the same activities and methods but targeting different hazards. For example, rodents trapped in the same Incidents may be sampled using the same methodology and tested for both coronaviruses and Rickettsia sp (two Surveillance Objectives). In this scenario, only one of the Surveillance Objectives will be automatically assigned. It is the user’s responsibility to add the second Surveillance Objective to the corresponding Field Activities, Locations, Incidents, Source Records, and Specimens.</p>
+<p>Another exception occurs when Source Records and Specimens collected during past surveillance efforts are included in future surveillance initiatives. For instance, using pangolin Specimens collected by rangers patrolling a protected area in 2017 as part of a scanning surveillance strategy, which are then tested in 2023 for SARS-CoV-2 as part of a targeted surveillance initiative. In this case, the latter Surveillance Objective does not generate new Field Activities, Locations, or Incidents, but the Specimens tested for SARS-CoV-2 and their Sources will have multiple Surveillance Objectives. One corresponds to the original Surveillance Objective that mandated the Field Activity for collecting the Source Records and Specimens, and the other is the new Surveillance Objective targeting SARS-CoV-2.</p>
+<p>Moreover, new Necropsies might be conducted during the Surveillance Objective targeting SARS-CoV-2, new Specimens could be created (from larger stored Specimens, such as a carcass or an organ), or new Pooled Specimens could be produced. All these components receive the Surveillance Objective targeting SARS-CoV-2 only. Again, it is the user’s responsibility to add the second Surveillance Objective to the new Source Records and Specimens.</p>
+<p>Each diagnostic remains linked to a single Surveillance Objective (new Diagnostics targeting SARS-CoV-2 will be associated with the SARS-CoV-2-related Surveillance Objective exclusively). Surveillance Objectives added to a Diagnostic will be automatically assigned to the corresponding Specimen, Source Record, and Source.</p>
+<p>Therefore, Surveillance Objectives can be interconnected for various reasons, such as belonging to the same Project, sharing common Field Activities, Locations, and Incidents, or having common Sources and Specimens. If Surveillance Objectives are connected for the latter two reasons, then these connections must be specified in the metadata of the corresponding Surveillance Objectives. These connections will also be evident in the exported data, where each component with multiple Surveillance Objectives (e.g., Field Activity, Specimen) will be represented by one row per Surveillance Objective.</p>
 <section id="outbreak-investigation" class="level2">
 <h2 class="anchored" data-anchor-id="outbreak-investigation">Outbreak Investigation</h2>
-<p>All Outbreak Investigations are a Surveillance Objective, although the outbreak information (name and diagnosis) can be provided after the Surveillance Objective creation in the database.</p>
+<p>All outbreak investigations are considered Surveillance Objectives, although the information regarding the outbreak (name and diagnosis) can be provided after the creation of the Surveillance Objective in the database.</p>
 
 
 </section>
@@ -467,7 +452,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="./project.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project</span>

@@ -9,3 +9,5 @@ dplyr
 stringr
 forcats
 lubridate
+gt
+reactable

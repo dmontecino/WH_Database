@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -91,23 +91,7 @@ ul.task-list li input[type="checkbox"] {
       <a href="./">WildHealthDat</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/dmontecino/WH_Database" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./puto_libro.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./puto_libro.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="./WildHealthDat.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -189,11 +173,11 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -212,10 +196,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Diagnostics refer to any technique used to identify a hazard (Biological, Chemical, Physical) or Physiological problems in any type of Specimen coming from any type of Source Record. Each Diagnostic is specific for a targeted hazard (e.g., a viral family or a specific virus). Diagnostics have the main features: the type, and the method, and the result.</p>
-<p>The type of Diagnostic refers to a general class of Diagnostic technique, for example, hystopathology, serology, imaging etc. Within each type of Diagnostic there are specific Diagnostic methods, for example, biopsy, ELISA assays, and X-rays. These example methods can be applied to different levels: an organ, serum, or a body area, respectively; and this is the argument why a Specimen can range from a full animal to any other smaller sample amount.</p>
-<p>A single result is expected from each Diagnostic method; however, it is possible to modify the result of a Diagnostic in the database and provide the reason for the change.</p>
-<p>The result of a Diagnostic must follow the case definition criteria established in the Surveillance Objective metadata for each method declared to be used. Ideally, supporting information such as digital images, files, etc. should be provided in order to back the result entered in the database. Diagnostics belonging to new Surveillance Objectives (e.g., testing a Specimen collected 20 years ago under another Surveillance Objective) must be provided in the Diagnostic data. As mentioned in the Surveillance Objective section, Surveillance Objectives added to a new Diagnostic will be automatically provided to the corresponding Specimen, Source Record, and Source.</p>
+<p>Diagnostics encompass various techniques used to identify hazards (biological, chemical, physical) or physiological problems in Specimens obtained from Source Records. Each Diagnostic is designed for a specific targeted hazard, such as a viral family or a particular virus species. Diagnostics include three main components: type, method, and result.</p>
+<p>The type of Diagnostic refers to a general category of diagnostic techniques, such as histopathology, serology, or imaging. Within each type, there are specific methods available, such as biopsy, ELISA assays, or X-rays. These methods can be applied at different levels, such as organs, serum, or specific body areas, respectively. This variability causes Specimens to range from full animals to a small sample.</p>
+<p>Each diagnostic method should provide a single result. However, it is possible to modify a diagnostic result in the database and provide a reason for the change.</p>
+<p>The result of a Diagnostic should adhere to the case definition criteria established in the corresponding Surveillance Objective metadata for each declared method. Whenever possible, it is ideal to include supporting information such as digital images or files to corroborate the entered result in the database. If Diagnostics are performed under a new Surveillance Objective, such as testing a Specimen collected 50 years ago, this information must be provided in the Diagnostic data. As mentioned in the Surveillance Objective section, when a new Diagnostic is added, the corresponding Specimen, Source Record, and Source will be automatically assigned the new Surveillance Objective.</p>
 
 
 
@@ -453,7 +437,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
       <a href="./specimen.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Specimens</span>
