@@ -1,6 +1,6 @@
 # Preface {.unnumbered}
 
-a change...Welcome to the WildHealthDat database documentation. Here, you will find comprehensive information about the database's data structure and its data dictionary. This documentation aims to provide a clear understanding of the database's organization and the meaning of its data.
+Welcome to the WildHealthDat database documentation. Here, you will find comprehensive information about the database's data structure and its data dictionary. This documentation aims to provide a clear understanding of the database's organization and the meaning of its data.
 
 Data Structure: The following sections provide a detailed explanation of the data structure used in the WildHealthDat database. By understanding the structure, users can efficiently enter, navigate and manipulate the data stored within.
 
