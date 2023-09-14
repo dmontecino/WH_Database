@@ -1601,6 +1601,13 @@ data_dictionary[["Source_Record_Specimen"]]<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenColdChainMaintained",
+      Label="Cold chain maintained", 
+      Definition="Answer to the question: 'Was the coldchain maintained during transit from the field to the laboratory?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
       Variable="WildlifeHealth_SourceRecordSpecimenLabStorage",
       Label="Laboratory storage", 
       Definition="The method to store the specimen in the laboratory",
@@ -1622,11 +1629,39 @@ data_dictionary[["Source_Record_Specimen"]]<-
       Mandatory="Yes, but this field becomes available to complete when the previous field is TRUE"),
 
     data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenLocation",
-      Label="Location", 
-      Definition="The institution where the specimen is currently stored",
+      Variable="WildlifeHealth_SourceRecordSpecimenOriginalLocation",
+      Label="Original Location", 
+      Definition="The institution where the specimen was originally stored",
       Type="Single selection",
       Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordSpecimenExportDestination",
+      Label="Export Destination", 
+      Definition="The institution where the specimen is to be exported",
+      Type="String", # more than one exportation location if the sample is moved around.
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenExportStatus",
+      Label="Export Status", 
+      Definition="The current status of the exportation",
+      Type="Single selection", # not shipped, shipped. in transit,  arrived, delivered, 
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenCurrentLocation",
+      Label="Current Location", 
+      Definition="The institution where the specimen is currently located. It can be the same as the original location",
+      Type="Single selection", # more than one exportation location if the sample is moved around.
+      Mandatory="Yes"),
+
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenCurrentLocationContact",
+      Label="Current Location Contact", 
+      Definition="The person to contact at the current location of the Specimen",
+      Type="Single selection", # more than one exportation location if the sample is moved around.
+      Mandatory="Yes"),    
     
     data.frame(
       Variable="WildlifeHealth_SourceRecordSpecimenBuilding",
@@ -1768,6 +1803,20 @@ data_dictionary[["Source_Record_Specimen_Diagnostic"]]<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenDiagnosticMeasurement",
+      Label="Diagnostic Measurement",
+      Definition="The target measurement of the diagnostic test (e.g., Neutrophils, PCR products, viral titer, parasite counts, Ct value)",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenDiagnosticMeasurementUnit",
+      Label="Diagnostic Measurement Unit",
+      Definition="The unit to measure the target measurement of the diagnostic test (e.g., Ct, TCID50/mL, or parasite count).",
+      Type="String",
+      Mandatory="Yes, but it is NA when the test is qualitative"),
+    
+    data.frame(
       Variable="SourceRecordSpecimenDiagnosticDateSentForTesting",
       Label="Date sent for testing",
       Definition="The date the diagnostic was requested",
@@ -1791,7 +1840,7 @@ data_dictionary[["Source_Record_Specimen_Diagnostic"]]<-
     data.frame(
       Variable="WildlifeHealth_SourceRecordSpecimenDiagnosticResult",
       Label="Diagnostic result",
-      Definition="The result of the diagnostic",
+      Definition="The result of the diagnostic based on the target measurement units",
       Type="Single selection",
       Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
     
@@ -1815,6 +1864,13 @@ data_dictionary[["Source_Record_Specimen_Diagnostic"]]<-
       Definition="The reason explaining the diagnostic result modification",
       Type="String",
       Mandatory="Yes, but this field becomes available only when 'Diagnostic result modified' is True"),
+    
+    data.frame(
+      Variable="WildlifeHealth_SourceRecordSpecimenDiagnosticInterpretation",
+      Label="Interpretation diagnostic test",
+      Definition="The interpretation of the diagnostic test based on its results (It can be positive, negative, hyperglicemia, neutrophilia, etc",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SourceRecordSpecimenDiagnosticComments",
