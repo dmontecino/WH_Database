@@ -217,11 +217,11 @@ writexl::write_xlsx(
 # create excel sheets
 # dir.create("data_base_fields_excel")
 
-writexl::write_xlsx(
-  x = full_table,
-  path = "data_base_fields_excel/database_excel_template.xlsx",
-  col_names = TRUE,
-  format_headers = TRUE)
+# writexl::write_xlsx(
+#   x = full_table,
+#   path = "data_base_fields_excel/database_excel_template.xlsx",
+#   col_names = TRUE,
+#   format_headers = TRUE)
 
 # write_xlsx(
 #   setNames(test, names(test)), 
@@ -231,6 +231,31 @@ writexl::write_xlsx(
 #            file="data_base_fields_excel/database_excel_template2.xlsx",
 #            col_names=TRUE)
 
+# VERTICAL
 
+fields<-
+  list(project, 
+       surveillance,
+       surveillance_obj_meta,
+       field_activity,
+       location,
+       incident, 
+       source,
+       obs_source,
+       animal_source,
+       environmental_source,
+       invertebrate_source,
+       source_record,
+       animal_source_record,
+       necropsy,
+       env_source_record,
+       inv_source_record)
+
+
+writexl::write_xlsx(
+  x=tibble(fields = unlist(fields, use.names = F)), 
+  path = "data_base_fields_excel/database_excel_template_test_vertical.xlsx",
+  col_names = TRUE,
+  format_headers = TRUE)
 
 
