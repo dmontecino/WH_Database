@@ -7,7 +7,7 @@ library(tidyverse)
 # click until "all pages" is selected and save the xml file 
 
 # load the entity relational model in XML format
-xml <- read_xml("Entity_relational_model_June_20_2023.drawio.xml")
+xml <- xml2::read_xml("Entity_relational_model_Sept_14_2023.drawio.xml")
 
 
 #create first dataset containing the names of the tables and fields and other properties
@@ -16,19 +16,19 @@ data_to_id_tables_and_columns_within<-
   
   data.frame(
     
-    name=xml_find_all(xml, "diagram/mxGraphModel/root/mxCell") %>%
-      xml_attr("value"),
+    name=xml2::xml_find_all(xml, "diagram/mxGraphModel/root/mxCell") %>%
+      xml2::xml_attr("value"),
     
-    parent=xml_find_all(xml, "diagram/mxGraphModel/root/mxCell") %>%
-      xml_attr("parent"),
+    parent=xml2::xml_find_all(xml, "diagram/mxGraphModel/root/mxCell") %>%
+      xml2::xml_attr("parent"),
     
-    id=xml_find_all(xml, "diagram/mxGraphModel/root/mxCell") %>%
-      xml_attr("id"),
+    id=xml2::xml_find_all(xml, "diagram/mxGraphModel/root/mxCell") %>%
+      xml2::xml_attr("id"),
     
-    style=xml_find_all(xml, "diagram/mxGraphModel/root/mxCell") %>%
-      xml_attr("style") %>% 
+    style=xml2::xml_find_all(xml, "diagram/mxGraphModel/root/mxCell") %>%
+      xml2::xml_attr("style") %>% 
       str_split(pattern = ";") %>% 
-      map_vec(function(x) x[1])
+      purrr::map_vec(function(x) x[1])
     
   )
 
@@ -104,3 +104,7 @@ names(full_table)[1]<-"Table_Name"
 full_table[is.na(full_table$Notes),]$Notes<-""
 
 row.names(full_table)<-1:nrow(full_table)
+
+full_table %>% filter(Table_Name=="WildlifeHealth_Project")
+
+
