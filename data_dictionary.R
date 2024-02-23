@@ -36,7 +36,8 @@ data_dictionary[["Project_Table"]]<-
     data.frame(
       Variable="ProjectCrossID",
       Label="Project Cross Identifier", 
-      Definition="The identifier of the project under another nomenclature system",
+      Definition="The identifier of the project under another nomenclature system.
+      The location/database/document where other nomenclature system is used must be provided",
       Type="String",
       Mandatory="No"),
     
@@ -70,7 +71,7 @@ data_dictionary[["Project_Table"]]<-
     
     data.frame(
       Variable="WilldifeHealth_ProjectLeader",
-      Label="Project leader", 
+      Label="Project Leader", 
       Definition="The head of the project",
       Type="Single selection",
       Mandatory="Yes"),
