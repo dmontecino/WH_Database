@@ -20,129 +20,282 @@ data_dictionary[["Project_Table"]]<-
   
   list(
     data.frame(
-      Variable="WildlifeHealth_ProjectID",
+      Variable="ProjectID",
       Label="Project Identifier", 
-      Definition="System-provided project identifier",
+      Definition="System-provided Project identifier",
       Type="Integer",
       Mandatory="System-assigned"), 
   
     data.frame(
       Variable="ProjectName",
       Label="Project Name", 
-      Definition="User-provided project name",
+      Definition="User-given Project name",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="ProjectCrossID",
-      Label="Project Cross Identifier", 
-      Definition="The identifier of the project under another nomenclature system.
-      The location/database/document where other nomenclature system is used must be provided",
+      Variable="ProjectCrossReferenceID",
+      Label="Project Cross Reference Identifier", 
+      Definition="The identifier of the Project under another nomenclature system. 
+      For example, in a different database or document where other identification 
+      for the same Project is used",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectFunder",
-      Label="Project Funder", 
-      Definition="The funding sources of the project",
+      Variable="ProjectCrossReferenceIDOrigin",
+      Label="Project Cross Reference Identifier Origin", 
+      Definition="The location/database/document where other identification 
+      for the same Project is used",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="ProjectCountry",
+      Label="Project Countries", 
+      Definition="The countries where the project takes place",
+      Type="Multiple selection",
+      Mandatory="Yes. Provide at least one option"),
+    
+    data.frame(
+      Variable="ProjectFunderOrganization",
+      Label="Project Funder Organization", 
+      Definition="The organizations providing the funding to conduct the Project",
       Type="Multiple selection", 
       Mandatory="Yes. Provide at least one option"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectCountry",
-      Label="Country", 
-      Definition="The countries included in the project",
-      Type="Multiple selection",
-      Mandatory="Yes. Provide at least one option"),
-    
-    data.frame(
-      Variable="WildlifeHealth_ProjectLeadingOrganization",
+      Variable="ProjectLeadingOrganization",
       Label="Project Leading Organization", 
-      Definition="The organizations leading the project",
+      Definition="The organization/institution leading the Project execution",
       Type="Multiple selection",
       Mandatory="Yes. Provide at least one option"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectOtherOrganization",
-      Label="Other Organizations in the project", 
-      Definition="Other organizations/partners associated with the project",
-      Type="Multiple selection",
-      Mandatory="Yes. Provide at least one option"),
-    
-    data.frame(
-      Variable="WilldifeHealth_ProjectLeader",
+      Variable="ProjectLeader",
       Label="Project Leader", 
-      Definition="The head of the project",
+      Definition="The person leading the Project. Usually affiliated to the Leading Organization",
       Type="Single selection",
       Mandatory="Yes"),
     
     data.frame(
+      Variable="ProjectOtherOrganization",
+      Label="Other Organizations", 
+      Definition="Other organizations/partners/institutions involved in the execution of 
+      the Project (e.g., Laboratories, NGOs, etc.)",
+      Type="Multiple selection",
+      Mandatory="Yes. Provide at least one option"),
+    
+    data.frame(
       Variable="ProjectPurpose",
       Label="Project Purpose", 
-      Definition="The full objective of the project",
+      Definition="Description of the objectives and goals of the Project",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="ProjectNewFieldActivities",
-      Label="Field visits are part of the project", 
-      Definition="Answer to the question: 'Does the project involve field visits?'",
+      Variable="ProjectNewSourceData",
+      Label="New Source Data", 
+      Definition="Answer to the question: 'Does the Project involve collecting new data from Sources?'
+      The answer is 'No' if the Project is using Source or Specimen data already available and generated as 
+      part of a different Project. The answer is 'Yes' when the Project involves collecting new data
+      from Sources exclusively or when the Project involves the collection of new data and also the use of data from previous Projects)",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectAnimalTaxa",
-      Label="Animal species considered in the project",
-      Definition="The animal species of interest for the project",
+      Variable="ProjectAnimalSourceSpecies",
+      Label="Animal Source Species",
+      Definition="Species of the animals of interest for the Project as Animal Sources. It is possible
+      to select high taxonomy levels such as 'mammals', 'chordata', 'Insecta', etc. to indicate that
+      no particular species is targeted",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectEnvironmentalSource",
-      Label="Environmental sources considered in the project",
-      Definition="The environmental sources of interest for the project",
+      Variable="ProjectObservationSource",
+      Label="Observation Source Species",
+      Definition="Species of the animals of interest for the Project as Observation Sources. 
+      It is possible to select high taxonomy levels such as 'mammals', 'chordata', 'Insecta' etc. to 
+      indicate that no particular species is targeted",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectInvertebrateSource",
-      Label="Invertebrate sources considered in the project",
-      Definition="The invertebrate sources of interest for the project",
+      Variable="ProjectEnvironmentalSource",
+      Label="Environmental Source Types",
+      Definition="The type(s) of Environmental Source(s) of interest for the Project",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectHazardType",
-      Label="Health hazard types targeted",
-      Definition="The general type of health hazard targeted under the project (e.g., 'Biological', 'Chemical', 'Physical', 'Physiological')",
+      Variable="ProjectInvertebrateSource",
+      Label="Invertebrate Source Species",
+      Definition="Species of invertebrate that cause or transmit diseases collected 'off-host' that
+      are of interest for the Project as Invertebrate Sources. It is possible to select high taxonomy
+      levels such as 'Diptera', 'Insecta', etc. to indicate that no particular species is  targeted",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectHazardName",
-      Label="Specific health hazard targeted",
-      Definition="The specific health hazards targeted under the project (e.g., 'coronaviridae', 'Brucella abortus')" ,
-      Type="Multiple selection",
-      Mandatory="Yes. Options available are conditional on the health hazard types selected"),
-    
+      Variable="=ProjectBiologicalHazard",
+      Label="Biological Hazards",
+      Definition="The type(s) of biological health hazard(s) of interest for the Project 
+      (e.g., 'Virus', 'Bacteria', 'Protozoa', 'Insecta')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+  
+# ------- Biological Hazard Types 
+
+    data.frame(
+      Variable="=ProjectVirusHazard",
+      Label="Virus",
+      Definition="The viruses of interest for the Project. It can be as specific as a clade/variant/etc of a species
+      or as general as 'Virus' (e.g., 'Virus', 'SARS-CoV-2 Omicron variant', 'H5N1 Highly Pathogenic Avian Influenza clade 2.3.3.4b')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+
+
+    data.frame(
+      Variable="=ProjectBacteriaHazard",
+      Label="Bacteria",
+      Definition="The bacteria of interest for the Project. It can be as specific as a strain/serovar/etc of a species
+          or as general as 'Bacteria' (e.g., 'Group-A Streptococcus', 'Mycobacterium bovis')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+
+    data.frame(
+      Variable="=ProjectProtozoaHazard",
+      Label="Protozoa",
+      Definition="The protozoa of interest for the Project. It can be as specific as a strain/serovar/etc of a species
+                  or as general as 'Protozoa' (e.g., 'Plasmodium relictum', 'Toxoplasma gondii')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+
+    data.frame(
+      Variable="=ProjectFungiHazard",
+      Label="Fungi",
+      Definition="The fungi of interest for the Project. It can be as specific as a strain/serovar/etc of a species
+                      or as general as 'Fungi' (e.g., 'Pseudogymnoascus destructans', 'Batrachochytrium dendrobatidis')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+
+
+    data.frame(
+      Variable="=ProjectPrionHazard",
+      Label="Prion",
+      Definition="The prion of interest for the Project. It can be as specific as the protein subtype
+                          or as general as 'Prion' (e.g., 'Chronic-wasting disease', 'Scrapie', 'Mad cow disease)", # name of the protein not the disease. REplace
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+
+
+    data.frame(
+      Variable="=ProjectNematodaHazard",
+      Label="",
+      Definition="The nematode of interest for the Project. It can be as specific as a strain/serovar/etc of a species
+                              or as general as 'Nematode' (e.g., 'Toxocara canis', '')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+
+    data.frame(
+      Variable="=ProjectPlatyhelminthHazard",
+      Label="Platyhelminth",
+      Definition="The platyhelminth of interest for the Project. It can be as specific as a subspecies
+                                  or as general as 'Platyhelminth' (e.g., 'Fasciola gigantica')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+
+    data.frame(
+      Variable="=ProjectArthropodHazard",
+      Label="Arthropod",
+      Definition="The arthropod of interest for the Project. It can be as specific as a subspecies
+                                  or as general as 'Arthropod' (e.g., 'Sarcoptes scabiei', 'Rhipicephalus sanguineus')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+  
+# --------------------------------
+   
+    data.frame(
+      Variable="=ProjectChemicalHazard",
+      Label="Chemical Hazards",
+      Definition="The type(s) of chemical health hazard(s) of interest for the Project 
+      (e.g., 'Heavy Metal', 'Organochlorine Pesticides', 'Cholinesterase-inhibbiting Pesticide', 'Toxins')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),
+ 
+# ------- Chemical Hazard Types 
+   
+data.frame(
+  Variable="=ProjectHeavyMetalHazard",
+  Label="Heavy Metal",
+  Definition="The heavy metal of interest for the Project. It can be as specific as a chemical form of the heavy metal 
+              or as general as the common name of the metal (e.g., 'Lead', 'Methylmercury')",
+  Type="Multiple selection", 
+  Mandatory="Yes. Provide at least one option"),
+
+data.frame(
+  Variable="=ProjectOrganochlorinePesticidesHazard",
+  Label="Organochlorine Pesticides",
+  Definition="The organochlorine pesticides of interest for the Project. It can be as specific as a type of organochlorine pesticides
+                  or as general as 'Organochlorine Pesticide' (e.g., 'DDT', 'Lindane')",
+  Type="Multiple selection", 
+  Mandatory="Yes. Provide at least one option"),
+
+data.frame(
+  Variable="=ProjectCholinesteraseInhibbitingPesticideHazard",
+  Label="Cholinesterase-inhibbiting Pesticide",
+  Definition="The cholinesterase-inhibbiting pesticide of interest for the Project. It can be as specific as a type of 
+              cholinesterase-inhibbiting pesticide or as general as 'Cholinesterase-inhibbiting Pesticide' 
+              (e.g., 'Diazinon', 'Malathion')",
+  Type="Multiple selection", 
+  Mandatory="Yes. Provide at least one option"),
+
+
+data.frame(
+  Variable="=ProjectToxinsHazard",
+  Label="Toxins",
+  Definition="The toxin of interest for the Project. It can be as specific as the protein subtype
+                          or as general as 'Toxin' (e.g., 'Clostridium botulinum toxin type C', 'Tetanus toxin')", # name of the protein not the disease. REplace
+  Type="Multiple selection", 
+  Mandatory="Yes. Provide at least one option"),
+
+# --------------------------------
+
+    data.frame(
+      Variable="=ProjectPhysicalHazard",
+      Label="Physical Hazards",
+      Definition="The type(s) of physical health hazard(s) of interest for the Project 
+      (e.g., 'Trap', 'Vehicle Collisions', 'Entanglement', 'Burning', 'Electrocution')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),  
+
+    data.frame(
+      Variable="=ProjectPhysiologicalHazard",
+      Label="Physiological Hazards",
+      Definition="The type(s) of physiological health problems of interest for the Project 
+      (e.g., 'Hypocalcemia', 'Hyperkalemia', 'Amyloid A amyloidosis')",
+      Type="Multiple selection", 
+      Mandatory="Yes. Provide at least one option"),  
+
     data.frame(
       Variable="ProjectStartDate",
       Label="Project Start Date",
-      Definition="The date the project oficially started" ,
+      Definition="The starting date of the Project" ,
       Type="Date",
       Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectEndDate",
       Label="Project End Date",
-      Definition="The date the project is projected to end or oficially ended",
+      Definition="The date when the Project is projected/planned to end or officially ended",
       Type="Date",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="WildlifeHealth_ProjectUrl",
+      Variable="ProjectUrl",
       Label="Project URLs",
-      Definition="URLs of the project, associated with the project, or organizations leading the project",
+      Definition="URLs of the Project or of the organizations/institutions involved in the Project",
       Type="String",
       Mandatory="No"))
 
