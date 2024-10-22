@@ -18,33 +18,24 @@ data_dictionary[["Arthropod_Source_Metadata"]]<-
     #> surveillance activity
     
     
+    ## ---- SOURCES  ## collection sitea
+    
     data.frame(
-      Variable="SurveillanceActivitySourceRecordsOrigin",
+      Variable="SurveillanceActivitySourceOrigin",
       Label="Arthropod Sources Origin",
       Definition="Select the appropriate origing of the arthropods used in the current 
       Surveillance Activity (e.g., generated during the current Surveillance Activity or 
-      aready available and collected during a previous Surveillance Activity)",
+      already available and collected during a previous Surveillance Activity)",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordOriginIdentifier",
-      Label="Surveillance Activity Identifier Generated Arthropod", 
+      Variable="SurveillanceActivitySourceOriginIdentifier",
+      Label="Surveillance Activity Identifier Arthropod Source Origin", 
       Definition="The identifier of the Surveillance Activity under which the arthropods used
       in the current Surveillance Activity were collected",
       Type="String",
       Mandatory="Yes"),
-    
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordCodeStructure",
-      Label="Arthropod Source Code Structure",
-      Definition="Explain the nomenclature of the Arthropod Source Record Codes used 
-      (e.g., first letter refers to the pathogen, the next two letters refer to the 
-      country, the next letter refers to the arthropod taxonomic group, and then the number is 
-      the sequential number of the Arthropod Source in the Surveillance Initiative",
-      Type="String",
-      Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivitySourcePolygonOrTrap",
@@ -124,10 +115,26 @@ data_dictionary[["Arthropod_Source_Metadata"]]<-
     
     data.frame(
       Variable="SurveillanceActivitySourceHowObtained",
-      Label="Collection Process",
-      Definition="Explain how arthropods are collected in the field",
+      Label="Collection Site Selection",
+      Definition="Explain how collection sites are selected",
       Type="String",
       Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceInclusionCriteria",
+      Label="Inclusion Criteria of Arthropods Collection Sites",
+      Definition="Provide specific inclusion criteria of arthropod collections sites (collection areas or points) 
+      in the Surveillance Activity, if any",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceExclusionCriteria",
+      Label="Exclusion Criteria of Arthropod Collection Sites",
+      Definition="Explain the reason to exclude certain arthropod collections sites (collection areas or points) 
+          or specific collections from the Surveillance Activity, if any",
+      Type="String",
+      Mandatory="No"),
     
     data.frame(
       Variable="SurveillanceActivitySourceIdentification",
@@ -139,28 +146,10 @@ data_dictionary[["Arthropod_Source_Metadata"]]<-
     
     data.frame(
       Variable="SurveillanceActivitySourceIdentificationMethod",
-      Label="Collection Sites AIdentification Method",
+      Label="Collection Sites Identification Method",
       Definition="Explain how arthropod collections are individually identified (e.g. color, other)",
       Type="String",
       Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordsOverTime",
-      Label="Collection Records Over Time",
-      Definition="Answer to the question: 'Is it aimed to obtain arthropods from the same collection sites
-      (polygon, trap, etc.) during the Surveillance Activity?' (e.g., several collections or Records from the same site or Sources)",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceCodeStructure",
-      Label="Arthropod Source Specimen Code Structure",
-      Definition="Explain the nomenclature of the Arthropod Source Record Codes used 
-      (e.g., first letter refers to the pathogen, the next two letters refer to the 
-      country, the next letter refers to the unique trap location, then the numbers are the 
-      the sequential record of the same collection location (polygon, trap, etc.)",
-      Type="String",
-      Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivitySourceGrouping",
@@ -178,24 +167,51 @@ data_dictionary[["Arthropod_Source_Metadata"]]<-
       Type="String",
       Mandatory="Yes"),
     
+    
+    ## ----- RECORDS ---- ## Colection from Souce s at time t
+    
+  
     data.frame(
-      Variable="SurveillanceActivitySourceInclusionCriteria",
-      Label="Inclusion Criteria of Arthropods Collections",
-      Definition="Provide specific inclusion criteria of arthropod collections sites (collection areas or points) 
-      in the Surveillance Activity, if any",
+      Variable="SurveillanceActivitySourceRecordCodeStructure",
+      Label="Arthropod Source Code Structure",
+      Definition="Explain the nomenclature of the Arthropod Source Record Codes used 
+      (e.g., first letter refers to the pathogen, the next two letters refer to the 
+      country, the next letter refers to the arthropod taxonomic group, and then the number is 
+      the sequential number of the Arthropod Source in the Surveillance Initiative)",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsOverTime",
+      Label="Collection Records Over Time",
+      Definition="Answer to the question: 'Is it aimed to obtain arthropods from the same collection sites
+      (polygon, trap, etc.) during the Surveillance Activity?' (e.g., several collections or Records from the same site or Sources)",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordHowObtained",
+      Label="Collection Process",
+      Definition="Explain how arthropods are collected in the field",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceExclusionCriteria",
+      Variable="SurveillanceActivitySourceRecordInclusionCriteria",
+      Label="Inclusion Criteria of Arthropods Collections",
+      Definition="Provide specific inclusion criteria of arthropod collections in the Surveillance Activity, if any",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordExclusionCriteria",
       Label="Exclusion Criteria of Arthropod Collections",
-      Definition="Explain the reason to exclude certain arthropod collections sites (collection areas or points) 
-          or specific collections from the Surveillance Activity, if any",
+      Definition="Explain the reason to exclude certain arthropod collections from the Surveillance Activity, if any",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceFieldStorage",
+      Variable="SurveillanceActivitySourceRecordFieldStorage",
       Label="Arthropod Collection Field Storage",
       Definition="Method to preserve the arthropods collected while in the field",
       Type="Mutiple selection",
@@ -234,7 +250,7 @@ data_dictionary[["Arthropod_Source_Metadata"]]<-
       (e.g., first letter refers to the pathogen, the next two letters refer to the 
       country, the next letter refers to the arthropod group, the following letters
       are the type of Specimen, then the numbers are the collection site, and the last number is 
-      the sequential Specimen from the arthropod collection site",
+      the sequential Specimen from each collection",
       Type="String",
       Mandatory="Yes"), 
     
@@ -277,7 +293,7 @@ data_dictionary[["Arthropod_Source_Metadata"]]<-
     
     data.frame(
       Variable="SurveillanceActivitySourceSpecimenDiagnosticsUsedProtocolReferences",
-      Label="Arthropod Source Diagnostic Protocols References",
+      Label="Arthropod Specimen Diagnostic Protocols References",
       Definition="Provide references associated with the Diagnostic protocols conducted",
       Type="String",
       Mandatory="No"), 
