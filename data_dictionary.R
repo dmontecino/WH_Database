@@ -885,9 +885,9 @@ data_dictionary[["Surveillance_Objective"]]<-
       Label="Surveillance Activity End Date",
       Definition="The date the Surveillance Activity is projected to end or officially ended",
       Type="Date",
-      Mandatory="No"),
+      Mandatory="No"))
     
-    
+
 #Outbreak
 
 data_dictionary[["Outbreak"]]<-
@@ -911,15 +911,12 @@ data_dictionary[["Outbreak"]]<-
 
 
 
-data.frame(
-  Variable="SurveillanceActivityAnimalSourceSpecies",
-  Label="Animal Source Species",
-  Definition="Species of the animals of interest for the Project as Animal Sources. It is possible
-      to select high taxonomy levels such as 'mammals', 'chordata', 'Insecta', etc. to indicate that
-      no particular species is targeted",
-  Type="Multiple selection",
-  Mandatory="No"),
 
+
+
+
+    
+    
 data.frame(
   Variable="SurveillanceActivityObservationSource",
   Label="Observation Source Species",
@@ -935,6 +932,12 @@ data.frame(
   Definition="The type(s) of Environmental Source(s) of interest for the Project",
   Type="Multiple selection",
   Mandatory="No"),
+
+
+
+
+
+
 
 data.frame(
   Variable="SurveillanceActivityInvertebrateSource",
