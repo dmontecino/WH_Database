@@ -21,9 +21,9 @@ data_dictionary[["Surveillance_Objective"]]<-
       Mandatory="System-assigned"), 
     
     data.frame(
-      Variable="SurveillanceObjectiveCode",
+      Variable="SurveillanceActivityCode",
       Label="Surveillance Activity Code",
-      Definition="User-provided Surveillance Activity code name",
+      Definition="User-provided Surveillance Activity code",
       Type="String",
       Mandatory="Yes"),
     
@@ -37,8 +37,8 @@ data_dictionary[["Surveillance_Objective"]]<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityCrossReferenceIDOrigin",
-      Label="SurveillanceActivity Cross Reference Identifier Origin", 
+      Variable="SurveillanceActivityCrossIDOrigin",
+      Label="Surveillance Activity Cross Identifier Origin", 
       Definition="The location/database/document where other identification 
       for the same Surveillance Activity is used",
       Type="String",
