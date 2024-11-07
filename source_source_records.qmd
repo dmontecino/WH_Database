@@ -43,7 +43,7 @@ An animal of species X documented as an Animal Source Record cannot be included 
 
 ### Animal Source Specimens
 
-Animal Sources can provide Specimens at time **t** (see "Specimens") and they should be traceable at the individual level. An example are feces collected from the bottom of a cage with animals of the same species, and it was observed which animal dropped them. If Specimens cannot be traced to a single animal, they should be associated with a Group Source (see above).
+Animal Sources can provide Specimens at time **t** (see "Specimens") and they should be traceable at the individual level. An example are feces collected from the bottom of a cage with animals of the same species, and it was observed which animal dropped them. If Specimens cannot be traced to a single animal but to a group of them, the Specimens should be associated with a Group Source (see above).
 
 The date of death of an Animal Source Record is not necessarily the last time it can provide Specimens because it is possible to collect them from the carcass (dead Animal Source).
 
