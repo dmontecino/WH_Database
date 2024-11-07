@@ -1,34 +1,59 @@
-# Sources and Source Records {.unnumbered}
+# Source and Source Records {.unnumbered}
 
-## Observation
+A Source in the database is an observed unit and that can provide Specimens, including carcasses, organic tissue, abiotic tissue, or arthropods. The database manages four types of Sources: i) a co-specific group of animals (Group Source), ii) individual animals (Animal Source), iii) sites that can provide abiotic tissue of interest or biotic material of animal origin whose individual or group animal origin is unknown (Environmental Source), and iv) sites where arthropods at any life stage can be obtained (e.g., a water fountain in a house). 
 
-An Observation corresponds to the observed-only animal(s) present at one Incident grouped by species. For example, a wildlife health event involving a single isolated injured animal. If this individual is observed only, then the Incident has a single Observation representing a single species. The animal count for that single species is one.
+A Group Source could correspond to a specific bat roost of species X sourcing guano, an Animal Source could be a collared animal, an Environmental Source could be a beach where bird guano is collected, and an Arthropod Source could be a pond where mosquito larvae are collected from. Sources contain time-independent data only, such as the species of an animal in the case of a Group Source or an Animal Source. 
 
-Another example: five animals are found in a wetland, two of them of species "A" and three of them of species "B". One animal of species "A" is sick. If they are only observed and the Surveillance Objective is not interested in individual animal-level data, then this set of findings is a wildlife health 'Incident' with two 'Observations'. One 'Observation' represents species "A" (one healthy individual and one sick animal), and another 'Observation' represents species "B" (three healthy individuals).
+If Sources are individually identified, they can be followed over time and added to multiple Events in the database documented over time. For example, the specific bat roost with species X (Group Source) can provide guano over time. A collared animal (Animal Source) can be captured several times over the course of a Surveillance Activity and sampled, the beach where bird guano are collected from (Environmental Source) can be sampled over the corresponding seasons, and the seasonal pond sourcing mosquito larvae can be sampled on a monthly basis. In this case "Source Records" of a Source are added to Events and Efforts at time **t**. Source Records contain time-dependent data only, such as health status at time **t**. In the database, all Sources have at least one Source Record. This first Record corresponds to the first time the Source is documented for the Surveillance Activity or the only time a Source is documented if longitudinal data is not planned for the Surveillance Activity. Therefore, it is not necessary for Sources to be followed over time. The first or unique documentation of a Source implies creating the Source with time independent attributes, create a Source Record with time-dependent data, and add the Source Record to an Event-Effort at time **t**. In the database, Source Records of multiple Sources of any type can be added to the same Event-Effort. 
 
-Incidents can include Observations (species) with healthy animals only, as long as they are part of a wildlife health event.
+## Group Source
 
-Each Observation generates one and only one Source Record with immutable data. In that unique Source Record animals are categorized by sex, age, and health status. The captivity categories of the corresponding animals; their anomalies; and potential causes of injury, disease, or dead can be provided.
+A Group Source is a unit of co-specific individuals (animals of the same species) that belong to the same epidemiologicla unit, are observed, and can provide Specimens. Group Sources can be associated to an area, a site, a farm, a cage, a stall, an enclosure, or another unit that allows to group animals of the same species as an epidemiological unit. Data of a Group Source include the species, the identifier, the cross identifier, and the date of extinction (see Data Dictionary). 
+An example of Group Sources are animals of two species in a cage located in a live market. Animals of each species represent a Group Source in the cage. Another example are two herds of wild herbivores of the same species that are identified as "group 37" and "group 38" living in specific area of the Arctic. As a consequence, an Event-Effort unit can have more than one Group Source of the same species if it contains animals of the same species that are distributed in different epidemiological units and, therefore, Group Sources.
 
-If the same set of only-observed animals is believed to be found five days later, then a new Observation must be created because there is no certainty that they are the same individuals. If users want to track the animals longitudinally, they should be added singly to the database as 'Animal Source' (see below).
+### Group Source Record
+
+A Group Source Record consists of a count of the animals in the Group Source at time **t**, stratified by sex, age, and health status (e.g., healthy, injured, sick, or dead), observed anomalies, potential causes of disease or death if they apply at time **t**, among others (see Data Dictionary). Each property of Group Source Records can receive multiple options. For example, a Group Source with three dead animals can receive several potential causes of death. Group Source Records can include a mix of dead, diseased, poisoned, infected, injured, and healthy individuals or one of these categories exclusively, including healthy animals only if they are of interest (e.g., animals of species X with all of them observed healthy next to dead animals of species Y and Z). 
+
+Group Source Records can have a single individual. For example, rangers patrolling a protected area find at the same site (Event) a dead animal of species X and two dead animals of species Y. For the data model of the database, this corresponds to a single Event with a specific Effort and records of two Group Sources. One with the single dead animal of species X and another one the two dead animals of species Y. 
+
+An animal of species X documented as part of a Group Source Record cannot be included as an Animal Source Record and vice-versa at time **t** (Sources types are mutually exclusive at time **t**). The total number of animals of species X in the Event-Effort unit that contains a Group Source Record of species X and Animal Source Records of species X, is the sum of animals of species X in the Group Source Record (one Record per species unit per Event) and the number of Animal Source Records of species X. An example is a herd of cows illegally raised in a protected area whose health is assessed at time **t**. The herd contains 20 cows, two of them are sampled, and the rest are part of a single unit. In this case, the Event has two Animal Source Records (corresponding to the two sampled cows) and a single Group Source Record that distributes 18 cows per sex, age, and health status.
+
+Properties of a Group Source Record are documented at the group level. Therefore, it is not possible to know the distribution of several properties across individuals of the Group Source Record, but only that it was present in at least one individual (the exception is the species and also other properties when a Group Source is composed by a single individual). If the user wants to record properties at the individual level, there are two options. The first one is to document Animal Source Records (see below) to document each animal of a Group singly with their corresponding properties. The second option is to record only animals showing symptoms as Animal Source Records and the rest of healthy animals of the same species as a Group Source Record. This second option is not recommended for Group Sources tracked over time because animals recorded as Animal Sources at time **t** might not show any symptoms at time **t'** and would be part of the Group Source Record at time **t'**.
+
+### Group Source Specimens
+
+Group Sources can provide Specimens at time **t** (see "Specimens") but they should not be traceable at the individual level but at the group level. An example are feces collected from the bottom of a cage with animals of the same species. In this case, it is not possible to know which individual dropped the feces; however, there is information of the species and the observed health status of animals, including the unknown individual that dropped them. Sex and age of the animals could be known too. If Specimens can be traced to a single animal, they should be associated with an Animal Source (see below).
+
+The last date a Group Source was observed is not necessarily the last time the Group Source can provide Specimens. For example, it is possible to collect feces from an empty cage that the Group Source was using until two days ago. In consequence, the age, sex, and health status distribution of the Group Source Record can be all unknown.
 
 ## Animal Source
 
-An Animal Source represents an individual animal. Animal Sources can be added because the Surveillance Objective aims to collect individual-level health information (e.g., individual findings in stranded pilot whales), because the Animal Sources provide Specimens to perform Diagnostics or to be stored (carcass, body parts, tissue, organs, samples, etc), or because a Diagnostic is conducted in individual animals that do not necessarily provide Specimens (e.g., evident hair loss in a free-ranging red fox).
+An Animal Source represents an individual animal whose specific data is wanted.  Individually-traceable Specimens can be collected from Animal Sources, including the full carcass to have a Necropsy completed. Animal Source data includes the species, the identifier, the cross identifier, the sex, and the date of death (see Data Dictionary). Past marking codes (if any have been used) are considered immutable and added to the Animal Source.
 
-Immutable data from Animal Sources are the sex, the species, and the date of death. Previous marking codes (if any have been used) are immutable; however, current marking codes are considered mutable and are provided in the corresponding Animal Source Record (see below).
+An example of Animal Sources are animals of different or the same species in a cage located in a live market. If the data of the animals is to be collected at the individual-level, then each individual of either species represent an Animal Group Source in the cage. Another example are two dead animals found by rangers patrolling a protected area with a rectal swab taken from each one of them. 
 
 ### Animal Source Record
 
-Each Animal Source has at least one Source Record. This first Source Record corresponds to the unique record of an unidentified individual animal or to the first record of an individually identified animal. Individually identified animals can potentially be tracked over time and have as many Source Records as needed.
+An Animal Source Record consists of an Animal Source at time **t**. Properties of an Animal Source Record are its age, health status, observed anomalies, and potential cause of disease or death if they apply at time **t**, among others (see Data Dictionary). The marking of an individual animal at time **t** is considered mutable and a property of the corresponding Animal Source Record. Properties of an Animal Source Record can have single or multiple qualifications For example, the observed health status in only one but an Animal Source Record can receive several anomalies. 
 
-Mutable data of an Animal Source over time needs to be provided for each Source Record. Mutable data includes the captivity category, the health status, the age, and the marking code. These are one-option features per Animal Source Record. Other mutable data for Animal Sources that can have multiple values in each Animal Source record are the anomalies found and the potential causes of injury, disease, or death. Obviously, the time t when the Animal Source is recorded is also mutable.
+An Animal Source can be either dead, diseased, poisoned, infected, injured, or healthy at time **t**. An Animal Source Record with an observed health status "healthy" can be part of an Event if they are of interest (e.g., a healthy animal of species X next to dead animals of species X, Y, and Z). 
 
-The last Animal Source Record for an animal is not necessarily the last time t when it was found dead because it is possible to collect Specimens from the carcass (dead Animal Source) over a period of time while the carcass is rooting.
+An animal of species X documented as an Animal Source Record cannot be included in a Group Source Record of animals of species X and vice-versa (Sources types are mutually exclusive at time **t**). The total number of animals of species X in the Event-Effort unit that contains a Group Source Record of species X and Animal Source Records of species X, is the sum of animals of species X in the Group Source Record (one Record per species unit per Event) and the number of Animal Source Records of species X. An example is a herd of cows illegally raised in a protected area whose health is assessed at time **t**. The herd contains 20 cows, two of them are sampled, and the rest are part of a single unit. In this case, the Event has two Animal Source Records (corresponding to the two sampled cows) and a single Group Source Record that distributes 18 cows per sex, age, and health status.
+
+### Animal Source Specimens
+
+Animal Sources can provide Specimens at time **t** (see "Specimens") and they should be traceable at the individual level. An example are feces collected from the bottom of a cage with animals of the same species, and it was observed which animal dropped them. If Specimens cannot be traced to a single animal, they should be associated with a Group Source (see above).
+
+The date of death of an Animal Source Record is not necessarily the last time it can provide Specimens because it is possible to collect them from the carcass (dead Animal Source).
+
+### Carcass
+
+
 
 ### Necropsy
 
-Necropsies are associated with the specific Animal Source Record when the carcass was collected. However, the Necropsy date can be any date since the corresponding Animal Source Record creation.
+A Necropsy is associated with a specific Animal Source Record that can occur any date after the corresponding Animal is found dead.
 
 Necropsies can be primary or secondary. Primary necropsies usually start with an intact carcass (not previously used in a necropsy). Secondary necropsies are usually conducted by a veterinarian pathologist using pictures of the primary necropsy or using a carcass already necropsied.
 
@@ -67,3 +92,18 @@ Users can group Source Records from different Sources beyond the Incident they b
 Under this scenario, the cage is providing three Source Records. Firstly, an Environmental Source with a single Environmental Source Record containing the feces sampled from the bottom of the cage. Secondly, an Observation with the two animals in the cage that are only observed (Observations always have a single Record). And thirdly, an Animal Source with a single Animal Source Record containing the oral swab.
 
 How to track that these Source Records belong to the same cage? The database provides tags per user request that allow to label Sources Records that belong to units lower than Incidents and keep them linked. In the example, the three Source Records can receive the same tag ("cage1") in order to track that they have a more specific origin than Incident.
+
+
+ An Animal Source Record has data of a single animal always, which might or might not be identified individually and tracked over time.
+
+Environmental and 
+
+In te case of env and arthropod sources, they could be equivalent to the location. 
+
+
+Incidents can include Observations (species) with healthy animals only, as long as they are part of a wildlife health event.
+
+Each Observation generates one and only one Source Record with immutable data. In that unique Source Record animals are categorized by sex, age, and health status. The captivity categories of the corresponding animals; their anomalies; and potential causes of injury, disease, or dead can be provided.
+
+
+Disgnostic test - visual assessment of death, sick injured? what about the potential causes of death?

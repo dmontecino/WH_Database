@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WildHealthDat - Surveillance Objective</title>
+<title>WildHealthDB - Surveillance Activity</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -73,10 +74,10 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./surveillance_objective.html">Surveillance Objective</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./surveillance_objective.html">Surveillance Activity</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -88,10 +89,10 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">WildHealthDat</a> 
+      <a href="./">WildHealthDB</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/dmontecino/WH_Database" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./WildHealthDat.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="https://github.com/dmontecino/WH_Database" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./WildHealthDB.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -123,13 +124,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./surveillance_objective.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Surveillance Objective</span></a>
+ <span class="menu-text">Surveillance Activity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./field_activity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Field Activity</span></a>
+ <span class="menu-text">Field Visit</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -147,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./source_source_records.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sources and Source Records</span></a>
+ <span class="menu-text">Source and Source Records</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -187,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Surveillance Objective</h1>
+<h1 class="title">Surveillance Activity</h1>
 </div>
 
 
@@ -202,18 +203,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A Surveillance Objective refers to a set of activities established to collect data with the aim of detecting, quantifying, or assessing trends related to specific health hazards within specific populations, using a standardized methodology. Each Surveillance Objective should specify the target populations, hazard, Source and Specimen collection methods, and Diagnostics. For example, a capture-mark-recapture study targeting lead accumulation in a specific vulture population involving the collection of blood samples and conducting tests using the same Diagnostic for every capture.</p>
-<p>Surveillance Objectives include targeted surveillance and scanning surveillance initiatives and they are the most complex component of the database, so it is essential to read this section carefully.</p>
-<p>Surveillance Objectives include detailed metadata that describe their objectives and methods. This metadata includes information on the targeted species, populations, and hazards, as well as the types of Sources and Specimens included, collection methods, and case definitions for specific Diagnostics, Specimens, and Sources. Some metadata elements are provided for each Source type, such as Observation, Animal Source, Environmental Source, and Invertebrate Source (see next sections).</p>
-<p>Typically, Field Activities, Locations, Incidents, Sources, Records, and Diagnostics belong to a single Surveillance Objective. This Surveillance Objective is the one that initially requested Field Activities at different Locations to record Incidents, collect Sources and Specimens, and perform Diagnostics for a specific hazard. In such cases, the Surveillance Objective is automatically assigned to each corresponding component.</p>
-<p>However, there are exceptions to this rule, except for Diagnostics, which have different justifications for each component. Field Activities, Locations, Incidents, Source Records, and Specimens can be originally requested by different Surveillance Objectives planning the same activities and methods but targeting different hazards. For example, rodents trapped in the same Incidents may be sampled using the same methodology and tested for both coronaviruses and Rickettsia sp (two Surveillance Objectives). In this scenario, only one of the Surveillance Objectives will be automatically assigned. It is the user’s responsibility to add the second Surveillance Objective to the corresponding Field Activities, Locations, Incidents, Source Records, and Specimens.</p>
-<p>Another exception occurs when Source Records and Specimens collected during past surveillance efforts are included in future surveillance initiatives. For instance, using pangolin Specimens collected by rangers patrolling a protected area in 2017 as part of a scanning surveillance strategy, which are then tested in 2023 for SARS-CoV-2 as part of a targeted surveillance initiative. In this case, the latter Surveillance Objective does not generate new Field Activities, Locations, or Incidents, but the Specimens tested for SARS-CoV-2 and their Sources will have multiple Surveillance Objectives. One corresponds to the original Surveillance Objective that mandated the Field Activity for collecting the Source Records and Specimens, and the other is the new Surveillance Objective targeting SARS-CoV-2.</p>
-<p>Moreover, new Necropsies might be conducted during the Surveillance Objective targeting SARS-CoV-2, new Specimens could be created (from larger stored Specimens, such as a carcass or an organ), or new Pooled Specimens could be produced. All these components receive the Surveillance Objective targeting SARS-CoV-2 only. Again, it is the user’s responsibility to add the second Surveillance Objective to the new Source Records and Specimens.</p>
-<p>Each diagnostic remains linked to a single Surveillance Objective (new Diagnostics targeting SARS-CoV-2 will be associated with the SARS-CoV-2-related Surveillance Objective exclusively). Surveillance Objectives added to a Diagnostic will be automatically assigned to the corresponding Specimen, Source Record, and Source.</p>
-<p>Therefore, Surveillance Objectives can be interconnected for various reasons, such as belonging to the same Project, sharing common Field Activities, Locations, and Incidents, or having common Sources and Specimens. If Surveillance Objectives are connected for the latter two reasons, then these connections must be specified in the metadata of the corresponding Surveillance Objectives. These connections will also be evident in the exported data, where each component with multiple Surveillance Objectives (e.g., Field Activity, Specimen) will be represented by one row per Surveillance Objective.</p>
+<p>A Surveillance Activity refers to a set of activities to collect data with the aim of detecting, quantifying, proving freedom of disease, or assessing trends of specific health hazards within specific populations, using a standardized methodology. Each Surveillance Activity should specify the target populations, hazard, Sources and Specimen collection methods, and Diagnostics (see below). A Surveillance Activity is a capture-mark-recapture study targeting lead accumulation in a specific vulture population involving the collection of blood samples and conducting tests using the same capture, marking, and Diagnostic methods. Surveillance Activities encompass targeted surveillance, scanning surveillance, citizen science monitoring, freedom of disease assessments, and others. Surveillance Activities include detailed metadata that describe their objectives and methods, including information on the targeted species, populations, hazards, type of Sources and Specimens, collection methods, and case definitions for Diagnostics, Specimens, and Sources. Surveillance Activities are the most complex component of the database, so it is essential to read this section carefully.</p>
+<p>Field Visits, Locations, Events, Sources, Records, and Diagnostics usually belong to a single Surveillance Activity. The Surveillance Activity that commanded the Field Visits at different Locations to document Events, collect Sources and Specimens, perform Diagnostics for a specific hazard, and provide Diagnosis for Diagnostics, Specimens, and Sources.</p>
+<p>However, there are exceptions to this rule. For example, rodents trapped in the same Event may be sampled using the same methodology but tested for coronaviruses and Rickettsia sp. Therefore, two Surveillance Activities are involved. In this scenario, two Surveillance Activities should be assigned to the Field Visits, Locations, Events, Source Records, and Specimens. Diagnostics for either group of pathogens and the corresponding Diagnosis should only get a single Surveillance Activity.</p>
+<p>Another exception occurs when Specimens were collected during past surveillance efforts but are included in new surveillance initiatives. For instance, using pangolin Specimens collected by veterinarians in 2017 and tested for Salmonella sps. which are then tested in 2023 for SARS-CoV-2. In this case, the latter Surveillance Activity is assigned only to the Specimens (as a second Surveillance Activity) and to the SARS-CoV-2 Diagnostics and Diagnosis. Therefore, the Specimens should have two Surveillance Objectives. The first one corresponds to the original Surveillance Objective that lead to their collection and the second one corresponds to the Surveillance Activity testing them for SARS-CoV-2.</p>
+<p>Moreover, new Necropsies might be conducted or new Specimens could be created (from larger stored Specimens, such as a carcass or an organ) as part of a new Surveillance Activity,. The new Necropsy and Specimens should receive the second Surveillance Activity only. Diagnostics using the new Specimens should receive the second Surveillance Activity.</p>
+<p>Therefore, Surveillance Activities can be interconnected for various reasons. These connections will be evident in the exported data, where each component with multiple Surveillance Activities (e.g., Specimen) will be represented by one row per Surveillance Activity.</p>
 <section id="outbreak-investigation" class="level2">
 <h2 class="anchored" data-anchor-id="outbreak-investigation">Outbreak Investigation</h2>
-<p>All outbreak investigations are considered Surveillance Objectives, although the information regarding the outbreak (name and diagnosis) can be provided after the creation of the Surveillance Objective in the database.</p>
+<p>All outbreak investigations are considered Surveillance Activities. Outbreak Surveillance Activities can encompass the Field Visit that lead to the Outbreak detection and the following Field Visits associated with Outbreak investigation and control. The detection could have been made during a Field Activity conducted by rangers or hunters as part of disease monitoring. In this case the components of this Field Visit should be assigned to a scanning surveillance Surveillance Activity (the original purpose) and to the Outbreak Surveillance Activity. The following Field Activities that could be completed by veterinarians or public health officers, they all receive the outbreak Surveillance Activity.</p>
 
 
 </section>
@@ -460,7 +458,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./field_activity.html" class="pagination-link">
-        <span class="nav-page-text">Field Activity</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Field Visit</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

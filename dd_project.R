@@ -1,10 +1,8 @@
-# Example entries
-data_dictionary<-vector(mode = "list")
+# @@@@@@@@@@@@@@@@@@ #
+# Project Dictionary #
+# @@@@@@@@@@@@@@@@@@ #
 
-
-#Project Table
-
-data_dictionary[["Project_Table"]]<-
+project<-
   
   list(
     data.frame(
@@ -296,3 +294,16 @@ data_dictionary[["Project_Table"]]<-
       Definition="URLs of the Project or of the organizations/institutions involved in the Project",
       Type="String",
       Mandatory="No"))
+
+project<-
+project %>% bind_rows() |> 
+  gt::gt() %>%
+  gt::tab_options(table.font.size = 8) %>%
+  gt::cols_width(Variable ~ gt::pct(22),
+                 Label ~ gt::pct(20),
+                 Definition ~ gt::pct(30),
+                 Type~ gt::pct(13),
+                 Mandatory~ gt::pct(15)) %>%
+  gt::tab_style(
+    style = cell_text(size = px(15), weight = "bold"),
+    locations = cells_column_labels())

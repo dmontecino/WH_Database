@@ -1,8 +1,8 @@
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
-# Surveillance Objective table #
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
+# Surveillance Activity Dictionary #
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
 
-data_dictionary[["Surveillance_Objective"]]<-
+surv_activity<-
   
   list(
     
@@ -573,3 +573,16 @@ data_dictionary[["Surveillance_Objective"]]<-
       Definition="The date the Surveillance Activity is projected to end or officially ended",
       Type="Date",
       Mandatory="No"))
+
+surv_activity<-
+  surv_activity %>% bind_rows() |> 
+  gt::gt() %>%
+  gt::tab_options(table.font.size = 8) %>%
+  gt::cols_width(Variable ~ gt::pct(22),
+                 Label ~ gt::pct(20),
+                 Definition ~ gt::pct(30),
+                 Type~ gt::pct(13),
+                 Mandatory~ gt::pct(15)) %>%
+  gt::tab_style(
+    style = cell_text(size = px(15), weight = "bold"),
+    locations = cells_column_labels())

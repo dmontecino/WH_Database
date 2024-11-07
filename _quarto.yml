@@ -3,9 +3,9 @@ project:
   output-dir: _book
 
 book:
-  title: "WildHealthDat"
+  title: "WildHealthDB"
   author: "Diego Montecino-Latorre"
-  date: "7/5/2023"
+  date: "11/3/2024"
   chapters:
     - index.qmd
     - intro.qmd

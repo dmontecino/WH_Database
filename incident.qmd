@@ -1,6 +1,6 @@
-# Incidents {.unnumbered}
+# Event {.unnumbered}
 
-An Incident refers to a distinct wildlife health event that occurs at a specific longitude and latitude on a particular date.
+An Event refers to a distinct wildlife health event that occurs at a specific longitude and latitude on a particular date.
 
 The definition of a wildlife health event, and thus the concept of an 'Incident,' varies depending on the Surveillance Objective methodology. In targeted surveillance efforts, an Incident may involve sampling healthy animals within a specific time and space to test them for a specific hazard. The inclusion of non-sampled individuals, as well as injured, sick, or dead animals, may or may not be considered part of the Incident.
 

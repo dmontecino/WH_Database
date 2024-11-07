@@ -1,7 +1,7 @@
 # Data Dictionary {.unnumbered}
 
 
-```{r table summarizing the different sources}
+```{r table summarizing the different sources, eval=FALSE, echo=F, message=FALSE, warning=FALSE}
 
 library(kableExtra)
 
@@ -44,7 +44,7 @@ kable(data) |> kable_paper()
 ```
 
 
-```{r data dictionary, echo=FALSE, eval=T, message=FALSE, cache=T}
+```{r load packages, echo=FALSE, eval=T, message=FALSE, cache=F, warning=FALSE}
 #| tbl-colwidths: false
 
 
@@ -53,7 +53,7 @@ kable(data) |> kable_paper()
 # Create Dictionary #
 # ------------------#
 
-#library(kableExtra)
+library(kableExtra)
 library(tidyverse)
 library(gt)
 library(reactable)
@@ -63,34 +63,103 @@ library(reactable)
 
 
 # Example entries
-data_dictionary<-vector(mode = "list")
+# data_dictionary<-vector(mode = "list")
   
+```
 
-#Project Table
+## Project
+
+```{r project, echo=FALSE, eval=T, message=FALSE, cache=F}
 
 source("dd_project.R")
 
-# Surveillance Objective 
+project
+
+```
+
+## Surveillance Activity 
+
+```{r surveillance objective, echo=FALSE, eval=T, message=FALSE, cache=F}
 
 source("dd_surv_act.R")
 
-# Surveillance Objective observation source 
+surv_activity
+```
+
+## Field Visit
+
+```{r field visit, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_field_visit.R")
+
+field_visit
+
+```
+
+## Location
+
+```{r location, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_location.R")
+
+location
+
+```
+
+
+## Event
+
+```{r event, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_event.R")
+
+event
+
+```
+
+## Group Source 
+
+```{r group source, echo=FALSE, eval=T, message=FALSE, cache=F}
 
 source("dd_surv_act_obs_source.R")
 
-# Surveillance Objective animal source 
+group_source
+
+```
+
+## Animal Source 
+
+```{r animal source, echo=FALSE, eval=T, message=FALSE, cache=F}
 
 source("dd_surv_act_animal_source.R")
 
-# Surveillance Objective environmental source
+animal_source
+
+```
+
+## Environmental Source
+
+```{r environmental source, echo=FALSE, eval=T, message=FALSE, cache=F}
 
 source("dd_surv_act_env_source.R")
 
-# Surveillance Objective arthropod source
+env_source
+
+```
+
+## Arthropod Source
+
+```{r arthropod source, echo=FALSE, eval=T, message=FALSE, cache=F}
 
 source("dd_surv_act_arthro_source.R")
 
-#Outbreak
+arthro_source
+
+```
+
+<!-- ## Outbreak -->
+
+```{r outbreak, echo=FALSE, eval=F, message=FALSE, cache=F}
 
 data_dictionary[["Outbreak"]]<-
   

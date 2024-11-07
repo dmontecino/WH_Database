@@ -1,19 +1,19 @@
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@ #
-# Observation Source Metadata #
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@ #
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
+# Group Source Dictionary #
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
 
 
-data_dictionary[["Observation_Source_Metadata"]]<-
+group_source<-
   
   list(
     
     data.frame(
-      Variable="ObservationSourceCodeStructure",
-      Label="Observation Source Code Structure",
-      Definition="Explain the nomenclature of the Observation Source Codes used 
+      Variable="GroupSourceCodeStructure",
+      Label="Group Source Code Structure",
+      Definition="Explain the nomenclature of the Group Source Codes used 
       (e.g., first letter refers to the pathogen, the next two letters refer to the 
       country, the next letter refers to the taxonomic group, and then the number is 
-      the sequential number of the Observation Source in the Surveillance Initiative",
+      the sequential number of the Group Source in the Surveillance Initiative",
       Type="String",
       Mandatory="Yes"),    
     
@@ -23,122 +23,122 @@ data_dictionary[["Observation_Source_Metadata"]]<-
     
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecies",
-      Label="Observation Source Species",
-      Definition="Species of the Observation Sources of interest for the Surveillance Activity. It is possible
+      Variable="GroupSourceSpecies",
+      Label="Group Source Species",
+      Definition="Species of the Group Sources of interest for the Surveillance Activity. It is possible
           to select high taxonomy levels such as 'Mammalia', 'Chordata', 'Insecta', etc. to indicate that
           no particular species is targeted",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpeciesIdentificationMethod",
-      Label="Observation Source Species Identification",
-      Definition="Explain the methodology used to identify the species of the Observation Sources",
+      Variable="GroupSourceSpeciesIdentificationMethod",
+      Label="Group Source Species Identification",
+      Definition="Explain the methodology used to identify the species of the Group Sources",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpeciesIdentificationMethodReferences",
-      Label="Observation Source Species Identification Method References",
-      Definition="Provide references associated with the identification method of the species of Observation Sources",
+      Variable="GroupSourceSpeciesIdentificationMethodReferences",
+      Label="Group Source Species Identification Method References",
+      Definition="Provide references associated with the identification method of the species of Group Sources",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceInclusionCriteria",
-      Label="Observation Source Inclusion Criteria",
-      Definition="Provide specific inclusion criteria for the Observation Sources of the species of interest 
+      Variable="GroupSourceInclusionCriteria",
+      Label="Group Source Inclusion Criteria",
+      Definition="Provide specific inclusion criteria for the Group Sources of the species of interest 
           considered for the Surveillance Activity, if any",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceExclusionCriteria",
-      Label="Observation Source Exclusion Criteria",
-      Definition="Explain the reason to exclude certain Observation Sources 
+      Variable="GroupSourceExclusionCriteria",
+      Label="Group Source Exclusion Criteria",
+      Definition="Explain the reason to exclude certain Group Sources 
           of the species of interest for the Surveillance Activity, if any",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceHowObtained",
-      Label="Obtaining Observation Sources",
-      Definition="Explain how Observation Sources were obtained for the Surveillance Activity",
+      Variable="GroupSourceHowObtained",
+      Label="Obtaining Group Sources",
+      Definition="Explain how Group Sources were obtained for the Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceIdentification",
-      Label="Observation Sources Are Identified Individually",
-      Definition="Answer to the question: 'Are Observation Sources (herds, etc.) individually identified?'
+      Variable="GroupSourceIdentification",
+      Label="Group Sources Are Identified Individually",
+      Definition="Answer to the question: 'Are Group Sources (herds, etc.) individually identified?'
       (e.g. herd, farm, etc.)",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceIdentificationMethod",
-      Label="Observation Source Identification Method",
-      Definition="Explain how Observation Sources are individually identified
+      Variable="GroupSourceIdentificationMethod",
+      Label="Group Source Identification Method",
+      Definition="Explain how Group Sources are individually identified
       (e.g. herd, farm, etc.)",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceIdentificationMethodReferences",
-      Label="Observation Source Identification Method References",
-      Definition="Provide references associated with identification method of Observation Sources",
+      Variable="GroupSourceIdentificationMethodReferences",
+      Label="Group Source Identification Method References",
+      Definition="Provide references associated with identification method of Group Sources",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceRecordsOverTime",
-      Label="Observation Source Records Over Time",
-      Definition="Answer to the question: 'Is it aimed to obtained records of the same Observation Source during the  
+      Variable="GroupSourceRecordsOverTime",
+      Label="Group Source Records Over Time",
+      Definition="Answer to the question: 'Is it aimed to obtained records of the same Group Source during the  
       Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceGrouping",
-      Label="Observation Source Are Grouped",
-      Definition="Answer to the question: 'Are Observation Sources associated with the current 
+      Variable="GroupSourceGrouping",
+      Label="Group Source Are Grouped",
+      Definition="Answer to the question: 'Are Group Sources associated with the current 
       Surveillance Activity clustered in units smaller than 'Event'?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceGroupingStructure",
-      Label="Grouping of Observation Sources",
-      Definition="Explain the grouping structure of the Observation Sources below 'Event' 
-      (e.g., Events represent a market vendor. Observation Sources (animals of the same species) 
+      Variable="GroupSourceGroupingStructure",
+      Label="Grouping of Group Sources",
+      Definition="Explain the grouping structure of the Group Sources below 'Event' 
+      (e.g., Events represent a market vendor. Group Sources (animals of the same species) 
       are grouped by each cage of the vendor (so a cage of a unique vendor can have only-observed 
       animals of multiple species)",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceDiagnosticsUsed",
-      Label="Diagnostics Are Applied in the Observation Source",
-      Definition="Answer to the question: 'Are diagnostics conducted in the Observation Source?' 
-      This question refers to Diagnostics that the full Observation
+      Variable="GroupSourceDiagnosticsUsed",
+      Label="Diagnostics Are Applied in the Group Source",
+      Definition="Answer to the question: 'Are diagnostics conducted in the Group Source?' 
+      This question refers to Diagnostics that the full Group
       as the tested Specimen. For example, herd body condition. Information on Diagnostics applied in 
-      a Specimen sourced by an Observation (e.g., feces from a herd) are requested below at the Observation
+      a Specimen sourced by an Group (e.g., feces from a herd) are requested below at the Group
       Source Specimen level",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceDiagnosticsUsedProtocol",
-      Label="Observation Source Diagnostic Protocols",
-      Definition="Name and describe the protocols of the Diagnostics applied in Observation Sources",
+      Variable="GroupSourceDiagnosticsUsedProtocol",
+      Label="Group Source Diagnostic Protocols",
+      Definition="Name and describe the protocols of the Diagnostics applied in Group Sources",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceDiagnosticsUsedProtocolReferences",
-      Label="Observation Source Diagnostic Protocols References",
-      Definition="Provide references associated with the Diagnostic protocols conducted in Observation Sources",
+      Variable="GroupSourceDiagnosticsUsedProtocolReferences",
+      Label="Group Source Diagnostic Protocols References",
+      Definition="Provide references associated with the Diagnostic protocols conducted in Group Sources",
       Type="String",
       Mandatory="Yes"),
     
@@ -148,162 +148,175 @@ data_dictionary[["Observation_Source_Metadata"]]<-
     # --- SPECIMENS 
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenUsed",
-      Label="Observation Specimen Used",
-      Definition="Answer to the question: 'Are Specimens from Observation Sources
+      Variable="GroupSourceSpecimenUsed",
+      Label="Group Specimen Used",
+      Definition="Answer to the question: 'Are Specimens from Group Sources
       (e.g., feces, etc.) collected under a different Surveillance Activity
       used in the current Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCollection",
-      Label="Observation Specimen Collection",
-      Definition="Answer to the question: 'Are Specimens collected from the Observation Sources
+      Variable="GroupSourceSpecimenCollection",
+      Label="Group Specimen Collection",
+      Definition="Answer to the question: 'Are Specimens collected from the Group Sources
       (e.g., feces, etc.) while in the field under the current Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenType",
-      Label="Observation Source Specimen Type",
-      Definition="Select the Specimen Types used or collected from Observation Sources",
+      Variable="GroupSourceSpecimenType",
+      Label="Group Source Specimen Type",
+      Definition="Select the Specimen Types used or collected from Group Sources",
       Type="Multiple selection",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCollectionMethod",
-      Label="Observation Source Specimen Collection Method",
-      Definition="Explain how the Specimens were collected from the surroundings of Observation Sources 
+      Variable="GroupSourceSpecimenCollectionMethod",
+      Label="Group Source Specimen Collection Method",
+      Definition="Explain how the Specimens were collected from the surroundings of Group Sources 
       (e.g., feces in a cage, urine under a bat roost)",
       Type="String",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCollectionMethodReferences",
-      Label="Observation Source Specimen Collection Method References",
-      Definition="Provide references associated with the collection method of the Observation Source Specimens",
+      Variable="GroupSourceSpecimenCollectionMethodReferences",
+      Label="Group Source Specimen Collection Method References",
+      Definition="Provide references associated with the collection method of the Group Source Specimens",
       Type="String",
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCollectionParasitesVectors",
-      Label="Observation Specimen Collection Includes Parasites or Vectors",
-      Definition="Answer to the question: 'Are parasites or vectors collected from the Observation Sources surroundings 
+      Variable="GroupSourceSpecimenCollectionParasitesVectors",
+      Label="Group Specimen Collection Includes Parasites or Vectors",
+      Definition="Answer to the question: 'Are parasites or vectors collected from the Group Sources surroundings 
       (e.g., when collecting a bat species-specific lice below a  roost of the corresponding bat host species.
       Otherwise the parasite or vector is an 'Arthropod Source')",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenFieldStorage",
-      Label="Observation Specimen Field Storage",
-      Definition="Method to preserve the Observation Specimens collected in the field",
+      Variable="GroupSourceSpecimenFieldStorage",
+      Label="Group Specimen Field Storage",
+      Definition="Method to preserve the Group Specimens collected in the field",
       Type="Mutiple selection",
       Mandatory="Yes"),    
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenLabStorage",
-      Label="Observation Specimen Laboratory Storage",
-      Definition="Method to preserve the Observation Specimens collected in the laboratory",
+      Variable="GroupSourceSpecimenLabStorage",
+      Label="Group Specimen Laboratory Storage",
+      Definition="Method to preserve the Group Specimens collected in the laboratory",
       Type="Mutiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenPooling",
-      Label="Observation Source Specimen Pooling",
-      Definition="Answer to the question: 'Are the Observation Source Specimens used in the Surveillance Activity
+      Variable="GroupSourceSpecimenPooling",
+      Label="Group Source Specimen Pooling",
+      Definition="Answer to the question: 'Are the Group Source Specimens used in the Surveillance Activity
       pooled?' (for a definition of 'pooling' in the database see the online database manual)",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenPoolingStrategy",
-      Label="Observation Source Specimen Pooling Strategy",
-      Definition="Explain the pooling method of the Observation Source Specimens 
+      Variable="GroupSourceSpecimenPoolingStrategy",
+      Label="Group Source Specimen Pooling Strategy",
+      Definition="Explain the pooling method of the Group Source Specimens 
       (for a definition of 'pooling' in the database see the online database manual)",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCodeStructure",
-      Label="Observation Source Specimen Code Structure",
-      Definition="Explain the nomenclature of the Observation Source Specimen Codes used 
+      Variable="GroupSourceSpecimenCodeStructure",
+      Label="Group Source Specimen Code Structure",
+      Definition="Explain the nomenclature of the Group Source Specimen Codes used 
       (e.g., first letter refers to the pathogen, the next two letters refer to the 
       country, the next letter refers to the taxonomic group, the following letters
-      are the type of Specimen, then the numbers are the Observation Source, and the last number is 
-      the sequential Specimen from the Observation Source",
+      are the type of Specimen, then the numbers are the Group Source, and the last number is 
+      the sequential Specimen from the Group Source",
       Type="String",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenDiagnosticsUsed",
-      Label="Diagnostics Are Applied in the Observation Specimens",
-      Definition="Answer to the question: 'Are diagnostics applied to Observation Source Specimens?'.
-      Diagnostics applied in a full Observation Source are requested above",
+      Variable="GroupSourceSpecimenDiagnosticsUsed",
+      Label="Diagnostics Are Applied in the Group Specimens",
+      Definition="Answer to the question: 'Are diagnostics applied to Group Source Specimens?'.
+      Diagnostics applied in a full Group Source are requested above",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenDiagnosticsUsedProtocol",
-      Label="Observation Specimen Diagnostic Protocols",
-      Definition="Name and describe the protocols of the Diagnostics conducted with in the Observation Source Specimens",
+      Variable="GroupSourceSpecimenDiagnosticsUsedProtocol",
+      Label="Group Specimen Diagnostic Protocols",
+      Definition="Name and describe the protocols of the Diagnostics conducted with in the Group Source Specimens",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenDiagnosticsUsedProtocolReferences",
-      Label="Observation Source Diagnostic Protocols References",
-      Definition="Provide references associated with the Diagnostic protocols conducted in the Observation Source Specimens",
+      Variable="GroupSourceSpecimenDiagnosticsUsedProtocolReferences",
+      Label="Group Source Diagnostic Protocols References",
+      Definition="Provide references associated with the Diagnostic protocols conducted in the Group Source Specimens",
       Type="String",
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCriteriaPositiveTest",
-      Label="Observation Specimen Criteria Positive Test",
-      Definition="Explain the criteria to establish that each diagnostic test method applied to an Observation
-      Source Specimen is positive. The criteria for positive Observation Source and Observation Source Specimens are requested below",
+      Variable="GroupSourceSpecimenCriteriaPositiveTest",
+      Label="Group Specimen Criteria Positive Test",
+      Definition="Explain the criteria to establish that each diagnostic test method applied to an Group
+      Source Specimen is positive. The criteria for positive Group Source and Group Source Specimens are requested below",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCriteriaPositiveTestReferences",
-      Label="Observation Specimen Criteria Positive Test References",
-      Definition="Provide references associated with the criteria to establish that each diagnostic test method applied to an Observation
+      Variable="GroupSourceSpecimenCriteriaPositiveTestReferences",
+      Label="Group Specimen Criteria Positive Test References",
+      Definition="Provide references associated with the criteria to establish that each diagnostic test method applied to an Group
       Source Specimen is positive",
       Type="String",
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCriteriaPositiveCase",
-      Label="Observation Source Specimen Criteria Positive Case",
-      Definition="Explain the criteria to establish that an Observation
+      Variable="GroupSourceSpecimenCriteriaPositiveCase",
+      Label="Group Source Specimen Criteria Positive Case",
+      Definition="Explain the criteria to establish that an Group
       Source Specimen is positive for each specific hazard targeted in the Surveillance Activity. 
-      The criteria for positive Observation Source Records are requested below",
+      The criteria for positive Group Source Records are requested below",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceSpecimenCriteriaPositiveCaseReferences",
-      Label="Observation Source Specimen Criteria Positive Case References",
-      Definition="Provide references associated with the criteria to establish that an Observation
+      Variable="GroupSourceSpecimenCriteriaPositiveCaseReferences",
+      Label="Group Source Specimen Criteria Positive Case References",
+      Definition="Provide references associated with the criteria to establish that an Group
       Source Specimen is positive for each specific hazard targeted in the Surveillance Activity",
       Type="String",
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceRecordCriteriaPositiveCase",
-      Label="Observation Source Record Criteria Positive Case",
-      Definition="Explain the criteria to establish that an Observation
+      Variable="GroupSourceRecordCriteriaPositiveCase",
+      Label="Group Source Record Criteria Positive Case",
+      Definition="Explain the criteria to establish that an Group
       Source Record is positive for each specific hazard targeted in the Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationSourceRecordCriteriaPositiveCaseReferences",
-      Label="Observation Source Record Criteria Positive Case References",
-      Definition="Provide references associated with the criteria to establish that an Observation
+      Variable="GroupSourceRecordCriteriaPositiveCaseReferences",
+      Label="Group Source Record Criteria Positive Case References",
+      Definition="Provide references associated with the criteria to establish that an Group
       Source Record is positive for each specific hazard targeted in the Surveillance Activity",
       Type="String",
-      Mandatory="No"), 
+      Mandatory="No") 
   )
+
+group_source<-
+  group_source %>% bind_rows() |> 
+  gt::gt() %>%
+  gt::tab_options(table.font.size = 8) %>%
+  gt::cols_width(Variable ~ gt::pct(22),
+                 Label ~ gt::pct(20),
+                 Definition ~ gt::pct(30),
+                 Type~ gt::pct(13),
+                 Mandatory~ gt::pct(15)) %>%
+  gt::tab_style(
+    style = cell_text(size = px(15), weight = "bold"),
+    locations = cells_column_labels())

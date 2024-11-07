@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WildHealthDat - Introduction</title>
+<title>WildHealthDB - Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -76,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -88,10 +89,10 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">WildHealthDat</a> 
+      <a href="./">WildHealthDB</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/dmontecino/WH_Database" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./WildHealthDat.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="https://github.com/dmontecino/WH_Database" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./WildHealthDB.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -123,13 +124,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./surveillance_objective.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Surveillance Objective</span></a>
+ <span class="menu-text">Surveillance Activity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./field_activity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Field Activity</span></a>
+ <span class="menu-text">Field Visit</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -147,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./source_source_records.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sources and Source Records</span></a>
+ <span class="menu-text">Source and Source Records</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,8 +198,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>WildlifeHealthDat is a versatile database designed to manage wildlife health data collected from various surveillance efforts. These efforts encompass a wide range of activities, including citizen observations of dead, injured, or sick animals, specific research studies, national or local wildlife health surveillance initiatives, outbreak investigations, and global wildlife health surveillance projects involving multiple countries, hazards, and host species</p>
-<p>The database draws upon the extensive experience of the Wildlife Conservation Society - Health Program, which spans several decades. This experience includes wildlife health surveillance activities conducted in numerous countries with several public and private partners; both cross-sectional and longitudinal studies; the establishment of wildlife health surveillance networks; investigation of diverse biological, chemical, and physical hazards; research on dangerous zoonotic pathogens like Ebola virus disease and SARS-CoV-2; first detection of emerging vector-borne pathogens such as West Nile virus; engagement of rangers in protected areas and nearby communities as key contributors to health surveillance; logistical challenges related to proper management, storage, and tracking of field-collected specimens; expertise in wildllife pathology; the use and development of various types of diagnostic tests, and prior experience in managing wildlife health data using different information management systems.</p>
-<p>The wildlife health information is organized within the database using a structured hierarchy of components, starting from the highest level of “Projects” down to “Surveillance Objectives,” “Field Activities,” “Locations,” “Incidents,” “Sources,” “Records,” “Specimens,” and “Diagnostics.” While there are four types of sources in the database, it is modular in nature, allowing for customization and selection of specific components based on the requirements of each surveillance initiative. Detailed explanations of each component are provided in the following sections.</p>
+<p>The database draws upon the extensive experience of the Wildlife Conservation Society - Health Program, which spans several decades. This experience includes wildlife health surveillance activities conducted in numerous countries with several public and private partners; both cross-sectional and longitudinal studies; the establishment of wildlife health surveillance networks; investigation of diverse biological, chemical, and physical hazards; research on dangerous zoonotic pathogens like Ebola virus disease and SARS-CoV-2; first detection of emerging vector-borne pathogens such as West Nile virus; engagement of rangers in protected areas and nearby communities as key contributors to health surveillance; logistical challenges related to proper management, storage, and tracking of field-collected specimens; expertise in wildlife pathology; the use and development of various types of diagnostic tests, and prior experience in managing wildlife health data using different information management systems.</p>
+<p>The wildlife health information is organized within the database using a structured hierarchy of components, starting from the highest level of “Projects” down to “Surveillance Objectives,” “Field Activities,” “Locations,” “Incidents,” “Sources,” “Records,” “Specimens,” and “Diagnostics.” While there are four types of sources in the database, it is modular in nature, allowing for customization and selection of specific components based on the requirements of each surveillance initiative. Briefly, Projects are a set of surveillance activities with a common leader and organizer (e.g., a national veterinary services agency). The Surveillance Activity is a surveillance effort that have a specific methodology and objective. The Field Visit represents a period when surveillance activities are conducted. The Location is a specific area where surveillance activities are conducted. An Event is a site where wildlife health surveillance data is collected from. Sources are the units that can present disease and provide specimens for hazard detection or sites where specimens can be collected directly to assess hazards in the environment or in the arthropods. Specimens are the tissue taken from the Sources. Diagnostics are the tests conducted in Animals, Carcasses, or Specimens collected to assess Hazards. Diagnosis are the final status assigned to a Diagnostic, a Specimen, or a Source with respect to the Hazards surveyed based on case definitions. Detailed explanations of each component are provided in the following sections.</p>
 
 
 

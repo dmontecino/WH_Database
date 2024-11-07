@@ -1,9 +1,8 @@
-# @@@@@@@@@@@@@@@@@@@@@@ #
-# Animal Source Metadata #
-# @@@@@@@@@@@@@@@@@@@@@@ #
+# @@@@@@@@@@@@@@@@@@@@@@@@ #
+# Animal Source Dictionary #
+# @@@@@@@@@@@@@@@@@@@@@@@@ #
 
-
-data_dictionary[["Animal_Source_Metadata"]]<-
+animal_source<-
   
   list(
     
@@ -23,7 +22,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
     
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecies",
+      Variable="AnimalSourceSpecies",
       Label="Animal Source Species",
       Definition="Species of the Animal Sources of interest for the Surveillance Activity. It is possible
           to select high taxonomy levels such as 'Mammalia', 'Chordata', 'Insecta', etc. to indicate that
@@ -32,21 +31,21 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpeciesIdentificationMethod",
+      Variable="AnimalSourceSpeciesIdentificationMethod",
       Label="Animal Source Species Identification",
       Definition="Explain the methodology used to identify the species of the Animal Sources",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpeciesIdentificationMethodReferences",
+      Variable="AnimalSourceSpeciesIdentificationMethodReferences",
       Label="BAnimal Source Species Identification Method References",
       Definition="Provide references associated with the identification method of the species of Animal Source",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceInclusionCriteria",
+      Variable="AnimalSourceInclusionCriteria",
       Label="Animal Source Inclusion Criteria",
       Definition="Provide specific inclusion criteria for the Animal Sources of the species of interest 
           considered for the Surveillance Activity, if any",
@@ -54,7 +53,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceExclusionCriteria",
+      Variable="AnimalSourceExclusionCriteria",
       Label="Animal Source Exclusion Criteria",
       Definition="Explain the reason to exclude certain Animal Sources 
           of the species of interest for the Surveillance Activity, if any",
@@ -62,14 +61,14 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="No"),
 
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceHowObtained",
+      Variable="AnimalSourceHowObtained",
       Label="Obtaining Animal Sources",
       Definition="Explain how Animal Sources are obtained for the Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCaptured",
+      Variable="AnimalSourceCaptured",
       Label="Animal Source Captured",
       Definition="Answer to the question: 'Are Animal Sources associated with the current 
       Surveillance Activity captured?'",
@@ -77,21 +76,21 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCaptureProtocol",
+      Variable="AnimalSourceCaptureProtocol",
       Label="Animal Source Capture Protocol",
       Definition="Explain how Animal Sources are captured",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCaptureProtocolReferences",
+      Variable="AnimalSourceCaptureProtocolReferences",
       Label="Animal Source Capture Protocol References",
       Definition="Provide references associated with the capture method of the Animal Sources",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceIdentification",
+      Variable="AnimalSourceIdentification",
       Label="Animal Sources Are Identified Individually",
       Definition="Answer to the question: 'Are Animal Sources individually identified?'
       (e.g. rings, line pattern, chip, etc.)",
@@ -99,7 +98,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceIdentificationMethod",
+      Variable="AnimalSourceIdentificationMethod",
       Label="Animal Source Identification Method",
       Definition="Explain how Animal Sources are individually identified
       (e.g. rings, line pattern, chip, etc.)",
@@ -107,14 +106,14 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceIdentificationMethodReferences",
+      Variable="AnimalSourceIdentificationMethodReferences",
       Label="Animal Source Identification Method References",
       Definition="Provide references associated with identification method of Animal Sources",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceRecordsOverTime",
+      Variable="AnimalSourceRecordsOverTime",
       Label="Animal Source Records Over Time",
       Definition="Answer to the question: 'Is it aimed to obtained records of the same Animal Source during the  
       Surveillance Activity?'",
@@ -122,84 +121,84 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceRecapture",
+      Variable="AnimalSourceRecapture",
       Label="Animal Source Recapture",
       Definition="Answer to the question: 'Are Animal Sources recaptured during the Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceFateAfterRecapture",
+      Variable="AnimalSourceFateAfterRecapture",
       Label="Animal Source Fate After Capture Recapture",
       Definition="Explain what happens with the Animal Sources identified individually after recapture",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceEuthanasia",
+      Variable="AnimalSourceEuthanasia",
       Label="Animal Sources Euthanasia",
       Definition="Answer to the question: 'Are Animal Sources euthanized?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceEuthanasiaMethod",
+      Variable="AnimalSourceEuthanasiaMethod",
       Label="Animal Source Euthanasia Method",
       Definition="Explain how Animal Sources are euthanized'",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceEuthanasiaMethodReferences",
+      Variable="AnimalSourceEuthanasiaMethodReferences",
       Label="Animal Source Euthanasia Method References",
       Definition="Provide references associated with the euthanasia method used",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCarcassCollected",
+      Variable="AnimalSourceCarcassCollected",
       Label="Animal Source Carcass Collected",
       Definition="Answer to the question: 'Are Animal Source carcasses collected as part the Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCarcassFieldStorage",
+      Variable="AnimalSourceCarcassFieldStorage",
       Label="Carcass Field Storage",
       Definition="The methods used to preserve carcasses collected while in the field",
       Type="Mutiple selection",
       Mandatory="Yes"),    
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCarcassLabStorage",
+      Variable="AnimalSourceCarcassLabStorage",
       Label="Carcass Laboratory Storage",
       Definition="The methods to preserve carcasses collected while in the laboratory",
       Type="Mutiple selection",
       Mandatory="Yes"),    
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCarcassNecropsy",
+      Variable="AnimalSourceCarcassNecropsy",
       Label="Animal Source Carcass For Necropsy",
       Definition="Answer to the question: 'Are Animal Source carcasses collected as part the Surveillance Activity necropsied?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCarcassNecropsyProtocol",
+      Variable="AnimalSourceCarcassNecropsyProtocol",
       Label="Animal Source Necropsy Protocol",
       Definition="Describe the protocol used to conduct the necropsies",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceCarcassNecropsyProtocolReferences",
+      Variable="AnimalSourceCarcassNecropsyProtocolReferences",
       Label="Animal Source Necropsy Protocol References",
       Definition="Provide references associated with the protocol to conduct the necropsies",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceGrouping",
+      Variable="AnimalSourceGrouping",
       Label="Animal Source Are Grouped",
       Definition="Answer to the question: 'Are Animal Sources associated with the current 
       Surveillance Activity clustered in units smaller than 'Event'?'",
@@ -207,7 +206,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceGroupingStructure",
+      Variable="AnimalSourceGroupingStructure",
       Label="Grouping of Animal Sources",
       Definition="Explain the grouping structure of the Animal Sources below 'Event' 
       (e.g., Events represent a stall in a market. Animal Sources are grouped by cage in each stall)",
@@ -215,7 +214,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceDiagnosticsUsed",
+      Variable="AnimalSourceDiagnosticsUsed",
       Label="Diagnostics Are Applied in the Animal Source",
       Definition="Answer to the question: 'Are diagnostics conducted in Animal Source?' 
       This question refers to Diagnostics that use either the carcass or the full animal
@@ -225,14 +224,14 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceDiagnosticsUsedProtocol",
+      Variable="AnimalSourceDiagnosticsUsedProtocol",
       Label="Animal Source Diagnostic Protocols",
       Definition="Name and describe the protocols of the Diagnostics applied in Animal Sources",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceDiagnosticsUsedProtocolReferences",
+      Variable="AnimalSourceDiagnosticsUsedProtocolReferences",
       Label="Animal Source Diagnostic Protocols References",
       Definition="Provide references associated with the Diagnostic protocols conducted in Animal Sources",
       Type="String",
@@ -244,7 +243,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
     # --- SPECIMENS 
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenUsed",
+      Variable="AnimalSourceSpecimenUsed",
       Label="Animal Specimen Used",
       Definition="Answer to the question: 'Are Specimens from Animal Sources
       (e.g., live animal, carcass) collected under a different Surveillance Activity
@@ -253,7 +252,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCollection",
+      Variable="AnimalSourceSpecimenCollection",
       Label="Animal Specimen Collection",
       Definition="Answer to the question: 'Are Specimens collected from the Animal Sources
       (e.g., live animal, carcass) while in the field or during a necropsy under the current 
@@ -262,35 +261,35 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenType",
+      Variable="AnimalSourceSpecimenType",
       Label="Animal Source Specimen Type",
       Definition="Select the Specimen Types used or collected from Animal Sources",
       Type="Multiple selection",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCollectionMethod",
+      Variable="AnimalSourceSpecimenCollectionMethod",
       Label="Animal Source Specimen Collection Method",
       Definition="Explain how the Specimens are collected from the Animal Sources",
       Type="String",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCollectionMethodReferences",
+      Variable="AnimalSourceSpecimenCollectionMethodReferences",
       Label="Animal Source Specimen Collection Method References",
       Definition="Provide references associated with the collection method of the Animal Source Specimens",
       Type="String",
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCollectionAtRecapture",
+      Variable="AnimalSourceSpecimenCollectionAtRecapture",
       Label="Animal Specimen Collection at Recapture",
       Definition="Answer to the question: 'Are Specimens collected from Animal Sources when they are recaptured?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCollectionParasitesVectors",
+      Variable="AnimalSourceSpecimenCollectionParasitesVectors",
       Label="Animal Specimen Collection Includes Parasites or Vectors",
       Definition="Answer to the question: 'Are parasites or vectors collected directly from the Animal Sources or
       are they collected from a known Animal Source?' (in the first, case the parasites or vectors are collected 
@@ -301,21 +300,21 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
 
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenFieldStorage",
+      Variable="AnimalSourceSpecimenFieldStorage",
       Label="Animal Specimen Field Storage",
       Definition="Method to preserve the Animal Specimens collected in the field",
       Type="Mutiple selection",
       Mandatory="Yes"),    
 
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenLabStorage",
+      Variable="AnimalSourceSpecimenLabStorage",
       Label="Animal Specimen Laboratory Storage",
       Definition="Method to preserve the Animal Specimens collected in the laboratory",
       Type="Mutiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenPooling",
+      Variable="AnimalSourceSpecimenPooling",
       Label="Animal Source Specimen Pooling",
       Definition="Answer to the question: 'Are the Animal Source Specimens used in the Surveillance Activity
       pooled?' (for a definition of 'pooling' in the database see the online database manual)",
@@ -323,7 +322,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenPoolingStrategy",
+      Variable="AnimalSourceSpecimenPoolingStrategy",
       Label="Animal Source Specimen Pooling Strategy",
       Definition="Explain the pooling method of the Animal Source Specimens 
       (for a definition of 'pooling' in the database see the online database manual)",
@@ -331,7 +330,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCodeStructure",
+      Variable="AnimalSourceSpecimenCodeStructure",
       Label="Animal Source Specimen Code Structure",
       Definition="Explain the nomenclature of the Animal Source Specimen Codes used 
       (e.g., first letter refers to the pathogen, the next two letters refer to the 
@@ -342,7 +341,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenDiagnosticsUsed",
+      Variable="AnimalSourceSpecimenDiagnosticsUsed",
       Label="Diagnostics Are Applied in the Animal Specimens",
       Definition="Answer to the question: 'Are diagnostics applied to Animal Source Specimens?'.
       Diagnostics applied in a full Animal Source are requested above",
@@ -350,21 +349,21 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenDiagnosticsUsedProtocol",
+      Variable="AnimalSourceSpecimenDiagnosticsUsedProtocol",
       Label="Animal Specimen Diagnostic Protocols",
       Definition="Name and describe the protocols of the Diagnostics conducted with in the Animal Source Specimens",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenDiagnosticsUsedProtocolReferences",
+      Variable="AnimalSourceSpecimenDiagnosticsUsedProtocolReferences",
       Label="Animal Source Diagnostic Protocols References",
       Definition="Provide references associated with the Diagnostic protocols conducted in the Animal Source Specimens",
       Type="String",
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCriteriaPositiveTest",
+      Variable="AnimalSourceSpecimenCriteriaPositiveTest",
       Label="Animal Specimen Criteria Positive Test",
       Definition="Explain the criteria to establish that each diagnostic test method applied to an Animal
       Source Specimen is positive. The criteria for positive Animal Source and Animal Source Specimens are requested below",
@@ -372,7 +371,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCriteriaPositiveTestReferences",
+      Variable="AnimalSourceSpecimenCriteriaPositiveTestReferences",
       Label="Animal Specimen Criteria Positive Test References",
       Definition="Provide references associated with the criteria to establish that each diagnostic test method applied to an Animal
       Source Specimen is positive",
@@ -380,7 +379,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCriteriaPositiveCase",
+      Variable="AnimalSourceSpecimenCriteriaPositiveCase",
       Label="Animal Source Specimen Criteria Positive Case",
       Definition="Explain the criteria to establish that an Animal
       Source Specimen is positive for each specific hazard targeted in the Surveillance Activity. 
@@ -389,7 +388,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimenCriteriaPositiveCaseReferences",
+      Variable="AnimalSourceSpecimenCriteriaPositiveCaseReferences",
       Label="Animal Source Specimen Criteria Positive Case References",
       Definition="Provide references associated with the criteria to establish that an Animal
       Source Specimen is positive for each specific hazard targeted in the Surveillance Activity",
@@ -397,7 +396,7 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceRecordCriteriaPositiveCase",
+      Variable="AnimalSourceRecordCriteriaPositiveCase",
       Label="Animal Source Record Criteria Positive Case",
       Definition="Explain the criteria to establish that an Animal
       Source Record is positive for each specific hazard targeted in the Surveillance Activity",
@@ -405,13 +404,25 @@ data_dictionary[["Animal_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceRecordCriteriaPositiveCaseReferences",
+      Variable="AnimalSourceRecordCriteriaPositiveCaseReferences",
       Label="Animal Source Record Criteria Positive Case References",
       Definition="Provide references associated with the criteria to establish that an Animal
       Source Record is positive for each specific hazard targeted in the Surveillance Activity",
       Type="String",
-      Mandatory="No"), 
+      Mandatory="No")
     
 
 )
-    
+
+animal_source<-
+  animal_source %>% bind_rows() |> 
+  gt::gt() %>%
+  gt::tab_options(table.font.size = 8) %>%
+  gt::cols_width(Variable ~ gt::pct(22),
+                 Label ~ gt::pct(20),
+                 Definition ~ gt::pct(30),
+                 Type~ gt::pct(13),
+                 Mandatory~ gt::pct(15)) %>%
+  gt::tab_style(
+    style = cell_text(size = px(15), weight = "bold"),
+    locations = cells_column_labels())

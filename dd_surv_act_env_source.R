@@ -1,9 +1,9 @@
-# @@@@@@@@@@@@@@@@@@@@@@ #
-# Environmental Source Metadata #
-# @@@@@@@@@@@@@@@@@@@@@@ #
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
+# Environmental Source Dictionary #
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
 
 
-data_dictionary[["Environmental_Source_Metadata"]]<-
+env_source<-
   
   list(
     
@@ -21,7 +21,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
     ## ---- SOURCES  ## collection sites
     
     data.frame(
-      Variable="SurveillanceActivitySourceOrigin",
+      Variable="EnvironmentalSourceOrigin",
       Label="Environmental Sources Origin",
       Definition="Select the appropriate origing of the Environmental Sources used in the current 
       Surveillance Activity (e.g., generated during the current Surveillance Activity or 
@@ -30,7 +30,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceOriginIdentifier",
+      Variable="EnvironmentalSourceOriginIdentifier",
       Label="Surveillance Activity Identifier Environmental Source Origin", 
       Definition="The identifier of the Surveillance Activity under which the Environmental Sources used
       in the current Surveillance Activity were collected",
@@ -38,7 +38,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourcePolygonOrPoint",
+      Variable="EnvironmentalSourcePolygonOrPoint",
       Label="Polygon or Trap is of Interest",
       Definition="Establish if a polygon (e.g., parcel, grid cell, protected area zone, hunting range) 
       where the collection of Environmental Specimens takes place or the exact position of each Environmental Source Record
@@ -47,12 +47,12 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     
-    biotic included
+    # biotic included
     
     
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecies",
+      Variable="EnvironmentalSourceSpecies",
       Label="Environmental Species",
       Definition="Species of the Environmental Sources that are the target of the Surveillance Activity. It is possible
           to select high taxonomy levels such as 'Insecta', etc. to indicate that
@@ -61,33 +61,33 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpeciesIdentificationMethod",
+      Variable="EnvironmentalSourceSpeciesIdentificationMethod",
       Label="Environmental Species Identification",
       Definition="Explain the methodology used to identify the Environmental species collected",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpeciesIdentificationMethodReferences",
+      Variable="EnvironmentalSourceSpeciesIdentificationMethodReferences",
       Label="Environmental Species Identification References",
       Definition="Provide references associated with the identification method of the Environmental species collected",
       Type="String",
       Mandatory="No"),
     
     
-    abiotic included
-    
-    source types
+    # abiotic included
+    # 
+    # source types
     
     data.frame(
-      Variable="SurveillanceActivitySourceHowObtained",
+      Variable="EnvironmentalSourceHowObtained",
       Label="Environmental Source Selection",
       Definition="Explain how Environmental Sources are selected",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceInclusionCriteria",
+      Variable="EnvironmentalSourceInclusionCriteria",
       Label="Inclusion Criteria of Environmental Sources Collection Sites",
       Definition="Provide specific inclusion criteria of Environmental Sources (collection areas or points) 
       in the Surveillance Activity, if any",
@@ -95,14 +95,14 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceExclusionCriteria",
+      Variable="EnvironmentalSourceExclusionCriteria",
       Label="Exclusion Criteria of Environmental Sources Collection Sites",
       Definition="Explain the reason to exclude certain Environmental Sources (collection areas or points) from the Surveillance Activity, if any",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceIdentification",
+      Variable="EnvironmentalSourceIdentification",
       Label="Environmental Sources Are Identified Individually",
       Definition="Answer to the question: 'Are Environmental Sources (polygon, traps, water container) individually identified?'
       (e.g. code, color, type, other)",
@@ -110,14 +110,14 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceIdentificationMethod",
+      Variable="EnvironmentalSourceIdentificationMethod",
       Label="Environmental Sources Identification Method",
       Definition="Explain how Environmental Sources are individually identified (e.g. grid cell code, other)",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceGrouping",
+      Variable="EnvironmentalSourceGrouping",
       Label="Environmental Sources Are Grouped",
       Definition="Answer to the question: 'Are Environmental collections clustered in units smaller
       than 'Event'?'. Grouping can be physical (e.g., parcel) or temporal (e.g., month)",
@@ -125,7 +125,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceGroupingStructure",
+      Variable="EnvironmentalSourceGroupingStructure",
       Label="Grouping of Environmental Sources",
       Definition="Explain the grouping structure of the Environmental Sources below 'Event' 
       (e.g., Events represent a area of a lake. Environmental Sources are grouped by the north or south borders)",
@@ -137,7 +137,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
     
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordCodeStructure",
+      Variable="EnvironmentalSourceRecordCodeStructure",
       Label="Environmental Source Record Code Structure",
       Definition="Explain the nomenclature of the Environmental Source Record Codes used 
       (e.g., first letter refers to the pathogen, the next two letters refer to the 
@@ -147,7 +147,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordsOverTime",
+      Variable="EnvironmentalSourceRecordsOverTime",
       Label="Environmental Source Records Over Time",
       Definition="Answer to the question: 'Is it aimed to obtain Environmental Sources Records from the same Environmental Source
       during the Surveillance Activity?' (e.g., several Records from the Environmental Source)",
@@ -155,35 +155,35 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordHowObtained",
+      Variable="EnvironmentalSourceRecordHowObtained",
       Label="Environmental Source Records Collection Process",
       Definition="Explain how Environmental Source Records are collected in the field (e.g., how water is collected from a spceific site of a river)",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordInclusionCriteria",
+      Variable="EnvironmentalSourceRecordInclusionCriteria",
       Label="Inclusion Criteria of Environmental Sources Collections",
       Definition="Provide specific inclusion criteria of Environmental collections in the Surveillance Activity, if any",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordExclusionCriteria",
+      Variable="EnvironmentalSourceRecordExclusionCriteria",
       Label="Exclusion Criteria of Environmental Collections",
       Definition="Explain the reason to exclude certain Environmental collections from the Surveillance Activity, if any",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordFieldStorage",
+      Variable="EnvironmentalSourceRecordFieldStorage",
       Label="Environmental Collection Field Storage",
       Definition="Method to preserve the Environmental Sources collected while in the field",
       Type="Multiple selection",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordLabStorage",
+      Variable="EnvironmentalSourceRecordLabStorage",
       Label="Environmental Collection Lab Storage",
       Definition="Method to preserve the Environmental Sources collected in the laboratory",
       Type="Multiple selection",
@@ -194,21 +194,21 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
     
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenCollection",
+      Variable="EnvironmentalSourceSpecimenCollection",
       Label="Environmental Specimen Creation",
       Definition="Answer to the question: 'Are Environmental Specimens created from the collections (Environmental Source Records)?'",
       Type="Boolean",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenCollectionMethod",
+      Variable="EnvironmentalSourceSpecimenCollectionMethod",
       Label="Environmental Specimen Creation Method",
       Definition="Explain how the Environmental Specimens are created from the collections (Environmental Source Records)",
       Type="String",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenCollectionMethodReferences",
+      Variable="EnvironmentalSourceSpecimenCollectionMethodReferences",
       Label="Environmental Specimen Creation Method References",
       Definition="Provide references associated with the creation method of the Environmental Specimens from 
       the collections (Environmental Sources Records)",
@@ -216,7 +216,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenCodeStructure",
+      Variable="EnvironmentalSourceSpecimenCodeStructure",
       Label="Environmental Specimen Code Structure",
       Definition="Explain the nomenclature of the Environmental Specimen Codes used 
       (e.g., first letter refers to the pathogen, the next two letters refer to the 
@@ -227,21 +227,21 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenFieldStorage",
+      Variable="EnvironmentalSourceSpecimenFieldStorage",
       Label="Environmental Specimen Field Storage",
       Definition="Method to preserve the Environmental Specimens in the field",
       Type="Mutiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenLabStorage",
+      Variable="EnvironmentalSourceSpecimenLabStorage",
       Label="Environmental Specimen Laboratory Storage",
       Definition="Method to preserve the Environmental Specimens in the laboratory",
       Type="Mutiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenPooling",
+      Variable="EnvironmentalSourceSpecimenPooling",
       Label="Environmental Specimen Pooling",
       Definition="Answer to the question: 'Are Environmental Specimens used in the Surveillance Activity
       pooled?' (for a definition of 'pooling' for the database see the online database manual)",
@@ -249,7 +249,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenPoolingStrategy",
+      Variable="EnvironmentalSourceSpecimenPoolingStrategy",
       Label="Environmental Specimen Pooling Strategy",
       Definition="Explain the pooling method of the Environmental Specimens 
       (for a definition of 'pooling' for the database see the online database manual)",
@@ -257,28 +257,28 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenDiagnosticsUsed",
+      Variable="EnvironmentalSourceSpecimenDiagnosticsUsed",
       Label="Diagnostics Are Conducted in the Environmental Specimens",
       Definition="Answer to the question: 'Are diagnostics conducted in the Environmental Specimens?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenDiagnosticsUsedProtocol",
+      Variable="EnvironmentalSourceSpecimenDiagnosticsUsedProtocol",
       Label="Environmental Specimen Diagnostic Protocols",
       Definition="Name and describe the protocols of the Diagnostics conducted",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenDiagnosticsUsedProtocolReferences",
+      Variable="EnvironmentalSourceSpecimenDiagnosticsUsedProtocolReferences",
       Label="Environmental Specimen Diagnostic Protocols References",
       Definition="Provide references associated with the Diagnostic protocols conducted",
       Type="String",
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenCriteriaPositiveTest",
+      Variable="EnvironmentalSourceSpecimenCriteriaPositiveTest",
       Label="Criteria Positive Test",
       Definition="Explain the criteria to establish that each diagnostic test method conducted in an
       Environmental Specimen is positive. The criteria for positive Environmental Source and Environmental Source Specimens are requested below",
@@ -286,7 +286,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenCriteriaPositiveTestReferences",
+      Variable="EnvironmentalSourceSpecimenCriteriaPositiveTestReferences",
       Label="Criteria Positive Test References",
       Definition="Provide references associated with the criteria to establish that each diagnostic test conducted in
       in an Environmental Specimen is positive",
@@ -294,7 +294,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenCriteriaPositiveCase",
+      Variable="EnvironmentalSourceSpecimenCriteriaPositiveCase",
       Label="Criteria Environmental Specimen Positive Case",
       Definition="Explain the criteria to establish that an Environmental Specimen is 
       positive for each specific hazard targeted in the Surveillance Activity. 
@@ -303,7 +303,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceSpecimenCriteriaPositiveCaseReferences",
+      Variable="EnvironmentalSourceSpecimenCriteriaPositiveCaseReferences",
       Label="Criteria Environmental Specimen Positive Case References",
       Definition="Provide references associated with the criteria to establish that an 
       Environmental Specimen is positive for each specific hazard targeted in the Surveillance
@@ -312,7 +312,7 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="No"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordCriteriaPositiveCase",
+      Variable="EnvironmentalSourceRecordCriteriaPositiveCase",
       Label="Criteria Environmental Source Record (Collection) Positive Case",
       Definition="Explain the criteria to establish that an Environmental
       Source Record is positive for each specific hazard targeted in the Surveillance Activity",
@@ -320,12 +320,26 @@ data_dictionary[["Environmental_Source_Metadata"]]<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordCriteriaPositiveCaseReferences",
+      Variable="EnvironmentalSourceRecordCriteriaPositiveCaseReferences",
       Label="Criteria Environmental Source Record (Collection) Positive Case References",
       Definition="Provide references associated with the criteria to establish that an Environmental
       Source Record is positive for each specific hazard targeted in the Surveillance Activity",
       Type="String",
-      Mandatory="No"), 
+      Mandatory="No")
     
     
   )
+
+env_source<-
+  env_source %>% bind_rows() |> 
+  gt::gt() %>%
+  gt::tab_options(table.font.size = 8) %>%
+  gt::cols_width(Variable ~ gt::pct(22),
+                 Label ~ gt::pct(20),
+                 Definition ~ gt::pct(30),
+                 Type~ gt::pct(13),
+                 Mandatory~ gt::pct(15)) %>%
+  gt::tab_style(
+    style = cell_text(size = px(15), weight = "bold"),
+    locations = cells_column_labels())
+
