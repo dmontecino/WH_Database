@@ -1,0 +1,19 @@
+# Event {.unnumbered}
+
+An Event refers to a distinct wildlife health event that occurs at a specific longitude and latitude on a particular date.
+
+The definition of a wildlife health event, and thus the concept of an 'Incident,' varies depending on the Surveillance Objective methodology. In targeted surveillance efforts, an Incident may involve sampling healthy animals within a specific time and space to test them for a specific hazard. The inclusion of non-sampled individuals, as well as injured, sick, or dead animals, may or may not be considered part of the Incident.
+
+If samples are collected from a river, the 'Incident' can be considered the location where the water is extracted. In the case of surveillance for vector-borne diseases, an Incident might represent a specific point in time and space where one or several traps for vectors have been placed. In scanning surveillance, an Incident could require the presence of at least one injured, sick, or dead animal, or a stranded individual. Additionally, healthy individuals found in the vicinity can also be included as part of the 'Incident.'
+
+In the case of beached fish, an Incident can represent each individual dead fish at one extreme, or the total count of dead fish across the beach as a single point in time and space at the other extreme. However, neither of these strategies is ideal. The former is not suitable for logistical purposes, while the latter results in the loss of valuable information regarding the distribution of dead fish across the beach. Therefore, an Incident should represent a unit between these two extremes.
+
+Similarly, in the context of a wet market, the market can represent simultaneously an Incident and a Location. This Incident can gather data from multiple vendors, cages, and animals within the cages. On the other hand, a market could be considered a Location only, and each individual vendor within the market could be considered an Incident.
+
+A structured study can have multiple levels of hierarchy (zone, grid, area, trap, etc.) and one level receives the temporal-spatial coordinates (Incident). Another similarly structured study may provide the spatial coordinate to a different unit (e.g., area in one case and trap in another case).
+
+Consequently, an Incident can represent a wide range of units depending on the methodology used to record health data. Therefore, it is crucial to allow flexibility in what an Incident represents within a surveillance design and to explicitly declare its meaning as part of their data.
+
+In the case of markets or structured studies, it may be desirable to group Incidents more specifically than simply under the general 'Location' category. For example, a market can be considered a 'Location,' and each cage could be treated as an 'Incident.' Users might want to further group cages by vendors and vendors by specific areas within the market. Similarly, in a structured study, the 'Incident' could represent a trap, and researchers may wish to group these Incidents based on areas, grid cells, zones, and seasons. Therefore, the database includes multiple 'Incident' tags to enable grouping on a finer scale than just the general 'Location.' Users can request specific tags as needed.
+
+Incidents can lack of any Sources (see below) if nothing is captured or sampled, but they can also have multiple Source Records of any type, depending on the specific findings and the interests of the corresponding Surveillance Objective.

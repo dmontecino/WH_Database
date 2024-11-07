@@ -1,0 +1,32 @@
+data_dictionary[["Event"]]<-
+  
+  list(
+    
+    data.frame(
+      Variable="CollectionID",
+      Label="Event Identifier",
+      Definition="System-provided Event identifier",
+      Type="Integer",
+      Mandatory="System-assigned"), 
+    
+    data.frame(
+      Variable="EventCode",
+      Label="Event Code",
+      Definition="User-provided Event code",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventCrossID",
+      Label="Event Cross Identifier", 
+      Definition="The identifier of an Event in another system (e.g., database/document/other)",
+      Type="String",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="EventCrossIDOrigin",
+      Label="Event Cross Identifier Origin", 
+      Definition="The database/document/other where other identification 
+      for the same Event is used",
+      Type="String",
+      Mandatory="No"),

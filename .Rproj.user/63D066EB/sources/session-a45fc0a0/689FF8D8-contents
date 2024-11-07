@@ -1,0 +1,30 @@
+# Grouping of Locations, Events, and Sources {.unnumbered}
+
+Surveillance Activities can involve the clustering of data in spatio-temporal units beyond Source Records clustered in Events, Events clustered in Locations, and Locations clustered in Field Visits. Any extra number of clustering levels between the Source Record and Event, Event and Location, and Location and Field Visit is possible. Similarly, what each one of these units represent and the information wanted from each of these extra units will vary among Surveillance Activities.
+
+For example, the units Location, Event, and Source Record could be enough to record the data structure of a specific Surveillance Activity gathering information from Protected Areas (Locations) at points (Events) where dead animals (Source Records) are found any given time. However, another Surveillance Activity could have the following structure: protected area, zones within protected area (Location), grid cells within each zone, capture site with a pair of mist nests within each grid cell (Event), mist nets of the capture site, and bats captured (Source Records) per season. To properly keep the structure of this last Surveillance Activity;'s data in the database, it is necessary to add grouping units that represent each protected area, each grid cell, each mist net, and each season. For this reason, the database allows the inclusion of spatio-temporal clustering units as attributes of each Location, Event, and Source Record. What each of these units represent must be provided in the metadata of the corresponding Surveillance Activity.
+
+The specific properties of each clustering unit added (e.g., spatial features, vegetation, precipitation, stall, etc.) can also vary among Surveillance Activities. Therefore, the only property that can be entered in the database for each grouping unit visited during the Surveillance Activity is the Identifier, the Cross Identified, and the Cross Identifier Origin. Further characteristics of each grouping units, whether static or time dependent through the Surveillance Activity period should be prepared in a file, such as an excel sheet, with columns with the identifiers of all relevant units (Location grouping units. Event grouping units that are not the Location, and Source Record grouping units that are not the Event) and  attached it at the corresponding level. A recommendation is to prepared a sheet for the features of all spatio temporal grouping units visited during a Field Visit and attach it at this level (Field Visit). The columns with the identifiers will allow joining the data of the corresponding Field Visit (Locations, Events, Source Records, grouping units) with the attached and spatial data.
+
+
+
+
+
+Add which are the locations
+Add each Location grouping sites
+ADd number of field visit to each Location
+frequency of visits to each Location
+what, where, when, how, who, why in the surveillace metadata
+
+
+
+
+
+
+these assign each Location to a zone within protected area, use an extra unit to group each Location (zone) to the corresponding Protected Area. Events within a Location (zone) can be group by a grid cell and an extra unit will be needed to represent the to group    corresponds to a market and the Event corresponds to a cage, then it is possible to assign the units between these levels: the corresponding stall and vendor to each Event. See moree details 
+
+## Event Grouping
+
+Events can be grouped in higher groups if needed (see 'Grouping of Events' below). For example, each cage with sampled animals can be an Event and each Event can grouped by stall and vendor. If each stall is an Event, then the sampled individuals (Sampled Source) can be grouped by cage below the Event and the Event itself (see 'Grouping of Source Records' in the 'Source Records' section below).
+
+Group units only have the Identifier as as attribute. Other attributes are not considered because it is not possible to guess whet properties are of interest for different surveillance initiatives. Therefore, properties of Groups should be attached as a file containing that information. The type and Identifier of each Group should be provided in order to join the Group information entered in the database and the Group data. We strongly recommend to attach a spatial file and report its projection in the Surveillance Activity metadata. 
