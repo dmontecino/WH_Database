@@ -11,3 +11,24 @@ Invertebrate Source Records may include multiple species; however, it is expecte
 Specimens with a current amount of zero should not be deleted from the database, and their last known storage location should be retained.
 
 In situations where space or materials are limited, it is possible that multiple Specimens are stored in the same container. This approach is not ideal because it can lead to cross-contamination and make actual Specimen tracing more complex. To address the tracing of these Specimens, a unique container identifier, such as a jar identifier, can be added in the database. Specimens sharing the same container will have the same container identifier. Although individual Specimens within the same container may not be labeled individually, each Specimen should be given a unique Specimen Code in the database. This Code can be the same as the container identifier, followed by the "organ name" or a numeric string (e.g., ".1", ".2", etc.). Specific details for each individual Specimen within the container, such as type, quantity, etc, should allow their visual identification within the container.
+
+### Group Source Record Specimens
+
+# speiemens pueden vennir desde multiple Group source records e differentes tipos.
+
+Group Sources can provide Specimens at time **t** (see "Specimens"). Information on the specific animal providing the Specimens, if it is available, will be lost. An example are feces collected from the bottom of a cage with animals of the same species but it is unknown which of the animals dropped the feces. However, there is information of the species of the animals and the observed health status of animals, including the unknown individual that dropped them. Sex and age of the animals could be known too. If Specimens can be traced to a single animal, it is recommended to associated them to an Animal Source (see below).
+
+The last date a Group Source was observed is not necessarily the last time the Group Source can provide Specimens. For example, it is possible to collect feces from an empty cage that a Group Source was using until two days ago. The age, sex, and health status distribution of the Group Source Record could be all unknown.
+
+### Animal Source Specimens
+
+Animal Sources can provide Specimens at time **t** (see "Specimens") and they should be traceable at the individual level. An example are feces collected from the bottom of a cage with animals of the same species, and it was observed which animal dropped them. If Specimens cannot be traced to a single animal but to a group of them, the Specimens should be associated with a Group Source (see above).
+
+The date of death of an Animal Source Record is not necessarily the last time it can provide Specimens because it is possible to collect them from the carcass (dead Animal Source).
+
+
+
+### Env Source Specimens 
+
+Setting the Environmental Source type determines the Specimen type provided for those Sources (see 'Specimens' below). For example, feces can only yield feces as Specimens, and water in a pond can only provide water.
+

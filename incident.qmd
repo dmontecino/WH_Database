@@ -1,12 +1,12 @@
-# Event {.unnumbered}
+<!-- # Event {.unnumbered} -->
 
 An Event refers to a distinct wildlife health event that occurs at a specific longitude and latitude on a particular date.
 
-The definition of a wildlife health event, and thus the concept of an 'Incident,' varies depending on the Surveillance Objective methodology. In targeted surveillance efforts, an Incident may involve sampling healthy animals within a specific time and space to test them for a specific hazard. The inclusion of non-sampled individuals, as well as injured, sick, or dead animals, may or may not be considered part of the Incident.
+The definition of a wildlife health event, and thus the concept of an 'Event', varies depending on the Surveillance Activity methodology. In active surveillance efforts, an Event may involve sampling healthy animals within a specific time and space to test them for a specific hazard. The inclusion of non-sampled individuals, as well as injured, sick, or dead animals, may or may not be considered part of the Event.
 
-If samples are collected from a river, the 'Incident' can be considered the location where the water is extracted. In the case of surveillance for vector-borne diseases, an Incident might represent a specific point in time and space where one or several traps for vectors have been placed. In scanning surveillance, an Incident could require the presence of at least one injured, sick, or dead animal, or a stranded individual. Additionally, healthy individuals found in the vicinity can also be included as part of the 'Incident.'
+If samples are collected from a river, the 'Event' can be established at the point where the water is extracted. In the case of surveillance for vector-borne diseases, an Event  represents a specific point in time and space where one or several traps for vectors are deployed. In passive surveillance, an Incident could require the presence of at least one injured, sick, or dead animal, or a stranded individual. Additionally, healthy individuals found at the site can also be included as part of the 'Event'
 
-In the case of beached fish, an Incident can represent each individual dead fish at one extreme, or the total count of dead fish across the beach as a single point in time and space at the other extreme. However, neither of these strategies is ideal. The former is not suitable for logistical purposes, while the latter results in the loss of valuable information regarding the distribution of dead fish across the beach. Therefore, an Incident should represent a unit between these two extremes.
+In the case of beached fish, an Event can represent each individual dead fish at one extreme, or the total count of dead fish across the beach as a single point in time and space at the other extreme. However, neither of these strategies is ideal. The former is not suitable for logistical purposes, while the latter results in the loss of valuable information regarding the distribution of dead fish across the beach. 
 
 Similarly, in the context of a wet market, the market can represent simultaneously an Incident and a Location. This Incident can gather data from multiple vendors, cages, and animals within the cages. On the other hand, a market could be considered a Location only, and each individual vendor within the market could be considered an Incident.
 
@@ -17,3 +17,14 @@ Consequently, an Incident can represent a wide range of units depending on the m
 In the case of markets or structured studies, it may be desirable to group Incidents more specifically than simply under the general 'Location' category. For example, a market can be considered a 'Location,' and each cage could be treated as an 'Incident.' Users might want to further group cages by vendors and vendors by specific areas within the market. Similarly, in a structured study, the 'Incident' could represent a trap, and researchers may wish to group these Incidents based on areas, grid cells, zones, and seasons. Therefore, the database includes multiple 'Incident' tags to enable grouping on a finer scale than just the general 'Location.' Users can request specific tags as needed.
 
 Incidents can lack of any Sources (see below) if nothing is captured or sampled, but they can also have multiple Source Records of any type, depending on the specific findings and the interests of the corresponding Surveillance Objective.
+
+
+
+events have types that define if the effort data is provided or not and at what level. They can have more than one. ... 
+
+Finding: no effort (market, citizen science, tradepost)
+Observation: for animal sources or grou sources
+Capture: for Animal Sources or Group Source
+Collection: for Environmetnal and Arthropod Sources. 
+
+Events with different capture/collection divices aand differetn Source types can be linked together 

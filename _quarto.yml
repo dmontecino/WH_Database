@@ -8,15 +8,17 @@ book:
   date: "11/3/2024"
   chapters:
     - index.qmd
-    - intro.qmd
-    - project.qmd
-    - surveillance_objective.qmd
-    - field_activity.qmd
-    - location.qmd
-    - incident.qmd
-    - source_source_records.qmd
-    - specimen.qmd
-    - diagnostics.qmd
+    # - intro.qmd
+    # - project.qmd
+    # - surveillance_objective.qmd
+    # - field_activity.qmd
+    # - location.qmd
+    # - incident.qmd
+    # - source_source_records.qmd
+    # - specimen.qmd
+    # - diagnostics.qmd
+    - data_model.qmd
+    - manual.qmd
     - data_dictionary.qmd
   search:
     type: textbox

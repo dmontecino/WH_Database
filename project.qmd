@@ -1,3 +1,3 @@
-# Project {.unnumbered}
+<!-- # Project {.unnumbered} -->
 
 A Project is a surveillance initiative supported by specific entities. For example, the PREDICT Project funded by USAID, an isolated cross-sectional study with a single field visit to a single location (sample collection in a market), or a national or local wildlife health surveillance network led by a government agency. Projects are the highest hierarchical unit in the database and they contain at least one Surveillance Activity.
