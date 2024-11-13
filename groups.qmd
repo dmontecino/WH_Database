@@ -1,0 +1,37 @@
+<!-- # Grouping of Locations, Events, and Sources {.unnumbered} -->
+
+Following the standard units in the data model, the simplest data of a Field Visit is an Source Record found in a single Event in a single Location. However, depending on the methodology of a specific Surveillance Activity, Sources Records could be clustered in units that are clustered by Events. In the same manner, Events can be clustered by units that are clustered by Locations, and Locations can be clustered by units that are clustered by Field Visits: 
+
+- Field Activity<sub>w</sub>
+  - **Cluster unit**<sub>𝛼</sub>
+    - **Cluster unit**<sub>𝛽</sub>
+      - Location<sub>x</sub>
+        - **Cluster unit**<sub>γ</sub>
+          - **Cluster unit**<sub>𝛿</sub>
+            - Event<sub>y</sub>
+              - **Cluster unit**<sub>𝜂</sub>
+                - Source Record<sub>z</sub>
+
+A second layer of complexity is the addition of clustered units that are not nested. For example, the same structure shown before plus the cluster of Source Records per season of the year: 
+
+- Field Activity<sub>w</sub>
+  - **Spatial Cluster unit**<sub>𝛼</sub>
+    - **Spatial Cluster unit**<sub>𝛽</sub>
+      - Location<sub>x</sub>
+        - **Spatial Cluster unit**<sub>γ</sub>
+          - **Spatial Cluster unit**<sub>𝛿</sub>
+            - Event<sub>y</sub>
+              - **Spatial Cluster unit**<sub>𝜂</sub>
+              - **Temporal Cluster unit**<sub>д</sub>
+                - Source Record<sub>z</sub>
+
+The data model considers the possibility to include clustering levels between the Source Record and Event, Event and Location, and Location and Field Visit. The data model also allows the inclusion of non-nested clustering units. Unavoidably, how many clustering levels are considered, what each of these clustering units represent, what are they clustering, and the data to be collected from each of these extra units will vary among Surveillance Activities. Therefore, clustering levels and their meaning must be reported in the Surveillance Activity metadata and the only properties for each level are the identifier, the cross identifier, the origin of the cross identifier, and a description.
+
+For example, the units Location, Event, and Source Record could be enough to record the data structure of a specific Surveillance Activity gathering information from Protected Areas (Locations) at points (Events) where dead animals (Source Records) are found any given time. However, another Surveillance Activity could have the following structure: protected area, zones within protected area (Location), grid cells within each zone, capture site with a pair of mist nests within each grid cell (Event), mist nets of the capture site, and bats captured (Source Records) per season.
+
+<!-- Further characteristics of each clustering unit, whether static or time dependent through the Surveillance Activity period, should be prepared in a file, such as an excel sheet, with columns with the identifiers of all relevant units (Location grouping units. Event grouping units that are not the Location, and Source Record grouping units that are not the Event) and  attached it at the corresponding level. A recommendation is to prepared a sheet for the features of all spatio temporal grouping units visited during a Field Visit and attach it at this level (Field Visit). The columns with the identifiers will allow joining the data of the corresponding Field Visit (Locations, Events, Source Records, grouping units) with the attached and spatial data. -->
+
+In another example, a Surveillance Activity involved sampling animals and cages in a market. One of the potential options to structure these data is to set the market as the Location and set each vendor within the market as an Event. Animals are in cages and cages are clustered in stalls. In one of the Events (a vendor), a sample of feces is collected from the bottom of a cage, the cage has three animals of the same species X, and only one of these three animals is sampled (Animal Source).
+
+In this scenario, the Sources (a Group Source Record with two animals of species X and a Animal Source Record), are clustered by cage (clustering unit 1), by stall (clustering group 2), Event (vendor), Location (market), and Field Activity.
+

@@ -1,27 +1,6 @@
 # Data Model {.unnumbered}
 
-```{r load packages, echo=FALSE, eval=F, message=FALSE, cache=F, warning=FALSE}
-#| tbl-colwidths: false
-
-
-
-# ------------------#
-# Create Dictionary #
-# ------------------#
-
-library(kableExtra)
-library(tidyverse)
-library(gt)
-library(reactable)
-
-# #tables in the .xml of the db diagram
-# fields_by_table<-split(full_table, full_table$Table_Name)
-
-
-# Example entries
-# data_dictionary<-vector(mode = "list")
-  
-```
+Data in the WildHealthDB is organized in units that are generally hierarchical, starting from the highest level of "**Projects**" down to "**Surveillance Activities**", "**Field Visits**", "**Locations**", "**Events**", "**Sources**", "**Source Records**", "**Specimens**", and "**Diagnostics**".  Briefly, **Projects** are a set of **Surveillance Activities** with a common leader and organizer (e.g., a national veterinary services agency). **Surveillance Activity** is a surveillance task that have a specific methodology and objectives. **Field Visit** represents a period of time when surveillance activities are conducted in the field. The **Location** is a specific area where surveillance activities are conducted. An **Event** is a site where wildlife health surveillance data is collected from. Sources are the units that can provide Specimens for hazard detection. **Specimens** are tissue taken from the **Sources** at time *t* (**Source Records**). **Diagnostics** are the tests conducted in lived animals ("Animal Source"), **Carcasses**, or **Specimens** collected to assess hazards. **Diagnosis** are the final status assigned to a Diagnostic, a Specimen, or a Source at time *t* with respect to the hazards surveyed, based on well-documented case definitions. Exceptions to the "hierarchical" rule are given in the sections for each unit below. To learn more about these units, please scan the menu on the top right corner of this website and click on the corresponding unit. A diagram shoing the relationship among the units is shown at the bottom of this website.
 
 ## Project
 
@@ -53,4 +32,29 @@ library(reactable)
 
 ```
 
+## Source and Source Records
+
+```{r child="source_source_records.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
+## Clustering of Locations, Events, and Source Records
+
+```{r child="groups.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
+## Specimen
+
+```{r child="specimen.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
+## Relationships
+
+A summary of the relationships in the data model is provided in the following figures:
+
+### For Animal Group Source
+
+![](Pictures_and_diagrams/Relationships_Animal_Source.png){width="680"}
 

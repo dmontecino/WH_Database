@@ -1,30 +1,15 @@
 <!-- # Event {.unnumbered} -->
 
-An Event refers to a distinct wildlife health event that occurs at a specific longitude and latitude on a particular date.
+An Event in the data model refers to a distinct wildlife health event that occurs at a specific longitude and latitude on a particular date. A single Location can include between zero to a indefinite number of Events. 
 
-The definition of a wildlife health event, and thus the concept of an 'Event', varies depending on the Surveillance Activity methodology. In active surveillance efforts, an Event may involve sampling healthy animals within a specific time and space to test them for a specific hazard. The inclusion of non-sampled individuals, as well as injured, sick, or dead animals, may or may not be considered part of the Event.
+The definition of a wildlife health event, and thus what an 'Event' represents, will inevitably vary depending on the Surveillance Activity and the particular definition of Event. For example, in active surveillance efforts, an Event can refer to the site and time where and when animals are captured to obtain Specimens. The site where a dead dead animal is found during a ranger patrol can be an Event. Furthermore, an 'Event' can be defined as the site where water is collected from a pond. In the case of surveillance for vector-borne diseases, an Event can represent a specific point in time and space where one or several traps for vectors are deployed. In the case of beached fish, an Event can represent each individual dead fish at one extreme, or the total count of dead fish across the beach as a single point in time and space at the other extreme. In the context of a wet market, the definition of Event can be applied to the market, or to the vendor, or to the stall, or to the cage. Structured studies can have multiple levels of hierarchy (zone, grid, area, trap, etc.) that represent can Event. For study A it could the grid cell whilst for study B it could each trap. 
 
-If samples are collected from a river, the 'Event' can be established at the point where the water is extracted. In the case of surveillance for vector-borne diseases, an Event  represents a specific point in time and space where one or several traps for vectors are deployed. In passive surveillance, an Incident could require the presence of at least one injured, sick, or dead animal, or a stranded individual. Additionally, healthy individuals found at the site can also be included as part of the 'Event'
+Moreover, the presence of at least one Source could be needed to establish an Event. For example, a dead animal found during a ranger patrol. In Active Surveillance, an Event can occur without the presence of any Source, for example, when a capturing effort ended in the absence of animals captured. Additionally, the definition of an Event can include healthy animals found nearby a dead animal or animals not captured nearby animals captured, or not, depending on the Event definition.
 
-In the case of beached fish, an Event can represent each individual dead fish at one extreme, or the total count of dead fish across the beach as a single point in time and space at the other extreme. However, neither of these strategies is ideal. The former is not suitable for logistical purposes, while the latter results in the loss of valuable information regarding the distribution of dead fish across the beach. 
+Consequently, an Event in wildlife health surveillance can represent different spatio-temporal units depending on the objectives and the methodology used to collect wildlife health data. **It is up to the user to define what unit the  Event represents and report it in the Surveillance Activity metadata and it should be unique for a specific Surveillance Activity**. 
 
-Similarly, in the context of a wet market, the market can represent simultaneously an Incident and a Location. This Incident can gather data from multiple vendors, cages, and animals within the cages. On the other hand, a market could be considered a Location only, and each individual vendor within the market could be considered an Incident.
+Properties of Event include the start and end date, a unique identifier, the cross referential identifier, longitude, latitude, the coordinate system reference used, the accuracy of the latitude and longitude valies, date-time, among others (see Data Dictionary).
 
-A structured study can have multiple levels of hierarchy (zone, grid, area, trap, etc.) and one level receives the temporal-spatial coordinates (Incident). Another similarly structured study may provide the spatial coordinate to a different unit (e.g., area in one case and trap in another case).
-
-Consequently, an Incident can represent a wide range of units depending on the methodology used to record health data. Therefore, it is crucial to allow flexibility in what an Incident represents within a surveillance design and to explicitly declare its meaning as part of their data.
-
-In the case of markets or structured studies, it may be desirable to group Incidents more specifically than simply under the general 'Location' category. For example, a market can be considered a 'Location,' and each cage could be treated as an 'Incident.' Users might want to further group cages by vendors and vendors by specific areas within the market. Similarly, in a structured study, the 'Incident' could represent a trap, and researchers may wish to group these Incidents based on areas, grid cells, zones, and seasons. Therefore, the database includes multiple 'Incident' tags to enable grouping on a finer scale than just the general 'Location.' Users can request specific tags as needed.
-
-Incidents can lack of any Sources (see below) if nothing is captured or sampled, but they can also have multiple Source Records of any type, depending on the specific findings and the interests of the corresponding Surveillance Objective.
+Events can be clustered in units smaller than Location if needed. For a detailed explanation, see “Clustering of Locations, Events, and Source Records” section below.
 
 
-
-events have types that define if the effort data is provided or not and at what level. They can have more than one. ... 
-
-Finding: no effort (market, citizen science, tradepost)
-Observation: for animal sources or grou sources
-Capture: for Animal Sources or Group Source
-Collection: for Environmetnal and Arthropod Sources. 
-
-Events with different capture/collection divices aand differetn Source types can be linked together 
