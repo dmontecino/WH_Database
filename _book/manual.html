@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WildHealthDB - Specimens</title>
+<title>WildHealthDB - WildlHealthDB Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./diagnostics.html" rel="next">
-<link href="./source_source_records.html" rel="prev">
+<link href="./data_dictionary.html" rel="next">
+<link href="./data_model.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./specimen.html">Specimens</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual.html">WildlHealthDB Manual</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -111,50 +111,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project</span></a>
+  <a href="./data_model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Model</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./surveillance_objective.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Surveillance Activity</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./field_activity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Field Visit</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./location.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Location</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./incident.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Event</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./source_source_records.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Source and Source Records</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./specimen.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Specimens</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./diagnostics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diagnostics</span></a>
+  <a href="./manual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">WildlHealthDB Manual</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -173,12 +137,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#group-source-record-specimens" id="toc-group-source-record-specimens" class="nav-link active" data-scroll-target="#group-source-record-specimens">Group Source Record Specimens</a></li>
-  <li><a href="#speiemens-pueden-vennir-desde-multiple-group-source-records-e-differentes-tipos." id="toc-speiemens-pueden-vennir-desde-multiple-group-source-records-e-differentes-tipos." class="nav-link" data-scroll-target="#speiemens-pueden-vennir-desde-multiple-group-source-records-e-differentes-tipos.">speiemens pueden vennir desde multiple Group source records e differentes tipos.</a>
-  <ul class="collapse">
-  <li><a href="#animal-source-specimens" id="toc-animal-source-specimens" class="nav-link" data-scroll-target="#animal-source-specimens">Animal Source Specimens</a></li>
-  <li><a href="#env-source-specimens" id="toc-env-source-specimens" class="nav-link" data-scroll-target="#env-source-specimens">Env Source Specimens</a></li>
-  </ul></li>
+  <li><a href="#finding-data" id="toc-finding-data" class="nav-link active" data-scroll-target="#finding-data">1. Finding Data</a></li>
+  <li><a href="#writing-data" id="toc-writing-data" class="nav-link" data-scroll-target="#writing-data">2. Writing data</a></li>
+  <li><a href="#export-data" id="toc-export-data" class="nav-link" data-scroll-target="#export-data">3. Export Data</a></li>
   </ul>
 </nav>
     </div>
@@ -187,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Specimens</h1>
+<h1 class="title">WildlHealthDB Manual</h1>
 </div>
 
 
@@ -202,30 +163,71 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Specimens refer to the materials collected from Source Records for the purpose of conducting Diagnostics to identify hazards (biological, chemical, physical) or physiological problems. Specimens can range from the entire body of a living animal for conducting an ultrasound on to a minimal amount of tissue to perform advanced assays.</p>
-<p>Specimens are characterized by an identifier, the type of material (water, hair, kidney, animal), the original amount (e.g., ‘full animal’ or 0.35 mm), the solution used for preservation, and the storage type in the field and in the storage location. Additionally, the database tracks the strorage location of the Specimens (building, laboratory name, refrigerator name, etc.), their availability, ownership, and current amount. It is important to note that the original amount and the current amount of a Specimen may differ if a portion of the original Specimen has already been used for Diagnostics.</p>
-<p>For Animal Specimens that are equivalent to the Animal Source Record (both representing the ‘full animal’), information should be provided at both the Source Record and Specimen levels. The Source Record and Specimen can have the same identifier or different identifiers, and the amount of the Specimen in such cases should be indicated as ‘full animal’.</p>
-<p>Invertebrate Source Records may include multiple species; however, it is expected that the Specimens associated with these Records only contain invertebrates of the same species.</p>
-<p>Specimens with a current amount of zero should not be deleted from the database, and their last known storage location should be retained.</p>
-<p>In situations where space or materials are limited, it is possible that multiple Specimens are stored in the same container. This approach is not ideal because it can lead to cross-contamination and make actual Specimen tracing more complex. To address the tracing of these Specimens, a unique container identifier, such as a jar identifier, can be added in the database. Specimens sharing the same container will have the same container identifier. Although individual Specimens within the same container may not be labeled individually, each Specimen should be given a unique Specimen Code in the database. This Code can be the same as the container identifier, followed by the “organ name” or a numeric string (e.g., “.1”, “.2”, etc.). Specific details for each individual Specimen within the container, such as type, quantity, etc, should allow their visual identification within the container.</p>
-<section id="group-source-record-specimens" class="level3">
-<h3 class="anchored" data-anchor-id="group-source-record-specimens">Group Source Record Specimens</h3>
+<p>The Field Visit requires an end date which can be placed in the future. For example, a Surveillance Activity aims to assess the body condition of a herd on a yearly for a decade. In this case, each Field Visit can encompass each full year, with an assigned start date of January 1st and en date December 31st of the corresponding year. The end date can be assigned in any moment before December 31st during the year, when the Field Visit is created.</p>
+<section id="finding-data" class="level3">
+<h3 class="anchored" data-anchor-id="finding-data">1. Finding Data</h3>
+<section id="finding-a-project" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-project">Finding a Project</h4>
 </section>
-<section id="speiemens-pueden-vennir-desde-multiple-group-source-records-e-differentes-tipos." class="level1">
-<h1>speiemens pueden vennir desde multiple Group source records e differentes tipos.</h1>
-<p>Group Sources can provide Specimens at time <strong>t</strong> (see “Specimens”). Information on the specific animal providing the Specimens, if it is available, will be lost. An example are feces collected from the bottom of a cage with animals of the same species but it is unknown which of the animals dropped the feces. However, there is information of the species of the animals and the observed health status of animals, including the unknown individual that dropped them. Sex and age of the animals could be known too. If Specimens can be traced to a single animal, it is recommended to associated them to an Animal Source (see below).</p>
-<p>The last date a Group Source was observed is not necessarily the last time the Group Source can provide Specimens. For example, it is possible to collect feces from an empty cage that a Group Source was using until two days ago. The age, sex, and health status distribution of the Group Source Record could be all unknown.</p>
-<section id="animal-source-specimens" class="level3">
-<h3 class="anchored" data-anchor-id="animal-source-specimens">Animal Source Specimens</h3>
-<p>Animal Sources can provide Specimens at time <strong>t</strong> (see “Specimens”) and they should be traceable at the individual level. An example are feces collected from the bottom of a cage with animals of the same species, and it was observed which animal dropped them. If Specimens cannot be traced to a single animal but to a group of them, the Specimens should be associated with a Group Source (see above).</p>
-<p>The date of death of an Animal Source Record is not necessarily the last time it can provide Specimens because it is possible to collect them from the carcass (dead Animal Source).</p>
+<section id="finding-a-surveillance-activity" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-surveillance-activity">Finding a Surveillance Activity</h4>
 </section>
-<section id="env-source-specimens" class="level3">
-<h3 class="anchored" data-anchor-id="env-source-specimens">Env Source Specimens</h3>
-<p>Setting the Environmental Source type determines the Specimen type provided for those Sources (see ‘Specimens’ below). For example, feces can only yield feces as Specimens, and water in a pond can only provide water.</p>
+<section id="finding-a-field-activity" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-field-activity">Finding a Field Activity</h4>
+</section>
+<section id="finding-a-location" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-location">Finding a Location</h4>
+</section>
+<section id="finding-a-location-group" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-location-group">Finding a Location Group</h4>
+</section>
+<section id="finding-an-event" class="level4">
+<h4 class="anchored" data-anchor-id="finding-an-event">Finding an Event</h4>
+</section>
+<section id="finding-an-event-group" class="level4">
+<h4 class="anchored" data-anchor-id="finding-an-event-group">Finding an Event Group</h4>
+</section>
+<section id="finding-a-source" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-source">Finding a Source</h4>
+</section>
+<section id="finding-a-source-record" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-source-record">Finding a Source Record</h4>
+</section>
+<section id="finding-a-source-record-group" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-source-record-group">Finding a Source Record Group</h4>
+</section>
+<section id="finding-a-carcass" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-carcass">Finding a Carcass</h4>
+</section>
+<section id="finding-a-necropsy" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-necropsy">Finding a Necropsy</h4>
+</section>
+<section id="finding-a-specimen" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-specimen">Finding a Specimen</h4>
+</section>
+<section id="finding-a-diagnostic" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-diagnostic">Finding a Diagnostic</h4>
+</section>
+<section id="finding-a-diagnosis" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-diagnosis">Finding a Diagnosis</h4>
+</section>
+<section id="finding-a-laboratory" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-laboratory">Finding a Laboratory</h4>
+</section>
+<section id="finding-a-person" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-person">Finding a Person</h4>
+</section>
+</section>
+<section id="writing-data" class="level3">
+<h3 class="anchored" data-anchor-id="writing-data">2. Writing data</h3>
+<section id="creating-a-new-project" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-new-project">Creating a new Project</h4>
+</section>
+</section>
+<section id="export-data" class="level3">
+<h3 class="anchored" data-anchor-id="export-data">3. Export Data</h3>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -464,13 +466,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./source_source_records.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Source and Source Records</span>
+      <a href="./data_model.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Model</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./diagnostics.html" class="pagination-link">
-        <span class="nav-page-text">Diagnostics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data_dictionary.html" class="pagination-link">
+        <span class="nav-page-text">Data Dictionary</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
