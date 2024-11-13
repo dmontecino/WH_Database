@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>WildHealthDB - Data Model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./manual.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_model.html">Data Model</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">WildHealthDB</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/dmontecino/WH_Database" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./WildHealthDB.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Model</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WildlHealthDB Manual</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_dictionary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Dictionary</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#project" id="toc-project" class="nav-link active" data-scroll-target="#project">Project</a></li>
+  <li><a href="#surveillance-activity" id="toc-surveillance-activity" class="nav-link" data-scroll-target="#surveillance-activity">Surveillance Activity</a></li>
+  <li><a href="#outbreak-investigation" id="toc-outbreak-investigation" class="nav-link" data-scroll-target="#outbreak-investigation">Outbreak Investigation</a></li>
+  <li><a href="#field-visit" id="toc-field-visit" class="nav-link" data-scroll-target="#field-visit">Field Visit</a></li>
+  <li><a href="#location" id="toc-location" class="nav-link" data-scroll-target="#location">Location</a></li>
+  <li><a href="#event" id="toc-event" class="nav-link" data-scroll-target="#event">Event</a></li>
+  <li><a href="#source-and-source-records" id="toc-source-and-source-records" class="nav-link" data-scroll-target="#source-and-source-records">Source and Source Records</a>
+  <ul class="collapse">
+  <li><a href="#generalities" id="toc-generalities" class="nav-link" data-scroll-target="#generalities">Generalities</a></li>
+  <li><a href="#group-source" id="toc-group-source" class="nav-link" data-scroll-target="#group-source">Group Source</a></li>
+  <li><a href="#animal-source" id="toc-animal-source" class="nav-link" data-scroll-target="#animal-source">Animal Source</a></li>
+  <li><a href="#environmental-source" id="toc-environmental-source" class="nav-link" data-scroll-target="#environmental-source">Environmental Source</a></li>
+  <li><a href="#arthropod-source" id="toc-arthropod-source" class="nav-link" data-scroll-target="#arthropod-source">Arthropod Source</a></li>
+  </ul></li>
+  <li><a href="#clustering-of-locations-events-and-source-records" id="toc-clustering-of-locations-events-and-source-records" class="nav-link" data-scroll-target="#clustering-of-locations-events-and-source-records">Clustering of Locations, Events, and Source Records</a></li>
+  <li><a href="#specimen" id="toc-specimen" class="nav-link" data-scroll-target="#specimen">Specimen</a></li>
+  <li><a href="#relationships" id="toc-relationships" class="nav-link" data-scroll-target="#relationships">Relationships</a>
+  <ul class="collapse">
+  <li><a href="#for-animal-group-source" id="toc-for-animal-group-source" class="nav-link" data-scroll-target="#for-animal-group-source">For Animal Group Source</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Model</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Data in the WildHealthDB is organized in units that are generally hierarchical, starting from the highest level of “<strong>Projects</strong>” down to “<strong>Surveillance Activities</strong>”, “<strong>Field Visits</strong>”, “<strong>Locations</strong>”, “<strong>Events</strong>”, “<strong>Sources</strong>”, “<strong>Source Records</strong>”, “<strong>Specimens</strong>”, and “<strong>Diagnostics</strong>”. Briefly, <strong>Projects</strong> are a set of <strong>Surveillance Activities</strong> with a common leader and organizer (e.g., a national veterinary services agency). <strong>Surveillance Activity</strong> is a surveillance task that have a specific methodology and objectives. <strong>Field Visit</strong> represents a period of time when surveillance activities are conducted in the field. The <strong>Location</strong> is a specific area where surveillance activities are conducted. An <strong>Event</strong> is a site where wildlife health surveillance data is collected from. Sources are the units that can provide Specimens for hazard detection. <strong>Specimens</strong> are tissue taken from the <strong>Sources</strong> at time <em>t</em> (<strong>Source Records</strong>). <strong>Diagnostics</strong> are the tests conducted in lived animals (“Animal Source”), <strong>Carcasses</strong>, or <strong>Specimens</strong> collected to assess hazards. <strong>Diagnosis</strong> are the final status assigned to a Diagnostic, a Specimen, or a Source at time <em>t</em> with respect to the hazards surveyed, based on well-documented case definitions. Exceptions to the “hierarchical” rule are given in the sections for each unit below. To learn more about these units, please scan the menu on the top right corner of this website and click on the corresponding unit. A diagram shoing the relationship among the units is shown at the bottom of this website.</p>
+<section id="project" class="level2">
+<h2 class="anchored" data-anchor-id="project">Project</h2>
+<!-- # Project {.unnumbered} -->
+<p>A Project in the data model is a surveillance initiative supported by specific entities. For example, the PREDICT Project funded by USAID, an isolated cross-sectional study with a single field visit to a single location (sample collection in a market), or a national or local wildlife health surveillance network led by a government agency. Projects are the highest hierarchical unit in the database and they contain at least one Surveillance Activity. Projects can involve a single date or they can extend for as long as wanted.</p>
+</section>
+<section id="surveillance-activity" class="level2">
+<h2 class="anchored" data-anchor-id="surveillance-activity">Surveillance Activity</h2>
+<!-- # Surveillance Activity {.unnumbered} -->
+<p>A Surveillance Activity in the data model refers to a set of activities to collect data with the aim of detecting, proving freedom of disease, measure incidence or prevalence, or assessing trends of specific health hazards within specific populations, using a standardized methodology. For example, the <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0274490">longitudinal assessment of coronavirus shedding in two <em>Eidolon helvum</em> bat roosts in Africa</a>.</p>
+<p>Surveillance Activities can encompass targeted surveillance, scanning surveillance, citizen science monitoring, freedom of disease assessments, ranger patrols, and others. An example is a capture-mark-recapture study targeting lead accumulation in a specific vulture population involving the collection of blood samples and conducting tests using the same capture, marking, and diagnostic methods. <strong>Surveillance Activities include detailed metadata that describe their objectives and methods, including information on the targeted species, populations, hazards, type of Sources and Specimens, collection methods, Diagnostics, and case definitions for Diagnostics, Specimens, and Sources</strong>.</p>
+<p>Field Visits, Locations, Events, Sources, Source Records, and Diagnostics usually belong to a single Surveillance Activity. The Surveillance Activity that commanded the Field Visits at different Locations to document Events, collect Sources and Specimens, perform Diagnostics for a specific hazard, and provide Diagnosis for Diagnostics, Specimens, and Sources. However, there are exceptions to this rule. For example, rodents trapped in the same Event may be sampled using the same methodology but tested for coronaviruses and Rickettsia <em>sp</em>. In this scenario, two Surveillance Activities should be assigned to the Field Visits, Locations, Events, Source Records, and Specimens. Diagnostics for either group of pathogens and the corresponding Diagnosis should only get a single Surveillance Activity.</p>
+<p>Another exception to this rule is the collection of Specimens from Sources that belonged to other Surveillance Activities. For example, marked rodents that were released, and later captured and tested for a specific hazard under Surveillance Activity A that were captured and sampled during Surveillance Activity B months later. In this case, these rodents will be part of two Surveillance Activities (A and B).</p>
+<p>Another exception occurs when Specimens were collected during past surveillance efforts but are included in new surveillance initiatives. For instance, using pangolin Specimens collected by veterinarians in 2017 and tested for Salmonella sps. which are then tested in 2023 for SARS-CoV-2. In this case, the latter Surveillance Activity is assigned to the Specimens being tested (as a second Surveillance Activity) and to the SARS-CoV-2 Diagnostics and Diagnosis. Therefore, these Specimens should have two Surveillance Objectives. The first one corresponds to the original Surveillance Activity that lead to their collection and the second one corresponds to the Surveillance Activity testing them for SARS-CoV-2. The Source (pangolin) and the corresponding Record should keep a single Surveillance Activity.</p>
+<p>Moreover, Necropsies might be conducted as part of a secondary Surveillance Activity (on a Carcass that was collected under other Surveillance Activity) or new Specimens could be created from a previously unused Carcass as part of a new Surveillance Activity. In this case, the new data (Necropsy and Specimens) should receive the second Surveillance Activity only. Diagnostics using the new Specimens should receive the second Surveillance Activity only. The Carcass should receive the Surveillance Activity that lead to its collection only.</p>
+<p>Therefore, Surveillance Activities can be interconnected through the reuse of Specimens or expanding the data generated by previous Surveillance Activities. These connections will be evident in the exported data, where each component with multiple Surveillance Activities (e.g., Specimen) will be represented by one row per Surveillance Activity.</p>
+</section>
+<section id="outbreak-investigation" class="level2">
+<h2 class="anchored" data-anchor-id="outbreak-investigation">Outbreak Investigation</h2>
+<p>All outbreak investigations are considered Surveillance Activities. Outbreak Surveillance Activities can encompass the Field Visit that lead to the Outbreak detection and the following Field Visits associated with Outbreak investigation and control. The detection could have been made during a Field Activity conducted by rangers during their patrols. This initial Field Visit and its components should be assigned to a the ranger patrol Surveillance Activity and to the Outbreak Surveillance Activity. The following Field Activities that could be completed by veterinarians or public health officers receive the outbreak Surveillance Activity only.</p>
+</section>
+<section id="field-visit" class="level2">
+<h2 class="anchored" data-anchor-id="field-visit">Field Visit</h2>
+<!-- # Field Visit {.unnumbered} -->
+<p>A Field Activity in the data model represents a visit to the field within a specific time period, including a start and end date, to find Events, Sources, and Specimens (see below) and document data from them. A Field Visit can include visits to various types of Locations, such as markets, natural areas, rehabilitation centers, caves, etc that are completed within the same trip and common start and end date.</p>
+</section>
+<section id="location" class="level2">
+<h2 class="anchored" data-anchor-id="location">Location</h2>
+<!-- # Location {.unnumbered} -->
+<p>A Location in the data model refers to a general place where Events, Source Records, Carcasses, and Specimens can be collected from. During a single Field Visit, data may be collected from various Locations, such as two rehabilitation centers, a cave within a protected area, or three different zones within another protected area. In this case, there would be a total of six Locations. Therefore, a Location serves as a way to group data in a more generalized manner compared to the exact latitude and longitude coordinates where data is collected (‘Event’; see below), but it provides more specificity than the overall ‘Field Activity’.</p>
+<p>What a ‘Location’ represents will inevitably vary depending on the Surveillance Activity methodology. For example, for the collection of arthropods, a Location can represent a parcel where traps are set. In a structured research, the Location could represent a grid cell. In ranger patrols, the Location can correspond to either the full protected area, or a specific zone within the protected area. <strong>It is up to the user to define what unit the Location represents and report it in the Surveillance Activity metadata</strong>.</p>
+<p>Properties of Location include the start and end date, a unique identifier, the cross referential identifier, the type of location, environmental characteristics, among others (see Data Dictionary).</p>
+<p>Locations can be clustered in units smaller than Field Visit if needed. For a detail explanation, see “Grouping of Locations, Events, and Source Records” section below.</p>
+</section>
+<section id="event" class="level2">
+<h2 class="anchored" data-anchor-id="event">Event</h2>
+<!-- # Event {.unnumbered} -->
+<p>An Event in the data model refers to a distinct wildlife health event that occurs at a specific longitude and latitude on a particular date. A single Location can include between zero to a indefinite number of Events.</p>
+<p>The definition of a wildlife health event, and thus what an ‘Event’ represents, will inevitably vary depending on the Surveillance Activity and the particular definition of Event. For example, in active surveillance efforts, an Event can refer to the site and time where and when animals are captured to obtain Specimens. The site where a dead dead animal is found during a ranger patrol can be an Event. Furthermore, an ‘Event’ can be defined as the site where water is collected from a pond. In the case of surveillance for vector-borne diseases, an Event can represent a specific point in time and space where one or several traps for vectors are deployed. In the case of beached fish, an Event can represent each individual dead fish at one extreme, or the total count of dead fish across the beach as a single point in time and space at the other extreme. In the context of a wet market, the definition of Event can be applied to the market, or to the vendor, or to the stall, or to the cage. Structured studies can have multiple levels of hierarchy (zone, grid, area, trap, etc.) that represent can Event. For study A it could the grid cell whilst for study B it could each trap.</p>
+<p>Moreover, the presence of at least one Source could be needed to establish an Event. For example, a dead animal found during a ranger patrol. In Active Surveillance, an Event can occur without the presence of any Source, for example, when a capturing effort ended in the absence of animals captured. Additionally, the definition of an Event can include healthy animals found nearby a dead animal or animals not captured nearby animals captured, or not, depending on the Event definition.</p>
+<p>Consequently, an Event in wildlife health surveillance can represent different spatio-temporal units depending on the objectives and the methodology used to collect wildlife health data. <strong>It is up to the user to define what unit the Event represents and report it in the Surveillance Activity metadata and it should be unique for a specific Surveillance Activity</strong>.</p>
+<p>Properties of Event include the start and end date, a unique identifier, the cross referential identifier, longitude, latitude, the coordinate system reference used, the accuracy of the latitude and longitude valies, date-time, among others (see Data Dictionary).</p>
+<p>Events can be clustered in units smaller than Location if needed. For a detailed explanation, see “Clustering of Locations, Events, and Source Records” section below.</p>
+</section>
+<section id="source-and-source-records" class="level2">
+<h2 class="anchored" data-anchor-id="source-and-source-records">Source and Source Records</h2>
+<!-- # Source and Source Records {.unnumbered} -->
+<section id="generalities" class="level3">
+<h3 class="anchored" data-anchor-id="generalities">Generalities</h3>
+<p>A Source in the data model is a unit that can be observed and provide Specimens, including carcasses, organic tissue, abiotic tissue, or arthropods. The data model manages four types of Sources: i) a co-specific group of animals (Group Source), ii) individual animals (Animal Source), iii) sites that can provide abiotic tissue of interest or biotic material of animal origin whose individual or group animal of origin is unknown (Environmental Source), and iv) sites where active or passive collection arthropods at any life stage is completed (Arthropod Source). A Group Source could correspond to a specific bat roost of species X sourcing guano, an Animal Source could be a collared animal, an Environmental Source could be a pond where water is collected from, and an Arthropod Source could be a site where mosquito larvae are collected from. Sources contain time-independent data only, such as the species of an animal in the case of a Group Source or an Animal Source (more below).</p>
+<p>All Sources can be individually identified and followed over time. <strong>Animal Sources and Group Sources might not be individually identified preventing following them over time</strong>. <strong>All Sources belong to at least one Surveillance Activity</strong> but they can be defined prior to any Event or after. For example, a set of animals can all be individually identified and released before any Field Visit starts. Then, capturing, recapturing, and sampling are conducted in following Field Visits. In that case, these animals are initially Animal Sources in the data model linked to the corresponding Surveillance Activity only. Once the Field Visits begin, all, none, or some of the Sources (rodents) will be part of Events. The Sources that are not part any Event by the end of the Surveillance Activity will still be part of it, but they will not have any data associated with Events, Specimens, Diagnostics, etc. Therefore, <strong>Sources might not be part of any Event</strong>.</p>
+<p>Sources that are individually identified during an Event will certainly belong to at least that Event when they were identified and potentially others. For example, a bat (Source) caught in a mist net (Event), identified individually, and recaptured in a following Event. This bat is linked to the capture Event and the recapture Event.</p>
+<p><strong>Sources that are not individually identified will belong to the Event when they were observed or captured only</strong>. For example, a bat (Source) that is captured and sampled during an Event but not marked or a dead animal found by a ranger during a patrol. The bat and the animal found are linked only to the Event they were capture and observed, respectively.</p>
+<p>Sources observed, collected, or captured at time <em>t</em> are linked to Events through a <strong>Source Record</strong> (the Source at time <em>t</em>). Source Records contain time-dependent data only, such as health status at time <em>t</em>. <strong>Sources individually identified can be followed longitudinally and have multiple Source Records that link them to multiple Events over time</strong>.</p>
+<p><strong>An Event can contain any number of Source Records associated with Sources of any type</strong>. For example, an Event can contain Group Source Records, Animal Source Records, Environmental Source Records, and Invertebrate Source Records, two of them, one of them, or three of them. Also remember that <strong>an Event might not contain any Source Record</strong> (e.g., a set up mist net without birds captured).</p>
+</section>
+<section id="group-source" class="level3">
+<h3 class="anchored" data-anchor-id="group-source">Group Source</h3>
+<p><strong>A Group Source is a unit of co-specific individuals (animals of the same species) associated to a herd, an area, a site, a farm, a cage, a stall, an enclosure, or another that makes the individuals part a single epidemiological unit</strong>. Group Sources can be observed, captured, and provide Specimens at time <em>t</em>. Data of a Group Source include the species, the identifier, the cross identifier, and the date of extinction (see Data Dictionary).</p>
+<p>The purpose of Group Source is to record individuals at health events at the species level instead of individual by individual. This can occur when herds are the unit of interest, when protected area rangers find animals of the same species in a health event, or animals in a unit such as a cage, stall, or vendor of a market. For example, animals of two species in a single cage. If the animals are not meant to be tracked individually, the animals of each species in the cage represent a Group Source.</p>
+<section id="group-source-record" class="level4">
+<h4 class="anchored" data-anchor-id="group-source-record">Group Source Record</h4>
+<p><strong>A Group Source Record consists of a count of the animals in the Group Source at time <em>t</em>, stratified by sex, age, and health status (e.g., healthy, injured, sick, or dead)</strong>. Other properties of the Group Source Record are observed anomalies, potential causes of disease or death if they apply at time <em>t</em> among others (see Data Dictionary). Properties of a Group Source Record are documented at the group level and each property can receive multiple options. For example, a Group Source with three dead animals can receive several potential causes of death. Therefore, <strong>is not possible to know the distribution of several properties across individuals of the Group Source Record</strong>, but only that it was present in at least one individual (the exception is the “species” property and other properties when a Group Source has a single individual).</p>
+<p><strong>Group Source Records can include a mix of dead, diseased, poisoned, infected, injured, and healthy individuals of the same species or animals of the same species that belong to just one of these categories exclusively (all animals are dead for example)</strong>. A Group Source Record of only healthy animals can also be part of a Health Event depending on the definition of Health Event (e.g., animals of species X with all of them observed healthy next to dead animals of species Y and Z). <strong>Group Source Records can have a single individual</strong>. For example, rangers patrolling a protected area might find a dead animal of species X and two dead animals of species Y at the same site (Event) and rangers record their animal data as Group Sources. If this is the case, the animal of species X belong to a Group Source Record and the animals of species Y correspond to another Source Group Record. Moreover, if only a single animal of a known herd is observed at time <em>t</em>, then that individual is the representation of the herd for the Source Group Record. Finally, <strong>an Event can have more than one Group Source Record of the same species</strong>. For example, animals of the same species in two cages hold by a vendor in market where each vendor is considered an Event. Then each cage with the corresponding animals could be considered a unit, and therefore, a Group Source Record belonging to the same vendor (same Event).</p>
+<p>An Group Source can be used directly for a Diagnostic (e.g., assessment of fat in carcasses of animals belonging to a specific herd). The data model can accommodate Diagnostics applied to the “group” itself rather than Specimens taken from that Group Source. The diagnostic information is part of the set of Diagnostics conducted in the corresponding Group Source (see Diagnostics).</p>
+<p><strong>An animal of species X documented as part of a Group Source Record must not be included as an Animal Source Record and vice-versa</strong>. If an Event contains a Group Source Record and an Animal Source Record of species X, then the total number of animals of species X at the Event is the sum of number of animals of species X in the Group Source Record and the single individual of species X recorded as an Animal Source Records. An example is a herd of cows illegally raised in a protected area whose health is assessed at time <em>t</em>. The herd of this example contains 20 cows. Two of them are sampled and the rest are part of a single unit. In this case, the sampled cows can be added as Animal Source Records (one per sampled cow) and the remaining 18 animals can be added as a single Group Source Record that distributes the animals per sex, age, and health status. The total number of cows are the individuals in the Group Source Record (18) and the two cows recorded as Animal Records (2). The “herd” identity of the 20 cows can be kept using a “Tag” (see below) so the three Source Records receive the same unit (another option is to add the 20 cows as a Group Source but the data of the specific animals sampled will be lost. See next section). If the Group Source Record contains the original 20 cows and also two Animal Source Records, then the total number of cows will be 22.</p>
+</section>
+</section>
+<section id="animal-source" class="level3">
+<h3 class="anchored" data-anchor-id="animal-source">Animal Source</h3>
+<p><strong>An Animal Source represents an individual animal whose specific individual-level data is of interest</strong>. Animal Sources can be observed, captured, tested, and provide Specimens at time <em>t</em>, including the full carcass to have a Necropsy completed. Animal Source data includes the species, the identifier, the cross identifier, the sex, and the date of death (see Data Dictionary). Past marking codes (if any have been used) are considered immutable and entered as data of an the Animal Source.</p>
+<p>An example of Animal Sources are animals of different or the same species in a cage located in a live market. If the data of the animals is to be collected at the individual-level, then each individual represents an Animal Group Source in the cage.</p>
+<section id="animal-source-record" class="level4">
+<h4 class="anchored" data-anchor-id="animal-source-record">Animal Source Record</h4>
+<p><strong>An Animal Source Record consists of an Animal Source at time <em>t</em> </strong>. Properties of an Animal Source Record are its age, health status, observed anomalies, and potential cause of disease or death if they apply at time <em>t</em>, among others (see Data Dictionary). The marking of an individual animal at time <em>t</em> is considered mutable and a property of the corresponding Animal Source Record. Properties of an Animal Source Record can receive single or multiple choices. For example, the observed health status in only one (live healthy, live sick) but an Animal Source Record can receive several observed anomalies if they apply at time <em>t</em> (wounded, hair loss, diarrhea, etc. See Data Dictionary).</p>
+<p>An Animal Source can be either dead, diseased, poisoned, infected, injured, or healthy at time <em>t</em>. <strong>An Animal Source Record with an observed health status “live healthy” can be part of an Event if they are of interest</strong> (e.g., a healthy animal of species X next to dead animals of species X, Y, and Z; healthy animals captured for Specimen collection).</p>
+<p>An Animal Source can be used directly for a Diagnostic (e.g., X-rays in a live animal). The data model can accommodate Diagnostics applied to the “animal” itself rather than a Specimen taken from that Animal Source. The diagnostic information is part of the set of Diagnostics conducted in the corresponding Animal Source (see Diagnostics).</p>
+<p><strong>An animal of species X documented as part of a Group Source Record cannot be included as an Animal Source Record and vice versa</strong>. If an Event contains a Group Source Record and an Animal Source Record of species X, then the total number of animals of species X at the Event is the sum of number of animals of species X in the Group Source Record and the single individual of species X recorded as an Animal Source Record. An example is a herd of cows illegally raised in a protected area whose health is assessed at time <em>t</em>. The herd of this example contains 20 cows. Two of them are sampled and the rest are part of a single unit. In this case, the sampled cows can be added as Animal Source Records (one per sampled cow) and the remaining 18 animals can be added as a single Group Source Record that distributes the animals per sex, age, and health status. The total number of cows are the individuals in the Group Source Record (18) and the two cows recorded as Animal Records (2). The “herd” identity of the 20 cows can be kept using a “Tag” (see below) so the three Source Records receive the same unit (another option is to add the 20 cows as a Group Source but the data of the specific animals sampled will be lost. See next section). If the Group Source Record contains the original 20 cows and also two Animal Source Records, then the total number of cows will be 22.</p>
+</section>
+<section id="carcass" class="level4">
+<h4 class="anchored" data-anchor-id="carcass">Carcass</h4>
+<p>The carcass of a dead Animal Source can be used as a source for Specimens and Diagnosis. A Carcass entered to the database comes from a specific Animal Source and they are collected at a single specific time <em>t</em>. Therefore, each Carcass is associated with one and only one Animal Source Record (when the Carcass was collected). Properties of a Carcass include its decomposition condition, storage during transport, storage in a facility, and its location (building, room, refrigerator, etc.), among others (see Data Dictionary). The data regarding changes in the storage of the carcass can have many units for the same carcass if it changes over time.</p>
+<p>An carcass can be used directly for a Diagnostic (e.g., X-rays in a dead animal). The data model can accommodate Diagnostics applied to the Carcass itself rather than a Specimen taken from that Carcass (see Diagnostics). The diagnostic information is part of the set of Diagnostics conducted in the corresponding Animal Source.</p>
+<section id="necropsy" class="level5">
+<h5 class="anchored" data-anchor-id="necropsy">Necropsy</h5>
+<p>A Necropsy is associated with a specific Animal Source Record that can occur any date after the corresponding Animal is found dead. However, <strong>a Necropsy is tied to the Carcass</strong>, which is tied to the Animal Source Record when it was collected. <strong>The earliest date a Necropsy can occur is when the dead animal was found and a Field Necropsy was conducted (no Carcass collection) or when the Carcass was collected and used for Necropsy</strong>. Necropsy data includes the identifier, the cross identifier, the date of the necropsy, findings per system, among others (see Data Dictionary).</p>
+<p>Necropsies can be primary or secondary. A primary necropsy usually starts with an intact carcass (not previously used in a necropsy). A secondary necropsy is usually conducted by a veterinarian pathologist using pictures of the primary necropsy or using a carcass already necropsied.</p>
+</section>
+</section>
+</section>
+<section id="environmental-source" class="level3">
+<h3 class="anchored" data-anchor-id="environmental-source">Environmental Source</h3>
+<p><strong>An Environmental Source is a unit in space where Specimens that cannot be associated with a Group Source, an Animal Source, or Arthropod Source can be collected from</strong> (e.g., feces found in the field but unknown individual dropping them or unknown group of animals with the individual that could have dropped them). Properties of an Environmental Source include the type (e.g., water, soil, sediment, air , feces), the species (only for biotic types if it is known), the identifier, and the cross identifier (see Data Dictionary). The species can be either NA (abiotic type such as water, sediment, or soil), “unknown” (e.g., “unknown” for feces found by themselves), or the most accurate taxonomy level that can be given to a biotic Environmental Source if barcoding or another species determination method is not used (e.g., “mammalia” for feces found by themselves).</p>
+<section id="environmental-source-record" class="level4">
+<h4 class="anchored" data-anchor-id="environmental-source-record">Environmental Source Record</h4>
+<p><strong>An Environmental Source Record is the collected biotic or abiotic tissue from the Environmental Source at time <em>t</em> using the same method</strong>. For example, the water obtained from a pond at time <em>t</em> across devices targeting water collection. This mean that air collected by any number of devices “X” deployed at the Environmental Source at time <em>t</em> to collect air is an Environmental Source Record and air collected by any number of devices “Y” deployed at the Environmental Source at time <em>t</em> to collect air is another Environmental Source Record. <strong>A key difference between the Environmental Source and the Group and Animal Sources is that an Event can contain multiple Environmental Source Records of the same Environmental Source (one per collection method) compared with Group and Animal Sources Records types that only have a single Source Record per Source per Event</strong>. The properties of an Environmental Source Record include the identifier, the cross identifier, the volume collected, the unit of the volume collected, among others (see Data Dictionary).</p>
+</section>
+</section>
+<section id="arthropod-source" class="level3">
+<h3 class="anchored" data-anchor-id="arthropod-source">Arthropod Source</h3>
+<p><strong>An Arthropod Source is a unit in space where collection of arthropods can be completed</strong> (e.g., a household in the forest where traps are set). Properties of an Arthropod Source include the identifier, the cross identifier, the area covered, among others (see Data Dictionary).</p>
+<p><strong>If the interest of the Surveillance Activity is at the arthropod individual level (e.g., butterflies with problems in their wings or with parasites), then the user should consider these arthropods as Animal Sources. Arthropods from Animals Sources (attached ticks, lice, fleas, mites) are Specimens from an Animal Source and not Arthropod Sources</strong>.</p>
+<section id="arthropod-source-record" class="level4">
+<h4 class="anchored" data-anchor-id="arthropod-source-record">Arthropod Source Record</h4>
+<p><strong>An Arthropod Source Record is the collected arthropods from the Arthropod Source at time <em>t</em> using the same method</strong>. For example, the number of mosquitoes obtained at the household in the forest at time <em>t</em> per species and age-sex-condition across the traps targeting the same group of arthropods. This mean that adult mosquitoes of <em>n</em> species collected by any number of CO2 traps deployed at the Arthropod Source at time <em>t</em> is an Arthropod Source Record and that adult mosquitoes of <em>n</em> species collected by any number of BG traps deployed at the Arthropod Source at time <em>t</em> is another Arthropod Source Record. <strong>A key difference between the Arthropod Source and the Group and Animal Sources is that an Event can contain multiple Arthropod Source Records of the same Arthropod Source (one per collection method) compared with Group and Animal Sources Records types that only have a single Source Record per Source per Event</strong>. The properties of an Arthropod Source Record include the identifier, the cross identifier, the species, the age, sex, condition of the females, the corresponding number, among others (see Data Dictionary).</p>
+<p>Sources can be clustered in units smaller than Event if needed. For a detailed explanation, see “Clustering of Locations, Events, and Source Records” section below.</p>
+</section>
+</section>
+</section>
+<section id="clustering-of-locations-events-and-source-records" class="level2">
+<h2 class="anchored" data-anchor-id="clustering-of-locations-events-and-source-records">Clustering of Locations, Events, and Source Records</h2>
+<!-- # Grouping of Locations, Events, and Sources {.unnumbered} -->
+<p>Following the standard units in the data model, the simplest data of a Field Visit is an Source Record found in a single Event in a single Location. However, depending on the methodology of a specific Surveillance Activity, Sources Records could be clustered in units that are clustered by Events. In the same manner, Events can be clustered by units that are clustered by Locations, and Locations can be clustered by units that are clustered by Field Visits:</p>
+<ul>
+<li>Field Activity<sub>w</sub>
+<ul>
+<li><strong>Cluster unit</strong><sub>𝛼</sub>
+<ul>
+<li><strong>Cluster unit</strong><sub>𝛽</sub>
+<ul>
+<li>Location<sub>x</sub>
+<ul>
+<li><strong>Cluster unit</strong><sub>γ</sub>
+<ul>
+<li><strong>Cluster unit</strong><sub>𝛿</sub>
+<ul>
+<li>Event<sub>y</sub>
+<ul>
+<li><strong>Cluster unit</strong><sub>𝜂</sub>
+<ul>
+<li>Source Record<sub>z</sub></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>A second layer of complexity is the addition of clustered units that are not nested. For example, the same structure shown before plus the cluster of Source Records per season of the year:</p>
+<ul>
+<li>Field Activity<sub>w</sub>
+<ul>
+<li><strong>Spatial Cluster unit</strong><sub>𝛼</sub>
+<ul>
+<li><strong>Spatial Cluster unit</strong><sub>𝛽</sub>
+<ul>
+<li>Location<sub>x</sub>
+<ul>
+<li><strong>Spatial Cluster unit</strong><sub>γ</sub>
+<ul>
+<li><strong>Spatial Cluster unit</strong><sub>𝛿</sub>
+<ul>
+<li>Event<sub>y</sub>
+<ul>
+<li><strong>Spatial Cluster unit</strong><sub>𝜂</sub></li>
+<li><strong>Temporal Cluster unit</strong><sub>д</sub>
+<ul>
+<li>Source Record<sub>z</sub></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>The data model considers the possibility to include clustering levels between the Source Record and Event, Event and Location, and Location and Field Visit. The data model also allows the inclusion of non-nested clustering units. Unavoidably, how many clustering levels are considered, what each of these clustering units represent, what are they clustering, and the data to be collected from each of these extra units will vary among Surveillance Activities. Therefore, clustering levels and their meaning must be reported in the Surveillance Activity metadata and the only properties for each level are the identifier, the cross identifier, the origin of the cross identifier, and a description.</p>
+<p>For example, the units Location, Event, and Source Record could be enough to record the data structure of a specific Surveillance Activity gathering information from Protected Areas (Locations) at points (Events) where dead animals (Source Records) are found any given time. However, another Surveillance Activity could have the following structure: protected area, zones within protected area (Location), grid cells within each zone, capture site with a pair of mist nests within each grid cell (Event), mist nets of the capture site, and bats captured (Source Records) per season.</p>
+<!-- Further characteristics of each clustering unit, whether static or time dependent through the Surveillance Activity period, should be prepared in a file, such as an excel sheet, with columns with the identifiers of all relevant units (Location grouping units. Event grouping units that are not the Location, and Source Record grouping units that are not the Event) and  attached it at the corresponding level. A recommendation is to prepared a sheet for the features of all spatio temporal grouping units visited during a Field Visit and attach it at this level (Field Visit). The columns with the identifiers will allow joining the data of the corresponding Field Visit (Locations, Events, Source Records, grouping units) with the attached and spatial data. -->
+<p>In another example, a Surveillance Activity involved sampling animals and cages in a market. One of the potential options to structure these data is to set the market as the Location and set each vendor within the market as an Event. Animals are in cages and cages are clustered in stalls. In one of the Events (a vendor), a sample of feces is collected from the bottom of a cage, the cage has three animals of the same species X, and only one of these three animals is sampled (Animal Source).</p>
+<p>In this scenario, the Sources (a Group Source Record with two animals of species X and a Animal Source Record), are clustered by cage (clustering unit 1), by stall (clustering group 2), Event (vendor), Location (market), and Field Activity.</p>
+</section>
+<section id="specimen" class="level2">
+<h2 class="anchored" data-anchor-id="specimen">Specimen</h2>
+<!-- # Specimens {.unnumbered} -->
+<section id="generalities-1" class="level4">
+<h4 class="anchored" data-anchor-id="generalities-1">Generalities</h4>
+<p>Specimens are tissue or material collected from Sources, other Specimens, and Diagnostic products (See Diagnostics) to conduct Diagnostics and identify hazards or other potential health threats. <strong>Specimens can originate from Sources at time <em>t</em>, but also from other Specimens, or Diagnostic Products</strong>.</p>
+<p>In the data model, a single Specimen can be composed of feces of a specific animal collected in the field mixed with water from a pond next to that Animal. Therefore, <strong>Specimens can be created using tissue collected from many Sources of different types</strong>.</p>
+<p>In the data model, a new Specimen can be created by mixing Specimens of any origin and Diagnostic Products. Therefore, <strong>Specimens can originate by mixing Specimens, or by mixing Diagnostic Products, or by mixing Specimens and Diagnostic Products. These are “Pooled Specimens”</strong>.</p>
+<p>Specimens are characterized by an identifier, the type of material (water, hair, kidney, animal), the original amount collected (e.g., ‘full animal’ or 0.35 mm), the current amount, their origin (Source Record, other Specimen, or Diagnostic Product), among others. Additionally, the data model can hold data on the storage location of Specimens (building, laboratory name, refrigerator name, etc.), their availability, ownership, current amount, and exportation processes (See Data Dictionary).</p>
+<p>Specimens without any amount of tissue left can be kept in the data model so the last storage, exportation processes, and its use in Diagnostic procedures can be tracked.</p>
+</section>
+<section id="specimens-from-source-records" class="level4">
+<h4 class="anchored" data-anchor-id="specimens-from-source-records">Specimens from Source Records</h4>
+<p>Specimens can be tissue collected from Sources at time <strong>t</strong> (from Source Records). These Specimens can range from the entire body of a living animal to conduct an ultrasound to a minimal amount of fluid (e.g., blood) to perform advanced assays. An example of Group Source Specimen is feces collected from the bottom of a cage with animals of the same species but it is unknown which of the animals dropped the feces. An example of Animal Source Specimen is 2 ml of blood taken from a lion. An example of Environmental Source Specimen is 10 grams of soil collected from a specific site. An example of Arthropod Source Specimen is a set mosquitoes of the same species coming from the same trap type collection. In vector-borne disease surveillance, this last type of Specimen are usually called “pools”.</p>
+<p>The data model does not accommodate Specimens that were collected after the last date a Source was observed. For example, it is possible to collect feces from an empty cage that a Group Source providing feces longitudinally was using until two days ago. In this case, the Specimen origin changes from the Group Source followed longitudinally to an Environmental Source (the cage). Using a clustering variable, it is possible to track that the Specimens are coming from the same cage, in one case with animals and in the last one without animals (clustering the Sources coming from the same cage).</p>
+<p><strong>An Group Source used directly for a Diagnostic (e.g., assessment of fat in carcasses of animals belonging to a specific herd) is not a Specimen</strong>.</p>
+<p>In the case of Animal Sources, new Specimens can be generated during a Necropsy (e.g., Specimens from the Carcass). In this case, the date of Specimen collection is not necessarily the date when the Animal Source was found, when the Carcass was collected, or when the animal died, but the date of the Necropsy (primary or secondary). It is possible to track if a Specimen was collected during the primary or secondary Necropsy based on the information entered for Specimens. <strong>An Animal Source used directly for a Diagnostic (e.g., X-rays in a live animal) is not a Specimen</strong></p>
+<p>In the case of Environmental Sources, its type determines the Specimen type. For example, a pond of water can only yield Specimens of type “water”.</p>
+</section>
+<section id="specimens-from-diagnostic-products" class="level4">
+<h4 class="anchored" data-anchor-id="specimens-from-diagnostic-products">Specimens from Diagnostic Products</h4>
+<p>Products generated by Diagnostic methods applied to a regular Specimen can be stored and used as Specimen in further Diagnostics (e.g., use cDNA created to complete Diagnostic A in a new RT-PCR Diagnostic B). The data model can accommodate Diagnostic Products to be use in future Diagnostics. In this case, the origin of these new “Specimens” is a specific Diagnostic and not a Source Record,m and its type is “Diagnostic Product”. The remaining properties of the new Specimen from a Diagnostic Product are the same (see Data Dictionary).</p>
+</section>
+<section id="pooled-specimens" class="level4">
+<h4 class="anchored" data-anchor-id="pooled-specimens">Pooled Specimens</h4>
+<p>Specimens can be created by mixing other Specimens of any origin. For example, mixing a Specimen from a Diagnostic Product, a Specimen from an Arthropod Source, a Specimen from an Animal Source, and a Specimen from an Environmental Source. The origin of Pooled Specimens is tracked in the data model. In the example, the origin will be associated with four Specimens. The remaining properties are the same (see Data Dictionary).</p>
+</section>
+<section id="specimens-in-containers" class="level4">
+<h4 class="anchored" data-anchor-id="specimens-in-containers">Specimens in Containers</h4>
+<p>In situations where space or materials are limited, it is possible that multiple Specimens are stored in a unique container. This approach is clearly not ideal because it can lead to cross-contamination and make actual Specimen tracing more complex. To address the tracing of these Specimens, a unique container identifier, such as a jar identifier, can be provided to the Specimen (see Data Dictionary). Specific properties for each individual Specimen within the container, such as type, quantity, etc, should allow their visual identification within the container.</p>
+</section>
+</section>
+<section id="relationships" class="level2">
+<h2 class="anchored" data-anchor-id="relationships">Relationships</h2>
+<p>A summary of the relationships in the data model is provided in the following figures:</p>
+<section id="for-animal-group-source" class="level3">
+<h3 class="anchored" data-anchor-id="for-animal-group-source">For Animal Group Source</h3>
+<p><img src="Pictures_and_diagrams/Relationships_Animal_Source.png" class="img-fluid" width="680"></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./manual.html" class="pagination-link">
+        <span class="nav-page-text">WildlHealthDB Manual</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
