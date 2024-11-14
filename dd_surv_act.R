@@ -144,17 +144,6 @@ surv_activity<-
       Mandatory="No"),   
     
     data.frame(
-      Variable="SurveillanceActivityNewSourceData",
-      Label="New Source Data", 
-      Definition="Answer to the question: 'Does the Surveillance Activity involve collecting new data from Sources?'
-      The answer is 'No' if the Surveillance Activity is using Source or Specimen data already available and generated as 
-      part of a different Surveillance Activity. The answer is 'Yes' when the Surveillance Activity involves collecting new data
-      from Sources exclusively or when the Surveillance Activity involves the collection of new data and also the use of data from
-      previous Surveillance Activity)",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
       Variable="SurveillanceActivityGroupSourcesIncluded",
       Label="Surveillance Activity Includes Grouped Animals", 
       Definition="Answer to the question: 'Does the Surveillance Activity include information of 
