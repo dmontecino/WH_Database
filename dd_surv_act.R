@@ -106,6 +106,14 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="SurveillanceActivitySite",
+      Label="Specific Sites Included in the Surveillance Activity", 
+      Definition="The sites (e.g., bat roosts, bird colonies, protected areas, etc.) 
+      where the Surveillance Activity takes place",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
       Variable="SurveillanceActivityPurpose",
       Label="Surveillance Activity Purpose", 
       Definition="Description of the objectives and goals of the Surveillance Activity",
@@ -147,9 +155,10 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityObservationsIncluded",
-      Label="Surveillance Activity Includes Observed-only Animals", 
-      Definition="Answer to the question: 'Does the Surveillance Activity include information of observed-only animals'",
+      Variable="SurveillanceActivityGroupSourcesIncluded",
+      Label="Surveillance Activity Includes Grouped Animals", 
+      Definition="Answer to the question: 'Does the Surveillance Activity include information of 
+      animals at a group-level (e.g., herd, pack, pen, cage, etc.)?'",
       Type="Boolean",
       Mandatory="Yes"),   
     
@@ -163,22 +172,24 @@ surv_activity<-
     data.frame(
       Variable="SurveillanceActivityEnvironmentalSourcesIncluded",
       Label="Surveillance Activity includes Environmental Sources", 
-      Definition="Answer to the question: 'Does the Surveillance Activity include information of Environmental Sources (e.g., water)?'",
+      Definition="Answer to the question: 'Does the Surveillance Activity include information of Environmental Sources 
+      (e.g., sites where water can be collected)?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityInvertebrateSourcesIncluded",
-      Label="Surveillance Activity Includes Invertebrate Sources", 
-      Definition="Answer to the question: 'Does the surveillance objective include information from Invertebrate sources (e.g., CO2 traps)?'",
+      Variable="SurveillanceActivityArthropodSourcesIncluded",
+      Label="Surveillance Activity Includes Arthropod Sources", 
+      Definition="Answer to the question: 'Does the Surveillance Activity include information from Arthropod Sources
+      (e.g., sites where CO2 traps can be placed to collect mosquitoes)?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityNewObservationRecordsAdded",
-      Label="New Observations Records", 
+      Variable="SurveillanceActivityNewGroupsSourceRecordsAdded",
+      Label="New Group Source Records", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve the documentation of new 
-      Observation Records?'",
+      Group Source Records?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
@@ -200,9 +211,9 @@ surv_activity<-
     
     data.frame(
       Variable="SurveillanceActivityNewInvertebrateSourceRecordsAdded",
-      Label="New Invertebrate Source Records", 
+      Label="New Arthropod Source Records", 
       Definition="Answer to the question: 'Does the Surveillance Activity include the documentation of new 
-      Invertebrate Source Records (e.g., new invertebrate collection)?'",
+      Arthropod Source Records (e.g., new invertebrate collection)?'",
       Type="Boolean",
       Mandatory="Yes"),    
     
