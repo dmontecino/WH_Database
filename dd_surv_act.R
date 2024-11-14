@@ -206,9 +206,17 @@ surv_activity<-
       Type="Boolean",
       Mandatory="Yes"),    
     
+    data.frame(
+      Variable="SurveillanceActivityActiveCollection",
+      Label="Surveillance Activity Involves Active Collection of Source Records", 
+      Definition="Answer to the question: 'Does the surveillance objective include 
+      active collection of Source Records (e.g., observation post, patrolling, transect, survey, 
+      capturing, collection, camera trapping, movement tracking. etc.)?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivitySpecimens",
+      Variable="SurveillanceActivityNewSpecimens",
       Label="New Specimens", 
       Definition="Answer to the question: 'Are new Specimens collected under the Surveillance Activity?",
       Type="Boolean",
@@ -220,7 +228,6 @@ surv_activity<-
       Definition="Answer to the question: 'Does the Surveillance Activity creates new diagnostic products?",
       Type="Boolean",
       Mandatory="Yes"),    
-    
     
     data.frame(
       Variable="SurveillanceActivityNewPooledSpecimens",
@@ -435,10 +442,41 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="SurveillanceActivityLocationClustering",
+      Label="Locations Are Clustered",
+      Definition="Answer to the question: 'Are Locations associated with the current 
+      Surveillance Activity clustered in units smaller than 'Field Visit'?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityLocationClusteringStructure",
+      Label="Clustering of Locations",
+      Definition="Explain the cluster structure of the Locations below 'Field Visit'
+      (e.g., The Locations are subsistence farms clustered by zone within a protected area. 
+      So farms [Locations], within zones [cluster])",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityLocationClusterSpatialFileProvided",
+      Label="Location Clusters File Provided",
+      Definition="'Answer to the question: 'Are the Location clusters provided as a spatial file (.shp, .geojson, other)?'" ,
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityLocationClusteringProjection",
+      Label="Spatial Projection of Location Clusters Spatial File",
+      Definition="The spatial projection of Location clusters spatial file" ,
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
       Variable="SurveillanceActivityEventUnitOfInterest",
       Label="The Event Is a Unit of Interest",
-      Definition="Answer to the question: 'Is the Event (and its associated longitude, latitude, and time) 
-      a unit of interest for the Surveillance Activity?'" ,
+      Definition="Answer to the question: 'Is the Event (and its associated longitude, latitude, 
+      and time) a unit of interest for the Surveillance Activity?'" ,
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -451,54 +489,70 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityEventGrouping",
-      Label="Events Are Grouped",
+      Variable="SurveillanceActivityEventClustering",
+      Label="Events Are Clustered",
       Definition="Answer to the question: 'Are Events associated with the current 
       Surveillance Activity clustered in units smaller than 'Location'?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityEventGroupingStructure",
-      Label="Grouping of Events",
-      Definition="Explain the grouping structure of the Events below 'location'
+      Variable="SurveillanceActivityEventClusteringStructure",
+      Label="Clustering of Events",
+      Definition="Explain the cluster structure of the Events below 'location'
       (e.g., The location is a market. The events are stalls of each vendor in the market. 
-      The Events are grouped by vendor in each market. So stalls [events], 
-      within vendors [group], within markets [location])",
+      The Events are clustered by vendor in each market. So stalls [events], 
+      within vendors [cluster], within markets [location])",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityEventGroupsSpatialFileProvided",
-      Label="Event Groups File Provided",
-      Definition="'Answer to the question: 'Are the Event groups provided as a spatial file (.shp, .geojson, other)?'" ,
+      Variable="SurveillanceActivityEventClusterSpatialFileProvided",
+      Label="Event Clusters File Provided",
+      Definition="'Answer to the question: 'Are the Event clusters provided as a spatial file (.shp, .geojson, other)?'" ,
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityEventGroupsProjection",
-      Label="Spatial Projection of Event Groups Spatial File",
-      Definition="The spatial projection of Event groups file provided as a spatial file" ,
+      Variable="SurveillanceActivityEventClusteringProjection",
+      Label="Spatial Projection of Event Clusters Spatial File",
+      Definition="The spatial projection of Event clusters spatial file" ,
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordGrouping",
-      Label="Source Records Are Grouped",
+      Variable="SurveillanceActivitySourceRecordClustering",
+      Label="Source Records Are Clustered",
       Definition="Answer to the question: 'Are Source Records associated with the current 
       Surveillance Activity clustered in units smaller than 'Event'?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordGroupingStructure",
-      Label="Grouping of Source Records",
-      Definition="Explain the grouping structure of the Source Records below 'Event' 
+      Variable="SurveillanceActivitySourceRecordClusteringStructure",
+      Label="Clustering of Source Records",
+      Definition="Explain the clusetring structure of the Source Records below 'Event' 
       (e.g., Events represent a stall in a market. Source records (animals in the stall) 
-      are grouped by cage in each stall)",
+      are clustered by cage in each stall [clustering by cage])",
       Type="String",
       Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityTemporalClustering",
+      Label="Temporal Clustering",
+      Definition="Answer to the question: 'Are the data in the current 
+      Surveillance Activity clustered temporally?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityTemporalClusteringStructure",
+      Label="Clustering by Temporal Units",
+      Definition="Explain the clustering structure per time unit 
+      (e.g., Events represent a stall in a market. The market is visited once per season. 
+      Each season is a temporal cluster grouping Locations, Events, and Source Records)",
+      Type="String",
+      Mandatory="Yes"),   
     
     data.frame(
       Variable="SurveillanceActivityLab",
