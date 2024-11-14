@@ -51,13 +51,6 @@ location<-
       Type="Single selection",
       Mandatory="Yes"), 
     
-    #> to know what should be expected for the location and potentially
-    #> create an arthropod source record from several arthropod sources (1 by envet)
-    #>  at the current location (e.g., when the arthropods at the location are relevant 
-    #>  but the specific traps ((sources) positions, etc, are not), Bring the collection
-    #>  of arthropods at the location level by creating a source record from multiple
-    #>  sources.
-    
     data.frame(
       Variable="LocationTargetedRecords",
       Label="Location Targeted Records",
