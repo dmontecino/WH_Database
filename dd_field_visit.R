@@ -49,9 +49,30 @@ field_visit<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="FieldVisitDescription",
-      Label="Field Visit Description",
-      Definition="The background for the Field Visit (e.g., why, who, how, where, what for)" ,
+      Variable="FieldVisitWho",
+      Label="Field Visit People Participating",
+      Definition="Mention who is participating in the Field Visit" ,
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="FieldVisitWhere",
+      Label="Field Visit Places Visited",
+      Definition="Briefly describe the places to be visited during the Field Visit" ,
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="FieldVisitWhat",
+      Label="Field Visit  Activities Conducted",
+      Definition="Briefly describe the activities conducted during the Field Visit" ,
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="FieldVisitPurpose",
+      Label="Field Visit Purpose",
+      Definition="Briefly describe the purpose of the Field Visit" ,
       Type="String",
       Mandatory="Yes"),
     
@@ -67,7 +88,7 @@ field_visit<-
       Label="Field Visit End Date",
       Definition="The date the Field Visit ended or the anticipated ending date" ,
       Type="Date",
-      Mandatory="Yes"))
+      Mandatory="No"))
 
 field_visit<-
   field_visit %>% bind_rows() |> 
