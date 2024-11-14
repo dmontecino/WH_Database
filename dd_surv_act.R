@@ -6,12 +6,12 @@ surv_activity<-
   
   list(
     
-    data.frame(
-      Variable="Project Name",
-      Label="Project Name",
-      Definition="The name of the Project containing the Surveillance Activity",
-      Type="Single selection",
-      Mandatory="Yes"), 
+    # data.frame(
+    #   Variable="Project Name",
+    #   Label="Project Name",
+    #   Definition="The name of the Project containing the Surveillance Activity",
+    #   Type="Single selection",
+    #   Mandatory="Yes"), 
     
     data.frame(
       Variable="WildlifeHealth_SurveillanceActivityID",
@@ -45,8 +45,8 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="TypeSurveillanceActivity",
-      Label="Type of Surveillance Activity", 
+      Variable="SurveillanceActivityType",
+      Label="Surveillance Activity Type", 
       Definition="The type of surveillance associated with the Surveillance Activity
       (e.g., Targeted, Scanning, Outbreak Investigation, or Research). If two or more
       surveillance types are involved, then two or more Surveillance Activities are needed
@@ -55,16 +55,16 @@ surv_activity<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="GrantName",
-      Label="Grant Name", 
+      Variable="SurveillanceActivityGrantName",
+      Label="Surveillance Activity Grant Name", 
       Definition="The name of the grant funding the Surveillance Activity. If there is not a 
       grant involved, type 'N/A'",
       Type="String",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="GrantNumber",
-      Label="Grant Number", 
+      Variable="SurveillanceActivityGrantNumber",
+      Label="Surveillance Activity Grant Number", 
       Definition="The number of the grant funding the Surveillance Activity",
       Type="String",
       Mandatory="No"), 
@@ -78,7 +78,7 @@ surv_activity<-
     
     data.frame(
       Variable="SurveillanceActivityLeaderOrganization",
-      Label="Leader Organization", 
+      Label="Surveillance Activity Leader Organization", 
       Definition="The affiliation of the person leading the Surveillance Activity",
       Type="Single selection",
       Mandatory="Yes"),
@@ -92,7 +92,7 @@ surv_activity<-
     
     data.frame(
       Variable="SurveillanceActivityOrganizationsInvolved",
-      Label="Organizations Involved", 
+      Label="Surveillance Activity Organizations Involved", 
       Definition="Organizations/partners/institutions involved in the execution of 
       the Surveillance Activity (e.g., Laboratories, NGOs, etc.)",
       Type="Multiple selection",
@@ -234,7 +234,7 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNewDiagnositcProducts",
+      Variable="SurveillanceActivityNewDiagnosticProducts",
       Label="New Diagnostic Products", 
       Definition="Answer to the question: 'Does the Surveillance Activity creates new diagnostic products?",
       Type="Boolean",
@@ -403,7 +403,7 @@ surv_activity<-
     
     data.frame(
       Variable="SurveillanceActivityIACUCNeeded",
-      Label="IACUC Needed",
+      Label="Surveillance ActivityIACUC Needed",
       Definition="Answer to the question: 'Is an IACUC needed to conduct the Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
@@ -567,7 +567,7 @@ surv_activity<-
     
     data.frame(
       Variable="SurveillanceActivityLab",
-      Label="Participating Laboratories", 
+      Label="Surveillance Activity Participating Laboratories", 
       Definition="The laboratories associated with the Surveillance Activity",
       Type="Multiple selection",
       Mandatory="Yes"),    
