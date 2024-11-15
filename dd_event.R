@@ -32,6 +32,14 @@ event<-
       Mandatory="No"),
     
     data.frame(
+      Variable="EventDate",
+      Label="Event Date", 
+      Definition="The date and time of the Event. Observation, capture, patrol, or collection efforts
+      can be established in the Collection associated fields",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
       Variable="EventLongitude",
       Label="Longitude", 
       Definition="Longitude coordinate. Non decimal degree coordinates are automatically converted. 
@@ -65,6 +73,22 @@ event<-
       Mandatory="Yes"), 
     
     data.frame(
+      Variable="EventCoordinatesExactOrEstimated",
+      Label="Event Coordinates Exact Or Estimated", 
+      Definition="Indicate weather the longitude and latitude coordinates are exact (GPS device)
+      or estimated based on another method (e.g., by pointinf the location in the map above)",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="EventOriginalCRS",
+      Label="Original Coordinate Reference System tro report the longitude and latitude of the Event", 
+      Definition="Indicate weather the longitude and latitude coordinates are exact (GPS device)
+      or estimated based on another method (e.g., by pointinf the location in the map above)",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
       Variable="EventCountry",
       Label="Country", 
       Definition="Country where the Event happens",
@@ -85,14 +109,14 @@ event<-
       Type="Single selection",
       Mandatory="No"),   
     
-    data.frame(
-      Variable="EventUnit",
-      Label="Event unit", 
-      Definition="Explanation of what the Event represents (e.g., a field finding, 
-      a market, a vendor, a cage, a grid cell, a point in a transect, a mist net, 
-      a point in a parcel, a point in a protected area, etc.)",
-      Type="Single selection",
-      Mandatory="Yes"), 
+    # data.frame(
+    #   Variable="EventUnit",
+    #   Label="Event unit", 
+    #   Definition="Explanation of what the Event represents (e.g., a field finding, 
+    #   a market, a vendor, a cage, a grid cell, a point in a transect, a mist net, 
+    #   a point in a parcel, a point in a protected area, etc.)",
+    #   Type="Single selection",
+    #   Mandatory="Yes"), 
     
     data.frame(
       Variable="EventFeatures",
@@ -101,6 +125,13 @@ event<-
       (e.g., fire, smoke, etc)",
       Type="Multiple selection",
       Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventOtherFeatures",
+      Label="Other Event Features", 
+      Definition="Other findings at the Event that are dynamic over time not listed in the previous attribute",
+      Type="Multiple selection",
+      Mandatory="No"),
     
     data.frame(
       Variable="EventBy",
@@ -116,13 +147,13 @@ event<-
       Type="Single selection",
       Mandatory="No"), 
   
-    data.frame(
-      Variable="EventTargetedRecords",
-      Label="Event Targeted Records",
-      Definition="Indicate what type of Records (Group, Animal, Environmental,
-      or from Arthropod Sources) are targeted in the Event",
-      Type="Multiple selection",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="EventTargetedRecords",
+    #   Label="Event Targeted Records",
+    #   Definition="Indicate what type of Records (Group, Animal, Environmental,
+    #   or from Arthropod Sources) are targeted in the Event",
+    #   Type="Multiple selection",
+    #   Mandatory="Yes"),
     
     # --- if Group Source is selected
     
@@ -170,167 +201,157 @@ event<-
     
     
     
-    data.frame(
-      Variable="EventSmartSource",
-      Label="Event from SMART", 
-      Definition="Answer to the question: 'Was the Event recorded using SMART?'",
-      Type="Single selection",
-      Mandatory="No"), 
+    # data.frame(
+    #   Variable="EventSmartSource",
+    #   Label="Event from SMART", 
+    #   Definition="Answer to the question: 'Was the Event recorded using SMART?'",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
+    # 
+    # 
+    # data.frame(
+    #   Variable="EventSiteCode",
+    #   Label="Site code", 
+    #   Definition="The site the Events are grouped by site",
+    #   Type="Single selection",
+    #   Mandatory="No"),   
+    # 
+    # data.frame(
+    #   Variable="EventZoneCode",
+    #   Label="Zone code", 
+    #   Definition="The zone the Events are grouped by zone",
+    #   Type="Single selection",
+    #   Mandatory="No"),  
+    # 
+    # data.frame(
+    #   Variable="EventMarketCode",
+    #   Label="Market code", 
+    #   Definition="The market the Events are grouped by market",
+    #   Type="Single selection",
+    #   Mandatory="No"),
+    # 
+    # data.frame(
+    #   Variable="EventGridCode",
+    #   Label="Grid code", 
+    #   Definition="The grid code the when Events are grouped by grid",
+    #   Type="Single selection",
+    #   Mandatory="No"),
+    # 
+    # data.frame(
+    #   Variable="EventGridCellCode",
+    #   Label="Grid cell code", 
+    #   Definition="The grid cell code when Events are grouped by grid cell",
+    #   Type="Single selection",
+    #   Mandatory="No"),
+    # 
+    # data.frame(
+    #   Variable="EventStationCode",
+    #   Label="Station code", 
+    #   Definition="The station code when Events are grouped by station",
+    #   Type="Single selection",
+    #   Mandatory="No"),  
+    # 
+    # data.frame(
+    #   Variable="EventTransectCode",
+    #   Label="Transect code", 
+    #   Definition="The transect code when Events are grouped by transect",
+    #   Type="Single selection",
+    #   Mandatory="No"),     
+    # 
+    # data.frame(
+    #   Variable="EventVendorCode",
+    #   Label="Vendor code", 
+    #   Definition="The vendor code when Events are grouped by vendor",
+    #   Type="Single selection",
+    #   Mandatory="No"),  
+    # 
+    # data.frame(
+    #   Variable="EventTrapCode",
+    #   Label="Trap code", 
+    #   Definition="The vendor code when Events are grouped by trap",
+    #   Type="Single selection",
+    #   Mandatory="No"),      
+    # 
+    # data.frame(
+    #   Variable="EventMistNetCode",
+    #   Label="Mist net code", 
+    #   Definition="The mist net code when Events are grouped by mist net code",
+    #   Type="Single selection",
+    #   Mandatory="No"),     
+    # 
+    # data.frame(
+    #   Variable="EventOtherSpatialUnitCode",
+    #   Label="Other spatial unit code", 
+    #   Definition="The spatial unit code when Events are grouped by another spatial unit",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
+    # 
+    # data.frame(
+    #   Variable="EventStudyYear",
+    #   Label="The study year", 
+    #   Definition="The temporal unit code when Events are grouped by year unit",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
+    # 
+    # data.frame(
+    #   Variable="EventStudySeason",
+    #   Label="The study season", 
+    #   Definition="The temporal unit code when Events are grouped by study season",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
+    # 
+    # data.frame(
+    #   Variable="EventStudyMonth",
+    #   Label="The study month", 
+    #   Definition="The temporal unit code when Events are grouped by month",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
+    # 
+    # data.frame(
+    #   Variable="EventStudyWeek",
+    #   Label="The study week", 
+    #   Definition="The temporal unit code when Events are grouped by week",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
+    # 
+    # data.frame(
+    #   Variable="EventStudyDayPeriod",
+    #   Label="The study day period", 
+    #   Definition="The temporal unit code when Events are grouped by study day",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
+    # 
+    # data.frame(
+    #   Variable="EventStudyHour",
+    #   Label="The study hour", 
+    #   Definition="The temporal unit code when Events are grouped by study hour",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
+    # 
+    # data.frame(
+    #   Variable="EventOtherTemporalUnit",
+    #   Label="Other spatial temporal unit code", 
+    #   Definition="The temporal unit code when Events are grouped by another temporal unit",
+    #   Type="Single selection",
+    #   Mandatory="No"), 
     
-    
-    data.frame(
-      Variable="EventSiteCode",
-      Label="Site code", 
-      Definition="The site the Events are grouped by site",
-      Type="Single selection",
-      Mandatory="No"),   
-    
-    data.frame(
-      Variable="EventZoneCode",
-      Label="Zone code", 
-      Definition="The zone the Events are grouped by zone",
-      Type="Single selection",
-      Mandatory="No"),  
-    
-    data.frame(
-      Variable="EventMarketCode",
-      Label="Market code", 
-      Definition="The market the Events are grouped by market",
-      Type="Single selection",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="EventGridCode",
-      Label="Grid code", 
-      Definition="The grid code the when Events are grouped by grid",
-      Type="Single selection",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="EventGridCellCode",
-      Label="Grid cell code", 
-      Definition="The grid cell code when Events are grouped by grid cell",
-      Type="Single selection",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="EventStationCode",
-      Label="Station code", 
-      Definition="The station code when Events are grouped by station",
-      Type="Single selection",
-      Mandatory="No"),  
-    
-    data.frame(
-      Variable="EventTransectCode",
-      Label="Transect code", 
-      Definition="The transect code when Events are grouped by transect",
-      Type="Single selection",
-      Mandatory="No"),     
-    
-    data.frame(
-      Variable="EventVendorCode",
-      Label="Vendor code", 
-      Definition="The vendor code when Events are grouped by vendor",
-      Type="Single selection",
-      Mandatory="No"),  
-    
-    data.frame(
-      Variable="EventTrapCode",
-      Label="Trap code", 
-      Definition="The vendor code when Events are grouped by trap",
-      Type="Single selection",
-      Mandatory="No"),      
-    
-    data.frame(
-      Variable="EventMistNetCode",
-      Label="Mist net code", 
-      Definition="The mist net code when Events are grouped by mist net code",
-      Type="Single selection",
-      Mandatory="No"),     
-    
-    data.frame(
-      Variable="EventOtherSpatialUnitCode",
-      Label="Other spatial unit code", 
-      Definition="The spatial unit code when Events are grouped by another spatial unit",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
-      Variable="EventStudyYear",
-      Label="The study year", 
-      Definition="The temporal unit code when Events are grouped by year unit",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
-      Variable="EventStudySeason",
-      Label="The study season", 
-      Definition="The temporal unit code when Events are grouped by study season",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
-      Variable="EventStudyMonth",
-      Label="The study month", 
-      Definition="The temporal unit code when Events are grouped by month",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
-      Variable="EventStudyWeek",
-      Label="The study week", 
-      Definition="The temporal unit code when Events are grouped by week",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
-      Variable="EventStudyDayPeriod",
-      Label="The study day period", 
-      Definition="The temporal unit code when Events are grouped by study day",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
-      Variable="EventStudyHour",
-      Label="The study hour", 
-      Definition="The temporal unit code when Events are grouped by study hour",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
-      Variable="EventOtherTemporalUnit",
-      Label="Other spatial temporal unit code", 
-      Definition="The temporal unit code when Events are grouped by another temporal unit",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    
-    
-    
-    data.frame(
-      Variable="EventDate",
-      Label="Event Date", 
-      Definition="The date and time of the Event. If the Event is a period of time (e.g, 
-      mist-nets to capture bats) then the end time and date can be obtained from the effort
-      associated fields (see below)",
-      Type="String",
-      Mandatory="Yes"),   
-    
-    data.frame(
-      Variable="EventTimeAssembled",
-      Label="Time assembled", 
-      Definition="The time a trap or similar representing an Event is set up",
-      Type="Datetime",
-      Mandatory="No"),    
-    
-    data.frame(
-      Variable="EventTimeDisassembled",
-      Label="Time disassembled", 
-      Definition="The time a trap or similar representing an Event is dissamsembled",
-      Type="Datetime",
-      Mandatory="No")     
-    
-  )
+
+  #   
+  #   data.frame(
+  #     Variable="EventTimeAssembled",
+  #     Label="Time assembled", 
+  #     Definition="The time a trap or similar representing an Event is set up",
+  #     Type="Datetime",
+  #     Mandatory="No"),    
+  #   
+  #   data.frame(
+  #     Variable="EventTimeDisassembled",
+  #     Label="Time disassembled", 
+  #     Definition="The time a trap or similar representing an Event is dissamsembled",
+  #     Type="Datetime",
+  #     Mandatory="No")     
+  #   
+  # )
 
 event<-
   event %>% bind_rows() |> 
