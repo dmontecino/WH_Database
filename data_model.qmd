@@ -54,11 +54,14 @@ Data in the WildHealthDB is organized in units that are generally hierarchical, 
 
 A summary of the relationships in the data model is provided in the following figures:
 
-### For Group, Environmental, and Arthropod Source
+### For Group Source
 
-![](Pictures_and_diagrams/Relationships_Other_Source.png){width="680"}
+![](Pictures_and_diagrams/Relationships_Group_Source.png){width="680"}
 
 ### For Animal Source
 
 ![](Pictures_and_diagrams/Relationships_Animal_Source.png){width="680"}
+### For Environmental and Arthropod Source
+
+![](Pictures_and_diagrams/Relationships_Other_Source.png){width="680"}
 
