@@ -61,6 +61,7 @@ A summary of the relationships in the data model is provided in the following fi
 ### For Animal Source
 
 ![](Pictures_and_diagrams/Relationships_Animal_Source.png){width="680"}
+
 ### For Environmental and Arthropod Source
 
 ![](Pictures_and_diagrams/Relationships_Other_Source.png){width="680"}
