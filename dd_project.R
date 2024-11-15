@@ -41,21 +41,21 @@ project<-
       Label="Project Countries", 
       Definition="The countries where the Project takes place",
       Type="Multiple selection",
-      Mandatory="Yes. Provide at least one option"),
+      Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectFunderOrganization",
       Label="Project Funder Organization", 
       Definition="The organizations providing the funding to conduct the Project",
       Type="Multiple selection", 
-      Mandatory="Yes. Provide at least one option"),
+      Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectLeadingOrganization",
       Label="Project Leading Organization", 
       Definition="The organization/institution leading the Project execution",
       Type="Single selection",
-      Mandatory="Yes. Provide at least one option"),
+      Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectLeader",
@@ -70,7 +70,7 @@ project<-
       Definition="Other organizations/partners/institutions involved in the execution of 
       the Project (e.g., Laboratories, NGOs, etc.)",
       Type="Multiple selection",
-      Mandatory="No"),
+      Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectPurpose",
@@ -96,29 +96,29 @@ project<-
       to select high taxonomy levels such as 'mammals', 'chordata', 'Insecta', etc. to indicate that
       no particular species is targeted",
       Type="Multiple selection",
-      Mandatory="No"),
+      Mandatory="Yes"),
     
     data.frame(
-      Variable="ProjectObservationSource",
-      Label="Observation Source Species",
-      Definition="Species of the animals of interest for the Project as Observation Sources. 
+      Variable="ProjectGroupSourceSpecies",
+      Label="Group Source Species",
+      Definition="Species of the animals of interest for the Project as Group Sources. 
       It is possible to select high taxonomy levels such as 'mammals', 'chordata', 'Insecta' etc. to 
       indicate that no particular species is targeted",
       Type="Multiple selection",
-      Mandatory="No"),
+      Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectEnvironmentalSource",
       Label="Environmental Source Types",
       Definition="The type(s) of Environmental Source(s) of interest for the Project",
       Type="Multiple selection",
-      Mandatory="No"),
+      Mandatory="Yes"),
     
     data.frame(
-      Variable="ProjectInvertebrateSource",
-      Label="Invertebrate Source Species",
-      Definition="Species of invertebrate that cause or transmit diseases collected 'off-host' that
-      are of interest for the Project as Invertebrate Sources. It is possible to select high taxonomy
+      Variable="ProjectArthropodSource",
+      Label="Arthropod Source Species",
+      Definition="Species of arthropod that cause or transmit diseases collected 'off-host' that
+      are of interest for the Project as Arthropod Sources. It is possible to select high taxonomy
       levels such as 'Diptera', 'Insecta', etc. to indicate that no particular species is  targeted",
       Type="Multiple selection",
       Mandatory="No"),
