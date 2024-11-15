@@ -51,7 +51,7 @@ surv_activity<-
       (e.g., Targeted, Scanning, Outbreak Investigation, or Research). If two or more
       surveillance types are involved, then two or more Surveillance Activities are needed
       so each one receives a single type of surveillance",
-      Type="Single selection",
+      Type="Multiple selection",
       Mandatory="Yes"), 
     
     data.frame(
@@ -67,7 +67,7 @@ surv_activity<-
       Label="Surveillance Activity Grant Number", 
       Definition="The number of the grant funding the Surveillance Activity",
       Type="String",
-      Mandatory="No"), 
+      Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivityLeader",
@@ -476,9 +476,9 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityLocationClusteringProjection",
+      Variable="SurveillanceActivityLocationClusterSpatialProjection",
       Label="Spatial Projection of Location Clusters Spatial File",
-      Definition="The spatial projection of Location clusters spatial file" ,
+      Definition="The spatial projection of the Location clusters spatial file" ,
       Type="String",
       Mandatory="Yes"),
     
@@ -494,7 +494,7 @@ surv_activity<-
       Variable="SurveillanceActivityEventRepresents",
       Label="Event Description",
       Definition="A description of what each Event represents in the Surveillance Activity 
-      (e.g., a trap, a stall, the location of a health event, etc.)" ,
+      (e.g., a trap, a stall, the site of a health event, etc.)" ,
       Type="String",
       Mandatory="Yes"),
     
@@ -524,9 +524,9 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityEventClusteringProjection",
-      Label="Spatial Projection of Event Clusters Spatial File",
-      Definition="The spatial projection of Event clusters spatial file" ,
+      Variable="SurveillanceActivityEventClusterSpatialFileProjection",
+      Label="Spatial Projection of the Event Clusters Spatial File",
+      Definition="The spatial projection of the Event clusters spatial file" ,
       Type="String",
       Mandatory="Yes"),
     
