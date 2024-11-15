@@ -174,46 +174,57 @@ surv_activity<-
       Type="Boolean",
       Mandatory="Yes"),  
     
-    data.frame(
-      Variable="SurveillanceActivityNewGroupsSourceRecordsAdded",
-      Label="New Group Source Records", 
-      Definition="Answer to the question: 'Does the Surveillance Activity involve the documentation of new 
-      Group Source Records?'",
-      Type="Boolean",
-      Mandatory="Yes"),  
+    # data.frame(
+    #   Variable="SurveillanceActivityNewGroupsSourceRecordsAdded",
+    #   Label="New Group Source Records", 
+    #   Definition="Answer to the question: 'Does the Surveillance Activity involve the documentation of new 
+    #   Group Source Records?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),  
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivityNewAnimalSourceRecordsAdded",
+    #   Label="New Animal Source Records", 
+    #   Definition="Answer to the question: 'Does the Surveillance Activity involve the documentation of new 
+    #   Animal Source Records?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),    
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivityNewEnvironmentalSourceRecordsAdded",
+    #   Label="New Environmental Source Records", 
+    #   Definition="Answer to the question: 'Does the Surveillance Activity include the documentation of new 
+    #   Environmental Source Records (e.g., water)?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),    
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivityNewInvertebrateSourceRecordsAdded",
+    #   Label="New Arthropod Source Records", 
+    #   Definition="Answer to the question: 'Does the Surveillance Activity include the documentation of new 
+    #   Arthropod Source Records (e.g., new invertebrate collection)?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),    
+    
     
     data.frame(
-      Variable="SurveillanceActivityNewAnimalSourceRecordsAdded",
-      Label="New Animal Source Records", 
-      Definition="Answer to the question: 'Does the Surveillance Activity involve the documentation of new 
-      Animal Source Records?'",
-      Type="Boolean",
-      Mandatory="Yes"),    
-    
-    data.frame(
-      Variable="SurveillanceActivityNewEnvironmentalSourceRecordsAdded",
-      Label="New Environmental Source Records", 
-      Definition="Answer to the question: 'Does the Surveillance Activity include the documentation of new 
-      Environmental Source Records (e.g., water)?'",
-      Type="Boolean",
-      Mandatory="Yes"),    
-    
-    data.frame(
-      Variable="SurveillanceActivityNewInvertebrateSourceRecordsAdded",
-      Label="New Arthropod Source Records", 
-      Definition="Answer to the question: 'Does the Surveillance Activity include the documentation of new 
-      Arthropod Source Records (e.g., new invertebrate collection)?'",
-      Type="Boolean",
-      Mandatory="Yes"),    
-    
-    data.frame(
-      Variable="SurveillanceActivityActiveCollection",
-      Label="Surveillance Activity Involves Active Collection of Source Records", 
-      Definition="Answer to the question: 'Does the surveillance objective include 
-      active collection of Source Records (e.g., observation post, patrolling, transect, survey, 
-      capturing, collection, camera trapping, movement tracking. etc.)?'",
+      Variable="SurveillanceActivityNewSourceRecords",
+      Label="Surveillance Activity Involves New Source Records", 
+      Definition="Answer to the question: 'Does the surveillance objective includes creating
+      new Source Records (e.g., go to the field and capture animals, collect water, or 
+      document dead animals found in a ranger patrol)?'",
       Type="Boolean",
       Mandatory="Yes"), 
+    
+    # data.frame(
+    #   Variable="SurveillanceActivityActiveCollection",
+    #   Label="Surveillance Activity Involves Active Collection of Source Records", 
+    #   Definition="Answer to the question: 'Does the surveillance objective include 
+    #   active collection of Source Records (e.g., observation post, patrolling, transect, 
+    #   capturing, collection, camera trapping, movement tracking. etc.)?' Passive collection include
+    #   news or social media articles, citizen reports, databases",
+    #   Type="Boolean",
+    #   Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivityNewSpecimens",
@@ -236,6 +247,8 @@ surv_activity<-
       Type="Boolean",
       Mandatory="Yes"),
     
+    # ------- Biological Hazard Types 
+    
     data.frame(
       Variable="=SurveillanceActivityBiologicalHazard",
       Label="Biological Hazards",
@@ -244,7 +257,6 @@ surv_activity<-
       Type="Multiple selection", 
       Mandatory="No"),
     
-    # ------- Biological Hazard Types 
     
     data.frame(
       Variable="=SurveillanceActivityVirusHazard",
@@ -319,7 +331,7 @@ surv_activity<-
       Type="Multiple selection", 
       Mandatory="No"),
     
-    # --------------------------------
+    # ------- Chemical Hazard Types 
     
     data.frame(
       Variable="=SurveillanceActivityChemicalHazard",
@@ -328,8 +340,6 @@ surv_activity<-
       (e.g., 'Heavy Metal', 'Organochlorine Pesticides', 'Cholinesterase-inhibbiting Pesticide', 'Toxins')",
       Type="Multiple selection", 
       Mandatory="No"),
-    
-    # ------- Chemical Hazard Types 
     
     data.frame(
       Variable="=SurveillanceActivityHeavyMetalHazard",
@@ -365,7 +375,7 @@ surv_activity<-
       Type="Multiple selection", 
       Mandatory="No"),
     
-    # --------------------------------
+    # -Physical Hazards
     
     data.frame(
       Variable="=SurveillanceActivityPhysicalHazard",
@@ -375,7 +385,7 @@ surv_activity<-
       Type="Multiple selection", 
       Mandatory="No"),
     
-    # --------------------------------
+    # -# -Biological Hazards
     
     data.frame(
       Variable="=SurveillanceActivityPhysiologicalHazard",
