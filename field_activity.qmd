@@ -1,3 +1,6 @@
 <!-- # Field Visit {.unnumbered} -->
 
-A Field Activity in the data model represents a visit to the field within a specific time period, including a start and end date, to find Events, Sources, and Specimens (see below) and document data from them. A Field Visit can include visits to various types of Locations, such as markets, natural areas, rehabilitation centers, caves, etc that are completed within the same trip and common start and end date.
+A Field Visit in the data model represents a time period, including a start and end date, to visit Locations, identify Events and Sources, and collect Specimens (see below) and document data from them. A Field Visit can include various types of Locations, such as markets, natural areas, rehabilitation centers, caves, etc. that are completed within the same trip and common start and end date.
+
+
+Properties of a Field Visit include the start and end date, a unique identifier, the cross referential identifier, the leader of the visit, among others (see Data Dictionary). If the data of interest per Field Activity includes attributes that are not part of the data model, it has to be reported as part of the Surveillance Activity metadata and it is recommended to keep track of these attributes in a different source (another database, an excel sheet, etc.)
