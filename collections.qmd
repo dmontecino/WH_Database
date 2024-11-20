@@ -1,1 +1,24 @@
+A **Collection** in the data model represents the effort associated with the observation, finding, capturing, etc. of Sources at the longitude and latitude of an Event that starts at the Event time stamp. For example, the number of hours an observer spent in a post to identify dead birds in a wetland and the tools used to find it (e.g., telescope, binoculars); the number of camera traps in a specific latitude and longitude to photograph a sick animal and the hours they were deployed; the distance and time traveled by a ranger to find a dead animal; the type of trap, bait, time period, and set of equivalent traps to collect mosquitoes at a specific site. 
+
+**A Collection can contain between zero Source Records (e.g., a capturing effort but no animal is captured) up to a indefinite number of Source Records**. If Sources are found opportunistically, then no Collection is involved (e.g., articles from news articles where the coordinates of the site and the date reported determine the Event and the animals involved are the Source Records). 
+
+**A Collection usually contains a specific type of Source Records (either Group Source Record, Animal Source Records, Environmental Source Records, and Invertebrate Source Records)** Because multiple Collections can be part of an Event, then an Event can contain Source Records of multiple types.
+
+**Collections are defined by the type of spatial and temporal units to complete it, the number of those units, and the position of those number of units with respect to the spatio-temporal coordinates of the Event**. A spatial unit can be mist nets deployed, CO2 traps deployed, camera traps deployed, kilometers walked, square kilometers scanned, etc. A temporal unit can be hours walking, days searched, minutes observed, etc. Then, each Collection has a number of the assigned unit (e.g., "6" for number and "kilometers walking" for unit). Finally, the position with respect to the Event spatio-temporal coordinates can be "at the Event", "around the Event", "from the beginning of the Event", "up to the Event", etc. 
+
+For example, a Collection of an Event constituted by an individual at a post in a wetland that spent 6 hours to scan for dead birds using binoculars has as spatial Attributes: "1", "observer binocular" "at the Event"; and temporal Attributes: "6", "hours", "at the Event". 
+
+Another example is a ranger walking for 10 kilometers since the beginning of the patrol to find a dead animal. The spatial Attributes are: "10", "kilometers walked", "to the Event"; and temporal Attributes are not relevant (or the time walking to get to the Event could be reported as well). A final example is two CO2 traps and a BG trap to collect mosquitoes deployed for a night. In this case, there are two Collections as **a set of equivalent units constitute a single Collection per Event**. The spatial Attributes of the CO2 traps are: "2", "CO2 traps", "at the Event"; and temporal Attributes are: "1", "night", "at the Event". The spatial Attributes of the BG trap are: "1", "BG trap", "at the Event"; and temporal Attributes are: "1", "night", "at the Event". To document the three traps separately, three Events with a single trap each must be created. 
+
+**It is not accepted to provide the spatial relationship with the Event as "meters after the Event" or the time relationship with the Event as "hours before the Event"**.
+
+Collections also allow to characterize problems during the search for Sources, such as camera traps running out of battery or stolen, torn mist nets, etc. 
+
+When Source Records are obtained without a **Collection** (e.g., animals sampled in a market, citizen science reports of dead animals) the property "Unit" is "none", the "number of units" is NA, and the positioning with respect to the Event is NA.
+
+Further properties of Collection include the Collection ID, Collection Code, Collection Cross Reference ID, Collection Cross Reference Origin, Problems, among others (see Data Dictionary). If the data of interest per Collection includes attributes that are not part of the data model, it has to be reported as part of the Surveillance Activity metadata and it is recommended to keep track of these attributes in a different source (another database, an excel sheet, etc.). Common extra Attributes can be added to the data model in future versions. Missing Options for single- and multi-selection attributes of Collection can be added as long as they promote a controlled vocabulary.
+
+
+
+
 

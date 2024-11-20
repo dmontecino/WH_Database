@@ -1,6 +1,45 @@
-# Data Model {.unnumbered}
+# Wildlife Health Data Model {.unnumbered}
 
-Data in the WildHealthDB is organized in units that are generally hierarchical, starting from the highest level of "**Projects**" down to "**Surveillance Activities**", "**Field Visits**", "**Locations**", "**Events**", "**Sources**", "**Source Records**", "**Specimens**", and "**Diagnostics**".  Briefly, **Projects** are a set of **Surveillance Activities** with a common leader and organizer (e.g., a national veterinary services agency). **Surveillance Activity** is a surveillance task that have a specific methodology and objectives. **Field Visit** represents a period of time when surveillance activities are conducted in the field. The **Location** is a specific area where surveillance activities are conducted. An **Event** is a site where wildlife health surveillance data is collected from. Sources are the units that can provide Specimens for hazard detection. **Specimens** are tissue taken from the **Sources** at time *t* (**Source Records**). **Diagnostics** are the tests conducted in lived animals ("Animal Source"), **Carcasses**, or **Specimens** collected to assess hazards. **Diagnosis** are the final status assigned to a Diagnostic, a Specimen, or a Source at time *t* with respect to the hazards surveyed, based on well-documented case definitions. Exceptions to the "hierarchical" rule are given in the sections for each unit below. To learn more about these units, please scan the menu on the top right corner of this website and click on the corresponding unit. A diagram shoing the relationship among the units is shown at the bottom of this website.
+The Wildlife Health Data Model (WHEDMO) is a data model that aims to accommodate wildlife health data coming from different sources, including local to national wildlife health surveillance systems (surveillance of diseases, pathogens, and toxins), research initiatives, or citizen-science based projects, among others. 
+
+Wildlife health surveillance systems can include a wide range of methods and targets. The plethora of surveillance types (general surveillance, targeted surveillance, participatory surveillance, sentinel surveillance, early warning surveillance, syndromic surveillance, etc) reflects the potential variability of the strategies, methodologies, and objectives associated with health assessment in wildlife. The strategies can include information from open sources, community members, and ranger patrols. Active capture of animals or the testing of specimen from wild animals in markets and collection of specimens of different types could be part of the strategies as well. The methodologies can focus in pure observations of herds and animals, hosts or vectors, the collection of carcasses to conduct necropsies, multiple diagnostic tests, among others. The objectives can range from early detection of pathogens, measure of disease levels and their impacts, prove absence of disease, evaluate disease control methods, etc. Furthermore, the variability with respect to the potential targeted populations and hazards (biological, chemical, physical, or physiological) support the creation of "infinite" types of data. 
+
+<!-- # Figure data inputs -->
+
+On the other hand, harmonization of data and systems to effectively track, store, retrieve and disseminate information are foundational pillars of wildlife health surveillance systems. However, both pillars have being absent historically and globally. The challenge is evident. Promote best data practices when data are multiple and variable. The Wildlife Health Intelligence Network has develop a data model designed to respond to this challenge.
+
+## Introduction
+
+The WHE data model contains units that are hierarchical organized, starting from the highest level of "**Projects**", followed by "**Surveillance Activities**", "**Field Visits**", "**Locations**", "**Events**", "**Collections**", "**Sources**", "**Source Records**", "**Specimens**", and "**Diagnostics**".  Briefly, **Projects** are a set of **Surveillance Activities** with a common leader and organizer (e.g., a national wildlife health surveillance system). **Surveillance Activity** is a surveillance task that have a specific methodology and objectives. **Field Visit** represents a period of time when  activities are conducted in the field. The **Location** is a specific area where surveillance activities are conducted. An **Event** is a site where wildlife health surveillance data is collected from. An **Event** can contain different **Collections** that represent different methods and efforts to obtain **Source Records from Sources**. **Sources** are the units that can provide **Specimens** for hazard detection or whose health is assessed by an agent at time *t*. There are four Source types in the data model: group of animals, individual animals, sites to collect environmental tissue, and sites to collect arthropods.  **Specimens** are tissue taken from the **Sources** at time *t* (**Source Records**). **Diagnostics** are the tests conducted in lived animals ("Animal Source"), **Carcasses**, or **Specimens** collected to assess hazards.  
+
+Out of this hierarchy is the component **Diagnosis**, which is the final status assigned to a Diagnostic, a Specimen, or a Source at time *t* with respect to the hazards surveyed, based on well-documented case definitions. **The basic relationships among the basic units of the data model** are shown in Figure 1 below.
+
+
+![](Pictures_and_diagrams/relationship_data_model.png){width=120%}
+
+**Figure 1**: Basic relationships among the basic units of the data model.
+
+
+
+The data model remains simple when the wildlife health data is simple, and it gets more complicated as the data structure and variability increases. For this reason, many components of the data model are conditional, meaning that they are needed depending on the structure of the data. Let's start with example 1: wildlife mortality reported by a community member through an application. The methodology must be explained in the Surveillance Activity metadata. The Field Visit could be one per year to categorize the reports per year. The Location can be defined by the position sent by the mobile device when each dead animal is recorded. In this case, it could be a county of a zip code. In the example, an Event has Source Records corresponding to dead animals.  No Specimen, Diagnostic, or Laboratory data is generated. No Collection effort is associated with the Events, and the animals are not clustered beyond the Field Visit, the Location, and the Events.
+
+
+
+
+
+![](Pictures_and_diagrams/simple_example.png){width=80%}
+
+**Figure 2**: Components of the data model to contain data from example 1.
+
+<!-- The next example is a series of surveys in wildlife farms to identify pathogens. Surveys are conducted every 3 months and each one of them include all the farms in the study. The farms are distributed in several counties. Each farm has several species that are distributed in barns, aisles, pens, and cages. Seasonal changes are assessed as well. All the animals of the cages will be sampled (rectal and oral swab each one). Fecal samples will be collected from the cages directly as well. Finally, each sample will be tested for 3 pathogens. In this example, there could be a single Surveillance Activity with the three pathogens included, or three Surveillance Activities with the same methods except the targeted hazards (one Surveillance Activity per pathogen is recommended). The data includes **Field Visits every three months**. Each one of these Field Visits includes all the counties were the farms are located. If each farm is a Location, then the Locations must be clustered by county. Also, if the Event within each farm is a cage with animals, then the Events must be clustered by pen, aisles, and barns. In the manner the structure of the data is Field Visit, county (cluster), farms (Location), barns (cluster), aisles (cluster), pens (cluster), and cages (Event). Depending on the number of cages per pen, there could be multiple or a unique Event per pen. Each Event will have as many Sources at time *t* as animals are per each cage. Continuing with the animals (Sources), two Specimens are collected from each one of them and they are tested for three pathogens for a total of six tests per individual. Furthermore, each cage Event also has a Group Source Record, corresponding to the animals that are in the cage as a group. This Group Source Record has a fecal Specimen associated also tested for three pathogens. -->
+
+<!-- # Figure first exaple -->
+
+The data model is **not designed for wildlife population monitoring**. However, the data model includes key identifiers so wildlife health and population data can be integrated seamlessly.
+
+More complex relationships among the basic units in the data model, as well as other extra units in the data model are explained in the section "Complexities". We recommend first to learn more about the units from Project up to Diagnosis by continuing reading this documentation and checking the menu on the top right corner of this website and click on the corresponding unit ->.
+
+# Main Units of the Data Model
 
 ## Project
 
@@ -32,15 +71,15 @@ Data in the WildHealthDB is organized in units that are generally hierarchical, 
 
 ```
 
-## Source and Source Records
+## Collection
 
-```{r child="source_source_records.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+```{r child="collections.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
 
-## Clustering of Locations, Events, and Source Records
+## Source and Source Records
 
-```{r child="groups.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+```{r child="source_source_records.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
 
@@ -50,7 +89,28 @@ Data in the WildHealthDB is organized in units that are generally hierarchical, 
 
 ```
 
-## Relationships
+## Diagnostics
+
+```{r child="diagnostics.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
+# Complexities
+
+## Surveillance Activities
+
+```{r child="complexities_surv_act.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
+## Clustering of Locations, Events, and Source Records
+
+```{r child="groups.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
+
+# Full Relationships and Units
 
 A summary of the relationships in the data model is provided in the following figures:
 
@@ -66,3 +126,8 @@ A summary of the relationships in the data model is provided in the following fi
 
 ![](Pictures_and_diagrams/Relationships_Other_Source.png){width="680"}
 
+<!-- #Recommnedations for Standardization -->
+
+```{r child="standardized_recommendations.qmd", echo=FALSE, eval=F, message=FALSE, cache=F}
+
+```
