@@ -1,37 +1,60 @@
 <!-- # Specimens {.unnumbered} -->
 
-#### Generalities
+### Generalities
 
-Specimens are tissue or material collected from Sources, other Specimens, and  Diagnostic products (See Diagnostics) to conduct Diagnostics and identify hazards or other potential health threats. **Specimens can originate from Sources at time *t*, but also from other Specimens, or Diagnostic Products**.
+In the data model, Specimens are tissue or material from Sources Records used to conduct Diagnostics (See Diagnostics) and identify hazards or other potential health threats in the corresponding Sources. Furthermore, Specimens can be stored in a facility and the current site where the Specimens are, as well as their historical movements among facilities can be traced.
 
-In the data model, a single Specimen can be composed of feces of a specific animal collected in the field mixed with water from a pond next to that Animal. Therefore, **Specimens can be created using tissue collected from many Sources of different types**. 
+Specimens are characterized by Specimen ID, Specimen Type, Specimen Original Amount, Specimen Current, their Origin, Storage building, Storage laboratory name, Storage refrigerator name, Ownership, among others (see Data Dictionary). 
 
-In the data model, a new Specimen can be created by mixing Specimens of any origin and Diagnostic Products. Therefore, **Specimens can originate by mixing Specimens, or by mixing Diagnostic Products, or by mixing Specimens and Diagnostic Products. These are "Pooled Specimens"**. 
+**The data model does not accommodate Specimens that were collected after the last date a Source was observed**. For example, it is possible to collect feces from an empty cage that a Group Source providing feces longitudinally was using until two days ago. In this case, the Specimen does not belong to the Group Source but to an Environmental Source (the cage). The connection between both Specimens coming from the cage with and withput animals can be made using cluster variables (see Complexities below).
 
-Specimens are characterized by an identifier, the type of material (water, hair, kidney, animal), the original amount collected (e.g., 'full animal' or 0.35 mm), the current amount, their origin (Source Record, other Specimen, or Diagnostic Product), among others. Additionally, the data model can hold data on the storage location of Specimens (building, laboratory name, refrigerator name, etc.), their availability, ownership, current amount, and exportation processes (See Data Dictionary). 
+Specimens without any amount of tissue left remain in the data model so the last storage, exportation processes, and its use in Diagnostic procedures can be traced.
 
-Specimens without any amount of tissue left can be kept in the data model so the last storage, exportation processes, and its use in Diagnostic procedures can be tracked.
+### Specimens from Animal and Group Source Records 
 
-#### Specimens from Source Records 
+An example of Group Source Specimen are feces collected from the bottom of a cage with animals of the same species but it is unknown which of the animals dropped the feces. An example of Animal Source Specimen is 2 ml of blood taken from a lion. 
 
-Specimens can be tissue collected from Sources at time **t** (from Source Records). These Specimens can range from the entire body of a living animal to conduct an ultrasound to a minimal amount of fluid (e.g., blood) to perform advanced assays. An example of Group Source Specimen is feces collected from the bottom of a cage with animals of the same species but it is unknown which of the animals dropped the feces. An example of Animal Source Specimen is 2 ml of blood taken from a lion. An example of Environmental Source Specimen is 10 grams of soil collected from a specific site. An example of Arthropod Source Specimen is a set mosquitoes of the same species coming from the same trap type collection. In vector-borne disease surveillance, this last type of Specimen are usually called "pools". 
+**A Group Source used directly for a Diagnostic (e.g., assessment of fat in carcasses of animals belonging to a specific herd) or an Animal Source used directly for a Diagnostic (e.g., ultrasound in an animal) are not Specimens (see Sources And Source Records**. 
 
-The data model does not accommodate Specimens that were collected after the last date a Source was observed. For example, it is possible to collect feces from an empty cage that a Group Source providing feces longitudinally was using until two days ago. In this case, the Specimen origin changes from the Group Source followed longitudinally to an Environmental Source (the cage). Using a clustering variable, it is possible to track that the Specimens are coming from the same cage, in one case with animals and in the last one without animals (clustering the Sources coming from the same cage). 
+In the case of Animal Sources, new Specimens can be generated during a Necropsy (e.g., Specimens from the Carcass). In this case, the date of Specimen collection is not necessarily the date when the Animal Source was found, when the Carcass was collected, or when the animal died, but the date of the Necropsy (primary or secondary). It is possible to track if a Specimen was collected during the primary or secondary Necropsy based on the information entered for Specimens.
 
-**An Group Source used directly for a Diagnostic (e.g., assessment of fat in carcasses of animals belonging to a specific herd) is not a Specimen**.
+### Specimens from Environmental Source Records 
 
-In the case of Animal Sources, new Specimens can be generated during a Necropsy (e.g., Specimens from the Carcass). In this case, the date of Specimen collection is not necessarily the date when the Animal Source was found, when the Carcass was collected, or when the animal died, but the date of the Necropsy (primary or secondary). It is possible to track if a Specimen was collected during the primary or secondary Necropsy based on the information entered for Specimens. **An Animal Source used directly for a Diagnostic (e.g., X-rays in a live animal) is not a Specimen**
+An example of Environmental Source Specimen is 10 grams of soil collected from a specific site (Environmental Source). Another useful example are feces found in the field at time *t* (Source Record) at a specific site (Source). 
 
-In the case of Environmental Sources, its type determines the Specimen type. For example, a pond of water can only yield Specimens of type "water".
+In this second example it is possible to: i) collect the full feces or ii) take swabs from it. In the former case, the feces are the Source Record and the Specimen (the Specimen can be stored. The Source Record cannot be Stored). In the latter, the feces are just the Source Record whilst the swabs are the Specimens.
 
-#### Specimens from Diagnostic Products
+In the case of **Environmental Specimens, its type is determined by the type of the Specimen Source Record**. For example, water collected at time *t* (Environmental Source Record) from a pond (Environmental Source) can only yield Specimens of type "water".
 
-Products generated by Diagnostic methods applied to a regular Specimen can be stored and used as Specimen in further Diagnostics (e.g., use cDNA created to complete Diagnostic A in a new RT-PCR Diagnostic B). The data model can accommodate Diagnostic Products to be use in future Diagnostics. In this case, the origin of these new "Specimens" is a specific Diagnostic and not a Source Record,m and its type is "Diagnostic Product". The remaining properties of the new Specimen from a Diagnostic Product are the same (see Data Dictionary).
+
+### Specimens from Arthropod Source Records 
+
+An example of Arthropod Source Specimen is the set mosquitoes of the same species coming from the same Collection. These are basically sub-groups of the mosquitoes present in the corresponding Source Record. In vector-borne disease surveillance, this last type of Specimen is usually called "pools". 
+
+### Special Cases
+
+#### Specimens from a mix of Source types
+
+An example: a bat is swabbed in its oral cavity and in its rectum but then the swabs are placed together in a tube and consider a single Specimen. Then, there is a single Specimen type: two oro-rectal swabs in a tube container but with a single Source Record origin. 
+
+It is possible also to get blood from two bats and mix it. The data model can accommodate this case because **Specimens can have multiple Source Record origins**. In the example, both bled bats are the origin of a single Specimen consisting in mm of blood.
+
+Similarly, **it is possible to generate a Specimen by mixing tissue from Source Records of different type**. For example, the blood (tissue) of a bat captured at time *t* (Animal Source Record) with the feces (tissue) collected from the bottom of the roost of the same bat at time *t* (Group Source Record). In this case, the mixed tissue (blood from an Animal Source and Feces from a Group Source) can be included in the data model as a single Specimen with two Source Records as origin. If the feces from the roost collected from the bottom of the roost were also recorded as a Specimen by themselves, then this Specimen also has two origins: the Group Source (the bats in the roost) and the bled bat who also belongs to the roost.
+
+**The key here is that Specimens are generated by mixing tissue coming from different Source Records, which is different than mixing Specimens**. In the data model, mixing Specimens means mixing data Units already documented (see next). 
 
 #### Pooled Specimens 
 
-Specimens can be created by mixing other Specimens of any origin. For example, mixing a Specimen from a Diagnostic Product, a Specimen from an Arthropod Source, a Specimen from an Animal Source, and a Specimen from an Environmental Source. The origin of Pooled Specimens is tracked in the data model. In the example, the origin will be associated with four Specimens. The remaining properties are the same (see Data Dictionary). 
+Specimens can be created by mixing other Specimens of any origin. For example, mixing a Specimen from an Arthropod Source, a Specimen from an Animal Source, and a Specimen from an Environmental Source. The origin of Pooled Specimens is tracked in the data model. In the example, the origin of the Specimen is three Specimens. The remaining properties are the same (see Data Dictionary). 
+
+#### Specimens from Diagnostic Products
+
+Products generated by a Diagnostic method (see Diagnostics below) can be stored and used as Specimen in further Diagnostics (e.g., use cDNA created as part of Diagnostic A used in a new RT-PCR, Diagnostic B). The data model can accommodate Diagnostic Products to be used as Specimens in future Diagnostics. In this case, the origin of these new "Specimens" is a specific Diagnostic and not a Source Record, and its type is a diagnostic product such as cDNA. The properties of a Specimen from a Diagnostic Product are the same (see Data Dictionary).
+
+Diagnostic Products as Specimens can be mixed with other Specimens also to create new Pooled Specimens. Diagnostic Products not included in the set of Specimens available cannot be mixed with other tissues to create new Specimens. In other words, Diagnostic Products must be added to the data model as a Specimen, so this Specimen can be pooled with other Specimens.
 
 #### Specimens in Containers
 
-In situations where space or materials are limited, it is possible that multiple Specimens are stored in a unique container. This approach is clearly not ideal because it can lead to cross-contamination and make actual Specimen tracing more complex. To address the tracing of these Specimens, a unique container identifier, such as a jar identifier, can be provided to the Specimen (see Data Dictionary). Specific properties for each individual Specimen within the container, such as type, quantity, etc, should allow their visual identification within the container.
+In situations where space or materials are limited, it is possible that multiple Specimens are stored in a unique container. This approach is clearly not ideal because it can lead to cross-contamination and make actual Specimen tracing more complex. To address the tracing of these Specimens, a Container Identifier is a property of Specimens (see Data Dictionary). Specific properties for each individual Specimen within the container, such as type, quantity, etc, should allow their visual identification within the container.
+
+

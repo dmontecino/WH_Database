@@ -510,9 +510,9 @@ surv_activity<-
       Variable="SurveillanceActivityEventClusteringStructure",
       Label="Clustering of Events",
       Definition="Explain the cluster structure of the Events below 'location'
-      (e.g., The location is a market. The events are stalls of each vendor in the market. 
-      The Events are clustered by vendor in each market. So stalls [events], 
-      within vendors [cluster], within markets [location])",
+      (e.g., Locations are markets. Events are stalls of each vendor in the market. 
+      Events are clustered by vendor. So, stalls [Event], 
+      within vendors [Cluster1], within markets [Location], included in each [Field Visit])",
       Type="String",
       Mandatory="Yes"),
     
@@ -563,6 +563,23 @@ surv_activity<-
       Each season is a temporal cluster grouping Locations, Events, and Source Records)",
       Type="String",
       Mandatory="Yes"),   
+    
+    SurveillanceActivityFieldVisitNumberAndUnits
+    
+    SurveillanceActivityLocationNumberAndUnits
+    
+    SurveillanceActivityEventNumberAndUnits
+    
+    SurveillanceActivityClusterNumberAndUnits
+    
+    
+    SurveillanceActivitySourceUnits
+    
+    SurveillanceActivitySourceNumberPerLocationEventCluster
+    
+    SurveillanceActivitySourceRecordNumber
+    
+    
     
     data.frame(
       Variable="SurveillanceActivityLab",

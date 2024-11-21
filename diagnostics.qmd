@@ -2,12 +2,16 @@ Diagnostics in the data model encompass various techniques used to identify haza
 
 The type of Diagnostic refers to a general category of diagnostic techniques, such as histopathology, serology, or imaging. Within each type, there are specific methods available, such as biopsy, ELISA assays, X-rays, or the width of fat in a herd. These methods can be applied at different levels, such as organs, serum, specific body areas to an entire Animal Source, or carcasses from a Group Source, respectively. 
 
-In the data model, **each Diagnostic has a unit of measurement that can either be qualitative or quantitative. The result of the diagnostic is reported as a value of those units. The interpretation, based on the result on those units, can either be positive, negative, or undetermined**. **It is ideal to include supporting information to each Diagnostic, such as digital images or files to corroborate the entered result in the database**. 
+In the data model, **each Diagnostic has a unit of measurement that can either be qualitative or quantitative. The result of the diagnostic is reported as a value of those units. The interpretation, based on the result on those units, can either be positive, negative, or undetermined**. The Interpretation of a Diagnostic **should adhere to the case definition criteria established in the corresponding Surveillance Activity metadata for each declared Diagnostic method used**. 
 
-The Interpretation of a Diagnostic **should adhere to the case definition criteria established in the corresponding Surveillance Activity metadata for each declared method**. 
+<!-- **It is ideal to include supporting information to each Diagnostic, such as digital images or files to corroborate the entered result in the database**.  -->
 
-**Diagnostics can produce "Diagnostic Products" that are treated as a Specimen** in the data model for two main reasons. The first one is the possibility to track the location of the product, the quantities available, and any exportation process. The second reason is because these Diagnostics Products can be used in further Diagnostics. For example, the cDNA from a RT-PCR assay that is used as material for a new chain reaction.
+**Diagnostics can produce "Diagnostic Products" that are treated as a Specimen** in the data model for two main reasons. The first one is the possibility to track the location of the product, the quantities available, and any exportation process. The second reason is because these Diagnostics Products can be used as Specimens in further Diagnostics (see Specimens above).
 
 Properties of a Diagnostic include the Diagnostic ID, Diagnostic Code, Diagnostic Cross Reference ID, Diagnostic Cross Reference Origin, the Laboratory conducting the Diagnostic, the targeted hazards, Measurement Unit, the Result, the Interpretation, among others (see Data Dictionary). 
 
 
+
+An Group Source can be used directly for a Diagnostic (e.g., assessment of fat in carcasses of animals belonging to a specific herd). The data model can accommodate Diagnostics applied to the "group" itself rather than Specimens taken from that Group Source. 
+
+The diagnostic information is part of the set of Diagnostics conducted in the corresponding Animal Source (see Diagnostics). 
