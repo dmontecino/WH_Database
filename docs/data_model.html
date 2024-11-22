@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./manual.html" rel="next">
+<link href="./data_dictionary.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,14 +117,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./manual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WildlHealthDB Manual</span></a>
+  <a href="./data_dictionary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Dictionary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_dictionary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Dictionary</span></a>
+  <a href="./manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WildlHealthDB Manual</span></a>
   </div>
 </li>
     </ul>
@@ -164,19 +164,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#special-cases" id="toc-special-cases" class="nav-link" data-scroll-target="#special-cases">Special Cases</a></li>
   </ul></li>
   <li><a href="#diagnostics" id="toc-diagnostics" class="nav-link" data-scroll-target="#diagnostics">Diagnostics</a></li>
-  <li><a href="#diagnosis" id="toc-diagnosis" class="nav-link" data-scroll-target="#diagnosis">Diagnosis</a></li>
+  </ul></li>
   <li><a href="#complexities" id="toc-complexities" class="nav-link" data-scroll-target="#complexities">Complexities</a>
   <ul class="collapse">
-  <li><a href="#surveillance-activities" id="toc-surveillance-activities" class="nav-link" data-scroll-target="#surveillance-activities">Surveillance Activities</a></li>
+  <li><a href="#laboratories" id="toc-laboratories" class="nav-link" data-scroll-target="#laboratories">Laboratories</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
   <li><a href="#clustering-of-locations-events-and-source-records" id="toc-clustering-of-locations-events-and-source-records" class="nav-link" data-scroll-target="#clustering-of-locations-events-and-source-records">Clustering of Locations, Events, and Source Records</a></li>
+  <li><a href="#surveillance-activities" id="toc-surveillance-activities" class="nav-link" data-scroll-target="#surveillance-activities">Surveillance Activities</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#full-relationships-and-units" id="toc-full-relationships-and-units" class="nav-link" data-scroll-target="#full-relationships-and-units">Full Relationships and Units</a>
-  <ul class="collapse">
-  <li><a href="#for-group-source" id="toc-for-group-source" class="nav-link" data-scroll-target="#for-group-source">For Group Source</a></li>
-  <li><a href="#for-animal-source" id="toc-for-animal-source" class="nav-link" data-scroll-target="#for-animal-source">For Animal Source</a></li>
-  <li><a href="#for-environmental-and-arthropod-source" id="toc-for-environmental-and-arthropod-source" class="nav-link" data-scroll-target="#for-environmental-and-arthropod-source">For Environmental and Arthropod Source</a></li>
-  </ul></li>
+  <li><a href="#all-units-in-the-data-model-and-all-relationships" id="toc-all-units-in-the-data-model-and-all-relationships" class="nav-link" data-scroll-target="#all-units-in-the-data-model-and-all-relationships">All Units in the Data Model and All Relationships</a></li>
   </ul>
 </nav>
     </div>
@@ -270,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="Pictures_and_diagrams/Picture7.png" class="img-fluid" style="width:100.0%"></p>
 <p>A <strong>Collection</strong> in the data model represents the effort associated with the observation, finding, capturing, etc. of Sources at the longitude and latitude of an Event that starts at the Event time stamp. For example, the number of hours an observer spent in a post to identify dead birds in a wetland and the tools used to find it (e.g., telescope, binoculars); the number of camera traps in a specific latitude and longitude to photograph a sick animal and the hours they were deployed; the distance and time traveled by a ranger to find a dead animal; the type of trap, bait, time period, and set of equivalent traps to collect mosquitoes at a specific site.</p>
 <p><strong>A Collection can contain between zero Source Records (e.g., a capturing effort but no animal is captured) up to a indefinite number of Source Records</strong>. If Sources are found opportunistically, then no Collection is involved (e.g., articles from news articles where the coordinates of the site and the date reported determine the Event and the animals involved are the Source Records).</p>
-<p><strong>A Collection usually contains a specific type of Source Record (either Group Source Record, Animal Source Record, Environmental Source Record, and Invertebrate Source Records)</strong>. This is because observation, capturing, or other efforts are usually targeting groups of animals, or individual animals, or environmental tissue, or arthropods. On the other hand, because multiple Collections, targeting any of these objectives, can be part the same Event (e.g., traps to collect mosquitoes and colleting air at the same site), then an Event can contain Source Records of multiple types.</p>
+<p><strong>A Collection usually contains a specific type of Source Record (either Group Source Record, Animal Source Record, Environmental Source Record, and Invertebrate Source Records)</strong>. This is because observation, capturing, or other efforts are usually targeting groups of animals, or individual animals, or environmental tissue, or arthropods. On the other hand, because multiple Collections, targeting any of these objectives, can be part the same Event (e.g., traps to collect mosquitoes and also use a device to filter and collect air at the same site), then an Event can contain Source Records of multiple types.</p>
 <p><strong>Collections are defined by the type of spatial and temporal units to complete it, the number of those units, and the position of those number of units with respect to the spatio-temporal coordinates of the Event</strong>. A spatial unit can be mist nets deployed, CO2 traps deployed, camera traps deployed, kilometers walked, square kilometers scanned, etc. A temporal unit can be hours walking, days searched, minutes observed, etc. Then, each Collection has a number of the assigned unit (e.g., “6” for number and “kilometers walking” for unit). Finally, the position with respect to the Event spatio-temporal coordinates can be “at the Event”, “around the Event”, “from the beginning of the Event”, “up to the Event”, etc.</p>
 <p>For example, a Collection of an Event constituted by an individual at a post in a wetland that spent 6 hours to scan for dead birds using binoculars has as spatial Attributes: “1”, “observer binocular” “at the Event”; and temporal Attributes: “6”, “hours”, “at the Event”.</p>
 <p>Another example is a ranger walking for 10 kilometers since the beginning of the patrol to find a dead animal. The spatial Attributes are: “10”, “kilometers walked”, “to the Event”; and temporal Attributes are not relevant (or the time walking to get to the Event could be reported as well). Similar approach can be used to record animals found during an outbreak investigation. A final example is two CO2 traps and a BG trap to collect mosquitoes deployed for a night. In this case, there are two Collections as <strong>a set of equivalent efforts constitute a single Collection per Event</strong>. The spatial Attributes of the CO2 traps are: “2”, “CO2 traps”, “at the Event”; and temporal Attributes are: “1”, “night”, “at the Event”. The spatial Attributes of the BG trap are: “1”, “BG trap”, “at the Event”; and temporal Attributes are: “1”, “night”, “at the Event”. To document the three traps separately, three Events with a single trap each must be created.</p>
@@ -313,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="animal-source-record">Animal Source Record</h4>
 <p><strong>An Animal Source Record consists of an Animal Source at time <em>t</em> </strong>. Properties of an Animal Source Record are its Age, Health Status, Observed Anomalies, and Potential Cause of Disease or Death if they apply at time <em>t</em>, among others (see Data Dictionary). The current marking code of an individual animal at time <em>t</em> is considered mutable and a property of the corresponding Animal Source Record. Properties of an Animal Source Record can receive single or multiple choices. For example, the observed health status is only one (live healthy, live sick) but an Animal Source Record can receive several observed anomalies if they observed in the same individual at time <em>t</em> (wounded, hair loss, diarrhea, etc. See Data Dictionary).</p>
 <p>An Animal Source can be either dead, diseased, poisoned, infected, injured, or healthy at time <em>t</em>. <strong>An Animal Source Record with an observed health status “live healthy” can be part of an Event depending on the Event definition</strong> (e.g., a healthy animal of species X next to dead animals of species X, Y, and Z; or healthy animals captured for Specimen collection).</p>
-<p>An Animal Source can be used directly for a Diagnostic (e.g., X-rays in a live animal). The data model can accommodate Diagnostics applied to the individual itself rather than a Specimen taken from that Animal Source.</p>
+<p>An Animal Source Record can be used directly for a Diagnostic (e.g., X-rays in a live animal at time <em>t</em>). The data model can accommodate Diagnostics applied to the individual itself rather than a Specimen taken from that Animal Source.</p>
 <p><strong>An animal of species X documented as part of a Group Source Record cannot be included as an Animal Source Record and vice versa</strong>. If an Event contains a Group Source Record of species X and an Animal Source Record of species X, then the total number of animals of species X at the Event is the sum of the number of animals of species X in the Group Source Record and the single individual of species X recorded as an Animal Source Record. An example is a herd of cows illegally raised in a protected area whose health is assessed at time <em>t</em>. The herd of this example contains 20 cows. Two of them are sampled and the rest are part of a single unit. In this case, the sampled cows can be added as two Animal Source Records (one per sampled cow) and the remaining 18 animals can be added as a single Group Source Record that distributes the animals per sex, age, and health status. The total number of cows are the individuals in the Group Source Record (18) and the two cows recorded as Animal Records. The “herd” identity of the 20 cows can be kept using a cluster (see “Complexities”). If the Group Source Record contains the original 20 cows and also two Animal Source Records, then the total number of cows will be 22.</p>
 </section>
 <section id="carcass" class="level4">
@@ -334,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="environmental-source-record" class="level4">
 <h4 class="anchored" data-anchor-id="environmental-source-record">Environmental Source Record</h4>
 <p><strong>An Environmental Source Record is the biotic or abiotic tissue from the Environmental Source at time <em>t</em> recovered using a common Collection</strong>. For example, the water collected from a pond (Event) at site X (Environmental Source) using a unique type of device (Collection) to obtain water at time <em>t</em> (Environmental Source Record). Properties of an Environmental Source Record include Record Number, Type of Tissue, Volume, the Unit of the Volume, among others (see Data Dictionary).</p>
-<p><strong>A key difference between the Environmental Source and the Group and Animal Sources is that an Event can contain multiple Records of a single Environmental Source (many Collections at the same Environmental Source at time <em>t</em>). Instead, an Event can contain a single Record of many Group and Animal Sources</strong>. An Event can only contain a single Environmental Source, but many Records can be retrieved (one per collection). On the opposite, many bats can be captured in a mist net (many Sources), but they can only provide one Record per Event.</p>
+<p><strong>A key difference between the Environmental Source and the Group and Animal Sources is that an Event can contain multiple Records of a single Environmental Source (many Collections from the same Environmental Source at time <em>t</em>). Instead, an Event can contain a single Record of many Group and Animal Sources (in one or many Collections)</strong>. An Event can only contain a single Environmental Source, but many Records can be retrieved (one per collection). On the opposite, many bats can be captured in a mist net (many Sources), but they can only provide one Record per Event (see figure at the end of this section).</p>
 <p><strong>Another key difference is that “species” for Group and Animal Sources is a property of the Source, whilst for Environmental Sources is a property of the Record</strong>. For example, it could be possible to identify the species that dropped feces found in the field as “mammal”. If this is the case, then the Species property can be completed with this level of taxonomy.</p>
 <p><strong>If there is a failed Collection of tissue at time <em>t</em> from the Environmental Source) then it is the Collection that exists without the Environmental Source Record. But an Environmental Source Record cannot be empty</strong>.</p>
 </section>
@@ -346,9 +342,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="arthropod-source-record" class="level4">
 <h4 class="anchored" data-anchor-id="arthropod-source-record">Arthropod Source Record</h4>
 <p><strong>An Arthropod Source Record is the arthropods collected at the Arthropod Source at time <em>t</em> using a common Collection</strong>. For example, the mosquitoes collected (Event) at the household in the forest (Environmental Source) at time <em>t</em> (Environmental Source Record) across the traps targeting the same group of arthropods (Collection). This mean mosquitoes of <em>n</em> species collected by CO2 traps deployed at the Arthropod Source at time <em>t</em> is an Arthropod Source Record and that mosquitoes of <em>n</em> species collected by any number of BG traps deployed at the Arthropod Source at time <em>t</em> is another Arthropod Source Record. This means that a single Arthropod Source record can contain many mosquito species. The properties of an Arthropod Source Record include Record Number, Species, Age, Sex, Condition of the Females, Number, among others (see Data Dictionary).</p>
-<p><strong>Similar to Environmental Sources, a key difference between the Arthropod Source and the Group and Animal Sources is that an Event can contain multiple Records of a single Arthropod Source (many Collections at the same Arthropod Source at time <em>t</em>). Instead, an Event can contain a single Record of many Group and Animal Sources</strong>. An Event can only contain a single Arthropod Source, but many Records can be retrieved (one per collection). On the opposite, many bats can be captured in a mist net (many Sources), but they can only provide one Record per Event.</p>
+<p><strong>Similar to Environmental Sources, a key difference between the Arthropod Source and the Group and Animal Sources is that an Event can contain multiple Records of a single Arthropod Source (many Collections at the same Arthropod Source at time <em>t</em>). Instead, an Event can contain a single Record of many Group and Animal Sources</strong>. An Event can only contain a single Arthropod Source, but many Records can be retrieved (one per collection). On the opposite, many bats can be captured in a mist net (many Sources), but they can only provide one Record per Event (see Figure at the end of the section).</p>
 <p><strong>Similarly, another key difference is that “species” for Group and Animal Sources is a property of the Source, whilst for Arthropod Sources is a property of the Record</strong>. For example, the mosquito species obtained through CO2 traps (Collection) deployed at a specific site (Source) will be identified and counted after the Collection and they will be a property of the Arthropod Source Record.</p>
 <p><strong>If there is a failed Collection of arthropods at time <em>t</em> from the Arthropod Source) then it is the Collection that exists without the Arthropod Source Record. But an Arthropod Source Record cannot be empty</strong>.</p>
+<p><img src="Pictures_and_diagrams/Picture23.png" class="img-fluid" width="600"></p>
 </section>
 </section>
 </section>
@@ -396,6 +393,7 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="specimens-from-diagnostic-products">Specimens from Diagnostic Products</h4>
 <p>Products generated by a Diagnostic method (see Diagnostics below) can be stored and used as Specimen in further Diagnostics (e.g., use cDNA created as part of Diagnostic A used in a new RT-PCR, Diagnostic B). The data model can accommodate Diagnostic Products to be used as Specimens in future Diagnostics. In this case, the origin of these new “Specimens” is a specific Diagnostic and not a Source Record, and its type is a diagnostic product such as cDNA. The properties of a Specimen from a Diagnostic Product are the same (see Data Dictionary).</p>
 <p>Diagnostic Products as Specimens can be mixed with other Specimens also to create new Pooled Specimens. Diagnostic Products not included in the set of Specimens available cannot be mixed with other tissues to create new Specimens. In other words, Diagnostic Products must be added to the data model as a Specimen, so this Specimen can be pooled with other Specimens.</p>
+<p><img src="Pictures_and_diagrams/Specimens.png" class="img-fluid" style="width:100.0%"></p>
 </section>
 <section id="specimens-in-containers" class="level4">
 <h4 class="anchored" data-anchor-id="specimens-in-containers">Specimens in Containers</h4>
@@ -406,23 +404,149 @@ ul.task-list li input[type="checkbox"] {
 <section id="diagnostics" class="level2">
 <h2 class="anchored" data-anchor-id="diagnostics">Diagnostics</h2>
 <p><img src="Pictures_and_diagrams/Picture10.png" class="img-fluid" style="width:100.0%"></p>
-<p>Diagnostics in the data model encompass various techniques used to identify hazards (biological, chemical, physical) or physiological problems in either Source Records of Animal and Group Sources or Specimens obtained from Source Records. Each Diagnostic is designed for a specific targeted hazard, such as a viral family or a particular virus species. Diagnostics include three main components: type, method, and result.</p>
-<p>The type of Diagnostic refers to a general category of diagnostic techniques, such as histopathology, serology, or imaging. Within each type, there are specific methods available, such as biopsy, ELISA assays, X-rays, or the width of fat in a herd. These methods can be applied at different levels, such as organs, serum, specific body areas to an entire Animal Source, or carcasses from a Group Source, respectively.</p>
-<p>In the data model, <strong>each Diagnostic has a unit of measurement that can either be qualitative or quantitative. The result of the diagnostic is reported as a value of those units. The interpretation, based on the result on those units, can either be positive, negative, or undetermined</strong>. The Interpretation of a Diagnostic <strong>should adhere to the case definition criteria established in the corresponding Surveillance Activity metadata for each declared Diagnostic method used</strong>.</p>
+<p><strong>Diagnostics in the data model encompass various techniques used to identify hazards (biological, chemical, physical) or physiological problems in either Source Records of Animal and Group Sources or Specimens obtained from Source Records of any type</strong>. Diagnostics conducted directly in Group and Animals Sources can include general body condition (Group or Animal Source), the width of body fat (Group or Animal Source), an ultrasound (Animal Source). Diagnostics can range from advanced techniques such as metagenomics to basic observations of body condition. Whatever the Diagnostic methods used are, they must be reported in the metadata of the Surveillance Activity.</p>
+<p>In the data model, Diagnostics can be conducted in a Laboratory or similar (see Laboratory below) but it is also possible to include field-base assays. Diagnostics can also be conducted by an individual (ranger, hunter, researcher, biologist, etc.) when they involve external or simple observations such as the body condition of an animal to assess a nutrition related hazard.</p>
+<p>In the data model, it is considered that each Diagnostic is designed for a specific targeted hazard, such as a viral family or a particular virus species and, therefore, each Diagnostic - Hazard is a Diagnostic method.</p>
+<p>Diagnostics include the type, method, and result. The type of Diagnostic refers to a general category of diagnostic techniques, such as histopathology, serology, imaging, molecular, clinical. Within each type, there are specific methods available, such as biopsy, ELISA assays, X-rays, PCR, or the width of fat in a herd, respectively. In the data model, <strong>each Diagnostic has a unit of measurement that can either be qualitative or quantitative. The result of the diagnostic is reported as a value of those units</strong>. For example, an agglutination test can report the minimum dilution that causes observable agglutination. A PCR can be reported as presence of bands compatible with the targeted genome sequence or genetic sequence compatible with targeted organism if sequencing followed the genetic sequence amplification. <strong>The interpretation of a Diagnostic (positive, negative, undetermined) corresponds to an “Interpretation” of the Diagnostic </strong> (see Interpretation in Complexities below). Other properties of a Diagnostic include the Diagnostic ID, Diagnostic Code, Diagnostic Cross Reference ID, Diagnostic Cross Reference Origin, among others (see Data Dictionary).</p>
 <!-- **It is ideal to include supporting information to each Diagnostic, such as digital images or files to corroborate the entered result in the database**.  -->
-<p><strong>Diagnostics can produce “Diagnostic Products” that are treated as a Specimen</strong> in the data model for two main reasons. The first one is the possibility to track the location of the product, the quantities available, and any exportation process. The second reason is because these Diagnostics Products can be used as Specimens in further Diagnostics (see Specimens above).</p>
-<p>Properties of a Diagnostic include the Diagnostic ID, Diagnostic Code, Diagnostic Cross Reference ID, Diagnostic Cross Reference Origin, the Laboratory conducting the Diagnostic, the targeted hazards, Measurement Unit, the Result, the Interpretation, among others (see Data Dictionary).</p>
-<p>An Group Source can be used directly for a Diagnostic (e.g., assessment of fat in carcasses of animals belonging to a specific herd). The data model can accommodate Diagnostics applied to the “group” itself rather than Specimens taken from that Group Source.</p>
-<p>The diagnostic information is part of the set of Diagnostics conducted in the corresponding Animal Source (see Diagnostics).</p>
+<section id="diagnostic-products-as-specimens" class="level4">
+<h4 class="anchored" data-anchor-id="diagnostic-products-as-specimens">Diagnostic Products as Specimens</h4>
+<p>In the data model, <strong>Diagnostics can produce “Diagnostic Products” that are then considered a Specimen</strong>. Diagnostic products as Specimens can be traced with respect to their storage, the quantities available, and any exportation process (See Exportation in Complexities). Furthermore, Specimens from Diagnostics Products can be used as in other Diagnostics (see Specimens above). For example, cDNA used in a new PCR essay. Basically the data model accepts a new Specimen whose origin is a Diagnostic Product with the corresponding type and its origin is a Diagnostic instead of one or multiple Source Records, or other Specimens (See Specimens above).</p>
+<!-- ## Diagnosis -->
+<!-- ![](Pictures_and_diagrams/Picture11.png){width=100%} -->
 </section>
-<section id="diagnosis" class="level2">
-<h2 class="anchored" data-anchor-id="diagnosis">Diagnosis</h2>
-<p><img src="Pictures_and_diagrams/Picture11.png" class="img-fluid" style="width:100.0%"></p>
 </section>
-<section id="complexities" class="level2">
-<h2 class="anchored" data-anchor-id="complexities">Complexities</h2>
-<section id="surveillance-activities" class="level3">
-<h3 class="anchored" data-anchor-id="surveillance-activities">Surveillance Activities</h3>
+</section>
+<section id="complexities" class="level1">
+<h1>Complexities</h1>
+<!-- ## Storage -->
+<!-- ## Export -->
+<section id="laboratories" class="level2">
+<h2 class="anchored" data-anchor-id="laboratories">Laboratories</h2>
+<p>The data model includes Laboratory entities. Laboratories can conduct Diagnostics to test for hazards in Specimens or in full Source Records (Field-based Diagnostics or simple Diagnostics conducted by people are also possible in the data model. See Diagnostics). Laboratory properties include address, manager, name, Laboratory ID, among others (Data Dictionary). It is also possible to store data regarding Laboratory capabilities in terms of diagnostic tests and storage, and their certifications (Bio safety levels, etc.)</p>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<section id="interpretation-of-a-hazards-detection-in-a-diagnostic" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-of-a-hazards-detection-in-a-diagnostic">Interpretation of a Hazard’s detection in a Diagnostic</h4>
+<p>In the data model, Interpretation of a Diagnostic is the conclusion regarding the detection of a hazard using a Diagnostic targeting that specific hazard, based on a case definition for a positive, negative, or undetermined result provided in the Surveillance Activity metadata. Each Diagnostic receives one Interpretation only.</p>
+</section>
+<section id="interpretation-of-a-hazards-presence-in-a-specimen" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-of-a-hazards-presence-in-a-specimen">Interpretation of a Hazard’s presence in a Specimen</h4>
+<p>In the data model, Interpretation of a Hazard in a Specimen is the conclusion regarding the presence or absence of a specific hazard in a Specimen, based on a case definition for a positive, negative, or undetermined Specimen provided in the Surveillance Activity metadata that follows the results from the Diagnostic(s) conducted using the Specimen and the corresponding Diagnostic(s) Interpretation(s). Specimens can receive multiple Interpretations if they are used to conduct several Diagnostics to assess several hazards or if the same hazard is assessed more than once.</p>
+</section>
+<section id="interpretation-of-a-hazards-presence-in-a-source-record" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-of-a-hazards-presence-in-a-source-record">Interpretation of a Hazard’s presence in a Source Record</h4>
+<p>In the data model, Interpretation of a Hazard in a Source Record is the conclusion regarding the presence or absence of a specific hazard in a Source Record, based on a case definition for a positive, negative, or undetermined Source Record provided in the Surveillance Activity metadata following the results of the Diagnostic(s) conducted using the Source Record and the Source Record Specimen(s), the corresponding Diagnostic(s) Interpretation(s), anomalies in the Source Record at a Event, and Necropsy findings.</p>
+<p>Source Records can receive multiple Interpretations if multiple hazards are assessed in them or the same hazard is assessed more than once. Sources can have many Interpretations through several Source Records if multiple hazards are assessed in them at time <em>t</em> (Source Record), if the same hazard is assessed more than once at time <em>t</em> (Source Record), or if different or the same hazard are assessed over time (several Source Records of the same Source over time).</p>
+</section>
+</section>
+<section id="clustering-of-locations-events-and-source-records" class="level2">
+<h2 class="anchored" data-anchor-id="clustering-of-locations-events-and-source-records">Clustering of Locations, Events, and Source Records</h2>
+<section id="clusters-in-surveillance-activities" class="level4">
+<h4 class="anchored" data-anchor-id="clusters-in-surveillance-activities">Clusters in Surveillance Activities</h4>
+<p>The units <strong>Location, Event, and Source Record could be enough to record the data structure of a specific Surveillance Activity</strong> gathering information during patrols (Field Visits) in Protected Areas (Locations) at points (Events) where dead animals (Source Records) are found at any given time. But another Surveillance Activity could have the following data structure:</p>
+<ul>
+<li>Visit (<strong>Field Visit</strong>)
+<ul>
+<li>Protected area (Spatial cluster level 1),
+<ul>
+<li>Zones within protected area (<strong>Location</strong>),
+<ul>
+<li>Grid cells within each zone (Spatial cluster level 2),
+<ul>
+<li>Capture site (<strong>Event</strong>)
+<ul>
+<li>Mist nets at the capture site (<strong>Collection</strong>),
+<ul>
+<li>Bats captured (<strong>Source Records</strong>)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Another example is surveillance of wild animals in a live markets. One of the potential options to structure these data is:</p>
+<ul>
+<li>Visit (<strong>Field Visit</strong>)
+<ul>
+<li>City (Spatial cluster level 1)
+<ul>
+<li>Neighborhood (Spatial cluster level 2)
+<ul>
+<li>Market (<strong>Location</strong>)
+<ul>
+<li>Vendor (Spatial cluster level 3)
+<ul>
+<li>Stalls (Spatial cluster level 4)
+<ul>
+<li>Cage (<strong>Event</strong>)
+<ul>
+<li>Animals (<strong>Source Records</strong>)
+<ul>
+<li>Rectal Swab (<strong>Specimens</strong>)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- Looking at the examples it is easy to understand that **what an Event represents depends on the Surveillance Activity** (See Event section above) as another Surveillance Activity can establish each Vendor as an Event. However, certain guidelines can be followed to promote standardization of Events (see Recommendations for Standardization below).  -->
+<p>Looking at the examples above, it is straightforward to understand that <strong>the units Location, Event, and Collection might not be enough to accommodate the data of all Surveillance Activities and other units (“Clusters”) can be needed</strong>.</p>
+<p>A second layer of complexity is the potential need for nested Clusters and non-nested Clusters. The last example above corresponds to a series of nested Clusters where the stalls are within vendors and neighborhoods are within cities. But it is also possible to need non-nested spatial Clusters, for example, “Zip Code”. Zip Code A can include portions of cities 1 and 2, and Zip Code B can also include portions of cities 1, 2, and 3.</p>
+<p>And a third layer of complexity is the potential need for spatial and temporal clusters. For example, it is possible that the data structure of the live market Surveillance Activity presented above has to be categorized in decades, year, season, season-year, etc. The following example adds the categorization of the data by season, no matter the markets visited or how many years the Surveillance Activity lasts:</p>
+<ul>
+<li><strong>Season (Temporal cluster 1)</strong></li>
+<li>Visit (<strong>Field Visit</strong>)
+<ul>
+<li>City (Spatial cluster level 1)
+<ul>
+<li>Neighborhood (Spatial cluster level 2)
+<ul>
+<li>Market (<strong>Location</strong>)
+<ul>
+<li>Vendor (Spatial cluster level 3)
+<ul>
+<li>Stalls (Spatial cluster level 4)
+<ul>
+<li>Cage (<strong>Event</strong>)
+<ul>
+<li>Animals (<strong>Source Records</strong>)
+<ul>
+<li>Rectal Swab (<strong>Specimens</strong>)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Finally, the number of categories within each Cluster can also be different across Surveillance Activities. For example, two Surveillance Activities may include grid cells as one of their Clusters, however, one Surveillance Activity can include grid cells A - R, whilst the another Surveillance Activity can include grid cell A - W (more categories). In summary:</p>
+<ul>
+<li>Clusters units can be needed</li>
+<li>The Clusters across Surveillance Activities can be different</li>
+<li>What these Clusters are grouping across Surveillance Activities can be different</li>
+<li>The number of categories can be different among Clusters, within and between Surveillance Activities</li>
+<li>Nested, Non-nested or both types of Clusters can be needed</li>
+<li>Spatial, Temporal or both Clusters types of Clusters can be needed</li>
+</ul>
+</section>
+<section id="clusters-in-the-data-model" class="level4">
+<h4 class="anchored" data-anchor-id="clusters-in-the-data-model">Clusters in the Data Model</h4>
+<p>To accommodate these needs in data structure, <strong>the data model allows the inclusion of Clusters</strong> between the Source Record and Event (in the absence of Collection) or Collection and Event, Event and Location, and Location and Field Visit. The data model also allows the inclusion of an undetermined number of nested and non-nested Clusters at each of these levels, and the inclusion of spatial and temporal Clusters. <!-- **Environmental and Arthropod Source Records cannot be clustered in units smaller than Event** but the Locations and Events containing them can be clustered.  --></p>
+<p><strong>Unavoidably, the number of Clusters, what Clusters represent, what they cluster, the number of categories per Cluster, and the data to be collected from each of these extra units will vary among Surveillance Activities. Therefore, Cluster properties must be reported in the Surveillance Activity metadata. In the data model, the only default property for each Cluster are the identifier, the cross identifier, the origin of the cross identifier, and a description</strong>. Other potential properties must be documented in a separate file (e.g., an excel sheet) with common identifiers to allow joining the clusters with the corresponding data.</p>
+<p>An interesting case study is the collection of Specimens from reindeer carcasses when they are found dead and also from the soil underneath each carcass. In this Surveillance Activity, an Event is a site where dead animals (at least one) are found. So, if two or more carcasses are found at the same site, then the Event contains two Animal Sources, but also two Environmental Sources providing soil Specimens. However, the interest of the researchers is to maintain the connection between the soil Specimens collected below each Animal Source and the Specimens from each Animal Source. Basically, they want to keep track of the soil Specimen that was below each Animal Source. In this case, Cluster unit can be used to group the corresponding Soil Specimen and Animal Specimen in two pairs while keeping the four specimens under the same Event.</p>
+<!-- Further characteristics of each clustering unit, whether static or time dependent through the Surveillance Activity period, should be prepared in a file, such as an excel sheet, with columns with the identifiers of all relevant units (Location grouping units. Event grouping units that are not the Location, and Source Record grouping units that are not the Event) and  attached it at the corresponding level. A recommendation is to prepared a sheet for the features of all spatio temporal grouping units visited during a Field Visit and attach it at this level (Field Visit). The columns with the identifiers will allow joining the data of the corresponding Field Visit (Locations, Events, Source Records, grouping units) with the attached and spatial data. -->
+</section>
+</section>
+<section id="surveillance-activities" class="level2">
+<h2 class="anchored" data-anchor-id="surveillance-activities">Surveillance Activities</h2>
 <p>Initially, it was mentioned that “<strong>Field Visits, Locations, Events, Sources, Source Records, and Diagnostics usually belong to a single Surveillance Activity</strong>. This is the Surveillance Activity that lead to the Field Visits at different Locations to document Events, collect Sources and Specimens, perform Diagnostics for a specific hazard, and provide Diagnosis for Diagnostics, Specimens, and Sources”.</p>
 <p>Furthermore, it was established that “<strong>a Surveillance Activity usually includes Field Visits, Locations, Events, Sources, Source Records, and Diagnostics</strong>”.</p>
 <p>Here it is explained what are the exceptions to these two general statements and how the data model can handle them.</p>
@@ -439,7 +563,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="field-visits-up-to-collections-belong-to-two-or-more-surveillance-activities" class="level4">
 <h4 class="anchored" data-anchor-id="field-visits-up-to-collections-belong-to-two-or-more-surveillance-activities">Field Visits up to Collections belong to two or more Surveillance Activities</h4>
 <p><img src="Pictures_and_diagrams/Picture14.png" class="img-fluid" style="width:100.0%"></p>
-<p>This can happen when two or more Surveillance Activities overlap in their Field Visits up to Collections but the Source Records up to Diagnostics are different. For example, bats are collected at the same; however, only Megabats are tested for Ebola as part of Surveillance Activity 1. Instead, only Microbats are tested for coronaviruses as part of Surveillance Activity 2. In this case the Field Visits, Locations, Events, and Collections belong to both Surveillance Activities. Instead, the Source Records, Specimens, Diagnostics, and Diagnosis belong to one of them only.</p>
+<p>This can happen when two or more Surveillance Activities overlap in their Field Visits up to Collections but the Source Records up to Diagnostics are different. For example, bats are collected using the same mist nets; however, only Megabats are tested for Ebola as part of Surveillance Activity 1. Instead, only Microbats are tested for coronaviruses as part of Surveillance Activity 2. In this case the Field Visits, Locations, Events, and Collections belong to both Surveillance Activities. The Source Records, Specimens, Diagnostics, and Diagnosis belong to one of them only.</p>
 </section>
 <section id="field-visits-up-to-events-belong-to-two-or-more-surveillance-activities" class="level4">
 <h4 class="anchored" data-anchor-id="field-visits-up-to-events-belong-to-two-or-more-surveillance-activities">Field Visits up to Events belong to two or more Surveillance Activities</h4>
@@ -454,143 +578,44 @@ ul.task-list li input[type="checkbox"] {
 <section id="field-visits-belong-to-two-or-more-surveillance-activities" class="level4">
 <h4 class="anchored" data-anchor-id="field-visits-belong-to-two-or-more-surveillance-activities">Field Visits belong to two or more Surveillance Activities</h4>
 <p><img src="Pictures_and_diagrams/Picture17.png" class="img-fluid" style="width:100.0%"></p>
-<p>This can happen when two or more Surveillance Activities overlap in their Field Visits but the Locations up to Diagnostics are different. Field Visit can be common because it facilitates logistics. For example, coming back from the forest after collecting chimpanzee urine as part of Surveillance Activity 1 and on the way back, go to a Rehabilitation Center and sampled animals there as part of Surveillance Activity 2.</p>
+<p>This can happen when two or more Surveillance Activities overlap in their Field Visits but the Locations up to Diagnostics are different. Field Visit can be common because it facilitates logistics. For example, coming back from the forest after collecting chimpanzee urine as part of Surveillance Activity 1 and on the way back, a visit is made to a Rehabilitation Center to sample animals as part of Surveillance Activity 2.</p>
+<!-- #### Surveillance Activity contains only Diagnostics and Diagnosis -->
+<!-- This can happen when Surveillance Activity 2 uses Specimens collected as part of Surveillance Activity 1 to test them again for the same or different hazard. For example, Specimens from bats collected ten years ago will be used in a new study to test them for SARS-CoV-2. The Diagnostics are the only new entity generated as part of Surveillance Activity 2. -->
+<!-- ![](Pictures_and_diagrams/Picture18.png){width=100%} -->
 </section>
-<section id="surveillance-activity-contains-only-diagnostics-and-diagnosis" class="level4">
-<h4 class="anchored" data-anchor-id="surveillance-activity-contains-only-diagnostics-and-diagnosis">Surveillance Activity contains only Diagnostics and Diagnosis</h4>
-<p>This can happen when Surveillance Activity 2 uses Specimens collected as part of Surveillance Activity 1 to test them again for the same or different hazard. For example, Specimens from bats collected ten years ago will be used in a new study to test them for SARS-CoV-2. The Diagnostics are the only new entity generated as part of Surveillance Activity 2.</p>
-<p><img src="Pictures_and_diagrams/Picture18.png" class="img-fluid" style="width:100.0%"></p>
-</section>
-<section id="surveillance-activity-contains-only-specimens-diagnostics-and-diagnosis" class="level4">
-<h4 class="anchored" data-anchor-id="surveillance-activity-contains-only-specimens-diagnostics-and-diagnosis">Surveillance Activity contains only Specimens, Diagnostics and Diagnosis</h4>
+<section id="surveillance-activity-contains-only-specimens-and-diagnostics" class="level4">
+<h4 class="anchored" data-anchor-id="surveillance-activity-contains-only-specimens-and-diagnostics">Surveillance Activity contains only Specimens and Diagnostics</h4>
 <p><img src="Pictures_and_diagrams/Picture19.png" class="img-fluid" style="width:100.0%"></p>
-<p>This can happen Surveillance Activity 2 generates new Specimens from a carcass of a Source Record collected as part of Surveillance Activity 1 and tests these new Specimens for a hazard. For example, a carcass of a bat collected ten years ago will be used in a new study, Surveillance Activity 2, to get a new Specimen and test it for SARS-CoV-2. The new Specimen and the new Diagnostic belong to Surveillance Activity 2.</p>
-<!-- #### Only the Source Record and Specimens belong to two or more Surveillance Activities -->
-<!-- This can happen Surveillance Activity 2 uses the carcass of a Source Record, collected as part of Surveillance Activity 1 to get new Specimens and test them for a hazard but also uses Specimens collected as part of Surveillance Activity 1 to test it for the same hazard. For example, a carcass of a bat collected ten years ago will be used in a new study, Surveillance Activity 2, to get a new Specimen and test it for SARS-CoV-2. Specimens from the bats collected 10 years ago will also be used to test them for SARS-CoV-2. The new Specimen and the new Diagnostic belong to Surveillance Activity 2, the Source Record and the old Specimens to both Surveillance Activities, and the corresponding Field Activity up to Collection belong to Surveillance Activity 1. -->
-<!-- Another exception to this rule is the collection of Specimens from Sources that belonged to other Surveillance Activities. For example, marked rodents that were released, and later captured and tested for a specific hazard under Surveillance Activity A that were captured and sampled during Surveillance Activity B months later. In this case, these rodents will be part of two Surveillance Activities (A and B). -->
-<!-- Another exception occurs when Specimens were collected during past surveillance efforts but are included in new surveillance initiatives. For instance, using pangolin Specimens collected by veterinarians in 2017 and tested for Salmonella sps. which are then tested in 2023 for SARS-CoV-2. In this case, the latter Surveillance Activity is assigned to the Specimens being tested (as a second Surveillance Activity) and to the SARS-CoV-2 Diagnostics and Diagnosis. Therefore, these Specimens should have two Surveillance Objectives. The first one corresponds to the original Surveillance Activity that lead to their collection and the second one corresponds to the Surveillance Activity testing them for SARS-CoV-2. The Source (pangolin) and the corresponding Record should keep a single Surveillance Activity. -->
+<p>This can happen when Surveillance Activity 2 uses Specimens collected as part of Surveillance Activity 1 to test them again for the same or different hazard. For example, Specimens from bats collected ten years ago will be used in a new study to test them for SARS-CoV-2. The Specimen belong to both Surveillance Activities. The Diagnostics are the only new entity generated as part of Surveillance Activity 2, and it is clear that Specimens from Surveillance Activity 1 were used in Surveillance Activity 2.</p>
+</section>
+<section id="surveillance-activity-contains-only-source-records-specimens-diagnostics-and-diagnosis" class="level4">
+<h4 class="anchored" data-anchor-id="surveillance-activity-contains-only-source-records-specimens-diagnostics-and-diagnosis">Surveillance Activity contains only Source Records, Specimens, Diagnostics, and Diagnosis</h4>
+<p><img src="Pictures_and_diagrams/Picture20.png" class="img-fluid" style="width:100.0%"></p>
+<p>This can happen when Surveillance Activity 2 generates new Specimens from carcasses of Source Records collected as part of Surveillance Activity 1 and tests these new Specimens for a hazard. For example, carcasses of bats collected ten years ago will be used in a new study, Surveillance Activity 2, to get new Specimens and test them for SARS-CoV-2. The Source Records belong to both Surveillance Activities. The new Specimens and Diagnostics are the only new entities generated as part of Surveillance Activity 2, and it is clear that Source Records (the carcasses in this particular case) from Surveillance Activity 1 were used in Surveillance Activity 2.</p>
 <!-- Moreover, Necropsies might be conducted as part of a secondary Surveillance Activity (on a Carcass that was collected under other Surveillance Activity) or new Specimens could be created from a previously unused Carcass as part of a new Surveillance Activity. In this case, the new data (Necropsy and Specimens) should receive the second Surveillance Activity only. Diagnostics using the new Specimens should receive the second Surveillance Activity only. The Carcass should receive the Surveillance Activity that lead to its collection only. -->
-<!-- Finally, the health of the same animal could be assessed under different Surveillance Activities. For example, a ranger that finds a sick animal in a specific date and assess it health and potential cause of disease. Then, the animal is taken to a rehabilitation center where its health is assessed again at admission and samples are collected for testing. Finally, the animal health at the rehabilitation center can be assessed again later and more sampled could be taken in order to learn what pathogens are circulating within the facility. This animal has been part of three potential Surveillance Activities, each with different target populations and methods. To track the path of this animal, each Field Visit (ranger patrolling, the admission at the rehabilitation center, and the sampling at admission) should be part of one Surveillance Activity only. The Locations within each Field Activity (a protected area, the rehabilitation center, and the rehabilitation center), should be part of the first, the second, and third Surveillance Activities only. Each Event at each Location, (when it was found originally in the protected area, examined at admission to the rehabilitation center, and then sampled after admission) should be part of a single Surveillance Activity,  -->
-<!-- it should receive the three Surveillance Activities. Each Event (when it was found originally, examined at admission to the rehabilitation center, and then sampled after admission) should be part of a single Surveillance Activity, the Locations (a protected area and the rehabilitation center), should be part of one and two Surveillance Activities, respectively correspondingly,  -->
-<!-- Therefore, Surveillance Activities can be interconnected through the reuse of Specimens or expanding the data generated by previous Surveillance Activities. These connections will be evident in the exported data, where each component with multiple Surveillance Activities (e.g., Specimen) will be represented by one row per Surveillance Activity.  -->
-<!-- Other option is animals in a pen. Feces known to be dropped by animal A can be collected, as well as feces from the pen floor whose specific individual source is unknown, but it is known that the animals in the pen dropped them (including animal B)-> Animal Source A -> feces 1 and Animal Source A + Group Source A -> feces 2 -->
-<!-- **Specimens can originate from Sources at time *t*, but also from other Specimens, or Diagnostic Products**. -->
-<!-- For example, it is possible to collect feces from an empty cage that a Group Source providing feces longitudinally was using until two days ago. In this case, the Specimen origin changes from the Group Source followed longitudinally to an Environmental Source (the cage). Using a clustering variable, it is possible to track that the Specimens are coming from the same cage, in one case with animals and in the last one without animals (clustering the Sources coming from the same cage).  -->
-<!-- # Grouping of Locations, Events, and Sources {.unnumbered} -->
 </section>
+<section id="same-source-in-different-surveillance-activities" class="level4">
+<h4 class="anchored" data-anchor-id="same-source-in-different-surveillance-activities">Same Source in different Surveillance Activities</h4>
+<p>The health of the same animal could be assessed under different Surveillance Activities. For example, a ranger finds a sick animal in a specific date and assess it health and potential cause of disease as part of Surveillance Activity 1. Then, the animal is taken to a rehabilitation center where its health is assessed again at admission and samples are collected for testing as part of Surveillance Activity 2. Finally, the animal health at the rehabilitation center is assessed again three months later and samples are collected again in order to learn what pathogens are circulating within the facility as part of Surveillance Activity 3.</p>
+<p>In this case there are three Projects, Surveillance Activities, Field Visits, Events, and Collections independently of each other. There are two Locations. The Animal Source belongs to three Surveillance Activities. The Source Records and Specimens belong to a single Surveillance Activity just like the Diagnostics completed in Surveillance in Surveillance Activity 2 and 3.</p>
+<p><img src="Pictures_and_diagrams/Picture21.png" class="img-fluid" style="width:100.0%"></p>
+<p>Therefore, Surveillance Activities can be interconnected through common units or the reuse of units generated by previous Surveillance Activities.</p>
 </section>
-<section id="clustering-of-locations-events-and-source-records" class="level3">
-<h3 class="anchored" data-anchor-id="clustering-of-locations-events-and-source-records">Clustering of Locations, Events, and Source Records</h3>
-<!-- Locations can be clustered in larger nested or non-nested spatial units if needed. For a detail explanation, see "Clustering of Locations, Events, and Source Records" section below. -->
-<!-- Events can be clustered in nested or non-nested spatial units smaller than Locations if needed and also in nested and non-nested temporal clusters (Events, and therefore, Source Records, are the only unit that can be clustered by a temporal group). For a detail explanation, see "Clustering of Locations, Events, and Source Records" section below. -->
-<!-- Using a clustering variable, it is possible to track that the Specimens are coming from the same cage, in one case with animals and in the last one without animals (clustering the Sources coming from the same cage).  -->
-<p>The simplest data of a Field Visit is a single Location with a single Event where a single Source Record is collected. However, depending on the methodology of a specific Surveillance Activity, <strong>Events can be clustered by units that are clustered by Locations and Locations can be clustered by units that are clustered by Field Visits</strong>:</p>
-<ul>
-<li>Field Visit<sub>w</sub>
-<ul>
-<li><strong>Cluster unit</strong><sub>𝛼</sub>
-<ul>
-<li><strong>Cluster unit</strong><sub>𝛽</sub>
-<ul>
-<li>Location<sub>x</sub>
-<ul>
-<li><strong>Cluster unit</strong><sub>γ</sub>
-<ul>
-<li><strong>Cluster unit</strong><sub>𝛿</sub>
-<ul>
-<li>Event<sub>y</sub>
-<ul>
-<li>Source Record<sub>z</sub></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-<p>For example, the Locations can correspond to markets that are clustered by neighborhood and city. Then the Events (cages with animals) within the market can be clustered by stall and the stalls can be clustered by vendor.</p>
-<ul>
-<li>Field Visit<sub>w</sub>
-<ul>
-<li><strong>City</strong><sub>𝛼</sub>
-<ul>
-<li><strong>Neighborhood</strong><sub>𝛽</sub>
-<ul>
-<li>Location<sub>x</sub>
-<ul>
-<li><strong>Vendor</strong><sub>γ</sub>
-<ul>
-<li><strong>Stall</strong><sub>𝛿</sub>
-<ul>
-<li>Event<sub>y</sub>
-<ul>
-<li>Source Record<sub>z</sub></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-<p>A second layer of complexity is the presence of spatial and temporal clusters. For example, the Locations can correspond to markets that are clustered by neighborhood and city. Then the Events (cages with animals) within the market can be clustered by stall and the stalls can be clustered by vendor.</p>
-<p>A second layer of complexity is the addition of clustered units that are not nested. For example, the same structure shown before plus the cluster of Source Records per season of the year (Temporal Cluster unit):</p>
-<ul>
-<li>Field Visit<sub>w</sub>
-<ul>
-<li><strong>Spatial Cluster unit</strong><sub>𝛼</sub>
-<ul>
-<li><strong>Spatial Cluster unit</strong><sub>𝛽</sub>
-<ul>
-<li>Location<sub>x</sub>
-<ul>
-<li><strong>Spatial Cluster unit</strong><sub>γ</sub>
-<ul>
-<li><strong>Spatial Cluster unit</strong><sub>𝛿</sub>
-<ul>
-<li>Event<sub>y</sub>
-<ul>
-<li><strong>Spatial Cluster unit</strong><sub>𝜂</sub></li>
-<li><strong>Temporal Cluster unit</strong><sub>д</sub>
-<ul>
-<li>Source Record<sub>z</sub></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-<p>Each of these Clusters can be either Spatial (e.g., County, City, Market, Vendor, Stall, Cage) or temporal (day, week, month, season, year, decade, etc)</p>
-<p>For example, the units Location, Event, and Source Record could be enough to record the data structure of a specific Surveillance Activity gathering information during patrols (Field Visits) in Protected Areas (Locations) at points (Events) where dead animals (Source Records) are found at any given time. However, another Surveillance Activity could have the following structure: patrol (Field Visit), protected area (cluster level 1), zones within protected area (Location), grid cells within each zone (cluster level 2), capture site (Event) with a pair of mist nests within each grid cell, mist nets of the capture site (cluster level 3), and bats captured (Source Records) per season (temporal cluster 1).</p>
-<!-- Further characteristics of each clustering unit, whether static or time dependent through the Surveillance Activity period, should be prepared in a file, such as an excel sheet, with columns with the identifiers of all relevant units (Location grouping units. Event grouping units that are not the Location, and Source Record grouping units that are not the Event) and  attached it at the corresponding level. A recommendation is to prepared a sheet for the features of all spatio temporal grouping units visited during a Field Visit and attach it at this level (Field Visit). The columns with the identifiers will allow joining the data of the corresponding Field Visit (Locations, Events, Source Records, grouping units) with the attached and spatial data. -->
-<p>In another example, a Surveillance Activity involved sampling animals and cages in a market. One of the potential options to structure these data is to set the market as the Location and set each vendor within the market as an Event. Animals are in cages and cages are clustered in stalls. In one of the Events (a vendor), a sample of feces is collected from the bottom of a cage, the cage has three animals of the same species X, and only one of these three animals is sampled (Animal Source). In this scenario, the Sources (a Group Source Record with two animals of species X and a Animal Source Record of species X also), are clustered by cage (clustering unit 1), by stall (clustering group 2), Event (vendor), Location (market), and Field Activity.</p>
-<p>To accommodate these structures, the data model allows the inclusion of clustering levels between the Source Record and Event, Event and Location, and Location and Field Visit. The data model also allows the inclusion of non-nested clustering units. Unavoidably, the number of clustering levels, what each of these clustering units represent, what they are clustering, and the data to be collected from each of these extra units will vary among Surveillance Activities. Therefore, clustering units properties and what their represent must be reported in the Surveillance Activity metadata. The only default properties for each unit are the identifier, the cross identifier, the origin of the cross identifier, and a description. Other potential properties must be documented in a separate file (e.g., an excel sheet) with common identifiers to allow joining the clusters with the corresponding data.</p>
-<p>a single level measn non-nested clustering</p>
+<section id="sources-in-surveillance-activity-but-not-present-in-any-event" class="level4">
+<h4 class="anchored" data-anchor-id="sources-in-surveillance-activity-but-not-present-in-any-event">Sources in Surveillance Activity but not Present in any Event</h4>
+<p>Studies that track marked individuals over time could succeed in capturing all individually identified animals, so all these Sources are included as Source Records at least once during the study period. However, it is also possible that only a proportion of the individualized Sources are captured or sight during the Surveillance Activity, so these Sources are not present as Source Record of any Event. For the second possibility, it is still important to track the Sources that were part of the sampling frame and censoring them when they were nor part of any Event.</p>
+<p>For this reason, the data model can assigned a Surveillance Activity to a Source without including any Field Visits, Location, Event, or Collection. When the study is completed, it will be possible to identify all the Sources involved in the study including those that were never captured (Source 3 in the figure below).</p>
+<p><img src="Pictures_and_diagrams/Picture22.png" class="img-fluid" style="width:100.0%"></p>
 </section>
 </section>
 </section>
-<section id="full-relationships-and-units" class="level1">
-<h1>Full Relationships and Units</h1>
-<p>A summary of the relationships in the data model is provided in the following figures:</p>
-<section id="for-group-source" class="level3">
-<h3 class="anchored" data-anchor-id="for-group-source">For Group Source</h3>
-<p><img src="Pictures_and_diagrams/Relationships_Group_Source.png" class="img-fluid" width="680"></p>
-</section>
-<section id="for-animal-source" class="level3">
-<h3 class="anchored" data-anchor-id="for-animal-source">For Animal Source</h3>
-<p><img src="Pictures_and_diagrams/Relationships_Animal_Source.png" class="img-fluid" width="680"></p>
-</section>
-<section id="for-environmental-and-arthropod-source" class="level3">
-<h3 class="anchored" data-anchor-id="for-environmental-and-arthropod-source">For Environmental and Arthropod Source</h3>
-<p><img src="Pictures_and_diagrams/Relationships_Other_Source.png" class="img-fluid" width="680"></p>
+<section id="all-units-in-the-data-model-and-all-relationships" class="level1">
+<h1>All Units in the Data Model and All Relationships</h1>
+<p>Considering the details explained in the Complexities section, a summary of the relationships in the data model is provided in the following figure (the orange Units and connections apply to Animal Sources only):</p>
+<p><img src="Pictures_and_diagrams/Relationships_All_Sources.png" class="img-fluid" width="680"></p>
 <!-- #Recommnedations for Standardization -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -834,8 +859,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./manual.html" class="pagination-link">
-        <span class="nav-page-text">WildlHealthDB Manual</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data_dictionary.html" class="pagination-link">
+        <span class="nav-page-text">Data Dictionary</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
