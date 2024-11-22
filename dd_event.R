@@ -145,7 +145,7 @@ event<-
       Label="Sector of the reporter", 
       Definition="The sector of the person that reported the Event",
       Type="Single selection",
-      Mandatory="No"), 
+      Mandatory="No")) 
   
     # data.frame(
     #   Variable="EventTargetedRecords",

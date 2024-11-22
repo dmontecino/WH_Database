@@ -564,20 +564,20 @@ surv_activity<-
       Type="String",
       Mandatory="Yes"),   
     
-    SurveillanceActivityFieldVisitNumberAndUnits
-    
-    SurveillanceActivityLocationNumberAndUnits
-    
-    SurveillanceActivityEventNumberAndUnits
-    
-    SurveillanceActivityClusterNumberAndUnits
-    
-    
-    SurveillanceActivitySourceUnits
-    
-    SurveillanceActivitySourceNumberPerLocationEventCluster
-    
-    SurveillanceActivitySourceRecordNumber
+    # SurveillanceActivityFieldVisitNumberAndUnits
+    # 
+    # SurveillanceActivityLocationNumberAndUnits
+    # 
+    # SurveillanceActivityEventNumberAndUnits
+    # 
+    # SurveillanceActivityClusterNumberAndUnits
+    # 
+    # 
+    # SurveillanceActivitySourceUnits
+    # 
+    # SurveillanceActivitySourceNumberPerLocationEventCluster
+    # 
+    # SurveillanceActivitySourceRecordNumber
     
     
     
