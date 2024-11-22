@@ -1,4 +1,4 @@
-### Surveillance Activities
+## Surveillance Activities
 
 Initially, it was mentioned that "**Field Visits, Locations, Events, Sources, Source Records, and Diagnostics usually belong to a single Surveillance Activity**. This is the Surveillance Activity that lead to the Field Visits at different Locations to document Events, collect Sources and Specimens, perform Diagnostics for a specific hazard, and provide Diagnosis for Diagnostics, Specimens, and Sources".
 
@@ -24,7 +24,7 @@ This can happen when two or more Surveillance Activities overlap in their Field 
 
 ![](Pictures_and_diagrams/Picture14.png){width=100%}
 
-This can happen when two or more Surveillance Activities overlap in their Field Visits up to Collections but the Source Records up to Diagnostics are different. For example, bats are collected at the same; however, only Megabats are tested for Ebola as part of Surveillance Activity 1. Instead, only Microbats are tested for coronaviruses as part of Surveillance Activity 2. In this case the Field Visits, Locations, Events, and Collections belong to both Surveillance Activities. Instead, the Source Records, Specimens, Diagnostics, and Diagnosis belong to one of them only. 
+This can happen when two or more Surveillance Activities overlap in their Field Visits up to Collections but the Source Records up to Diagnostics are different. For example, bats are collected using the same mist nets; however, only Megabats are tested for Ebola as part of Surveillance Activity 1. Instead, only Microbats are tested for coronaviruses as part of Surveillance Activity 2. In this case the Field Visits, Locations, Events, and Collections belong to both Surveillance Activities. The Source Records, Specimens, Diagnostics, and Diagnosis belong to one of them only. 
 
 #### Field Visits up to Events belong to two or more Surveillance Activities
 
@@ -42,53 +42,45 @@ This can happen when two or more Surveillance Activities overlap in their Field 
 
 ![](Pictures_and_diagrams/Picture17.png){width=100%}
 
-This can happen when two or more Surveillance Activities overlap in their Field Visits but the Locations up to Diagnostics are different. Field Visit can be common because it facilitates logistics. For example, coming back from the forest after collecting chimpanzee urine as part of Surveillance Activity 1 and on the way back, go to a Rehabilitation Center and sampled animals there as part of Surveillance Activity 2. 
+This can happen when two or more Surveillance Activities overlap in their Field Visits but the Locations up to Diagnostics are different. Field Visit can be common because it facilitates logistics. For example, coming back from the forest after collecting chimpanzee urine as part of Surveillance Activity 1 and on the way back, a visit is made to a Rehabilitation Center to sample animals as part of Surveillance Activity 2. 
 
 
-#### Surveillance Activity contains only Diagnostics and Diagnosis
+<!-- #### Surveillance Activity contains only Diagnostics and Diagnosis -->
 
-This can happen when Surveillance Activity 2 uses Specimens collected as part of Surveillance Activity 1 to test them again for the same or different hazard. For example, Specimens from bats collected ten years ago will be used in a new study to test them for SARS-CoV-2. The Diagnostics are the only new entity generated as part of Surveillance Activity 2.
+<!-- This can happen when Surveillance Activity 2 uses Specimens collected as part of Surveillance Activity 1 to test them again for the same or different hazard. For example, Specimens from bats collected ten years ago will be used in a new study to test them for SARS-CoV-2. The Diagnostics are the only new entity generated as part of Surveillance Activity 2. -->
 
-![](Pictures_and_diagrams/Picture18.png){width=100%}
+<!-- ![](Pictures_and_diagrams/Picture18.png){width=100%} -->
 
-#### Surveillance Activity contains only Specimens, Diagnostics and Diagnosis
+#### Surveillance Activity contains only Specimens and Diagnostics
 
 ![](Pictures_and_diagrams/Picture19.png){width=100%}
 
-This can happen Surveillance Activity 2 generates new Specimens from a carcass of a Source Record collected as part of Surveillance Activity 1 and tests these new Specimens for a hazard. For example, a carcass of a bat collected ten years ago will be used in a new study, Surveillance Activity 2, to get a new Specimen and test it for SARS-CoV-2. The new Specimen and the new Diagnostic belong to Surveillance Activity 2.
+This can happen when Surveillance Activity 2 uses Specimens collected as part of Surveillance Activity 1 to test them again for the same or different hazard. For example, Specimens from bats collected ten years ago will be used in a new study to test them for SARS-CoV-2. The Specimen belong to both Surveillance Activities. The Diagnostics are the only new entity generated as part of Surveillance Activity 2, and it is clear that Specimens from Surveillance Activity 1 were used in Surveillance Activity 2.
+
+#### Surveillance Activity contains only Source Records, Specimens, Diagnostics, and Diagnosis
+
+![](Pictures_and_diagrams/Picture20.png){width=100%}
 
 
-
-
-
-
-
-<!-- #### Only the Source Record and Specimens belong to two or more Surveillance Activities -->
-
-<!-- This can happen Surveillance Activity 2 uses the carcass of a Source Record, collected as part of Surveillance Activity 1 to get new Specimens and test them for a hazard but also uses Specimens collected as part of Surveillance Activity 1 to test it for the same hazard. For example, a carcass of a bat collected ten years ago will be used in a new study, Surveillance Activity 2, to get a new Specimen and test it for SARS-CoV-2. Specimens from the bats collected 10 years ago will also be used to test them for SARS-CoV-2. The new Specimen and the new Diagnostic belong to Surveillance Activity 2, the Source Record and the old Specimens to both Surveillance Activities, and the corresponding Field Activity up to Collection belong to Surveillance Activity 1. -->
-
-
-
-<!-- Another exception to this rule is the collection of Specimens from Sources that belonged to other Surveillance Activities. For example, marked rodents that were released, and later captured and tested for a specific hazard under Surveillance Activity A that were captured and sampled during Surveillance Activity B months later. In this case, these rodents will be part of two Surveillance Activities (A and B). -->
-
-<!-- Another exception occurs when Specimens were collected during past surveillance efforts but are included in new surveillance initiatives. For instance, using pangolin Specimens collected by veterinarians in 2017 and tested for Salmonella sps. which are then tested in 2023 for SARS-CoV-2. In this case, the latter Surveillance Activity is assigned to the Specimens being tested (as a second Surveillance Activity) and to the SARS-CoV-2 Diagnostics and Diagnosis. Therefore, these Specimens should have two Surveillance Objectives. The first one corresponds to the original Surveillance Activity that lead to their collection and the second one corresponds to the Surveillance Activity testing them for SARS-CoV-2. The Source (pangolin) and the corresponding Record should keep a single Surveillance Activity. -->
+This can happen when Surveillance Activity 2 generates new Specimens from carcasses of Source Records collected as part of Surveillance Activity 1 and tests these new Specimens for a hazard. For example, carcasses of bats collected ten years ago will be used in a new study, Surveillance Activity 2, to get new Specimens and test them for SARS-CoV-2. The Source Records belong to both Surveillance Activities. The new Specimens and Diagnostics are the only new entities generated as part of Surveillance Activity 2, and it is clear that Source Records (the carcasses in this particular case) from Surveillance Activity 1 were used in Surveillance Activity 2.
 
 <!-- Moreover, Necropsies might be conducted as part of a secondary Surveillance Activity (on a Carcass that was collected under other Surveillance Activity) or new Specimens could be created from a previously unused Carcass as part of a new Surveillance Activity. In this case, the new data (Necropsy and Specimens) should receive the second Surveillance Activity only. Diagnostics using the new Specimens should receive the second Surveillance Activity only. The Carcass should receive the Surveillance Activity that lead to its collection only. -->
 
-<!-- Finally, the health of the same animal could be assessed under different Surveillance Activities. For example, a ranger that finds a sick animal in a specific date and assess it health and potential cause of disease. Then, the animal is taken to a rehabilitation center where its health is assessed again at admission and samples are collected for testing. Finally, the animal health at the rehabilitation center can be assessed again later and more sampled could be taken in order to learn what pathogens are circulating within the facility. This animal has been part of three potential Surveillance Activities, each with different target populations and methods. To track the path of this animal, each Field Visit (ranger patrolling, the admission at the rehabilitation center, and the sampling at admission) should be part of one Surveillance Activity only. The Locations within each Field Activity (a protected area, the rehabilitation center, and the rehabilitation center), should be part of the first, the second, and third Surveillance Activities only. Each Event at each Location, (when it was found originally in the protected area, examined at admission to the rehabilitation center, and then sampled after admission) should be part of a single Surveillance Activity,  -->
+#### Same Source in different Surveillance Activities
 
+The health of the same animal could be assessed under different Surveillance Activities. For example, a ranger finds a sick animal in a specific date and assess it health and potential cause of disease as part of Surveillance Activity 1. Then, the animal is taken to a rehabilitation center where its health is assessed again at admission and samples are collected for testing as part of Surveillance Activity 2. Finally, the animal health at the rehabilitation center is assessed again three months later and samples are collected again in order to learn what pathogens are circulating within the facility as part of Surveillance Activity 3. 
 
-<!-- it should receive the three Surveillance Activities. Each Event (when it was found originally, examined at admission to the rehabilitation center, and then sampled after admission) should be part of a single Surveillance Activity, the Locations (a protected area and the rehabilitation center), should be part of one and two Surveillance Activities, respectively correspondingly,  -->
+In this case there are three Projects, Surveillance Activities, Field Visits, Events, and Collections independently of each other. There are two Locations. The Animal Source belongs to three Surveillance Activities. The Source Records and Specimens belong to a single Surveillance Activity just like the Diagnostics completed in Surveillance in Surveillance Activity 2 and 3.
 
-<!-- Therefore, Surveillance Activities can be interconnected through the reuse of Specimens or expanding the data generated by previous Surveillance Activities. These connections will be evident in the exported data, where each component with multiple Surveillance Activities (e.g., Specimen) will be represented by one row per Surveillance Activity.  -->
+![](Pictures_and_diagrams/Picture21.png){width=100%}
 
+Therefore, Surveillance Activities can be interconnected through common units or the reuse of units generated by previous Surveillance Activities.
 
+#### Sources in Surveillance Activity but not Present in any Event
 
+Studies that track marked individuals over time could succeed in capturing all individually identified animals, so all these Sources are included as Source Records at least once during the study period. However, it is also possible that only a proportion of the individualized Sources are captured or sight during the Surveillance Activity, so these Sources are not present as Source Record of any Event. For the second possibility, it is still important to track the Sources that were part of the sampling frame and censoring them when they were nor part of any Event. 
 
+For this reason, the data model can assigned a Surveillance Activity to a Source without including any Field Visits, Location, Event, or Collection. When the study is completed, it will be possible to identify all the Sources involved in the study including those that were never captured (Source 3 in the figure below).
 
-<!-- Other option is animals in a pen. Feces known to be dropped by animal A can be collected, as well as feces from the pen floor whose specific individual source is unknown, but it is known that the animals in the pen dropped them (including animal B)-> Animal Source A -> feces 1 and Animal Source A + Group Source A -> feces 2 -->
+![](Pictures_and_diagrams/Picture22.png){width=100%}
 
-
-<!-- **Specimens can originate from Sources at time *t*, but also from other Specimens, or Diagnostic Products**. -->
-
-<!-- For example, it is possible to collect feces from an empty cage that a Group Source providing feces longitudinally was using until two days ago. In this case, the Specimen origin changes from the Group Source followed longitudinally to an Environmental Source (the cage). Using a clustering variable, it is possible to track that the Specimens are coming from the same cage, in one case with animals and in the last one without animals (clustering the Sources coming from the same cage).  -->

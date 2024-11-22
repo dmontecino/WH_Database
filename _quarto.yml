@@ -18,8 +18,8 @@ book:
     # - specimen.qmd
     # - diagnostics.qmd
     - data_model.qmd
-    - manual.qmd
     - data_dictionary.qmd
+    - manual.qmd
   search:
     type: textbox
     location: sidebar

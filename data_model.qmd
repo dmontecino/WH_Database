@@ -112,19 +112,41 @@ More complex relationships among the basic units in the data model, as well as o
 
 ```
 
-## Diagnosis
+<!-- ## Diagnosis -->
 
-![](Pictures_and_diagrams/Picture11.png){width=100%}
+<!-- ![](Pictures_and_diagrams/Picture11.png){width=100%} -->
 
 ```{r child="diagnosis.qmd", echo=FALSE, eval=F, message=FALSE, cache=F}
 
 ```
 
-## Complexities
+# Complexities
 
-```{r child="complexities_surv_act.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ## Storage -->
 
-```
+<!-- ## Export -->
+
+
+
+## Laboratories
+
+The data model includes Laboratory entities. Laboratories can conduct Diagnostics to test for hazards in Specimens or in full Source Records (Field-based Diagnostics or simple Diagnostics conducted by people are also possible in the data model. See Diagnostics). Laboratory properties include address, manager, name, Laboratory ID, among others (Data Dictionary). It is also possible to store data regarding Laboratory capabilities in terms of diagnostic tests and storage, and their certifications (Bio safety levels, etc.)
+
+## Interpretation
+
+#### Interpretation of a Hazard's detection in a Diagnostic
+
+In the data model, Interpretation of a Diagnostic is the conclusion regarding the detection of a hazard using a Diagnostic targeting that specific hazard, based on a case definition for a positive, negative, or undetermined result provided in the Surveillance Activity metadata. Each Diagnostic receives one Interpretation only.
+
+#### Interpretation of a Hazard's presence in a Specimen
+
+In the data model, Interpretation of a Hazard in a Specimen is the conclusion regarding the presence or absence of a specific hazard in a Specimen, based on a case definition for a positive, negative, or undetermined Specimen provided in the Surveillance Activity metadata that follows the results from the Diagnostic(s) conducted using the Specimen and the corresponding Diagnostic(s) Interpretation(s). Specimens can receive multiple Interpretations if they are used to conduct several Diagnostics to assess several hazards or if the same hazard is assessed more than once.
+
+#### Interpretation of a Hazard's presence in a Source Record
+
+In the data model, Interpretation of a Hazard in a Source Record is the conclusion regarding the presence or absence of a specific hazard in a Source Record, based on a case definition for a positive, negative, or undetermined Source Record provided in the Surveillance Activity metadata following the results of the Diagnostic(s) conducted using the Source Record and the Source Record Specimen(s), the corresponding Diagnostic(s) Interpretation(s), anomalies in the Source Record at a Event, and Necropsy findings.
+
+Source Records can receive multiple Interpretations if multiple hazards are assessed in them or the same hazard is assessed more than once. Sources can have many Interpretations through several Source Records if multiple hazards are assessed in them at time *t* (Source Record), if the same hazard is assessed more than once at time *t* (Source Record), or if different or the same hazard are assessed over time (several Source Records of the same Source over time).
 
 
 ```{r child="groups.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
@@ -132,21 +154,17 @@ More complex relationships among the basic units in the data model, as well as o
 ```
 
 
-# Full Relationships and Units
+```{r child="complexities_surv_act.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
-A summary of the relationships in the data model is provided in the following figures:
+```
 
-### For Group Source
 
-![](Pictures_and_diagrams/Relationships_Group_Source.png){width="680"}
+# All Units in the Data Model and All Relationships
 
-### For Animal Source
+Considering the details explained in the Complexities section, a summary of the relationships in the data model is provided in the following figure (the orange Units and connections apply to Animal Sources only):
 
-![](Pictures_and_diagrams/Relationships_Animal_Source.png){width="680"}
+![](Pictures_and_diagrams/Relationships_All_Sources.png){width="680"}
 
-### For Environmental and Arthropod Source
-
-![](Pictures_and_diagrams/Relationships_Other_Source.png){width="680"}
 
 <!-- #Recommnedations for Standardization -->
 
