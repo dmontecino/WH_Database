@@ -17,14 +17,14 @@ event<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="EventCrossID",
+      Variable="EventCrossReferenceID",
       Label="Event Cross Identifier", 
       Definition="The identifier of an Event in another system (e.g., database/document/other)",
       Type="String",
       Mandatory="No"), 
     
     data.frame(
-      Variable="EventCrossIDOrigin",
+      Variable="EventCrossReferenceIDOrigin",
       Label="Event Cross Identifier Origin", 
       Definition="The database/document/other where other identification 
       for the same Event is used",
@@ -34,14 +34,13 @@ event<-
     data.frame(
       Variable="EventDate",
       Label="Event Date", 
-      Definition="The date and time of the Event. Observation, capture, patrol, or collection efforts
-      can be established in the Collection associated fields",
+      Definition="The date and time of the Event",
       Type="String",
       Mandatory="Yes"), 
     
     data.frame(
       Variable="EventLongitude",
-      Label="Longitude", 
+      Label="Event Longitude", 
       Definition="Longitude coordinate. Non decimal degree coordinates are automatically converted. 
       If coordinates are provided in UTM, then the UTM zone must be provided (see below)",
       Type="Float",
@@ -49,7 +48,7 @@ event<-
     
     data.frame(
       Variable="EventLatitude",
-      Label="Latitude", 
+      Label="Event Latitude", 
       Definition="Latitude coordinate. Non decimal degree coordinates are automatically converted. 
       If coordinates are provided in UTM, then the UTM zone must be provided (see below)",
       Type="Float",
@@ -61,7 +60,7 @@ event<-
       Definition="UTM Zone where the Event occurs. It applies if the longitude an latitude odf
       the Event are provided in UTM coordinate reference system. 
       See https://www.dmap.co.uk/utmworld.htm",
-      Type="Float",
+      Type="Single selection",
       Mandatory="Yes"),   
     
     data.frame(
@@ -73,38 +72,29 @@ event<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="EventCoordinatesExactOrEstimated",
-      Label="Event Coordinates Exact Or Estimated", 
-      Definition="Indicate weather the longitude and latitude coordinates are exact (GPS device)
-      or estimated based on another method (e.g., by pointinf the location in the map above)",
+      Variable="EventOriginalCRS",
+      Label="Event OriginalCRS", 
+      Definition="Indicate the Coordinate Reference System in which the Event coordinates were recorded",
       Type="Single selection",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="EventOriginalCRS",
-      Label="Original Coordinate Reference System tro report the longitude and latitude of the Event", 
-      Definition="Indicate weather the longitude and latitude coordinates are exact (GPS device)
-      or estimated based on another method (e.g., by pointinf the location in the map above)",
-      Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
       Variable="EventCountry",
-      Label="Country", 
+      Label="Event Country", 
       Definition="Country where the Event happens",
       Type="Single selection",
       Mandatory="Yes"),  
     
     data.frame(
       Variable="EventState",
-      Label="State", 
+      Label="Event State", 
       Definition="State where the Event happens",
       Type="Single selection",
       Mandatory="No"),      
     
     data.frame(
       Variable="EventProvince",
-      Label="Province", 
+      Label="Event Province", 
       Definition="Province where the Event happens",
       Type="Single selection",
       Mandatory="No"),   
@@ -130,22 +120,29 @@ event<-
       Variable="EventOtherFeatures",
       Label="Other Event Features", 
       Definition="Other findings at the Event that are dynamic over time not listed in the previous attribute",
-      Type="Multiple selection",
+      Type="String",
       Mandatory="No"),
     
     data.frame(
       Variable="EventBy",
-      Label="Event reported by", 
-      Definition="The person that reported the Event",
+      Label="Event Recorded by", 
+      Definition="The person that recorded the Event",
       Type="Single selection",
       Mandatory="Yes"),        
     
     data.frame(
       Variable="EventBySector",
-      Label="Sector of the reporter", 
+      Label="Sector of the Reporter", 
       Definition="The sector of the person that reported the Event",
       Type="Single selection",
-      Mandatory="No")) 
+      Mandatory="No"),
+
+    data.frame(
+      Variable="EventComments",
+      Label="Event Comments", 
+      Definition="Any other comments regarding the Event",
+      Type="String",
+      Mandatory="No"))
   
     # data.frame(
     #   Variable="EventTargetedRecords",

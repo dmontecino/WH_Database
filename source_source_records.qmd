@@ -48,9 +48,16 @@ An Animal Source Record can be used directly for a Diagnostic (e.g., X-rays in a
 
 **An animal of species X documented as part of a Group Source Record cannot be included as an Animal Source Record and vice versa**. If an Event contains a Group Source Record of species X and an Animal Source Record of species X, then the total number of animals of species X at the Event is the sum of the number of animals of species X in the Group Source Record and the single individual of species X recorded as an Animal Source Record. An example is a herd of cows illegally raised in a protected area whose health is assessed at time *t*. The herd of this example contains 20 cows. Two of them are sampled and the rest are part of a single unit. In this case, the sampled cows can be added as two Animal Source Records (one per sampled cow) and the remaining 18 animals can be added as a single Group Source Record that distributes the animals per sex, age, and health status. The total number of cows are the individuals in the Group Source Record (18) and the two cows recorded as Animal Records. The "herd" identity of the 20 cows can be kept using a cluster (see "Complexities"). If the Group Source Record contains the original 20 cows and also two Animal Source Records, then the total number of cows will be 22.
 
+#### Vaccination
+
+The data model allows the inclusion of vaccinations completed in an Animal Source by the time it was captured or immobilized at time *t*. It is possible to include as many vaccination records
+as needed to an Animal Source Record. Thus, the vaccination data accumulates for the corresponding Animal Source.
+
 #### Carcass
 
-The carcass of a dead Animal Source can provide Specimens. A Carcass entered to the database comes from a specific Animal Source and they are collected at a single specific time *t*. Therefore, each Carcass is associated with one and only one Animal Source Record (when the Carcass was collected). Properties of a Carcass include its Storage Location Decomposition Condition, Storage During Transport, Storage in a Facility, and its Storage  (building, room, refrigerator, etc.), among others (see Data Dictionary). Moreover, changes in the storage or movement of the carcass from one storage facility to another can be multiple for the same carcass over time. 
+The carcass of a dead Animal Source can provide Specimens. A Carcass entered to the database comes from a specific Animal Source and they are collected at a single specific time *t*. Therefore, each Carcass is associated with one and only one Animal Source Record (when the Carcass was collected). Properties of a Carcass include its Decomposition Condition, Storage During Transport, Owner, Availability, among others. Moreover, Carcasses are stored and changes in the storage or movement of the Carcass from one storage facility to another can be multiple over time. Similarly, Carcasses can be exported multiple times. Changes in storage associated with an exportation must occur after the exportation is completed and the Carcass can be stored in the destination facility.
+
+A Carcass does not provide Specimens directly but through the dead Animal Source Record. 
 
 A Carcass is not used directly for a Diagnostic but through the dead Animal Source Record (e.g., X-rays in a dead animal). The diagnostic information is part of the set of Diagnostics conducted in the corresponding Animal Source. 
 
@@ -62,13 +69,15 @@ Necropsy data includes the a Necropsy Identifier, the Necropy Cross Reference Id
 
 Necropsies can be primary or secondary. A primary necropsy usually starts with an intact carcass (not previously used in a necropsy). A secondary necropsy is usually conducted by a veterinarian pathologist using pictures of the primary necropsy or using a carcass already necropsied. 
 
+A Necropsy does not provide Specimens directly but through the Animal Source Record. 
+
 ### Environmental Source
 
 **An Environmental Source is a unit in space where Specimens that cannot be associated with a Group Source, an Animal Source, or Arthropod Source can be collected from** (e.g., the site where feces of unknown source are found). Properties of an Environmental Source include the Environmental Source ID, the Cross Reference ID, among others (see Data Dictionary). 
 
 #### Environmental Source Record
 
-**An Environmental Source Record is the biotic or abiotic tissue from the Environmental Source at time *t* recovered using a common Collection**. For example, the water collected from a pond (Event) at site X (Environmental Source) using a unique type of device (Collection) to obtain water at time *t* (Environmental Source Record). Properties of an Environmental Source Record include Record Number, Type of Tissue, Volume, the Unit of the Volume, among others (see Data Dictionary). 
+**An Environmental Source Record is the biotic or abiotic tissue from the Environmental Source at time *t* recovered using a common Collection**. For example, the water collected from a pond (Event) at site X (Environmental Source) using a device (Collection) to obtain water at time *t* (Environmental Source Record). Properties of an Environmental Source Record include Record Number, Type of Tissue, the Quantity, and the Quantity Unit (see Data Dictionary). 
 
 **A key difference between the Environmental Source and the Group and Animal Sources is that an Event can contain multiple Records of a single Environmental Source (many Collections from the same Environmental Source at time *t*). Instead, an Event can contain a single Record of many Group and Animal Sources (in one or many Collections)**. An Event can only contain a single Environmental Source, but many Records can be retrieved (one per collection). On the opposite, many bats can be captured in a mist net (many Sources), but they can only provide one Record per Event (see figure at the end of this section).  
 
@@ -84,13 +93,13 @@ Necropsies can be primary or secondary. A primary necropsy usually starts with a
 
 #### Arthropod Source Record
 
-**An Arthropod Source Record is the arthropods collected at the Arthropod Source at time *t* using a common Collection**. For example, the mosquitoes collected (Event) at the household in the forest (Environmental Source) at time *t* (Environmental Source Record) across the traps targeting the same group of arthropods (Collection). This mean mosquitoes of *n* species collected by CO2 traps deployed at the Arthropod Source at time *t* is an Arthropod Source Record and that mosquitoes of *n* species collected by any number of BG traps deployed at the Arthropod Source at time *t* is another Arthropod Source Record. This means that a single Arthropod Source record can contain many mosquito species. The properties of an Arthropod Source Record include Record Number, Species, Age, Sex, Condition of the Females, Number, among others (see Data Dictionary).
+**An Arthropod Source Record is the arthropods of the same species collected at the Arthropod Source at time *t* using a common Collection**. For example, the mosquitoes of species X collected (Event) at the household in the forest (Arthropod Source) at time *t* (Arthropod Source Record) using a specific type of trap (Collection). This means that **mosquitoes of a specific species collected by CO2 traps deployed at the Arthropod Source at time *t* ** is an Arthropod Source Record and that mosquitoes of a specific species collected by any number of BG traps deployed at the Arthropod Source at time *t* is another Arthropod Source Record. The properties of an Arthropod Source Record include Record Number, Species, and the mosquitoes distributed by age, sex, and condition (females only), among others (see Data Dictionary).
 
-**Similar to Environmental Sources, a key difference between the Arthropod Source and the Group and Animal Sources is that an Event can contain multiple Records of a single Arthropod Source (many Collections at the same Arthropod Source at time *t*). Instead, an Event can contain a single Record of many Group and Animal Sources**. An Event can only contain a single Arthropod Source, but many Records can be retrieved (one per collection). On the opposite, many bats can be captured in a mist net (many Sources), but they can only provide one Record per Event (see Figure at the end of the section). 
+**Similar to Environmental Sources, a key difference between the Arthropod Source and the Group and Animal Sources is that an Event can contain multiple Records of a single Arthropod Source (many Collections and many species at the same Arthropod Source at time *t*). Instead, an Event can contain a single Record of many Group and Animal Sources**. An Event can only contain a single Arthropod Source, but many Records can be retrieved (one per Collection per species). On the opposite, many bats can be captured in a mist net (many Sources), but they can only provide one Record per Event (see Figure at the end of the section). 
 
-**Similarly, another key difference is that "species" for Group and Animal Sources is a property of the Source, whilst for Arthropod Sources is a property of the Record**. For example, the mosquito species obtained through CO2 traps (Collection) deployed at a specific site (Source) will be identified and counted after the Collection and they will be a property of the Arthropod Source Record.  
+**Similarly, another key difference is that "species" for Group and Animal Sources is a property of the Source, whilst for Arthropod Sources is a property of the Record**. For example, mosquitoes obtained through CO2 traps (Collection) deployed at a specific site (Source) will be identified and counted by species after the Collection and they will constitute an Arthropod Source Record.  
 
-**If there is a failed Collection of arthropods at time *t* from the Arthropod Source) then it is the Collection that exists without the Arthropod Source Record. But an Arthropod Source Record cannot be empty**.
+**If there is a failed Collection of arthropods at time *t* from the Arthropod Source) then it is the Collection that exists without Arthropod Source Records. But an Arthropod Source Record cannot be empty**.
 
 
 ![](Pictures_and_diagrams/Picture23.png){width="600"}

@@ -10,16 +10,6 @@ location<-
       Mandatory="System-assigned"), 
     
     data.frame(
-      Variable="Location Polygon ID",
-      Label="Location Polygon Identifier",
-      Definition="If a spatial file with the different Locations has been entered in the database.
-      then provide the ID of the polygon representing the Location in such file. This attribute is
-      available only when the spatial file has been entered in the database as reported in the 
-      Surveillance Activity metadata",
-      Type="String",
-      Mandatory="Yes"), 
-    
-    data.frame(
       Variable="LocationName",
       Label="Location Code",
       Definition="User-provided Location code",
@@ -27,7 +17,17 @@ location<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="LocationCrossID",
+      Variable="Location Polygon ID",
+      Label="Location Polygon Identifier",
+      Definition="If a spatial file with the different Locations has been entered in the database.
+      then provide the ID of the polygon representing the Location in such file. This attribute is
+      available only when the spatial file has been entered in the database as reported in the 
+      Surveillance Activity metadata",
+      Type="String",
+      Mandatory="No"), 
+  
+    data.frame(
+      Variable="LocationCrossReferenceID",
       Label=" Location Cross Identifier", 
       Definition="The identifier of the Location under another nomenclature system. 
       For example, in a different database or document where other identification 
@@ -36,7 +36,7 @@ location<-
       Mandatory="No"),
     
     data.frame(
-      Variable="LocationCrossIDOrigin",
+      Variable="LocationCrossReferenceIDOrigin",
       Label="Location Cross Identifier Origin", 
       Definition="The database/document/other where other identification 
       for the same Location is used",
@@ -52,31 +52,52 @@ location<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="LocationTargetedRecords",
-      Label="Location Targeted Records",
-      Definition="Indicate what type of Records (Group, Animal, Environmental,
-      or from Arthropod Sources) are targeted in the Event",
+      Variable="LocationPurpose",
+      Label="Location Purpose",
+      Definition="Describe the objectives to accomplish in the Location",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LocationDescription",
+      Label="Location Description",
+      Definition="Provide a general description of the Location",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="LocationEnvironment",
+      Label="Location Environment",
+      Definition="Describe the environmental conditions of the Location",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LocationTargetedSources",
+      Label="Location Targeted Sources",
+      Definition="Indicate the type of Sources (Group, Animal, Environmental,
+      or Arthropod) targeted in the Event",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
       Variable="LocationStartDate",
-      Label="Start Date",
+      Label="Location Start Date",
       Definition="The date the activities in the Location started" ,
       Type="Date",
       Mandatory="Yes"),
     
     data.frame(
       Variable="LocationEndDate",
-      Label="End Date",
+      Label="Location End Date",
       Definition="The date the activities in the Location ended or the anticipated ending date" ,
       Type="Date",
-      Mandatory="No"),
+      Mandatory="Yes"),
     
     data.frame(
       Variable="LocationComments",
-      Label="Comments",
-      Definition="Provided any other relevant information regarding the Location" ,
+      Label="Location Comments",
+      Definition="Provide any other relevant information regarding the Location" ,
       Type="String",
       Mandatory="No")
     )

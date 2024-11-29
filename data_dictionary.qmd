@@ -1,4 +1,4 @@
-# Data Dictionary {.unnumbered}
+# Wildlife Health Data Model Dictionary {.unnumbered}
 
 
 ```{r table summarizing the different sources, eval=FALSE, echo=F, message=FALSE, warning=FALSE}
@@ -86,42 +86,54 @@ source("dd_surv_act.R")
 surv_activity
 ```
 
+### Surveillance Activity - Group Source 
+
+```{r group source metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_surv_act_obs_source.R")
+
+group_source
+
+```
+
+### Surveillance Activity - Animal Source 
+
+```{r animal source metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_surv_act_animal_source.R")
+
+animal_source
+
+```
+
+### Surveillance Activity - Environmental Source
+
+```{r environmental source metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_surv_act_env_source.R")
+
+env_source
+
+```
+
+### Surveillance Activity - Arthropod Source
+
+```{r arthropod source metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_surv_act_arthro_source.R")
+
+arthro_source
+
+```
+
 ## Outbreak
 
 ```{r outbreak, echo=FALSE, eval=T, message=FALSE, cache=F}
 
-outbreak<-
-  
-  list(
-    
-    data.frame(
-      Variable="OutbreakName",
-      Label="Outbreak Name",
-      Definition="The name provided to the outbreak",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="OutbreakDiagnosis",
-      Label="Outbreak Diagnosis",
-      Definition="The diagnosis provided to the outbreak",
-      Type="String",
-      Mandatory="No"))
-
-outbreak<-
-  outbreak %>% bind_rows() |> 
-  gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
-  gt::cols_width(Variable ~ gt::pct(22),
-                 Label ~ gt::pct(20),
-                 Definition ~ gt::pct(30),
-                 Type~ gt::pct(13),
-                 Mandatory~ gt::pct(15)) %>%
-  gt::tab_style(
-    style = cell_text(size = px(15), weight = "bold"),
-    locations = cells_column_labels())
+source("dd_outbreak.R")
 
 outbreak
+
 ```
 
 ## Field Visit
@@ -144,7 +156,6 @@ location
 
 ```
 
-
 ## Event
 
 ```{r event, echo=FALSE, eval=T, message=FALSE, cache=F}
@@ -155,505 +166,209 @@ event
 
 ```
 
-## Group Source 
+## Collection
+
+```{r collection, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_collection.R")
+
+collection
+
+```
+
+## Source 
+
+```{r source, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_source.R")
+
+source
+
+```
+
+### Group Source 
 
 ```{r group source, echo=FALSE, eval=T, message=FALSE, cache=F}
 
-source("dd_surv_act_obs_source.R")
+source("dd_group_source.R")
 
 group_source
 
 ```
 
-## Animal Source 
+### Animal Source 
 
 ```{r animal source, echo=FALSE, eval=T, message=FALSE, cache=F}
 
-source("dd_surv_act_animal_source.R")
+source("dd_animal_source.R")
 
 animal_source
 
 ```
 
-## Environmental Source
+## Source Record
 
-```{r environmental source, echo=FALSE, eval=T, message=FALSE, cache=F}
+### Group Source Record
 
-source("dd_surv_act_env_source.R")
+```{r group source record, echo=FALSE, eval=T, message=FALSE, cache=F}
 
-env_source
+source("dd_group_source_records.R")
 
-```
-
-## Arthropod Source
-
-```{r arthropod source, echo=FALSE, eval=T, message=FALSE, cache=F}
-
-source("dd_surv_act_arthro_source.R")
-
-arthro_source
+group_source_record
 
 ```
 
-<!-- #Source record specimen -->
+### Animal Source Record
 
-```{r record specimen, echo=FALSE, eval=F, message=FALSE, cache=F}
+```{r animal source record, echo=FALSE, eval=T, message=FALSE, cache=F}
 
-#Source record specimen
-  
-data_dictionary[["Source_Record_Specimen"]]<-
-  
-  list(    
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenID",
-      Label="Specimen identifier", 
-      Definition="System-provided specimen identifier",
-      Type="Integer",
-      Mandatory="System-assigned"), 
-    
-    data.frame(
-      Variable="SourceRecordSpecimenCode",
-      Label="Specimen code", 
-      Definition="User-provided specimen code",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenCrossID",
-      Label="Specimen cross identifier", 
-      Definition="The identifier of the specimen under another nomenclature system",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenCollectedPrimaryNecropsy",
-      Label="Primary Necropsy Specimen", 
-      Definition="Answer to the question: 'Is the Specimen collected during the Primary Necropsy?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenCollectedSecondaryNecropsy",
-      Label="Secondary Necropsy Specimen", 
-      Definition="Answer to the question: 'Is the Specimen collected during the Secondary Necropsy?'",
-      Type="Boolean",
-      Mandatory="Yes"),
+source("dd_animal_source_record.R")
 
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenType",
-      Label="Specimen type", 
-      Definition="The type of the specimen. It can be a full carcass",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenMedium",
-      Label="Medium", 
-      Definition="The medium in which the specimen is contained on",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenOriginalQuantity",
-      Label="Original quantity", 
-      Definition="The original quantity of specimen",
-      Type="Float",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenOriginalQuantityUnit",
-      Label="Quantity unit", 
-      Definition="The unit of the original quantity",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenQuantityStored",
-      Label="Quantity stored", 
-      Definition="The amount of specimen currently stored",
-      Type="Float",
-      Mandatory="Yes"),  
-    
-    data.frame(
-      Variable="SourceRecordSpecimenReasonQuantityDifference",
-      Label="Reason for quantity difference", 
-      Definition="The explanantion for the difference between the original specimen amount and the stored specimen amount",
-      Type="String",
-      Mandatory="Yes, if 'Quantity stored' and 'Quantity difference' are different"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenFieldStorage",
-      Label="Field storage", 
-      Definition="The method to store the specimen in the field while in transit to a proper facility",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenLabStorage",
-      Label="Laboratory storage", 
-      Definition="The method to store the specimen in the laboratory",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenInContainer",
-      Label="Specimen container", 
-      Definition="Answer to the question: 'Is the specimen stored in a container mixed with other specimens?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenContainerCode",
-      Label="Container label", 
-      Definition="The container with the current specimen and other specimens",
-      Type="String",
-      Mandatory="Yes, but this field becomes available to complete when the previous field is TRUE"),
-
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenLocation",
-      Label="Location", 
-      Definition="The institution where the specimen is currently stored",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenBuilding",
-      Label="Building", 
-      Definition="The specific building within the institution where the specimen is located",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenRoom",
-      Label="Room", 
-      Definition="The specific room within the building where the specimen is located",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenStorage",
-      Label="Storage", 
-      Definition="The specific unit within the room (e.g., refrigerator) where the specimen is located",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenShelf",
-      Label="Shelf", 
-      Definition="The specific shelf within the unit (e.g., refrigerator) where the specimen is located",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenRack",
-      Label="Rack", 
-      Definition="The specific rack within the shelf where the specimen is located",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenBox",
-      Label="Box", 
-      Definition="The specific box of the rack where the specimen is located",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenRow",
-      Label="Row", 
-      Definition="The specific row of the box where the specimen is located",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenAvailable",
-      Label="Specimen available", 
-      Definition="Answer to the question:'Is the specimen available for testing or shipping?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenOwner",
-      Label="Specimen owner", 
-      Definition="The organization or individual that owns the specimen",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenComments",
-      Label="Comments", 
-      Definition="Any comments regarding the specimen",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SurveillanceObjective",
-      Label="Surveillance objective", 
-      Definition="The surveillance objectives that the source record is part of",
-      Type="Mutiple selection",
-      Mandatory="Yes"))
-
-#Specimen diagnostic
-
-data_dictionary[["Source_Record_Specimen_Diagnostic"]]<-
-  
-  list(    
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenDiagnosticID",
-      Label="Diagnostic identifier", 
-      Definition="System-provided diagnostic identifier",
-      Type="Integer",
-      Mandatory="System-assigned"), 
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticWithinLabCode",
-      Label="Laboratory diagnostic identifier", 
-      Definition="System-provided diagnostic identifier",
-      Type="String",
-      Mandatory="Yes"),   
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardType",
-      Label="Diagnostic hazard type", 
-      Definition="The general type of health hazard targeted by the diagnostic (e.g., 'Biological', 'Chemical', 'Physical', 'Physiological')",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardName",
-      Label="Specific health hazard targeted",
-      Definition="The specific health hazard targeted by the diagnostic (e.g., 'coronaviridae', 'Brucella abortus')" ,
-      Type="Single selection",
-      Mandatory="Yes. Options available are conditional on the health hazard types selected"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceSpecimenDiagnosticTargetedHazardName",
-      Label="Specific health hazard targeted",
-      Definition="The specific health hazard targeted by the diagnostic (e.g., 'coronaviridae', 'Brucella abortus')" ,
-      Type="Single selection",
-      Mandatory="Yes. Options available are conditional on the health hazard types selected"),
-    
-    data.frame(
-      Variable="WildlifeHealth_LaboratoryID",
-      Label="Laboratory identifier", 
-      Definition="System-provided laboratory identifier",
-      Type="Integer",
-      Mandatory="System-assigned"), 
-    
-    data.frame(
-      Variable="WildlifeHealth_DiagnosticMethod",
-      Label="Diagnostic method", 
-      Definition="The general method used to conduct the diagnostic (e.g., 'histopathology', 'molecular diagnostics', etc)",
-      Type="Single selection",
-      Mandatory="Yes"),
-
-    data.frame(
-      Variable="WildlifeHealth_DiagnosticType",
-      Label="Diagnostic type",
-      Definition="The general method used to conduct the diagnostic (e.g., 'immunofluorescence', 'PCR', etc)",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticDateSentForTesting",
-      Label="Date sent for testing",
-      Definition="The date the diagnostic was requested",
-      Type="Date",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticResultsReceived",
-      Label="Results received",
-      Definition="Answer to the question: 'Have the diagnostic results been received?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticDateResultsReceived",
-      Label="Date results received",
-      Definition="The date the diagnostic results were received",
-      Type="Date",
-      Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SourceRecordSpecimenDiagnosticResult",
-      Label="Diagnostic result",
-      Definition="The result of the diagnostic",
-      Type="Single selection",
-      Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticResultModified",
-      Label="Diagnostic result modified",
-      Definition="Answer to the question:'Have the results been modified?'",
-      Type="Boolean",
-      Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticDateResultModified",
-      Label="Date diagnostic result modified",
-      Definition="The date when the diagnostic results was modified",
-      Type="Date",
-      Mandatory="Yes, but this field becomes available only when 'Results received' is True"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticReasonResultModified",
-      Label="Reason diagnostic result modified",
-      Definition="The reason explaining the diagnostic result modification",
-      Type="String",
-      Mandatory="Yes, but this field becomes available only when 'Diagnostic result modified' is True"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticComments",
-      Label="Diagnostic comments",
-      Definition="Any comments regarding the diagnostic",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="SourceRecordSpecimenDiagnosticSupportingInformation",
-      Label="Supporting information",
-      Definition="Any supporting information regarding the diagnostic",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="WildlifeHealth_SurveillanceObjective",
-      Label="Surveillance objective", 
-      Definition="The surveillance objectives that the diagnostic is part of",
-      Type="Mutiple selection",
-      Mandatory="Yes"))
-
-#Laboratory
-
-data_dictionary[["Laboratory"]]<-
-  
-  list(   
-
-    data.frame(
-      Variable="LabName",
-      Label="Laboratory name",
-      Definition="The name of the laboratory",
-      Type="String",
-      Mandatory="Yes"),
-  
-    data.frame(
-      Variable="WildlifeHealth_LabCountryID",
-      Label="Laboratory country",
-      Definition="The country of the laboratory",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="LabAddress",
-      Label="Laboratory address",
-      Definition="The address of the laboratory",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="LabManager",
-      Label="Laboratory manager",
-      Definition="The manager of the laboratory",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="LabManagerEmail",
-      Label="Laboratory manager email",
-      Definition="The email address of the manager of the laboratory",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="LabPointContactName",
-      Label="Laboratory contact",
-      Definition="The name of the best contact point for the laboratory",
-      Type="Multiple selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="LabPointContactEmail",
-      Label="Laboratory contact email",
-      Definition="The email address of the best contact point for the laboratory",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="LabPointContactAffiliation",
-      Label="Laboratory contact affiliation",
-      Definition="The affiliation of the best contact point for the laboratory",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
-      Variable="WildlifeHealth_LabDiagnosticMethodAvailable",
-      Label="Diagnostics available",
-      Definition="The diagnostic methods available in the laboratory",
-      Type="Multiple selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="WildlifeHealth_LabMaxBiosafetyLevel",
-      Label="Maximum biosafety level",
-      Definition="The maximum biosafety level avalable in the laboratory",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="WildlifeHealth_LabCertification",
-      Label="Certifications",
-      Definition="The certifications accomplished by the laboratory",
-      Type="Multiple selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="LabStorageCapacity",
-      Label="Storage capacity",
-      Definition="The capacity of the laboratory to store specimens",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="LabDataManagementSystem",
-      Label="Information system",
-      Definition="The information system used in the laboratory to track diagnositci information",
-      Type="String",
-      Mandatory="Yes"))
-    
-        
-# map(data_dictionary, \(x) do.call(rbind,x)) %>% list_rbind()
-    
-data_dictionary<-map(data_dictionary, \(x) do.call(rbind,x)) 
-
-for(i in seq_along(data_dictionary)){
-  data_dictionary[[i]]$Component<-names(data_dictionary[i])}
-
-data_dictionary<-data_dictionary %>% 
-  list_rbind() %>% 
-  select(Component, Variable, Label, Definition, Type, Mandatory)
-
-# need to find how to change the font size to improve the column width
-
-  # kableExtra::kable(data_dictionary, booktabs = TRUE)%>%
-  # kable_styling(bootstrap_options = c("basic"), font_size = 2) %>% 
-  #   kableExtra::column_spec(column = 1:5, border_right = T) 
-
-  data_dictionary %>%
-  gt::gt() %>%
-  gt::tab_options(table.font.size = 9) %>%
-  gt::cols_width(Variable ~ gt::pct(5),
-                 Label ~ gt::pct(20),
-                 Definition ~ gt::pct(25),
-                 Type~ gt::pct(25),
-                 Mandatory~ gt::pct(25)) %>%
-  gt::tab_style(
-  style = cell_text(size = px(16), weight = "bold"),
-  locations = cells_column_labels())
- 
-
-# write_csv(data_dictionary, file = "data_dictionary_June_30_2023.csv")
+animal_source_record
 
 ```
+
+#### Animal Source Record - Vaccination
+
+```{r vaccination, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_vaccination.R")
+
+animal_source_record_vaccination
+
+```
+
+#### Animal Source Record - Carcass
+
+```{r carcass, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_animal_source_record_carcass.R")
+
+animal_source_record_carcass
+
+```
+
+#### Animal Source Record - Necropsy
+
+```{r necropsy, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_animal_source_record_necropsy.R")
+
+animal_source_record_necropsy
+
+```
+
+### Environmental Source Record
+
+```{r environmental source record, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_environmental_source_record.R")
+
+environmental_source_record
+
+```
+
+### Arthropod Source Record
+
+```{r arthropod source record, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_arthropod_source_record.R")
+
+arthropod_source_record
+
+```
+
+## Specimen
+
+```{r specimen, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_specimen.R")
+
+specimen
+
+```
+
+
+
+## Storage
+
+```{r storage, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_storage.R")
+
+storage
+
+```
+
+## Export
+
+```{r export, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_export.R")
+
+export
+
+```
+
+## Diagnostic
+
+```{r diagnostic, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_diagnostic.R")
+
+diagnostic
+
+```
+
+### Diagnostic Product
+
+```{r diagnostic product, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_diagnostic_product.R")
+
+diagnostic_product
+
+```
+
+## Laboratory
+
+```{r laboratory, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_laboratory.R")
+
+laboratory
+
+```
+
+## Interpretation 
+
+### Diagnostic Interpretation
+
+```{r diagnostic interpretation, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_diagnostic_interpretation.R")
+
+diagnostic_interpretation
+
+```
+
+### Specimen Interpretation
+
+```{r specimen interpretation, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_specimen_interpretation.R")
+
+specimen_interpretation
+
+```
+
+### Source Record Interpretation
+
+```{r source record interpretation, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+source("dd_source_record_interpretation.R")
+
+source_record_interpretation
+
+```
+

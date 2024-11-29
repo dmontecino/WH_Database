@@ -17,7 +17,7 @@ field_visit<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="FieldVisitCrossID",
+      Variable="FieldVisitCrossReferenceID",
       Label="Field Visit Cross Identifier", 
       Definition="The identifier of the Field Visit under another nomenclature system. 
       For example, in a different database or document where other identification 
@@ -26,7 +26,7 @@ field_visit<-
       Mandatory="No"),
     
     data.frame(
-      Variable="FieldVisitCrossIDOrigin",
+      Variable="FieldVisitCrossReferenceIDOrigin",
       Label="Field Visit Cross Identifier Origin", 
       Definition="The location/database/document where other identification 
       for the same Field Visit is used",
@@ -40,20 +40,20 @@ field_visit<-
       Type="Single selection",
       Mandatory="Yes"),
     
-    data.frame(
-      Variable="FieldVisitType",
-      Label="Field Visit Type", 
-      Definition="The type of Field Visit (e.g., 'Market', 'Free-ranging', 'Ranger patrolling').
-      More than one Field Visit type can be selected",
-      Type="Multiple selection",
-      Mandatory="Yes"), 
+    # data.frame(
+    #   Variable="FieldVisitType",
+    #   Label="Field Visit Type", 
+    #   Definition="The type of Field Visit (e.g., 'Market', 'Free-ranging', 'Ranger patrolling').
+    #   More than one Field Visit type can be selected",
+    #   Type="Multiple selection",
+    #   Mandatory="Yes"), 
     
-    data.frame(
-      Variable="FieldVisitWho",
-      Label="Field Visit People Participating",
-      Definition="Mention who is participating in the Field Visit" ,
-      Type="String",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="FieldVisitWho",
+    #   Label="Field Visit People Participating",
+    #   Definition="Mention who is participating in the Field Visit" ,
+    #   Type="String",
+    #   Mandatory="Yes"),
     
     data.frame(
       Variable="FieldVisitWhere",
@@ -62,19 +62,19 @@ field_visit<-
       Type="String",
       Mandatory="Yes"),
     
-    data.frame(
-      Variable="FieldVisitWhat",
-      Label="Field Visit  Activities Conducted",
-      Definition="Briefly describe the activities conducted during the Field Visit" ,
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="FieldVisitPurpose",
-      Label="Field Visit Purpose",
-      Definition="Briefly describe the purpose of the Field Visit" ,
-      Type="String",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="FieldVisitWhat",
+    #   Label="Field Visit  Activities Conducted",
+    #   Definition="Briefly describe the activities conducted during the Field Visit" ,
+    #   Type="String",
+    #   Mandatory="Yes"),
+    # 
+    # data.frame(
+    #   Variable="FieldVisitPurpose",
+    #   Label="Field Visit Purpose",
+    #   Definition="Briefly describe the purpose of the Field Visit" ,
+    #   Type="String",
+    #   Mandatory="Yes"),
     
     data.frame(
       Variable="FieldVisitStartDate",
@@ -88,7 +88,7 @@ field_visit<-
       Label="Field Visit End Date",
       Definition="The date the Field Visit ended or the anticipated ending date" ,
       Type="Date",
-      Mandatory="No"))
+      Mandatory="Yes"))
 
 field_visit<-
   field_visit %>% bind_rows() |> 

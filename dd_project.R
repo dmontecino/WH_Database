@@ -21,7 +21,7 @@ project<-
     
     data.frame(
       Variable="ProjectCrossReferenceID",
-      Label="Project Cross Reference Identifier", 
+      Label="Project Cross Identifier", 
       Definition="The identifier of the Project under another nomenclature system. 
       For example, in a different database or document where other identification 
       for the same Project is used",
@@ -30,7 +30,7 @@ project<-
     
     data.frame(
       Variable="ProjectCrossReferenceIDOrigin",
-      Label="Project Cross Reference Identifier Origin", 
+      Label="Project Cross Identifier Origin", 
       Definition="The location/database/document where other identification 
       for the same Project is used",
       Type="String",
@@ -66,7 +66,7 @@ project<-
     
     data.frame(
       Variable="ProjectOtherOrganization",
-      Label="Other Organizations", 
+      Label="Project Other Organizations", 
       Definition="Other organizations/partners/institutions involved in the execution of 
       the Project (e.g., Laboratories, NGOs, etc.)",
       Type="Multiple selection",
@@ -79,62 +79,57 @@ project<-
       Type="String",
       Mandatory="Yes"),
     
+    # data.frame(
+    #   Variable="ProjectNewSourceData",
+    #   Label="New Source Data", 
+    #   Definition="Answer to the question: 'Does the Project involve collecting new data from Sources?'
+    #   The answer is 'No' if the Project is using Source or Specimen data already available and generated as 
+    #   part of a different Project. The answer is 'Yes' when the Project involves collecting new data
+    #   from Sources exclusively or when the Project involves the collection of new data and also the use of data from previous Projects)",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
+  
+
     data.frame(
-      Variable="ProjectNewSourceData",
-      Label="New Source Data", 
-      Definition="Answer to the question: 'Does the Project involve collecting new data from Sources?'
-      The answer is 'No' if the Project is using Source or Specimen data already available and generated as 
-      part of a different Project. The answer is 'Yes' when the Project involves collecting new data
-      from Sources exclusively or when the Project involves the collection of new data and also the use of data from previous Projects)",
+      Variable="ProjectGroupSource",
+      Label="Project Group Source",
+      Definition="Answer to the question: 'Are Group Source(s) of interest for the Project?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="ProjectAnimalSourceSpecies",
-      Label="Animal Source Species",
-      Definition="Species of the animals of interest for the Project as Animal Sources. It is possible
-      to select high taxonomy levels such as 'mammals', 'chordata', 'Insecta', etc. to indicate that
-      no particular species is targeted",
-      Type="Multiple selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="ProjectGroupSourceSpecies",
-      Label="Group Source Species",
-      Definition="Species of the animals of interest for the Project as Group Sources. 
-      It is possible to select high taxonomy levels such as 'mammals', 'chordata', 'Insecta' etc. to 
-      indicate that no particular species is targeted",
-      Type="Multiple selection",
+      Variable="ProjectAnimalSource",
+      Label="Project Animal Source",
+      Definition="Answer to the question: 'Are Animal Source(s) of interest for the Project?'",
+      Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectEnvironmentalSource",
-      Label="Environmental Source Types",
-      Definition="The type(s) of Environmental Source(s) of interest for the Project",
-      Type="Multiple selection",
+      Label="Project Environmental Source",
+      Definition="Answer to the question: 'Are Environmental Source(s) of interest for the Project?'",
+      Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectArthropodSource",
-      Label="Arthropod Source Species",
-      Definition="Species of arthropod that cause or transmit diseases collected 'off-host' that
-      are of interest for the Project as Arthropod Sources. It is possible to select high taxonomy
-      levels such as 'Diptera', 'Insecta', etc. to indicate that no particular species is  targeted",
-      Type="Multiple selection",
-      Mandatory="No"),
+      Label="Project Arthropod Sources",
+      Definition="Answer to the question: 'Are Arthropod Source(s) of interest for the Project?'",
+      Type="Boolean",
+      Mandatory="Yes"),
     
     data.frame(
-      Variable="=ProjectBiologicalHazard",
+      Variable="ProjectBiologicalHazard",
       Label="Biological Hazards",
       Definition="The type(s) of biological health hazard(s) of interest for the Project 
       (e.g., 'Virus', 'Bacteria', 'Protozoa', 'Insecta')",
-      Type="Multiple selection", 
-      Mandatory="No"),
+      Type="Boolean", 
+      Mandatory="Yes"),
     
     # ------- Biological Hazard Types 
     
     data.frame(
-      Variable="=ProjectVirusHazard",
+      Variable="ProjectVirusHazard",
       Label="Virus",
       Definition="The viruses of interest for the Project. It can be as specific as a clade/variant/etc of a species
       or as general as 'Virus' (e.g., 'Virus', 'SARS-CoV-2 Omicron variant', 'H5N1 Highly Pathogenic Avian Influenza clade 2.3.3.4b')",
@@ -143,7 +138,7 @@ project<-
     
     
     data.frame(
-      Variable="=ProjectBacteriaHazard",
+      Variable="ProjectBacteriaHazard",
       Label="Bacteria",
       Definition="The bacteria of interest for the Project. It can be as specific as a strain/serovar/etc of a species
           or as general as 'Bacteria' (e.g., 'Group-A Streptococcus', 'Mycobacterium bovis')",
@@ -151,7 +146,7 @@ project<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=ProjectProtozoaHazard",
+      Variable="ProjectProtozoaHazard",
       Label="Protozoa",
       Definition="The protozoa of interest for the Project. It can be as specific as a strain/serovar/etc of a species
                   or as general as 'Protozoa' (e.g., 'Plasmodium relictum', 'Toxoplasma gondii')",
@@ -159,7 +154,7 @@ project<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=ProjectFungiHazard",
+      Variable="ProjectFungiHazard",
       Label="Fungi",
       Definition="The fungi of interest for the Project. It can be as specific as a strain/serovar/etc of a species
                       or as general as 'Fungi' (e.g., 'Pseudogymnoascus destructans', 'Batrachochytrium dendrobatidis')",
@@ -168,7 +163,7 @@ project<-
     
     
     data.frame(
-      Variable="=ProjectPrionHazard",
+      Variable="ProjectPrionHazard",
       Label="Prion",
       Definition="The prion of interest for the Project. It can be as specific as the protein subtype
                           or as general as 'Prion' (e.g., 'Chronic-wasting disease', 'Scrapie', 'Mad cow disease)", # name of the protein not the disease. REplace
@@ -176,14 +171,14 @@ project<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=ProjectTransmissibleTumourHazard",
+      Variable="ProjectTransmissibleTumourHazard",
       Label="Transmissible Tumour",
       Definition="The transmissible tumour of interest for the Project (e.g., 'Devil facial tumor 1', 'Devil facial tumor 2')",
       Type="Multiple selection", 
       Mandatory="No"),
     
     data.frame(
-      Variable="=ProjectNematodaHazard",
+      Variable="ProjectNematodaHazard",
       Label="",
       Definition="The nematode of interest for the Project. It can be as specific as a strain/serovar/etc of a species
                               or as general as 'Nematode' (e.g., 'Toxocara canis', '')",
@@ -191,7 +186,7 @@ project<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=ProjectPlatyhelminthHazard",
+      Variable="ProjectPlatyhelminthHazard",
       Label="Platyhelminth",
       Definition="The platyhelminth of interest for the Project. It can be as specific as a subspecies
                                   or as general as 'Platyhelminth' (e.g., 'Fasciola gigantica')",
@@ -199,7 +194,7 @@ project<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=ProjectArthropodHazard",
+      Variable="ProjectArthropodHazard",
       Label="Arthropod",
       Definition="The arthropod of interest for the Project. It can be as specific as a subspecies
                                   or as general as 'Arthropod' (e.g., 'Sarcoptes scabiei', 'Rhipicephalus sanguineus')",
@@ -209,7 +204,7 @@ project<-
     # --------------------------------
     
     data.frame(
-      Variable="=ProjectChemicalHazard",
+      Variable="ProjectChemicalHazard",
       Label="Chemical Hazards",
       Definition="The type(s) of chemical health hazard(s) of interest for the Project 
       (e.g., 'Heavy Metal', 'Organochlorine Pesticides', 'Cholinesterase-inhibbiting Pesticide', 'Toxins')",
@@ -219,7 +214,7 @@ project<-
     # ------- Chemical Hazard Types 
     
     data.frame(
-      Variable="=ProjectHeavyMetalHazard",
+      Variable="ProjectHeavyMetalHazard",
       Label="Heavy Metal",
       Definition="The heavy metal of interest for the Project. It can be as specific as a chemical form of the heavy metal 
               or as general as the common name of the metal (e.g., 'Lead', 'Methylmercury')",
@@ -227,7 +222,7 @@ project<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=ProjectOrganochlorinePesticidesHazard",
+      Variable="ProjectOrganochlorinePesticidesHazard",
       Label="Organochlorine Pesticides",
       Definition="The organochlorine pesticides of interest for the Project. It can be as specific as a type of organochlorine pesticides
                   or as general as 'Organochlorine Pesticide' (e.g., 'DDT', 'Lindane')",
@@ -235,7 +230,7 @@ project<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=ProjectCholinesteraseInhibbitingPesticideHazard",
+      Variable="ProjectCholinesteraseInhibbitingPesticideHazard",
       Label="Cholinesterase-inhibbiting Pesticide",
       Definition="The cholinesterase-inhibbiting pesticide of interest for the Project. It can be as specific as a type of 
               cholinesterase-inhibbiting pesticide or as general as 'Cholinesterase-inhibbiting Pesticide' 
@@ -245,7 +240,7 @@ project<-
     
     
     data.frame(
-      Variable="=ProjectToxinsHazard",
+      Variable="ProjectToxinsHazard",
       Label="Toxins",
       Definition="The toxin of interest for the Project. It can be as specific as the protein subtype
               or as general as 'Toxin' (e.g., 'Clostridium botulinum toxin type C', 'Tetanus toxin')", # name of the protein not the disease. REplace
@@ -255,7 +250,7 @@ project<-
     # --------------------------------
     
     data.frame(
-      Variable="=ProjectPhysicalHazard",
+      Variable="ProjectPhysicalHazard",
       Label="Physical Hazards",
       Definition="The type(s) of physical health hazard(s) of interest for the Project 
       (e.g., 'Trap', 'Vehicle Collisions', 'Entanglement', 'Burning', 'Electrocution')",
@@ -265,7 +260,7 @@ project<-
     # --------------------------------
     
     data.frame(
-      Variable="=ProjectPhysiologicalHazard",
+      Variable="ProjectPhysiologicalHazard",
       Label="Physiological Hazards",
       Definition="The type(s) of physiological health problems of interest for the Project 
       (e.g., 'Hypocalcemia', 'Hyperkalemia', 'Amyloid A amyloidosis')",

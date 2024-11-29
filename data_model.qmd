@@ -140,11 +140,11 @@ In the data model, Interpretation of a Diagnostic is the conclusion regarding th
 
 #### Interpretation of a Hazard's presence in a Specimen
 
-In the data model, Interpretation of a Hazard in a Specimen is the conclusion regarding the presence or absence of a specific hazard in a Specimen, based on a case definition for a positive, negative, or undetermined Specimen provided in the Surveillance Activity metadata that follows the results from the Diagnostic(s) conducted using the Specimen and the corresponding Diagnostic(s) Interpretation(s). Specimens can receive multiple Interpretations if they are used to conduct several Diagnostics to assess several hazards or if the same hazard is assessed more than once.
+In the data model, Interpretation of a Hazard in a Specimen is the conclusion regarding the presence or absence of a specific hazard in a Specimen, based on a case definition for a positive, negative, or undetermined Specimen provided in the Surveillance Activity metadata. The interpretation follows the results from the Diagnostic(s) conducted using the Specimen and the corresponding Diagnostic(s) Interpretation(s). Specimens can receive multiple Interpretations if they are used to conduct several Diagnostics to assess several hazards or if the same hazard is assessed more than once in different diagnostics.
 
 #### Interpretation of a Hazard's presence in a Source Record
 
-In the data model, Interpretation of a Hazard in a Source Record is the conclusion regarding the presence or absence of a specific hazard in a Source Record, based on a case definition for a positive, negative, or undetermined Source Record provided in the Surveillance Activity metadata following the results of the Diagnostic(s) conducted using the Source Record and the Source Record Specimen(s), the corresponding Diagnostic(s) Interpretation(s), anomalies in the Source Record at a Event, and Necropsy findings.
+In the data model, Interpretation of a Hazard in a Source Record is the conclusion regarding the presence or absence of a specific hazard in a Source Record, based on a case definition for a positive, negative, or undetermined Source Record provided in the Surveillance Activity metadata. The interpretation follows the results of the Diagnostic(s) conducted using the Source Record, the Source Record Specimen(s), the corresponding Diagnostic(s), anomalies in the Source Record at a Event, and Necropsy findings.
 
 Source Records can receive multiple Interpretations if multiple hazards are assessed in them or the same hazard is assessed more than once. Sources can have many Interpretations through several Source Records if multiple hazards are assessed in them at time *t* (Source Record), if the same hazard is assessed more than once at time *t* (Source Record), or if different or the same hazard are assessed over time (several Source Records of the same Source over time).
 
@@ -161,7 +161,7 @@ Source Records can receive multiple Interpretations if multiple hazards are asse
 
 # All Units in the Data Model and All Relationships
 
-Considering the details explained in the Complexities section, a summary of the relationships in the data model is provided in the following figure (the orange Units and connections apply to Animal Sources only):
+Considering the details explained in the Complexities section, a summary of the relationships in the data model is provided in the following figure (the orange Units and connections apply to Animal Sources only. The red lines apply to Group and Animal Source Records only):
 
 ![](Pictures_and_diagrams/Relationships_All_Sources.png){width="680"}
 
