@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Diego Montecino-Latorre">
-<meta name="dcterms.date" content="2024-11-22">
 
-<title>WildHealthDB</title>
+<title>WildHealthDB - WildlHealthDB Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data_model.html" rel="next">
+<link href="./data_dictionary.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual.html">WildlHealthDB Manual</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -106,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -124,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./manual.html" class="sidebar-item-text sidebar-link">
+  <a href="./manual.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">WildlHealthDB Manual</span></a>
   </div>
 </li>
@@ -138,7 +136,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#finding-data" id="toc-finding-data" class="nav-link active" data-scroll-target="#finding-data">1. Finding Data</a></li>
+  <li><a href="#writing-data" id="toc-writing-data" class="nav-link" data-scroll-target="#writing-data">2. Writing data</a></li>
+  <li><a href="#export-data" id="toc-export-data" class="nav-link" data-scroll-target="#export-data">3. Export Data</a></li>
   </ul>
 </nav>
     </div>
@@ -147,26 +147,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">WildHealthDB</h1>
+<h1 class="title">WildlHealthDB Manual</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Diego Montecino-Latorre </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 22, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -174,16 +162,69 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome to the <strong>WildHealthDB</strong> documentation. Here, you will find comprehensive information about the database’s data structure (data model), how to use the web-based graphical user interface as user and administrator, and the data dictionary. This documentation aims to provide a clear understanding of the database’s organization, how to use the database, and the meaning of its data.</p>
-<p><strong>WildlifeHealthDB</strong> is a versatile database designed to manage wildlife health data collected from various surveillance efforts. These efforts encompass a wide range of activities, including citizen observations of dead, injured, or sick animals, specific research studies, national or local wildlife health surveillance initiatives, outbreak investigations, and global wildlife health surveillance projects involving multiple countries, hazards, and host species.</p>
-<p>The data model of the database has been developed by the <strong>Wildlife Health Intelligence Network - Data Task Force</strong>, integrated by members of the Wildlife Conservation Society, the World Organisation of Animal Health, the United Nations Food and Agriculture Administration, the World Health Organisation, the University of Calgary, the Davis Arbovirus Research and Training (University of California - Davis), the Canadian Wildlife Health Cooperative, and the Global Biodiversity Information Facility. This collective experience includes wildlife health surveillance activities conducted in numerous countries with several public and private partners; both cross-sectional and longitudinal studies; the establishment of wildlife health surveillance networks; investigation of diverse biological, chemical, and physical hazards; research on dangerous zoonotic pathogens like Ebola virus disease and SARS-CoV-2; engagement of rangers in protected areas and nearby communities as key contributors to health surveillance; expertise in wildlife pathology; the use and development of various types of diagnostic tests; and prior experience in managing wildlife health data using different information management systems.</p>
-<p>The current documentation is divided in the following sections:</p>
-<p>The <strong>Data Model</strong> section provides a detailed explanation of the data structure used in the WildHealthDB database. By understanding the structure, users can efficiently enter, navigate, and manipulate the data stored within.</p>
-<p>The <strong>Database Manual</strong> section explains how to use the graphical user interface of the WildHealthDB to read, write, and delete data, and how to use the database if you are an administrator.</p>
-<p>The <strong>Data Dictionary</strong> is the last section of this documentation. The data dictionary serves as a valuable resource for users, as it provides a complete list and description of all the data elements present in the database. Each data element is defined, including its name, type, and any applicable constraints.</p>
-<p>We hope this documentation proves to be a valuable resource, enabling you to effectively utilize the WildHealthDB database. Should you have any further questions or require additional assistance, please don’t hesitate to reach out the support team.</p>
+<p>The Field Visit requires an end date which can be placed in the future. For example, a Surveillance Activity aims to assess the body condition of a herd on a yearly for a decade. In this case, each Field Visit can encompass each full year, with an assigned start date of January 1st and en date December 31st of the corresponding year. The end date can be assigned in any moment before December 31st during the year, when the Field Visit is created.</p>
+<section id="finding-data" class="level3">
+<h3 class="anchored" data-anchor-id="finding-data">1. Finding Data</h3>
+<section id="finding-a-project" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-project">Finding a Project</h4>
+</section>
+<section id="finding-a-surveillance-activity" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-surveillance-activity">Finding a Surveillance Activity</h4>
+</section>
+<section id="finding-a-field-activity" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-field-activity">Finding a Field Activity</h4>
+</section>
+<section id="finding-a-location" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-location">Finding a Location</h4>
+</section>
+<section id="finding-a-location-group" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-location-group">Finding a Location Group</h4>
+</section>
+<section id="finding-an-event" class="level4">
+<h4 class="anchored" data-anchor-id="finding-an-event">Finding an Event</h4>
+</section>
+<section id="finding-an-event-group" class="level4">
+<h4 class="anchored" data-anchor-id="finding-an-event-group">Finding an Event Group</h4>
+</section>
+<section id="finding-a-source" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-source">Finding a Source</h4>
+</section>
+<section id="finding-a-source-record" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-source-record">Finding a Source Record</h4>
+</section>
+<section id="finding-a-source-record-group" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-source-record-group">Finding a Source Record Group</h4>
+</section>
+<section id="finding-a-carcass" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-carcass">Finding a Carcass</h4>
+</section>
+<section id="finding-a-necropsy" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-necropsy">Finding a Necropsy</h4>
+</section>
+<section id="finding-a-specimen" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-specimen">Finding a Specimen</h4>
+</section>
+<section id="finding-a-diagnostic" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-diagnostic">Finding a Diagnostic</h4>
+</section>
+<section id="finding-a-diagnosis" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-diagnosis">Finding a Diagnosis</h4>
+</section>
+<section id="finding-a-laboratory" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-laboratory">Finding a Laboratory</h4>
+</section>
+<section id="finding-a-person" class="level4">
+<h4 class="anchored" data-anchor-id="finding-a-person">Finding a Person</h4>
+</section>
+</section>
+<section id="writing-data" class="level3">
+<h3 class="anchored" data-anchor-id="writing-data">2. Writing data</h3>
+<section id="creating-a-new-project" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-new-project">Creating a new Project</h4>
+</section>
+</section>
+<section id="export-data" class="level3">
+<h3 class="anchored" data-anchor-id="export-data">3. Export Data</h3>
 
 
 </section>
@@ -424,11 +465,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./data_dictionary.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Wildlife Health Data Model Dictionary</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data_model.html" class="pagination-link">
-        <span class="nav-page-text">Wildlife Health Data Model</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
