@@ -28,7 +28,7 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityCrossID",
+      Variable="SurveillanceActivityCrossReferenceID",
       Label="Surveillance Activity Cross Identifier", 
       Definition="The identifier of the Surveillance Activity under another nomenclature system. 
       For example, in a different database or document where other identification 
@@ -37,7 +37,7 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityCrossIDOrigin",
+      Variable="SurveillanceActivityCrossReferenceIDOrigin",
       Label="Surveillance Activity Cross Identifier Origin", 
       Definition="The location/database/document where other identification 
       for the same Surveillance Activity is used",
@@ -85,11 +85,26 @@ surv_activity<-
     
     data.frame(
       Variable="SurveillanceActivityLeaderOrganizationROR",
-      Label="Leader Organization ROR", 
+      Label="Surveillance Activity Leader Organization ROR", 
       Definition="The ROR of the affiliation of the person leading the Surveillance Activity",
       Type="String",
       Mandatory="No"),      
+
+    data.frame(
+      Variable="SurveillanceActivityOtherIndividuals",
+      Label="Surveillance Activity Other Individuals", 
+      Definition="Other Individuals relevant for the Surveillance Activity",
+      Type="Multiple selection",
+      Mandatory="No"),
     
+    data.frame(
+      Variable="SurveillanceActivitySectorsInvolved",
+      Label="Surveillance Activity Sectors Involved", 
+      Definition="The environmental, animal, human, wildlife sectors involved in the 
+      execution of the Surveillance Activity",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+        
     data.frame(
       Variable="SurveillanceActivityOrganizationsInvolved",
       Label="Surveillance Activity Organizations Involved", 
@@ -105,147 +120,7 @@ surv_activity<-
       Type="Multiple selection",
       Mandatory="Yes"),
     
-    data.frame(
-      Variable="SurveillanceActivitySite",
-      Label="Specific Sites Included in the Surveillance Activity", 
-      Definition="The sites (e.g., bat roosts, bird colonies, protected areas, etc.) 
-      where the Surveillance Activity takes place",
-      Type="Multiple selection",
-      Mandatory="Yes"),
     
-    data.frame(
-      Variable="SurveillanceActivityPurpose",
-      Label="Surveillance Activity Purpose", 
-      Definition="Description of the objectives and goals of the Surveillance Activity",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityDataCurator",
-      Label="Surveillance Activity Data Curator", 
-      Definition="The person taking responsibility for the entering and cleaning of the
-      Surveillance Activity data",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityDataOwner",
-      Label="Surveillance Activity Data Owner", 
-      Definition="The person or institution that owns the data of the Surveillance Activity",
-      Type="String",
-      Mandatory="Yes"),   
-    
-    data.frame(
-      Variable="SurveillanceActivityOtherIndividuals",
-      Label="Other Individuals", 
-      Definition="Other individuals relevant for the Surveillance Activity, such as laboratory
-      point of contacts, local leaders, etc.",
-      Type="Multiple selection",
-      Mandatory="No"),   
-    
-    data.frame(
-      Variable="SurveillanceActivityGroupSourcesIncluded",
-      Label="Surveillance Activity Includes Grouped Animals", 
-      Definition="Answer to the question: 'Does the Surveillance Activity include information of 
-      animals at a group-level (e.g., herd, pack, pen, cage, etc.)?'",
-      Type="Boolean",
-      Mandatory="Yes"),   
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourcesIncluded",
-      Label="Surveillance Activity Includes Animal Sources", 
-      Definition="Answer to the question: 'Does the Surveillance Activity include information of individual animals?'",
-      Type="Boolean",
-      Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="SurveillanceActivityEnvironmentalSourcesIncluded",
-      Label="Surveillance Activity includes Environmental Sources", 
-      Definition="Answer to the question: 'Does the Surveillance Activity include information of Environmental Sources 
-      (e.g., sites where water can be collected)?'",
-      Type="Boolean",
-      Mandatory="Yes"),  
-    
-    data.frame(
-      Variable="SurveillanceActivityArthropodSourcesIncluded",
-      Label="Surveillance Activity Includes Arthropod Sources", 
-      Definition="Answer to the question: 'Does the Surveillance Activity include information from Arthropod Sources
-      (e.g., sites where CO2 traps can be placed to collect mosquitoes)?'",
-      Type="Boolean",
-      Mandatory="Yes"),  
-    
-    # data.frame(
-    #   Variable="SurveillanceActivityNewGroupsSourceRecordsAdded",
-    #   Label="New Group Source Records", 
-    #   Definition="Answer to the question: 'Does the Surveillance Activity involve the documentation of new 
-    #   Group Source Records?'",
-    #   Type="Boolean",
-    #   Mandatory="Yes"),  
-    # 
-    # data.frame(
-    #   Variable="SurveillanceActivityNewAnimalSourceRecordsAdded",
-    #   Label="New Animal Source Records", 
-    #   Definition="Answer to the question: 'Does the Surveillance Activity involve the documentation of new 
-    #   Animal Source Records?'",
-    #   Type="Boolean",
-    #   Mandatory="Yes"),    
-    # 
-    # data.frame(
-    #   Variable="SurveillanceActivityNewEnvironmentalSourceRecordsAdded",
-    #   Label="New Environmental Source Records", 
-    #   Definition="Answer to the question: 'Does the Surveillance Activity include the documentation of new 
-    #   Environmental Source Records (e.g., water)?'",
-    #   Type="Boolean",
-    #   Mandatory="Yes"),    
-    # 
-    # data.frame(
-    #   Variable="SurveillanceActivityNewInvertebrateSourceRecordsAdded",
-    #   Label="New Arthropod Source Records", 
-    #   Definition="Answer to the question: 'Does the Surveillance Activity include the documentation of new 
-    #   Arthropod Source Records (e.g., new invertebrate collection)?'",
-    #   Type="Boolean",
-    #   Mandatory="Yes"),    
-    
-    
-    data.frame(
-      Variable="SurveillanceActivityNewSourceRecords",
-      Label="Surveillance Activity Involves New Source Records", 
-      Definition="Answer to the question: 'Does the surveillance objective includes creating
-      new Source Records (e.g., go to the field and capture animals, collect water, or 
-      document dead animals found in a ranger patrol)?'",
-      Type="Boolean",
-      Mandatory="Yes"), 
-    
-    # data.frame(
-    #   Variable="SurveillanceActivityActiveCollection",
-    #   Label="Surveillance Activity Involves Active Collection of Source Records", 
-    #   Definition="Answer to the question: 'Does the surveillance objective include 
-    #   active collection of Source Records (e.g., observation post, patrolling, transect, 
-    #   capturing, collection, camera trapping, movement tracking. etc.)?' Passive collection include
-    #   news or social media articles, citizen reports, databases",
-    #   Type="Boolean",
-    #   Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="SurveillanceActivityNewSpecimens",
-      Label="New Specimens", 
-      Definition="Answer to the question: 'Are new Specimens collected under the Surveillance Activity?",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityNewDiagnosticProducts",
-      Label="New Diagnostic Products", 
-      Definition="Answer to the question: 'Does the Surveillance Activity creates new diagnostic products?",
-      Type="Boolean",
-      Mandatory="Yes"),    
-    
-    data.frame(
-      Variable="SurveillanceActivityNewPooledSpecimens",
-      Label="New Pooled Specimens", 
-      Definition="Answer to the question: 'Does the Surveillance Activity creates new pooled specimens?",
-      Type="Boolean",
-      Mandatory="Yes"),
     
     # ------- Biological Hazard Types 
     
@@ -398,201 +273,259 @@ surv_activity<-
     # --------------------------------
     
     
+    data.frame(
+      Variable="SurveillanceActivityTaxa",
+      Label="Taxa Targeted",
+      Definition="Taxa of interest for the Surveillance Activity. It is possible
+      to select high taxonomy levels such as 'Mammalia', 'Chordata', 'Insecta', etc. 
+      to indicate that no particular species is targeted. The answer applies to 
+      previous Sources Records (Carcasses or Specimens from previous Surveillance
+      Activities) and new Sources  if both are included in the Surveillance Activity",
+      Type="Multiple selection",
+      Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityPurpose",
+      Label="Surveillance Activity Purpose", 
+      Definition="Description of the general objectives and goals of the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityMethods",
+      Label="Surveillance Activity Methods", 
+      Definition="Description of the methods used to complete the Surveillance Activity (e.g., 
+      transect, citizen reports, ranger patrols, animal health team putbreak investigation, 
+      mosquito trapping, hunters reporting body condition, indigenous communities reporting
+      findings in processed carcasses, etc.)",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewFieldVisits",
+      Label="Surveillance Activity New Field Visits", 
+      Definition="Answer to the question: 'Does the Surveillance Activity implies new Field Visits?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldVisitCodeStructure",
+      Label="Surveillance Activity Field Visit Code Structure", 
+      Definition="Description of the structure of the codes used to identify Field Visits",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldVisitOtherAttributes",
+      Label="Surveillance Activity Field Visit Other Attributes", 
+      Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
+      other properties of Field Activities not included in the default Field Visit properties of
+      the data model?'",
+      Type="Boolean",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldVisitListDefinitionOtherAtttributes",
+      Label="Surveillance Activity Field Visit Definition Other Attributes", 
+      Definition="Description of other Field Visit attributes of interest not included in the 
+      data model. Provide a list with the name of the attributes and their definition",
+      Type="String",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityNewLocationsCodeStructure",
+      Label="Surveillance Activity Location Code Structure", 
+      Definition="Description of the structure of the codes used to identify Location",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberLocations",
+      Label="Surveillance Activity Number Locations", 
+      Definition="The number of Locations included in the Surveillance Activity",
+      Type="Integer",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityEventCodeStructure",
+      Label="Surveillance Activity Event Code Structure", 
+      Definition="Description of the structure of the codes used to identify Events",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityActiveCollection",
+      Label="Surveillance Activity Active Collection", 
+      Definition="Answer to the question:'Are Source Records obtained through an active collection
+      strategy (e.g., camera traps, mosquito traps, patrolling, transect, mist nets, observation
+      periods, land exploration, etc.)?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionCodeStructure",
+      Label="Surveillance Activity Collection Code Structure", 
+      Definition="Description of the structure of the codes used to identify Collections",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourcesIncluded",
+      Label="Surveillance Activity Includes Group Sources", 
+      Definition="Answer to the question: 'Does the Surveillance Activity include
+      animals at a group-level (e.g., herd, pack, pen, animal in a cage, etc.)?'",
+      Type="Boolean",
+      Mandatory="Yes"),   
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourcesIncluded",
+      Label="Surveillance Activity Includes Animal Sources", 
+      Definition="Answer to the question: 'Does the Surveillance Activity include
+      individual animals?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityEnvironmentalSourcesIncluded",
+      Label="Surveillance Activity includes Environmental Sources", 
+      Definition="Answer to the question: 'Does the Surveillance Activity include
+      Environmental Sources (e.g., sites where water is collected)?'",
+      Type="Boolean",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityArthropodSourcesIncluded",
+      Label="Surveillance Activity Includes Arthropod Sources", 
+      Definition="Answer to the question: 'Does the Surveillance Activity include
+      of Arthropod Sources (e.g., sites where CO2 traps can be placed to collect mosquitoes)?'",
+      Type="Boolean",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceCodeStructure",
+      Label="Surveillance Activity Source Code Structure", 
+      Definition="Description of the structure of the codes used to identify Sources",
+      Type="String",
+      Mandatory="Yes"),     
+    
+    data.frame(
+      Variable="SurveillanceActivityPreviousSpecimensAnySourceType",
+      Label="Surveillance Activity Previous Specimens Any Source Type", 
+      Definition="Answer to the question: 'Does the Surveillance Activity include the 
+      use of Specimens of any type obtained under a previous Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimensAnySourceType",
+      Label="Surveillance Activity New Specimens Any Source Type", 
+      Definition="Answer to the question: 'Does the Surveillance Activity include 
+      obtaining new Specimens of any type?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenCodeStructure",
+      Label="Surveillance Activity New Specimen Code Structure", 
+      Definition="Description of the structure of the codes used to identify newly obtained Specimens",
+      Type="String",
+      Mandatory="Yes"),    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewPooledSpecimens",
+      Label="Surveillance Activity New Pooled Specimens", 
+      Definition="Answer to the question: 'Does the Surveillance Activity involve the 
+      creation of new Pooled Specimens?",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewPooledSpecimenCodeStructure",
+      Label="Surveillance Activity New Pooled Specimens Code Structure", 
+      Definition="Description of the structure of the codes used to identify newly 
+      created Pooled Specimens",
+      Type="String",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityNewDiagnostics",
+      Label="Surveillance Activity New Diagnostics", 
+      Definition="Answer to the question: 'Does the Surveillance Activity 
+      involve new Diagnostics?",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewDiagnosticsCodeStructure",
+      Label="Surveillance Activity New Diagnostics Code Structure", 
+      Definition="Description of the structure of the codes used to identify new Diagnostics",
+      Type="String",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityNewDiagnosticProducts",
+      Label="Surveillance Activity New Diagnostic Products", 
+      Definition="Answer to the question: 'Does the Surveillance Activity involve 
+      the creation of new Diagnostic Products?",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityLaboratoriesIncluded",
+      Label="Surveillance Activity Laboratories Included", 
+      Definition="Answer to the question: 'Are there any laboratories participating 
+      somehow in the Surveillance Activity",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityLaboratories",
+      Label="Surveillance Activity Participating Laboratories", 
+      Definition="The laboratories participating in any manner in the Surveillance Activity",
+      Type="Multiple selection",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityIACUCNeeded",
-      Label="Surveillance ActivityIACUC Needed",
+      Label="Surveillance Activity IACUC Needed",
       Definition="Answer to the question: 'Is an IACUC needed to conduct the Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityOrganizationProvidingIACUC",
-      Label="Organization providing IACUC",
-      Definition="The organization providing the IACUC approving the methodology of the Surveillance Activity",
+      Label="Surveillance Activity Organization Providing IACUC",
+      Definition="The organization providing the IACUC approving the methodology 
+      of the Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityIACUCCode",
-      Label="IACUC Code",
+      Label="Surveillance Activity IACUC Code",
       Definition="The code of the IACUC approving the methodology of the Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
-    
+  
     data.frame(
-      Variable="SurveillanceActivityLocationPolygonUnitOfInterest",
-      Label="Location Polygon Is a Unit of Interest",
-      Definition="Answer to the question: 'Is the Location a Polygon that represents a unit of interest for the Surveillance Activity
-      (e.g., a parcel or a house)?'" ,
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityLocationPolygonRepresents",
-      Label="Location Polygon Description",
-      Definition="A description of what each polygon Location represents in the Surveillance Activity (e.g., a parcel or a house)" ,
+      Variable="SurveillanceActivityDataOwner",
+      Label="Surveillance Activity Data Owner", 
+      Definition="The person or organization that owns the Surveillance Activity data",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityLocationSpatialFileProvided",
-      Label="Spatial File with Location Polygons Provided",
-      Definition="'Answer to the question: 'Are the Location polygons included in the 
-      Surveillance Activity provided as a spatial file (.shp, .geojson, other)?'" ,
-      Type="Boolean",
+      Variable="SurveillanceActivityDataManager",
+      Label="Surveillance Activity Data Manager", 
+      Definition="The person responsible of the Surveillance Activity data",
+      Type="Single selection",
       Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityLocationPolygonProjection",
-      Label="Spatial Projection Of Location Polygons In Spatial File",
-      Definition="Answer to the question: 'Is the spatial projection of the Location Polygons file provided as a spatial file?'" ,
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityLocationClustering",
-      Label="Locations Are Clustered",
-      Definition="Answer to the question: 'Are Locations associated with the current 
-      Surveillance Activity clustered in units smaller than 'Field Visit'?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityLocationClusteringStructure",
-      Label="Clustering of Locations",
-      Definition="Explain the cluster structure of the Locations below 'Field Visit'
-      (e.g., The Locations are subsistence farms clustered by zone within a protected area. 
-      So farms [Locations], within zones [cluster])",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityLocationClusterSpatialFileProvided",
-      Label="Location Clusters File Provided",
-      Definition="'Answer to the question: 'Are the Location clusters provided as a spatial file (.shp, .geojson, other)?'" ,
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityLocationClusterSpatialProjection",
-      Label="Spatial Projection of Location Clusters Spatial File",
-      Definition="The spatial projection of the Location clusters spatial file" ,
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityEventUnitOfInterest",
-      Label="The Event Is a Unit of Interest",
-      Definition="Answer to the question: 'Is the Event (and its associated longitude, latitude, 
-      and time) a unit of interest for the Surveillance Activity?'" ,
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityEventRepresents",
-      Label="Event Description",
-      Definition="A description of what each Event represents in the Surveillance Activity 
-      (e.g., a trap, a stall, the site of a health event, etc.)" ,
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityEventClustering",
-      Label="Events Are Clustered",
-      Definition="Answer to the question: 'Are Events associated with the current 
-      Surveillance Activity clustered in units smaller than 'Location'?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityEventClusteringStructure",
-      Label="Clustering of Events",
-      Definition="Explain the cluster structure of the Events below 'location'
-      (e.g., Locations are markets. Events are stalls of each vendor in the market. 
-      Events are clustered by vendor. So, stalls [Event], 
-      within vendors [Cluster1], within markets [Location], included in each [Field Visit])",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityEventClusterSpatialFileProvided",
-      Label="Event Clusters File Provided",
-      Definition="'Answer to the question: 'Are the Event clusters provided as a spatial file (.shp, .geojson, other)?'" ,
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityEventClusterSpatialFileProjection",
-      Label="Spatial Projection of the Event Clusters Spatial File",
-      Definition="The spatial projection of the Event clusters spatial file" ,
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordClustering",
-      Label="Source Records Are Clustered",
-      Definition="Answer to the question: 'Are Source Records associated with the current 
-      Surveillance Activity clustered in units smaller than 'Event'?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordClusteringStructure",
-      Label="Clustering of Source Records",
-      Definition="Explain the clusetring structure of the Source Records below 'Event' 
-      (e.g., Events represent a stall in a market. Source records (animals in the stall) 
-      are clustered by cage in each stall [clustering by cage])",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityTemporalClustering",
-      Label="Temporal Clustering",
-      Definition="Answer to the question: 'Are the data in the current 
-      Surveillance Activity clustered temporally?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityTemporalClusteringStructure",
-      Label="Clustering by Temporal Units",
-      Definition="Explain the clustering structure per time unit 
-      (e.g., Events represent a stall in a market. The market is visited once per season. 
-      Each season is a temporal cluster grouping Locations, Events, and Source Records)",
-      Type="String",
-      Mandatory="Yes"),   
-    
-    # SurveillanceActivityFieldVisitNumberAndUnits
-    # 
-    # SurveillanceActivityLocationNumberAndUnits
-    # 
-    # SurveillanceActivityEventNumberAndUnits
-    # 
-    # SurveillanceActivityClusterNumberAndUnits
-    # 
-    # 
-    # SurveillanceActivitySourceUnits
-    # 
-    # SurveillanceActivitySourceNumberPerLocationEventCluster
-    # 
-    # SurveillanceActivitySourceRecordNumber
-    
-    
-    
-    data.frame(
-      Variable="SurveillanceActivityLab",
-      Label="Surveillance Activity Participating Laboratories", 
-      Definition="The laboratories associated with the Surveillance Activity",
-      Type="Multiple selection",
-      Mandatory="Yes"),    
     
     data.frame(
       Variable="SurveillanceActivityOtherSurveillanceActivityAssociated",
-      Label="Other Surveillance Activities or Datasets Associated", 
-      Definition="Answer to the question: 'Are there other Surveillance Activities
-      associated with the current Surveillance Activity or other datasets?' 
+      Label="Surveillance Activity Other Surveillance Activities or Datasets Associated", 
+      Definition="Answer to the question: 'Are there other Surveillance Activities or other datasets
+      associated with the current Surveillance Activity ?' 
       (e.g., if the current Surveillance Activity uses Specimens collected as part of 
       other associated Surveillance Objective, or if the full set of events of a ranger
       patrol (beyond health events) belong to the patrol XXXX of the protected
@@ -603,26 +536,19 @@ surv_activity<-
     
     data.frame(
       Variable="SurveillanceActivityOtherSurveillanceActivityAssociatedCode",
-      Label="Associated Surveillance Activities Codes", 
-      Definition="Describe why other Surveillance Activities are associated with the
-      current Surveillance Activity (e.g., the current Surveillance Activity uses 
-      Specimens collected as part of Surveillance Objective ZZZZ, or the health Events
-      are part of patrols conducted in protected YYY'. The patrol ID including 
-      the Events of the current Surveillance Activity are given in the Field Visit
-      Cross Reference Identifier)",
+      Label="Surveillance Activity Associated Surveillance Activities Codes", 
+      Definition="The Codes of other Surveillance Activities associated with the 
+      current Surveillance Activity",
       Type="Multiple selection",
       Mandatory="Yes"),
-    
     
     data.frame(
       Variable="SurveillanceActivityReasonOtherSurveillanceActivityAssociated",
       Label="Reason other Surveillance Activities or Datasets Are Associated", 
       Definition="Describe why other Surveillance Activities are associated with the
       current Surveillance Activity (e.g., the current Surveillance Activity uses 
-      Specimens collected as part of Surveillance Objective ZZZZ, or the health Events
-      are part of patrols conducted in protected YYY'. The patrol ID including 
-      the Events of the current Surveillance Activity are given in the Field Visit
-      Cross Reference Identifier)",
+      Specimens collected as part of Surveillance Activity X, or the health Events
+      are part of patrols conducted in protected Z')",
       Type="String",
       Mandatory="Yes"),
     
@@ -644,7 +570,7 @@ surv_activity<-
     data.frame(
       Variable="SurveillanceActivityStartDate",
       Label="Surveillance Activity Start Date",
-      Definition="The date the Surveillance Objective officially started" ,
+      Definition="The date the Surveillance Activity officially started" ,
       Type="Date",
       Mandatory="Yes"),
     

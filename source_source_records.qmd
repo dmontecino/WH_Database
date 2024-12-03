@@ -28,7 +28,7 @@ The purpose of Group Source is to record individuals at the species level instea
 
 **An Event can have more than one Group Source Record of the same species**. For example, animals of the same species in two cages hold by a vendor in market where the vendor is considered an Event. Then the animals per cage could be a unit, and therefore, two Group Source Records of the same species under the same vendor (same Event).
 
-An Group Source can be used directly for a Diagnostic (e.g., e.g., assessment of fat in carcasses of animals belonging to a specific herd). The data model can accommodate Diagnostics applied to a group itself rather than a Specimen taken from that Group Source.  
+**An Group Source can be used directly for a Diagnostic** (e.g., assessment of the body condition of a specific herd). The data model can accommodate Diagnostics applied to a group itself rather than a Specimen taken from that Group Source. **Specimens (see below) from Group Sources can be stored, exported, and they can be used for Diagnostics** (see below). However, **the data model does not accept Group Sources Carcasses to be exported or stored as a set of Carcasses because their collection and manipulation implies an opportunity to collect data at the individual level (Animal Source). Similar criteria applies with Necropsies and the Specimens collected from these Carcasses. In this case, the animals of the Group Source whose Carcasses are taken or used for field Necropsy can and MUST be converted to Animals Sources. These Animal Sources are identified as ex-members of a Group Source and their Carcasses, Necropsies, and Specimens are tight to the individual animal (more details in the Complexities section below). 
 
 **An animal of species X documented as part of a Group Source Record must not be included as an Animal Source Record and vice-versa**. If an Event contains a Group Source Record of species X and an Animal Source Record of species X, then the total number of animals of species X at the Event is the sum of the number of animals of species X in the Group Source Record and the single individual of species X recorded as an Animal Source Record. An example is a herd of cows illegally raised in a protected area whose health is assessed at time *t*. The herd of this example contains 20 cows. Two of them are sampled and the rest are part of a single unit. In this case, the sampled cows can be added as two Animal Source Records (one per sampled cow) and the remaining 18 animals can be added as a single Group Source Record that distributes the animals per sex, age, and health status. The total number of cows are the individuals in the Group Source Record (18) and the two cows recorded as Animal Records. The "herd" identity of the 20 cows can be kept using a cluster (see "Complexities"). If the Group Source Record contains the original 20 cows and also two Animal Source Records, then the total number of cows will be 22.
 
@@ -51,13 +51,13 @@ An Animal Source Record can be used directly for a Diagnostic (e.g., X-rays in a
 #### Vaccination
 
 The data model allows the inclusion of vaccinations completed in an Animal Source by the time it was captured or immobilized at time *t*. It is possible to include as many vaccination records
-as needed to an Animal Source Record. Thus, the vaccination data accumulates for the corresponding Animal Source.
+as needed to an Animal Source Record. Thus, the vaccination data accumulates for the corresponding Animal Source. 
 
 #### Carcass
 
 The carcass of a dead Animal Source can provide Specimens. A Carcass entered to the database comes from a specific Animal Source and they are collected at a single specific time *t*. Therefore, each Carcass is associated with one and only one Animal Source Record (when the Carcass was collected). Properties of a Carcass include its Decomposition Condition, Storage During Transport, Owner, Availability, among others. Moreover, Carcasses are stored and changes in the storage or movement of the Carcass from one storage facility to another can be multiple over time. Similarly, Carcasses can be exported multiple times. Changes in storage associated with an exportation must occur after the exportation is completed and the Carcass can be stored in the destination facility.
 
-A Carcass does not provide Specimens directly but through the dead Animal Source Record. 
+A Carcass does not provide Specimens directly but through the dead Animal Source Record. The Specimens can be identified as Carcass sourced.
 
 A Carcass is not used directly for a Diagnostic but through the dead Animal Source Record (e.g., X-rays in a dead animal). The diagnostic information is part of the set of Diagnostics conducted in the corresponding Animal Source. 
 

@@ -120,13 +120,16 @@ More complex relationships among the basic units in the data model, as well as o
 
 ```
 
+
 # Complexities
 
-<!-- ## Storage -->
+## Storage
 
-<!-- ## Export -->
+In the data model, Specimens from all Sources (including Diagnostic Products) and Carcasses of Animal Sources can be stored, their storage can be tracked, and changes in storage can be traced. 
 
+## Export
 
+In the data model, Specimens from all Sources (including Diagnostic Products) and Carcasses of Animal Sources can be exported and exportations can be tracked.
 
 ## Laboratories
 
@@ -148,7 +151,6 @@ In the data model, Interpretation of a Hazard in a Source Record is the conclusi
 
 Source Records can receive multiple Interpretations if multiple hazards are assessed in them or the same hazard is assessed more than once. Sources can have many Interpretations through several Source Records if multiple hazards are assessed in them at time *t* (Source Record), if the same hazard is assessed more than once at time *t* (Source Record), or if different or the same hazard are assessed over time (several Source Records of the same Source over time).
 
-
 ```{r child="groups.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
@@ -161,7 +163,7 @@ Source Records can receive multiple Interpretations if multiple hazards are asse
 
 # All Units in the Data Model and All Relationships
 
-Considering the details explained in the Complexities section, a summary of the relationships in the data model is provided in the following figure (the orange Units and connections apply to Animal Sources only. The red lines apply to Group and Animal Source Records only):
+Considering the details explained in the Complexities section, a summary of the relationships in the data model is provided in the following figure (the orange Units and connections apply to Animal Sources only. The green line apply to Group and Animal Source Records only):
 
 ![](Pictures_and_diagrams/Relationships_All_Sources.png){width="680"}
 
