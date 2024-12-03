@@ -693,8 +693,8 @@ group_source<-
     data.frame(
       Variable="SurveillanceActivityNewAnimalSourcesfromGroupSourcesReason",
       Label="Surveillance Activity New Animal Sources from Group Sources Reason",
-      Definition="Explanation why are new Animal Sources created from 
-      previous or new Group Sources during the Surveillance Activity?'",
+      Definition="Reason new Animal Sources are created from 
+      previous or new Group Sources during the Surveillance Activity'",
       Type="String",
       Mandatory="Yes")) 
     
