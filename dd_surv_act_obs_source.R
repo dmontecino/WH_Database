@@ -21,10 +21,26 @@ group_source<-
       Definition="Explain the nomenclature of the new Group Source Codes of the 
       Surveillance Activity (e.g., 'first letter refers to the pathogen, the next 
       two letters refer to the country, the next letter refers to the taxonomic group, 
-      and then the number is the sequential number of the Group Source in the 
-      Surveillance Activity code'",
+      and then the number is the sequential number of the Group Source')",
       Type="String",
       Mandatory="Yes"),    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceLocationPreviousSurveillanceActivities",
+      Label="Surveillance Activity New Group Source Locations in Previous Surveillance Activities",
+      Definition="Answer to the question: 'Have any of the Locations to obtain
+      Group Source Records in the Surveillance Activity been included in previous
+      Suveillance Activities",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceLocationPreviousSurveillanceActivitiesCodes",
+      Label="Surveillance Activity New Group Source Locations in Previous Surveillance Activities",
+      Definition="The codes of previous Surveillance Activities containing the Locations used in the 
+      current Surveillance Activities to obtain Group Sources",
+      Type="String",
+      Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourcesLocationUnitOfInterest",
@@ -53,11 +69,10 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceLocationSpatialFileProvided",
-      Label="Surveillance Activity New Group Sourcce Location Spatial File Provided",
+      Label="Surveillance Activity New Group Source Location Spatial File Provided",
       Definition="Answer to the question: 'Has a file with the spatial data and other
       relevant attributes of the Locations where new Group Source 
-      Records are obtained from in the Surveillance Activity being attached to
-      the database'",
+      Records are obtained from in the Surveillance Activity been perovided?'",
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -65,32 +80,34 @@ group_source<-
       Variable="SurveillanceActivityNewGroupSourceLocationPolygonProjection",
       Label="Surveillance Activity New Group Source Location Polygon Projection",
       Definition="The projection of the spatial data of the Locations in the file
-      attached'",
+      provided",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceLocationOtherAttriibutes",
+      Variable="SurveillanceActivityNewGroupSourceLocationOtherAttributes",
       Label="Surveillance Activity New Group Source Location Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
-      other properties of Locations not included in the default Location properties of
-      the data model?'",
+      other properties of Locations where new Group Source Records are obtained from
+      not included in the the data model?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceLocationListDefinitionOtherAtttributes",
+      Variable="SurveillanceActivityNewGroupSourceLocationListDefinitionOtherAttributes",
       Label="Surveillance Activity New Group Source Location Definition Other Attributes", 
-      Definition="Description of other Location attributes of interest not included in the 
-      data model. Provide a list with the name of the attributes and their definition",
+      Definition="Description of the other attributes of Locations where new Group Source 
+      Records are obtained from not included in the data model. Provide a list with the
+      name of the attributes and their definition",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourcePlannedVisitsPerLocation",
       Label="Surveillance Activity New Group Source Planned Visits Per Location", 
-      Definition="The number of planned visits per Location during the Surveillance Activity. 
-      An unknown number, 'at least X', or 'at most X' are accepted resposes",
+      Definition="The number of planned visits per Location where new Group Source
+      Records are obtained from during the Surveillance Activity. An unknown number,
+      'at least X', or 'at most X' are accepted resposes",
       Type="String",
       Mandatory="Yes"),
     
@@ -106,8 +123,8 @@ group_source<-
     data.frame(
       Variable="SurveillanceActivityNewGroupSourcesEventDefinition",
       Label="Surveillance Activity New Group Sources Event Definition",
-      Definition="Description of what the Events where Group Source Records 
-      collected from are (e.g., a parcel, an zone of a proteced area, a city, etc.)",
+      Definition="Description of what the Events where Group Source Records are
+      collected from are (e.g., a house, a cave, a tree, etc.)",
       Type="String",
       Mandatory="Yes"),
     
@@ -146,9 +163,9 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceEventIncludesManyGroupSources",
-      Label="Surveillance Activity New Group Source Event Includes Several Group Sources",
-      Definition="Answer to the question: Can Events where new Group Source 
-      Records are obtained from contain several records of other Group Sources?",
+      Label="Surveillance Activity New Group Source Event Includes Many Group Sources",
+      Definition="Answer to the question: Events where new Group Source 
+      Records are obtained from can contain records of other Group Sources?",
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -180,22 +197,47 @@ group_source<-
       Variable="SurveillanceActivityNewGroupSourceEventOtherAttributes",
       Label="Surveillance Activity New Group Source Event Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
-      other properties of Event not included in the default Event properties of
-      the data model?'",
+      other properties of Events where new Group Source Records are found not included
+      in the the data model?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceEventListDefinitionOtherAtttributes",
       Label="Surveillance Activity New Group Source Event Definition Other Attributes", 
-      Definition="Description of other Event attributes of interest not included in the 
-      data model. Provide a list with the name of the attributes and their definition",
+      Definition="Description of other attributes of interest for the Events where new 
+      Group Source Records are found not included in the the data model'",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
+      Variable="SurveillanceActivityNewGroupSourceEventIncludesSeveralGroupSources",
+      Label="Surveillance Activity New Group Source Event Includes Other Group Sources ", 
+      Definition="Answer to the question: 'Can Events provide Records from more than one
+      Group Source?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceEventIncludesOtherSourceTypes",
+      Label="Surveillance Activity New Group Source Event Includes Other Source Types", 
+      Definition="Answer to the question: 'Can Records of Group Sources and
+      other types being obtained from the same Event'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourcePassiveCollection",
+      Label="Surveillance Activity New Group Source Passive Collection", 
+      Definition="Answer to the question:'Are Group Source Records obtained through a
+      passive collection strategy (e.g., citizen reports, information from news outlets)?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    
+    data.frame(
       Variable="SurveillanceActivityNewGroupSourceActiveCollection",
-      Label="Surveillance Activity New Group Source Collection Has Effort", 
+      Label="Surveillance Activity New Group Source Active Collection",
       Definition="Answer to the question:'Are Group Source Records obtained through an
       active collection strategy (e.g., camera traps, mosquito traps, patrolling, transect,
       mist nets, observation periods, land exploration, etc.)?'",
@@ -203,28 +245,45 @@ group_source<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceCollectionMethods",
-      Label="Surveillance Activity New Group Source Collection Methods", 
-      Definition="Description of the Collection methods used to obtain new 
+      Variable="SurveillanceActivityNewGroupSourceActiveCollectionMethods",
+      Label="Surveillance Activity New Group Source Active Collection Methods", 
+      Definition="Description of the active Collection methods used to obtain new 
       Group Source Records (e.g., pair of mist nets placed in X for Y hours in S 
       sites every M months under a bat roost ans blood samples re collected using ... etc.)",
       Type="String",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceCollectionOtherAttriibutes",
+      Variable="SurveillanceActivityNewGroupSourceActiveCollectionMethodsReferences",
+      Label="Surveillance Activity New Group Source Active Collection Methods References", 
+      Definition="References associated with the Active Collection Methods to obtain new Group 
+      Source Records",
+      Type="String",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceActiveCollectionMethodExpectedEffort",
+      Label="Surveillance Activity New Group Source Active Collection Methods Expected Effort", 
+      Definition="Expected Effort of the Active Collection Methods to obtain new Group 
+      Source Records",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceCollectionOtherAttributes",
       Label="Surveillance Activity New Group Source Collection Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
-      other properties of Collections not included in the default Collection properties of
-      the data model?'",
+      other properties of Collections to obtain Group Source Records not included 
+      in the default Collection properties of the data model?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceCollectionListDefinitionOtherAtttributes",
       Label="Surveillance Activity New Group Source Collection Definition Other Attributes", 
-      Definition="Description of other Collection attributes of interest not included in the 
-      data model. Provide a list with the name of the attributes and their definition",
+      Definition="Description of other attributes of interest of the Collections to obtain 
+      Group Source Records not included in the data model. Provide a list with the name
+      of the attributes and their definition",
       Type="String",
       Mandatory="Yes"),
     
@@ -312,7 +371,7 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceIdentificationMethodReferences",
-      Label="GSurveillance Activity New Group Source Identification Method References",
+      Label="Surveillance Activity New Group Source Identification Method References",
       Definition="References associated with identification method of new Group Sources",
       Type="String",
       Mandatory="No"),
@@ -321,22 +380,61 @@ group_source<-
       Variable="SurveillanceActivityNewGroupSourceFollowedOverTime",
       Label="New Group Source Followed Over Time",
       Definition="Answer to the question: 'Is it aimed to follow the same Group Source during the  
-      Surveillance Activity and obtained Source Records over time?'",
+      Surveillance Activity and obtain Source Records over time?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceFollowedOverTimeFrequency",
       Label="New Group Source Followed Over Time",
-      Definition="Description about the frequencyt the new Groups Sources 
+      Definition="Description of the frequency that new Group Sources 
       will be searched for, observed, collected, examined, etc.",
       Type="String",
       Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceHazardType",
+      Label="Surveillance Activity Group Source Hazard Type Targeted",
+      Definition="The types of hazards targeted during the Surveillance Activity 
+      in Group Sources",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceHazardNames",
+      Label="Surveillance Activity Group Source Hazard Names Targeted",
+      Definition="The names of the hazards targeted during the Surveillance Activity
+      in Group Sources",
+      Type="Multiple selection",
+      Mandatory="Yes"),
 
     data.frame(
+      Variable="SurveillanceActivityAnimalSourceNewDiagnostics",
+      Label="Surveillance Activity Animal Source New Diagnostics",
+      Definition="Answer to the question: 'Are new Diagnostics conducted on the 
+      Animal Sources?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceNewDiagnosticProtocols",
+      Label="Surveillance Activity Group Source New Diagnostic Protocols",
+      Definition="Protocols of the new Diagnostic(s) conducted on Group Sources",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceNewDiagnosticProtocolReferences",
+      Label="Surveillance Activity Group Source New Diagnostic Protocol References",
+      Definition="References associated with the new Diagnostic protocols conducted
+      on the Group Sources",
+      Type="String",
+      Mandatory="No"),
+    
+     data.frame(
       Variable="SurveillanceActivityNewGroupSourceRecordInclusionCriteria",
       Label="Surveillance Activity New Group Source Records Inclusion Criteria",
-      Definition="The specific criteria for the inclusion of new Group Sources Records,
+      Definition="The specific criteria for the inclusion of new Group Source Records,
       if any",
       Type="String",
       Mandatory="Yes"),
@@ -344,56 +442,44 @@ group_source<-
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceRecordExclusionCriteria",
       Label="Surveillance Activity New Group Source Records Exclusion Criteria",
-      Definition="The specific criteria for the exclusion of new Group Sources Records,
+      Definition="The specific criteria for the exclusion of new Group Source Records,
       if any",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceNewDiagnostics",
-      Label="urveillance Activity New Group Source New Diagnostics",
-      Definition="Answer to the question: 'Are new Diagnostics conducted on the 
-      new Group Source Records?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityNewGroupSourceNewDiagnosticProtocols",
-      Label="Surveillance Activity New Group Source New Diagnostic Protocols",
-      Definition="Protocols of the Diagnostic(s) conducted on new Group 
-      Source Records",
+      Variable="SurveillanceActivityNewGroupSourceRecordCodeStructure",
+      Label="Surveillance Activity New Group Source Record Code Structure",
+      Definition="Explain the nomenclature of the new Group Source Record Codes of the 
+      Surveillance Activity (e.g., 'first letter refers to the pathogen, the next 
+      two letters refer to the country, the next letter refers to the taxonomic group, 
+      the number is the sequential number of the Group Source in the 
+      Surveillance Activity code, and the number is the sequential number of the 
+      Group Source Record')",
       Type="String",
       Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityNewGroupSourceNewDiagnosticProtocolReferences",
-      Label="Surveillance Activity New Group Source New Diagnostic Protocol References",
-      Definition="References associated with the Diagnostic protocols conducted
-      on the new Group Source Records",
-      Type="String",
-      Mandatory="No"),
     
     # SPECIMENS
     
     data.frame(
       Variable="SurveillanceActivityPreviousGroupSourceStoredSpecimens",
       Label="Surveillance Activity Previous Group Source Stored Specimens",
-      Definition="Answer to the question: 'Are stored Specimens from previous 
-      Group Sources included in the Surveillance Activity?'",
+      Definition="Answer to the question: 'Are stored Specimens from  
+      Group Sources of previous Surveillance Activities included in the current Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityPreviousGroupSourceStoredSpecimensProjectOrigin",
       Label="Surveillance Activity Previous Group Source Stored Specimens Project Origin",
-      Definition="The code of the Projects under which stored Group Sources Specimens
+      Definition="The code of the Projects under which stored Group Source Specimens
       included in the current Surveillance Activity were originated",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurvillanceActivityPreviousGroupSourceStoredSpecimensSurveillanceActivityOrigin",
+      Variable="SurveillanceActivityPreviousGroupSourceStoredSpecimensSurveillanceActivityOrigin",
       Label="Surveillance Activity Previous Group Source Stored Specimens Surveillance Activity Origin",
-      Definition="The code of the Surveillance ACtivities under which stored Group Sources Specimens
+      Definition="The code of the Surveillance Activities under which stored Group Source Specimens
       included in the current Surveillance Activity were originated",
       Type="Multiple selection",
       Mandatory="Yes"),
@@ -402,7 +488,7 @@ group_source<-
       Variable="SurveillanceActivityPreviousGroupSourceNewSpecimens",
       Label="Surveillance Activity Previous Group Source New Specimens",
       Definition="Answer to the question: 'In the current Surveillance Activity,
-      are new Specimens generated from stored Group Sources?'", 
+      are new Specimens generated from stored Carcasses of animals belonging to Group Sources?'", 
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -414,7 +500,6 @@ group_source<-
       Type="Boolean",
       Mandatory="Yes"),
     
-
     data.frame(
       Variable="SurveillanceActivityGroupSourceNewSpecimenCodeStructure",
       Label="Surveillance Activity Group Source New Specimen Code Structure",
@@ -430,8 +515,8 @@ group_source<-
     data.frame(
       Variable="SurveillanceActivityGroupSourceSpecimenTypes",
       Label="Surveillance Activity Group Source Specimen Types",
-      Definition="Select the Types of the newly generated Specimens from Group Sources
-      s under the current Surveillance Activity",
+      Definition="Select the types of the newly generated Specimens from Group Sources
+      under the current Surveillance Activity",
       Type="Multiple selection",
       Mandatory="Yes"),  
     
@@ -474,7 +559,7 @@ group_source<-
       Definition="Answer to the question: 'Are parasites or vectors collected from Group Sources
       surroundings included as Specimens in the current Surveillance Activity? (e.g., when 
       collecting a bat species-specific lice below a roost of the corresponding bat host species. 
-      Otherwise the parasite or vector is an 'Arthropod Source')",
+      If the parasite or vector is not linked to a Group Source then it is an 'Arthropod Source')",
       Type="Boolean",
       Mandatory="No"),
     
@@ -513,6 +598,24 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="SurveillanceActivityGroupSourceSpecimenHazardType",
+      Label="Surveillance Activity Group Source Specimen Hazard Type Targeted",
+      Definition="The types of hazards targeted during the Surveillance Activity in Group Source 
+      Specimens",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceSpecimenHazardNames",
+      Label="Surveillance Activity Group Source Specimen Hazard Names Targeted",
+      Definition="The names of the hazards targeted during the Surveillance Activity in Group 
+      Source Specimens",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    
+    
+    data.frame(
       Variable="SurveillanceActivityGroupSourceSpecimenNewDiagnostics",
       Label="Surveillance Activity Group Source New Diagnostics",
       Definition="Answer to the question: 'Are new Diagnostics conducted with 
@@ -524,7 +627,7 @@ group_source<-
     data.frame(
       Variable="SurveillanceActivityGroupSourceSpecimenNewDiagnosticsProtocol",
       Label="Surveillance Activity Group Source New Diagnostics Protocol",
-      Definition="Descrption of the Diagnostic protocols conducted with the 
+      Definition="Description of the Diagnostic protocols conducted with the 
       Group Source Specimens included in the Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
@@ -547,8 +650,7 @@ group_source<-
       Mandatory="Yes"),     
   
     
-    
-    
+
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordCriteriaPositiveDiagnostic",
       Label="Surveillance Activity Group Source Record Criteria Positive Diagnostic",
@@ -603,7 +705,8 @@ group_source<-
       Variable="SurveillanceActivityGroupSourceRecordCriteriaPositiveCase",
       Label="Surveillance Activity Group Source Record Criteria Positive Case",
       Definition="Explain the criteria to establish that a Group Source Record is
-      positive for each specific hazard targeted in the Surveillance Activity",
+      positive for each specific hazard targeted in the Surveillance Activity (positive 
+      Group Source Record case definition)",
       Type="String",
       Mandatory="Yes"),
     
@@ -618,7 +721,7 @@ group_source<-
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordDiagnosticInterpretation",
       Label="Surveillance Activity Group Source Record Diagnostic Interpretation",
-      Definition="Answer to the question: 'Are Diagnostics conducted in Group Source Record 
+      Definition="Answer to the question: 'Are Diagnostics conducted in Group Source Records 
       Interpreted as part of the Surveillance Activity?'",
       Type="boolean",
       Mandatory="Yes"),
@@ -627,7 +730,7 @@ group_source<-
       Variable="SurveillanceActivityGroupSourceRecordDiagnosticInterpretationBy",
       Label="Surveillance Activity Group Source Record Diagnostic Interpretation by",
       Definition="The individual providing the Interpretation of the Diagnostics 
-      conducted in Group Source Record",
+      conducted in Group Source Records",
       Type="Single selection",
       Mandatory="No"), 
     
@@ -651,25 +754,24 @@ group_source<-
     data.frame(
       Variable="SurveillanceActivityGroupSourceSpecimenInterpretation",
       Label="Surveillance Activity Group Source Specimen Interpretation",
-      Definition="Answer to the question: 'Are Group Source Specimens 
-      Interpreted with respect to the presence of targeted hazards as part of
-      the Surveillance Activity?'",
+      Definition="Answer to the question: ''Does the presence of targeted hazards
+      in Group Source Specimens receive an Interpretation as part of the Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceSpecimenInterpretationBy",
       Label="Surveillance Activity Group Source Specimen Interpretation by",
-      Definition="The individual providing the Interpretation of the Group Source 
-      Specimens with respect to the presence of targeted hazards",
+      Definition="The individual providing the Interpretation of targeted hazards
+      in Group Source Specimens",
       Type="Single selection",
       Mandatory="No"), 
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordInterpretation",
       Label="Surveillance Activity Group Source Record Interpretation",
-      Definition="Answer to the question: 'Are Group Source Records 
-      Interpreted with respect to the presence of targeted hazards as part of
+      Definition="Answer to the question: ''Does the presence of targeted hazards
+      in Group Source Records receive an Interpretation as part of
       the Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
@@ -680,23 +782,7 @@ group_source<-
       Definition="The individual providing the Interpretation of the Group Source 
       Records with respect to the presence of targeted hazards",
       Type="Single selection",
-      Mandatory="No"), 
-    
-    data.frame(
-      Variable="SurveillanceActivityNewAnimalSourcesfromGroupSources",
-      Label="Surveillance Activity New Animal Sources from Group Sources",
-      Definition="Answer to the question: 'Are New Animal Sources created from 
-      previous or new Group Sources during the Surveillance Activity?'",
-      Type="Boolean",
-      Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="SurveillanceActivityNewAnimalSourcesfromGroupSourcesReason",
-      Label="Surveillance Activity New Animal Sources from Group Sources Reason",
-      Definition="Reason new Animal Sources are created from 
-      previous or new Group Sources during the Surveillance Activity'",
-      Type="String",
-      Mandatory="Yes")) 
+      Mandatory="No")) 
     
 
 group_source<-

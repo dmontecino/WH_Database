@@ -2,24 +2,38 @@ animal_source<-
   
   list(
     
-
+    data.frame(
+      Variable="FromGroupSource", #(of the GRoup)
+      Label="Animal Source from Group Source", 
+      Definition="Answer to the question: 'Is the Animal Source coming from a Group Source
+      to be now considered as a specific individual?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceID", #(of the GRoup)
+      Label="Animal Source Origing Group Source ID", 
+      Definition="The ID of the Group Source that the Animal Source belonged to",
+      Type="String",
+      Mandatory="Yes"),
+    
     data.frame(
       Variable="SourceSpecies",
-      Label="Source Species", 
+      Label="Animal Source Species", 
       Definition="The Animal Source species",
       Type="Single selection",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SourceSex",
-      Label="Source Species", 
-      Definition="The Group source species. Only one for each Group Source",
+      Label="Source Species Sex", 
+      Definition="The Animal Source Sex",
       Type="Single selection",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SourcePreviousMarkingCode",
-      Label="Source Previous Marking Code", 
+      Label="Animal Source Previous Marking Code", 
       Definition="A known marking code of the Animal Source, before the current marking code",
       Type="String",
       Mandatory="No"))
