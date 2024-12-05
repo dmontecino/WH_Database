@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "WildHealthDB"
+  title: "WHe-DB"
   author: "Diego Montecino-Latorre"
   date: "11/22/2024"
   chapters:
