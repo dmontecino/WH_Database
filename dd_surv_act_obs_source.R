@@ -89,7 +89,7 @@ group_source<-
       Label="Surveillance Activity New Group Source Location Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
       other properties of Locations where new Group Source Records are obtained from
-      not included in the the data model?'",
+      not included in the data model?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
@@ -198,7 +198,7 @@ group_source<-
       Label="Surveillance Activity New Group Source Event Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
       other properties of Events where new Group Source Records are found not included
-      in the the data model?'",
+      in the data model?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
@@ -206,7 +206,7 @@ group_source<-
       Variable="SurveillanceActivityNewGroupSourceEventListDefinitionOtherAtttributes",
       Label="Surveillance Activity New Group Source Event Definition Other Attributes", 
       Definition="Description of other attributes of interest for the Events where new 
-      Group Source Records are found not included in the the data model'",
+      Group Source Records are found not included in the data model'",
       Type="String",
       Mandatory="Yes"),
     

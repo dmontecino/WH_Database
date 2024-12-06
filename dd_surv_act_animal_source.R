@@ -79,7 +79,7 @@ animal_source<-
       Label="Surveillance Activity New Animal Source Location Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
       other properties of Locations where new Animal Source Records are obtained from
-      not included in the the data model?'",
+      not included in the data model?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
@@ -184,7 +184,7 @@ animal_source<-
       Label="Surveillance Activity New Animal Source Event Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
       other properties of Events where new Animal Source Records are found not included
-      in the the data model?'",
+      in the data model?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
@@ -192,25 +192,10 @@ animal_source<-
       Variable="SurveillanceActivityNewAnimalSourceEventListDefinitionOtherAtttributes",
       Label="Surveillance Activity New Animal Source Event Definition Other Attributes", 
       Definition="Description of other attributes of interest for the Events where new 
-      Animal Source Records are found not included in the the data model?'",
+      Animal Source Records are found not included in the data model?'",
       Type="String",
       Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityNewAnimalSourceEventIncludesSeveralAnimalSources",
-      Label="Surveillance Activity New Animal Source Event Includes Other Group Sources ", 
-      Definition="Answer to the question: 'Can Events provide Records from more than one
-      Animal Source?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityNewAnimalSourceEventIncludesOtherSourceTypes",
-      Label="Surveillance Activity New Animal Source Event Includes Other Source Types", 
-      Definition="Answer to the question: 'Can Records of Animal Sources and
-      other types being obtained from the same Event'",
-      Type="Boolean",
-      Mandatory="Yes"),
+
     
     data.frame(
       Variable="SurveillanceActivityNewAnimalSourcePassiveCollection",
@@ -248,7 +233,7 @@ animal_source<-
     
     
     data.frame(
-      Variable="SurveillanceActivityNewAnimalSourceActiveCollectionMethodsReferences",
+      Variable="SurveillanceActivityNewAnimalSourceActiveCollectionMethodsExpectedEffort",
       Label="Surveillance Activity New Animal Source Active Collection Methods Expected Effort", 
       Definition="Expected Effort of the Active Collection Methods to obtain new Animal 
       Source Records",
@@ -590,7 +575,6 @@ animal_source<-
       Definition="Answer to the question: 'Are stored Specimens from Group Sources
       of previous Surveillance Activities included in the current Surveillance Activity?'",
       Type="Boolean",
-      Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
@@ -673,7 +657,7 @@ animal_source<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimensInclusionCriteria",
+      Variable="SurveillanceActivityAnimalSourceSpecimenInclusionCriteria",
       Label="Surveillance Activity Animal Source Specimens Inclusion Criteria",
       Definition="The specific criteria for the inclusion of Animal Source Specimens,
       in the Surveillance Activity, if any",
@@ -681,7 +665,7 @@ animal_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimensExclusionCriteria",
+      Variable="SurveillanceActivityAnimalSourceSpecimenExclusionCriteria",
       Label="Surveillance Activity Animal Source Specimens Exclusion Criteria",
       Definition="The specific criteria for the exclusion of Animal Source Specimens,
       in the Surveillance Activity, if any",
@@ -689,7 +673,7 @@ animal_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceSpecimensIncludesParasitesVectors",
+      Variable="SurveillanceActivityAnimalSourceSpecimenIncludesParasitesVectors",
       Label="Surveillance Activity Animal Source Specimens Includes Parasites or Vectors",
       Definition="Answer to the question: 'Are parasites or vectors collected from Animal Sources
       included as Specimens in the current Surveillance Activity? (e.g., 
