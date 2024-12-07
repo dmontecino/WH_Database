@@ -559,9 +559,6 @@ animal_source<-
       Animal Source Record')",
       Type="String",
       Mandatory="Yes"),
-  
-    
-    # VAccination 
     
     
     

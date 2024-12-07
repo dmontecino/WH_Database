@@ -28,6 +28,7 @@ specimen<-
       Label="Specimen Cross Identifier Origin", 
       Definition="The database/document/other where other identification 
       for the same Specimen is used",
+      Type="String",
       Mandatory="No"), 
 
     data.frame(
