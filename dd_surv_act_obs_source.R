@@ -8,6 +8,22 @@ group_source<-
   list(
     
     data.frame(
+      Variable="SurveillanceActivityGroupSourceNumber",
+      Label="Surveillance Activity Group Source Number",
+      Definition="The full number of Group Sources belonging to the 
+      Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceRecordsNumber",
+      Label="Surveillance Activity Group Source Records Number",
+      Definition="The full number of Group Sources Records of the 
+      Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
       Variable="SurveillanceActivityNewGroupSourcesIncluded",
       Label="Surveillance Activity New Group Sources Included",
       Definition="Answer to the question: 'Are new Group Sources considered in the 
@@ -23,7 +39,7 @@ group_source<-
       two letters refer to the country, the next letter refers to the taxonomic group, 
       and then the number is the sequential number of the Group Source')",
       Type="String",
-      Mandatory="Yes"),    
+      Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceLocationPreviousSurveillanceActivities",
@@ -108,6 +124,46 @@ group_source<-
       Definition="The number of planned visits per Location where new Group Source
       Records are obtained from during the Surveillance Activity. An unknown number,
       'at least X', or 'at most X' are accepted resposes",
+      Type="String",
+      Mandatory="Yes"),
+
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerLocationKnown",
+      Label="Surveillance Activity New Group Source Records Number Per Location Known", 
+      Definition="Answer to the question: 'Is the total number of Group Source Records 
+      targeted per Location where new Group Source Records are obtained from during 
+      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerLocation",
+      Label="Surveillance Activity New Group Source Records Number Per Location", 
+      Definition="The total number of Group Source Records targeted per Location
+      where new Group Source Records are obtained from during the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerVisitPerLocationKnown",
+      Label="Surveillance Activity New Group Source Records Number Per Visit to a Location Known", 
+      Definition="Answer to the question: 'Is the total number of Group Source Records 
+      targeted per visit to each Location where new Group Source Records are obtained from during 
+      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerVisitPerLocation",
+      Label="Surveillance Activity New Group Source Records Number Per Visit per Location", 
+      Definition="The total number of Group Source Records targeted per visit to each Location
+      where new Group Source Records are obtained from during 
+      the Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
     
@@ -211,19 +267,28 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceEventIncludesSeveralGroupSources",
-      Label="Surveillance Activity New Group Source Event Includes Other Group Sources ", 
-      Definition="Answer to the question: 'Can Events provide Records from more than one
-      Group Source?'",
+      Variable="SurveillanceActivityNewGroupSourceEventSeveralCollections",
+      Label="Surveillance Activity New Group Source Event Several Collection", 
+      Definition="Answer to the question: 'Can multiple Collections be completed per Event?' 
+      (e.g., two observers track the same deer herd from the same observation post)",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceEventIncludesOtherSourceTypes",
-      Label="Surveillance Activity New Group Source Event Includes Other Source Types", 
-      Definition="Answer to the question: 'Can Records of Group Sources and
-      other types being obtained from the same Event'",
+      Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerEventKnown",
+      Label="Surveillance Activity New Group Source Records Number Per Event Known", 
+      Definition="Answer to the question: 'Is the total number of Group Source Records 
+      targeted per Event known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
       Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerEvent",
+      Label="Surveillance Activity New Group Source Records Number Per Event", 
+      Definition="The total number of Group Source Records targeted per Event",
+      Type="String",
       Mandatory="Yes"),
     
     data.frame(
@@ -269,6 +334,22 @@ group_source<-
       Type="String",
       Mandatory="Yes"), 
     
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceCollectionSeveralGroupSourcesRecords",
+      Label="Surveillance Activity New Group Source Collection Several Group Sources Records", 
+      Definition="Answer to the question: 'Can a Collection provide Records of several Group Sources?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceCollectionRecordsOtherSourceTypes",
+      Label="Surveillance Activity New Group Source Collection Records Other Source Types", 
+      Definition="Answer to the question: 'Can a Collection provide Records of Sources 
+      of different types?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceCollectionOtherAttributes",
       Label="Surveillance Activity New Group Source Collection Other Attributes", 
@@ -288,13 +369,23 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceUnitDefinition",
-      Label="Surveillance Activity New Group Source Unit Definition", 
-      Definition="Description of what is a Group Source for the Surveillance Activity 
-      (e.g., caged animals, animals observed together in the field)",
-      Type="String",
+      Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerCollectionKnown",
+      Label="Surveillance Activity New Group Source Records Number Per Collection Known", 
+      Definition="Answer to the question: 'Is the total number of Group Source Records 
+      targeted per Collection aimed to obtained new Group Source Records during 
+      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
       Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerCollection",
+      Label="Surveillance Activity New Group Source Records Number Per Collection", 
+      Definition="The total number of Group Source Records targeted per Collection 
+      aimed to obtained new Group Source Records during the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceHowDefined",
       Label="Surveillance Activity New Group Sources Definition",
@@ -519,6 +610,22 @@ group_source<-
       under the current Surveillance Activity",
       Type="Multiple selection",
       Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceSpecimenPerGroupSourceRecordKnown",
+      Label="Surveillance Activity Number Specimens Per Group Source Record Known", 
+      Definition="Answer to the question: 'Is the total number of Specimens targeted per 
+      Group Source Record known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceSpecimenPerGroupSourceRecord",
+      Label="Surveillance Activity Number Specimens Per Group Source Record", 
+      Definition="The total number of Specimens targeted per Group Source Record",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceNewSpecimenCollectionMethod",

@@ -35,15 +35,22 @@ animal_source_record_carcass<-
     
     data.frame(
       Variable="AnimalSourceRecordCarcassFieldCondition",
-      Label="Field Carcass Condition",
-      Definition="The condition of the Carcass wehn it was collected at time t",
+      Label="Carcass Condition",
+      Definition="The condition of the Carcass when it was collected at time t",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="AnimalSourceRecordCarcassAction",
+      Label="Carcass Action",
+      Definition="Description of what was done with the Carcass found in the field or captive facility",
       Type="Single selection",
       Mandatory="Yes"), 
     
     data.frame(
       Variable="AnimalSourceRecordCarcassFieldStorage",
       Label="Field Carcass Storage",
-      Definition="The method to store the carcass in the field while in transit to a proper facility",
+      Definition="The method to store the carcass in the field or captive facility while in transit to a proper facility",
       Type="Single selection",
       Mandatory="Yes"), 
     
@@ -51,14 +58,16 @@ animal_source_record_carcass<-
       Variable="AnimalSourceRecordCarcassColdChainMaintainedInSitu",
       Label="Carcass Cold Chain Maintained In Situ",
       Definition="Answer to the question: 'Was the cold chain for the Carcass maintained
-      after its collection in the field up to arriving to the storage facility?'",
+      after its collection in the field or captive facility until arrival to the storage facility 
+      (e.g., pathology laboratory)?'",
       Type="Boolean",
       Mandatory="Yes"), 
     
     data.frame(
       Variable="AnimalSourceRecordCarcassFieldStorageProblems",
       Label="Carcass Field Storage Problems",
-      Definition="Description of any problems faced during the storage of the Carcass in the field",
+      Definition="Description of any problems faced during the storage of the Carcass
+      while on the field or captive facility",
       Type="String",
       Mandatory="No"),
     

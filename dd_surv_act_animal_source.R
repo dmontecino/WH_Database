@@ -8,6 +8,22 @@ animal_source<-
   list(
     
     data.frame(
+      Variable="SurveillanceActivityAnimalSourceNumber",
+      Label="Surveillance Activity Animal Source Number",
+      Definition="The full number of Animal Sources belonging to the 
+      Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordsNumber",
+      Label="Surveillance Activity Animal Source Records Number",
+      Definition="The full number of Animal Sources Records of the 
+      Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
       Variable="SurveillanceActivityNewAnimalSourcesIncluded",
       Label="Surveillance Activity New Animal Sources Included",
       Definition="Answer to the question: 'Are new Animal Sources considered in the 
@@ -15,6 +31,16 @@ animal_source<-
       Type="Boolean",
       Mandatory="Yes"), 
     
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceCodeStructure",
+      Label="Surveillance Activity New Animal Source Code Structure",
+      Definition="Explain the nomenclature of the new Animal Source Codes of the 
+      Surveillance Activity (e.g., 'first letter refers to the pathogen, the next 
+      two letters refer to the country, the next letter refers to the taxonomic group, 
+      and then the number is the sequential number of the Animal Source')",
+      Type="String",
+      Mandatory="Yes"), 
+
     data.frame(
       Variable="SurveillanceActivityNewAnimalSourceLocationPreviousSurveillanceActivities",
       Label="Surveillance Activity New Animal Source Locations in Previous Surveillance Activities",
@@ -100,6 +126,50 @@ animal_source<-
       'at least X', or 'at most X' are accepted resposes",
       Type="String",
       Mandatory="Yes"),
+    
+    
+    
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceRecordsNumberPerLocationKnown",
+      Label="Surveillance Activity New Animal Source Records Number Per Location Known", 
+      Definition="Answer to the question: 'Is the total number of Animal Source Records 
+      targeted per Location where new Animal Source Records are obtained from during 
+      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceRecordsNumberPerLocation",
+      Label="Surveillance Activity New Animal Source Records Number Per Location", 
+      Definition="The total number of Animal Source Records targeted per Location
+      where new Animal Source Records are obtained from during the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceRecordsNumberPerVisitPerLocationKnown",
+      Label="Surveillance Activity New Animal Source Records Number Per Visit to a Location Known", 
+      Definition="Answer to the question: 'Is the total number of Animal Source Records 
+      targeted per visit to each Location where new Animal Source Records are obtained from during 
+      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceRecordsNumberPerVisitPerLocation",
+      Label="Surveillance Activity New Animal Source Records Number Per Visit per Location", 
+      Definition="The total number of Animal Source Records targeted per visit to each Location
+      where new Animal Source Records are obtained from during 
+      the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
     
     data.frame(
       Variable="SurveillanceActivityNewAnimalSourcesEventUnitOfInterest",
@@ -195,7 +265,50 @@ animal_source<-
       Animal Source Records are found not included in the data model?'",
       Type="String",
       Mandatory="Yes"),
-
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceEventListDefinitionOtherAtttributes",
+      Label="Surveillance Activity New Animal Source Event Definition Other Attributes", 
+      Definition="Description of other attributes of interest for the Events where new 
+      Animal Source Records are found not included in the data model?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceEventListDefinitionOtherAtttributes",
+      Label="Surveillance Activity New Animal Source Event Definition Other Attributes", 
+      Definition="Description of other attributes of interest for the Events where new 
+      Animal Source Records are found not included in the data model?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceEventSeveralCollections",
+      Label="Surveillance Activity New Animal Source Event Several Collection", 
+      Definition="Answer to the question: 'Can multiple Collections be completed per Event?' 
+      (e.g., two observers track the same deer from the same observation post)",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceRecordsNumberPerEventKnown",
+      Label="Surveillance Activity New Animal Source Records Number Per Event Known", 
+      Definition="Answer to the question: 'Is the total number of Animal Source Records 
+      targeted per Event known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceRecordsNumberPerEvent",
+      Label="Surveillance Activity New Animal Source Records Number Per Event", 
+      Definition="The total number of Animal Source Records targeted per Event",
+      Type="String",
+      Mandatory="Yes"),
+    
     
     data.frame(
       Variable="SurveillanceActivityNewAnimalSourcePassiveCollection",
@@ -258,23 +371,23 @@ animal_source<-
       Type="String",
       Mandatory="Yes"),
     
-    # data.frame(
-    #   Variable="SurveillanceActivityNewAnimalSourceUnitDefinition",
-    #   Label="Surveillance Activity New Animal Source Unit Definition", 
-    #   Definition="Description of what is an Animal Source for the Surveillance Activity 
-    #   (e.g., caged animals, animals observed together in the field)",
-    #   Type="String",
-    #   Mandatory="Yes"),
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceRecordsNumberPerCollectionKnown",
+      Label="Surveillance Activity New Animal Source Records Number Per Collection Known", 
+      Definition="Answer to the question: 'Is the total number of Animal Source Records 
+      targeted per Collection aimed to obtained new Animal Source Records during 
+      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
+      Mandatory="Yes"),
     
-    # data.frame(
-    #   Variable="SurveillanceActivityNewAnimalSourceHowDefined",
-    #   Label="Surveillance Activity New Animal Sources Definition",
-    #   Definition="Description about the process to establish that the animals of 
-    #   the same species in a Animal Sources are assumed to be a epidemiological unit
-    #   (e.g., a herd of wildlife herbivores that have been lived in a specific area
-    #   and followed for decades, animals of the same species sharing a cage, etc.)",
-    #   Type="String",
-    #   Mandatory="Yes"),
+    data.frame(
+      Variable="SurveillanceActivityNewAnimalSourceRecordsNumberPerCollection",
+      Label="Surveillance Activity New Animal Source Records Number Per Collection", 
+      Definition="The total number of Animal Source Records targeted per Collection 
+      aimed to obtained new Animal Source Records during the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityNewAnimalSourceSpecies",
@@ -461,79 +574,6 @@ animal_source<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceVaccinated",
-      Label="Surveillance Activity Animal Source Vaccinated",
-      Definition="Answer to the question: 'Are Animal Sources vaccinated as part of 
-      the Surveillance Activity",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourceVaccinatedAgainst",
-      Label="Surveillance Activity Animal Source Vaccinated Against",
-      Definition="The hazards vaccinated against. Vaccines against toxins and other 
-      non-pathogen hazards must also be reported",
-      Type="Multiple selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourceCarcassCollected",
-      Label="Surveillance Activity Animal Source Carcass Collected",
-      Definition="Answer to the question: 'Are Carcasses of Animal Sources collected 
-      as part of the Surveillance Activity?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourceCarcassFieldStorage",
-      Label="Surveillance Activity Animal Source Carcass Field Storage",
-      Definition="Method to store the Carcasses collected while in the field 
-      under the current Surveillance Activity",
-      Type="Mutiple selection",
-      Mandatory="Yes"), 
-    
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourceFieldNecropsy",
-      Label="Surveillance Activity Animal Source Field Necropsy",
-      Definition="Answer to the question: 'Are field necropsies conducted as part
-      of the Surveillance Activity?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourcePrimaryNecropsy",
-      Label="Surveillance Activity Animal Source Primary Necropsy",
-      Definition="Answer to the question: 'Are primary necropsies conducted as part
-      of the Surveillance Activity?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourceSecondaryNecropsy",
-      Label="Surveillance Activity Animal Source Secondary Necropsy",
-      Definition="Answer to the question: 'Are secondary necropsies conducted as part
-      of the Surveillance Activity?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourceNecropsyCarcassProtocol",
-      Label="Surveillance Activity Animal Source Necropsy Carcass Protocol",
-      Definition="Protocol of the Necropsies conducted in Animal Sources as part
-      of the Surveillance Activity",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityAnimalSourceNecropsyCarcassReferences",
-      Label="Surveillance Activity Animal Source Necropsy Carcass Protocol References",
-      Definition="References supporting protocol of the Necropsies conducted in Animal Sources
-      as part of the Surveillance Activity",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
       Variable="SurveillanceActivityAnimalSourceRecordInclusionCriteria",
       Label="Surveillance Activity Animal Source Records Inclusion Criteria",
       Definition="The specific criteria for the inclusion of new Animal Source Records,
@@ -560,9 +600,79 @@ animal_source<-
       Type="String",
       Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordVaccinated",
+      Label="Surveillance Activity Animal Source Record Vaccinated",
+      Definition="Answer to the question: 'Are Animal Sources vaccinated as part of 
+      the Surveillance Activity",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordVaccinatedAgainst",
+      Label="Surveillance Activity Animal Source Record Vaccinated Against",
+      Definition="The hazards vaccinated against. Vaccines against toxins and other 
+      non-pathogen hazards must also be reported",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordCarcassCollected",
+      Label="Surveillance Activity Animal Source Record Carcass Collected",
+      Definition="Answer to the question: 'Are Carcasses of Animal Sources collected 
+      as part of the Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceCRecordarcassFieldStorage",
+      Label="Surveillance Activity Animal Source Carcass Record Field Storage",
+      Definition="Method to store the Carcasses collected while in the field 
+      under the current Surveillance Activity",
+      Type="Mutiple selection",
+      Mandatory="Yes"), 
     
     
-
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordFieldNecropsy",
+      Label="Surveillance Activity Animal Source Record Field Necropsy",
+      Definition="Answer to the question: 'Are field necropsies conducted as part
+      of the Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordPrimaryNecropsy",
+      Label="Surveillance Activity Animal Source Record Primary Necropsy",
+      Definition="Answer to the question: 'Are primary necropsies conducted as part
+      of the Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceSecondaryNecropsy",
+      Label="Surveillance Activity Animal Source Record Secondary Necropsy",
+      Definition="Answer to the question: 'Are secondary necropsies conducted as part
+      of the Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceNecropsyCarcassProtocol",
+      Label="Surveillance Activity Animal Source Necropsy Carcass Protocol",
+      Definition="Protocol of the Necropsies conducted in Animal Sources as part
+      of the Surveillance Activity",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceNecropsyCarcassReferences",
+      Label="Surveillance Activity Animal Source Necropsy Carcass Protocol References",
+      Definition="References supporting protocol of the Necropsies conducted in Animal Sources
+      as part of the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
     
     # SPECIMENS
     
@@ -635,6 +745,21 @@ animal_source<-
       Type="Multiple selection",
       Mandatory="Yes"),  
     
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceSpecimenPerAnimalSourceRecordKnown",
+      Label="Surveillance Activity Number Specimens Per Animal Source Record Known", 
+      Definition="Answer to the question: 'Is the total number of Specimens targeted per 
+      Animal Source Record known?. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceSpecimenPerAnimalSourceRecord",
+      Label="Surveillance Activity Number Specimens Per Animal Source Record", 
+      Definition="The total number of Specimens targeted per Animal Source Record",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityAnimalSourceNewSpecimenCollectionMethod",
