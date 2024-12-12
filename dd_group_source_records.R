@@ -72,12 +72,49 @@ group_source_record<-
       Type="Multiple selection",
       Mandatory="Yes"),
     
+    
+    data.frame(
+      Variable="SourceRecordTimeOutNaturalHabitat",
+      Label="Group Source Record Time Out Natural Habitat",
+      Definition="The period of time the Group Source has not been on its natural area",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordInFacility",
+      Label="Group Source In Facility",
+      Definition="Answer to the question: 'Is the Group Source in a captive facility
+      (e.g., rehabilitation center, zoologic, laboratory, market, etc).",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordNameFacility",
+      Label="Group Source Record Name Facility",
+      Definition="The name of the facility where the Group Source is",
+      Type="String",
+      Mandatory="Yes"),
+    
     data.frame(
       Variable="SourceRecordAdmissiontoFacility",
       Label="Group Source Record Date Entered to the Facility",
       Definition="The date the Group Source Record entered to the facility. Applies when the Location
       type is a farm or similar",
       Type="Date",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordInPenOrCage",
+      Label="Group Source In Pen or Cage",
+      Definition="Answer to the question: 'Is the Group Source in a pen or a cage?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordPenCageIdentifier",
+      Label="Group Source Record Pen Cage Identifier",
+      Definition="The identifier of the pen or cage where the Group Source is",
+      Type="String",
       Mandatory="Yes"),
     
     data.frame(
@@ -86,7 +123,7 @@ group_source_record<-
       Definition="The date the Group Source Record entered to the Pen or Cage. Applies when the Location
       type is a market or similar",
       Type="Date",
-      Mandatory="Yes"),
+      Mandatory="No"),
     
     data.frame(
       Variable="SourceRecordAnomaly",

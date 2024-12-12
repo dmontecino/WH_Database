@@ -49,12 +49,48 @@ animal_source_record<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="SourceRecordTimeOutNaturalHabitat",
+      Label="Animal Source Record Time Out Natural Habitat",
+      Definition="The period of time the Animal Source has not been on its natural area",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordInFacility",
+      Label="Animal Source In Facility",
+      Definition="Answer to the question: 'Is the Animal Source in a captive facility
+      (e.g., rehabilitation center, zoologic, laboratory, market, etc).",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordNameFacility",
+      Label="Animal Source Record Name Facility",
+      Definition="The name of the facility where the Animal Source is",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
       Variable="SourceRecordAdmissiontoFacility",
       Label="Animal Source Record Date Entered to the Facility",
       Definition="The date the Animal Source Record entered to the facility. Applies when the Location
       type is a farm or similar",
       Type="Date",
       Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordInPenOrCage",
+      Label="Animal Source In Pen or Cage",
+      Definition="Answer to the question: 'Is the Animal Source in a pen or a cage?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordPenCageIdentifier",
+      Label="Animal Source Record Pen Cage Identifier",
+      Definition="The identifier of the pen or cage where the Animal Source is",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SourceRecordAdmissiontoPenCage",
