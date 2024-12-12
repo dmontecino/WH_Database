@@ -20,7 +20,7 @@ htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"),
 
 ```
 
-## Introduction {.unnumbered}
+## Presentation {.unnumbered}
 
 Welcome to the **Wildlife Health Database (WHe-DB)** documentation. Here, you will find comprehensive information about the database's data structure (data model), how to use the web-based graphical user interface as user and administrator, and the data dictionary. This documentation aims to provide a clear understanding of the database's organization, how to use the database, and the meaning of its data.
 
