@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "WHe-DB"
+  title: "Wildlife Health Database (WHe-DB)"
   author: "Diego Montecino-Latorre"
   date: "12/11/2024"
   chapters:
@@ -25,7 +25,7 @@ book:
     location: sidebar
   repo-url: https://github.com/dmontecino/WH_Database
   #repo-actions: [edit]
-  downloads: [pdf]
+  #downloads: [pdf]
   #output-file: "WildHealthDat.pdf"
   #output-file: "puto_libro"
 # file:
@@ -42,8 +42,8 @@ format:
       - cerulean
     # number-depth: 9
     page-layout: full
-  pdf:
-    documentclass: scrreprt
+  #pdf:
+  #  documentclass: scrreprt
   # epub:
   #   toc:
   #     true

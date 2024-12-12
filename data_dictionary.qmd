@@ -12,7 +12,7 @@ htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"),
 htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
                alt = 'logo', 
                style = 'position:fixed; 
-                        top:80;
+                        top:90;
                         right:0; 
                         padding:70px;',
                width = "300px", 
