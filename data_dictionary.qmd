@@ -1,3 +1,25 @@
+```{r, echo=FALSE}
+htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
+               alt = 'logo', 
+               style = 'position:fixed; 
+                        top:0;
+                        right:0; 
+                        padding:70px;',
+               width = "300px", 
+               heigth = "300px")
+
+
+htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
+               alt = 'logo', 
+               style = 'position:fixed; 
+                        top:80;
+                        right:0; 
+                        padding:70px;',
+               width = "300px", 
+               heigth = "300px")
+
+```
+
 # Wildlife Health Data Model Dictionary {.unnumbered}
 
 
@@ -140,7 +162,7 @@ environmental_source
 
 ```{r environmental source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
 
-source("dd_surv_act_clusters_environmental_source_records.R")
+source("dd_surv_act_clusters_environmental_source.R")
 
 cluster_environmental_source_records
 

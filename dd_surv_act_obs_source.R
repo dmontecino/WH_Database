@@ -10,7 +10,7 @@ group_source<-
     data.frame(
       Variable="SurveillanceActivityGroupSourceNumber",
       Label="Surveillance Activity Group Source Number",
-      Definition="The full number of Group Sources belonging to the 
+      Definition="The full number of Group Sources targeted in the 
       Surveillance Activity",
       Type="String",
       Mandatory="Yes"), 
@@ -126,15 +126,49 @@ group_source<-
       'at least X', or 'at most X' are accepted resposes",
       Type="String",
       Mandatory="Yes"),
-
     
+  
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceEventNumberPerLocationKnown",
+      Label="Surveillance Activity New Group Source Event Number Per Location Known", 
+      Definition="Answer to the question: 'Is the number of Events per Location
+      where new Group Source Records are obtained from during the Surveillance Activity Known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceEventNumberPerLocation",
+      Label="Surveillance Activity New Group Source Event Number Per Location", 
+      Definition="The number of Events per Location where new Group Source
+      Records are obtained from during the Surveillance Activity. An unknown number,
+      'at least X', or 'at most X' are accepted resposes",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceCollectionNumberPerLocationKnown",
+      Label="Surveillance Activity New Group Source Event Number Per Location Known", 
+      Definition="Answer to the question: 'Is the number of Collections per Location
+      where new Group Source Records are obtained from during the Surveillance Activity Known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceCollectionNumberPerLocation",
+      Label="Surveillance Activity New Group Source Event Number Per Location", 
+      Definition="The number of Events per Location where new Group Source
+      Records are obtained from during the Surveillance Activity. An unknown number,
+      'at least X', or 'at most X' are accepted resposes",
+      Type="String",
+      Mandatory="Yes"),
+    
+
     data.frame(
       Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerLocationKnown",
       Label="Surveillance Activity New Group Source Records Number Per Location Known", 
       Definition="Answer to the question: 'Is the total number of Group Source Records 
       targeted per Location where new Group Source Records are obtained from during 
-      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
-      X' are accepted resposes",
+      the Surveillance Activity known?",
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -142,7 +176,8 @@ group_source<-
       Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerLocation",
       Label="Surveillance Activity New Group Source Records Number Per Location", 
       Definition="The total number of Group Source Records targeted per Location
-      where new Group Source Records are obtained from during the Surveillance Activity",
+      where new Group Source Records are obtained from during the Surveillance Activity.
+      An unknown number, 'at least X', or 'at most X' are accepted resposes",
       Type="String",
       Mandatory="Yes"),
     
@@ -152,8 +187,7 @@ group_source<-
       Label="Surveillance Activity New Group Source Records Number Per Visit to a Location Known", 
       Definition="Answer to the question: 'Is the total number of Group Source Records 
       targeted per visit to each Location where new Group Source Records are obtained from during 
-      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
-      X' are accepted resposes",
+      the Surveillance Activity known?",
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -163,7 +197,8 @@ group_source<-
       Label="Surveillance Activity New Group Source Records Number Per Visit per Location", 
       Definition="The total number of Group Source Records targeted per visit to each Location
       where new Group Source Records are obtained from during 
-      the Surveillance Activity",
+      the Surveillance Activity. An unknown number, 'at least X', or 'at most
+      X' are accepted resposes",
       Type="String",
       Mandatory="Yes"),
     
@@ -266,12 +301,22 @@ group_source<-
       Type="String",
       Mandatory="Yes"),
     
+    
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceEventSeveralCollections",
-      Label="Surveillance Activity New Group Source Event Several Collection", 
-      Definition="Answer to the question: 'Can multiple Collections be completed per Event?' 
-      (e.g., two observers track the same deer herd from the same observation post)",
+      Variable="SurveillanceActivityNewGroupSourceCollectionNumberPerLocationKnown",
+      Label="Surveillance Activity New Group Source Collection Number Per Location Known", 
+      Definition="Answer to the question: 'Is the number of Collections per Location
+      where new Group Source Records are obtained from during the Surveillance Activity Known?'",
       Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewGroupSourceCollectionNumberPerLocation",
+      Label="Surveillance Activity New Group Source Collection Number Per Location", 
+      Definition="The number of Collections per Location where new Group Source
+      Records are obtained from during the Surveillance Activity. An unknown number,
+      'at least X', or 'at most X' are accepted resposes",
+      Type="String",
       Mandatory="Yes"),
     
     data.frame(
@@ -373,8 +418,7 @@ group_source<-
       Label="Surveillance Activity New Group Source Records Number Per Collection Known", 
       Definition="Answer to the question: 'Is the total number of Group Source Records 
       targeted per Collection aimed to obtained new Group Source Records during 
-      the Surveillance Activity known?. An unknown number, 'at least X', or 'at most
-      X' are accepted resposes",
+      the Surveillance Activity known?",
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -382,7 +426,8 @@ group_source<-
       Variable="SurveillanceActivityNewGroupSourceRecordsNumberPerCollection",
       Label="Surveillance Activity New Group Source Records Number Per Collection", 
       Definition="The total number of Group Source Records targeted per Collection 
-      aimed to obtained new Group Source Records during the Surveillance Activity",
+      aimed to obtained new Group Source Records during the Surveillance Activity.
+      An unknown number, 'at least X', or 'at most X' are accepted resposes",
       Type="String",
       Mandatory="Yes"),
 
