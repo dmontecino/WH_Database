@@ -355,18 +355,18 @@ group_source<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceActiveCollectionMethods",
-      Label="Surveillance Activity New Group Source Active Collection Methods", 
-      Definition="Description of the active Collection methods used to obtain new 
+      Variable="SurveillanceActivityNewGroupSourceCollectionMethods",
+      Label="Surveillance Activity New Group Source Collection Methods", 
+      Definition="Description of the Collection methods used to obtain new 
       Group Source Records (e.g., pair of mist nets placed in X for Y hours in S 
       sites every M months under a bat roost ans blood samples re collected using ... etc.)",
       Type="String",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityNewGroupSourceActiveCollectionMethodsReferences",
-      Label="Surveillance Activity New Group Source Active Collection Methods References", 
-      Definition="References associated with the Active Collection Methods to obtain new Group 
+      Variable="SurveillanceActivityNewGroupSourceollectionMethodsReferences",
+      Label="Surveillance Activity New Group Source Collection Methods References", 
+      Definition="References associated with the Collection Methods to obtain new Group 
       Source Records",
       Type="String",
       Mandatory="No"), 
@@ -529,41 +529,41 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityGroupSourceHazardType",
-      Label="Surveillance Activity Group Source Hazard Type Targeted",
+      Variable="SurveillanceActivityNewGroupSourceHazardType",
+      Label="Surveillance Activity New Group Source Hazard Type Targeted",
       Definition="The types of hazards targeted during the Surveillance Activity 
-      in Group Sources",
+      in new Group Sources",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityGroupSourceHazardNames",
-      Label="Surveillance Activity Group Source Hazard Names Targeted",
+      Variable="SurveillanceActivityyNewGroupSourceHazardNames",
+      Label="Surveillance Activity yNew Group Source Hazard Names Targeted",
       Definition="The names of the hazards targeted during the Surveillance Activity
-      in Group Sources",
+      in new Group Sources",
       Type="Multiple selection",
       Mandatory="Yes"),
 
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceNewDiagnostics",
-      Label="Surveillance Activity Animal Source New Diagnostics",
+      Variable="SurveillanceActivityNewGroupSourceNewDiagnostics",
+      Label="Surveillance Activity New Group Source New Diagnostics",
       Definition="Answer to the question: 'Are new Diagnostics conducted on the 
-      Animal Sources?'",
+      new Group Sources?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityGroupSourceNewDiagnosticProtocols",
-      Label="Surveillance Activity Group Source New Diagnostic Protocols",
-      Definition="Protocols of the new Diagnostic(s) conducted on Group Sources",
+      Variable="SurveillanceActivityNewGroupSourceNewDiagnosticProtocols",
+      Label="Surveillance Activity New Group Source New Diagnostic Protocols",
+      Definition="Protocols of the new Diagnostic(s) conducted on new Group Sources",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityGroupSourceNewDiagnosticProtocolReferences",
-      Label="Surveillance Activity Group Source New Diagnostic Protocol References",
+      Variable="SurveillanceActivityNewGroupSourceNewDiagnosticProtocolReferences",
+      Label="Surveillance Activity New Group Source New Diagnostic Protocol References",
       Definition="References associated with the new Diagnostic protocols conducted
-      on the Group Sources",
+      on the new Group Sources",
       Type="String",
       Mandatory="No"),
     
@@ -580,6 +580,7 @@ group_source<-
       Label="Surveillance Activity New Group Source Records Exclusion Criteria",
       Definition="The specific criteria for the exclusion of new Group Source Records,
       if any",
+      Type="String",
       Mandatory="No"),
     
     data.frame(
@@ -768,7 +769,7 @@ group_source<-
     
     
     data.frame(
-      Variable="SurveillanceActivityGroupSourceSpecimenNewDiagnostics",
+      Variable="SurveillanceActivityGroupSourceSpecimenNewDiagnostic",
       Label="Surveillance Activity Group Source New Diagnostics",
       Definition="Answer to the question: 'Are new Diagnostics conducted with 
       the Group Source Specimens included in the Surveillance Activity?'",
@@ -777,7 +778,7 @@ group_source<-
     
     
     data.frame(
-      Variable="SurveillanceActivityGroupSourceSpecimenNewDiagnosticsProtocol",
+      Variable="SurveillanceActivityGroupSourceSpecimenNewDiagnosticProtocol",
       Label="Surveillance Activity Group Source New Diagnostics Protocol",
       Definition="Description of the Diagnostic protocols conducted with the 
       Group Source Specimens included in the Surveillance Activity",
@@ -785,7 +786,7 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityGroupSourceSpecimenNewDiagnosticsProtocolReferences",
+      Variable="SurveillanceActivityGroupSourceSpecimenNewDiagnosticProtocolReferences",
       Label="Surveillance Activity Group Source New Diagnostics Protocol References",
       Definition="References associated with the Diagnostic protocols conducted with the 
       Group Source Specimens included in the Surveillance Activity",

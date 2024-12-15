@@ -93,28 +93,32 @@ project<-
     data.frame(
       Variable="ProjectGroupSource",
       Label="Project Group Source",
-      Definition="Answer to the question: 'Are Group Source(s) of interest for the Project?'",
+      Definition="Answer to the question: 'Are new Group Source(s) or from previous
+      Surveillance Activities of interest for the Project?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectAnimalSource",
       Label="Project Animal Source",
-      Definition="Answer to the question: 'Are Animal Source(s) of interest for the Project?'",
+      Definition="Answer to the question: 'Are new Animal Source(s) or from previous
+      Surveillance Activities of interest for the Project?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectEnvironmentalSource",
       Label="Project Environmental Source",
-      Definition="Answer to the question: 'Are Environmental Source(s) of interest for the Project?'",
+      Definition="Answer to the question: 'Are new Environmental Source(s) or from previous
+      Surveillance Activities of interest for the Project?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="ProjectArthropodSource",
       Label="Project Arthropod Sources",
-      Definition="Answer to the question: 'Are Arthropod Source(s) of interest for the Project?'",
+      Definition="Answer to the question: 'Are new Arthropod Source(s) or from previous
+      Surveillance Activities of interest for the Project?'",
       Type="Boolean",
       Mandatory="Yes"),
     

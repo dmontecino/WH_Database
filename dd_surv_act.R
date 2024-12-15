@@ -304,7 +304,7 @@ surv_activity<-
     data.frame(
       Variable="SurveillanceActivityNewFieldVisits",
       Label="Surveillance Activity New Field Visits", 
-      Definition="Answer to the question: 'Does the Surveillance Activity implies new Field Visits?'",
+      Definition="Answer to the question: 'Does the Surveillance Activity involve new Field Visits?'",
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -373,7 +373,8 @@ surv_activity<-
       Variable="SurveillanceActivityGroupSourcesIncluded",
       Label="Surveillance Activity Includes Group Sources", 
       Definition="Answer to the question: 'Does the Surveillance Activity include
-      animals at a group-level (e.g., herd, pack, pen, animal in a cage, etc.)?'",
+      data of animals at a group-level (e.g., herd, pack, pen, animal in a cage, etc.) 
+      to be collected or from previous Surveillance Activities?'",
       Type="Boolean",
       Mandatory="Yes"),   
     
@@ -381,7 +382,7 @@ surv_activity<-
       Variable="SurveillanceActivityAnimalSourcesIncluded",
       Label="Surveillance Activity Includes Animal Sources", 
       Definition="Answer to the question: 'Does the Surveillance Activity include
-      individual animals?'",
+      data of individual animals to be collected or from previous Surveillance Activities?'",
       Type="Boolean",
       Mandatory="Yes"), 
     
@@ -389,7 +390,8 @@ surv_activity<-
       Variable="SurveillanceActivityEnvironmentalSourcesIncluded",
       Label="Surveillance Activity includes Environmental Sources", 
       Definition="Answer to the question: 'Does the Surveillance Activity include
-      Environmental Sources (e.g., sites where water is collected)?'",
+      data of Environmental Sources (e.g., sites where water is collected)
+      to be collected or from previous Surveillance Activities?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
@@ -397,7 +399,8 @@ surv_activity<-
       Variable="SurveillanceActivityArthropodSourcesIncluded",
       Label="Surveillance Activity Includes Arthropod Sources", 
       Definition="Answer to the question: 'Does the Surveillance Activity include
-      of Arthropod Sources (e.g., sites where CO2 traps can be placed to collect mosquitoes)?'",
+      data of of Arthropod Sources (e.g., sites where CO2 traps can be placed to collect mosquitoes)
+      to be collected or from previous Surveillance Activities?'",
       Type="Boolean",
       Mandatory="Yes"),  
     

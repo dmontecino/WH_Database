@@ -259,7 +259,7 @@ animal_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNewAnimalSourceEventIncludeAnimalSources",
+      Variable="SurveillanceActivityNewAnimalSourceEventIncludesGroupSources",
       Label="Surveillance Activity New Animal Source Event Includes Group Sources",
       Definition="Answer to the question: Do Events where new Animal Source 
       Records are obtained from contain records of Group Sources?",
@@ -394,7 +394,7 @@ animal_source<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityNewAnimalSourceCollectionOtherAttributes",
+      Variable="SurveillanceActivityNewAnimalSourceActiveCollectionOtherAttributes",
       Label="Surveillance Activity New Animal Source Collection Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
       other properties of Collections to obtain Animal Source Records not included in the
@@ -614,18 +614,19 @@ animal_source<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceRecordInclusionCriteria",
-      Label="Surveillance Activity Animal Source Records Inclusion Criteria",
+      Variable="SurveillanceActivityNewAnimalSourceRecordInclusionCriteria",
+      Label="Surveillance Activity New Animal Source Records Inclusion Criteria",
       Definition="The specific criteria for the inclusion of new Animal Source Records,
       if any",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityAnimalSourceRecordExclusionCriteria",
-      Label="Surveillance Activity Animal Source Records Exclusion Criteria",
+      Variable="SurveillanceActivityNewAnimalSourceRecordExclusionCriteria",
+      Label="Surveillance Activity New Animal Source Records Exclusion Criteria",
       Definition="The specific criteria for the exclusion of new Animal Source Records,
       if any",
+      Type="String",
       Mandatory="No"),
     
     data.frame(
@@ -702,7 +703,7 @@ animal_source<-
       Label="Surveillance Activity Animal Source Necropsy Carcass Protocol",
       Definition="Protocol of the Necropsies conducted in Animal Sources as part
       of the Surveillance Activity",
-      Type="Boolean",
+      Type="String",
       Mandatory="Yes"),
     
     data.frame(

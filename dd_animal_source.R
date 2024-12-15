@@ -3,16 +3,16 @@ animal_source<-
   list(
     
     data.frame(
-      Variable="FromGroupSource", #(of the GRoup)
-      Label="Animal Source from Group Source", 
+      Variable="AnimalSourceFromGroupSource", #(of the GRoup)
+      Label="Animal Source From Group Source", 
       Definition="Answer to the question: 'Is the Animal Source coming from a Group Source
       to be now considered as a specific individual?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceID", #(of the GRoup)
-      Label="Animal Source Origing Group Source ID", 
+      Variable="AnimalSourceFromGroupSourceGroupID", #(of the GRoup)
+      Label="Animal Source From Group Source Group ID", 
       Definition="The ID of the Group Source that the Animal Source belonged to",
       Type="String",
       Mandatory="Yes"),
