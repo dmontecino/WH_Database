@@ -231,7 +231,14 @@ diagnostic<-
       Label="Diagnostic Comments",
       Definition="Any comments regarding the Diagnostic",
       Type="String",
-      Mandatory="No"))
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="DiagnosticInterpreted",
+      Label="Diagnostic Interpreted",
+      Definition="Ansnwer to the quessiton: 'In the diagnostic interpreted?'",
+      Type="Boolean",
+      Mandatory="Yes"))
 
 
 diagnostic<-

@@ -33,19 +33,26 @@ animal_source_record_carcass<-
       Type="String",
       Mandatory="No"),
     
-    data.frame(
-      Variable="AnimalSourceRecordCarcassFieldCondition",
-      Label="Carcass Condition",
-      Definition="The condition of the Carcass when it was collected at time t",
-      Type="Single selection",
-      Mandatory="Yes"), 
+    # data.frame(
+    #   Variable="AnimalSourceRecordCarcassFieldCondition",
+    #   Label="Carcass Condition",
+    #   Definition="The condition of the Carcass when it was collected at time t",
+    #   Type="Single selection",
+    #   Mandatory="Yes"), 
+    
+    # data.frame(
+    #   Variable="AnimalSourceRecordCarcassAction",
+    #   Label="Carcass Action",
+    #   Definition="Description of what was done with the Carcass found in the field or captive facility",
+    #   Type="Single selection",
+    #   Mandatory="Yes"), 
     
     data.frame(
-      Variable="AnimalSourceRecordCarcassAction",
-      Label="Carcass Action",
-      Definition="Description of what was done with the Carcass found in the field or captive facility",
-      Type="Single selection",
-      Mandatory="Yes"), 
+      Variable="AnimalSourceRecordCarcassNecropsy",
+      Label="Carcass To Necropsy",
+      Definition="Answer to the question: 'Carcass used for a field, primary, or secondary necropsy?'",
+      Type="Boolean",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="AnimalSourceRecordCarcassFieldStorage",

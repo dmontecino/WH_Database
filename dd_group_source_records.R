@@ -3,7 +3,7 @@ group_source_record<-
   list(
     
     data.frame(
-      Variable="SourceRecordDistancetoSource",
+      Variable="GroupAnimalSourceRecordDistancetoSource",
       Label="Distance to the Group Source Record",
       Definition="In case of transect or similar, this is the distance in any unit from the Event 
       (point in transect) to the Group Source",
@@ -11,7 +11,7 @@ group_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordDistancetoSourceUnit",
+      Variable="GroupAnimalSourceRecordDistancetoSourceUnit",
       Label="Unit of the Distance",
       Definition="The unit for the distance from the Event (point in a transect) to the Group Source
       (e.g., meters, kilometers)",
@@ -19,7 +19,7 @@ group_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordSex",
+      Variable="GroupAnimalArthropodSourceRecordSex",
       Label=" Group Source Record Sex of the Animals",
       Definition="A sex category of the animals in the Group Source Record that are also 
       stratified by initial health status and age class",
@@ -27,7 +27,7 @@ group_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordAge",
+      Variable="GroupAnimalArthropodSourceRecordAge",
       Label="Group Source Record Age of the Animals",
       Definition="An age category of the animals in the Group Source Record that 
       are also stratified by initial health status and sex class",
@@ -43,21 +43,21 @@ group_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordHealthStatusAssessedBy",
+      Variable="GroupAnimalSourceRecordHealthStatusAssessedBy",
       Label="Group Source Record Health Status Assessed By",
       Definition="The health, animal, environmental, or another sector of the individual assigning the initial health status",
       Type="Single selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordNumberAnimals",
+      Variable="GroupArthropodSourceRecordNumberAnimals",
       Label="Group Source Record Number of Animals",
       Definition="The number animals of the corresponding sex, age, and initial health status category",
       Type="Integer",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordExactNumber",
+      Variable="GroupArthropodSourceRecordExactNumber",
       Label="Group Source Record Number is Exact",
       Definition="Answer to the question: 'Is the number of animals reported per sex, age, and 
       initial health status category exact?'",
@@ -65,7 +65,7 @@ group_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordCaptivityCategory",
+      Variable="GroupAnimalSourceRecordCaptivityCategory",
       Label="Group Source Record Captivity Category",
       Definition="The captivity category of the animals in the Group Source Record.
       Multiple options can be selected",
@@ -74,29 +74,30 @@ group_source_record<-
     
     
     data.frame(
-      Variable="SourceRecordTimeOutNaturalHabitat",
+      Variable="GroupAnimalSourceRecordTimeOutNaturalHabitat",
       Label="Group Source Record Time Out Natural Habitat",
       Definition="The period of time the Group Source has not been on its natural area",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordInFacility",
-      Label="Group Source In Facility",
+      Variable="GroupAnimalSourceRecordInFacilityHousehold",
+      Label="Group Source In Facility or Household",
       Definition="Answer to the question: 'Is the Group Source in a captive facility
-      (e.g., rehabilitation center, zoologic, laboratory, market, etc).",
+      (e.g., rehabilitation center, zoologic, laboratory, market, etc) or household 
+      (restricted by a person at home or other)?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordNameFacility",
+      Variable="GroupAnimalSourceRecordNameFacility",
       Label="Group Source Record Name Facility",
       Definition="The name of the facility where the Group Source is",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordAdmissiontoFacility",
+      Variable="GroupAnimalSourceRecordAdmissiontoFacility",
       Label="Group Source Record Date Entered to the Facility",
       Definition="The date the Group Source Record entered to the facility. Applies when the Location
       type is a farm or similar",
@@ -104,21 +105,21 @@ group_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordInPenOrCage",
+      Variable="GroupAnimalSourceRecordInPenOrCage",
       Label="Group Source In Pen or Cage",
       Definition="Answer to the question: 'Is the Group Source in a pen or a cage?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordPenCageIdentifier",
+      Variable="GroupAnimalSourceRecordPenCageIdentifier",
       Label="Group Source Record Pen Cage Identifier",
       Definition="The identifier of the pen or cage where the Group Source is",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordAdmissiontoPenCage",
+      Variable="GroupAnimalSourceRecordAdmissiontoPenCage",
       Label="Group Source Record Date Entered to the Pen or Cage",
       Definition="The date the Group Source Record entered to the Pen or Cage. Applies when the Location
       type is a market or similar",
@@ -126,7 +127,7 @@ group_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordAnomaly",
+      Variable="GroupAnimalSourceRecordAnomaly",
       Label="Group Source Record Anomalies",
       Definition="The anomalies detected in the animals of the Group Source Record
       reported as sick, injured, or dead per sex and age category",
@@ -134,7 +135,7 @@ group_source_record<-
       Mandatory="Yes"),
 
     data.frame(
-      Variable="SourceRecordOtherAnomalies",
+      Variable="GroupAnimalSourceRecordOtherAnomalies",
       Label="Group Source Record Other Anomalies",
       Definition="Other anomalies not listed in the previous field in the animals 
       of the Group Source Record reported as sick, injured, or dead per sex and age category",
@@ -142,7 +143,7 @@ group_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordAnomaliesBy",
+      Variable="GroupAnimalSourceRecordAnomaliesBy",
       Label="Group Source Record Anomalies By",
       Definition="The health, animal, environmental, or another sector of the individual 
       reporting the anomalies in sick, injured, or dead animals of the Group Source Record.
@@ -151,7 +152,7 @@ group_source_record<-
       Mandatory="Yes"),
 
     data.frame(
-      Variable="SourceRecordPotentialCauseInjuryDisease",
+      Variable="GroupAnimalSourceRecordPotentialCauseInjuryDisease",
       Label="Group Source Record Potential Cause Injury or Disease",
       Definition="The potential causes of injury or disease in the animals of the Group Source
       Record that are reported as sick or injured per sex and age category",
@@ -159,7 +160,7 @@ group_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordPotentialCauseInjuryDiseaseBy",
+      Variable="GroupAnimalSourceRecordPotentialCauseInjuryDiseaseBy",
       Label="Group Source Record Potential Cause Injury Disease By",
       Definition="The health, animal, environmental, or another sector of the individual 
       reporting the potential cause of injury or disease in sick or injured animals of the Group
@@ -168,7 +169,7 @@ group_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordPotentialCauseDeath",
+      Variable="GroupAnimalSourceRecordPotentialCauseDeath",
       Label="Group Source Record Potential Cause Death",
       Definition="The potential causes of death in the animals of the Group Source
       Record that are reported as dead per sex and age category",
@@ -176,7 +177,7 @@ group_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordPotentialCauseDeathBy",
+      Variable="GroupAnimalSourceRecordPotentialCauseDeathBy",
       Label="Group Source Record Potential Cause Injury Disease By",
       Definition="The health, animal, environmental, or another sector of the individual 
       reporting the potential cause of death in dead animals of the Group

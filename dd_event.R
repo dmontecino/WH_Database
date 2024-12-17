@@ -72,8 +72,8 @@ event<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="EventOriginalCRS",
-      Label="Event OriginalCRS", 
+      Variable="EventCoordinatesOriginalCRS",
+      Label="Event Coordinates Original CRS", 
       Definition="Indicate the Coordinate Reference System in which the Event coordinates were recorded",
       Type="Single selection",
       Mandatory="Yes"), 

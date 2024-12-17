@@ -24,10 +24,11 @@ environmental_source<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityNewEnvironmentalSourcesRecordsIncluded",
-      Label="Surveillance Activity New Environmental Source Records Included",
-      Definition="Answer to the question: 'Are new Environmental Source Records part of  the 
-      Surveillance Activity (e.g., new collection of data from Environmental Sources)?'",
+      Variable="SurveillanceActivityNewEnvironmentalSourceRecordsIncluded",
+      Label="Surveillance Activity New Environmental Source New Records Included",
+      Definition="Answer to the question: 'Are Environmental Source Records from 
+      New Environmental sources part of the  Surveillance Activity 
+      (e.g., collection of data from new Environmental Sources)?'",
       Type="Boolean",
       Mandatory="Yes"), 
     
@@ -548,10 +549,11 @@ environmental_source<-
     
     
     data.frame(
-      Variable="SurveillanceActivityPreviousEnvironmentalSource",
-      Label="Surveillance Activity Previous Environmental Source",
-      Definition="Answer to the question: 'Are there Environmental Sources included
-      in the current Surveillance Activities that have been included in previous Surveillance Activities?'",
+      Variable="SurveillanceActivityPreviousEnvironmentalSourceNewRecords",
+      Label="Surveillance Activity Previous Environmental Source New Records",
+      Definition="Answer to the question: 'Do Environmental Sources that have been
+      included in previous Surveillance Activities generate new records for the current
+      Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     

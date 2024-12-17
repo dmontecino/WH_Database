@@ -3,7 +3,7 @@ animal_source_record<-
   list(
     
     data.frame(
-      Variable="SourceRecordDistancetoSource",
+      Variable="GroupAnimalSourceRecordDistancetoSource",
       Label="Distance to the Animal Source Record",
       Definition="In case of transect or similar, this is the distance in any unit from the Event 
       (point in transect) to the Animal Source",
@@ -11,7 +11,7 @@ animal_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordDistancetoSourceUnit",
+      Variable="GroupAnimalSourceRecordDistancetoSourceUnit",
       Label="Unit of the Distance",
       Definition="The unit for the distance from the Event (point in a transect) to the Animal Source
       (e.g., meters, kilometers)",
@@ -19,14 +19,14 @@ animal_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordAge",
+      Variable="GroupAnimalArthropodSourceRecordAge",
       Label="Animal Source Record Age of the Animals",
       Definition="An age category of the Animal Source Record",
       Type="Single selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordInitialHealthStatus",
+      Variable="GroupAnimalSourceRecordInitialHealthStatus",
       Label="Animal Source Record Initial Health Status",
       Definition="An initial health status category of the Animal 
       Source Record",
@@ -34,7 +34,7 @@ animal_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordHealthStatusAssessedBy",
+      Variable="GroupAnimalSourceRecordHealthStatusAssessedBy",
       Label="Animal Source Record Health Status Assessed By",
       Definition="The health, animal, environmental, or another sector of the individual
       assigning the initial health status",
@@ -42,21 +42,21 @@ animal_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordCaptivityCategory",
+      Variable="GroupAnimalSourceRecordCaptivityCategory",
       Label="Animal Source Record Captivity Category",
       Definition="The captivity category of the Animal Source Record",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordTimeOutNaturalHabitat",
+      Variable="GroupAnimalSourceRecordTimeOutNaturalHabitat",
       Label="Animal Source Record Time Out Natural Habitat",
       Definition="The period of time the Animal Source has not been on its natural area",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordInFacility",
+      Variable="GroupAnimalSourceRecordInFacility",
       Label="Animal Source In Facility",
       Definition="Answer to the question: 'Is the Animal Source in a captive facility
       (e.g., rehabilitation center, zoologic, laboratory, market, etc).",
@@ -64,14 +64,14 @@ animal_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordNameFacility",
+      Variable="GroupAnimalSourceRecordNameFacility",
       Label="Animal Source Record Name Facility",
       Definition="The name of the facility where the Animal Source is",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordAdmissiontoFacility",
+      Variable="GroupAnimalSourceRecordAdmissiontoFacility",
       Label="Animal Source Record Date Entered to the Facility",
       Definition="The date the Animal Source Record entered to the facility. Applies when the Location
       type is a farm or similar",
@@ -79,21 +79,21 @@ animal_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordInPenOrCage",
+      Variable="GroupAnimalSourceRecordInPenOrCage",
       Label="Animal Source In Pen or Cage",
       Definition="Answer to the question: 'Is the Animal Source in a pen or a cage?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordPenCageIdentifier",
+      Variable="GroupAnimalSourceRecordPenCageIdentifier",
       Label="Animal Source Record Pen Cage Identifier",
       Definition="The identifier of the pen or cage where the Animal Source is",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordAdmissiontoPenCage",
+      Variable="GroupAnimalSourceRecordAdmissiontoPenCage",
       Label="Animal Source Record Date Entered to the Pen or Cage",
       Definition="The date the Animal Source Record entered to the Pen or Cage. Applies when the Location
       type is a market or similar",
@@ -101,7 +101,7 @@ animal_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordAnomaly",
+      Variable="GroupAnimalSourceRecordAnomaly",
       Label="Animal Source Record Anomalies",
       Definition="The anomalies detected in the Animal Source Record reported as sick, injured, 
       or dead",
@@ -109,7 +109,7 @@ animal_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordOtherAnomalies",
+      Variable="GroupAnimalSourceRecordOtherAnomalies",
       Label="Animal Source Record Other Anomalies",
       Definition="Other anomalies not listed in the previous field in the Animal Source Record 
       reported as sick, injured, or dead",
@@ -117,7 +117,7 @@ animal_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordAnomaliesBy",
+      Variable="GroupAnimalSourceRecordAnomaliesBy",
       Label="Animal Source Record Anomalies By",
       Definition="The health, animal, environmental, or another sector of the individual 
       reporting the anomalies in the sick, injured, or dead Animal Source Record.
@@ -126,7 +126,7 @@ animal_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordPotentialCauseInjuryDisease",
+      Variable="GroupAnimalSourceRecordPotentialCauseInjuryDisease",
       Label="Animal Source Record Potential Cause Injury or Disease",
       Definition="The potential causes of injury or disease in the Animal Source
       Record that is reported as sick or injured",
@@ -134,7 +134,7 @@ animal_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordPotentialCauseInjuryDiseaseBy",
+      Variable="GroupAnimalSourceRecordPotentialCauseInjuryDiseaseBy",
       Label="Animal Source Record Potential Cause Injury Disease By",
       Definition="The health, animal, environmental, or another sector of the individual 
       reporting the potential cause of injury or disease in the Animal
@@ -150,14 +150,14 @@ animal_source_record<-
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SourceRecordPotentialCauseDeath",
+      Variable="GroupAnimalSourceRecordPotentialCauseDeath",
       Label="Animal Source Record Potential Cause Death",
       Definition="The potential causes of death of the Animal Source Record",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordPotentialCauseDeathBy",
+      Variable="GroupAnimalSourceRecordPotentialCauseDeathBy",
       Label="Animal Source Record Potential Cause Injury Disease By",
       Definition="The health, animal, environmental, or another sector of the individual 
       reporting the potential cause of death of the Animal
@@ -201,18 +201,25 @@ animal_source_record<-
       Mandatory="Yes"),    
     
     data.frame(
-      Variable="AnimalSourceFieldNecropsy",
-      Label="Animal Source Field Necropsy",
-      Definition="Answer to the question:'Was an animal necropsy conducted in the field?'",
-      Type="Boolean",
-      Mandatory="Yes"),  
+      Variable="AnimalSourceRecordCarcassFieldCondition",
+      Label="Carcass Condition",
+      Definition="The condition of the Carcass when it was collected at time t",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    # data.frame(
+    #   Variable="AnimalSourceFieldNecropsy",
+    #   Label="Animal Source Field Necropsy",
+    #   Definition="Answer to the question:'Was an animal necropsy conducted in the field?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
      
-    data.frame(
-      Variable="AnimalSourceRecordCarcassCollected",
-      Label="Animal Source Record Carcass collected",
-      Definition="Answer to the question: 'Was the carcass of the Animal Source Record collected?'",
-      Type="Boolean",
-      Mandatory="Yes"),  
+    # data.frame(
+    #   Variable="AnimalSourceRecordCarcassCollected",
+    #   Label="Animal Source Record Carcass collected",
+    #   Definition="Answer to the question: 'Was the carcass of the Animal Source Record collected?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),  
     
     # data.frame(
     #   Variable="AnimalSourceRecordFieldStorageCarcass",
@@ -221,6 +228,13 @@ animal_source_record<-
     #   Type="Single selection but available only if 'Carcass collected' is true",
     #   Mandatory="Yes"), 
     # 
+    data.frame(
+      Variable="AnimalSourceRecordCarcassAction",
+      Label="Carcass Action",
+      Definition="Description of what was done with the Carcass found in the field or captive facility",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
     data.frame(
       Variable="AnimalSourceRecordMarkingCode",
       Label="Animal Source Record Marking Code",

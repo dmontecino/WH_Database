@@ -43,9 +43,9 @@ source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceRecordSpecimensCollected",
-      Label="Source Record Specimens Collected", 
-      Definition="Report if Specimens were generated from the Source Record",
+      Variable="SourceRecordNewSpecimens",
+      Label="Source Record New Specimens", 
+      Definition="Answer to the question: 'Are new Specimens generated from the Source Record?'",
       Type="String",
       Mandatory="No"),
 
@@ -61,7 +61,14 @@ source_record<-
       Label="Source Record Comments", 
       Definition="Provide any comments regarding the Source Record",
       Type="String",
-      Mandatory="No"))
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordInterpretation",
+      Label="Source Record Interpreted",
+      Definition="Ansnwer to the quessiton: 'In the Source Record interpreted?'",
+      Type="Boolean",
+      Mandatory="Yes"))
 
 source_record<-
   source_record %>% bind_rows() |> 

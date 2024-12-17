@@ -69,7 +69,7 @@ animal_source_record_necropsy<-
     
     data.frame(
       Variable="NecropsyCarcassCondition",
-      Label="Carcass Condition for Necropsy", 
+      Label="Carcass Condition at Necropsy", 
       Definition="The condition of the carcass by the time of the necropsy",
       Type="Single selection",
       Mandatory="Yes"),
@@ -237,14 +237,22 @@ animal_source_record_necropsy<-
     
     data.frame(
       Variable="NecropsyComments",
-      Label="Comments", 
+      Label="Necropsy Comments", 
+      Definition="Any comments regarding the necropsy",
+      Type="String",
+      Mandatory="No"),
+    
+    
+    data.frame(
+      Variable="NecropsyProblems",
+      Label="Necropsy Problems", 
       Definition="Any comments regarding the necropsy",
       Type="String",
       Mandatory="No"),
     
     data.frame(
       Variable="NecropsyConclusion",
-      Label="Conclusion", 
+      Label="Necropsy Conclusion", 
       Definition="The conclusion of the necropsy",
       Type="String",
       Mandatory="No"),
