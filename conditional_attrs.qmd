@@ -1,0 +1,29 @@
+
+<!-- ## Annex. Conditional Attributes {.unnumbered} -->
+
+```{r,  echo=FALSE, eval=T, message=FALSE, cache=F,  warning=FALSE}
+library(readxl)
+library(knitr)
+library(kableExtra)
+library(gt)
+library(dplyr)
+
+# Path to your Excel file
+# file_path <- "assets/my_data.xlsx"
+
+# Read and preview the data
+data_preview <- read_excel("Conditionals.xlsx", sheet = 1) # Load only the first 10 rows
+
+# Render the preview table
+# kable(data_preview, format = "html", table.attr = "class='table table-striped'") %>%
+#   kable_styling(full_width = FALSE)
+
+# location<-
+  data_preview %>% bind_rows() |> 
+  gt::gt() %>%
+  gt::tab_options(table.font.size = 8) |> 
+  gt::tab_style(
+    style = cell_text(size = px(10), weight = "bold"),
+    locations = cells_column_labels())
+```
+
