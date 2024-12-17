@@ -1,32 +1,64 @@
+```{r, echo=FALSE}
+htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
+               alt = 'logo', 
+               style = 'position:fixed; 
+                        top:0;
+                        right:0; 
+                        padding:70px;',
+               width = "300px", 
+               heigth = "300px")
+
+
+htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
+               alt = 'logo', 
+               style = 'position:fixed; 
+                        top:90;
+                        right:0; 
+                        padding:70px;',
+               width = "300px", 
+               heigth = "300px")
+
+```
+
 ## WildlHealthDB Manual {.unnumbered}
 
-The Field Visit requires an end date which can be placed in the future. For example, a Surveillance Activity aims to assess the body condition of a herd on a yearly for a decade. In this case, each Field Visit can encompass each full year, with an assigned start date of January 1st and en date December 31st of the corresponding year. The end date can be assigned in any moment before December 31st during the year, when the Field Visit is created.
+Under construction
 
-### 1. Finding Data 
+<!-- The Field Visit requires an end date which can be placed in the future. For example, a Surveillance Activity aims to assess the body condition of a herd on a yearly for a decade. In this case, each Field Visit can encompass each full year, with an assigned start date of January 1st and en date December 31st of the corresponding year. The end date can be assigned in any moment before December 31st during the year, when the Field Visit is created. -->
 
-#### Finding a Project
-#### Finding a Surveillance Activity
-#### Finding a Field Activity 
-#### Finding a Location
-#### Finding a Location Group
-#### Finding an Event
-#### Finding an Event Group
-#### Finding a Source 
-#### Finding a Source Record
-#### Finding a Source Record Group
-#### Finding a Carcass
-#### Finding a Necropsy
-#### Finding a Specimen
-#### Finding a Diagnostic
-#### Finding a Diagnosis
-#### Finding a Laboratory
-#### Finding a Person
+<!-- ### 1. Finding Data  -->
 
-### 2. Writing data
+<!-- #### Finding a Project -->
+<!-- #### Finding a Surveillance Activity -->
+<!-- #### Finding a Field Activity  -->
+<!-- #### Finding a Location -->
+<!-- #### Finding a Location Group -->
+<!-- #### Finding an Event -->
+<!-- #### Finding an Event Group -->
+<!-- #### Finding a Source  -->
+<!-- #### Finding a Source Record -->
+<!-- #### Finding a Source Record Group -->
+<!-- #### Finding a Carcass -->
+<!-- #### Finding a Necropsy -->
+<!-- #### Finding a Specimen -->
+<!-- #### Finding a Diagnostic -->
+<!-- #### Finding a Diagnosis -->
+<!-- #### Finding a Laboratory -->
+<!-- #### Finding a Person -->
 
-#### Creating a new Project
+<!-- ### 2. Writing data -->
+
+<!-- #### Creating a new Project -->
 
 
 
-### 3. Export Data
+<!-- ### 3. Export Data -->
+
+### Appendices
+
+#### Summary of fields and tables whose availability is conditional on other fields of the database
+
+```{r child="conditional_attrs.qmd" , echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
 
