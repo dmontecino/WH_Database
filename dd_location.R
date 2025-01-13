@@ -54,21 +54,21 @@ location<-
     data.frame(
       Variable="LocationPurpose",
       Label="Location Purpose",
-      Definition="Describe the objectives to accomplish in the Location",
+      Definition="Description of the objectives to accomplish in the Location",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
       Variable="LocationDescription",
       Label="Location Description",
-      Definition="Provide a general description of the Location",
+      Definition="A general description of the Location",
       Type="String",
       Mandatory="No"),
     
     data.frame(
       Variable="LocationEnvironment",
       Label="Location Environment",
-      Definition="Describe the environmental conditions of the Location",
+      Definition="Description of the environmental conditions of the Location",
       Type="String",
       Mandatory="Yes"),
     

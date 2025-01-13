@@ -28,6 +28,7 @@ diagnostic<-
       Label="Diagnostic Cross Identifier Origin", 
       Definition="The database/document/other where other identification 
       for the same Diagnostic is used",
+      Type="String",
       Mandatory="No"), 
     
     data.frame(
@@ -38,7 +39,7 @@ diagnostic<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="=DiagnosticTargetedHazardName",
+      Variable="DiagnosticTargetedHazardName",
       Label="Diagnostic Targeted Hazard Name",
       Definition="The name of the health hazard targeted by the Diagnostic",
       Type="Single selection", 
@@ -57,13 +58,6 @@ diagnostic<-
       Definition="The method used to conduct the Diagnostic (e.g., 'agglutination', 'PCR', etc)",
       Type="Single selection",
       Mandatory="Yes"),
-    
-    data.frame(
-      Variable="DiagnosticType",
-      Label="Diagnostic type",
-      Definition="The general method used to conduct the diagnostic (e.g., 'immunofluorescence', 'PCR', etc)",
-      Type="Single selection",
-      Mandatory="Yes"),  
     
     data.frame(
       Variable="DiagnosticName",
@@ -117,14 +111,15 @@ diagnostic<-
     data.frame(
       Variable="DiagnosticDateSentForTesting",
       Label="Date Sent for Testing",
-      Definition="The date the Specimen was sent to the Laboratory",
+      Definition="The date the Animal Source, Carcass, or Specimen was sent to the
+      Laboratory to be tested",
       Type="Date",
       Mandatory="Yes"),
     
     data.frame(
       Variable="DiagnosticDateReceivedForTesting",
       Label="Date Received for Testing",
-      Definition="The date the Specimen was received in the Laboratory",
+      Definition="The date the Animal Source, Carcass, or Specimen was received in the Laboratory",
       Type="Date",
       Mandatory="No"),
     
@@ -144,7 +139,7 @@ diagnostic<-
     
     data.frame(
       Variable="DiagnosticResultsReceived",
-      Label="Results Received",
+      Label="Diagnostic Results Received",
       Definition="Answer to the question: 'Were the Diagnostic results received?'",
       Type="Boolean",
       Mandatory="Yes"),

@@ -20,7 +20,7 @@ htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"),
 
 ```
 
-## WildlHealthDB Manual {.unnumbered}
+## WHe-DB Manual {.unnumbered}
 
 Under construction
 

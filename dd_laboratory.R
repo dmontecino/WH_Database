@@ -34,9 +34,31 @@ laboratory<-
       Mandatory="No"),
     
     data.frame(
+      Variable="LaboratoryCountry",
+      Label="Laboratory Country",
+      Definition="The country where the Laboratory is located",
+      Type="String",
+      Mandatory="No"),
+    
+    
+    data.frame(
       Variable="LaboratoryAddress",
       Label="Laboratory Address",
       Definition="The address of the Laboratory",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="LaboratoryPhone",
+      Label="Laboratory Phone",
+      Definition="The phone number of the Laboratory",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LaboratoryEmail",
+      Label="Laboratory Email",
+      Definition="The email address of the Laboratory",
       Type="String",
       Mandatory="No"),
     

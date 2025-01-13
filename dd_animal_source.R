@@ -3,6 +3,13 @@ animal_source<-
   list(
     
     data.frame(
+      Variable="SourceSpecies",
+      Label="Animal Source Species", 
+      Definition="The Animal Source species",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
       Variable="AnimalSourceFromGroupSource", #(of the GRoup)
       Label="Animal Source From Group Source", 
       Definition="Answer to the question: 'Is the Animal Source coming from a Group Source
@@ -18,23 +25,16 @@ animal_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceSpecies",
-      Label="Animal Source Species", 
-      Definition="The Animal Source species",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
       Variable="SourceSex",
       Label="Source Species Sex", 
-      Definition="The Animal Source Sex",
+      Definition="The Source Sex",
       Type="Single selection",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SourcePreviousMarkingCode",
       Label="Animal Source Previous Marking Code", 
-      Definition="A known marking code of the Animal Source, before the current marking code",
+      Definition="A known marking code of the Animal Source, if any, before the current marking code, if any",
       Type="String",
       Mandatory="No"))
 

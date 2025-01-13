@@ -44,8 +44,8 @@ specimen<-
     data.frame(
       Variable="SpecimenOrigin",
       Label="Specimen Origin", 
-      Definition="The Codes of the Source Records and Specimens involved in the origin of 
-      the current Specimen",
+      Definition="The Codes of the Source Records, Specimens, or Diagnostics involved 
+      in the origin of the current Specimen",
       Type="Multiple Selection",
       Mandatory="Yes"),  
     
@@ -59,7 +59,7 @@ specimen<-
     
     data.frame(
       Variable="SpecimenCreationDate",
-      Label="SpecimenCreationDate",
+      Label="Specimen Creation Date",
       Definition="The date the Specimen is created",
       Type="Date",
       Mandatory="Yes"),
@@ -73,9 +73,9 @@ specimen<-
     
     data.frame(
       Variable="SpecimenOriginalQuantityUnit",
-      Label="Specimen Quantity unit", 
+      Label="Specimen Quantity Unit", 
       Definition="The unit for the original quantity of the Specimen 
-      (e.g., mililiters, swab, mosquitoes)",
+      (e.g., milliliters, swab, mosquitoes)",
       Type="Single selection",
       Mandatory="Yes"),
     
@@ -97,24 +97,24 @@ specimen<-
       Variable="SpecimenMediumQuantityUnit",
       Label="Specimen Medium Quantity Unit", 
       Definition="The unit of the medium quantity in which the Specimen is contained on 
-      (e.g., mililiters)",
+      (e.g., milliliters)",
       Type="Single selection",
       Mandatory="Yes"),
     
-    data.frame(
-      Variable="SpecimenCurrentQuantityStored",
-      Label="Specimen Current Quantity Stored", 
-      Definition="The quantity of Specimen currently stored (e.g., 0.3)",
-      Type="Float",
-      Mandatory="Yes"),  
+    # data.frame(
+    #   Variable="SpecimenCurrentQuantityStored",
+    #   Label="Specimen Current Quantity Stored", 
+    #   Definition="The quantity of Specimen currently stored (e.g., 0.3)",
+    #   Type="Float",
+    #   Mandatory="Yes"),  
     
-    data.frame(
-      Variable="SpecimenReasonQuantityDifference",
-      Label="Specimen Reason of Quantity Difference", 
-      Definition="Explanantion for the difference between the original Specimen amount 
-      and the current Specimen amount stored",
-      Type="String",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="SpecimenReasonQuantityDifference",
+    #   Label="Specimen Reason of Quantity Difference", 
+    #   Definition="Explanantion for the difference between the original Specimen amount 
+    #   and the current Specimen amount stored",
+    #   Type="String",
+    #   Mandatory="Yes"),
     
     data.frame(
       Variable="SpecimenFieldStorage",
@@ -124,8 +124,8 @@ specimen<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="Specimen Cold Chain Maintained",
-      Label="Specimen Cold chain maintained", 
+      Variable="SpecimenColdChainMaintained",
+      Label="Specimen Cold Chain Maintained", 
       Definition="Answer to the question: 'Was the cold chain maintained during transit from 
       the field to the laboratory?'",
       Type="Boolean",

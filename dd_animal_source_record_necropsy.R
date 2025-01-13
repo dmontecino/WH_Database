@@ -54,10 +54,17 @@ animal_source_record_necropsy<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="NecropsyLab",
+      Variable="NecropsyFacility",
       Label="Necropsy Facility", 
       Definition="The facility where the necropsy was conducted",
-      Type="String",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="NecropsyFacilityID",
+      Label="Necropsy Facility ID", 
+      Definition="The identifier of the facility where the necropsy was conducted",
+      Type="Single selection",
       Mandatory="Yes"), 
     
     data.frame(
@@ -235,20 +242,6 @@ animal_source_record_necropsy<-
       Type="String",
       Mandatory="No"),
     
-    data.frame(
-      Variable="NecropsyComments",
-      Label="Necropsy Comments", 
-      Definition="Any comments regarding the necropsy",
-      Type="String",
-      Mandatory="No"),
-    
-    
-    data.frame(
-      Variable="NecropsyProblems",
-      Label="Necropsy Problems", 
-      Definition="Any comments regarding the necropsy",
-      Type="String",
-      Mandatory="No"),
     
     data.frame(
       Variable="NecropsyConclusion",
@@ -258,11 +251,46 @@ animal_source_record_necropsy<-
       Mandatory="No"),
     
     data.frame(
+      Variable="NecropsyProblems",
+      Label="Necropsy Problems", 
+      Definition="Any problems regarding the necropsy",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyComments",
+      Label="Necropsy Comments", 
+      Definition="Any comments regarding the necropsy",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
       Variable="NecropsyNeedsPathologistReview",
       Label="Needs pathologist review", 
-      Definition="Answer to the quesstion: 'Does the necropsy needs a pathologist review?'",
+      Definition="Answer to the question: 'Does the necropsy need a pathologist review?'",
       Type="Boolean",
-      Mandatory="Yes"))
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="NecropsyTopography",
+      Label="Necropsy Findings Topography", 
+      Definition="The location of the lesions or findings",
+      Type="Multiple selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="NecropsyTopography",
+      Label="Necropsy Findings Morphology", 
+      Definition="The pathological aspect of the lesions or findings",
+      Type="Multiple selection",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="NecropsyEthiology",
+      Label="Necropsy Findings Ethiology", 
+      Definition="The suspected or established cause of the lesions or findings",
+      Type="Multiple selection",
+      Mandatory="No"))
 
 animal_source_record_necropsy<-
   animal_source_record_necropsy %>% bind_rows() |> 

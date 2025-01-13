@@ -20,24 +20,8 @@ animal_source_record<-
     
     data.frame(
       Variable="GroupAnimalArthropodSourceRecordAge",
-      Label="Animal Source Record Age of the Animals",
+      Label="Animal Source Record Age of the Animal",
       Definition="An age category of the Animal Source Record",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="GroupAnimalSourceRecordInitialHealthStatus",
-      Label="Animal Source Record Initial Health Status",
-      Definition="An initial health status category of the Animal 
-      Source Record",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="GroupAnimalSourceRecordHealthStatusAssessedBy",
-      Label="Animal Source Record Health Status Assessed By",
-      Definition="The health, animal, environmental, or another sector of the individual
-      assigning the initial health status",
       Type="Single selection",
       Mandatory="Yes"),
     
@@ -48,20 +32,13 @@ animal_source_record<-
       Type="Multiple selection",
       Mandatory="Yes"),
     
-    data.frame(
-      Variable="GroupAnimalSourceRecordTimeOutNaturalHabitat",
-      Label="Animal Source Record Time Out Natural Habitat",
-      Definition="The period of time the Animal Source has not been on its natural area",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="GroupAnimalSourceRecordInFacility",
-      Label="Animal Source In Facility",
-      Definition="Answer to the question: 'Is the Animal Source in a captive facility
-      (e.g., rehabilitation center, zoologic, laboratory, market, etc).",
-      Type="Boolean",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="GroupAnimalSourceRecordInFacility",
+    #   Label="Animal Source In Facility",
+    #   Definition="Answer to the question: 'Is the Animal Source in a captive facility
+    #   (e.g., rehabilitation center, zoologic, laboratory, market, etc).",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
     
     data.frame(
       Variable="GroupAnimalSourceRecordNameFacility",
@@ -77,6 +54,14 @@ animal_source_record<-
       type is a farm or similar",
       Type="Date",
       Mandatory="No"),
+    
+    
+    data.frame(
+      Variable="GroupAnimalSourceRecordTimeOutNaturalHabitat",
+      Label="Animal Source Record Time Out Natural Habitat",
+      Definition="The period of time the Animal Source has not been on its natural area",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="GroupAnimalSourceRecordInPenOrCage",
@@ -99,6 +84,22 @@ animal_source_record<-
       type is a market or similar",
       Type="Date",
       Mandatory="No"),
+    
+    data.frame(
+      Variable="GroupAnimalSourceRecordInitialHealthStatus",
+      Label="Animal Source Record Initial Health Status",
+      Definition="An initial health status category of the Animal 
+      Source Record",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="GroupAnimalSourceRecordHealthStatusAssessedBy",
+      Label="Animal Source Record Health Status Assessed By",
+      Definition="The health, animal, environmental, or another sector of the individual
+      assigning the initial health status",
+      Type="Single selection",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="GroupAnimalSourceRecordAnomaly",
@@ -149,6 +150,42 @@ animal_source_record<-
       Type="Boolean",
       Mandatory="Yes"),  
     
+
+    data.frame(
+      Variable="AnimalSourceRecordFinalHealthStatus",
+      Label="Animal Source Record Final Health Status",
+      Definition="The health status of the Animal Source Record at the end of the observation",
+      Type="Single selection",
+      Mandatory="Yes"),
+
+    # data.frame(
+    #   Variable="AnimalSourceRecordEuthanasia",
+    #   Label="Animal Source Record Euthanasia",
+    #   Definition="Answer to the question: 'Was the Animal Source euthanized?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),  
+    
+    # data.frame(
+    #   Variable="AnimalSourceRecordEuthanasiaMethod",
+    #   Label="Animal Source Record Euthanasia Method",
+    #   Definition="The euthanasia method used in the Animal Source",
+    #   Type="Single selection",
+    #   Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="AnimalSourceDateOfDeathKnown",
+      Label="Animal Source Record Date of Death Known",
+      Definition="Answer to the question: 'Is the Animal Source date of death known?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="AnimalSourceDateOfDeath",
+      Label="Animal Source Record Date of Death",
+      Definition="The date the Animal Source died",
+      Type="Date",
+      Mandatory="Yes"),   
+    
     data.frame(
       Variable="GroupAnimalSourceRecordPotentialCauseDeath",
       Label="Animal Source Record Potential Cause Death",
@@ -164,20 +201,6 @@ animal_source_record<-
       Source Record. Not available if the Animal Source Record is not dead",
       Type="Single selection",
       Mandatory="Yes"),
-
-    data.frame(
-      Variable="AnimalSourceRecordHealthConditionReleased",
-      Label="Animal Source Record Health Status at Release",
-      Definition="The health status of the Animal Source Record at release",
-      Type="Single selection",
-      Mandatory="Yes"),
-
-    data.frame(
-      Variable="AnimalSourceRecordEuthanasia",
-      Label="Animal Source Record Euthanasia",
-      Definition="Answer to the question: 'Was the Animal Source euthanized?'",
-      Type="Boolean",
-      Mandatory="Yes"),  
     
     data.frame(
       Variable="AnimalSourceRecordEuthanasiaMethod",
@@ -187,22 +210,8 @@ animal_source_record<-
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="AnimalSourceDateOfDeathKnown",
-      Label="Animal Source Record Date of Death Known",
-      Definition="Answer to the question: 'Is the Animal Source date of death known?'",
-      Type="Boolean",
-      Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="AnimalSourceDateOfDeath",
-      Label="Animal Source Record Date of Death",
-      Definition="The date the Animal Source died",
-      Type="Date",
-      Mandatory="Yes"),    
-    
-    data.frame(
       Variable="AnimalSourceRecordCarcassFieldCondition",
-      Label="Carcass Condition",
+      Label="Animal Source Record Carcass Field Condition",
       Definition="The condition of the Carcass when it was collected at time t",
       Type="Single selection",
       Mandatory="Yes"), 
@@ -230,17 +239,25 @@ animal_source_record<-
     # 
     data.frame(
       Variable="AnimalSourceRecordCarcassAction",
-      Label="Carcass Action",
+      Label="Animal Source Record Carcass Action",
       Definition="Description of what was done with the Carcass found in the field or captive facility",
       Type="Single selection",
       Mandatory="Yes"), 
+
+    data.frame(
+      Variable="AnimalSourceRecordAnyMarkingCode",
+      Label="Animal Source Record Any Marking Code",
+      Definition="Answer to the question: 'Was there any marking in the Animal Source 
+      at time t that allowed its individual identification?'",
+      Type="String",
+      Mandatory="No"), 
     
     data.frame(
       Variable="AnimalSourceRecordMarkingCode",
       Label="Animal Source Record Marking Code",
-      Definition="Provide the marking of the Animal Source at time t",
+      Definition="The marking of the Animal Source at time t",
       Type="String",
-      Mandatory="No"), 
+      Mandatory="Yes"), 
     
     data.frame(
       Variable="AnimalSourceRecordMarkingCodeChange",

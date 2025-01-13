@@ -35,36 +35,6 @@ group_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordInitialHealthStatus",
-      Label="Group Source Record Initial Health Status",
-      Definition="An initial health status category of the animals in the Group 
-      Source Record that are also stratified by sex and age class",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="GroupAnimalSourceRecordHealthStatusAssessedBy",
-      Label="Group Source Record Health Status Assessed By",
-      Definition="The health, animal, environmental, or another sector of the individual assigning the initial health status",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="GroupArthropodSourceRecordNumberAnimals",
-      Label="Group Source Record Number of Animals",
-      Definition="The number animals of the corresponding sex, age, and initial health status category",
-      Type="Integer",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="GroupArthropodSourceRecordExactNumber",
-      Label="Group Source Record Number is Exact",
-      Definition="Answer to the question: 'Is the number of animals reported per sex, age, and 
-      initial health status category exact?'",
-      Type="Boolean",
-      Mandatory="Yes"),
-    
-    data.frame(
       Variable="GroupAnimalSourceRecordCaptivityCategory",
       Label="Group Source Record Captivity Category",
       Definition="The captivity category of the animals in the Group Source Record.
@@ -72,22 +42,14 @@ group_source_record<-
       Type="Multiple selection",
       Mandatory="Yes"),
     
-    
-    data.frame(
-      Variable="GroupAnimalSourceRecordTimeOutNaturalHabitat",
-      Label="Group Source Record Time Out Natural Habitat",
-      Definition="The period of time the Group Source has not been on its natural area",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="GroupAnimalSourceRecordInFacilityHousehold",
-      Label="Group Source In Facility or Household",
-      Definition="Answer to the question: 'Is the Group Source in a captive facility
-      (e.g., rehabilitation center, zoologic, laboratory, market, etc) or household 
-      (restricted by a person at home or other)?'",
-      Type="Boolean",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="GroupAnimalSourceRecordInFacilityHousehold",
+    #   Label="Group Source In Facility or Household",
+    #   Definition="Answer to the question: 'Is the Group Source in a captive facility
+    #   (e.g., rehabilitation center, zoologic, laboratory, market, etc) or household 
+    #   (restricted by a person at home or other)?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
     
     data.frame(
       Variable="GroupAnimalSourceRecordNameFacility",
@@ -103,6 +65,13 @@ group_source_record<-
       type is a farm or similar",
       Type="Date",
       Mandatory="No"),
+    
+    data.frame(
+      Variable="GroupAnimalSourceRecordTimeOutNaturalHabitat",
+      Label="Group Source Record Time Out Natural Habitat",
+      Definition="The period of time the Group Source has not been on its natural area",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="GroupAnimalSourceRecordInPenOrCage",
@@ -125,6 +94,21 @@ group_source_record<-
       type is a market or similar",
       Type="Date",
       Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordInitialHealthStatus",
+      Label="Group Source Record Initial Health Status",
+      Definition="An initial health status category of the animals in the Group 
+      Source Record that are also stratified by sex and age class",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="GroupAnimalSourceRecordHealthStatusAssessedBy",
+      Label="Group Source Record Health Status Assessed By",
+      Definition="The health, animal, environmental, or another sector of the individual assigning the initial health status",
+      Type="Single selection",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="GroupAnimalSourceRecordAnomaly",
@@ -183,6 +167,21 @@ group_source_record<-
       reporting the potential cause of death in dead animals of the Group
       Source Record. Not available if no animals are dead",
       Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="GroupArthropodSourceRecordNumberAnimals",
+      Label="Group Source Record Number of Animals",
+      Definition="The number animals of the corresponding sex, age, and initial health status category",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="GroupArthropodSourceRecordExactNumber",
+      Label="Group Source Record Number is Exact",
+      Definition="Answer to the question: 'Is the number of animals reported per sex, age, and 
+      initial health status category exact?'",
+      Type="Boolean",
       Mandatory="Yes"))
 
 group_source_record<-

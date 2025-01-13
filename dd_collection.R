@@ -10,11 +10,10 @@ collection<-
       Mandatory="System-assigned"), 
     
     data.frame(
-      Variable="CollectionHasEffort",
-      Label="Collection Has Effort",
-      Definition="Answer to the question: 'Is there any effort involved in creating new Source Records?' For example,
-      capture, patroling, traps, observation from a post, etc. (citizen reports do not involve effort and visits to 
-      markets or other facilities where wildlife is already captured does not involve effort)",
+      Variable="Collection Passive Active",
+      Label="Collection Passive Active",
+      Definition="Answer to the question: 'Is the collection passive or active?'
+      (markets or other facilities where wildlife is already captured does not involve effort)",
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -39,6 +38,13 @@ collection<-
       for the same Event is used",
       Type="String",
       Mandatory="No"),
+    
+    data.frame(
+      Variable="CollectionSourceMethod",
+      Label="Collection Source Method", 
+      Definition="The tools employed in the Collection",
+      Type="Multiple selection",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="CollectionSourceTarget",

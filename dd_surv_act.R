@@ -14,7 +14,7 @@ surv_activity<-
     #   Mandatory="Yes"), 
     
     data.frame(
-      Variable="WildlifeHealth_SurveillanceActivityID",
+      Variable="SurveillanceActivityID",
       Label="Surveillance Activity Identifier",
       Definition="System-provided Surveillance Activity identifier",
       Type="Integer",
@@ -125,7 +125,7 @@ surv_activity<-
     # ------- Biological Hazard Types 
     
     data.frame(
-      Variable="=SurveillanceActivityBiologicalHazard",
+      Variable="SurveillanceActivityBiologicalHazard",
       Label="Biological Hazards",
       Definition="The type(s) of biological health hazard(s) of interest for the Surveillance Activity 
       (e.g., 'Virus', 'Bacteria', 'Protozoa', 'Insecta')",
@@ -134,7 +134,7 @@ surv_activity<-
     
     
     data.frame(
-      Variable="=SurveillanceActivityVirusHazard",
+      Variable="SurveillanceActivityVirusHazard",
       Label="Virus",
       Definition="The viruses of interest for the Surveillance Activity. It can be as specific as a clade/variant/etc of a species
       or as general as 'Virus' (e.g., 'Virus', 'SARS-CoV-2 Omicron variant', 'H5N1 Highly Pathogenic Avian Influenza clade 2.3.3.4b')",
@@ -143,7 +143,7 @@ surv_activity<-
     
     
     data.frame(
-      Variable="=SurveillanceActivityBacteriaHazard",
+      Variable="SurveillanceActivityBacteriaHazard",
       Label="Bacteria",
       Definition="The bacteria of interest for the Project. It can be as specific as a strain/serovar/etc of a species
           or as general as 'Bacteria' (e.g., 'Group-A Streptococcus', 'Mycobacterium bovis')",
@@ -151,7 +151,7 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityProtozoaHazard",
+      Variable="SurveillanceActivityProtozoaHazard",
       Label="Protozoa",
       Definition="The protozoa of interest for the Surveillance Activity. It can be as specific as a strain/serovar/etc of a species
                   or as general as 'Protozoa' (e.g., 'Plasmodium relictum', 'Toxoplasma gondii')",
@@ -159,7 +159,7 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityFungiHazard",
+      Variable="SurveillanceActivityFungiHazard",
       Label="Fungi",
       Definition="The fungi of interest for the Surveillance Activity. It can be as specific as a strain/serovar/etc of a species
                       or as general as 'Fungi' (e.g., 'Pseudogymnoascus destructans', 'Batrachochytrium dendrobatidis')",
@@ -168,7 +168,7 @@ surv_activity<-
     
     
     data.frame(
-      Variable="=SurveillanceActivityPrionHazard",
+      Variable="SurveillanceActivityPrionHazard",
       Label="Prion",
       Definition="The prion of interest for the Project. It can be as specific as the protein subtype
                           or as general as 'Prion' (e.g., 'Chronic-wasting disease', 'Scrapie', 'Mad cow disease)", # name of the protein not the disease. REplace
@@ -176,22 +176,22 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityTransmissibleTumourHazard",
+      Variable="SurveillanceActivityTransmissibleTumourHazard",
       Label="Transmissible Tumour",
       Definition="The transmissible tumour of interest for the Surveillance Activity (e.g., 'Devil facial tumor 1', 'Devil facial tumor 2')",
       Type="Multiple selection", 
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityNematodaHazard",
-      Label="",
+      Variable="SurveillanceActivityNematodaHazard",
+      Label="Nematode",
       Definition="The nematode of interest for the Surveillance Activity. It can be as specific as a strain/serovar/etc of a species
                               or as general as 'Nematode' (e.g., 'Toxocara canis', '')",
       Type="Multiple selection", 
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityPlatyhelminthHazard",
+      Variable="SurveillanceActivityPlatyhelminthHazard",
       Label="Platyhelminth",
       Definition="The platyhelminth of interest for the Surveillance Activity. It can be as specific as a subspecies
                                   or as general as 'Platyhelminth' (e.g., 'Fasciola gigantica')",
@@ -199,7 +199,7 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityArthropodHazard",
+      Variable="SurveillanceActivityArthropodHazard",
       Label="Arthropod",
       Definition="The arthropod of interest for the Surveillance Activity. It can be as specific as a subspecies
                                   or as general as 'Arthropod' (e.g., 'Sarcoptes scabiei', 'Rhipicephalus sanguineus')",
@@ -209,7 +209,7 @@ surv_activity<-
     # ------- Chemical Hazard Types 
     
     data.frame(
-      Variable="=SurveillanceActivityChemicalHazard",
+      Variable="SurveillanceActivityChemicalHazard",
       Label="Chemical Hazards",
       Definition="The type(s) of chemical health hazard(s) of interest for the Surveillance Activity 
       (e.g., 'Heavy Metal', 'Organochlorine Pesticides', 'Cholinesterase-inhibbiting Pesticide', 'Toxins')",
@@ -217,7 +217,7 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityHeavyMetalHazard",
+      Variable="SurveillanceActivityHeavyMetalHazard",
       Label="Heavy Metal",
       Definition="The heavy metal of interest for the Surveillance Activity. It can be as specific as a chemical form of the heavy metal 
               or as general as the common name of the metal (e.g., 'Lead', 'Methylmercury')",
@@ -225,7 +225,7 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityOrganochlorinePesticidesHazard",
+      Variable="SurveillanceActivityOrganochlorinePesticidesHazard",
       Label="Organochlorine Pesticides",
       Definition="The organochlorine pesticides of interest for the Surveillance Activity. It can be as specific as a type of organochlorine pesticides
                   or as general as 'Organochlorine Pesticide' (e.g., 'DDT', 'Lindane')",
@@ -233,7 +233,7 @@ surv_activity<-
       Mandatory="No"),
     
     data.frame(
-      Variable="=SurveillanceActivityCholinesteraseInhibbitingPesticideHazard",
+      Variable="SurveillanceActivityCholinesteraseInhibbitingPesticideHazard",
       Label="Cholinesterase-inhibbiting Pesticide",
       Definition="The cholinesterase-inhibbiting pesticide of interest for the Surveillance Activity. It can be as specific as a type of 
               cholinesterase-inhibbiting pesticide or as general as 'Cholinesterase-inhibbiting Pesticide' 
@@ -243,7 +243,7 @@ surv_activity<-
     
     
     data.frame(
-      Variable="=SurveillanceActivityToxinsHazard",
+      Variable="SurveillanceActivityToxinsHazard",
       Label="Toxins",
       Definition="The toxin of interest for the Surveillance Activity. It can be as specific as the protein subtype
               or as general as 'Toxin' (e.g., 'Clostridium botulinum toxin type C', 'Tetanus toxin')", # name of the protein not the disease. REplace
@@ -253,7 +253,7 @@ surv_activity<-
     # -Physical Hazards
     
     data.frame(
-      Variable="=SurveillanceActivityPhysicalHazard",
+      Variable="SurveillanceActivityPhysicalHazard",
       Label="Physical Hazards",
       Definition="The type(s) of physical health hazard(s) of interest for the Surveillance Activity 
       (e.g., 'Trap', 'Vehicle Collisions', 'Entanglement', 'Burning', 'Electrocution')",
@@ -263,7 +263,7 @@ surv_activity<-
     # -# -Biological Hazards
     
     data.frame(
-      Variable="=SurveillanceActivityPhysiologicalHazard",
+      Variable="SurveillanceActivityPhysiologicalHazard",
       Label="Physiological Hazards",
       Definition="The type(s) of physiological health problems of interest for the Surveillance Activity 
       (e.g., 'Hypocalcemia', 'Hyperkalemia', 'Amyloid A amyloidosis')",
@@ -274,7 +274,7 @@ surv_activity<-
     
     
     data.frame(
-      Variable="SurveillanceActivityTaxa",
+      Variable="SurveillanceActivityTaxaTargeted",
       Label="Taxa Targeted",
       Definition="Taxa of interest for the Surveillance Activity. It is possible
       to select high taxonomy levels such as 'Mammalia', 'Chordata', 'Insecta', etc. 
@@ -309,24 +309,24 @@ surv_activity<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityFieldVisitCodeStructure",
-      Label="Surveillance Activity Field Visit Code Structure", 
-      Definition="Description of the structure of the codes used to identify Field Visits",
+      Variable="SurveillanceActivityNewFieldVisitCodeStructure",
+      Label="Surveillance Activity New Field Visit Code Structure", 
+      Definition="Description of the structure of the codes used to identify New Field Visits",
       Type="String",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityFieldVisitOtherAttributes",
-      Label="Surveillance Activity Field Visit Other Attributes", 
+      Variable="SurveillanceActivityNewFieldVisitOtherAttributes",
+      Label="Surveillance Activity New Field Visit Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
-      other properties of Field Activities not included in the default Field Visit properties of
+      other properties of New Field Activities not included in the default Field Visit properties of
       the data model?'",
       Type="Boolean",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityFieldVisitListDefinitionOtherAtttributes",
-      Label="Surveillance Activity Field Visit Definition Other Attributes", 
+      Variable="SurveillanceActivityNewFieldVisitListDefinitionOtherAtttributes",
+      Label="Surveillance Activity New Field Visit Definition Other Attributes", 
       Definition="Description of other Field Visit attributes of interest not included in the 
       data model. Provide a list with the name of the attributes and their definition",
       Type="String",
@@ -340,8 +340,8 @@ surv_activity<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityNumberLocations",
-      Label="Surveillance Activity Number Locations", 
+      Variable="SurveillanceActivityLocationsNumber",
+      Label="Surveillance Activity Locations Number", 
       Definition="The number of Locations included in the Surveillance Activity",
       Type="Integer",
       Mandatory="Yes"),  
@@ -404,12 +404,12 @@ surv_activity<-
       Type="Boolean",
       Mandatory="Yes"),  
     
-    data.frame(
-      Variable="SurveillanceActivitySourceCodeStructure",
-      Label="Surveillance Activity Source Code Structure", 
-      Definition="Description of the structure of the codes used to identify Sources",
-      Type="String",
-      Mandatory="Yes"),     
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceCodeStructure",
+    #   Label="Surveillance Activity Source Code Structure", 
+    #   Definition="Description of the structure of the codes used to identify Sources",
+    #   Type="String",
+    #   Mandatory="Yes"),     
     
     data.frame(
       Variable="SurveillanceActivityPreviousSpecimensAnySourceType",

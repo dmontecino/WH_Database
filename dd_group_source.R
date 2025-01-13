@@ -4,7 +4,7 @@ group_source<-
     data.frame(
       Variable="SourceSpecies",
       Label="Source Species", 
-      Definition="The Group source species",
+      Definition="The Group Source species",
       Type="Single selection",
       Mandatory="Yes"))
 

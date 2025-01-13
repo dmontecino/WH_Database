@@ -43,7 +43,7 @@ source<-
     data.frame(
       Variable="SourceComments",
       Label="Source Comments", 
-      Definition="Provide any comments regarding the Source",
+      Definition="Any comments regarding the Source",
       Type="String",
       Mandatory="No"))
 

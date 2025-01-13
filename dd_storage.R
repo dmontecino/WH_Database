@@ -2,12 +2,12 @@ storage<-
   
   list(
     
-    data.frame(
-      Variable="StorageID",
-      Label="Storage Identifier",
-      Definition="System-provided Storage identifier",
-      Type="Integer",
-      Mandatory="System-assigned"), 
+    # data.frame(
+    #   Variable="StorageID",
+    #   Label="Storage Identifier",
+    #   Definition="System-provided Storage identifier",
+    #   Type="Integer",
+    #   Mandatory="System-assigned"), 
     
     data.frame(
       Variable="StorageChange",
@@ -19,10 +19,10 @@ storage<-
     
     data.frame(
       Variable="StorageChangeDate",
-      Label="Storage Change DAte",
+      Label="Storage Change Date",
       Definition="The date when the storage change occured. If the change is associated with an Export, then 
       this attribute is the date when the exported material was stored in the new facility",
-      Type="Boolean",
+      Type="Date",
       Mandatory="Yes"), 
     
     
@@ -33,13 +33,28 @@ storage<-
       Type="String",
       Mandatory="Yes"), 
     
+    # data.frame(
+    #   Variable="StorageChangeExportID",
+    #   Label="Storage Change Export ID",
+    #   Definition="The Id of the Export leading to a change in the storage of the Carcass or Specimen. 
+    #   The exportation process in this case must have occurred before the storage change",
+    #   Type="Integer",
+    #   Mandatory="Yes"), 
+    
     data.frame(
-      Variable="StorageChangeExportID",
-      Label="Storage Change Export ID",
-      Definition="The Id of the Export leading to a change in the storage of the Carcass or Specimen. 
-      The exportation process in this case must have occurred before the storage change",
-      Type="Integer",
-      Mandatory="Yes"), 
+      Variable="SpecimenCurrentQuantityStored",
+      Label="Specimen Current Quantity Stored",
+      Definition="The quantity of Specimen currently stored (e.g., 0.3)",
+      Type="Float",
+      Mandatory="Yes"),
+
+    data.frame(
+      Variable="SpecimenReasonQuantityDifference",
+      Label="Specimen Reason of Quantity Difference",
+      Definition="Explanantion for the difference between the original Specimen amount
+      and the current Specimen amount stored",
+      Type="String",
+      Mandatory="Yes"),
 
     data.frame(
       Variable="StorageType",

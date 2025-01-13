@@ -10,7 +10,7 @@ source_record_interpretation<-
       Mandatory="System-assigned"), 
     
     data.frame(
-      Variable="SourceRecordInterpretationTargetedHazardType",
+      Variable="SourceRecordInterpretationTargetedHazardTypeID",
       Label="Source Record Interpretation Targeted Hazard Type",
       Definition="The hazard type to be Interpreted with respect to its presence in the
       current Source Record",

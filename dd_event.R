@@ -39,65 +39,149 @@ event<-
       Mandatory="Yes"), 
     
     data.frame(
+      Variable="EventCoordinatesSource",
+      Label="The Source of the Coordinates Data", 
+      Definition="The source of the coordinates (longitude and latitude) of the Event",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="EventCoordinateSystem",
+      Label="Event Coordindate System", 
+      Definition="The coordinate system of the Event longitude and latitude reported",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
       Variable="EventLongitude",
       Label="Event Longitude", 
-      Definition="Longitude coordinate. Non decimal degree coordinates are automatically converted. 
-      If coordinates are provided in UTM, then the UTM zone must be provided (see below)",
+      Definition="Longitude coordinate in decimal degrees",
       Type="Float",
       Mandatory="Yes"), 
     
     data.frame(
       Variable="EventLatitude",
       Label="Event Latitude", 
-      Definition="Latitude coordinate. Non decimal degree coordinates are automatically converted. 
-      If coordinates are provided in UTM, then the UTM zone must be provided (see below)",
+      Definition="Latitude coordinate in decimal degrees",
       Type="Float",
       Mandatory="Yes"), 
     
     data.frame(
       Variable="EventUTMZone",
-      Label="Event UTM Zone", 
+      Label="Event UTM Zone",
       Definition="UTM Zone where the Event occurs. It applies if the longitude an latitude odf
-      the Event are provided in UTM coordinate reference system. 
+      the Event are provided in UTM coordinate reference system.
       See https://www.dmap.co.uk/utmworld.htm",
       Type="Single selection",
-      Mandatory="Yes"),   
+      Mandatory="Yes"),
     
     data.frame(
-      Variable="EventCoordinatesExactOrEstimated",
-      Label="Event Coordinates Exact Or Estimated", 
-      Definition="Indicate weather the longitude and latitude coordinates are exact (GPS device)
-      or estimated based on another method (e.g., by pointinf the location in the map above)",
-      Type="Single selection",
+      Variable="EventUTMEasting",
+      Label="Event UTM Easting", 
+      Definition="UTM Easting value where the Event occurs",
+      Type="Float",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="EventCoordinatesOriginalCRS",
-      Label="Event Coordinates Original CRS", 
-      Definition="Indicate the Coordinate Reference System in which the Event coordinates were recorded",
-      Type="Single selection",
+      Variable="EventUTMNorthing",
+      Label="Event UTM Northing", 
+      Definition="UTM Northing value where the Event occurs",
+      Type="Float",
       Mandatory="Yes"), 
     
+    data.frame(
+      Variable="EventDMSLongitudeDegrees",
+      Label="Event Longitude Degrees", 
+      Definition="The degree value of the longitude coordinate (absolute value)",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventDMSLongitudeMinutes",
+      Label="Event Longitude Minutes", 
+      Definition="The minutes value of the longitude coordinate",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventDMSLongitudeSeconds",
+      Label="Event Longitude Seconds", 
+      Definition="The seconds value of the longitude coordinate",
+      Type="Float",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventDMSLongitudeHemisphere",
+      Label="Event Longitude Hemisphere", 
+      Definition="The eastern or western hemisphere where the Event occurs",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventDMSLatitudeDegrees",
+      Label="Event Latitude Degrees", 
+      Definition="The degree value of the latitude coordinate (absolute value)",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventDMSLatitudeMinutes",
+      Label="Event Latitude Minutes", 
+      Definition="The minutes value of the latitude coordinate",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventDMSLatitudeSeconds",
+      Label="Event Latitude Seconds", 
+      Definition="The seconds value of the latitude coordinate",
+      Type="Float",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventDMSLatitudeHemisphere",
+      Label="Event Latitude Hemisphere", 
+      Definition="The northern or southern hemisphere where the Event occurs",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    
+    # data.frame(
+    #   Variable="EventUTMHemisphere",
+    #   Label="Event UTM Hemisphere", 
+    #   Definition="UTM Zone where the Event occurs. It applies if the longitude an latitude odf
+    #   the Event are provided in UTM coordinate reference system. 
+    #   See https://www.dmap.co.uk/utmworld.htm",
+    #   Type="Single selection",
+    #   Mandatory="Yes"), 
+
     data.frame(
       Variable="EventCountry",
       Label="Event Country", 
-      Definition="Country where the Event happens",
+      Definition="Country where the Event occurs",
       Type="Single selection",
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="EventState",
-      Label="Event State", 
-      Definition="State where the Event happens",
+      Variable="EventStateProvince",
+      Label="Event State Or Province", 
+      Definition="State or Province where the Event occurs",
       Type="Single selection",
-      Mandatory="No"),      
+      Mandatory="No"), 
     
     data.frame(
-      Variable="EventProvince",
-      Label="Event Province", 
-      Definition="Province where the Event happens",
+      Variable="EventCounty",
+      Label="Event County", 
+      Definition="County where the Event occurs",
+      Type="String",
+      Mandatory="No"),  
+    
+    data.frame(
+      Variable="EventType",
+      Label="Event type",
+      Definition="The type of Event recorded",
       Type="Single selection",
-      Mandatory="No"),   
+      Mandatory="Yes"),
     
     # data.frame(
     #   Variable="EventUnit",
@@ -123,12 +207,12 @@ event<-
       Type="String",
       Mandatory="No"),
     
-    data.frame(
-      Variable="EventBy",
-      Label="Event Recorded by", 
-      Definition="The person that recorded the Event",
-      Type="Single selection",
-      Mandatory="Yes"),        
+    # data.frame(
+    #   Variable="EventBy",
+    #   Label="Event Recorded by", 
+    #   Definition="The person that recorded the Event",
+    #   Type="Single selection",
+    #   Mandatory="Yes"),        
     
     data.frame(
       Variable="EventBySector",

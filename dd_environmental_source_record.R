@@ -19,8 +19,8 @@ environmental_source_record<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="EnvironmentalSourceRecordQuantity",
-      Label="Environmental Source Record Quantity",
+      Variable="EnvironmentalSourceRecordQuantityUnit",
+      Label="Environmental Source Record Quantity Unit",
       Definition="The unit of measure for the amount of environmental tissue, biotic or abiotic, collected from the 
       environmental source (site)",
       Type="Single selection",
@@ -28,12 +28,12 @@ environmental_source_record<-
     
     data.frame(
       Variable="SourceSpecies",
-      Label="Environmental Source Species",
+      Label="Environmental Source Species Origin",
       Definition="The species that sourced a biotic Environmental Source Record. 
       Usually applies for feces. A high level taxonomy can be provided if that is the 
       best choice. For example, 'mammalia'",
       Type="Single selection",
-      Mandatory="No"))
+      Mandatory="Yes"))
 
 environmental_source_record<-
   environmental_source_record %>% bind_rows() |> 

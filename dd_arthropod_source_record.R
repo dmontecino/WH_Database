@@ -6,7 +6,7 @@ arthropod_source_record<-
       Variable="SourceSpecies",
       Label="Arthropod Source Record Species", 
       Definition="The arthropod species of the Arthropod Source Record.
-      The arthopods of the Arthropod Source Record (one species) are also stratified by sex, age, and the females, 
+      The arthropods of the Arthropod Source Record (one species) are also stratified by sex, age, and the females, 
       if any, by condition class also",
       Type="Single selection",
       Mandatory="Yes"), 
@@ -19,19 +19,19 @@ arthropod_source_record<-
       Mandatory="No"),
     
     data.frame(
-      Variable="SourceSex",
-      Label="Arthropod Source Record Sex", 
-      Definition="A sex category represented in the arthropods of the Arthropod Source Record.
-      The arthopods of the corresponding species are also stratified by age and the females, 
+      Variable="SourceRecordAge",
+      Label="Arthropod Source Record Life Stage", 
+      Definition="A life stage category represented in the arthropods of the Arthropod Source Record.
+      The arthropods of the corresponding species are also stratified by sex and the females, 
       if any, by condition class also",
       Type="Single selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SourceRecordAge",
-      Label="Arthropod Source Record Age", 
-      Definition="An age category represented in the arthropods of the Arthropod Source Record.
-      The arthopods of the corresponding species are also stratified by sex and the females, 
+      Variable="SourceSex",
+      Label="Arthropod Source Record Sex", 
+      Definition="A sex category represented in the arthropods of the Arthropod Source Record.
+      The arthropods of the corresponding species are also stratified by age and the females, 
       if any, by condition class also",
       Type="Single selection",
       Mandatory="Yes"),
@@ -45,20 +45,22 @@ arthropod_source_record<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SourceRecordExactNumber",
-      Label="Arthropod Source Record Exact Number", 
-      Definition="Answer to the question: 'Is the number of arthropods reported in the current sex, age, and condition 
-      category of the Arthopod Source Record exact?'",
-      Type="Single selection",
-      Mandatory="Yes"), 
-    
-    data.frame(
       Variable="SourceRecordNumberAnimals",
       Label="Arthropod Source Record Number of Arthropods",
       Definition="The number of arthropods in the corresponding sex, age, and condition category 
       of the Arthropod Source Record",
       Type="Integer",
-      Mandatory="Yes"))
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourceRecordExactNumber",
+      Label="Arthropod Source Record Exact Number", 
+      Definition="Answer to the question: 'Is the number of arthropods reported in the current sex, age, and condition 
+      category of the Arthropod Source Record exact?'",
+      Type="Single selection",
+      Mandatory="Yes")
+    
+)
   
 arthropod_source_record<-
   arthropod_source_record %>% bind_rows() |> 
