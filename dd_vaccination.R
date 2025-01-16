@@ -32,11 +32,54 @@ animal_source_record_vaccination<-
       Mandatory="No"),
     
     data.frame(
-      Variable="AnimalSourceRecordVaccinatedAgainst",
+      Variable="AnimalSourceRecordVaccinationVaccineName",
+      Label="Animal Source Record Vaccine Name",
+      Definition="The commercial name of the vaccine administered",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="AnimalSourceRecordVaccinationVaccineType",
+      Label="Animal Source Record Vaccine Type",
+      Definition="The type of vaccine administered",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="AnimalSourceRecordVaccinationAgainst",
       Label="Animal Source Record Vaccinated Against",
       Definition="The hazard(s) targeted for protection by the vaccine administered",
       Type="Multiple selection",
       Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="AnimalSourceRecordVaccinationVaccineExpirationDate",
+      Label="Animal Source Record Vaccine Expiration Date",
+      Definition="The date the adminstered vaccine expires",
+      Type="Date",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="AnimalSourceRecordVaccinationVaccineFieldStorage",
+      Label="Animal Source Record Vaccine Field Storage",
+      Definition="The method to store the vaccine or keep the cold chain while on the field",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="AnimalSourceRecordVaccinationVaccineDaysStoredField",
+      Label="Animal Source Record Vaccine Days Stored in Field",
+      Definition="The number of days the vaccine was stored while on the field before administration",
+      Type="Integer",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="AnimalSourceRecordVaccinationVaccineColdChainMaintained",
+      Label="Animal Source Record Vaccine in Cold Chain",
+      Definition="Answer to the question: 'Was the vaccine maintained in the cold chain
+      before the administration?'",
+      Type="Single selection",
+      Mandatory="Yes"),
   
     data.frame(
       Variable="AnimalSourceRecordVaccinationDate",
@@ -51,20 +94,7 @@ animal_source_record_vaccination<-
       Definition="The person that administered the vaccine",
       Type="Single selection",
       Mandatory="No"),
-    
-    data.frame(
-      Variable="AnimalSourceRecordVaccinationVaccineName",
-      Label="Animal Source Record Vaccine Name",
-      Definition="The commercial name of the vaccine administered",
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="AnimalSourceRecordVaccinationVaccineType",
-      Label="Animal Source Record Vaccine Type",
-      Definition="The type of vaccine administered",
-      Type="Single selection",
-      Mandatory="Yes"),
+
     
     data.frame(
       Variable="AnimalSourceRecordVaccinationVaccineDose",
@@ -107,27 +137,7 @@ animal_source_record_vaccination<-
       Definition="Description of any reaction observed in the Animal Source after vacinnated at time *t*",
       Type="String",
       Mandatory="No"),
-    
-    data.frame(
-      Variable="AnimalSourceRecordVaccinationVaccineFieldStorage",
-      Label="Animal Source Record Vaccine Field Storage",
-      Definition="The method to store the vaccine or keep the cold chain while on the field",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="AnimalSourceRecordVaccinationVaccineDaysStoredField",
-      Label="Animal Source Record Vaccine Days Stored in Field",
-      Definition="The number of days the vaccine was stored while on the field before administration",
-      Type="Integer",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="AnimalSourceRecordVaccinationVaccineExpirationDate",
-      Label="Animal Source Record Vaccine Expiration Date",
-      Definition="The date the adminstered vaccine expires",
-      Type="Date",
-      Mandatory="Yes"),
+
     
     data.frame(
       Variable="AnimalSourceRecordVaccinationVaccinationComments",

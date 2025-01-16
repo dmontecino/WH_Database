@@ -42,6 +42,21 @@ location<-
       for the same Location is used",
       Type="String",
       Mandatory="No"),
+
+    data.frame(
+      Variable="LocationPurpose",
+      Label="Location Purpose",
+      Definition="Description of the objectives to accomplish in the Location",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="LocationTargetedSources",
+      Label="Location Targeted Sources",
+      Definition="Indicate the type of Sources (Group, Animal, Environmental,
+      or Arthropod) targeted in the Event",
+      Type="Multiple selection",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="LocationType",
@@ -51,12 +66,7 @@ location<-
       Type="Single selection",
       Mandatory="Yes"), 
     
-    data.frame(
-      Variable="LocationPurpose",
-      Label="Location Purpose",
-      Definition="Description of the objectives to accomplish in the Location",
-      Type="String",
-      Mandatory="Yes"),
+
     
     data.frame(
       Variable="LocationDescription",
@@ -70,14 +80,6 @@ location<-
       Label="Location Environment",
       Definition="Description of the environmental conditions of the Location",
       Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="LocationTargetedSources",
-      Label="Location Targeted Sources",
-      Definition="Indicate the type of Sources (Group, Animal, Environmental,
-      or Arthropod) targeted in the Event",
-      Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(

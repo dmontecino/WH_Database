@@ -56,7 +56,7 @@ animal_source_record_carcass<-
     
     data.frame(
       Variable="AnimalSourceRecordCarcassFieldStorage",
-      Label="Field Carcass Storage",
+      Label="Carcass Field Storage",
       Definition="The method to store the carcass in the field or captive facility while in transit to a proper facility",
       Type="Single selection",
       Mandatory="Yes"), 

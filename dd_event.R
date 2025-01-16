@@ -32,6 +32,51 @@ event<-
       Mandatory="No"),
     
     data.frame(
+      Variable="EventType",
+      Label="Event type",
+      Definition="The type of Event recorded",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    # data.frame(
+    #   Variable="EventUnit",
+    #   Label="Event unit", 
+    #   Definition="Explanation of what the Event represents (e.g., a field finding, 
+    #   a market, a vendor, a cage, a grid cell, a point in a transect, a mist net, 
+    #   a point in a parcel, a point in a protected area, etc.)",
+    #   Type="Single selection",
+    #   Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="EventFeatures",
+      Label="Event Features", 
+      Definition="Specific set of findings at the Event that are dynamic over time
+      (e.g., fire, smoke, etc)",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="EventOtherFeatures",
+      Label="Other Event Features", 
+      Definition="Other findings at the Event that are dynamic over time not listed in the previous attribute",
+      Type="String",
+      Mandatory="No"),
+    
+    # data.frame(
+    #   Variable="EventBy",
+    #   Label="Event Recorded by", 
+    #   Definition="The person that recorded the Event",
+    #   Type="Single selection",
+    #   Mandatory="Yes"),        
+    
+    data.frame(
+      Variable="EventBySector",
+      Label="Sector of the Reporter", 
+      Definition="The sector of the person that reported the Event",
+      Type="Single selection",
+      Mandatory="No"),
+    
+    data.frame(
       Variable="EventDate",
       Label="Event Date", 
       Definition="The date and time of the Event",
@@ -176,50 +221,6 @@ event<-
       Type="String",
       Mandatory="No"),  
     
-    data.frame(
-      Variable="EventType",
-      Label="Event type",
-      Definition="The type of Event recorded",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    # data.frame(
-    #   Variable="EventUnit",
-    #   Label="Event unit", 
-    #   Definition="Explanation of what the Event represents (e.g., a field finding, 
-    #   a market, a vendor, a cage, a grid cell, a point in a transect, a mist net, 
-    #   a point in a parcel, a point in a protected area, etc.)",
-    #   Type="Single selection",
-    #   Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="EventFeatures",
-      Label="Event Features", 
-      Definition="Specific set of findings at the Event that are dynamic over time
-      (e.g., fire, smoke, etc)",
-      Type="Multiple selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="EventOtherFeatures",
-      Label="Other Event Features", 
-      Definition="Other findings at the Event that are dynamic over time not listed in the previous attribute",
-      Type="String",
-      Mandatory="No"),
-    
-    # data.frame(
-    #   Variable="EventBy",
-    #   Label="Event Recorded by", 
-    #   Definition="The person that recorded the Event",
-    #   Type="Single selection",
-    #   Mandatory="Yes"),        
-    
-    data.frame(
-      Variable="EventBySector",
-      Label="Sector of the Reporter", 
-      Definition="The sector of the person that reported the Event",
-      Type="Single selection",
-      Mandatory="No"),
 
     data.frame(
       Variable="EventComments",

@@ -166,13 +166,6 @@ diagnostic<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="DiagnosticProblems",
-      Label="Diagnostic Problems",
-      Definition="Description of any problems regarding the Diagnostic",
-      Type="String",
-      Mandatory="No"),
-    
-    data.frame(
       Variable="DiagnosticResultModified",
       Label="Diagnostic Result Modified",
       Definition="Answer to the question:'Have the Diagnostic results been modified?'",
@@ -204,6 +197,13 @@ diagnostic<-
       Variable="DiagnosticPreviousResultQualitative",
       Label="Diagnostic Previous Result Qualitative",
       Definition="The Diagnostic quantitative result before modification",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="DiagnosticProblems",
+      Label="Diagnostic Problems",
+      Definition="Description of any problems regarding the Diagnostic",
       Type="String",
       Mandatory="No"),
     

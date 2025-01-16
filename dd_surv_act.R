@@ -347,6 +347,14 @@ surv_activity<-
       Mandatory="Yes"),  
     
     data.frame(
+      Variable="SurveillanceActivityLocationSpatialPolygons",
+      Label="Surveillance Activity Location Spatial Polygons", 
+      Definition="Answer to the question: 'Are the polygons of Locations entered in the database
+      as a external file containing spatial data?'",
+      Type="Boolean",
+      Mandatory="Yes"),  
+    
+    data.frame(
       Variable="SurveillanceActivityEventCodeStructure",
       Label="Surveillance Activity Event Code Structure", 
       Definition="Description of the structure of the codes used to identify Events",
@@ -427,12 +435,12 @@ surv_activity<-
       Type="Boolean",
       Mandatory="Yes"),
     
-    data.frame(
-      Variable="SurveillanceActivityNewSpecimenCodeStructure",
-      Label="Surveillance Activity New Specimen Code Structure", 
-      Definition="Description of the structure of the codes used to identify newly obtained Specimens",
-      Type="String",
-      Mandatory="Yes"),    
+    # data.frame(
+    #   Variable="SurveillanceActivityNewSpecimenCodeStructure",
+    #   Label="Surveillance Activity New Specimen Code Structure", 
+    #   Definition="Description of the structure of the codes used to identify newly obtained Specimens",
+    #   Type="String",
+    #   Mandatory="Yes"),    
     
     data.frame(
       Variable="SurveillanceActivityNewPooledSpecimens",

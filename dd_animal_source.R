@@ -10,6 +10,20 @@ animal_source<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="SourceSex",
+      Label="Source Species Sex", 
+      Definition="The Source Sex",
+      Type="Single selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SourcePreviousMarkingCode",
+      Label="Animal Source Previous Marking Code", 
+      Definition="A known marking code of the Animal Source, if any, before the current marking code, if any",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
       Variable="AnimalSourceFromGroupSource", #(of the GRoup)
       Label="Animal Source From Group Source", 
       Definition="Answer to the question: 'Is the Animal Source coming from a Group Source
@@ -22,21 +36,8 @@ animal_source<-
       Label="Animal Source From Group Source Group ID", 
       Definition="The ID of the Group Source that the Animal Source belonged to",
       Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourceSex",
-      Label="Source Species Sex", 
-      Definition="The Source Sex",
-      Type="Single selection",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SourcePreviousMarkingCode",
-      Label="Animal Source Previous Marking Code", 
-      Definition="A known marking code of the Animal Source, if any, before the current marking code, if any",
-      Type="String",
-      Mandatory="No"))
+      Mandatory="Yes")
+  )
 
 animal_source<-
   animal_source %>% bind_rows() |> 

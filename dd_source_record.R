@@ -36,9 +36,17 @@ source_record<-
     data.frame(
       Variable="SourceRecordNumber",
       Label="Source Record Number", 
-      Definition="The seqiemctial number for the times that the Source has been added to the Surveillance Activity
-      as a Source Record (e.g., a bat captured for the third time should get a 3. Mosquitoes collected for the 
-      fourth time from a site [Arthropod Source])",
+      Definition="The sequential number for the times that the Source has been added
+      to the Surveillance Activity as a Source Record (e.g., a bat captured for the
+      third time should get a 3.  A site [Arthropod Source] sourcing mosquitoes for
+      the fourht time should get a 4).",
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SourceRecordProblems",
+      Label="Source Record Comments", 
+      Definition="Report any problems regarding the Source Record",
       Type="String",
       Mandatory="No"),
     
@@ -46,13 +54,6 @@ source_record<-
       Variable="SourceRecordNewSpecimens",
       Label="Source Record New Specimens", 
       Definition="Answer to the question: 'Are new Specimens generated from the Source Record?'",
-      Type="String",
-      Mandatory="No"),
-
-    data.frame(
-      Variable="SourceRecordProblems",
-      Label="Source Record Comments", 
-      Definition="Report any problems regarding the Source Record",
       Type="String",
       Mandatory="No"),
     
@@ -66,7 +67,7 @@ source_record<-
     data.frame(
       Variable="SourceRecordInterpretation",
       Label="Source Record Interpreted",
-      Definition="Ansnwer to the quessiton: 'In the Source Record interpreted?'",
+      Definition="Answer to the quessiton: 'In the Source Record interpreted?'",
       Type="Boolean",
       Mandatory="Yes"))
 
