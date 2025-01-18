@@ -1,26 +1,67 @@
+## Presentation {.unnumbered}
+
 ```{r, echo=FALSE}
-htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
-               alt = 'logo', 
-               style = 'position:fixed; 
-                        top:0;
-                        right:0; 
-                        padding:70px;',
-               width = "300px", 
-               heigth = "300px")
+
+# htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
+#                alt = 'logo', 
+#                style = 'position:fixed; 
+#                         top:0;
+#                         right:0; 
+#                         padding:70px;',
+#                width = "300px", 
+#                heigth = "300px")
+# 
+# 
+# htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
+#                alt = 'logo', 
+#                style = 'position:fixed; 
+#                         top:90;
+#                         right:0; 
+#                         padding:70px;',
+#                width = "300px", 
+#                heigth = "300px")
 
 
-htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
-               alt = 'logo', 
-               style = 'position:fixed; 
-                        top:90;
-                        right:0; 
-                        padding:70px;',
-               width = "300px", 
-               heigth = "300px")
+# htmltools::div(
+#   style = "position: fixed;
+#            right: 0px;
+#            top: 20%;
+#            transform: translateY(-20%);",
+#   htmltools::div(
+#     htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"),
+#         style = "width: 200px; 
+#                  height: 75px; 
+#                  margin-bottom: 10px;"),
+#     htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WHINlogo.png"),
+#         style = "width: 220px; 
+#                  height: 90px; 
+#                  margin-right: 15px;
+#                  margin-bottom: 10px;"),
+#     htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"),
+#         style = "width: 200px; 
+#                  height: 180px; 
+#                  margin-bottom: 10px;")
+#   )
+# )
+
+htmltools::div(
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WHINlogo.png"),
+                 alt = 'logo', 
+                 style = 
+                 "position: fixed; 
+                 right: 10px; 
+                 top: 0%; 
+                 width: 220px;"),
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
+                 style = "position: fixed; right: 10px; top: 13%; width: 200px;"),
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
+                 style = "position: fixed; right: 10px; top: 20%; width: 200px;")
+)
+
 
 ```
 
-## Presentation {.unnumbered}
+<!-- ## Presentation {.unnumbered} -->
 
 Welcome to the **Wildlife Health Database (WHe-DB)** documentation. Here, you will find comprehensive information about the database's data structure (data model), how to use the web-based graphical user interface as user and administrator, and the data dictionary. This documentation aims to provide a clear understanding of the database's organization, how to use the database, and the meaning of its data.
 

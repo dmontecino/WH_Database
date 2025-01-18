@@ -1,26 +1,41 @@
+# Wildlife Health Data Model {.unnumbered}
+
 ```{r, echo=FALSE}
-htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
-               alt = 'logo', 
-               style = 'position:fixed; 
-                        top:0;
-                        right:0; 
-                        padding:70px;',
-               width = "300px", 
-               heigth = "300px")
+# htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
+#                alt = 'logo', 
+#                style = 'position:fixed; 
+#                         top:0;
+#                         right:0; 
+#                         padding:70px;',
+#                width = "300px", 
+#                heigth = "300px")
+# 
+# 
+# htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
+#                alt = 'logo', 
+#                style = 'position:fixed; 
+#                         top:90;
+#                         right:0; 
+#                         padding:70px;',
+#                width = "300px", 
+#                heigth = "300px")
 
-
-htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
-               alt = 'logo', 
-               style = 'position:fixed; 
-                        top:90;
-                        right:0; 
-                        padding:70px;',
-               width = "300px", 
-               heigth = "300px")
+htmltools::div(
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WHINlogo.png"),
+                 alt = 'logo', 
+                 style = 
+                 "position: fixed; 
+                 right: 10px; 
+                 top: 0%; 
+                 width: 220px;"),
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
+                 style = "position: fixed; right: 10px; top: 13%; width: 200px;"),
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
+                 style = "position: fixed; right: 10px; top: 20%; width: 200px;")
+)
 
 ```
 
-# Wildlife Health Data Model {.unnumbered}
 
 The Wildlife Health Data Model (WHe-DM) is a data model that aims to accommodate wildlife health data coming from different sources, including local to national wildlife health surveillance systems (surveillance of diseases, pathogens, and toxins), research initiatives, or citizen-science based projects, among others. 
 

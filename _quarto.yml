@@ -2,9 +2,12 @@ project:
   type: book
   output-dir: _book
 
+cache: false
+
 book:
   title: "Wildlife Health Database (WHe-DB)"
   author: "Diego Montecino-Latorre"
+  downloads: [pdf] 
   date: "12/11/2024"
   chapters:
     - index.qmd

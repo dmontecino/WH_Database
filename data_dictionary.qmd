@@ -1,26 +1,39 @@
-```{r, echo=FALSE}
-htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
-               alt = 'logo', 
-               style = 'position:fixed; 
-                        top:0;
-                        right:0; 
-                        padding:70px;',
-               width = "300px", 
-               heigth = "300px")
-
-
-htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
-               alt = 'logo', 
-               style = 'position:fixed; 
-                        top:90;
-                        right:0; 
-                        padding:70px;',
-               width = "300px", 
-               heigth = "300px")
-
-```
-
 # Wildlife Health Data Model Dictionary {.unnumbered}
+
+```{r, echo=FALSE}
+# htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
+#                alt = 'logo', 
+#                style = 'position:fixed; 
+#                         top:0;
+#                         right:0; 
+#                         padding:70px;',
+#                width = "300px", 
+#                heigth = "300px")
+# 
+# 
+# htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
+#                alt = 'logo', 
+#                style = 'position:fixed; 
+#                         top:90;
+#                         right:0; 
+#                         padding:70px;',
+#                width = "300px", 
+#                heigth = "300px")
+
+htmltools::div(
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WHINlogo.png"),
+                 alt = 'logo', 
+                 style = 
+                 "position: fixed; 
+                 right: 10px; 
+                 top: 0%; 
+                 width: 220px;"),
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
+                 style = "position: fixed; right: 10px; top: 13%; width: 200px;"),
+  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
+                 style = "position: fixed; right: 10px; top: 20%; width: 200px;")
+)
+```
 
 
 ```{r table summarizing the different sources, eval=FALSE, echo=F, message=FALSE, warning=FALSE}

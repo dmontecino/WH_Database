@@ -83,6 +83,7 @@ Studies that track marked individuals over time could succeed in capturing all i
 For this reason, the data model can assigned a Surveillance Activity to a Source without including any Field Visits, Location, Event, or Collection. When the study is completed, it will be possible to identify all the Sources involved in the study including those that were never captured (Source 3 in the figure below).
 
 ![](Pictures_and_diagrams/Picture22.png){width=100%}
+
 #### Outbreak Investigation
 
 An outbreak can contains elements associated with two or more Surveillance Activities. For example, the first detection of the outbreak could have been done by a citizen or by rangers patrolling a protected area. The Field Activity, Location, Event, Collection (if any), Source Records, and Specimens collected when the Outbreak is discovered belong to the "Citizen Science" or "Ranger Patrol" Surveillance Activity. However, they also belong to the "Outbreak Investigation" Surveillance Activity, together with Field Activities up to the Diagnostics associated exclusively with the Outbreak Investigation.
