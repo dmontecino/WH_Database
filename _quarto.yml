@@ -5,7 +5,7 @@ project:
 cache: false
 
 book:
-  title: "Wildlife Health Database (WHe-DB)"
+  title: "WildHealth Database (WHeDB)"
   author: "Diego Montecino-Latorre"
   downloads: [pdf] 
   date: "12/11/2024"

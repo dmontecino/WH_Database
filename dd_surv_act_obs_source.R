@@ -570,13 +570,13 @@ group_source<-
       Type="Boolean",
       Mandatory="Yes"),
     
-    # data.frame(
-    #   Variable="SurveillanceActivityGroupSourceRecordHealthyDescription",
-    #   Label="Description Group Sources Including Healthy Animals",
-    #   Definition="Description of the conditions so Group Sources can contain 
-    #   healthy individuals, by species",
-    #   Type="String",
-    #   Mandatory="Yes"),
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceRecordHealthyDescription",
+      Label="Description Group Sources Include Healthy Animals",
+      Definition="Description of the conditions so Group Sources can contain
+      healthy individuals, by species",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordSick",
@@ -587,7 +587,7 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordSickDescription",
-      Label="Description Group Sources Including Sick Animals",
+      Label="Description Group Sources Include Sick Animals",
       Definition="Description how Group Sources can contain 
       sick individuals, by species",
       Type="String",
@@ -602,7 +602,7 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordInjuredDescription",
-      Label="Description Group Sources Including Injured Animals",
+      Label="Description Group Sources Include Injured Animals",
       Definition="Description how Group Sources can contain 
       injured individuals, by species",
       Type="String",
@@ -617,7 +617,7 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordDeadDescription",
-      Label="Description Group Sources Including Dead Animals",
+      Label="Description Group Sources Include Dead Animals",
       Definition="Description how Group Sources can contain 
       dead individuals, by species",
       Type="String",
@@ -633,7 +633,7 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordUnknownDescription",
-      Label="Description Group Sources Including Unknown Health Status Animals",
+      Label="Description Group Sources Include Unknown Health Status Animals",
       Definition="Description how Group Sources can contain 
       individuals of unknown health status, by species",
       Type="String",
