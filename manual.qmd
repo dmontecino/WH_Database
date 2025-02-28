@@ -130,6 +130,212 @@ The initial page, the **Navigation Panel**, and the **Workspace** can be scrolle
 
 ## The Navigation Panel
 
+The **Navigation Panel** has a tree. This tree starts with the **Organizations** that a specific user has access to. Then, each Organization has a **Projects** folder that contains the **Projects** belonging to the corresponding **Organization**. Each **Project** contains a **Surveillance Activities** folder that contains the **Surveillance Activities** belonging to each **Project**. The tree continues with each **Surveillance Activity** containing a **Field Visits** folder, each Field Visit containing a **Locations** folder, an **Event** folder nested in each **Location**, etc. following the basic structure of the data explained above. 
+
+The number in parenthesis at the right of each folder name indicates the number of units included. For example, “Projects (2)” label indicates that the “Projects” folder contain two Project units (see image below). The “+” icon to the right of each folder in the **Navigation Panel** indicates that the contents of the folder are not displayed. To open the content of the folders, the user has to click on the folder icon. The folder icon will open, the  “+” icon will convert to a “-“ icon, and the folder contents will be displayed:
+
+![](Pictures_and_diagrams/navigation_panel_1.png){width=100%}
+Similarly, to reveal the folders under a specific data unit, the user has to click the “+” icon. The icon will convert to a “-“ icon and the contents will be displayed:
+
+![](Pictures_and_diagrams/navigation_panel_2.png){width=100%}
+
+After clicking on a data unit of any folder in the **Navigation Panel**, the “Details”, “Files”, and “Map and Table” tabs will become available in the **Workspace**. The content in the tab “Details” will be available first by default.
+
+## The Workspace - Details Tab
+
+The “Details” tab contains the variables that characterize each unit. They are empty for new units or filled for previously created units (red frame below): 
+
+![](Pictures_and_diagrams/details_tab.png){width=100%}
+Users can navigate across the this tab by scrolling up and down and place the cursor in a specific field. Fields can be active if their box to complete them is open to be modified. If fields are not active, they will have a grey color and cannot be edited (read only). This can happen when the user does not have editing permissions (see *"XXX"*) or because the responses in previous fields keep subsequent fields inactive (i.e., if a Project does not have chemical hazards, then it is not possible to select a specific toxin. See “Mandatory and Conditional Fields” below).
+
+The fields are numbered based on a logical flow and the order is maintained when the area of the **Workspace** is modified. Compare the two images below: 
+
+![](Pictures_and_diagrams/numbered_fields_1.png){width=100%}
+![](Pictures_and_diagrams/numbered_fields_2.png){width=100%}
+
+Guidance to create a data unit (**Project**, **Surveillance Activity**, **Field Visit**, etc.) and complete the information in the “Details” tab is given in the “Add data in WHeDB” section. To edit and delete data of a unit in the “Details” tab, see section *XX* and section *XX*, respectively. 
+
+## The Workspace - Files Tab
+
+To access the “Files” tab, users have to click on it. The “Files” tab can receive and store files associated with the  currently open data unit. WHeDB supports may file extensions (images, pictures, videos, pdf, docx, xlsx, csv, json, shp, etc). The “Files” tab has a list of the files stored in each data unit in the “Uploaded Files” section (blue frame in the image below), a “Drag and drop” area to upload files (green frame in the image below) associated with the corresponding data unit, and a "Preview" tool to visualize in real-time the files uploaded and stored in each data unit (black frame in the image below). The list of files will be empty if there are no files associated with the data unit and the preview tool will not show any content.
+
+![](Pictures_and_diagrams/files_tab_1.png){width=100%}
+The area of the "Uploaded Files" list and the area of the "Preview" tool can be modified by clicking on the bar separating them and dragging the bar to the left or right. Compare the images below: 
+
+![](Pictures_and_diagrams/files_tab_2.png){width=100%}
+![](Pictures_and_diagrams/files_tab_3.png){width=100%}
+To add files to a specific unit see the “Add Data in WHeDB” section. To view files of a specific unit see the “View Data in WHeDB” section. To delete files of a specific unit files see the “Delete Data in WHeDB” section.
+
+## The Workspace - Map and Table Tab
+
+To access the “Map and Table” tab, users have to click on it. This tab shows the spatial information of the data units and the contextual data in a tabular form. For a **Project**, the map shows all its **Events** across all its **Surveillance Activities**, **Locations**, and **Field Visits**. The table in this case shows the *Project ID* and the corresponding *Surveillance Activity IDs*. The data in this tab is only for visualization purposes and cannot be modified. The content of the map and the table changes based on the data provided in the “Details” tab of the current data unit, the data unit parents and children. For example, the tabular data at the **Specimens** level include the IDs of its parents: the *Project ID*, *Surveillance Activity ID*, *Field Visit ID*, *Location ID*, *Collection ID*, *Event ID*, and *Source Record ID*. It also shows the *Specimen ID*; and finally, its children, *Diagnostics ID*. The specific content displayed for each unit is shown in the table below:
+
+
+```{r table, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+#| tbl-cap: Column headers per data unit in the "Maps and Table" Tab
+
+library(flextable)
+
+#Project Columns: 
+
+proj_col<-c("Project ID", 
+            "Project Name", 
+            "Surveillance Activity Names")
+
+#Surv activity Columns: 
+surv_act_col<-c("Project ID",
+                "Project Name",
+                "Surveillance Activity ID",
+                "Surveillance Activities Name",
+                "Field Visit Names")
+
+field_visit_col<-c("Project Name",
+                   "Surveillance Activity Name",
+                   "Field Visit ID",
+                   "Field Visit Name",
+                   "Field Visit Star Date",
+                   "Field Visit End Date",
+                   "Location Cluster Names
+                   ",
+                   "Location Names")
+
+location_col<-c("Project Name",
+                "Surveillance Activity Name",
+                "Field Visit Name",
+                "Location Cluster Names",
+                "Location ID",
+                "Location Name",
+                "Event Cluster Names",
+                "Event IDs")
+
+event_col <- c("Project Name",
+                "Surveillance Activity Name",
+                "Field Visit Name",
+                "Location Cluster Names",
+                "Location Name",
+                "Event Cluster Names",
+                "Event ID",
+                "Event Date",
+                "Collection IDs",
+                "Source IDs")
+
+collection_col <- c("Project Name",
+                    "Surveillance Activity Name",
+                    "Field Visit Name",
+                    "Location Cluster Names",
+                    "Location Name",
+                    "Event Cluster Names",
+                    "Event ID",
+                    "Event Date",
+                    "Collection ID",
+                    "Collection Method",
+                    "Source IDs")
+
+source_record_col <- c("Project Name",
+                    "Surveillance Activity Name",
+                    "Field Visit Name",
+                    "Location Cluster Names",
+                    "Location Name",
+                    "Event Cluster Names",
+                    "Event ID",
+                    "Event Date",
+                    "Collection ID",
+                    "Source ID",
+                    "Source Type",
+                    "Source Record Cluster Names",
+                    "Record Number",
+                    "Initial Health Status",
+                    "Necropsy ID",
+                    "Specimen IDs",
+                    "Specimen Type")
+
+specimen_col <- c("Project Name",
+                    "Surveillance Activity Name",
+                    "Field Visit Name",
+                    "Location Cluster Names",
+                    "Location Name",
+                    "Event Cluster Names",
+                    "Event ID",
+                    "Event Date",
+                    "Collection ID",
+                    "Source ID",
+                    "Source Type",
+                    "Source Record Cluster Names",
+                    "Record Number",
+                    "Specimen ID",
+                    "Specimen Type",
+                    "Diagnostic IDs",
+                    "Diagnostic Targeted Hazard",
+                    "Diagnostic Result")
+
+diagnostic_col <- c("Project Name",
+                    "Surveillance Activity Name",
+                    "Field Visit Name",
+                    "Location Cluster Names",
+                    "Location Name",
+                    "Event Cluster Names",
+                    "Event ID",
+                    "Collection ID",
+                    "Source ID",
+                    "Source Type",
+                    "Source Record Cluster Names",
+                    "Record Number",
+                    "Specimen ID",
+                    "Diagnostic IDs",
+                    "Diagnostic Targeted Hazard",
+                    "Diagnostic Result", 
+                    "Diagnostic Date Sent",
+                    "Diagnostic Date Received",
+                    "Diagnostic Result")
+
+
+
+# Define the data with nested lists
+nested_data <- tibble::tibble(
+  Unit = c("Project", 
+               "Surveillance Activity", 
+               "Field Visit", 
+               "Location", 
+               "Event", 
+               "Collection", 
+               "Source Record", 
+               "Specimen", 
+               "Diagnostics"),
+  Columns = list(
+    proj_col, 
+    surv_act_col, 
+    field_visit_col, 
+    location_col, 
+    event_col, 
+    collection_col, 
+    source_record_col, 
+    specimen_col, 
+    diagnostic_col
+  )
+)
+
+# Print the nested data frame
+
+# library(knitr)
+# library(kableExtra)
+
+unnested_data <-
+  nested_data|> 
+  tidyr::unnest(Columns) 
+  
+temp<-
+  flextable(unnested_data) |> 
+  merge_v(j="Unit") |> 
+  theme_box() |> 
+  width(j = "Unit", width=7, unit = "cm") |> 
+  width(j = "Columns", width=10, unit = "cm")
+
+
+
+temp
+```
+
+
 *Under construction*
 
 <!-- The Field Visit requires an end date which can be placed in the future. For example, a Surveillance Activity aims to assess the body condition of a herd on a yearly for a decade. In this case, each Field Visit can encompass each full year, with an assigned start date of January 1st and en date December 31st of the corresponding year. The end date can be assigned in any moment before December 31st during the year, when the Field Visit is created. -->
@@ -162,7 +368,7 @@ The initial page, the **Navigation Panel**, and the **Workspace** can be scrolle
 
 <!-- ### 3. Export Data -->
 
-## Appendices
+# Appendices
 
 ### Summary of fields and tables whose availability is conditional on other fields of the database
 

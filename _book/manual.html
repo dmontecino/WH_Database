@@ -60,6 +60,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 </head>
@@ -117,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_dictionary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WildHealth Data Model Dictionary</span></a>
+ <span class="menu-text">Wildlife Health Data Model Dictionary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -155,10 +157,13 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#initial-screen" id="toc-initial-screen" class="nav-link" data-scroll-target="#initial-screen">Initial Screen</a></li>
   <li><a href="#the-navigation-panel" id="toc-the-navigation-panel" class="nav-link" data-scroll-target="#the-navigation-panel">The Navigation Panel</a></li>
+  <li><a href="#the-workspace---details-tab" id="toc-the-workspace---details-tab" class="nav-link" data-scroll-target="#the-workspace---details-tab">The Workspace - Details Tab</a></li>
+  <li><a href="#the-workspace---files-tab" id="toc-the-workspace---files-tab" class="nav-link" data-scroll-target="#the-workspace---files-tab">The Workspace - Files Tab</a></li>
+  <li><a href="#the-workspace---map-and-table-tab" id="toc-the-workspace---map-and-table-tab" class="nav-link" data-scroll-target="#the-workspace---map-and-table-tab">The Workspace - Map and Table Tab</a></li>
+  </ul></li>
   <li><a href="#appendices" id="toc-appendices" class="nav-link" data-scroll-target="#appendices">Appendices</a>
   <ul class="collapse">
   <li><a href="#summary-of-fields-and-tables-whose-availability-is-conditional-on-other-fields-of-the-database" id="toc-summary-of-fields-and-tables-whose-availability-is-conditional-on-other-fields-of-the-database" class="nav-link" data-scroll-target="#summary-of-fields-and-tables-whose-availability-is-conditional-on-other-fields-of-the-database">Summary of fields and tables whose availability is conditional on other fields of the database</a></li>
-  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -265,6 +270,35 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-navigation-panel" class="level2">
 <h2 class="anchored" data-anchor-id="the-navigation-panel">The Navigation Panel</h2>
+<p>The <strong>Navigation Panel</strong> has a tree. This tree starts with the <strong>Organizations</strong> that a specific user has access to. Then, each Organization has a <strong>Projects</strong> folder that contains the <strong>Projects</strong> belonging to the corresponding <strong>Organization</strong>. Each <strong>Project</strong> contains a <strong>Surveillance Activities</strong> folder that contains the <strong>Surveillance Activities</strong> belonging to each <strong>Project</strong>. The tree continues with each <strong>Surveillance Activity</strong> containing a <strong>Field Visits</strong> folder, each Field Visit containing a <strong>Locations</strong> folder, an <strong>Event</strong> folder nested in each <strong>Location</strong>, etc. following the basic structure of the data explained above.</p>
+<p>The number in parenthesis at the right of each folder name indicates the number of units included. For example, “Projects (2)” label indicates that the “Projects” folder contain two Project units (see image below). The “+” icon to the right of each folder in the <strong>Navigation Panel</strong> indicates that the contents of the folder are not displayed. To open the content of the folders, the user has to click on the folder icon. The folder icon will open, the “+” icon will convert to a “-“ icon, and the folder contents will be displayed:</p>
+<p><img src="Pictures_and_diagrams/navigation_panel_1.png" class="img-fluid" style="width:100.0%"> Similarly, to reveal the folders under a specific data unit, the user has to click the “+” icon. The icon will convert to a “-“ icon and the contents will be displayed:</p>
+<p><img src="Pictures_and_diagrams/navigation_panel_2.png" class="img-fluid" style="width:100.0%"></p>
+<p>After clicking on a data unit of any folder in the <strong>Navigation Panel</strong>, the “Details”, “Files”, and “Map and Table” tabs will become available in the <strong>Workspace</strong>. The content in the tab “Details” will be available first by default.</p>
+</section>
+<section id="the-workspace---details-tab" class="level2">
+<h2 class="anchored" data-anchor-id="the-workspace---details-tab">The Workspace - Details Tab</h2>
+<p>The “Details” tab contains the variables that characterize each unit. They are empty for new units or filled for previously created units (red frame below):</p>
+<p><img src="Pictures_and_diagrams/details_tab.png" class="img-fluid" style="width:100.0%"> Users can navigate across the this tab by scrolling up and down and place the cursor in a specific field. Fields can be active if their box to complete them is open to be modified. If fields are not active, they will have a grey color and cannot be edited (read only). This can happen when the user does not have editing permissions (see <em>“XXX”</em>) or because the responses in previous fields keep subsequent fields inactive (i.e., if a Project does not have chemical hazards, then it is not possible to select a specific toxin. See “Mandatory and Conditional Fields” below).</p>
+<p>The fields are numbered based on a logical flow and the order is maintained when the area of the <strong>Workspace</strong> is modified. Compare the two images below:</p>
+<p><img src="Pictures_and_diagrams/numbered_fields_1.png" class="img-fluid" style="width:100.0%"> <img src="Pictures_and_diagrams/numbered_fields_2.png" class="img-fluid" style="width:100.0%"></p>
+<p>Guidance to create a data unit (<strong>Project</strong>, <strong>Surveillance Activity</strong>, <strong>Field Visit</strong>, etc.) and complete the information in the “Details” tab is given in the “Add data in WHeDB” section. To edit and delete data of a unit in the “Details” tab, see section <em>XX</em> and section <em>XX</em>, respectively.</p>
+</section>
+<section id="the-workspace---files-tab" class="level2">
+<h2 class="anchored" data-anchor-id="the-workspace---files-tab">The Workspace - Files Tab</h2>
+<p>To access the “Files” tab, users have to click on it. The “Files” tab can receive and store files associated with the currently open data unit. WHeDB supports may file extensions (images, pictures, videos, pdf, docx, xlsx, csv, json, shp, etc). The “Files” tab has a list of the files stored in each data unit in the “Uploaded Files” section (blue frame in the image below), a “Drag and drop” area to upload files (green frame in the image below) associated with the corresponding data unit, and a “Preview” tool to visualize in real-time the files uploaded and stored in each data unit (black frame in the image below). The list of files will be empty if there are no files associated with the data unit and the preview tool will not show any content.</p>
+<p><img src="Pictures_and_diagrams/files_tab_1.png" class="img-fluid" style="width:100.0%"> The area of the “Uploaded Files” list and the area of the “Preview” tool can be modified by clicking on the bar separating them and dragging the bar to the left or right. Compare the images below:</p>
+<p><img src="Pictures_and_diagrams/files_tab_2.png" class="img-fluid" style="width:100.0%"> <img src="Pictures_and_diagrams/files_tab_3.png" class="img-fluid" style="width:100.0%"> To add files to a specific unit see the “Add Data in WHeDB” section. To view files of a specific unit see the “View Data in WHeDB” section. To delete files of a specific unit files see the “Delete Data in WHeDB” section.</p>
+</section>
+<section id="the-workspace---map-and-table-tab" class="level2">
+<h2 class="anchored" data-anchor-id="the-workspace---map-and-table-tab">The Workspace - Map and Table Tab</h2>
+<p>To access the “Map and Table” tab, users have to click on it. This tab shows the spatial information of the data units and the contextual data in a tabular form. For a <strong>Project</strong>, the map shows all its <strong>Events</strong> across all its <strong>Surveillance Activities</strong>, <strong>Locations</strong>, and <strong>Field Visits</strong>. The table in this case shows the <em>Project ID</em> and the corresponding <em>Surveillance Activity IDs</em>. The data in this tab is only for visualization purposes and cannot be modified. The content of the map and the table changes based on the data provided in the “Details” tab of the current data unit, the data unit parents and children. For example, the tabular data at the <strong>Specimens</strong> level include the IDs of its parents: the <em>Project ID</em>, <em>Surveillance Activity ID</em>, <em>Field Visit ID</em>, <em>Location ID</em>, <em>Collection ID</em>, <em>Event ID</em>, and <em>Source Record ID</em>. It also shows the <em>Specimen ID</em>; and finally, its children, <em>Diagnostics ID</em>. The specific content displayed for each unit is shown in the table below:</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="tabwid"><style>.cl-1bc0f332{}.cl-1bb78f36{font-family:'Helvetica';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1bb78f40{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1bbb39e2{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1bbb52c4{width:2.756in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1bbb52ce{width:3.937in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1bbb52cf{width:2.756in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1bbb52d8{width:3.937in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-1bc0f332"><caption><p>Column headers per data unit in the “Maps and Table” Tab</p></caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f36">Unit</span></p></th><th class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f36">Columns</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-1bbb52cf"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project</span></p></td><td class="cl-1bbb52d8"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="5" class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity</span></p></td><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activities Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="8" class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit</span></p></td><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Star Date</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit End Date</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Cluster Names</span><br><span class="cl-1bb78f40">                   </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="8" class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location</span></p></td><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event IDs</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="10" class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event</span></p></td><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Date</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Collection IDs</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source IDs</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="11" class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Collection</span></p></td><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Date</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Collection ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Collection Method</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source IDs</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="17" class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source Record</span></p></td><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Date</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Collection ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source Type</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source Record Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Record Number</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Initial Health Status</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Necropsy ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Specimen IDs</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Specimen Type</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="18" class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Specimen</span></p></td><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Date</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Collection ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source Type</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source Record Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Record Number</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Specimen ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Specimen Type</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic IDs</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic Targeted Hazard</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic Result</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="19" class="cl-1bbb52c4"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostics</span></p></td><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Project Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Surveillance Activity Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Field Visit Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Location Name</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Event ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Collection ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source Type</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Source Record Cluster Names</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Record Number</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Specimen ID</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic IDs</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic Targeted Hazard</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic Result</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic Date Sent</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic Date Received</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1bbb52ce"><p class="cl-1bbb39e2"><span class="cl-1bb78f40">Diagnostic Result</span></p></td></tr></tbody></table></div>
+</div>
+</div>
 <p><em>Under construction</em></p>
 <!-- The Field Visit requires an end date which can be placed in the future. For example, a Surveillance Activity aims to assess the body condition of a herd on a yearly for a decade. In this case, each Field Visit can encompass each full year, with an assigned start date of January 1st and en date December 31st of the corresponding year. The end date can be assigned in any moment before December 31st during the year, when the Field Visit is created. -->
 <!-- ### 1. Finding Data  -->
@@ -289,31 +323,32 @@ ul.task-list li input[type="checkbox"] {
 <!-- #### Creating a new Project -->
 <!-- ### 3. Export Data -->
 </section>
-<section id="appendices" class="level2">
-<h2 class="anchored" data-anchor-id="appendices">Appendices</h2>
+</section>
+<section id="appendices" class="level1">
+<h1>Appendices</h1>
 <section id="summary-of-fields-and-tables-whose-availability-is-conditional-on-other-fields-of-the-database" class="level3">
 <h3 class="anchored" data-anchor-id="summary-of-fields-and-tables-whose-availability-is-conditional-on-other-fields-of-the-database">Summary of fields and tables whose availability is conditional on other fields of the database</h3>
 <!-- ## Annex. Conditional Attributes {.unnumbered} -->
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="jawrfwjxqf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jawrfwjxqf table {
+<div id="rwtxwwecit" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rwtxwwecit table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jawrfwjxqf thead, #jawrfwjxqf tbody, #jawrfwjxqf tfoot, #jawrfwjxqf tr, #jawrfwjxqf td, #jawrfwjxqf th {
+#rwtxwwecit thead, #rwtxwwecit tbody, #rwtxwwecit tfoot, #rwtxwwecit tr, #rwtxwwecit td, #rwtxwwecit th {
   border-style: none;
 }
 
-#jawrfwjxqf p {
+#rwtxwwecit p {
   margin: 0;
   padding: 0;
 }
 
-#jawrfwjxqf .gt_table {
+#rwtxwwecit .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -339,12 +374,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_caption {
+#rwtxwwecit .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jawrfwjxqf .gt_title {
+#rwtxwwecit .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -356,7 +391,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#jawrfwjxqf .gt_subtitle {
+#rwtxwwecit .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -368,7 +403,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#jawrfwjxqf .gt_heading {
+#rwtxwwecit .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -380,13 +415,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_bottom_border {
+#rwtxwwecit .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_col_headings {
+#rwtxwwecit .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -401,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_col_heading {
+#rwtxwwecit .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -421,7 +456,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#jawrfwjxqf .gt_column_spanner_outer {
+#rwtxwwecit .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -433,15 +468,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#jawrfwjxqf .gt_column_spanner_outer:first-child {
+#rwtxwwecit .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jawrfwjxqf .gt_column_spanner_outer:last-child {
+#rwtxwwecit .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jawrfwjxqf .gt_column_spanner {
+#rwtxwwecit .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -453,11 +488,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#jawrfwjxqf .gt_spanner_row {
+#rwtxwwecit .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jawrfwjxqf .gt_group_heading {
+#rwtxwwecit .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -483,7 +518,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#jawrfwjxqf .gt_empty_group_heading {
+#rwtxwwecit .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -498,15 +533,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#jawrfwjxqf .gt_from_md > :first-child {
+#rwtxwwecit .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jawrfwjxqf .gt_from_md > :last-child {
+#rwtxwwecit .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jawrfwjxqf .gt_row {
+#rwtxwwecit .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -525,7 +560,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#jawrfwjxqf .gt_stub {
+#rwtxwwecit .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -538,7 +573,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#jawrfwjxqf .gt_stub_row_group {
+#rwtxwwecit .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -552,15 +587,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#jawrfwjxqf .gt_row_group_first td {
+#rwtxwwecit .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jawrfwjxqf .gt_row_group_first th {
+#rwtxwwecit .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jawrfwjxqf .gt_summary_row {
+#rwtxwwecit .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -570,16 +605,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#jawrfwjxqf .gt_first_summary_row {
+#rwtxwwecit .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_first_summary_row.thick {
+#rwtxwwecit .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jawrfwjxqf .gt_last_summary_row {
+#rwtxwwecit .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -589,7 +624,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_grand_summary_row {
+#rwtxwwecit .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -599,7 +634,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#jawrfwjxqf .gt_first_grand_summary_row {
+#rwtxwwecit .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -609,7 +644,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_last_grand_summary_row_top {
+#rwtxwwecit .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -619,11 +654,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_striped {
+#rwtxwwecit .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jawrfwjxqf .gt_table_body {
+#rwtxwwecit .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -632,7 +667,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_footnotes {
+#rwtxwwecit .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -646,7 +681,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_footnote {
+#rwtxwwecit .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -655,7 +690,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#jawrfwjxqf .gt_sourcenotes {
+#rwtxwwecit .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -669,7 +704,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#jawrfwjxqf .gt_sourcenote {
+#rwtxwwecit .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -677,72 +712,72 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#jawrfwjxqf .gt_left {
+#rwtxwwecit .gt_left {
   text-align: left;
 }
 
-#jawrfwjxqf .gt_center {
+#rwtxwwecit .gt_center {
   text-align: center;
 }
 
-#jawrfwjxqf .gt_right {
+#rwtxwwecit .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jawrfwjxqf .gt_font_normal {
+#rwtxwwecit .gt_font_normal {
   font-weight: normal;
 }
 
-#jawrfwjxqf .gt_font_bold {
+#rwtxwwecit .gt_font_bold {
   font-weight: bold;
 }
 
-#jawrfwjxqf .gt_font_italic {
+#rwtxwwecit .gt_font_italic {
   font-style: italic;
 }
 
-#jawrfwjxqf .gt_super {
+#rwtxwwecit .gt_super {
   font-size: 65%;
 }
 
-#jawrfwjxqf .gt_footnote_marks {
+#rwtxwwecit .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jawrfwjxqf .gt_asterisk {
+#rwtxwwecit .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jawrfwjxqf .gt_indent_1 {
+#rwtxwwecit .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jawrfwjxqf .gt_indent_2 {
+#rwtxwwecit .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jawrfwjxqf .gt_indent_3 {
+#rwtxwwecit .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jawrfwjxqf .gt_indent_4 {
+#rwtxwwecit .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jawrfwjxqf .gt_indent_5 {
+#rwtxwwecit .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jawrfwjxqf .katex-display {
+#rwtxwwecit .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jawrfwjxqf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rwtxwwecit div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -990,7 +1025,6 @@ and
 
 </section>
 </section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1229,7 +1263,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="./data_dictionary.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">WildHealth Data Model Dictionary</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Wildlife Health Data Model Dictionary</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
