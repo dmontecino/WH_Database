@@ -45,17 +45,24 @@
 # )
 
 htmltools::div(
-  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WHINlogo.png"),
-                 alt = 'logo', 
-                 style = 
-                 "position: fixed; 
-                 right: 10px; 
-                 top: 0%; 
-                 width: 220px;"),
-  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
-                 style = "position: fixed; right: 10px; top: 13%; width: 200px;"),
-  htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"), 
-                 style = "position: fixed; right: 10px; top: 20%; width: 200px;")
+  htmltools::a(
+    href = "https://www.whin.org", target = "_blank",
+    htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WHINlogo.png"),
+                   alt = 'WHIN logo',  
+                   style = "position: fixed; right: 10px; top: 0%; width: 220px;")
+  ),
+  htmltools::a(
+    href = "https://www.wcs.org", target = "_blank",
+    htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"),
+                   alt = 'WCS logo',  
+                   style = "position: fixed; right: 10px; top: 13%; width: 200px;")
+  ),
+  htmltools::a(
+    href = "https://www.iucn.org/our-union/commissions/world-commission-protected-areas", target = "_blank",
+    htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"),
+                   alt = 'WCPA logo',  
+                   style = "position: fixed; right: 10px; top: 20%; width: 200px;")
+  )
 )
 
 

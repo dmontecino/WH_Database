@@ -2,7 +2,7 @@
 
 #### Clusters in Surveillance Activities
 
-The units **Location, Event, and Source Record could be enough to record the data structure of a specific Surveillance Activity** gathering information during patrols (Field Visits) in Protected Areas (Locations) at points (Events) where dead animals (Source Records) are found at any given time. But another Surveillance Activity could have the following data structure: 
+The units **Location, Event, and Source Record could be enough to record the data structure of a specific Surveillance Activity**. For example, rangers collecting information during patrols (Field Visits) in Protected Areas (Locations) at specific points (Events) where dead animals (Source Records) are found at any given time. But another Surveillance Activity could have the following data structure: 
 
 - Visit (**Field Visit**)
   - Protected area (Spatial cluster level 1), 
@@ -28,7 +28,7 @@ Another example is surveillance of wild animals in a live markets. One of the po
 
 Looking at the examples above, it is straightforward to understand that **the units Location, Event, and Collection might not be enough to accommodate the data of all Surveillance Activities and other units ("Clusters") can be needed**. 
 
-A second layer of complexity is the potential need for nested Clusters and non-nested Clusters. The last example above corresponds to a series of nested Clusters where the stalls are within vendors and neighborhoods are within cities. But it is also possible to need non-nested spatial Clusters, for example, "Zip Code". Zip Code A can include portions of cities 1 and 2, and Zip Code B can also include portions of cities 1, 2, and 3.
+A second layer of complexity is the potential need for non-nested Clusters. The last example above corresponds to a series of nested Clusters where the stalls are within vendors and neighborhoods are within cities. But it is also possible to need non-nested spatial Clusters, for example, "Zip Code". Zip Code A can include portions of cities 1 and 2, and Zip Code B can also include portions of cities 1, 2, and 3.
 
 And a third layer of complexity is the potential need for spatial and temporal clusters. For example, it is possible that the data structure of the live market Surveillance Activity presented above has to be categorized in decades, year, season, season-year, etc. The following example adds the categorization of the data by season, no matter the markets visited or how many years the Surveillance Activity lasts: 
 
@@ -43,7 +43,9 @@ And a third layer of complexity is the potential need for spatial and temporal c
                 - Animals (**Source Records**) 
                   - Rectal Swab (**Specimens**)
 
-Finally, the number of categories within each Cluster can also be different across Surveillance Activities. For example, two Surveillance Activities may include grid cells as one of their Clusters, however, one Surveillance Activity can include grid cells A - R, whilst the another Surveillance Activity can include grid cell A - W (more categories). In summary:
+The spatial clusters can be nested, non-nested, or a combination of both. Similarly, the temporal cluster can be nested, non-nested, or a combination of both.
+
+Finally, the number of categories within each Cluster can also be different across Surveillance Activities. For example, two Surveillance Activities may include grid cells as one of their Clusters, however, the number of grid cells can be different. For example, one Surveillance Activity can include grid cells A to R, whilst the other Surveillance Activity can include grid cells A to W (more categories). In summary:
 
 - Clusters units can be needed
 - The Clusters across Surveillance Activities can be different
@@ -54,12 +56,12 @@ Finally, the number of categories within each Cluster can also be different acro
 
 #### Clusters in the Data Model
 
-To accommodate these needs in data structure, **the data model allows the inclusion of Clusters** between the Source Record and Event (in the absence of Collection) or Collection and Event, Event and Location, and Location and Field Visit. The data model also allows the inclusion of an undetermined number of nested and non-nested Clusters at each of these levels, and the inclusion of spatial and temporal Clusters. 
+To accommodate these needs in data structure, **the data model allows the inclusion of Clusters** between the Source Record and Event, Event and Location, and Location and Field Visit. The data model also allows the inclusion of an undetermined number of nested and non-nested Clusters at each of these levels, and the inclusion of spatial and temporal Clusters. **Collections are always nested under and only under an Event** 
 <!-- **Environmental and Arthropod Source Records cannot be clustered in units smaller than Event** but the Locations and Events containing them can be clustered.  -->
 
-**Unavoidably, the number of Clusters, what Clusters represent, what they cluster, the number of categories per Cluster, and the data to be collected from each of these extra units will vary among Surveillance Activities. Therefore, Cluster properties must be reported in the Surveillance Activity metadata. In the data model, the only default property for each Cluster are the identifier, the cross identifier, the origin of the cross identifier, and a description**. Other potential properties must be documented in a separate file (e.g., an excel sheet) with common identifiers to allow joining the clusters with the corresponding data.
+**Unavoidably, the number of Clusters, what Clusters represent, what they cluster, the number of categories per Cluster, and the data to be collected from each of these extra units will vary among Surveillance Activities. Therefore, Cluster properties must be reported in the Surveillance Activity metadata. In the data model, the only default property for each Cluster are the identifier, the cross identifier, the origin of the cross identifier, and a description**. Other potential properties must be documented in a separate file (e.g., an excel sheet) with common identifiers to allow joining the clusters with the corresponding data. 
 
-An interesting case study is the collection of Specimens from reindeer carcasses when they are found dead and also from the soil underneath each carcass. In this Surveillance Activity, an Event is a site where dead animals (at least one) are found. So, if two or more carcasses are found at the same site, then the Event contains two Animal Sources, but also two Environmental Sources providing soil Specimens. However, the interest of the researchers is to maintain the connection between the soil Specimens collected below each Animal Source and the Specimens from each Animal Source. Basically, they want to keep track of the soil Specimen that was below each Animal Source. In this case, Cluster unit can be used to group the corresponding Soil Specimen and Animal Specimen in two pairs while keeping the four specimens under the same Event. 
+**A Cluster unit can group Source Records of different type**. An interesting case study is the collection of Specimens from reindeer carcasses when they are found dead and also from the soil underneath each carcass. In this Surveillance Activity, an Event is a site where dead animals (at least one) are found. So, if two or more carcasses are found at the same site, then the Event contains two Animal Sources, but also two Environmental Sources providing soil Specimens. However, the interest of the researchers is to maintain the connection between the soil Specimens collected below each Animal Source and the Specimens from each Animal Source. Basically, they want to keep track of the soil Specimen that was below each Animal Source. In this case, a Cluster unit can be used to group the corresponding Soil Specimen and Animal Specimen in two pairs while keeping the four specimens under the same Event. 
 
 
 
