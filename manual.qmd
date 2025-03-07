@@ -380,7 +380,7 @@ temp
 
 ### Summary of fields and tables whose availability is conditional on other fields of the database
 
-```{r child="conditional_attrs.qmd" , echo=FALSE, eval=T, message=FALSE, cache=F}
+```{r child="conditional_attrs.qmd" , echo=FALSE, eval=F, message=FALSE, cache=F}
 
 ```
 
