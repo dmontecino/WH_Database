@@ -8,24 +8,24 @@ environmental_source<-
   list(
     
     data.frame(
-      Variable="SurveillanceActivityTargetedEnvironmentalBiotic",
-      Label="Biotic Environmental Tissue of Interest",
+      Variable="SurveillanceActivityEnvironmentalSourceBiotic",
+      Label="Biotic Environmental Sources of Interest",
       Definition="Answer to the question: 'Is biotic environmental tissue (e.g., feces)
       of interest for the Surveillance Activity",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityTargetedEnvironmentalBioticType",
-      Label="Biotic Environmental Tissue Type of Interest",
-      Definition="The biotic types of environmental tissue targeted during the Surveillance Activity",
+      Variable="SurveillanceActivityEnvironmentalSourceBioticType",
+      Label="Biotic Environmental Source Types of Interest",
+      Definition="The biotic types of environmental Sources of interest during the Surveillance Activity",
       Type="Multiple selection",
       Mandatory="Yes"),    
     
     data.frame(
-      Variable="SurveillanceActivityTargetedEnvironmentalBioticSpecies",
-      Label="Species Sourcing Biotic Environmental Tissue",
-      Definition="The animal species sourcing biotic environmental tissue targeted
+      Variable="SurveillanceActivityEnvironmentalSourceBioticSpecies",
+      Label="Species Sourcing Biotic Environmental Sources",
+      Definition="The animal species sourcing biotic environmental Sources of interest
       during the Surveillance Activity. It is possible to select high taxonomy levels 
       such as 'Mammalia', 'Chordata', 'Insecta', etc. to indicate that no particular 
       species is targeted but higher level taxa",
@@ -33,45 +33,45 @@ environmental_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityTargetedEnvironmentalBioticSpeciesIdentification",
-      Label="Ipecies Sourcing Biotic Environmental Tissue Identification",
-      Definition="Answer to the question: 'Are the species sourcing biotc tissue identified?'",
+      Variable="SurveillanceActivityEnvironmentalSourceBioticSpeciesIdentification",
+      Label="Species Sourcing Biotic Sources Identification",
+      Definition="Answer to the question: 'Are the species sourcing biotic Sources identified?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityTargetedEnvironmentalBioticSpeciesIdentificationMethod",
-      Label="Species Sourcing Biotic Environmental Tissue Identification Method",
-      Definition="The methods used to identify the species sourcing biotic tissue of interest",
+      Variable="SurveillanceActivityEnvironmentalBioticSpeciesIdentificationMethod",
+      Label="Species Sourcing Biotic Source Identification Method",
+      Definition="The methods used to identify the species sourcing biotic Sources of interest",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityTargetedEnvironmentalBioticSpeciesIdentificationMethodReferences",
-      Label="Species Sourcing Biotic Environmental Tissue Identification Method References",
+      Variable="SurveillanceActivityEnvironmentalBioticSpeciesIdentificationMethodReferences",
+      Label="SSpecies Sourcing Biotic Source Identification Method References",
       Definition="The references associated with the methods used to identify the species
-      sourcing biotic tissue of interest",
+      sourcing biotic Sources of interest",
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityTargetedEnvironmentalAbiotic",
-      Label="Abiotic Environmental Tissue of Interest",
-      Definition="Answer to the question: 'Is abiotic environmental tissue (e.g., water)
-      of interest for the Surveillance Activity",
+      Variable="SurveillanceActivityEnvironmentalSourceAbiotic",
+      Label="Abiotic Environmental Sources of Interest",
+      Definition="Answer to the question: 'Is abiotic environmental Sources (e.g., river providing water)
+      of interest during the Surveillance Activity",
       Type="Boolean",
       Mandatory="Yes"),
 
     data.frame(
-      Variable="SurveillanceActivityTargetedEnvironmentalAbioticType",
-      Label="Abiotic Environmental Tissue Type of Interest",
-      Definition="The abiotic types of environmental tissue targeted during the Surveillance Activity",
+      Variable="SurveillanceActivityEnvironmentalSourceAbioticType",
+      Label="Abiotic Environmental Source Types of Interest",
+      Definition="The abiotic types of environmental Source of interest during the Surveillance Activity",
       Type="Multiple selection",
       Mandatory="Yes"),  
     
     data.frame(
       Variable="SurveillanceActivityTargetedHazardType",
-      Label="Environmental Tissue Targeted Hazard Type",
+      Label="Targeted Hazard Type in Environmental Tissue",
       Definition="The types of hazards targeted during the Surveillance Activity 
       in environmental tissue",
       Type="Multiple selection",
@@ -79,7 +79,7 @@ environmental_source<-
     
     data.frame(
       Variable="SurveillanceActivityTargetedHazardName",
-      Label="Environmental Tissue Targeted Hazard Name",
+      Label="Targeted Hazard Name in Environmental Tissue",
       Definition="The names of the hazards targeted during the Surveillance Activity 
       in environmental tissue",
       Type="Multiple selection",
@@ -153,7 +153,7 @@ environmental_source<-
       Mandatory="Yes"),    
     
     data.frame(
-      Variable="SurveillanceActivityEnvironmentalSourceList",
+      Variable="SurveillanceActivitySourceList",
       Label="Environmental Source List",
       Definition="A list with the names or codes of the Environmental Source
       included in the Surveillance Activity",
@@ -339,7 +339,8 @@ environmental_source<-
     data.frame(
       Variable="SurveillanceActivitySourceRecordClusteringDescription",
       Label="Environmental Source Records Cluster Description",
-      Definition="Description of Environmental Source Records cluster units smaller than Event",
+      Definition="Description of units smaller than Event clustering the Environmental Source
+      Records",
       Type="String",
       Mandatory="Yes"), 
     
@@ -413,7 +414,7 @@ environmental_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityEnvironmentalStoredSpecimen",
+      Variable="SurveillanceActivityStoredEnvironmentalSourceSpecimens",
       Label="Stored Environmental Specimens",
       Definition="Answer to the question: 'Are stored Environmental Specimens
       of previous Surveillance Activities included in the current Surveillance Activity?'",
@@ -449,7 +450,7 @@ environmental_source<-
       Label="Any Stored Environmental Specimen Inclusion Criteria",
       Definition="Answer to the question: 'Is there any criteria to include 
       specific Environmental Specimens of any type besides the type itself?'",
-      Type="Noolean",
+      Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
@@ -555,7 +556,7 @@ environmental_source<-
       
       # Field Visits
       
-    data.frame(
+  data.frame(
     Variable="SurveillanceActivityFieldVisitList",
     Label="Field Visit List Environmental Source Records",
     Definition="A list with the Field Vists where Environmental Source 
@@ -568,7 +569,7 @@ environmental_source<-
     Variable="SurveillanceActivityFieldVisitOtherAttributes",
     Label="Field Visit Environmental Source Records Other Attributes", 
     Definition="Answer to the question: 'Are other properties of Field Visits 
-      where Environmental Source Records are obtained during the current
+      where Environmental Source Records are obtained from during the current
       Surveillance Activity tracked that are not included in the data model?'",
     Type="Boolean",
     Mandatory="Yes"),  
@@ -577,7 +578,7 @@ environmental_source<-
     Variable="SurveillanceActivityFieldVisitListDefinitionOtherAttributes",
     Label="Field Visit Environmental Source Records Definition Other Attributes", 
     Definition="Description of the other attributes of Field Visits where Environmental 
-      Source Records are obtained during the current Surveillance Activity tracked. 
+      Source Records are obtained from during the current Surveillance Activity tracked. 
       Provide a list with the name of the attributes and their definition",
     Type="String",
     Mandatory="Yes"),
@@ -603,7 +604,7 @@ environmental_source<-
     Variable="SurveillanceActivityFieldVisitNumberLocationsKnown",
     Label="Number Locations Surveyed Per Field Visit Known", 
     Definition="Answer to the question: 'Is the total number of Locations surveyed per
-      Field Visit where Environmental Source Records are obtained during the current Surveillance
+      Field Visit where Environmental Source Records are obtained from during the current Surveillance
       Activity known?'",
     Type="Boolean",
     Mandatory="Yes"),
@@ -612,7 +613,7 @@ environmental_source<-
     Variable="SurveillanceActivityFieldVisitNumberLocations",
     Label="Number Locations Per Field Visit", 
     Definition="The number of planned Locations surveyed per Field Visit where Environmental Source
-      Records are obtained during the current Surveillance Activity",
+      Records are obtained from during the current Surveillance Activity",
     Type="String",
     Mandatory="Yes"),
   
@@ -620,7 +621,7 @@ environmental_source<-
     Variable="SurveillanceActivityFieldVisitNumberEventsKnown",
     Label="Number Events Per Field Visit Known", 
     Definition="Answer to the question: 'Is the total number of Events per
-      Field Visit where Environmental Source Records are obtained during the current Surveillance
+      Field Visit where Environmental Source Records are obtained from during the current Surveillance
       Activity known?'",
     Type="Boolean",
     Mandatory="Yes"),
@@ -629,7 +630,7 @@ environmental_source<-
     Variable="SurveillanceActivityFieldVisitNumberEvents",
     Label="Number Events Per Field Visit", 
     Definition="The number of planned Events per Field Visit where Environmental Source
-      Records are obtained during the current Surveillance Activity",
+      Records are obtained from during the current Surveillance Activity",
     Type="String",
     Mandatory="Yes"),
   
@@ -637,7 +638,7 @@ environmental_source<-
     Variable="SurveillanceActivityFieldVisitNumberCollectionKnown",
     Label="Number Collections Per Field Visit Known", 
     Definition="Answer to the question: 'Is the total number of Collections per
-      Field Visit where Environmental Source Records are obtained during the current Surveillance
+      Field Visit where Environmental Source Records are obtained from during the current Surveillance
       Activity known?'",
     Type="Boolean",
     Mandatory="Yes"),
@@ -646,12 +647,12 @@ environmental_source<-
     Variable="SurveillanceActivityFieldVisitNumberCollection",
     Label="Number Collections Per Field Visit", 
     Definition="The number of planned Collections per Field Visit where Environmental Source
-      Records are obtained during the current Surveillance Activity",
+      Records are obtained from during the current Surveillance Activity",
     Type="String",
     Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityFieldVisitNumberEnvironmentalSourceRecordsKnown",
+    Variable="SurveillanceActivityFieldVisitNumberSourceRecordsKnown",
     Label="Number Environmental Source Records Per Field Visit Known", 
     Definition="Answer to the question: 'Is the total number of Environmental Source Records per
       Field Visit for the current Surveillance Activity known?'",
@@ -659,7 +660,7 @@ environmental_source<-
     Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityFieldVisitNumberEnvironmentalSourceRecords",
+    Variable="SurveillanceActivityFieldVisitNumberSourceRecords",
     Label="Number Environmental Source Records Per Field Visit", 
     Definition="The number of Environmental Sources to obtain Records per Field Visit
       of the current Surveillance Activity",
@@ -667,7 +668,7 @@ environmental_source<-
     Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityFieldVisitNumberEnvironmentalSpecimensKnown",
+    Variable="SurveillanceActivityFieldVisitNumberSpecimensKnown",
     Label="Number Environmental Specimens Per Field Visit Known", 
     Definition="Answer to the question: 'Is the total number of Environmental Specimens per
       Field Visit for the current Surveillance Activity known?'",
@@ -675,7 +676,7 @@ environmental_source<-
     Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityFieldVisitNumberEnvironmentalSpecimens",
+    Variable="SurveillanceActivityFieldVisitNumberSpecimens",
     Label="Number Environmental Specimens Per Field Visit", 
     Definition="The number of Environmental Specimens to obtain Records per Field Visit
       of the current Surveillance Activity",
@@ -766,7 +767,7 @@ environmental_source<-
     Variable="SurveillanceActivityLocationListDefinitionOtherAtttributes",
     Label="Location Environmental Sources Definition Other Attributes", 
     Definition="Description of the other attributes of Locations where Environmental 
-      Sources are located that are tracked during the current Surveillance Activity  
+      Sources are located that are tracked during the current Surveillance Activity.  
       Provide a list with the name of the attributes and their definition",
     Type="String",
     Mandatory="Yes"),
@@ -898,10 +899,19 @@ environmental_source<-
   data.frame(
     Variable="SurveillanceActivityLocationClustering",
     Label="Location Clustering", 
-    Definition="Answer to the question: 'Are the Locations of the current Surveillance
-      Activity spatially or temporally clustered in units smaller than the Field Visit?'",
+    Definition="Answer to the question: 'Are the Locations containing Environmental Sources of the current Surveillance
+      Activity spatially or temporally clustered in units smaller
+    than the Field Visit?'",
     Type="Boolean",
     Mandatory="Yes"),
+  
+  data.frame(
+    Variable="SurveillanceActivityLocationClusteringDescription",
+    Label="Location Cluster Description",
+    Definition="Description of units larger than Location containing Environmental Sources 
+    clustering the Locations",
+    Type="String",
+    Mandatory="Yes"), 
   
   # Events 
   
@@ -971,7 +981,7 @@ environmental_source<-
       sites where Environmental Source Records are obtained during the current Surveillance
       Activity? (Several Events over time for the same unit. For example, monthly Events in
       a roost)'",
-    Type="boolean",
+    Type="b=Boolean",
     Mandatory="Yes"),
   
   data.frame(
@@ -1023,7 +1033,7 @@ environmental_source<-
     Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityEventNumberFieldEnvironmentalSpecimensPerEventRecordsKnow",
+    Variable="SurveillanceActivityEventNumberEnvironmentalSpecimensperEventKnown",
     Label="Number Environmental Specimens Per Event Known",
     Definition="Answer to the question: 'Is the number of Environmental Specimens
       per Event of the the Surveillance Activity known'?",
@@ -1031,7 +1041,7 @@ environmental_source<-
     Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityEventNumberFieldEnvironmentalSpecimensPerEventRecords",
+    Variable="SurveillanceActivityEventNumberEnvironmentalSpecimensperEvent",
     Label="Number Environmental Specimens Per Event",
     Definition="The number of Environmental Specimens per Event of the the Surveillance
     Activity known",
@@ -1043,9 +1053,17 @@ environmental_source<-
     Label="Events Clustering", 
     Definition="Answer to the question: 'Are the Events where Environmental Source Records 
       are obtained from during the the current Surveillance Activity spatially or
-      temporally clustered in units smaller than the Field Visit?'",
+      temporally clustered in units smaller than the Location?'",
     Type="Boolean",
     Mandatory="Yes"),
+  
+  data.frame(
+    Variable="SurveillanceActivityEventClusteringDescription",
+    Label="Event Cluster Description",
+    Definition="Description of units larger than Event and smaller than Location clustering the Events
+    containing Environmental Sources",
+    Type="String",
+    Mandatory="Yes"), 
     
     
     
@@ -1209,9 +1227,6 @@ environmental_source<-
     Type="String",
     Mandatory="No"),
   
-
-  
-  
   data.frame(
     Variable="SourceSpecimenDiagnosticInterpretation",
     Label="Environmental Source Specimen Diagnostic Interpretation",
@@ -1239,9 +1254,9 @@ environmental_source<-
   
   data.frame(
     Variable="SourceSpecimenInterpretationBy",
-    Label="Animal Source Specimen Interpretation by",
+    Label="Environmental Source Specimen Interpretation by",
     Definition="The individual providing the Interpretation of targeted hazards
-      in Animal Source Specimens",
+      in Environmental Source Specimens",
     Type="Single selection",
     Mandatory="No"), 
   
