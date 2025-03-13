@@ -1,4 +1,4 @@
-# Wildlife Health Data Model Dictionary {.unnumbered}
+# WildHealth Data Model Dictionary {.unnumbered}
 
 ```{r, echo=FALSE}
 # htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
