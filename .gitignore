@@ -7,3 +7,4 @@ WH_DATABASE.Rproj
 .data_dictionary
 .data_dictionary_cache
 /.quarto/
+.DS_Store
