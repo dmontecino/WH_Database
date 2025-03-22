@@ -1,5 +1,18 @@
 <!-- # Project {.unnumbered} -->
 
-A Project in the data model is a surveillance initiative supported by specific entities. For example, the PREDICT Project funded by USAID, an isolated cross-sectional study with a single field visit to a single location (sample collection in a market), or a national or local wildlife health surveillance network led by a government agency. Projects are the highest hierarchical unit in the database and they contain at least one Surveillance Activity. Projects can involve a single date or they can extend for as long as needed.
+A **Project** in the data model represents a surveillance initiative supported by specific entities. Examples include the PREDICT Project funded by USAID, a single cross-sectional study with one field visit to a specific location (e.g., sample collection in a market), or a national or local wildlife health surveillance network managed by a government agency.
 
-Properties of a Project include the Project ID, Project Code, Project Cross Reference ID, Project Cross Reference Origin, Project Leader, Project Funding Source, among others (see Data Dictionary).
+**Projects** serve as the highest hierarchical unit in the database and must contain at least one **Surveillance Activity**. They can be time-limited, spanning a single date, or ongoing for an extended period as needed.
+
+Key properties of a **Project** include:
+
+* Project ID
+* Project Code
+* Project Cross-Reference ID
+* Project Cross-Reference Origin
+* Project Leader
+* Project Funding Source
+
+Other attributes and provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html)
+
+

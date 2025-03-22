@@ -205,6 +205,21 @@ animal_source<-
       Type="String",
       Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityNumberSourcesKnown",
+      Label="Animal Source Number Known",
+      Definition="Answer to the question: 'Is the number of Animal Sources included in 
+      the Surveillance Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberSources",
+      Label="Animal Source Number",
+      Definition="The number of Animal Sources included in the Surveillance Activity",
+      Type="Integer",
+      Mandatory="Yes"),    
+    
     
     data.frame(
       Variable="SurveillanceActivitySourceFollowedOverTime",
@@ -395,6 +410,22 @@ animal_source<-
       Mandatory="Yes"),
   
     data.frame(
+      Variable="SurveillanceActivityFieldNumberFieldCarcassSpeciesKnown",
+      Label="Animal Source Carcass Number per Species Known",
+      Definition="Answer to the question: 'Is the number of Animal Source Carcasses
+      of the species of interest collected from the field known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldNumberFieldCarcassSpecies",
+      Label="Animal Source Carcass Number per Species",
+      Definition="The number of Animal Source Carcasses of the species of interest
+      collected from the field",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
       Variable="SurveillanceActivityFieldAnimalSourceCarcassFieldStorage",
       Label="Field Animal Source Carcass Field Storage",
       Definition="Method to store the Animal Source Carcasses collected while 
@@ -473,6 +504,22 @@ animal_source<-
       Label="Store Carcass Exclusion Criteria",
       Definition="The specific criteria for the exclusion of stored Carcasses of the
       species of interest, if any",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityStoredCarcassNumberSpeciesKnown",
+      Label="Store Carcass Number per Species Known",
+      Definition="Answer to the question: 'Is the number of stored carcasses to be 
+      used in the curent Surveillance Activity, per Species, known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityStoredCarcassNumberSpecies",
+      Label="Store Carcass Number per Species",
+      Definition="The number of stored carcasses to be used in the curent Surveillance
+      Activity, per Species",
       Type="String",
       Mandatory="Yes"),
     
@@ -674,6 +721,35 @@ animal_source<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordNumberBySpeciesCaptivityKnown",
+      Label="Number Animal Source Records Per Species Captivity Known",
+      Definition="Answer to the question: 'Is the number of Animal Source Records per species and 
+      captivity category known?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordNumberBySpeciesCaptivity",
+      Label="Number Source Records Per Species Captivity",
+      Definition="The number of Animal Source Records per species and captivity category",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordNumberByAnimalSourceKnown",
+      Label="Number Records Per Animal Source Known",
+      Definition="Answer to the question: 'Is the number of Records per Animal Source known?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityAnimalSourceRecordNumberByAnimalSource",
+      Label="Number Records Per Animal Source",
+      Definition="The number of Records per Animal Source",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
       Variable="SurveillanceActivityAnimalSourceRecordVaccinated",
       Label="Animal Source Record Vaccinated",
       Definition="Answer to the question: 'Are Animal Sources
@@ -804,6 +880,46 @@ animal_source<-
       Mandatory="Yes"),
     
     
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldAnimalSourceSpecimensPerSpeciesCaptivityKnown",
+      Label="Number Field Animal Source Specimens Per Species Captivity Known",
+      Definition="Answer to the question: 'Is the number of field Animal Source 
+      Specimens per Species and Captivity status to be collected during the Surveillance
+      Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldAnimalSourceSpecimensPerSpeciesCaptivity",
+      Label="Number Field Animal Source Specimens Per Species Captivity",
+      Definition="The number of field Animal Source Specimens per Species and Captivity 
+      status to be collected during the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldSpecimensPerAnimalSourceKnown",
+      Label="Number Field Specimens Per Animal Source Known",
+      Definition="Answer to the question: 'Is the number of field
+      Specimens per Animal Source to be collected during the Surveillance
+      Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldSpecimensPerAnimalSource",
+      Label="Number Field Specimens Per Animal Source",
+      Definition="The number of field Specimens per Animal Source to be collected
+      during the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
+    
+    
+    
     data.frame(
       Variable="SurveillanceActivityStoredCarcassNewSpecimens",
       Label="Stored Carcasses New Specimens",
@@ -880,6 +996,13 @@ animal_source<-
       Type="String",
       Mandatory="Yes"),
     
+    
+    
+    
+    
+    
+    
+    
     data.frame(
       Variable="SurveillanceActivityNewSpecimenLabStorage",
       Label="New Specimen Facility Storage",
@@ -887,24 +1010,59 @@ animal_source<-
       Surveillance Activity in a facility",
       Type="Multiple selection",
       Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberNewSpecimensPerStoredCarcassByTypeSpeciesKnown",
+      Label="Number New Animal Source Specimens per Stored Carcass by Type and Species Known",
+      Definition="Answer to the question: 'Is the number of new Animal Source Specimens 
+      per stored carcass by type and species included in the Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberNewSpecimensPerStoredCarcassByTypeSpecies",
+      Label="Number New Animal Source Specimens per Stored Carcass by Type and Species",
+      Definition="The number of new Animal Source Specimens per stored carcass by type and 
+      species included in the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberNewAnimalSourceSpecimensByTypeSpeciesKnown",
+      Label="Number New Animal Source Specimens by Type and Species Known",
+      Definition="Answer to the question: 'Is the number of new Animal Source Specimens 
+      by type and species included in the Surveillance Activity known (from stored carcasses 
+      and from the field)?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberNewAnimalSourceSpecimensByTypeSpecies",
+      Label="Number New Animal Source Specimens by Type and Species",
+      Definition="The number of new Animal Source Specimens by type and species
+      included in the Surveillance Activity (from stored carcasses and from
+      the field)",
+      Type="String",
+      Mandatory="Yes"),
   
-  data.frame(
-    Variable="SurveillanceActivityNumberNewAnimalSourceSpecimensKnown",
-    Label="Number Animal Source Field Specimens Known",
-    Definition="Answer to the question: 'Is the number of Specimens from Animal 
-      Sources to be collected in the field as part of the Surveillance Activity known
-      a priori?'",
-    Type="Boolean",
-    Mandatory="Yes"),
-  
-  data.frame(
-    Variable="SurveillanceActivityNumberNewAnimalSourceSpecimensByTypeSpecies",
-    Label="Number Animal Source Field Specimens By Type Species",
-    Definition="The number of Specimens from Animal Sources to be collected in the
-      field as part of the Surveillance Activity by type and species",
-    Type="String",
-    Mandatory="Yes"),  
-  
+  # data.frame(
+  #   Variable="SurveillanceActivityNumberNewAnimalSourceSpecimensKnown",
+  #   Label="Number Animal Source Field Specimens Known",
+  #   Definition="Answer to the question: 'Is the number of Specimens from Animal 
+  #     Sources to be collected in the field as part of the Surveillance Activity known
+  #     a priori?'",
+  #   Type="Boolean",
+  #   Mandatory="Yes"),
+  # 
+  # data.frame(
+  #   Variable="SurveillanceActivityNumberNewAnimalSourceSpecimensByTypeSpecies",
+  #   Label="Number Animal Source Field Specimens By Type Species",
+  #   Definition="The number of Specimens from Animal Sources to be collected in the
+  #     field as part of the Surveillance Activity by type and species",
+  #   Type="String",
+  #   Mandatory="Yes"),  
+  # 
   
     data.frame(
       Variable="SurveillanceActivityStoredAnimalSourceSpecimens",
@@ -971,10 +1129,10 @@ animal_source<-
       Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityNumberStoredAnimalSourceSpecimensKnown",
-    Label="Number Stored Animal Source Specimens Known",
+    Variable="SurveillanceActivityNumberStoredAnimalSourceSpecimensByTypeSpeciesKnown",
+    Label="Number Stored Animal Source Specimens By Type Species Known",
     Definition="Answer to the question: 'Is the number of stored Specimens from Animal 
-      Sources to be included in the Surveillance Activity known
+      Sources per type and species to be included in the Surveillance Activity known
       a priori?'",
     Type="Boolean",
     Mandatory="Yes"),
@@ -983,7 +1141,24 @@ animal_source<-
     Variable="SurveillanceActivityNumberStoredAnimalSourceSpecimensByTypeSpecies",
     Label="Number Stored Animal Source Specimens By Type Species",
     Definition="The number of stored Specimens from Animal 
-        Sources to be included in the Surveillance Activity by type and species",
+        Sources per type and species to be included in the Surveillance Activity",
+    Type="String",
+    Mandatory="Yes"),
+  
+  data.frame(
+    Variable="SurveillanceActivityNumberAnimalSourceSpecimensByTypeSpeciesKnown",
+    Label="Number Animal Source Specimens by Type Species Known",
+    Definition="Answer to the question: 'Is the number of total Specimens (new and 
+    stored) from Animal Sources per type and species to be included in the Surveillance
+    Activity known a priori?'",
+    Type="Boolean",
+    Mandatory="Yes"),
+  
+  data.frame(
+    Variable="SurveillanceActivityNumberAnimalSourceSpecimensByTypeSpecies",
+    Label="Number Animal Source Specimens By Type Species",
+    Definition="The number of total Specimens from Animal Sources per type and species
+    to be included in the Surveillance Activity",
     Type="String",
     Mandatory="Yes"),
   
@@ -1405,7 +1580,7 @@ animal_source<-
   data.frame(
     Variable="SurveillanceActivityLocationNumberSpecimensPerSurvey",
     Label="Number Animal Source Specimens Per Location Per Survey", 
-    Definition="the total number of Animal Source Specimens per
+    Definition="The total number of Animal Source Specimens per
     survey per each Location of the current Surveillance Activity",
     Type="String",
     Mandatory="Yes"),
@@ -1578,12 +1753,12 @@ animal_source<-
     Variable="SurveillanceActivityEventNumberFieldAnimalSpecimensPerEventRecordsKnow",
     Label="Number Animal Specimens Per Event Known",
     Definition="Answer to the question: 'Is the number of Animal Specimens
-      per Event of the the Surveillance Activity known'?",
+      per Event of the the Surveillance Activity known?'",
     Type="Boolean",
     Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityEventNumberFieldAnimalSpecimensPerEventRecords",
+    Variable="SurveillanceActivityEventNumberAnimalSpecimensPerEvent",
     Label="Number Animal Specimens Per Event",
     Definition="The number of Animal Specimens per Event of the the Surveillance
     Activity known",

@@ -1,15 +1,29 @@
 <!-- # Surveillance Activity {.unnumbered} -->
 
-A Surveillance Activity in the data model refers to a set of activities to collect data with the aim of detecting, proving freedom of disease, measure incidence or prevalence, or assessing trends of specific health hazards within specific populations, using a common methodology. For example, the [longitudinal assessment of coronavirus shedding in two *Eidolon helvum* bat roosts in Africa](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0274490) collected a fix number of feces from two bat roosts of the same species on a monthly basis for 12 months and tested the feces for coronaviridae sp.
+A **Surveillance Activity** in the data model refers to a coordinated set of activities aimed at detect diseases, demonstrate disease freedom, measure incidence or prevalence, assess trends in specific health and health hazards within defined populations. In general, a specific set of methods, strategies, and objectives should equal a specific **Surveillance Activity**.
 
-Surveillance Activities can encompass targeted surveillance, scanning surveillance, citizen science monitoring, ranger patrols, and others. **Surveillance Activities include detailed metadata that describe their objectives and methods, including information on the targeted species, populations, hazards, samples, collection methods, diagnostics, and case definitions, among others**. A Surveillance Activity can include multiple Field Visits and Locations and Source types (groups, individual animals, environmental sources, or arthropod collections). 
+For example, the [longitudinal assessment of coronavirus shedding in two *Eidolon helvum* bat roosts in Africa](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0274490) involved collecting a fixed number of fecal samples from two bat roosts of the same species every month for 12 months, with subsequent testing for Coronaviridae sp.
 
-It is recommended that the definition of Event, what an Event represents, is unique for the Surveillance Activity and also to keep a minimum number of hazards targeted under the same Surveillance Activity. In general, a specific set of methods, strategies, and objectives should equal a specific Surveillance Activity.
+Each **Surveillance Activity** includes detailed metadata describing its objectives and methods, such as:
 
-**Field Visits, Locations, Events, Sources, Source Records, and Diagnostics usually belong to a single Surveillance Activity**. This is the Surveillance Activity that lead to the Field Visits at different Locations to document Events, collect Sources and Specimens, perform Diagnostics for a specific hazard, and provide Diagnosis for Diagnostics, Specimens, and Sources. However, there are exceptions to this rule (See the "Complexities" section below). Furthermore, **a Surveillance Activity usually includes Field Visits, Locations, Events, Sources, Source Records, and Diagnostics, but this is not always the case** (See the "Complexities" section below).
+* Targeted species, populations, and hazards
+* Samples and collection methods
+* Diagnostics and case definitions
 
-Most of the properties of a Surveillance Activity are associated with the standard documentation of the methods use to conduct the corresponding surveillance initiative. These properties include, Start Date, End Date, Hazards and Taxa targeted, Organizations involved, the definition of Location, the definition of Event, the type of Sources included, the methods to find or establish Sources, Specimens collected and method of collection, the diagnostics used, case definitions for the diagnostic tests, the Specimens, and the Sources at time *t*, among others.
+A **Surveillance Activity** can span multiple **Field Visits**, **Locations**, and **Source** types (e.g., *Groups*, *Animals*, *Environmental* and *Arthropod* Sources).
+
+Generally, **Field Visits, Locations, Events, Sources, Source Records, and Diagnostics belong to a single Surveillance Activity**. Furthermore, **a Surveillance Activity usually includes Field Visits, Locations, Events, Sources, Source Records, and Diagnostics**. However, exceptions exist (see Complexities section).
+
+Most **Surveillance Activity** properties align with standard documentation of surveillance methods, including:
+
+* Start and End Dates
+* Targeted Hazards and Taxa
+* Involved **Organizations**
+* Definitions of **Locations**, **Events**, and **Sources**
+* **Source** identification, **Specimens**, and **Collection** methods
+* **Diagnostic** techniques and case definitions
 
 ## Outbreak Investigation
 
-Each outbreak investigation is considered a Surveillance Activity. Outbreak Surveillance Activities can encompass the Field Visit that lead to the Outbreak detection and the following Field Visits associated with Outbreak investigation and control. The detection could have been made during a Field Activity conducted by rangers during their patrols. This initial Field Visit and its components should be assigned to a the ranger patrol Surveillance Activity and to the Outbreak Surveillance Activity. The following Field Activities that could be completed by veterinarians or public health officers conducting the official outbreak investigation receive the outbreak Surveillance Activity only (See Complexities below).  
+Each outbreak investigation is considered a **Surveillance Activity**. **Outbreak Surveillance Activities can encompass the initial Field Visit that led to the outbreak detection and subsequent Field Visits associated with the investigation and control**. For instance, an outbreak may first be detected during routine patrols by rangers. In such cases, the initial **Field Visit** and its components should be assigned to both the ranger patrol **Surveillance Activity** and also the **Outbreak Surveillance Activity**. Follow-up **Field Visits** (e.g., by veterinarians or public health officers investigating the outbreak) should be assigned exclusively to the **Outbreak Surveillance Activity** (see Complexities section).
+

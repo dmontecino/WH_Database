@@ -1,6 +1,6 @@
-# @@@@@@@@@@@@@@@@@@@@@@ #
+# @@@@@@@@@@@@@@@@@@@@@@@@@ #
 # Arthropod Source Metadata #
-# @@@@@@@@@@@@@@@@@@@@@@ #
+# @@@@@@@@@@@@@@@@@@@@@@@@@ #
 
 
 arthro_source<-
@@ -19,7 +19,7 @@ arthro_source<-
     
     data.frame(
       Variable="SurveillanceActivityArthropodSourcePassiveCollectionTaxa",
-      Label="Arthropod Passive Collection Targeted Species", 
+      Label="Arthropod Passive Collection Targeted Taxa", 
       Definition="The arthropod species targeted through passive Collection in the 
         Surveillance Activity",
       Type="Multiple selection",
@@ -50,8 +50,8 @@ arthro_source<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityArthropodSourceActiveCollectionSpecies",
-      Label="Arthropod Active Collection Targeted Species", 
+      Variable="SurveillanceActivityArthropodSourceActiveCollectionTaxa",
+      Label="Arthropod Active Collection Targeted Taxa", 
       Definition="The arthropod species targeted through active Collection in the 
         Surveillance Activity",
       Type="Multiple selection",
@@ -281,7 +281,7 @@ arthro_source<-
     
     data.frame(
       Variable="SurveillanceActivityCollectionActiveTrapTypes",
-      Label="Arthropod Source Active Collection Trap Types", 
+      Label="Field Arthropod Source Record Active Collection Trap Types", 
       Definition="The traps types used to actively collect arthropods in the 
         Surveillance Activity",
       Type="Multiple selection",
@@ -290,21 +290,21 @@ arthro_source<-
     
     data.frame(
       Variable="SurveillanceActivityCollectionActiveLure",
-      Label="Arthropod Source Active Collection Lure", 
+      Label="Field Arthropod Source Record Active Collection Lure", 
       Definition="Answer to the question: 'Is any type lure used in the active Collection?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityCollectionActiveLureType",
-      Label="Arthropod Source Active Collection Lure", 
+      Label="Field Arthropod Source Record Active Collection Lure Type", 
       Definition="The types of lure used in the active Collection methods",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityArthopodSourceActiveCollectionMethodsByTaxa",
-      Label="Arthropod Source Active Collection Methods by Taxa", 
+      Variable="SurveillanceActivityCollectionActiveMethodsByTaxa",
+      Label="Field Arthropod Source Record Active Collection Methods by Taxa", 
       Definition="Description of the methods employed to actively obtained Arthropod
       Source Records from the field during the Surveillance Activity by Taxa",
       Type="String",
@@ -312,7 +312,7 @@ arthro_source<-
     
     data.frame(
       Variable="SurveillanceActivityCollectionActiveMethodReferences",
-      Label="Surveillance Activity Arthropod Active Source Collection Method References",
+      Label="Field Arthropod Source Record Active Collection Method References",
       Definition="Name the references supporting the methods used to actively collect the 
         arthropods",
       Type="String",
@@ -320,23 +320,23 @@ arthro_source<-
     
     data.frame(
       Variable="SurveillanceActivityCollectionActiveMethodExpectedEffort",
-      Label="Surveillance Activity Arthropod Source Active Collection Expected Effort", 
+      Label="Field Arthropod Source Record Active Collection Expected Effort", 
       Definition="Expected Effort of the active Collection Methods to obtain Arthropod 
       Source Records",
       Type="String",
       Mandatory="Yes"), 
     
-    data.frame(
-      Variable="SurveillanceActivityCollectionActiveOtherSourceTypes",
-      Label="Active Arthropod Source Collection Other Source Types", 
-      Definition="Answer to the question: 'Do active collections of Arthropod Sources
-      also target other Source types?'",
-      Type="Boolean",
-      Mandatory="Yes"),  
+    # data.frame(
+    #   Variable="SurveillanceActivityCollectionActiveOtherSourceTypes",
+    #   Label="Active Arthropod Source Collection Other Source Types", 
+    #   Definition="Answer to the question: 'Do active collections of Arthropod Sources
+    #   also target other Source types?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityArthropodSourceActiveCollectionOtherAttributes",
-      Label="Active Arthropod Source Collection Other Attributes", 
+      Variable="SurveillanceActivityCollectionActiveOtherAttributes",
+      Label="Field Arthropod Source Record Active Collection Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
       other properties of the Collections to actively obtain Arthropod Source Records 
       that are not included in the data model?'",
@@ -344,17 +344,56 @@ arthro_source<-
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityArthropodActiveCollectionListDefinitionOtherAttributes",
-      Label="Active Arthropod Source Collection Definition Other Attributes", 
+      Variable="SurveillanceActivityCollectionActiveListDefinitionOtherAttributes",
+      Label="Field Arthropod Source Record Active Collection Definition Other Attributes", 
       Definition="Description of other attributes of interest for actively collected
       Arthropod Source Records that are not included in the data model. Provide a list with
       the name of the attributes and their definition",
       Type="String",
       Mandatory="Yes"),
     
+    
+    
+    
+    
+    
     data.frame(
-      Variable="SurveillanceActivityArthropodPassiveCollectionMethodsByTaxa",
-      Label="Arthropod Source Passive Collection Methods By Taxa", 
+      Variable="SurveillanceActivityCollectionActiveNumberKnown",
+      Label="Number Active Arthropod Collections Known",
+      Definition="Answer to the question:'Is the number of active Arthropod Collections 
+      of the Surveillance Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveNumber",
+      Label="Number Active Arthropod Collections",
+      Definition="The number of active Arthropod Collections included in the
+      Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceNumberCollectionActivePerSourceKnown",
+      Label="Field Environmental Source Number Active Arthropod Collection Known",
+      Definition="Answer to the question:'Is the number of active Collections per Arthropod
+      Source included in the Surveillance Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceNumberCollectionActivePerSource",
+      Label="Field Environmental Source Number Active Collection",
+      Definition="The number of active Collections per Arthropod Source included in the
+      Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionPassiveMethodsByTaxa",
+      Label="Field Arthropod Source Record Passive Collection Methods By Taxa", 
       Definition="Description of the methods employed to passively obtained Arthropod
       Source Records from the field during the Surveillance Activity by Taxa",
       Type="Multiple selection",
@@ -362,23 +401,23 @@ arthro_source<-
     
     data.frame(
       Variable="SurveillanceActivityCollectionPassiveMethodReferences",
-      Label="Surveillance Activity Arthropod Passive Source Collection Method References",
+      Label="Field Arthropod Source Record Passive Collection Method References",
       Definition="Name the references supporting the methods used to passively collect the 
         arthropods",
       Type="String",
       Mandatory="No"),
     
-    data.frame(
-      Variable="SurveillanceActivityCollectionPassiveOtherSourceTypes",
-      Label="Passive Arthropod Source Collection Other Source Types", 
-      Definition="Answer to the question: 'Do passive collections of Arthropod Sources
-      also target other Source types?'",
-      Type="Boolean",
-      Mandatory="Yes"), 
+    # data.frame(
+    #   Variable="SurveillanceActivityCollectionPassiveOtherSourceTypes",
+    #   Label="Passive Arthropod Source Collection Other Source Types", 
+    #   Definition="Answer to the question: 'Do passive collections of Arthropod Sources
+    #   also target other Source types?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityArthropodSourcePassiveCollectionOtherAttributes",
-      Label="Passive Arthropod Source Collection Other Attributes", 
+      Variable="SurveillanceActivityCollectionPassiveOtherAttributes",
+      Label="Field Arthropod Source Record Passive Collection Other Attributes", 
       Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
       other properties of the Collections to passively obtain Arthropod Source Records 
       that are not included in the data model?'",
@@ -386,17 +425,37 @@ arthro_source<-
       Mandatory="Yes"),  
     
     data.frame(
-      Variable="SurveillanceActivityArthropodPassiveCollectionListDefinitionOtherAttributes",
-      Label="Passive Arthropod Source Collection Definition Other Attributes", 
+      Variable="SurveillanceActivityCollectionPassiveListDefinitionOtherAttributes",
+      Label="Field Arthropod Source Record Passive Collection Definition Other Attributes", 
       Definition="Description of other attributes of interest for passively collected
       Arthropod Source Records that are not included in the data model. Provide a list with
       the name of the attributes and their definition",
       Type="String",
       Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityCollectionOtherSourceTypes",
+      Label="Field Arthropod Source Record Collection Other Source Types",
+      Definition="Answer to the question: 'Does the Collection of Arthropod Source
+      Records also target other Source types?'",
+      Type="Boolean",
+      Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityCollectionNumberFieldSpecimensKnown",
+      Label="Number Field Arthropod Specimens Per Collection Known",
+      Definition="Answer to the question: 'Is the number of Arthropod Specimens
+      to obtain per Collecton of the the Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
     
-    
+    data.frame(
+      Variable="SurveillanceActivityCollectionNumberFieldSpecimens",
+      Label="Number Field Arthropod Specimens Per Collection",
+      Definition="The number of Arthropod Source Records 
+      to obtain per Collection of the the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
     
     
     data.frame(
@@ -409,40 +468,26 @@ arthro_source<-
       Type="String",
       Mandatory="Yes"), 
     
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordsNumberKnown",
-      Label="Arthropod Source Records Number",
-      Definition="Answer to the question: 'Is the full number of Arthropod Source Records 
-      of the Surveillance Activity known?'",
-      Type="Boolean",
-      Mandatory="Yes"), 
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceRecordsNumberKnown",
+    #   Label="Arthropod Source Records Number",
+    #   Definition="Answer to the question: 'Is the full number of Arthropod Source Records 
+    #   of the Surveillance Activity known?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"), 
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceRecordsNumber",
+    #   Label="Arthropod Source Record Number",
+    #   Definition="The full number of Arthropod Source Records of the 
+    #   Surveillance Activity",
+    #   Type="String",
+    #   Mandatory="Yes"), 
+    
+    
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordsNumber",
-      Label="Arthropod Source Record Number",
-      Definition="The full number of Arthropod Source Records of the 
-      Surveillance Activity",
-      Type="String",
-      Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordsNumberActiveKnown",
-      Label="Active Arthropod Source Record Number Known",
-      Definition="Answe to the question: 'Is the full number of Arthropod Source Records of the 
-      Surveillance Activity that are actively obtained known?'",
-      Type="Boolean",
-      Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordsNumberActive",
-      Label="Active Arthropod Source Record Number",
-      Definition="The full number of Arthropod Source Records of the 
-      Surveillance Activity that are actively obtained",
-      Type="String",
-      Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordInclusionCriteriaActiveAny",
+      Variable="SurveillanceActivitySourceRecordInclusionCriteriaAnyActive",
       Label="Any Active Arthropod Source Record Inclusion Criteria",
       Definition="Answer to the question: 'Is there any criteria to include 
       specific Arthropod Source Records actively obtained?'",
@@ -472,6 +517,87 @@ arthro_source<-
       collected actively, if any",
       Type="String",
       Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActiveKnown",
+      Label="Active Arthropod Source Record Number Known",
+      Definition="Answe to the question: 'Is the full number of Arthropod Source Records of the 
+      Surveillance Activity that are actively obtained known?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActive",
+      Label="Active Arthropod Source Record Number",
+      Definition="The full number of Arthropod Source Records of the 
+      Surveillance Activity that are actively obtained",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActivePerTypeKnown",
+      Label="Number Arthropod Source Records Obtained Actively Per Type Know",
+      Definition="Answer to the question: 'Is the number of Records obtained actively per Arthropod 
+      Source type (biotic, abiotic, and type) known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActivePerType",
+      Label="Number Arthropod Source Records Obtained Actively Per Type",
+      Definition="The number of Records obtained actively per Arthropod Source type 
+      (biotic, abiotic, and type)",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActiveBySourceKnown",
+      Label="Number Records Actively Obtained per Arthropod Source Known",
+      Definition="Answer to the question: 'Is the number of Records actively obtained per
+      Arthropod Source known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActiveBySource",
+      Label="Number Records Actively Obtained per Arthropod Source",
+      Definition="The number of Records Actively obtained per Arthropod Source",
+      Type="String",
+      Mandatory="Yes"),
+    
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceRecordInclusionCriteriaActiveAny",
+    #   Label="Any Active Arthropod Source Record Inclusion Criteria",
+    #   Definition="Answer to the question: 'Is there any criteria to include 
+    #   specific Arthropod Source Records actively obtained?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceRecordInclusionCriteriaActive",
+    #   Label="Active Arthropod Source Record Inclusion Criteria",
+    #   Definition="The specific criteria for the inclusion of Arthropod Source Records
+    #   actively collected, if any",
+    #   Type="String",
+    #   Mandatory="Yes"),
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceRecordExclusionCriteriaAnyActive",
+    #   Label="Any Active Arthropod Source Record Exclusion Criteria",
+    #   Definition="Answer to the question: 'Is there any criteria to exclude 
+    #   specific Arthropod Source Records collected actively?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceRecordExclusionCriteriaActive",
+    #   Label="Active Arthropod Source Record Exclusion Criteria",
+    #   Definition="The specific criteria for the exclusion of Arthropod Source Records
+    #   collected actively, if any",
+    #   Type="String",
+    #   Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivitySourceRecordPresenceAbsenceActive",
@@ -573,22 +699,22 @@ arthro_source<-
     
     
     
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordsNumberPassiveKnown",
-      Label="Passive Arthropod Source Record Number",
-      Definition="Answe to the question: 'Is the full number of Arthropod Source Records of the 
-      Surveillance Activity that are passively obtained known?'",
-      Type="Boolean",
-      Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="SurveillanceActivitySourceRecordsNumberPassive",
-      Label="Passive Arthropod Source Record Number",
-      Definition="The full number of Arthropod Source Records of the 
-      Surveillance Activity that are passively obtained",
-      Type="String",
-      Mandatory="Yes"), 
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceRecordsNumberPassiveKnown",
+    #   Label="Passive Arthropod Source Record Number",
+    #   Definition="Answe to the question: 'Is the full number of Arthropod Source Records of the 
+    #   Surveillance Activity that are passively obtained known?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"), 
+    # 
+    # data.frame(
+    #   Variable="SurveillanceActivitySourceRecordsNumberPassive",
+    #   Label="Passive Arthropod Source Record Number",
+    #   Definition="The full number of Arthropod Source Records of the 
+    #   Surveillance Activity that are passively obtained",
+    #   Type="String",
+    #   Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivitySourceRecordInclusionCriteriaPassiveAny",
@@ -729,41 +855,50 @@ arthro_source<-
     #   Type="Boolean",
     #   Mandatory="Yes"),
     
-    data.frame(
-      Variable="SurveillanceActivityFieldArthropodSpecimenCodeStructure",
-      Label="Field Arthropod Source Specimen Code Structure",
-      Definition="Explain the nomenclature of the field Arthropod Source Record Specimen 
-      Codes of the Surveillance Activity (e.g., 'first letter refers to the pathogen, the next 
-      two letters refer to the country, the next letter refers to the taxonomic group, 
-      the number is the sequential number of the Arthropod Source in the 
-      Surveillance Activity code, and the number is the sequential number of the 
-      Arthropod Source Record and finally a sequential letter for the specimen')",
-      Type="String",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="SurveillanceActivityFieldArthropodSpecimenCodeStructure",
+    #   Label="Field Arthropod Source Specimen Code Structure",
+    #   Definition="Explain the nomenclature of the field Arthropod Source Record Specimen 
+    #   Codes of the Surveillance Activity (e.g., 'first letter refers to the pathogen, the next 
+    #   two letters refer to the country, the next letter refers to the taxonomic group, 
+    #   the number is the sequential number of the Arthropod Source in the 
+    #   Surveillance Activity code, and the number is the sequential number of the 
+    #   Arthropod Source Record and finally a sequential letter for the specimen')",
+    #   Type="String",
+    #   Mandatory="Yes"),
+    
     
     data.frame(
-      Variable="SurveillanceActivityFieldArthropodSpecimenPerSourceRecordKnownActive",
-      Label="Active Field Arthropod Source Specimen Number Known",
-      Definition="Answer to the question: 'Is the number of Specimens created per actively
-      collected Arthropod Source Records known a priori?",
+      Variable="SurveillanceActivityFieldArthropodSpecimens",
+      Label="Field Arthropod Specimens",
+      Definition="Answer to the question: 'Are Arthropod Specimens
+      generated from field Arthropod Source Records in the current Surveillance Activity?'",
       Type="Boolean",
       Mandatory="Yes"),
     
-    data.frame(
-      Variable="SurveillanceActivityFieldArthropodSpecimenPerSourceRecordActive",
-      Label="Active Field Arthropod Source Specimen Number",
-      Definition="The number of Specimens to be created from actively collected Arthropod
-      Source Records",
-      Type="String",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="SurveillanceActivityFieldArthropodSpecimenPerSourceRecordKnownActive",
+    #   Label="Active Field Arthropod Source Specimen Number Known",
+    #   Definition="Answer to the question: 'Is the number of Specimens created per actively
+    #   collected Arthropod Source Records known a priori?",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
     
-    data.frame(
-      Variable="SurveillanceActivityFieldArthropodSpecimenNumberArthropodsActive",
-      Label="Arthropod Number per Specimen from Active Field Source Record",
-      Definition="The number of Arthropods per Field Source Specimen created from actively
-      collected Arthropod Source Records",
-      Type="String",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="SurveillanceActivityFieldArthropodSpecimenPerSourceRecordActive",
+    #   Label="Active Field Arthropod Source Specimen Number",
+    #   Definition="The number of Specimens to be created from actively collected Arthropod
+    #   Source Records",
+    #   Type="String",
+    #   Mandatory="Yes"),
+    
+    # data.frame(
+    #   Variable="SurveillanceActivityFieldArthropodSpecimenNumberArthropodsActive",
+    #   Label="Arthropod Number per Specimen from Active Field Source Record",
+    #   Definition="The number of Arthropods per Field Source Specimen created from actively
+    #   collected Arthropod Source Records",
+    #   Type="String",
+    #   Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityFieldArthropodSpecimenCreationMethodActive",
@@ -781,6 +916,25 @@ arthro_source<-
       Type="String",
       Mandatory="No"),
     
+    data.frame(
+      Variable="SurveillanceActivityFieldArthropodSpecimenFieldStorageActive",
+      Label="Field Arthropod Source Specimens from Active Source Record Field Storage",
+      Definition="Method to store the Arthropod Source Specimens from actively collected
+      Arthropod Source Records while in the field under the current Surveillance Activity",
+      Type="Mutiple selection",
+      Mandatory="Yes"),    
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldArthropodSpecimenCodeStructureActive",
+      Label="Field Arthropod Source Specimen Actively Collected Code Structure",
+      Definition="Explain the nomenclature of the Codes of Specimend from actively collected 
+      field Arthropod Source Records during the Surveillance Activity (e.g., 'first letter refers to the pathogen, the next 
+      two letters refer to the country, the next letter refers to the taxonomic group, 
+      the number is the sequential number of the Arthropod Source in the 
+      Surveillance Activity code, and the number is the sequential number of the 
+      Arthropod Source Record and finally a sequential letter for the specimen')",
+      Type="String",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityFieldArthropodSpecimenInclusionCriteriaAnyActive",
@@ -815,28 +969,12 @@ arthro_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityFieldArthropodSpecimenFieldStorageActive",
-      Label="Field Arthropod Source Specimens from Active Source Record Field Storage",
-      Definition="Method to store the Arthropod Source Specimens from actively collected
-      Arthropod Source Records while in the field under the current Surveillance Activity",
-      Type="Mutiple selection",
-      Mandatory="Yes"),    
-    
-    data.frame(
       Variable="SurveillanceActivityFieldArthropodSpecimenLabStorageActive",
       Label="Field Arthropod Source Specimens from Active Source Record Laboratory Storage",
       Definition="Method to store the Arthropod Source Specimens from actively collected
       Arthropod Source Records in the laboratory under the current Surveillance Activity",
       Type="Mutiple selection",
       Mandatory="Yes"),
-    
-    
-    
-    
-    
-
-
-    
     
     
     data.frame(
@@ -854,6 +992,26 @@ arthro_source<-
       collected Arthropod Source Records",
       Type="String",
       Mandatory="No"),
+
+    data.frame(
+      Variable="SurveillanceActivityFieldArthropodSpecimenFieldStoragePassive",
+      Label="Field Arthropod Source Specimens from Passive Source Record Field Storage",
+      Definition="Method to store the Arthropod Source Specimens from passively collected
+      Arthropod Source Records while in the field under the current Surveillance Activity",
+      Type="Mutiple selection",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldArthropodSpecimenCodeStructurePassive",
+      Label="Field Arthropod Source Specimen Passively Collected Code Structure",
+      Definition="Explain the nomenclature of the Codes of Specimens from pasively collected 
+      field Arthropod Source Records during the Surveillance Activity (e.g., 'first letter
+      refers to the pathogen, the next two letters refer to the country, the next letter
+      refers to the taxonomic group, the number is the sequential number of the Arthropod
+      Source in the Surveillance Activity code, and the number is the sequential number of the 
+      Arthropod Source Record and finally a sequential letter for the specimen')",
+      Type="String",
+      Mandatory="Yes"),
     
     
     data.frame(
@@ -889,21 +1047,12 @@ arthro_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityFieldArthropodSpecimenFieldStoragePassive",
-      Label="Field Arthropod Source Specimens from Passive Source Record Field Storage",
-      Definition="Method to store the Arthropod Source Specimens from passively collected
-      Arthropod Source Records while in the field under the current Surveillance Activity",
-      Type="Mutiple selection",
-      Mandatory="Yes"),    
-    
-    data.frame(
       Variable="SurveillanceActivityFieldArthropodSpecimenLabStoragePassive",
       Label="Field Arthropod Source Specimens from Passive Source Record Laboratory Storage",
       Definition="Method to store the Arthropod Source Specimens from passively collected
       Arthropod Source Records in the laboratory under the current Surveillance Activity",
       Type="Mutiple selection",
       Mandatory="Yes"),
-    
     
     
     data.frame(
@@ -923,7 +1072,7 @@ arthro_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityStoreArthropodSpecimenProjectOrigin",
+      Variable="SurveillanceActivityStoredArthropodSpecimenProjectOrigin",
       Label="Stored Arthropod Specimens Project Origin",
       Definition="The code of the Projects under which stored Arthropod Specimens
       included in the current Surveillance Activity were originated",

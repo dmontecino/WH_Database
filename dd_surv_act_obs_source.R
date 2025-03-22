@@ -149,27 +149,27 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivityCaptivityCategoryBySpecies",
-      Label="Group Source Captivity Status Per Species",
+      Label="Group Source Captivity Status Per Group",
       Definition="Description of the captivity status of the Group Sources included in the Surveillance 
-      Activity per species (e.g., 'groups of civets were obtained from farms. 
+      Activity per Group (e.g., 'groups of civets were obtained from farms. 
       The group of bats from markets)",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityCaptiveFacilityBySpecies",
-      Label="Group Source Captivitity Facility Per Species",
+      Label="Group Source Captivitity Facility Per Group",
       Definition="Description of the captivity facility of the captive Group Sources included in the Surveillance 
-      Activity per species (e.g., 'Groups of civets were obtained from farm A, B, C')",
+      Activity per Group (e.g., 'Groups of civets were obtained from farm A, B, C')",
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivityLocationCaptiveFacilityBySpecies",
-      Label="Group Source Location of Captivitity Facilities Per Species",
+      Label="Group Source Location of Captivitity Facilities Per Group",
       Definition="Description of the location of the captivity facilities of the
       captive Group Sources included in the Surveillance 
-      Activity per species (e.g., 'farm A where we collected groups of civets and 
+      Activity per Group (e.g., 'farm A where we collected groups of civets and 
       groups of parrots is located in town X, Province Y')",
       Type="String",
       Mandatory="Yes"),
@@ -211,6 +211,20 @@ group_source<-
       Type="String",
       Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityNumberSourcesKnown",
+      Label="Group Source Number Known",
+      Definition="Answer to the question: 'Is the number of Group Sources included in 
+      the Surveillance Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberSources",
+      Label="Group Source Number",
+      Definition="The number of Group Sources included in the Surveillance Activity",
+      Type="Integer",
+      Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceMembersInclusionCriteriaAny",
@@ -245,7 +259,6 @@ group_source<-
       of the species of interest, if any, by group",
       Type="String",
       Mandatory="Yes"),
-    
     
     data.frame(
       Variable="SurveillanceActivitySourceFollowedOverTime",
@@ -687,12 +700,18 @@ group_source<-
     #   Type="Multiple selection",
     #   Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityGroupSourceRecordNumberBySpeciesCaptivityKnown",
+      Label="Number Group Source Records Per Species Captivity Known",
+      Definition="Answer to the question: 'Is the number of Group Source Records per species and 
+      captivity category known?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
     
     data.frame(
       Variable="SurveillanceActivityGroupSourceRecordNumberBySpeciesCaptivity",
       Label="Number Group Source Records Per Species Captivity",
-      Definition="Number of Group Source Records from per species and 
-      captivity category",
+      Definition="The number of Group Source Records per species and captivity category",
       Type="String",
       Mandatory="Yes"), 
     
@@ -800,6 +819,44 @@ group_source<-
       Mandatory="Yes"),
     
     
+    
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldGroupSourceSpecimensPerSpeciesCaptivityKnown",
+      Label="Number Field Group Source Specimens Per Species Captivity Known",
+      Definition="Answer to the question: 'Is the number of field Group Source 
+      Specimens per Species and Captivity status to be collected during the Surveillance
+      Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldGroupSourceSpecimensPerSpeciesCaptivity",
+      Label="Number Field Group Source Specimens Per Species Captivity",
+      Definition="The number of field Group Source Specimens per Species and Captivity 
+      status to be collected during the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldSpecimensPerGroupSourceKnown",
+      Label="Number Field Specimens Per Group Source Known",
+      Definition="Answer to the question: 'Is the number of field
+      Specimens per Group Source to be collected during the Surveillance
+      Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldSpecimensPerGroupSource",
+      Label="Number Field Specimens Per Group Source",
+      Definition="The number of field Specimens per Group Source to be collected
+      during the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
     # data.frame(
     #   Variable="SurveillanceActivityStoredCarcassNewSpecimens",
     #   Label="Stored Carcasses New Specimens",
@@ -831,6 +888,11 @@ group_source<-
     #   during the Surveillance Activity", 
     #   Type="String",
     #   Mandatory="No"),
+    
+    
+    
+    
+    
     
     data.frame(
       Variable="SurveillanceActivityNewSpecimenCodeStructure",
@@ -885,11 +947,11 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNumberNewGroupSourceSpecimensKnown",
-      Label="Number Field Group Source Specimens Known",
+      Variable="SurveillanceActivityNumberNewGroupSourceSpecimensByTypeSpeciesKnown",
+      Label="Number Field Group Source Specimens By Type Species Known",
       Definition="Answer to the question: 'Is the number of Specimens from Group 
       Sources to be collected in the field as part of the Surveillance Activity known
-      a priori?'",
+      a priori by type and species?'",
       Type="Boolean",
       Mandatory="Yes"),
     
@@ -972,10 +1034,10 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNumberStoredGroupSourceSpecimensKnown",
-      Label="Number Stored Group Source Specimens Known",
+      Variable="SurveillanceActivityNumberStoredGroupSourceSpecimensByTypeSpeciesKnown",
+      Label="Number Stored Group Source Specimens By Type Species Known",
       Definition="Answer to the question: 'Is the number of stored Specimens from Group 
-      Sources to be included in the Surveillance Activity known
+      Sources per type and species to be included in the Surveillance Activity known
       a priori?'",
       Type="Boolean",
       Mandatory="Yes"),
@@ -984,7 +1046,24 @@ group_source<-
       Variable="SurveillanceActivityNumberStoredGroupSourceSpecimensByTypeSpecies",
       Label="Number Stored Group Source Specimens By Type Species",
       Definition="The number of stored Specimens from Group 
-        Sources to be included in the Surveillance Activity by type and species",
+        Sources per type and species to be included in the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberGroupSourceSpecimensByTypeSpeciesKnown",
+      Label="Number Group Source Specimens by Type Species Known",
+      Definition="Answer to the question: 'Is the number of total Specimens (new and 
+    stored) from Group Sources per type and species to be included in the Surveillance
+    Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberGroupSourceSpecimensByTypeSpecies",
+      Label="Number Group Source Specimens By Type Species",
+      Definition="The number of total Specimens from Group Sources per type and species
+    to be included in the Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
     
@@ -1180,6 +1259,24 @@ group_source<-
       Type="String",
       Mandatory="Yes"),
     
+    data.frame(
+      Variable="SurveillanceActivityFieldVisitNumberGroupSpecimensKnown",
+      Label="Number Group Specimens Per Field Visit Known", 
+      Definition="Answer to the question: 'Is the total number of Group Specimens per
+      Field Visit for the current Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldVisitNumberGroupSpecimens",
+      Label="Number Group Specimens Per Field Visit", 
+      Definition="The number of Group Specimens to obtain Records per Field Visit
+      of the current Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
+    
     #Locations
     
     data.frame(
@@ -1330,7 +1427,7 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityLocationNumberFieldGroupSourceRecordsKnown",
+      Variable="SurveillanceActivityLocationNumberSourceRecordsKnown",
       Label="Number Group Source Records Per Location Known", 
       Definition="Answer to the question: 'Is the total number of Group Source Records per
       Location for the current Surveillance Activity known?'",
@@ -1338,7 +1435,7 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityLocationNumberFieldGroupSourceRecords",
+      Variable="SurveillanceActivityLocationNumberSourceRecords",
       Label="Number Group Source Records Per Location", 
       Definition="The number of Group Sources to obtain Records from at each Location
       of the current Surveillance Activity",
@@ -1346,7 +1443,7 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityLocationNumberFieldGroupSourceRecordsPerSurveyKnown",
+      Variable="SurveillanceActivityLocationNumberSourceRecordsPerSurveyKnown",
       Label="Number Group Source Records Per Location Per Survey Known", 
       Definition="Answer to the question: 'Is the total number of Group Source Records per
       survey to each Location of the current Surveillance Activity known?'",
@@ -1354,10 +1451,42 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityLocationNumberFieldGroupSourceRecordsPerSurvey",
+      Variable="SurveillanceActivityLocationNumberSourceRecordsPerSurvey",
       Label="Number Group Source Records Per Location Per Survey", 
       Definition="The number of Group Source Records per survey to each Location
       of the current Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityLocationNumberSpecimensKnown",
+      Label="Number Group Source Specimens Per Location Known", 
+      Definition="Answer to the question: 'Is the total number of Group Source Specimens per
+    each Location of the current Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityLocationNumberSpecimens",
+      Label="Number Group Source Specimens Per Location", 
+      Definition="The number of Group Source Specimens per Location
+      of the current Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityLocationNumberSpecimensPerSurveyKnown",
+      Label="Number Group Source Specimens Per Location Per Survey Known", 
+      Definition="Answer to the question: 'Is the total number of Group Source Specimens per
+    survey per each Location of the current Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityLocationNumberSpecimensPerSurvey",
+      Label="Number Group Source Specimens Per Location Per Survey", 
+      Definition="The total number of Group Source Specimens per
+    survey per each Location of the current Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
     
@@ -1526,6 +1655,22 @@ group_source<-
       Mandatory="Yes"),
     
     data.frame(
+      Variable="SurveillanceActivityEventNumberFieldGroupSpecimensPerEventRecordsKnow",
+      Label="Number Group Specimens Per Event Known",
+      Definition="Answer to the question: 'Is the number of Group Specimens
+      per Event of the the Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityEventNumberGroupSpecimensPerEvent",
+      Label="Number Group Specimens Per Event",
+      Definition="The number of Group Specimens per Event of the the Surveillance
+    Activity known",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
       Variable="SurveillanceActivityEventClustering",
       Label="Events Clustering", 
       Definition="Answer to the question: 'Are the Events of the current Surveillance
@@ -1570,7 +1715,7 @@ group_source<-
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivityFieldGroupSourceCollectionMethodReferences",
+      Variable="SurveillanceActivityCollectionMethodReferences",
       Label="Group Source Collection Method References",
       Definition="Name the references supporting the methods used to collect
       Group Sources",

@@ -138,19 +138,34 @@ environmental_source<-
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNumberSourcesKnown",
-      Label="Environmental Source Number Known",
-      Definition="Answer to the question: 'Is the number of Environmental Sources included in 
+      Variable="SurveillanceActivityNumberAbioticSourcesKnown",
+      Label="Environmental Source Number Abiotic Sources Known",
+      Definition="Answer to the question: 'Is the number of abiotic Environmental Sources included in 
       the Surveillance Activity known a priori?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNumberSources",
-      Label="Environmental Source Number",
-      Definition="The number of Environmental Sources included in the Surveillance Activity",
+      Variable="SurveillanceActivityNumberAbioticSources",
+      Label="Environmental Source Number Abiotic Sources",
+      Definition="The number of abiotic Environmental Sources included in the Surveillance Activity",
       Type="Integer",
-      Mandatory="Yes"),    
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberBioticSourcesKnown",
+      Label="Environmental Source Number Biotic Sources Known",
+      Definition="Answer to the question: 'Is the number of biotic Environmental Sources included in 
+      the Surveillance Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberBioticSources",
+      Label="Environmental Source Number Biotic Sources",
+      Definition="The number of biotic Environmental Sources included in the Surveillance Activity",
+      Type="Integer",
+      Mandatory="Yes"),
     
     data.frame(
       Variable="SurveillanceActivitySourceList",
@@ -267,8 +282,185 @@ environmental_source<-
       Type="String", # yes, no
       Mandatory="Yes"),
     
+    # data.frame(
+    #   Variable="SurveillanceActivityCollectionPassive",
+    #   Label="Field Envinromental Source Record Opportunistic Collection",
+    #   Definition="Answer to the question:'Are biotic Envinromental Source Records
+    #   obtained from the field opportunistically (e.g., sample of feces opprotunistically
+    #   found)?'",
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
+
     data.frame(
-      Variable="SurveillanceActivityEnvironmentalSourceRecordCodeStructure",
+      Variable="SurveillanceActivityCollectionActive",
+      Label="Field Environmental Source Record Active Collection",
+      Definition="Answer to the question:'Are Environmental Source Records obtained
+      from the field through an active collection strategy (e.g., eDNA)?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveDeviceTypes",
+      Label="Field Environmental Source Record Active Collection Device Types", 
+      Definition="The devices types used to actively collect Environmental Source Records in the 
+        Surveillance Activity",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveMethodsByTaxa",
+      Label="Field Environmental Source Record Active Collection Methods by Taxa", 
+      Definition="Description of the methods employed to actively obtained Environmental
+      Source Records from the field during the Surveillance Activity by Taxa",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveMethodReferences",
+      Label="Field Environmental Source Record Active Collection Methods by Taxa References", 
+      Definition="The references associated with the methods employed to actively obtained
+      Environmental Source Records from the field during the Surveillance Activity by Taxa",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveMethodExpectedEffort",
+      Label="Field Environmental Source Record Active Collection Expected Effort", 
+      Definition="Field Environmental Source Record Active Collection methods to obtain Arthropod 
+      Source Records",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveOtherAttributes",
+      Label="Field Environmental Source Record Active Collection Other Attributes", 
+      Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
+      other properties of the Collections to actively Environmental Source Records 
+      that are not included in the data model?'",
+      Type="Boolean",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveListDefinitionOtherAtttributes",
+      Label="Field Environmental Source Record Active Collection Definition Other Attributes", 
+      Definition="Description of other attributes of interest for actively collected
+      Environmental Source Records that are not included in the data model. Provide a list with
+      the name of the attributes and their definition",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveNumberKnown",
+      Label="Number Active Environmental Collections Known",
+      Definition="Answer to the question:'Is the number of active Environmental Collections 
+      of the Surveillance Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionActiveNumber",
+      Label="Number Active Environmental Collections",
+      Definition="The number of active Environmental Collections included in the
+      Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceNumberCollectionActivePerSourceKnown",
+      Label="Field Environmental Source Number Active Environmental Collection Known",
+      Definition="Answer to the question:'Is the number of active Collections per Environmental
+      Source included in the Surveillance Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceNumberCollectionActivePerSource",
+      Label="Field Environmental Source Number Active Collection",
+      Definition="The number of active Collections per Environmental Source included in the
+      Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionPassive",
+      Label="Field Envinromental Source Record Opportunistic Collection",
+      Definition="Answer to the question:'Are biotic Envinromental Source Records
+      obtained from the field opportunistically (e.g., sample of feces opprotunistically
+      found)?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionPassiveMethodsByTaxa",
+      Label="Field Environmental Source Record Opportunistic Collection Methods by Taxa", 
+      Definition="Description of the methods employed to opportunistically obtained Environmental
+      Source Records from the field during the Surveillance Activity by Taxa",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionPassiveMethodReferences",
+      Label="Field Environmental Source Record Opportunistic Collection Methods by Taxa References", 
+      Definition="The references associated with the methods employed to opportunistically obtained
+      Environmental Source Records from the field during the Surveillance Activity by Taxa",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionPassiveOtherAttributes",
+      Label="Field Environmental Source Record Opportunistic Collection Other Attributes", 
+      Definition="Answer to the question: 'Does the Surveillance Activity involve tracking 
+      other properties of the Collections to opportunistically obtain Environmental Source Records 
+      that are not included in the data model?'",
+      Type="Boolean",
+      Mandatory="Yes"),  
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionPassiveListDefinitionOtherAtttributes",
+      Label="Field Environmental Source Record Opportunistic Collection Definition Other Attributes", 
+      Definition="Description of other attributes of interest for opportunistically collected
+      Environmental Source Records that are not included in the data model. Provide a list with
+      the name of the attributes and their definition",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionOtherSourceTypes",
+      Label="Field Envionmental Source Record Collection Other Source Types", 
+      Definition="Answer to the question: 'Does the Collection of Environmental Source 
+      Records also target other Source types?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionNumberFieldSpecimensKnown",
+      Label="Number Field Environmental Specimens Per Collection Known",
+      Definition="Answer to the question: 'Is the number of Environmental Specimens
+      to obtain per Collecton of the the Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionNumberFieldSpecimens",
+      Label="Number Field Environmental Specimens Per Collection",
+      Definition="The number of Envinromental Source Records 
+      to obtain per Collection of the the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
+    
+    
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordCodeStructure",
       Label="Surveillance Activity Environmental Source Record Code Structure",
       Definition="Explain the nomenclature of  Environmental Source Record Codes of the 
       Surveillance Activity (e.g., 'first letter refers to the pathogen, the next 
@@ -328,90 +520,356 @@ environmental_source<-
       Type="String",
       Mandatory="Yes"),
     
+    
+    
+    
+    
+    
+    
+    
     data.frame(
-      Variable="SurveillanceActivitySourceRecordClustering",
-      Label="Environmental Source Records Clustering",
-      Definition="Answer to the question: 'Are Environmental Source Records clustered in units 
-      smaller than the Event?'",
+      Variable="SurveillanceActivitySourceRecordsNumberActiveKnown",
+      Label="Number Environmental Source Records Obtained Actively Known",
+      Definition="Answer to the question: 'Is the number of Environmental Source Records
+      actively obtained during the Surveillance Activity known a priori?'",
       Type="Boolean",
       Mandatory="Yes"), 
     
     data.frame(
-      Variable="SurveillanceActivitySourceRecordClusteringDescription",
-      Label="Environmental Source Records Cluster Description",
-      Definition="Description of units smaller than Event clustering the Environmental Source
-      Records",
+      Variable="SurveillanceActivitySourceRecordsNumberActive",
+      Label="Number Environmental Source Records Obtained Actively",
+      Definition="The number of Environmental Source Records
+      actively obtained during the Surveillance Activity",
       Type="String",
-      Mandatory="Yes"), 
-    
-    data.frame(
-      Variable="SurveillanceActivityFieldEnvironmentalSpecimen",
-      Label="Field Environmental Source Specimens",
-      Definition="Answer to the question: 'In the current Surveillance Activity,
-      are field Environmental Specimens collected?'",
-      Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenTypes",
-      Label="Field Environmental Source Specimen Types",
-      Definition="The type of field Environmental Specimen Types included in 
-      the Surveillance Activity",
+      Variable="SurveillanceActivitySourceRecordsNumberActivePerTypeKnown",
+      Label="Number Environmental Source Records Obtained Actively Per Type Know",
+      Definition="Answer to the question: 'Is the number of Records obtained actively per Environmental 
+      Source type (biotic, abiotic, and type) known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActivePerType",
+      Label="Number Environmental Source Records Obtained Actively Per Type",
+      Definition="The number of Records obtained actively per Environmental Source type 
+      (biotic, abiotic, and type)",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActiveBySourceKnown",
+      Label="Number Records Actively Obtained per Environmental Source Known",
+      Definition="Answer to the question: 'Is the number of Records actively obtained per
+      Environmental Source known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordsNumberActiveBySource",
+      Label="Number Records Actively Obtained per Environmental Source",
+      Definition="The number of Records Actively obtained per Environmental Source",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionNumberActiveSourceRecordsKnown",
+      Label="Number Environmental Source Records Actively Obtained per Collection Known",
+      Definition="Answer to the question: 'Is the number of Environmental Source Records
+      per active Collection known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivityCollectionNumberActiveSourceRecords",
+      Label="Number Environmental Source Records Actively Obtained per Collection",
+      Definition="The number of Environmental Source Records
+      per active Collection known a priori",
+      Type="String",
+      Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordClusteringActive",
+      Label="Active Environmental Source Records Clustering",
+      Definition="Answer to the question: 'Are Environmental Source Records obtained actively 
+      clustered in units smaller than the Event?'",
+      Type="Boolean",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="SurveillanceActivitySourceRecordClusteringDescriptionActive",
+      Label="Active Environmental Source Records Clustering Description",
+      Definition="Description of units smaller than Event clustering the Environmental Source
+      Records obtained actively",
+      Type="String",
+      Mandatory="Yes"), 
+    
+    # data.frame(
+    #   Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimens",
+    #   Label="Field Environmental Source Specimens",
+    #   Definition="Answer to the question: 'Are biotic or abiotic Environmental Sources Specimens 
+    #   collected from the field during the Surveillance Activity (actively or opportunistically)?'", 
+    #   Type="Boolean",
+    #   Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenTypesActive",
+      Label="Field Environmental Source Specimen Types Actively Collected",
+      Definition="The type of biotic or abiotic Environmental Source Specimens actively collected 
+      in the field as part of the Surveillance Activity", 
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityFieldEnvironmentalSpecimenCodeStructure",
-      Label="Field Environmental Source Specimen Code Structure",
-      Definition="Explain the nomenclature of the field Environmental Source Record Specimen 
-      Codes of the Surveillance Activity (e.g., 'first letter refers to the pathogen, the next 
-      two letters refer to the country, the next letter refers to the taxonomic group, 
-      the number is the sequential number of the Environmental Source in the 
-      Surveillance Activity code, and the number is the sequential number of the 
-      Environmental Source Record and finally a sequential letter for the specimen')",
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenCollectionMethodActive",
+      Label="Field Environmental Source Specimen Active Collection Method",
+      Definition="Description of the active methods used to obtain biotic or abiotic Specimens 
+      from Environmental Sources in the field during the Surveillance Activity", 
       Type="String",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenCollectionMethod",
-      Label="Field Environmental Source Specimen Collection Method",
-      Definition="Description of the methods used to obtain Specimens from Environmental
-      Sources in the field during the Surveillance Activity", 
-      Type="String",
-      Mandatory="Yes"),
-    
-    data.frame(
-      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenCollectionMethodReferences",
-      Label="Field Environmental Source Specimen Collection Method References",
-      Definition="References asociated with the methods to obtain Specimens from Environmental
-      Sources in the field during the Surveillance Activity", 
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenCollectionMethodReferencesActive",
+      Label="Field Environmental Source Specimen Active Collection Method References",
+      Definition="References asociated with the active methods to obtain biotic or abiotic Specimens
+      from Environmental Sources in the field during the Surveillance Activity", 
       Type="String",
       Mandatory="No"),
     
     data.frame(
-      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenFieldStorage",
-      Label="Field Environmental Specimens Field Storage",
-      Definition="Method to store the new Environmental Source Specimens while 
-      in the field under the current Surveillance Activity",
-      Type="Mutiple selection",
-      Mandatory="Yes"),    
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenFieldStorageActive",
+      Label="Field Environmental Source Specimen Active Field Storage",
+      Definition="Method to store the biotic or abiotic Environmental Source Specimens
+      actively collected in the field during the Surveillance Activity",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    
     
     data.frame(
-      Variable="SurveillanceActivtyNumberFieldSpecimensPerEnvironmentalSourcePerType",
-      Label="Number Field Environmental Specimens per Type",
-      Definition="Number of Specimens per type of Environmental Source in the current 
-      Surveillance Activity. An unknown number, 'at least X', or 'at most X' are accepted
-      resposes",
-      Type="string",
-      Mandatory="Yes"),    
+      Variable="SurveillanceActivityNumberFieldEnvironmentalSourceSpecimensPerTypeKnownActive",
+      Label="Number Field Environmental Source Specimens Actively Collected Per Type Known",
+      Definition="Answer to the question: 'Is the number of biotic or abiotic Environmental Source 
+      Specimens per type to be actively collected during the Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimensLabStorage",
-      Label="Field Environmental Specimens Laboratory Storage",
-      Definition="Method to store the field Environmental Specimens collected during 
-      the current Surveillance Activity in the laboratory",
+      Variable="SurveillanceActivityNumberFieldEnvironmentalSourceSpecimensPerTypeActive",
+      Label="Number Field Environmental Source Specimens Actively Collected Per Type",
+      Definition="The number of biotic or abiotic Environmental Source 
+      Specimens per type to be actively collected during the Surveillance Activity known",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldEnvironmentalSpecimensPerEnvironmentalSourceKnownActive",
+      Label="Number Field Specimens Actively Collected Per Environmental Source Known",
+      Definition="Answer to the question: 'Is the number of biotic or abiotic field
+      Specimens to be actively collected per Environmental Source during the Surveillance
+      Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldEnvironmentalSpecimensPerEnvironmentalSourceActive",
+      Label="Number Field Specimens Actively Collected Per Environmental Source",
+      Definition="The number of biotic or abiotic field
+      Specimens to be actively collected per Environmental Source during the Surveillance
+      Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenCodeStructureActive",
+      Label="Field Environmental Source Specimen Actively Collected Code Structure",
+      Definition="Explain the nomenclature of the Codes of biotic or abiotic
+      Environmental Source Specimens collected actively as part
+      of the Surveillance Activity (e.g., 'first letter refers to the pathogen, 
+      the next two letters refer to the country, the next letter refers to the taxonomic
+      group, the number is the sequential number of the Animal Source in the Surveillance
+      Activity code, and the number is the sequential number of the Specimen')",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenInclusionCriteriaAnyActive",
+      Label="Any New Environmental Source Specimen Actively Collected Inclusion Criteria",
+      Definition="Answer to the question: 'Is there any criteria to include 
+      specific new biotic or abiotic Environmental Source Specimens 
+      actively collected during the Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenInclusionCriteriaActive",
+      Label="New Environmental Source Specimen Actively Collected Inclusion Criteria",
+      Definition="The specific criteria for the inclusion of new biotic or abiotic 
+      Environmental Source Specimens actively collected during
+      the Surveillance Activity, if any, by Specimen Type",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenExclusionCriteriaAnyActive",
+      Label="Any New Environmental Source Specimen Actively Collected Exclusion Criteria",
+      Definition="Answer to the question: 'Is there any criteria to exclude 
+      specific new biotic or abiotic Environmental Source Specimens
+      actively collected during the Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenExclusionCriteriaActive",
+      Label="New Environmental Source Specimen Actively Collected Exclusion Criteria",
+      Definition="The specific criteria for the exclusion of new Environmental Source Specimens,
+      biotic or abiotic, actively collected during the Surveillance Activity,
+      if any, by Specimen Type",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimensLabStorageActive",
+      Label="Field Environmental Specimens Actively Collected Laboratory Storage",
+      Definition="Method to store the biotic or abiotic Environmental Specimens actively 
+      collected in the field during the current Surveillance Activity in the laboratory",
       Type="Mutiple selection",
       Mandatory="Yes"),
+    
+    
+    ## PAssive
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenTypesPassive",
+      Label="Field Environmental Source Specimen Types Opportunistically Collected",
+      Definition="The type of biotic or abiotic Environmental Source Specimens opportunistically collected 
+      in the field as part of the Surveillance Activity", 
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenCollectionMethodPassive",
+      Label="Field Environmental Source Specimen Opportunistic Collection Method",
+      Definition="Description of the opportunistic methods used to obtain biotic or abiotic Specimens 
+      from Environmental Sources in the field during the Surveillance Activity", 
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenCollectionMethodReferencesPassive",
+      Label="Field Environmental Source Specimen Opportunistic Collection Method References",
+      Definition="References asociated with the opportunistic methods to obtain biotic or abiotic Specimens
+      from Environmental Sources in the field during the Surveillance Activity", 
+      Type="String",
+      Mandatory="No"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimenFieldStoragePassive",
+      Label="Field Environmental Source Specimen Opportunistic Field Storage",
+      Definition="Method to store the biotic or abiotic Environmental Source Specimens
+      opportunistically collected in the field during the Surveillance Activity",
+      Type="Multiple selection",
+      Mandatory="Yes"),
+    
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldEnvironmentalSourceSpecimensPerTypeKnownPassive",
+      Label="Number Field Environmental Source Specimens Opportunistically Collected Per Type Known",
+      Definition="Answer to the question: 'Is the number of biotic or abiotic Environmental Source 
+      Specimens per type to be opportunistically collected during the Surveillance Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldEnvironmentalSourceSpecimensPerTypePassive",
+      Label="Number Field Environmental Source Specimens Opportunistically Collected Per Type",
+      Definition="The number of biotic or abiotic Environmental Source 
+      Specimens per type to be opportunistically collected during the Surveillance Activity known",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldEnvironmentalSpecimensPerEnvironmentalSourceKnownPassive",
+      Label="Number Field Specimens Opportunistically Collected Per Environmental Source Known",
+      Definition="Answer to the question: 'Is the number of biotic or abiotic field
+      Specimens to be opportunistically collected per Environmental Source during the Surveillance
+      Activity known?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberFieldEnvironmentalSpecimensPerEnvironmentalSourcePassive",
+      Label="Number Field Specimens Opportunistically Collected Per Environmental Source",
+      Definition="The number of biotic or abiotic field
+      Specimens to be opportunistically collected per Environmental Source during the Surveillance
+      Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenCodeStructurePassive",
+      Label="Field Environmental Source Specimen Opportunistically Collected Code Structure",
+      Definition="Explain the nomenclature of the Codes of biotic or abiotic
+      Environmental Source Specimens collected opportunistically as part
+      of the Surveillance Activity (e.g., 'first letter refers to the pathogen, 
+      the next two letters refer to the country, the next letter refers to the taxonomic
+      group, the number is the sequential number of the Animal Source in the Surveillance
+      Activity code, and the number is the sequential number of the Specimen')",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenInclusionCriteriaAnyPassive",
+      Label="Any New Environmental Source Specimen Opportunistically Collected Inclusion Criteria",
+      Definition="Answer to the question: 'Is there any criteria to include 
+      specific new biotic or abiotic Environmental Source Specimens 
+      opportunistically collected during the Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenInclusionCriteriaPassive",
+      Label="New Environmental Source Specimen Opportunistically Collected Inclusion Criteria",
+      Definition="The specific criteria for the inclusion of new biotic or abiotic 
+      Environmental Source Specimens opportunistically collected during
+      the Surveillance Activity, if any, by Specimen Type",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenExclusionCriteriaAnyPassive",
+      Label="Any New Environmental Source Specimen Opportunistically Collected Exclusion Criteria",
+      Definition="Answer to the question: 'Is there any criteria to exclude 
+      specific new biotic or abiotic Environmental Source Specimens
+      opportunistically collected during the Surveillance Activity?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNewSpecimenExclusionCriteriaPassive",
+      Label="New Environmental Source Specimen Opportunistically Collected Exclusion Criteria",
+      Definition="The specific criteria for the exclusion of new Environmental Source Specimens,
+      biotic or abiotic, opportunistically collected during the Surveillance Activity,
+      if any, by Specimen Type",
+      Type="String",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityFieldEnvironmentalSourceSpecimensLabStoragePassive",
+      Label="Field Environmental Specimens Opportunistically Collected Laboratory Storage",
+      Definition="Method to store the biotic or abiotic Environmental Specimens opportunistically 
+      collected in the field during the current Surveillance Activity in the laboratory",
+      Type="Mutiple selection",
+      Mandatory="Yes"),
+    
+    
+    
+    
+    
     
     data.frame(
       Variable="SurveillanceActivityStoredEnvironmentalSourceSpecimens",
@@ -478,20 +936,39 @@ environmental_source<-
       Mandatory="Yes"),
 
     data.frame(
-      Variable="SurveillanceActivityNumberStoredEnvironmentalSourceSpecimensKnown",
-      Label="Number Stored Environmental Specimens Known",
+      Variable="SurveillanceActivityNumberStoredEnvironmentalSourceSpecimensByTypeKnown",
+      Label="Number Stored Environmental Specimens By Type Known",
       Definition="Answer to the question: 'Is the number of stored Environmental Specimens
       to be included in the Surveillance Activity known a priori?'",
       Type="Boolean",
       Mandatory="Yes"),
     
     data.frame(
-      Variable="SurveillanceActivityNumberStoredEnvironmentalSourceSpecimensByTypeSpecies",
-      Label="Number Stored Environmental Specimen Specimens",
+      Variable="SurveillanceActivityNumberStoredEnvironmentalSourceSpecimensByType",
+      Label="Number Stored Environmental Specimens",
       Definition="The number of stored Environmental Specimens to be included in the
       Surveillance Activity",
       Type="String",
       Mandatory="Yes"),
+    
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberEnvironmentalSourceSpecimensByTypeKnown",
+      Label="Number Environmental Source Specimens by Type Species Known",
+      Definition="Answer to the question: 'Is the number of total Specimens (new and 
+    stored) from Environmental Sources per type to be included in the Surveillance
+    Activity known a priori?'",
+      Type="Boolean",
+      Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SurveillanceActivityNumberEnvironmentalSourceSpecimensByType",
+      Label="Number Environmental Source Specimens By Type Species",
+      Definition="The number of total Specimens (new and  stored) from Environmental
+      Sources per type to be included in the Surveillance Activity",
+      Type="String",
+      Mandatory="Yes"),
+    
     
     data.frame(
       Variable="SurveillanceActivityEnvironmentalSourceSpecimenPooling",
@@ -1141,7 +1618,7 @@ environmental_source<-
     Mandatory="Yes"), 
   
   data.frame(
-    Variable="SurveillanceActivityCollectionNumberFieldEnvironmentalSpecimensKnown",
+    Variable="SurveillanceActivityCollectionNumberFieldSpecimensKnown",
     Label="Number Environmental Specimens Per Collection Known",
     Definition="Answer to the question: 'Is the number of Environmental Specimens 
       per Collection of the the Surveillance Activity known'?",
@@ -1149,7 +1626,7 @@ environmental_source<-
     Mandatory="Yes"),
   
   data.frame(
-    Variable="SurveillanceActivityCollectionNumberFieldEnvironmentalSpecimens",
+    Variable="SurveillanceActivityCollectionNumberFieldSpecimens",
     Label="Number Environmental Specimens Per Collection",
     Definition="Description of the number of Environmental Specimens per Collection 
       of the Surveillance Activity",
