@@ -1,11 +1,42 @@
 <!-- # Event {.unnumbered} -->
 
-An Event in the data model refers to a distinct wildlife health event that occurs at a specific longitude and latitude on a particular date (time stamp). A single Event (point) can include between zero Collections (e.g., opportunistic detection of Sources) up to a indefinite number of Collections.
+In the data model, an **Event** represents a distinct wildlife health event recorded at a specific longitude, latitude, and timestamp. Each **Event** is a point that can contain zero **Collections** (opportunistic detections of **Sources**) up to  an unlimited number of **Collections**.
 
-The definition of a wildlife health event, and thus what an 'Event' represents, will inevitably vary depending on the Surveillance Activity. For example, in active surveillance efforts, an Event can refer to the site where animals are captured, starting at time *t*, to obtain Specimens, the site and time where a dead dead animal is found during a ranger patrol, the site and time where water is collected from a pond. In the case of surveillance for vector-borne diseases, an Event can represent a site where one or several traps for vectors are deployed at time X. In the case of beached fish, an Event can represent the position and time of recording of each individual dead fish in one extreme, or the total count of dead fish across the beach reported as a single point in the other extreme. In the context of a wet market, the definition of Event can be applied to the market, to vendors, to the stalls of vendors, or to the cages in the stalls at time *t*. For study A the Event could the grid cell where traps are deployed, whilst for study B it could each trap within a grid cell. 
+The definition of a "wildlife health event", and therefore, what an **Event** represents in a **Surveillance Activity** will inevitably vary depending on the main epidemiological unit of interest and goals. Examples include:
 
-Moreover, the presence of at least one Source could be needed to establish an Event. For example, a dead animal found during a ranger patrol at time *t* leads to an Event. In Active Surveillance, an **Event might not have any Source, for example, a capturing effort starting at time *t* that ends with no animals captured**. Additionally, the definition of an Event can include or not healthy animals. In the example of the dead animal found by the ranger at time *t*, it could be possible that the Event definition includes the documentation of healthy animals or not.
+* A site where *Animals* are captured at time *t* for **Specimen** collection
+* The position and time a dead animal is found during a ranger patrol
+* A position and time where water from a pond is sampled for analysis
+* A site where one or several traps for vectors are deployed
 
-Consequently, an Event in wildlife health surveillance can represent different entities depending on the objectives and the methodology used to collect wildlife health data. **It is up to the user to define what unit the Event represents and report it in the Surveillance Activity metadata. It is recommended that each Surveillance Activity has a single definition of what an Event represents**. 
+In the case of beached fish, an **Event** can represent the position and time of recording of each individual dead fish in one extreme, or the total count of dead fish across the beach reported as a single point in the other extreme. In the context of a wet market, the definition of **Event** can be applied to the market, to vendors, to the stalls of vendors, or to the cages in the stalls at time *t*. For study A the **Event** could the grid cell where traps are deployed, whilst for study B it could each trap within a grid cell. 
 
-Properties of Event include the Start Date, Event ID, Event Code, Event Cross Reference ID, Event Cross Reference Origin, Longitude, Latitude, the Coordinate Reference System used, among others (see Data Dictionary). If the data of interest per Event includes attributes that are not part of the data model, it has to be reported as part of the Surveillance Activity metadata and it is recommended to keep track of these attributes in a different source (another database, an excel sheet, etc.). Common extra Attributes can be added to the data model in future versions. Missing Options for single- and multi-selection attributes of Events can be added as long as they promote a controlled vocabulary.
+In some cases, the presence of at least one **Source** may be required to establish an **Event**. For example: a dead animal found during a ranger patrol at time *t* creates an **Event**. 
+
+In Active Surveillance, an **Event might not have any Source, for example, an Event containing a Collection that ends with no animals captured**.
+
+An **Event** can include or not healthy animals. In the example of the dead animal found by the ranger at time *t*, it could be possible that the **Event** definition includes the documentation of healthy animals or not.
+
+An **Event** can involve more than one **Source** type. For example, mosquito traps (*Arthropods*) and *Environmental* sampling under the same **Event**.
+
+It is possible that specific latitude and longitude coordinates are not of interest in a **Surveillance Activity**. For example, a set of mosquito tramps deployed in parcels whose specific spatial location within each parcel is not relevant. In this case, the traps can be under a unique **Event** with an ID that links the traps at time *t* with the parcel where they were placed. In this case, the **Event** will still need spatial coordinates but they do not  represent the actual position of the **Collections**, Sources, etc.
+
+This flexibility allows WHeDB to accommodate diverse surveillance strategies, ensuring meaningful and context-appropriate data representation.
+
+**It is up to the user to define if the Event is a unit of interest and what it represents and to document this definition in the Surveillance Activity metadata. To ensure consistency, each Surveillance Activity must maintain a single, well-establish Event definition**.
+
+Key attributes of a **Event** include:
+
+* Start Date
+* Event ID
+* Event Code
+* Event Cross-Reference ID
+* Event Cross-Reference Origin
+* Longitude & Latitude
+* Coordinate Reference System (CRS) used
+
+If there are a **Event** attributes that are not part of the current data model but are of interest to track, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Event** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Event** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity.
+
+
+
+

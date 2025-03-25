@@ -1,7 +1,14 @@
 <!-- # Location {.unnumbered} -->
 
-A Location in the data model refers to a general area (polygon) where Events can be identified, and Source Records, Carcasses, and Specimens can be collected from. A Location serves as a way to group data in areas compared to the Events that group data under a exact latitude and longitude ('Event'; see below). A single Location (area) can include between zero Events (e.g., a Location is explored but no Event is found) up to a indefinite number of Events (points). 
+In the data model, a **Location** represents a general area (polygon) where **Events** can be identified and **Source Records**, **Carcasses**, and **Specimens** can be collected. Unlike **Events**, which are defined by exact latitude and longitude coordinates, **Locations** serve as a broader spatial grouping for organizing data. A single Location can contain zero Events (e.g., when an area is surveyed but no **Event** is recorded) or multiple **Events** (e.g., multiple observations or findings within the same area).
 
-What a 'Location' represents will inevitably vary depending on the Surveillance Activity methodology. For example, for the collection of arthropods, a Location can represent a parcel where traps are set. In a structured/hierarchical/clustered/nested research, the Location could represent a grid cell. In ranger patrols, the Location can correspond to either the full protected area, or a specific zone within the protected area. **It is up to the user to define what unit the Location area represents and report it in the Surveillance Activity metadata**.
+The meaning of a **Location** depends on the methodology of the **Surveillance Activity**. For *Arthropod* collection, a **Location** may represent a parcel where traps are set. In a structured, hierarchical study, a **Location** could correspond to a grid cell.During ranger patrols, a **Location** might be defined as the entire protected area or a specific zone within it. **Users must define the specific unit a Location represents and document it in the Surveillance Activity metadata**.
 
-Properties of Location include Location ID, Location Code, Location Cross Reference ID, Location Cross Reference Origin, Location Type, Environmental Characteristics, among others (see Data Dictionary). If the data of interest per Location includes attributes that are not part of the data model, it has to be reported as part of the Surveillance Activity metadata and it is recommended to keep track of these attributes in a different source (another database, an excel sheet, etc.). Common extra Attributes can be added to the data model in the future. Missing Options for single- and multi-selection attributes of Locations can be added as long as they promote a controlled vocabulary.
+Key attributes of a **Location** include:
+
+* Location ID and Code
+* Location Cross-Reference ID and Origin
+* Location Type
+* Environmental Characteristics
+
+If there are a **Location** attributes that are not part of the current data model but are of interest to track, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Location** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Location** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity.
