@@ -62,6 +62,12 @@ htmltools::div(
     htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"),
                    alt = 'WCPA logo',  
                    style = "position: fixed; right: 10px; top: 20%; width: 200px;")
+  ),
+  htmltools::a(
+    href = "https://snappartnership.net/", target = "_blank",
+    htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/snapp-logo-250.png"),
+                   alt = 'SNAPP logo',  
+                   style = "position: fixed; right: 0px; top: 40%; width: 200px; background-color: black;")
   )
 )
 
@@ -70,18 +76,31 @@ htmltools::div(
 
 <!-- ## Presentation {.unnumbered} -->
 
-Welcome to the **WildHealth Database (WHeDB)** documentation. Here, you will find comprehensive information about the database's data structure (data model), how to use the web-based graphical user interface as user and administrator, and the data dictionary. This documentation aims to provide a clear understanding of the database's organization, how to use the database, and the meaning of its data.
+This documentation provides a comprehensive guide to the WildHealth Database (WHeDB), covering its data structure (data model), the web-based graphical user interface for general users, and the data dictionary. Our goal is to offer a clear understanding of WHeDB’s organization, functionality, and data semantics.
 
-**WHeDB** is a versatile database designed to manage wildlife health data collected from various surveillance efforts. These efforts encompass a wide range of activities, including citizen observations of dead, injured, or sick animals, specific research studies, national or local wildlife health surveillance initiatives, outbreak investigations, and global wildlife health surveillance projects involving multiple countries, hazards, and host species.
+**WHeDB** is a versatile platform designed to manage wildlife health data from diverse surveillance efforts. These efforts include:
 
-The data model of the database has been developed by the **Wildlife Health Intelligence Network - Data Task Force**, integrated by members of the Wildlife Conservation Society, the World Organisation of Animal Health, the United Nations Food and Agriculture Administration, the World Health Organisation, the University of Calgary, the Davis Arbovirus Research and Training (University of California - Davis), the Canadian Wildlife Health Cooperative, and the Global Biodiversity Information Facility. This collective experience includes wildlife health surveillance activities conducted in numerous countries with several public and private partners; both cross-sectional and longitudinal studies; the establishment of wildlife health surveillance networks; investigation of diverse biological, chemical, and physical hazards; research on dangerous zoonotic pathogens like Ebola virus disease and SARS-CoV-2; engagement of rangers in protected areas and nearby communities as key contributors to health surveillance; expertise in wildlife pathology; the use and development of various types of diagnostic tests; and prior experience in managing wildlife health data using different information management systems. 
+* Citizen observations of dead, injured, or sick animals
+* Research studies focused on wildlife health
+* National and local monitoring surveillance programs
+* Outbreak investigations
+* Global surveillance initiatives spanning multiple countries, hazards, and host species
 
-The current documentation is divided in the following sections:
+The version 1 of the data model structuring the data in **WHeDB**  has been developed by the **Wildlife Health Intelligence Network - Data Task Force**. This Data Task Force is composed by members of the Wildlife Conservation Society, the World Organisation of Animal Health, the United Nations Food and Agriculture Administration, the University of Calgary, the Davis Arbovirus Research and Training (University of California - Davis), the Canadian Wildlife Health Cooperative, and the Global Biodiversity Information Facility. This collective expertise spans wildlife health surveillance activities conducted in numerous countries with several public and private partners using cross-sectional and longitudinal strategies; the establishment of wildlife health surveillance networks; assessment of diverse biological, chemical, and physical hazards; zoonotic disease research (e.g., Ebola, SARS-CoV-2); engagement of rangers in protected areas and nearby communities as key contributors to health surveillance; diagnostic development and testing, wildlife pathology, and wildlife data management using different information management systems. 
 
-The **Data Model** section provides a detailed explanation of the data structure used in the WildHealthDB database. By understanding the structure, users can efficiently enter, navigate, and manipulate the data stored within.
 
-The **Database Manual** section explains how to use the graphical user interface of the WildHealthDB to read, write, and delete data, and how to use the database if you are an administrator.
+The documentation is structured as follows:
 
-The **Data Dictionary** is the last section of this documentation. The data dictionary serves as a valuable resource for users, as it provides a complete list and description of all the data elements present in the database. Each data element is defined, including its name, type, and any applicable constraints.
+**Data Model** – A detailed overview of **WHeDB’s** data structure, enabling users to effectively enter, navigate, and manage data in the database.
+
+**Data Dictionary** – A reference guide listing and describing all data elements, including their names, types, and constraints, to ensure consistency and clarity.
+
+**Database Manual** – Step-by-step guidance on using the graphical user interface to access, read, write, edit, delete, and manage data.
+
+Get Support
+
+We hope this documentation helps you maximize **WHeDB’s** potential. If you have any questions or need assistance, please contact our support team.
+
+
 
 We hope this documentation proves to be a valuable resource, enabling you to effectively utilize the WildHealthDB database. Should you have any further questions or require additional assistance, please don't hesitate to reach out the support team.
