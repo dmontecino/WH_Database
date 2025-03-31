@@ -2,22 +2,34 @@
 
 ### Generalities
 
-In the data model, Specimens are tissue or material used to conduct Diagnostics (See Diagnostics) and identify hazards or other potential health threats. **Specimens can be collected from Source Records or created from other Specimens (Pooled Specimens) or from products derived of Diagnostic tests (Diagnostic Products). Specimens can contain a single type of tissue coming from a single or multiple Source Records and Specimens, or multiple types of tissue coming from a single or multiple Source Records, Specimens, and Diagnostic Products (see Diagnostics below)**:
+In the data model, **Specimens** refer to tissues or materials collected to conduct **Diagnostics** (see Diagnostics). 
 
-![](Pictures_and_diagrams/Specimens.png){width=100%}
-In summary:
+**Specimens** originate from the following: 
 
-- Specimens can be collected from a single Group or Animal Source Records. These Specimens can contain a single type of tissue (e.g., blood) or multiple types of tissue from the same Source Record (e.g., blood and saliva).
+* Sampled **Source Records** (i.e., an oral swab from an individual animal; the **Specimens** within the green boxes in the figure below). These **Specimens** may consist of either a single type of tissue (e.g., blood) or multiple tissue types (e.g., blood and saliva) from the same **Source Record**. 
 
-- Specimens can be created from a single Environmental and Arthropod Source Records. These Specimens can contain a single type of tissue only (e.g., a site with water can only provide water and a group of *Culex sp.* mosquitoes can only provide a subset of *Culex sp.* mosquitoes).
+* A Diagnostic Product created by running a **Diagnostic** on a **Specimen** that can be used in further **Diagnostics** (i.e., cDNA created from RNA in a sample; the **Specimens** within the pink boxes in the figure below)  
 
-- Specimens can be created by mixing the tissue sourced by many Group, Animal, Environmental, and Arthropod Source Records. Depending on the type of Source Records involved and the tissues provided by each one of them, these Specimens can contain a single type of tissue or several of them.
+* Other **Specimens** (Pooled Specimen). For example, different **Specimens** from the same or multiple **Source Records** are mixed (grey boxes in figure below) with **Diagnostic Products**   
 
-- Specimens can be created from Diagnostic Products.
 
-- Pooled Specimens with a single or multiple types of tissue can be created by mixing Specimens from a single or multiple Source Records with a single or multiple types of tissue, Specimens from Diagnostic Products, and other Pooled Specimens with a single or multiple types of tissue.
 
-Specimens are characterized by Specimen ID, Tissue Type, Specimen Original Amount, Specimen Current Amount, their Origin, Ownership, among others (see Data Dictionary). Moreover, Specimens are stored and changes in the storage or movement of the Specimens from one storage facility to another can be multiple over time. Similarly, Specimens can be exported multiple times. Changes in storage associated with an exportation must occur after the exportation is completed and the Specimen can be stored in the destination facility.
+
+![](Pictures_and_diagrams/Specimens.png){width=50%}
+
+Key attributes of a **Specimen** include:
+
+* Specimen ID
+* Tissue Type
+* Specimen Original Amount
+* Specimen Current Quantity Stored
+* Origin
+* Ownership
+
+
+**Specimens** are stored, and their storage may change multiple times over time as they are transferred within and between facilities or because the amount of **Specimen** changes as it is used in a **Diagnostic**. Similarly, **Specimens** can be exported multiple times. Any storage changes related to an exportation must occur only after the exportation is completed, ensuring the Specimen is properly stored at the destination facility.
+
+**Specimens** are stored and changes in the storage or movement of the **Specimens** from one storage facility to another can be multiple over time. Similarly, Specimens can be exported multiple times. Changes in storage associated with an exportation must occur after the exportation is completed and the Specimen can be stored in the destination facility.
 
 Specimens without any amount of tissue left remain in the data model so the last storage, exportation, and use in Diagnostics can be traced.
 

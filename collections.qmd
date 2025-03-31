@@ -18,16 +18,16 @@ A **Collection** typically contains a specific type of **Source Record**. This i
 **Collections are defined by**: 
 
 * The **number of units**, that  must be larger than zero.
-* The type of spatial and temporal units associated with the completion of the **Collection** (e.g., "number of mist nets", "number of CO₂ traps", "number of Camera traps", "distance walked"; and "area scanned").
-* The position of the units with respect to the spatial coordinates of the **Event** (e.g., "at the Event"
+* The **type of spatial and temporal units** associated with the completion of the **Collection** (e.g., "number of mist nets", "number of CO₂ traps", "number of Camera traps", "distance walked"; and "area scanned").
+* The **position of the units with respect to the spatial coordinates of the Event** (e.g., "at the Event"
 "around the Event", "starting at the Event", "ending at the Event", "starting and ending at the Event").
-* The position of the units with respect to the temporal coordinates of the **Event** (e.g., "starting at the Event", "ending at the Event").
+* The **position of the units with respect to the temporal coordinates of the Event** (e.g., "starting at the Event", "ending at the Event").
 
-For example, **1**, **observer standing**, and **at the Event** for number of spatial units, spatial unit, and spatial position with respect to the **Event**; and **6**, **hours observing with binoculars**, and **at the Event** for number of temporal units, temporal unit, and temporal position with respect to the **Event**, respectively. The attributes of a **Collection** completed through a transect can include **2**, **hours**, and **starting at the Event** for the temporal components, and **4**, **kilometers walked**, and **starting and ending at the Event** for the spatial components.
+For example, "**1**", "**observer standing**", and "**at the Event**" for number of spatial units, spatial unit, and spatial position with respect to the **Event**, respectively; and "**6**", "**hours observing with binoculars**", and "**at the Event**" for number of temporal units, temporal unit, and temporal position with respect to the **Event**, respectively. Similarly, the attributes of a **Collection** completed through a transect can be "**2**", "**hours**", and "**starting at the Event**" for the temporal components, and "**4**", "**kilometers walked**", and "**starting and ending at the Event**" for the spatial components.
 
 **Collections** also allow to characterize problems during the search for **Sources**, such as camera traps running out of battery or stolen, torn mist nets, etc. 
 
-When **Source Records** are not associated to a **Collection** (e.g., opportunist finding of dead animals), the following properties are number of units = NA, unit = NA, and positioning with respect to the **Event** = NA
+When **Source Records** are not associated to a **Collection** (e.g., opportunist finding of dead animals), the following properties are "number of units" = NA, "unit" = NA, and "positioning" with respect to the **Event** = NA
 
 Key attributes of a **Collection** include:
 

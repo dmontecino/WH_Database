@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>specimen</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="specimen_files/libs/clipboard/clipboard.min.js"></script>
+<script src="specimen_files/libs/quarto-html/quarto.js"></script>
+<script src="specimen_files/libs/quarto-html/popper.min.js"></script>
+<script src="specimen_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="specimen_files/libs/quarto-html/anchor.min.js"></script>
+<link href="specimen_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="specimen_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="specimen_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="specimen_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="specimen_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<!-- # Specimens {.unnumbered} -->
+<section id="generalities" class="level3">
+<h3 class="anchored" data-anchor-id="generalities">Generalities</h3>
+<p>In the data model, Specimens are tissue or material used to conduct Diagnostics (See Diagnostics) and identify hazards or other potential health threats. <strong>Specimens can be collected from Source Records or created from other Specimens (Pooled Specimens) or from products derived of Diagnostic tests (Diagnostic Products). Specimens can contain a single type of tissue coming from a single or multiple Source Records and Specimens, or multiple types of tissue coming from a single or multiple Source Records, Specimens, and Diagnostic Products (see Diagnostics below)</strong>:</p>
+<p><img src="Pictures_and_diagrams/Specimens.png" class="img-fluid" style="width:50.0%"></p>
+<p>In summary:</p>
+<ul>
+<li><p>Specimens can be collected from a single Group or Animal Source Records. These Specimens can contain a single type of tissue (e.g., blood) or multiple types of tissue from the same Source Record (e.g., blood and saliva).</p></li>
+<li><p>Specimens can be created from a single Environmental and Arthropod Source Records. These Specimens can contain a single type of tissue only (e.g., a site with water can only provide water and a group of <em>Culex sp.</em> mosquitoes can only provide a subset of <em>Culex sp.</em> mosquitoes).</p></li>
+<li><p>Specimens can be created by mixing the tissue sourced by many Group, Animal, Environmental, and Arthropod Source Records. Depending on the type of Source Records involved and the tissues provided by each one of them, these Specimens can contain a single type of tissue or several of them.</p></li>
+<li><p>Specimens can be created from Diagnostic Products.</p></li>
+<li><p>Pooled Specimens with a single or multiple types of tissue can be created by mixing Specimens from a single or multiple Source Records with a single or multiple types of tissue, Specimens from Diagnostic Products, and other Pooled Specimens with a single or multiple types of tissue.</p></li>
+</ul>
+<p>Specimens are characterized by Specimen ID, Tissue Type, Specimen Original Amount, Specimen Current Amount, their Origin, Ownership, among others (see Data Dictionary). Moreover, Specimens are stored and changes in the storage or movement of the Specimens from one storage facility to another can be multiple over time. Similarly, Specimens can be exported multiple times. Changes in storage associated with an exportation must occur after the exportation is completed and the Specimen can be stored in the destination facility.</p>
+<p>Specimens without any amount of tissue left remain in the data model so the last storage, exportation, and use in Diagnostics can be traced.</p>
+</section>
+<section id="specimens-of-group-source-records" class="level3">
+<h3 class="anchored" data-anchor-id="specimens-of-group-source-records">Specimens of Group Source Records</h3>
+<p>An example of Group Source Specimen are feces collected from the bottom of a cage with animals of the same species but it is unknown which of the animals dropped the feces.</p>
+<p><strong>A Group Source used directly for a Diagnostic (e.g., assessment of fat in carcasses of animals belonging to a specific herd) is not a Specimen (see Sources And Source Records)</strong>.</p>
+<p><strong>Group Source Specimens cannot be OBTAINED after the last date the Group Source was observed (the last Record of the Group Source)</strong>. For example, it is possible to collect feces from a cage that restrains a Group Source longitudinally and also from the same cage after the animals of the Group Source were moved. In this case, the Specimen from the empty cage does not belong to the Group Source but to an Environmental Source. The sampling of the feces from the empty cage belongs to a different Event. To keep the connection between the corresponding Specimens, it is possible to cluster the Group Source Records and the Environmental Source Record (see Complexities).</p>
+</section>
+<section id="specimens-of-animal-source-records" class="level3">
+<h3 class="anchored" data-anchor-id="specimens-of-animal-source-records">Specimens of Animal Source Records</h3>
+<p>An example of Animal Source Specimen is 2 ml of blood taken from a lion.</p>
+<p><strong>An Animal Source used directly for a Diagnostic (e.g., ultrasound in an animal) is not a Specimen (see Sources And Source Records)</strong>.</p>
+<p><strong>Animal Source Specimens cannot be OBTAINED after the last date the Animal Source was observed (the last Record of the Animal Source)</strong>. For example, it is possible to collect feces from a cage that restrained an Animal Source longitudinally and also from the same cage after the animal was moved. In this case, the Specimen from the empty cage does not belong to the Animal Source but to an Environmental Source. The sampling of the feces from the empty cage belongs to a different Event. To keep the connection between the corresponding Specimens, it is possible to cluster the Animal Source Records and the Environmental Source Record (see Complexities).</p>
+<p><strong>The data model DOES accept Animal Source Specimens that are CREATED after the last date the Animal Source was documented (the last Record of the Animal Source)</strong>. New Specimens can be generated during a Necropsy or from a stored Carcass. In this case, the date of Specimen creation is not necessarily the date when the Animal Source was found, when the Carcass was collected, or when the animal died, but after the storage of the Carcass or the date of the Necropsy (primary or secondary). It is possible to track if a Specimen was collected in the field (from the animal, carcass, during a field necropsy, or the ground near the animal), or in a facility from the carcass or during a primary or secondary Necropsy based on the information entered for Specimens.</p>
+</section>
+<section id="specimens-from-environmental-source-records" class="level3">
+<h3 class="anchored" data-anchor-id="specimens-from-environmental-source-records">Specimens from Environmental Source Records</h3>
+<p>An example of Environmental Source Specimen is 10 grams of soil collected from a specific site (Environmental Source). Another useful example are feces of unknown origin found in the field at time <em>t</em> (Source Record) at a specific site (Source).</p>
+<p>In this second example it is possible to: i) collect the full feces or ii) take swabs from it. In the former case, the feces are the Source Record and the Specimen (the Specimen can be stored. The Source Record cannot be Stored). In the latter, the feces are just the Source Record whilst the swabs are the Specimens.</p>
+<p>In the case of <strong>Environmental Source Records, their type of tissue is determined by the type of the Specimen Source Record</strong>. For example, water collected at time <em>t</em> (Environmental Source Record) from a pond (Environmental Source) can only yield tissue of type “water”. If a Specimen contains tissue from a single Environmental Source Record, then, the type of tissue of the Specimen must be the same type of tissue of the Environmental Source.</p>
+<p><strong>The data model DOES accept Environmental Source Specimens that were CREATED after the last date the Environmental Source was visited (the last Record of the Environmental Source)</strong>. New Specimens can be generated from a contained Environmental Source Record (for example, a bottle with sediment that is divided in Specimens later). In this case, the date of Specimen creation is not necessarily the date when the Environmental Source Record was obtained but later.</p>
+</section>
+<section id="specimens-from-arthropod-source-records" class="level3">
+<h3 class="anchored" data-anchor-id="specimens-from-arthropod-source-records">Specimens from Arthropod Source Records</h3>
+<p>An example of Arthropod Source Specimen is the set mosquitoes of the same species coming from the same Collection. These are basically sub-groups of the mosquitoes present in the corresponding Source Record. In vector-borne disease surveillance, this last type of Specimen is usually called “pools”.</p>
+<p>In the case of <strong>Arthropod Specimens, their type of tissue is determined by the Arthropod Source Record</strong>. If a Specimen contains tissue from a single Arthropod Source Record, then, the type of tissue of the Specimen is “arthropod” by default. In this case, the links of the Specimen with its origin allows to track the species of arthropod involved.</p>
+<p><strong>The data model DOES accept Arthropod Source Specimens that were CREATED after the last date the Arthropod Source was visited (the last Record of the Environmental Source)</strong>. New Specimens can be generated from an Arthropod Source Record (for example, taking a new sub-set of mosquitoes from the Source Record and creating a new Specimen with mosquitoes of the species). In this case, the date of Specimen creation is not necessarily the date when the Arthropod Source Record was obtained but later.</p>
+</section>
+<section id="specimens-with-a-mix-of-tissues-coming-from-a-unique-or-several-source-records" class="level3">
+<h3 class="anchored" data-anchor-id="specimens-with-a-mix-of-tissues-coming-from-a-unique-or-several-source-records">Specimens with a mix of tissues coming from a unique or several Source Records</h3>
+<p>A bat is swabbed in its oral cavity and in its rectum but then the swabs are placed together in a tube and considered a single Specimen. Then, there is a single Specimen with a unique Source Record origin and with two types of tissue: “rectal swab” and “oral swab” in a tube.</p>
+<p>It is possible also to get blood from two bats and mix it. The data model can accommodate this case because <strong>Specimens can have multiple Source Record origins</strong>. In the example, both bled bats (Source Records) are the origin of a single Specimen with “blood” tissue consisting in mm of blood.</p>
+<p>Similarly, <strong>it is possible to generate a Specimen by mixing tissue of different type from different Source Records</strong>. For example, the blood (tissue) of a bat captured at time <em>t</em> (Animal Source Record) with the feces (tissue) collected from the bottom of the roost of the same bat at time <em>t</em> (Group Source Record). In this case, the mixed tissue (blood from an Animal Source and Feces from a Group Source) can be included in the data model as a single Specimen with two Source Records as origin and two types of tissue.</p>
+<p><strong>The key here is that Specimens are generated by mixing tissue coming from different Source Records, which is different than mixing Specimens</strong>. In the data model, mixing Specimens means mixing data Units already documented (see next).</p>
+</section>
+<section id="specimens-from-diagnostic-products" class="level3">
+<h3 class="anchored" data-anchor-id="specimens-from-diagnostic-products">Specimens from Diagnostic Products</h3>
+<p>Products generated by a Diagnostic method (see Diagnostic Products as Specimens below) can be stored and used as Specimen in further Diagnostics (e.g., use cDNA created as part of Diagnostic A used in a new RT-PCR, Diagnostic B). The data model can accommodate Diagnostic Products to be used as Specimens in future Diagnostics. In this case, the origin of these new “Specimens” are specific Diagnostic and not Source Records, and their type is a diagnostic product such as cDNA. The remaining properties of a Specimen from a Diagnostic Product are the same as for Specimens from Source Records (see Data Dictionary).</p>
+<p>Diagnostic Products must be added to the data model as a Specimen, so this Specimen can be pooled with other Specimens.</p>
+</section>
+<section id="pooled-specimens" class="level3">
+<h3 class="anchored" data-anchor-id="pooled-specimens">Pooled Specimens</h3>
+<p>Specimens can be created by mixing other Specimens of any origin. For example, mixing a Specimen from an Arthropod Source, a Specimen from an Animal Source, a Specimen from an Environmental Source, and a Specimen from an Arthropod Source (see below). The origin of Pooled Specimens is tracked in the data model. In the example, the origin of the Specimen is four Specimens and the new Specimen has potentially four types of tissue. The remaining properties are the same as for Specimens from Source Records (see Data Dictionary).</p>
+</section>
+<section id="specimens-in-containers" class="level3">
+<h3 class="anchored" data-anchor-id="specimens-in-containers">Specimens in Containers</h3>
+<p>In situations where space or materials are limited, it is possible that multiple Specimens are stored in a unique container. This approach is clearly not ideal because it can lead to cross-contamination and make actual Specimen tracing more complex. However, the data model has Container Identifier as a property of Specimens (see Data Dictionary). Specific properties for each individual Specimen within the container, such as type, quantity, etc, should allow their visual identification within the container.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

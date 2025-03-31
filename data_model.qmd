@@ -71,7 +71,7 @@ The data model contains units that are hierarchical organized capturing relevant
 6. **Collections**: Different methods and efforts to obtain Source Records from Sources within an Event.
 7. **Sources**: Units that can provide Specimens for hazard detection or whose health is assessed at a specific time. There are four Source types:​
       * *Group*: groups of animals of the same species.
-      * *Animal*: Individual animals that can be observed, examined, sampled, and necropsied.
+      * *Animal: Individual animals that can be observed, examined, sampled, and necropsied.
       * *Environmental*: environmental sampling sites (e.g., ponds or feces in the field).
       * *Arthropod*: arthropod capture sites.
 8. **Source Records**: Records of the Sources at a specific time.
