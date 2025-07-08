@@ -22,6 +22,7 @@ book:
     # - diagnostics.qmd
     - data_model.qmd
     - data_dictionary.qmd
+    - data_model_options.qmd
     - manual.qmd
   search:
     type: textbox

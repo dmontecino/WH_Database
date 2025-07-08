@@ -1,0 +1,575 @@
+---
+format:
+  html:
+    theme: 
+      - cerulean
+    # number-depth: 9
+    page-layout: full
+---
+
+# WildHealth Data Model Options {.unnumbered}
+
+```{r, echo=FALSE, eval=T, message=FALSE, cache=F}
+
+htmltools::div(
+  htmltools::a(
+    href = "https://www.whin.org", target = "_blank",
+    htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WHINlogo.png"),
+                   alt = 'WHIN logo',  
+                   style = "position: fixed; right: 10px; top: 0%; width: 220px;")
+  ),
+  htmltools::a(
+    href = "https://www.wcs.org", target = "_blank",
+    htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"),
+                   alt = 'WCS logo',  
+                   style = "position: fixed; right: 10px; top: 13%; width: 200px;")
+  ),
+  htmltools::a(
+    href = "https://www.iucn.org/our-union/commissions/world-commission-protected-areas", target = "_blank",
+    htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/wcpa-logo.png"),
+                   alt = 'WCPA logo',  
+                   style = "position: fixed; right: 10px; top: 20%; width: 200px;")
+  ),
+  htmltools::a(
+    href = "https://snappartnership.net/", target = "_blank",
+    htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/snapp-logo-250.png"),
+                   alt = 'SNAPP logo',  
+                   style = "position: fixed; right: 0px; top: 40%; width: 200px; background-color: black;")
+  )
+)
+```
+
+
+```{r load packages, echo=FALSE, eval=T, message=FALSE, cache=F, warning=FALSE}
+
+library(kableExtra)
+library(stringr)
+library(gt)
+library(reactable)
+library(httr2)
+library(jsonlite)
+library(dplyr)
+library(tidyr)
+
+```
+
+
+```{r get pathogen data, echo=FALSE, eval=T, message=FALSE, cache=F, warning=FALSE}
+
+
+# Function to execute SPARQL queries
+sparql_query <- function(endpoint, query) {
+  tryCatch({
+    response <- request(endpoint) |>
+      req_method("GET") |>
+      req_url_query(query = query, format = "json") |>
+      req_headers("Accept" = "application/sparql-results+json") |>
+      req_perform()
+    
+    content <- resp_body_json(response)
+    
+    # Convert to data frame
+    if (length(content$results$bindings) > 0) {
+      # Extract variable names
+      vars <- content$head$vars
+      
+      # Convert bindings to data frame
+      df <- do.call(rbind, lapply(content$results$bindings, function(row) {
+        result_row <- setNames(rep(NA, length(vars)), vars)
+        for (var in names(row)) {
+          if (var %in% vars) {
+            result_row[var] <- row[[var]]$value
+          }
+        }
+        return(result_row)
+      }))
+      
+      return(as.data.frame(df, stringsAsFactors = FALSE))
+    } else {
+      return(data.frame())
+    }
+  }, error = function(e) {
+    cat("Error executing SPARQL query:", e$message, "\n")
+    return(data.frame())
+  })
+}
+
+# AGROVOC SPARQL endpoint
+endpoint_agrovoc <- "https://agrovoc.fao.org/sparql"
+
+# MESH SPARQL endpoint
+endpoint_mesh <- "https://id.nlm.nih.gov/mesh/sparql"
+
+
+```
+
+## Pathogens
+
+In the tables below, the "AGROVOC_URI" column contains the identification of the Agent in the 
+AGROVOC vocabulary database (https://agrovoc.fao.org/browse/agrovoc/en/). The "MESH_URI" column contains the identification of the Agent in the MeSH database, the National Library of Medicine 
+controlled vocabulary thesaurus used for indexing articles for PubMed (https://www.ncbi.nlm.nih.gov/mesh/).
+
+If an agent is not listed in the "Agent", search in the "Alternative Name" column.
+
+### Bacteria
+
+```{r create bacteria table of options, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+# MESH 
+
+bacteria_mesh_query<-'
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+
+SELECT ?bacteriaURI ?bacteriaLabel ?uniqueID ?rdfID ?scopeNote
+WHERE {
+  # Recursively get narrower descriptors under Bacteria (D001419)
+  ?bacteriaURI meshv:broaderDescriptor+ mesh:D001419 .
+
+  # Label and Unique ID
+  ?bacteriaURI rdfs:label ?bacteriaLabel .
+  FILTER (lang(?bacteriaLabel) = "en")
+
+  ?bacteriaURI meshv:identifier ?uniqueID .
+  BIND(str(?bacteriaURI) AS ?rdfID)
+
+  # Get the scope note from the preferredConcept
+  OPTIONAL {
+    ?bacteriaURI meshv:preferredConcept ?concept .
+    ?concept meshv:scopeNote ?scopeNote .
+    FILTER (lang(?scopeNote) = "en")
+  }
+}
+ORDER BY ?bacteriaLabel
+'
+
+bacteria_results <- list()
+batch_size <- 1000
+
+for (offset in seq(0, 10000, by = batch_size)) {
+  # cat("Fetching OFFSET:", offset, "\n")
+  paged_query <- paste0(bacteria_mesh_query, "\nLIMIT ", batch_size, " OFFSET ", offset)
+  result <- sparql_query(endpoint_mesh, paged_query)
+  
+  if (nrow(result) == 0) break
+  bacteria_results[[length(bacteria_results) + 1]] <- result
+}
+
+bacteria_df <- dplyr::bind_rows(bacteria_results)
+bacteria_df_mesh <- bacteria_df |> distinct()
+# colnames(bacteria_df)
+
+# write.csv(x = bacteria_df_mesh, "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/bacteria.csv")
+
+bacteria_df_mesh<-bacteria_df_mesh |> mutate(source = "MESH", agentAltLabel = NA)
+
+
+### AGROVOC
+
+bacteria_agrovoc_query <- '
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?agent ?agentLabel ?agentAltLabel ?definitionValue ?narrower ?narrowerLabel
+WHERE {
+  # Recursively get all descendants of Bacteria
+  <http://aims.fao.org/aos/agrovoc/c_765> skos:narrower+ ?agent .
+
+  # Agent label in English
+  ?agent skos:prefLabel ?agentLabel .
+  FILTER (lang(?agentLabel) = "en")
+
+  # Optional: entry terms (alternative labels)
+  OPTIONAL {
+    ?agent skos:altLabel ?agentAltLabel .
+    FILTER (lang(?agentAltLabel) = "en")
+  }
+
+  # Optional: definition (structured via rdf:value)
+  OPTIONAL {
+    ?agent skos:definition ?definition .
+    ?definition rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+
+  # Optional: narrower (child) concepts
+  OPTIONAL {
+    ?agent skos:narrower ?narrower .
+    ?narrower skos:prefLabel ?narrowerLabel .
+    FILTER (lang(?narrowerLabel) = "en")
+  }
+}
+
+'
+
+# Run the query
+# cat("Executing SPARQL query...\n")
+bacteria_results <- sparql_query(endpoint_agrovoc, bacteria_agrovoc_query)
+
+bacteria_results_agrovoc<-
+  bacteria_results |> 
+  select(agent,
+         agentLabel,
+         agentAltLabel,
+         definitionValue) |> 
+  distinct() |> 
+  arrange(agentLabel) |> 
+  mutate(source="agrovoc")
+
+
+# dir.create("/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc")
+# write.csv(x = bacteria_results_agrovoc, "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc/bacteria.csv")
+
+
+
+
+
+# Combined table 
+
+
+# head(bacteria_agrovoc)
+# head(bacteria_mesh)
+
+bacteria_results_agrovoc<-
+  bacteria_results_agrovoc |> 
+  select(-source) |> 
+  rename("AGROVOC_URI" = "agent",
+         "Agent" = "agentLabel", 
+         "Alternative_name" = "agentAltLabel",
+         "Definition_AGROVOC" = "definitionValue") |> 
+  mutate(Agent = str_to_sentence(as.character(Agent)))
+
+         
+# head(bacteria_agrovoc)  
+
+bacteria_df_mesh<-
+  bacteria_df_mesh |> 
+  select(-source) |> 
+  rename("MESH_URI" = "rdfID",
+         "Agent" = "bacteriaLabel",
+         "Definition_MESH" = "scopeNote") |> 
+  select(MESH_URI, Agent, Definition_MESH) |> 
+  distinct() |> 
+    mutate(Agent = stringr::str_to_sentence(as.character(Agent)))
+
+
+# head(bacteria_mesh)
+
+bacteria<-
+full_join(bacteria_results_agrovoc, bacteria_df_mesh, by = "Agent") |> 
+  select(Agent, 
+         AGROVOC_URI,
+         MESH_URI,
+         Definition_AGROVOC,
+         Definition_MESH,
+         Alternative_name) |> 
+  arrange(Agent)
+
+
+bacteria<-unique(bacteria)
+
+bacteria<-bacteria[!is.na(bacteria$Agent),]
+
+bacteria_with_alternative_name<-bacteria[!is.na(bacteria$Alternative_name),]
+
+bacteria_with_alternative_name<-unique(bacteria_with_alternative_name$Agent)
+
+test<-
+lapply(bacteria_with_alternative_name, function(x)
+  rbind(bacteria[bacteria$Agent==x,],
+        bacteria[tolower(bacteria$Agent)%in% tolower(bacteria[bacteria$Agent==x,]$Alternative_name),]))
+
+test<-lapply(test, function(x) x |> select(Agent, Alternative_name))
+
+# Changes
+
+# to avoid confusion with oot-and-mouth-disease-bacteria
+# test[[2]]
+bacteria<-bacteria[bacteria$Agent!="Corynebacterium pyogenes",]
+
+#test[[4]]
+bacteria<-bacteria[bacteria$Agent!="Haemophilus paragallinarum",]
+
+# test[[50]]
+bacteria<-bacteria[bacteria$Agent!="Burkholderia pseudomallei",]
+
+# test[[64]]
+bacteria<-bacteria[bacteria$Agent!="Listonella",]
+
+bacteria |>
+  mutate(Alternative_name = str_to_sentence(Alternative_name)) |> 
+  bind_rows() |>
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 6
+  ) |>
+  column_spec(1, width = "22%", ) |>  # Agent
+  column_spec(2, width = "28%") |>  # AGROVOC_URI
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_Agrovoc
+  column_spec(5, width = "30%") |>  # Definition_MESH
+  column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+write.csv(unique(bacteria$Agent), "../OPTIONS/GET_OPTIONS/full_bacteria.csv")
+
+```
+
+### Virus
+
+```{r create virus table of options, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+virus_mesh_query<-'
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+
+SELECT ?virusURI ?virusLabel ?uniqueID ?rdfID ?scopeNote
+WHERE {
+  VALUES ?topVirus {
+    mesh:D005253  # Sarcoma Viruses, Feline
+    mesh:D009053  # Sarcoma Viruses, Murine
+    mesh:D004267  # DNA Viruses
+    mesh:D006518  # Hepatitis Viruses 
+	mesh:D007304  # Insect Viruses 
+	mesh:D009858  # Oncogenic Viruses 
+	mesh:D012328  # RNA Viruses 
+  }
+
+  ?virusURI meshv:broaderDescriptor+ ?topVirus .
+
+  ?virusURI rdfs:label ?virusLabel .
+  FILTER (lang(?virusLabel) = "en")
+
+  ?virusURI meshv:identifier ?uniqueID .
+  BIND(str(?virusURI) AS ?rdfID)
+
+  OPTIONAL {
+    ?virusURI meshv:preferredConcept ?concept .
+    ?concept meshv:scopeNote ?scopeNote .
+    FILTER (lang(?scopeNote) = "en")
+  }
+}
+ORDER BY ?virusLabel
+'
+
+virus_results <- list()
+batch_size <- 1000
+
+for (offset in seq(0, 10000, by = batch_size)) {
+  # cat("Fetching OFFSET:", offset, "\n")
+  paged_query <- paste0(virus_mesh_query, "\nLIMIT ", batch_size, " OFFSET ", offset)
+  result <- sparql_query(endpoint_mesh, paged_query)
+  
+  if (nrow(result) == 0) break
+  virus_results[[length(virus_results) + 1]] <- result
+}
+
+virus_df <- dplyr::bind_rows(virus_results) 
+# colnames(virus_df)
+virus_df_mesh<- virus_df |> distinct()
+
+# write.csv(x = bacteria_df_mesh, "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/bacteria.csv")
+
+virus_df_mesh<-virus_df_mesh |> mutate(source = "MESH", agentAltLabel = NA)
+
+
+
+
+
+
+### AGROVOC
+
+virus_agrovoc_query <- '
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX agro: <http://aims.fao.org/aos/agrontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?concept ?conceptLabel ?definitionValue
+       ?agent ?agentLabel ?agentDefinitionValue ?agentAltLabel
+WHERE {
+  # Recursively get all viral diseases and their descendants
+  <http://aims.fao.org/aos/agrovoc/c_8260> skos:narrower+ ?concept .
+
+  # English label of the disease
+  ?concept skos:prefLabel ?conceptLabel .
+  FILTER (lang(?conceptLabel) = "en")
+
+  # Optional: definition of the disease
+  OPTIONAL {
+    ?concept skos:definition ?definition .
+    ?definition rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+
+  # Optional: causative agent
+  OPTIONAL {
+    ?concept agro:isCausedBy ?agent .
+
+    # Agent label
+    OPTIONAL {
+      ?agent skos:prefLabel ?agentLabel .
+      FILTER (lang(?agentLabel) = "en")
+    }
+
+    # Agent definition
+    OPTIONAL {
+      ?agent skos:definition ?agentDef .
+      ?agentDef rdf:value ?agentDefinitionValue .
+      FILTER (lang(?agentDefinitionValue) = "en")
+    }
+
+    # Agent alternative labels (entry terms)
+    OPTIONAL {
+      ?agent skos:altLabel ?agentAltLabel .
+      FILTER (lang(?agentAltLabel) = "en")
+    }
+  }
+}
+'
+
+virus_results_agrovoc <- sparql_query(endpoint_agrovoc, virus_agrovoc_query)
+
+virus_results_agrovoc<-
+  virus_results_agrovoc |> 
+  select(agent,
+         agentLabel,
+         agentAltLabel,
+         agentDefinitionValue) |> 
+  distinct() |> 
+  arrange(agentLabel) |> 
+  mutate(source="agrovoc")
+
+
+
+# Combined table 
+
+
+# head(bacteria_agrovoc)
+# head(bacteria_mesh)
+
+virus_results_agrovoc<-
+  virus_results_agrovoc |> 
+  select(-source) |> 
+  rename("AGROVOC_URI" = "agent",
+         "Agent" = "agentLabel", 
+         "Alternative_name" = "agentAltLabel",
+         "Definition_AGROVOC" = "agentDefinitionValue") |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent)))
+
+         
+# head(bacteria_agrovoc)  
+
+virus_df_mesh<-
+  virus_df_mesh |> 
+  select(-source) |> 
+  rename("MESH_URI" = "rdfID",
+         "Agent" = "virusLabel",
+         "Definition_MESH" = "scopeNote") |> 
+  select(MESH_URI, Agent, Definition_MESH) |> 
+  distinct() |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent))) 
+
+
+# head(bacteria_mesh)
+
+virus<-
+full_join(virus_results_agrovoc, virus_df_mesh, by = "Agent") |> 
+  select(Agent, 
+         AGROVOC_URI,
+         MESH_URI,
+         Definition_AGROVOC,
+         Definition_MESH,
+         Alternative_name) |> 
+  arrange(Agent)
+
+
+virus<-unique(virus)
+
+virus<-virus[!is.na(virus$Agent),]
+
+viruses_with_alternative_name<-virus[!is.na(virus$Alternative_name),]
+
+viruses_with_alternative_name<-unique(viruses_with_alternative_name$Agent)
+
+test<-
+lapply(viruses_with_alternative_name, function(x)
+  rbind(virus[virus$Agent==x,],
+        virus[tolower(virus$Agent)%in% tolower(virus[virus$Agent==x,]$Alternative_name),]))
+
+test<-lapply(test, function(x) x |> select(Agent, Alternative_name))
+
+# Changes
+
+# to avoid confusion with oot-and-mouth-disease-virus
+# test[[2]]
+virus[virus$Agent=="Aphthovirus",]$Alternative_name<-NA
+
+#test[[4]]
+virus[virus$Agent=="Aviadenovirus",]$Alternative_name<-NA
+virus[virus$Agent=="Aviadenovirus",]$Alternative_name<-"Avian adenovirus"
+
+# test[[5]]
+virus[virus$Agent=="Avian influenzavirus",]$Alternative_name<-NA
+virus[virus$Agent=="Avian influenzavirus",]$Alternative_name<-"Avian influenza virus"
+
+# test[[6]]
+virus<-virus[virus$Agent!="Avian leukosis virus",]
+virus<-virus[virus$Agent!="Avian myeloblastosis virus",]
+
+virus<-virus[virus$Agent!="Citrus tristeza virus",]
+
+#test[[14]]
+virus<-virus[virus$Agent!="Orf virus",]
+
+#test[[20]]
+virus<-virus[virus$Agent!="Hiv",]
+
+# test[[22]]
+virus[which(virus$Alternative_name=="PRRS virus"),]$Alternative_name<-"Porcine Reproductive and Respiratory Syndrome virus"
+
+# test[[24]]
+virus<-virus[virus$Agent!="Myxoma virus",]
+
+#test[[26]]
+virus[which(virus$Alternative_name=="goose hepatitis virus"),]$Alternative_name<-NA
+
+#test[[30]]
+virus[which(virus$Agent=="Porcine epidemic diarrhea virus"),]$Alternative_name<-NA
+
+#test[[31]]
+virus<-virus[!virus$Agent %in% c("Rice tungro virus", 
+                                 "Rice tungro bacilliform virus", 
+                                 "Rice tungro spherical virus"),]
+
+
+
+virus |>
+  mutate(Alternative_name = str_to_sentence(Alternative_name)) |> 
+  bind_rows() |>
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Agent
+  column_spec(2, width = "28%") |>  # AGROVOC_URI
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_Agrovoc
+  column_spec(5, width = "30%") |>  # Definition_MESH
+  column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+write.csv(unique(virus$Agent), "../OPTIONS/GET_OPTIONS/full_virus.csv")
+
+
+
+```
+
