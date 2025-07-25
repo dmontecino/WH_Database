@@ -132,7 +132,515 @@ Necropsies can be classified as primary or secondary. A primary necropsy typical
 
 A **Necropsy** does not provide **Specimens** directly; rather, **Specimens** are provided through the dead **Animal Source Carcass**.
 
+The **Necropsy** findings are reported through text in fields such as "Gastrointestinal System", "Reproductive System", etc. The list of anatomical components encompassed by each of these elements or systems is provided in the table below and they follow The National Agricultural Library Thesaurus Concept Space (NALT), a controlled vocabulary of terms related to agricultural, biological, physical and social sciences (https://lod.nal.usda.gov/nalt/en/). NALT is used by the National Agricultural Library (NAL) of the United States
 
+##### Mouth and Beak
+
+```{r necropsy mouth and beak, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_mouth_beak.R")
+
+mouth_beak_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+  
+
+```
+
+##### Eyes
+
+```{r necropsy eyes, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_eye.R")
+
+rbind(
+  eye_table,
+  c("Eyelashes", NA, NA, NA)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+```
+
+##### Nose
+
+```{r necropsy nose, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_nose.R")
+
+nose_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT))|> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+##### Ears
+
+```{r necropsy ears, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_ear.R")
+
+ear_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+
+##### Sinuses
+
+```{r necropsy sinuses, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_sinuses.R")
+
+sinuses_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+
+##### Integument
+
+```{r necropsy integument, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_integument.R")
+
+rbind(
+integument_table,
+c("Eyelashes", NA, NA, NA)) |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+
+##### Skin
+
+```{r necropsy skin, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_skin.R")
+
+
+rbind(
+  skin_table,
+  c("Scar", NA, NA, NA))|> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+```
+
+
+##### Subcutaneous Fat
+
+```{r necropsy subcutaneous fat, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_subcutaneous _fat.R")
+
+
+sc_fat_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+```
+
+##### Muskuloskeletal System
+
+
+```{r necropsy muskuloskeletal, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_muscleskeletal _fat.R")
+
+muscle_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+##### Body Cavities 
+
+```{r necropsy body cavities, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_body_cavities.R")
+
+body_cavities_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+```
+
+##### Cardiovascular System
+
+```{r necropsy cardio, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_cardiovascular.R")
+
+circulatory_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+
+```
+
+##### Respiratory System
+
+```{r necropsy respiratory, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_respiratory.R")
+
+resp_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+
+##### Gastrointestinal System
+
+```{r necropsy gastrointestinal, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_digestive.R")
+
+digestive_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+##### Urinary Tract
+
+```{r necropsy gastrointestinal, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_urinary.R")
+
+urinary_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+##### Reproductive System
+
+```{r necropsy reproductvie, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_repro.R")
+
+repro_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+
+##### Lymphatic System
+
+```{r necropsy lymphatic, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_lymph.R")
+
+lympha_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+```
+
+##### Endocrine System
+
+```{r necropsy endocrine, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_endocrine.R")
+
+endo_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+```
+
+
+##### Nervous System
+
+```{r necropsy nervous, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+source("Necropsy_anatomy/Necropsy_topology_nervous.R")
+
+nervo_table |> 
+  mutate(Topography = stringr::str_to_sentence(Topography)) |> 
+  mutate(Alternative_name = stringr::str_to_sentence(Alternative_name)) |> 
+  mutate(Definition_NALT = ifelse(Definition_NALT == "", NA, Definition_NALT)) |> 
+  arrange(Topography) |> 
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8) |>
+  column_spec(1, width = "22%") |>  # Topography
+  column_spec(2, width = "28%") |>  # Alternative_name
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_NALT
+  # column_spec(5, width = "30%") |>  # Definition_MESH
+  # column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+```
 
 ### Environmental Source
 
