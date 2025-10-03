@@ -103,7 +103,7 @@ endpoint_mesh <- "https://id.nlm.nih.gov/mesh/sparql"
 
 ```
 
-## Pathogens
+## Biological Hazards
 
 In the tables below, the "AGROVOC_URI" column contains the identification of the Agent in the 
 AGROVOC vocabulary database (https://agrovoc.fao.org/browse/agrovoc/en/). The "MESH_URI" column contains the identification of the Agent in the MeSH database, the National Library of Medicine 
@@ -113,7 +113,7 @@ If an agent is not listed in the "Agent", search in the "Alternative Name" colum
 
 ### Bacteria
 
-```{r create bacteria table of options, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+```{r create bacteria table of options, echo=FALSE, eval=F, message=FALSE, warning=FALSE, cache=F}
 
 # MESH 
 
@@ -160,9 +160,12 @@ bacteria_df <- dplyr::bind_rows(bacteria_results)
 bacteria_df_mesh <- bacteria_df |> distinct()
 # colnames(bacteria_df)
 
-# write.csv(x = bacteria_df_mesh, "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/bacteria.csv")
 
 bacteria_df_mesh<-bacteria_df_mesh |> mutate(source = "MESH", agentAltLabel = NA)
+
+# write.csv(x = bacteria_df_mesh, "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/bacteria.csv")
+
+
 
 
 ### AGROVOC
@@ -315,7 +318,7 @@ bacteria |>
   row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
   scroll_box(width = "740px", height = "1000px")
 
-write.csv(unique(bacteria$Agent), "../OPTIONS/GET_OPTIONS/full_bacteria.csv")
+# write.csv(unique(bacteria$Agent), "../OPTIONS/GET_OPTIONS/full_bacteria.csv")
 
 ```
 
@@ -373,10 +376,11 @@ virus_df <- dplyr::bind_rows(virus_results)
 # colnames(virus_df)
 virus_df_mesh<- virus_df |> distinct()
 
-# write.csv(x = bacteria_df_mesh, "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/bacteria.csv")
-
 virus_df_mesh<-virus_df_mesh |> mutate(source = "MESH", agentAltLabel = NA)
 
+
+# write.csv(x = virus_df_mesh, 
+#           "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/virus.csv")
 
 
 
@@ -443,6 +447,9 @@ virus_results_agrovoc<-
   distinct() |> 
   arrange(agentLabel) |> 
   mutate(source="agrovoc")
+
+ # write.csv(x = virus_results_agrovoc,
+ #          "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc/virus.csv")
 
 
 
@@ -567,9 +574,1470 @@ virus |>
   scroll_box(width = "740px", height = "1000px")
 
 
-write.csv(unique(virus$Agent), "../OPTIONS/GET_OPTIONS/full_virus.csv")
+# write.csv(unique(virus$Agent), "../OPTIONS/GET_OPTIONS/full_virus.csv")
 
 
 
 ```
+
+### Fungi
+
+```{r create fungi table of options, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+
+fungi_mesh_query<-'
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?fungusURI ?fungusLabel ?uniqueID ?rdfID ?scopeNote ?entryTerm 
+WHERE {
+  VALUES ?topFungi {
+    mesh:D001203  # Ascomycota
+    mesh:D008290  # Malassezia
+    mesh:D008411  # Chytridiomycota
+    mesh:D020092  # Conidiobolus
+    mesh:D004773  # Entomophthora
+    mesh:D016817  # Apansporoblastina
+    mesh:D003904  # Mitosporic Fungi
+    mesh:D002175  # Candida
+    mesh:D003454  # Cryptococcus
+  }
+
+  ?fungusURI meshv:broaderDescriptor+ ?topFungi .
+
+  ?fungusURI rdfs:label ?fungusLabel .
+  FILTER (lang(?fungusLabel) = "en")
+
+  ?fungusURI meshv:identifier ?uniqueID .
+  BIND(str(?fungusURI) AS ?rdfID)
+
+  OPTIONAL {
+    ?fungusURI meshv:preferredConcept ?concept .
+
+    # Scope note
+    OPTIONAL {
+      ?concept meshv:scopeNote ?scopeNote .
+      FILTER (lang(?scopeNote) = "en")
+    }
+  }
+}
+ORDER BY ?fungusLabel
+'
+
+
+fungi_results <- list()
+batch_size <- 1000
+
+for (offset in seq(0, 10000, by = batch_size)) {
+  # cat("Fetching OFFSET:", offset, "\n")
+  paged_query <- paste0(fungi_mesh_query, "\nLIMIT ", batch_size, " OFFSET ", offset)
+  result <- sparql_query(endpoint_mesh, paged_query)
+  
+  if (nrow(result) == 0) break
+  fungi_results[[length(fungi_results) + 1]] <- result
+}
+
+fungi_df <- dplyr::bind_rows(fungi_results) 
+# colnames(virus_df)
+fungi_df_mesh<- fungi_df |> distinct()
+# colnames(fungi_df)
+
+fungi_df_mesh<-fungi_df_mesh |> mutate(source = "MESH", agentAltLabel = NA)
+
+# write.csv(x = fungi_df_mesh, 
+#           "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/fungi.csv")
+
+
+
+
+
+### AGROVOC
+
+
+fungi_agrovoc_query <- 
+  '
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX agro: <http://aims.fao.org/aos/agrontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?disease ?diseaseLabel ?definitionValue
+       ?agent ?agentLabel
+       ?agentDescendant ?agentDescendantLabel ?agentDescendantDef ?agentDescendantAltLabel ?agentDescendantDefinitionValue
+WHERE {
+  # Start from all diseases under Disease concept
+  <http://aims.fao.org/aos/agrovoc/c_5024> skos:narrower+ ?disease .
+  
+  # Preferred label of the disease
+  ?disease skos:prefLabel ?diseaseLabel .
+  FILTER (lang(?diseaseLabel) = "en")
+  
+  # Optional: disease definition
+  OPTIONAL {
+    ?disease skos:definition ?def .
+    ?def rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+  
+  # Causative agent
+  OPTIONAL {
+    ?disease agro:isCausedBy ?agent .
+    
+    # Agent label
+    OPTIONAL {
+      ?agent skos:prefLabel ?agentLabel .
+      FILTER (lang(?agentLabel) = "en")
+    }
+    
+    # Recursively get descendants of the causative agent
+    OPTIONAL {
+      ?agent skos:narrower+ ?agentDescendant .
+      
+      # Descendant label
+      ?agentDescendant skos:prefLabel ?agentDescendantLabel .
+      FILTER (lang(?agentDescendantLabel) = "en")
+      
+      # Optional: descendant definition
+      OPTIONAL {
+        ?agentDescendant skos:definition ?agentDef .
+        ?agentDef rdf:value ?agentDescendantDef .
+        FILTER (lang(?agentDescendantDef) = "en")
+      }
+      
+      # Optional: descendant definition value (alternative pattern)
+      OPTIONAL {
+        ?agentDescendant skos:definition ?agentDescendantDefinitionValue .
+        FILTER (lang(?agentDescendantDefinitionValue) = "en")
+      }
+      
+      # Optional: descendant alternative label
+      OPTIONAL {
+        ?agentDescendant skos:altLabel ?agentDescendantAltLabel .
+        FILTER (lang(?agentDescendantAltLabel) = "en")
+      }
+    }
+  }
+}
+
+'
+
+fungi_results_agrovoc <- sparql_query(endpoint_agrovoc, fungi_agrovoc_query)
+
+fungi_results_agrovoc<-
+  fungi_results_agrovoc |> 
+  select(agent,
+         agentLabel,
+         agentDescendant,
+         agentDescendantLabel,
+         agentDescendantDef,
+         agentDescendantAltLabel) |> 
+  distinct() |> 
+  arrange(agentLabel) |> 
+  mutate(source="agrovoc")
+
+ # write.csv(x = fungi_results_agrovoc,
+ #          "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc/fungi.csv")
+ # 
+
+
+# Combined table 
+
+
+# head(bacteria_agrovoc)
+# head(bacteria_mesh)
+
+fungi_results_agrovoc<-
+  fungi_results_agrovoc |> 
+  # select(-source) |> 
+  rename("AGROVOC_URI" = "agentDescendant",
+         "Agent" = "agentDescendantLabel", 
+         "Alternative_name" = "agentDescendantAltLabel",
+         "Definition_AGROVOC" = "agentDescendantDef") |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent)))
+
+         
+# head(bacteria_agrovoc)  
+
+fungi_df_mesh<-
+  fungi_df_mesh |> 
+  select(-source) |> 
+  rename("MESH_URI" = "rdfID",
+         "Agent" = "fungusLabel",
+         "Definition_MESH" = "scopeNote") |> 
+  select(MESH_URI, Agent, Definition_MESH) |> 
+  distinct() |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent))) 
+
+
+# head(bacteria_mesh)
+
+fungi<-
+full_join(fungi_results_agrovoc, fungi_df_mesh, by = "Agent") |> 
+  select(Agent, 
+         AGROVOC_URI,
+         MESH_URI,
+         Definition_AGROVOC,
+         Definition_MESH,
+         Alternative_name) |> 
+  arrange(Agent)
+
+
+fungi<-unique(fungi)
+
+fungi<-fungi[!is.na(fungi$Agent),]
+
+fungies_with_alternative_name<-fungi[!is.na(fungi$Alternative_name),]
+
+fungies_with_alternative_name<-unique(fungies_with_alternative_name$Agent)
+
+# Prevent that alternative names are also agents
+test<-
+lapply(fungies_with_alternative_name, function(x)
+  rbind(fungi[fungi$Agent==x,],
+        fungi[tolower(fungi$Agent)%in% tolower(fungi[fungi$Agent==x,]$Alternative_name),]))
+
+test<-lapply(test, function(x) x |> select(Agent, Alternative_name))
+
+# Changes
+# No changes needed
+
+
+
+fungi |>
+  mutate(Alternative_name = str_to_sentence(Alternative_name)) |> 
+  bind_rows() |>
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Agent
+  column_spec(2, width = "28%") |>  # AGROVOC_URI
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_Agrovoc
+  column_spec(5, width = "30%") |>  # Definition_MESH
+  column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+# write.csv(unique(fungi$Agent), "../OPTIONS/GET_OPTIONS/full_fungi.csv")
+
+
+
+```
+
+### Protist
+
+```{r create protist table of options, echo=FALSE, eval=FALSE, message=FALSE, warning=FALSE, cache=F}
+
+protozoa_mesh_query<-'
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+
+SELECT ?protozoaURI ?protozoaLabel ?uniqueID ?rdfID ?scopeNote
+WHERE {
+  VALUES ?topProtozoa {
+    mesh:D056893  # Alveolata [B01.043]
+    mesh:D056894  # Amoebozoa [B01.046]
+    mesh:D016828  # Diplomonadida [B01.237]
+    mesh:D056898  # Euglenozoa [B01.268]
+    mesh:D056900  # Parabasalidea [B01.630]
+  }
+
+  ?protozoaURI meshv:broaderDescriptor+ ?topProtozoa .
+
+  ?protozoaURI rdfs:label ?protozoaLabel .
+  FILTER (lang(?protozoaLabel) = "en")
+
+  ?protozoaURI meshv:identifier ?uniqueID .
+  BIND(str(?protozoaURI) AS ?rdfID)
+
+  OPTIONAL {
+    ?protozoaURI meshv:preferredConcept ?concept .
+    ?concept meshv:scopeNote ?scopeNote .
+    FILTER (lang(?scopeNote) = "en")
+  }
+}
+ORDER BY ?protozoaLabel
+'
+
+protozoa_results <- list()
+batch_size <- 1000
+
+for (offset in seq(0, 10000, by = batch_size)) {
+  cat("Fetching OFFSET:", offset, "\n")
+  paged_query <- paste0(protozoa_mesh_query, "\nLIMIT ", batch_size, " OFFSET ", offset)
+  result <- sparql_query(endpoint, paged_query)
+  
+  if (nrow(result) == 0) break
+  protozoa_results[[length(protozoa_results) + 1]] <- result
+}
+
+protozoa_df <- dplyr::bind_rows(protozoa_results) 
+# colnames(virus_df)
+
+# colnames(virus_df)
+protozoa_df_mesh<- protozoa_df |> distinct()
+# colnames(fungi_df)
+
+protozoa_df_mesh<-protozoa_df_mesh |> mutate(source = "MESH", agentAltLabel = NA)
+
+  
+# write.csv(x = protozoa_df_mesh, 
+#           "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/protista.csv")
+
+
+### AGROVOC
+
+protozoa_agrovoc_query <- 
+'
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX agro: <http://aims.fao.org/aos/agrontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?concept ?conceptLabel ?definitionValue ?conceptAltLabel
+       ?agentDescendant ?agentDescendantLabel ?agentDescendantDef ?agentDescendantAltLabel
+WHERE {
+  # Start from Protozoa under organisms
+  # First get organisms, then find Protozoa under it
+  ?organisms skos:prefLabel "organisms"@en .
+  ?organisms skos:narrower+ ?protozoa .
+  ?protozoa skos:prefLabel "Protozoa"@en .
+  ?protozoa skos:narrower+ ?concept .
+  
+  # Preferred label of the concept
+  ?concept skos:prefLabel ?conceptLabel .
+  FILTER (lang(?conceptLabel) = "en")
+  
+  # Optional: concept definition
+  OPTIONAL {
+    ?concept skos:definition ?def .
+    ?def rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+  
+  # Optional: concept alternative label
+  OPTIONAL {
+    ?concept skos:altLabel ?conceptAltLabel .
+    FILTER (lang(?conceptAltLabel) = "en")
+  }
+  
+  # Causative agent descendants
+  OPTIONAL {
+    ?concept agro:isCausedBy ?agent .
+    
+    # Recursively get descendants of the causative agent
+    ?agent skos:narrower+ ?agentDescendant .
+    
+    # Descendant label
+    ?agentDescendant skos:prefLabel ?agentDescendantLabel .
+    FILTER (lang(?agentDescendantLabel) = "en")
+    
+    # Optional: descendant definition
+    OPTIONAL {
+      ?agentDescendant skos:definition ?agentDef .
+      ?agentDef rdf:value ?agentDescendantDef .
+      FILTER (lang(?agentDescendantDef) = "en")
+    }
+    
+    # Optional: descendant alternative label
+    OPTIONAL {
+      ?agentDescendant skos:altLabel ?agentDescendantAltLabel .
+      FILTER (lang(?agentDescendantAltLabel) = "en")
+    }
+  }
+}
+'
+
+protozoa_results_agrovoc<- sparql_query(endpoint_agrovoc, protozoa_agrovoc_query)
+
+# protozoa_results |> arrange(conceptLabel)
+
+protozoa_results_agrovoc<-
+  protozoa_results_agrovoc |> 
+  select(concept,
+         conceptLabel,
+         definitionValue,
+         conceptAltLabel) |> 
+  distinct() |> 
+  arrange(conceptLabel) |> 
+  mutate(source="agrovoc")
+
+ # write.csv(x = protozoa_results_agrovoc,
+ #          "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc/protista.csv")
+
+
+# Combined table 
+
+
+# head(bacteria_agrovoc)
+# head(bacteria_mesh)
+
+protozoa_results_agrovoc<-
+  protozoa_results_agrovoc |> 
+  # select(-source) |> 
+  rename("AGROVOC_URI" = "concept",
+         "Agent" = "conceptLabel", 
+         "Alternative_name" = "conceptAltLabel",
+         "Definition_AGROVOC" = "definitionValue") |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent)))
+
+         
+# head(bacteria_agrovoc)  
+
+protozoa_df_mesh<-
+  protozoa_df_mesh |> 
+  select(-source) |> 
+  rename("MESH_URI" = "rdfID",
+         "Agent" = "protozoaLabel",
+         "Definition_MESH" = "scopeNote") |> 
+  select(MESH_URI, Agent, Definition_MESH) |> 
+  distinct() |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent))) 
+
+
+# head(bacteria_mesh)
+
+protozoa<-
+full_join(protozoa_results_agrovoc, protozoa_df_mesh, by = "Agent") |> 
+  select(Agent, 
+         AGROVOC_URI,
+         MESH_URI,
+         Definition_AGROVOC,
+         Definition_MESH,
+         Alternative_name) |> 
+  arrange(Agent)
+
+
+protozoa<-unique(protozoa)
+
+protozoa<-protozoa[!is.na(protozoa$Agent),]
+
+protozoa_with_alternative_name<-protozoa[!is.na(protozoa$Alternative_name),]
+
+protozoa_with_alternative_name<-unique(protozoa_with_alternative_name$Agent)
+
+# Prevent that alternative names are also agents
+test<-
+lapply(protozoa_with_alternative_name, function(x)
+  rbind(protozoa[protozoa$Agent==x,],
+        protozoa[tolower(protozoa$Agent)%in% tolower(protozoa[protozoa$Agent==x,]$Alternative_name),]))
+
+test<-lapply(test, function(x) x |> select(Agent, Alternative_name))
+
+# Changes
+# test[[3]]
+# protozoa[grepl("Haemosporida", protozoa$Agent, ignore.case = T),]
+# protozoa[grepl("Coccidia", protozoa$Agent, ignore.case = T),]
+
+protozoa<-protozoa[protozoa$Agent!="Haemosporida",]
+
+# test[[4]]
+protozoa<-protozoa[protozoa$Agent!="Giardia lamblia",]
+
+# test[[12]]
+protozoa<-protozoa[protozoa$Agent!="Apicomplexa",]
+
+protozoa<-protozoa[protozoa$Agent!="Trypanosoma gambiense",] #Trypanosoma brucei gambiense stays
+
+protozoa<-protozoa[protozoa$Agent!="[Obsolete] endamoeba histolytica",] 
+
+protozoa |>
+  mutate(Alternative_name = str_to_sentence(Alternative_name)) |> 
+  bind_rows() |>
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Agent
+  column_spec(2, width = "28%") |>  # AGROVOC_URI
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_Agrovoc
+  column_spec(5, width = "30%") |>  # Definition_MESH
+  column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+# write.csv(unique(protozoa$Agent), "../OPTIONS/GET_OPTIONS/full_protista.csv")
+
+```
+
+### Helminths
+
+
+```{r create helminths table of options, echo=FALSE, eval=FALSE, message=FALSE, warning=FALSE, cache=F}
+
+worm_mesh_query <- '
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?wormURI ?wormLabel ?uniqueID ?rdfID ?scopeNote ?depth ?parentURI ?parentLabel
+WHERE {
+  VALUES ?topWorm {
+    mesh:D006376  # Helminths
+  }
+  
+  # Use property path with * to include the starting node and all descendants
+  ?wormURI meshv:broaderDescriptor* ?topWorm .
+  
+  # Get the label
+  ?wormURI rdfs:label ?wormLabel .
+  FILTER (lang(?wormLabel) = "en")
+  
+  # Get the unique identifier
+  ?wormURI meshv:identifier ?uniqueID .
+  
+  # Convert URI to string
+  BIND(str(?wormURI) AS ?rdfID)
+  
+  # Calculate depth (optional - shows hierarchy level)
+  OPTIONAL {
+    SELECT ?wormURI (COUNT(?intermediate) AS ?depth) WHERE {
+      ?wormURI meshv:broaderDescriptor* ?intermediate .
+      ?intermediate meshv:broaderDescriptor* ?topWorm .
+    }
+    GROUP BY ?wormURI
+  }
+  
+  # Get immediate parent (optional)
+  OPTIONAL {
+    ?wormURI meshv:broaderDescriptor ?parentURI .
+    ?parentURI rdfs:label ?parentLabel .
+    FILTER (lang(?parentLabel) = "en")
+  }
+  
+  # Scope note
+  OPTIONAL {
+    ?wormURI meshv:annotation ?scopeNote .
+    FILTER (lang(?scopeNote) = "en")
+  }
+}
+ORDER BY ?depth ?wormLabel
+'
+
+worm_mesh_results <- list()
+batch_size <- 1000
+
+for (offset in seq(0, 10000, by = batch_size)) {
+  cat("Fetching OFFSET:", offset, "\n")
+  paged_query <- paste0(worm_mesh_query, "\nLIMIT ", batch_size, " OFFSET ", offset)
+  result <- sparql_query(endpoint_mesh, paged_query)
+  
+  if (nrow(result) == 0) break
+  worm_mesh_results[[length(worm_mesh_results) + 1]] <- result
+}
+
+worm_mesh_df <- dplyr::bind_rows(worm_mesh_results) 
+
+worm_mesh_df<- worm_mesh_df |> distinct()
+# colnames(worm_mesh_df)
+
+worm_mesh_df<-worm_mesh_df |> mutate(source = "MESH", agentAltLabel = NA)
+
+
+# write.csv(x = worm_mesh_df, 
+#           "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/worm.csv")
+
+
+
+
+# nematode AGROVOC
+
+
+nematode_agrovoc_query <- 
+  '
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?agent ?agentLabel ?agentAltLabel ?definitionValue ?parentURI ?parentLabel
+WHERE {
+  VALUES ?rootConcept {
+    <http://aims.fao.org/aos/agrovoc/c_5112>   # nematoda
+  }
+  
+  # Use property path with * to include the starting node and all descendants
+  ?rootConcept skos:narrower* ?agent .
+  
+  # Agent label in English
+  ?agent skos:prefLabel ?agentLabel .
+  FILTER (lang(?agentLabel) = "en")
+  
+  # Optional: entry terms (alternative labels)
+  OPTIONAL {
+    ?agent skos:altLabel ?agentAltLabel .
+    FILTER (lang(?agentAltLabel) = "en")
+  }
+  
+  # Optional: definition (structured via rdf:value)
+  OPTIONAL {
+    ?agent skos:definition ?definition .
+    ?definition rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+  
+  # Get immediate parent (optional)
+  OPTIONAL {
+    ?parentURI skos:narrower ?agent .
+    ?parentURI skos:prefLabel ?parentLabel .
+    FILTER (lang(?parentLabel) = "en")
+  }
+}
+ORDER BY ?agentLabel
+'
+
+
+nematode_agrovoc_results<- sparql_query(endpoint_agrovoc, nematode_agrovoc_query)
+
+# protozoa_results |> arrange(conceptLabel)
+
+nematode_agrovoc_results<-
+  nematode_agrovoc_results |> 
+  select(agent,
+         agentLabel,
+         definitionValue,
+         agentAltLabel) |> 
+  distinct() |> 
+  arrange(agentLabel) |> 
+  mutate(source="agrovoc")
+
+
+
+
+# plathelminthes AGROVOC 
+
+
+plathelminthes_agrovoc_query <- 
+  '
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?agent ?agentLabel ?agentAltLabel ?definitionValue ?parentURI ?parentLabel
+WHERE {
+  VALUES ?rootConcept {
+    <http://aims.fao.org/aos/agrovoc/c_6007>   # platyhelminthes
+  }
+  
+  # Use property path with * to include the starting node and all descendants
+  ?rootConcept skos:narrower* ?agent .
+  
+  # Agent label in English
+  ?agent skos:prefLabel ?agentLabel .
+  FILTER (lang(?agentLabel) = "en")
+  
+  # Optional: entry terms (alternative labels)
+  OPTIONAL {
+    ?agent skos:altLabel ?agentAltLabel .
+    FILTER (lang(?agentAltLabel) = "en")
+  }
+  
+  # Optional: definition (structured via rdf:value)
+  OPTIONAL {
+    ?agent skos:definition ?definition .
+    ?definition rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+  
+  # Get immediate parent (optional)
+  OPTIONAL {
+    ?parentURI skos:narrower ?agent .
+    ?parentURI skos:prefLabel ?parentLabel .
+    FILTER (lang(?parentLabel) = "en")
+  }
+}
+ORDER BY ?agentLabel
+'
+
+plathelminthes_agrovoc_results<- sparql_query(endpoint_agrovoc, plathelminthes_agrovoc_query)
+
+
+# protozoa_results |> arrange(conceptLabel)
+
+plathelminthes_agrovoc_results<-
+  plathelminthes_agrovoc_results |> 
+  select(agent,
+         agentLabel,
+         definitionValue,
+         agentAltLabel) |> 
+  distinct() |> 
+  arrange(agentLabel) |> 
+  mutate(source="agrovoc")
+
+
+# full grovoc wrom dataset
+worms_agrovoc_df <- rbind(
+  nematode_agrovoc_df,
+  plathelminthes_agrovoc_df)
+
+#colnames(worms_agrovoc_df)
+
+worms_agrovoc_df<-worms_agrovoc_df |>  arrange(agentLabel)
+
+
+ # write.csv(x = worms_agrovoc_df, 
+ #          "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc/worm.csv")
+
+
+
+ 
+# FULL table 
+
+
+# head(bacteria_agrovoc)
+# head(bacteria_mesh)
+
+worms_agrovoc_df<-
+  worms_agrovoc_df |> 
+  # select(-source) |> 
+  rename("AGROVOC_URI" = "agent",
+         "Agent" = "agentLabel", 
+         "Alternative_name" = "agentAltLabel",
+         "Definition_AGROVOC" = "definitionValue") |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent)))
+
+         
+# head(bacteria_agrovoc)  
+
+worm_mesh_df<-
+  worm_mesh_df |> 
+  # select(-source) |> 
+  rename("MESH_URI" = "rdfID",
+         "Agent" = "wormLabel",
+         "Definition_MESH" = "scopeNote") |> 
+  select(MESH_URI, Agent, Definition_MESH) |> 
+  distinct() |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent))) 
+
+
+# head(bacteria_mesh)
+
+worms<-
+full_join(worms_agrovoc_df, worm_mesh_df, by = "Agent") |> 
+  select(Agent, 
+         AGROVOC_URI,
+         MESH_URI,
+         Definition_AGROVOC,
+         Definition_MESH,
+         Alternative_name) |> 
+  arrange(Agent)
+
+
+worms<-unique(worms)
+
+worms<-worms[!is.na(worms$Agent),]
+
+worms_with_alternative_name<-worms[!is.na(worms$Alternative_name),]
+
+worms_with_alternative_name<-unique(worms_with_alternative_name$Agent)
+
+# Prevent that alternative names are also agents
+test<-
+lapply(worms_with_alternative_name, function(x)
+  rbind(worms[worms$Agent==x,],
+        worms[tolower(worms$Agent)%in% tolower(worms[worms$Agent==x,]$Alternative_name),]))
+
+test<-lapply(test, function(x) x |> select(Agent, Alternative_name))
+
+# Changes
+# test[[11]]
+worms<-worms[worms$Agent!="Nematospiroides",]
+
+ 
+ 
+worms |>
+  mutate(Alternative_name = str_to_sentence(Alternative_name)) |> 
+  bind_rows() |>
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Agent
+  column_spec(2, width = "28%") |>  # AGROVOC_URI
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_Agrovoc
+  column_spec(5, width = "30%") |>  # Definition_MESH
+  column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+# write.csv(unique(worms$Agent), "../OPTIONS/GET_OPTIONS/full_helminths.csv")
+ 
+
+```
+
+### Leeches 
+
+```{r create leeches table of options, echo=FALSE, eval=FALSE, message=FALSE, warning=FALSE, cache=F}
+
+
+### MESH 
+
+leeches_mesh_query <- '
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?leechURI ?leechLabel ?uniqueID ?rdfID ?scopeNote ?parentURI ?parentLabel
+WHERE {
+  VALUES ?topLeech {
+    mesh:D007865  # Leeches
+  }
+  
+  # Use property path with * to include the starting node and all descendants
+  ?leechURI meshv:broaderDescriptor* ?topLeech .
+  
+  # Get the label
+  ?leechURI rdfs:label ?leechLabel .
+  FILTER (lang(?leechLabel) = "en")
+  
+  # Get the unique identifier
+  ?leechURI meshv:identifier ?uniqueID .
+  
+  # Convert URI to string
+  BIND(str(?leechURI) AS ?rdfID)
+  
+  # Get immediate parent (optional)
+  OPTIONAL {
+    ?leechURI meshv:broaderDescriptor ?parentURI .
+    ?parentURI rdfs:label ?parentLabel .
+    FILTER (lang(?parentLabel) = "en")
+  }
+  
+  # Scope note
+  OPTIONAL {
+    ?leechURI meshv:annotation ?scopeNote .
+    FILTER (lang(?scopeNote) = "en")
+  }
+}
+ORDER BY ?leechLabel
+'
+
+leeches_mesh_results <- list()
+batch_size <- 1000
+
+for (offset in seq(0, 10000, by = batch_size)) {
+  cat("Fetching OFFSET:", offset, "\n")
+  paged_query <- paste0(leeches_mesh_query, "\nLIMIT ", batch_size, " OFFSET ", offset)
+  result <- sparql_query(endpoint_mesh, paged_query)
+  
+  if (nrow(result) == 0) break
+  leeches_mesh_results[[length(leeches_mesh_results) + 1]] <- result
+}
+
+leeches_mesh_df <- dplyr::bind_rows(leeches_mesh_results) 
+
+leeches_mesh_df<- leeches_mesh_df |> distinct()
+# colnames(worm_mesh_df)
+
+leeches_mesh_df<-leeches_mesh_df |> mutate(source = "MESH", agentAltLabel = NA)
+
+
+# write.csv(x = leeches_mesh_df, 
+#           "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/leeches.csv")
+
+
+
+## AGROVOC
+
+
+hirudinea_agrovoc_query <-  # leeches
+'
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?agent ?agentLabel ?agentAltLabel ?definitionValue ?parentURI ?parentLabel
+WHERE {
+  VALUES ?rootConcept {
+    <http://aims.fao.org/aos/agrovoc/c_4249>   # platyhelminthes
+  }
+  
+  # Use property path with * to include the starting node and all descendants
+  ?rootConcept skos:narrower* ?agent .
+  
+  # Agent label in English
+  ?agent skos:prefLabel ?agentLabel .
+  FILTER (lang(?agentLabel) = "en")
+  
+  # Optional: entry terms (alternative labels)
+  OPTIONAL {
+    ?agent skos:altLabel ?agentAltLabel .
+    FILTER (lang(?agentAltLabel) = "en")
+  }
+  
+  # Optional: definition (structured via rdf:value)
+  OPTIONAL {
+    ?agent skos:definition ?definition .
+    ?definition rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+  
+  # Get immediate parent (optional)
+  OPTIONAL {
+    ?parentURI skos:narrower ?agent .
+    ?parentURI skos:prefLabel ?parentLabel .
+    FILTER (lang(?parentLabel) = "en")
+  }
+}
+ORDER BY ?agentLabel
+'
+
+hirudinea_agrovoc_results <- sparql_query(endpoint_agrovoc, hirudinea_agrovoc_query)
+
+hirudinea_agrovoc_results<-
+  hirudinea_agrovoc_results |> 
+  select(agent,
+         agentLabel,
+         definitionValue,
+         agentAltLabel) |> 
+  distinct() |> 
+  arrange(agentLabel) |> 
+  mutate(source="agrovoc")
+
+ # write.csv(x = hirudinea_agrovoc_results,
+ #          "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc/hirudinea.csv")
+
+ 
+ 
+
+
+# Combined table 
+
+
+# head(bacteria_agrovoc)
+# head(bacteria_mesh)
+
+hirudinea_agrovoc_results<-
+  hirudinea_agrovoc_results |> 
+  # select(-source) |> 
+  rename("AGROVOC_URI" = "agent",
+         "Agent" = "agentLabel", 
+         "Alternative_name" = "agentAltLabel",
+         "Definition_AGROVOC" = "definitionValue") |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent)))
+
+         
+# head(bacteria_agrovoc)  
+
+leeches_mesh_df<-
+  leeches_mesh_df |> 
+  select(-source) |> 
+  rename("MESH_URI" = "rdfID",
+         "Agent" = "leechLabel",
+         "Definition_MESH" = "scopeNote") |> 
+  select(MESH_URI, Agent, Definition_MESH) |> 
+  distinct() |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent))) 
+
+
+leeches<-
+full_join(hirudinea_agrovoc_results, leeches_mesh_df, by = "Agent") |> 
+  select(Agent, 
+         AGROVOC_URI,
+         MESH_URI,
+         Definition_AGROVOC,
+         Definition_MESH,
+         Alternative_name) |> 
+  arrange(Agent)
+
+
+leeches<-unique(leeches)
+
+leeches<-leeches[!is.na(leeches$Agent),]
+
+leeches_with_alternative_name<-leeches[!is.na(leeches$Alternative_name),]
+
+leeches_with_alternative_name<-unique(leeches_with_alternative_name$Agent)
+
+# Prevent that alternative names are also agents
+test<-
+lapply(leeches_with_alternative_name, function(x)
+  rbind(leeches[leeches$Agent==x,],
+        leeches[tolower(leeches$Agent)%in% tolower(leeches[leeches$Agent==x,]$Alternative_name),]))
+
+test<-lapply(test, function(x) x |> select(Agent, Alternative_name))
+
+# Changes
+
+leeches |>
+  mutate(Alternative_name = str_to_sentence(Alternative_name)) |> 
+  bind_rows() |>
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Agent
+  column_spec(2, width = "28%") |>  # AGROVOC_URI
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_Agrovoc
+  column_spec(5, width = "30%") |>  # Definition_MESH
+  column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+# write.csv(unique(leeches$Agent), "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/GET_OPTIONS/full_leeches.csv")
+
+
+```
+
+### Arthopods
+
+```{r create arhropod table of options, echo=FALSE, eval=FALSE, message=FALSE, warning=FALSE, cache=F}
+
+# mesh. 
+
+arthro_mesh_query<-'
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?arthroURI ?arthroLabel ?uniqueID ?rdfID ?scopeNote ?parentURI ?parentLabel
+WHERE {
+  VALUES ?topArthro {
+    mesh:D008925  # Mites
+    mesh:D013987  # Ticks
+    mesh:D020063  # Cimicidae
+    mesh:D014225  # Triatominae
+    mesh:D000854  # Anoplura
+    mesh:D018429  # Glossinidae
+    mesh:D000073563  # Culicomorpha
+    mesh:D010691  # Phlebotomus
+    mesh:D005423  # Siphonaptera
+  }
+  
+  # Use property path with * to include the starting node and all descendants
+  ?arthroURI meshv:broaderDescriptor* ?topArthro .
+  
+  # Get the label
+  ?arthroURI rdfs:label ?arthroLabel .
+  FILTER (lang(?arthroLabel) = "en")
+  
+  # Get the unique identifier
+  ?arthroURI meshv:identifier ?uniqueID .
+  
+  # Convert URI to string
+  BIND(str(?arthroURI) AS ?rdfID)
+  
+  # Get immediate parent (optional)
+  OPTIONAL {
+    ?arthroURI meshv:broaderDescriptor ?parentURI .
+    ?parentURI rdfs:label ?parentLabel .
+    FILTER (lang(?parentLabel) = "en")
+  }
+  
+  # Scope note
+  OPTIONAL {
+    ?arthroURI meshv:annotation ?scopeNote .
+    FILTER (lang(?scopeNote) = "en")
+  }
+}
+ORDER BY ?arthroLabel
+'
+
+arthro_mesh_results <- list()
+batch_size <- 1000
+
+for (offset in seq(0, 10000, by = batch_size)) {
+  cat("Fetching OFFSET:", offset, "\n")
+  paged_query <- paste0(arthro_mesh_query, "\nLIMIT ", batch_size, " OFFSET ", offset)
+  result <- sparql_query(endpoint_mesh, paged_query)
+  
+  if (nrow(result) == 0) break
+  arthro_mesh_results[[length(arthro_mesh_results) + 1]] <- result
+}
+
+arthro_mesh_df <- dplyr::bind_rows(arthro_mesh_results) 
+
+arthro_mesh_df<- arthro_mesh_df |> distinct()
+# colnames(arthro_df)
+
+# write.csv(x = arthro_mesh_df, 
+#           "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/arthro.csv")
+
+
+
+
+# agrovoc
+
+
+arthro_agrovoc_query<-
+
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?agent ?agentLabel ?agentAltLabel ?definitionValue ?parentURI ?parentLabel
+WHERE {
+  VALUES ?rootConcept {
+    <http://aims.fao.org/aos/agrovoc/c_6007>   # platyhelminthes
+    <http://aims.fao.org/aos/agrovoc/c_57>     # acari
+    <http://aims.fao.org/aos/agrovoc/c_30648>  # cimicidae
+    <http://aims.fao.org/aos/agrovoc/c_30703>   # triatominae
+    <http://aims.fao.org/aos/agrovoc/c_7492>    # anoplura
+    <http://aims.fao.org/aos/agrovoc/c_11174>   # glossinidae
+    <http://aims.fao.org/aos/agrovoc/c_1465>   # ceratopogonidae
+    <http://aims.fao.org/aos/agrovoc/c_30471>  # Chironomidae
+    <http://aims.fao.org/aos/agrovoc/c_2016>   # Culicidae
+    <http://aims.fao.org/aos/agrovoc/c_7075>   # Simuliidae
+    <http://aims.fao.org/aos/agrovoc/c_29353>  # Psychodidae
+    <http://aims.fao.org/aos/agrovoc/c_7082>   # Psychodidae
+  }
+  
+  # Use property path with * to include the starting node and all descendants
+  ?rootConcept skos:narrower* ?agent .
+  
+  # Agent label in English
+  ?agent skos:prefLabel ?agentLabel .
+  FILTER (lang(?agentLabel) = "en")
+  
+  # Optional: entry terms (alternative labels)
+  OPTIONAL {
+    ?agent skos:altLabel ?agentAltLabel .
+    FILTER (lang(?agentAltLabel) = "en")
+  }
+  
+  # Optional: definition (structured via rdf:value)
+  OPTIONAL {
+    ?agent skos:definition ?definition .
+    ?definition rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+  
+  # Get immediate parent (optional)
+  OPTIONAL {
+    ?parentURI skos:narrower ?agent .
+    ?parentURI skos:prefLabel ?parentLabel .
+    FILTER (lang(?parentLabel) = "en")
+  }
+}
+ORDER BY ?agentLabel'
+
+
+arthro_agrovoc_results <- sparql_query(endpoint_agrovoc, arthro_agrovoc_query)
+
+
+arthro_agrovoc_results<-
+  arthro_agrovoc_results |> 
+  select(agent,
+         agentLabel,
+         definitionValue,
+         agentAltLabel) |> 
+  distinct() |> 
+  arrange(agentLabel) |> 
+  mutate(source="agrovoc")
+
+ write.csv(x = arthro_agrovoc_results,
+          "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc/arthropod.csv")
+
+
+ 
+
+# Combined table 
+
+
+arthro_agrovoc_results<-
+  arthro_agrovoc_results |> 
+  # select(-source) |> 
+  rename("AGROVOC_URI" = "agent",
+         "Agent" = "agentLabel", 
+         "Alternative_name" = "agentAltLabel",
+         "Definition_AGROVOC" = "definitionValue") |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent)))
+
+         
+# head(bacteria_agrovoc)  
+
+arthro_mesh_df<-
+  arthro_mesh_df |> 
+  # select(-source) |> 
+  rename("MESH_URI" = "rdfID",
+         "Agent" = "arthroLabel",
+         "Definition_MESH" = "scopeNote") |> 
+  select(MESH_URI, Agent, Definition_MESH) |> 
+  distinct() |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent))) 
+
+
+arthropods<-
+full_join(arthro_agrovoc_results, arthro_mesh_df, by = "Agent") |> 
+  select(Agent, 
+         AGROVOC_URI,
+         MESH_URI,
+         Definition_AGROVOC,
+         Definition_MESH,
+         Alternative_name) |> 
+  arrange(Agent)
+
+
+arthropods<-unique(arthropods)
+
+arthropods<-arthropods[!is.na(arthropods$Agent),]
+
+arthropods_with_alternative_name<-arthropods[!is.na(arthropods$Alternative_name),]
+
+arthropods_with_alternative_name<-unique(arthropods_with_alternative_name$Agent)
+
+# Prevent that alternative names are also agents
+test<-
+lapply(arthropods_with_alternative_name, function(x)
+  rbind(arthropods[arthropods$Agent==x,],
+        arthropods[tolower(arthropods$Agent)%in% tolower(arthropods[arthropods$Agent==x,]$Alternative_name),]))
+
+test<-lapply(test, function(x) x |> select(Agent, Alternative_name))
+
+# test
+
+
+arthropods |>
+  mutate(Alternative_name = str_to_sentence(Alternative_name)) |> 
+  bind_rows() |>
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Agent
+  column_spec(2, width = "28%") |>  # AGROVOC_URI
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_Agrovoc
+  column_spec(5, width = "30%") |>  # Definition_MESH
+  column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+# write.csv(unique(arthropods$Agent), "../OPTIONS/GET_OPTIONS/full_arthropods.csv")
+
+```
+
+### Prions
+
+```{r create prions table of options, echo=FALSE, eval=FALSE, message=FALSE, warning=FALSE, cache=F}
+
+# mesh. 
+
+prion_mesh_query<-'
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?prionURI ?prionLabel ?uniqueID ?rdfID ?scopeNote ?parentURI ?parentLabel
+WHERE {
+  VALUES ?topPrion {
+    mesh:D011328  # Prions
+  }
+  
+  # Use property path with * to include the starting node and all descendants
+  ?prionURI meshv:broaderDescriptor* ?topPrion .
+  
+  # Get the label
+  ?prionURI rdfs:label ?prionLabel .
+  FILTER (lang(?prionLabel) = "en")
+  
+  # Get the unique identifier
+  ?prionURI meshv:identifier ?uniqueID .
+  
+  # Convert URI to string
+  BIND(str(?prionURI) AS ?rdfID)
+  
+  # Get immediate parent (optional)
+  OPTIONAL {
+    ?prionURI meshv:broaderDescriptor ?parentURI .
+    ?parentURI rdfs:label ?parentLabel .
+    FILTER (lang(?parentLabel) = "en")
+  }
+  
+  # Scope note
+  OPTIONAL {
+    ?prionURI meshv:annotation ?scopeNote .
+    FILTER (lang(?scopeNote) = "en")
+  }
+}
+ORDER BY ?prionLabel
+'
+
+prion_mesh_results <- list()
+batch_size <- 1000
+
+for (offset in seq(0, 10000, by = batch_size)) {
+  cat("Fetching OFFSET:", offset, "\n")
+  paged_query <- paste0(prion_mesh_query, "\nLIMIT ", batch_size, " OFFSET ", offset)
+  result <- sparql_query(endpoint_mesh, paged_query)
+  
+  if (nrow(result) == 0) break
+  prion_mesh_results[[length(prion_mesh_results) + 1]] <- result
+}
+
+prion_mesh_df <- dplyr::bind_rows(prion_mesh_results) 
+
+prion_mesh_df<- prion_mesh_df |> distinct()
+# colnames(arthro_df)
+
+# write.csv(x = prion_mesh_df,
+#           "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/MESH/prion.csv")
+
+
+
+#agrovoc
+
+prion_agrovoc_query<- 
+  '
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?agent ?agentLabel ?agentAltLabel ?definitionValue 
+WHERE {
+  VALUES ?rootConcept {
+    <http://aims.fao.org/aos/agrovoc/c_36165> # Prion
+  }
+  
+  # Include root concept and recursively get all descendants
+  {
+    # Include the root concept itself
+    ?rootConcept skos:prefLabel ?agentLabel .
+    BIND(?rootConcept AS ?agent)
+  }
+  UNION
+  {
+    # Recursively get all descendants of the root concepts
+    ?rootConcept skos:narrower+ ?agent .
+    ?agent skos:prefLabel ?agentLabel .
+  }
+  
+  # Agent label in English
+  FILTER (lang(?agentLabel) = "en")
+  
+  # Optional: entry terms (alternative labels)
+  OPTIONAL {
+    ?agent skos:altLabel ?agentAltLabel .
+    FILTER (lang(?agentAltLabel) = "en")
+  }
+  
+  # Optional: definition (structured via rdf:value)
+  OPTIONAL {
+    ?agent skos:definition ?definition .
+    ?definition rdf:value ?definitionValue .
+    FILTER (lang(?definitionValue) = "en")
+  }
+}
+'
+
+prion_agrovoc_results <- sparql_query(endpoint_agrovoc, prion_agrovoc_query)
+# prion_agrovoc_results <- prion_agrovoc_results |> arrange(agentLabel)
+
+
+prion_agrovoc_results<-
+  prion_agrovoc_results |> 
+  select(agent,
+         agentLabel,
+         definitionValue,
+         agentAltLabel) |> 
+  distinct() |> 
+  arrange(agentLabel) |> 
+  mutate(source="agrovoc")
+
+
+ # write.csv(x = prion_agrovoc_results, 
+ #          "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/OPTIONS/Agrovoc/prion.csv")
+
+
+
+
+
+# Combined table 
+
+
+prion_agrovoc_results<-
+  prion_agrovoc_results |> 
+  # select(-source) |> 
+  rename("AGROVOC_URI" = "agent",
+         "Agent" = "agentLabel", 
+         "Alternative_name" = "agentAltLabel",
+         "Definition_AGROVOC" = "definitionValue") |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent)))
+
+         
+# head(bacteria_agrovoc)  
+
+prion_mesh_df<-
+  prion_mesh_df |> 
+  # select(-source) |> 
+  rename("MESH_URI" = "rdfID",
+         "Agent" = "prionLabel",
+         "Definition_MESH" = "scopeNote") |> 
+  select(MESH_URI, Agent, Definition_MESH) |> 
+  distinct() |> 
+  mutate(Agent = stringr::str_to_sentence(as.character(Agent))) 
+
+
+prion<-
+full_join(prion_agrovoc_results, prion_mesh_df, by = "Agent") |> 
+  select(Agent, 
+         AGROVOC_URI,
+         MESH_URI,
+         Definition_AGROVOC,
+         Definition_MESH,
+         Alternative_name) |> 
+  arrange(Agent)
+
+
+prion<-unique(prion)
+
+prion<-prion[!is.na(prion$Agent),]
+
+prion_with_alternative_name<-prion[!is.na(prion$Alternative_name),]
+
+prion_with_alternative_name<-unique(prion_with_alternative_name$Agent)
+
+# Prevent that alternative names are also agents
+test<-
+lapply(prion_with_alternative_name, function(x)
+  rbind(prion[prion$Agent==x,],
+        prion[tolower(prion$Agent)%in% tolower(prion[prion$Agent==x,]$Alternative_name),]))
+
+test<-lapply(test, function(x) x |> select(Agent, Alternative_name))
+
+# test
+
+prion<-prion[prion$Agent!="Prion proteins",]
+
+prion |>
+  mutate(Alternative_name = str_to_sentence(Alternative_name)) |> 
+  bind_rows() |>
+  kable("html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE,
+    font_size = 8
+  ) |>
+  column_spec(1, width = "22%") |>  # Agent
+  column_spec(2, width = "28%") |>  # AGROVOC_URI
+  column_spec(3, width = "28%") |>  # MESH_URI
+  column_spec(4, width = "30%") |>  # Definition_Agrovoc
+  column_spec(5, width = "30%") |>  # Definition_MESH
+  column_spec(6, width = "22%") |>  # Alternative_name
+  row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
+  scroll_box(width = "740px", height = "1000px")
+
+
+# write.csv(unique(prion$Agent), "/Users/DMontecino/OneDrive - Wildlife Conservation Society/DATABASE/OPTIONS/GET_OPTIONS/full_prion.csv")
+
+
+```
+
+
+
 

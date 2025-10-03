@@ -42,14 +42,13 @@ group_source_record<-
       Type="Multiple selection",
       Mandatory="Yes"),
     
-    # data.frame(
-    #   Variable="GroupAnimalSourceRecordInFacilityHousehold",
-    #   Label="Group Source In Facility or Household",
-    #   Definition="Answer to the question: 'Is the Group Source in a captive facility
-    #   (e.g., rehabilitation center, zoologic, laboratory, market, etc) or household 
-    #   (restricted by a person at home or other)?'",
-    #   Type="Boolean",
-    #   Mandatory="Yes"),
+    data.frame(
+      Variable="GroupAnimalSourceRecordTimeSinceHunted",
+      Label="Group Source Time Since Hunted",
+      Definition="The period that the animals of the Group Source have been hunted. The 
+      unit must be provided also (e.g., '20 minutes', ' Two days', etc.)",
+      Type="String",
+      Mandatory="No"),
     
     data.frame(
       Variable="GroupAnimalSourceRecordNameFacility",

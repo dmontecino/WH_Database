@@ -340,6 +340,14 @@ surv_activity<-
       Mandatory="Yes"), 
     
     data.frame(
+      Variable="LocationsNumberKnown",
+      Label="Surveillance Activity Locations Number Know", 
+      Definition="Answer to the question: 'Is the number of Locations included in the 
+      Surveillance Activity know a priori?'",
+      Type="Integer",
+      Mandatory="Yes"),  
+    
+    data.frame(
       Variable="SurveillanceActivityLocationsNumber",
       Label="Surveillance Activity Locations Number", 
       Definition="The number of Locations included in the Surveillance Activity",
@@ -548,9 +556,9 @@ surv_activity<-
     data.frame(
       Variable="SurveillanceActivityOtherSurveillanceActivityAssociatedCode",
       Label="Surveillance Activity Associated Surveillance Activities Codes", 
-      Definition="The Codes of other Surveillance Activities associated with the 
+      Definition="The Codes of other Surveillance Activities or datasets associated with the 
       current Surveillance Activity",
-      Type="Multiple selection",
+      Type="String",
       Mandatory="Yes"),
     
     data.frame(

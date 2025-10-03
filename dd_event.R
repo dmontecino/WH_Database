@@ -31,12 +31,12 @@ event<-
       Type="String",
       Mandatory="No"),
     
-    data.frame(
-      Variable="EventType",
-      Label="Event type",
-      Definition="The type of Event recorded",
-      Type="Single selection",
-      Mandatory="Yes"),
+    # data.frame(
+    #   Variable="EventType",
+    #   Label="Event type",
+    #   Definition="The type of Event recorded",
+    #   Type="Single selection",
+    #   Mandatory="Yes"),
     
     # data.frame(
     #   Variable="EventUnit",
@@ -48,16 +48,16 @@ event<-
     #   Mandatory="Yes"), 
     
     data.frame(
-      Variable="EventFeatures",
-      Label="Event Features", 
-      Definition="Specific set of findings at the Event that are dynamic over time
-      (e.g., fire, smoke, etc)",
+      Variable="EventFindings",
+      Label="Event Findings", 
+      Definition="Specific set of findings at the Event scale that are dynamic over time
+      and could represent a health threat (e.g., fire, smoke, etc)",
       Type="Multiple selection",
       Mandatory="Yes"),
     
     data.frame(
       Variable="EventOtherFeatures",
-      Label="Other Event Features", 
+      Label="Other Event Findings", 
       Definition="Other findings at the Event that are dynamic over time not listed in the previous attribute",
       Type="String",
       Mandatory="No"),
@@ -200,6 +200,50 @@ event<-
     #   Type="Single selection",
     #   Mandatory="Yes"), 
 
+    data.frame(
+      Variable="AreaAroundEvent",
+      Label="Area Around Event", 
+      Definition="Answer to the question: 'Does the Event include Source Records
+      distributed around its longitude and latitude recorded?'",
+      Type="Single selection",
+      Mandatory="No"), 
+    
+    data.frame(
+      Variable="EventAreaValue",
+      Label="Event Area Value", 
+      Definition="Value of the area surface centered in the longitude and latitude of the Event 
+      (surface of the area around the Event containing Source Records)",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="EventAreaValueUnit",
+      Label="Event Area Value Unit", 
+      Definition="The unit of the area surface centered in the longitude and latitude of the Event",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="EventAreaAroundEvent",
+      Label="Area Around Event Precision", 
+      Definition="The precision of the value reported for the surface of the area around the Event",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="EventCountry",
+      Label="Event Country", 
+      Definition="Country where the Event occurs",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
+    data.frame(
+      Variable="EventCountry",
+      Label="Event Country", 
+      Definition="Country where the Event occurs",
+      Type="Single selection",
+      Mandatory="Yes"), 
+    
     data.frame(
       Variable="EventCountry",
       Label="Event Country", 

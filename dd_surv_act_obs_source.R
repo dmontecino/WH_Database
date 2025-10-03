@@ -740,8 +740,9 @@ group_source<-
     
     data.frame(
       Variable="SurveillanceActivitySourceOrCarcassOrStoredCarcassDiagnosticProtocols",
-      Label="Group Source Diagnostic Protocols",
-      Definition="Protocols of the new Diagnostic(s) conducted in Group Sources",
+      Label="Group Source Carcasses Diagnostic Protocols",
+      Definition="Protocols of the new Diagnostic(s) conducted in carcasses belonging to the same
+      Group Source",
       Type="String",
       Mandatory="Yes"),
     
@@ -1109,7 +1110,10 @@ group_source<-
       Label="Group Source Protocol Diagnostics",
       Definition="Description of the Diagnostic protocols conducted with the 
       Group Source Specimens included in the Surveillance Activity per hazard, Specimen type,
-      and host species",
+      and host species. For PCR protocols, it is strongly recommended to provide the forward primer sequence, the reverse
+      primer sequence, the gene target, and the primer citation. For ELISA assays, the probe target 
+      the probe type, and the probe citation, as recommended in 'A minimum data standard for wildlife disease research and surveillance'
+      https://www.nature.com/articles/s41597-025-05332-x; https://doi.org/10.1038/s41597-025-05332-x; Table 3",
       Type="String",
       Mandatory="Yes"),
     

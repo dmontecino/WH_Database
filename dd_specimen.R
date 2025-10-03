@@ -58,6 +58,13 @@ specimen<-
       Mandatory="Yes"),  
     
     data.frame(
+      Variable="SpecimenCollectionMethod",
+      Label="Specimen Collection Method", 
+      Definition="The technique used to acquire the Specimen (e.g., swabbing, punching, venipuncture, bleeding)",
+      Type="Single Selection",
+      Mandatory="Yes"),  
+    
+    data.frame(
       Variable="SpecimenCreationDate",
       Label="Specimen Creation Date",
       Definition="The date the Specimen is created",

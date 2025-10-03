@@ -47,6 +47,13 @@ storage<-
       Definition="The quantity of Specimen currently stored (e.g., 0.3)",
       Type="Float",
       Mandatory="Yes"),
+    
+    data.frame(
+      Variable="SpecimenCurrentQuantityUnit",
+      Label="Specimen Current Quantity Unit",
+      Definition="The unit of measurement for the reported quantity of Specimen currently stored (e.g., mililiters)",
+      Type="Single selection",
+      Mandatory="Yes"),
 
     data.frame(
       Variable="SpecimenReasonQuantityDifference",
@@ -129,8 +136,15 @@ data.frame(
 data.frame(
   Variable="StorageProblemsInFacility",
   Label="Storage Problems in Facility",
-  Definition="Description of any problems regarding the storage of the Carcass or Specimen within the facility",
+  Definition="Description of any problems regarding the storage of Carcasses or Specimens within the facility",
   Type="String",
+  Mandatory="Yes"), 
+
+data.frame(
+  Variable="StorageProblemsInFacilityDate",
+  Label="Storage Problems in Facility Date",
+  Definition="Date when any problems regarding the storage of Carcasses or Specimens within the facility occurred",
+  Type="Date",
   Mandatory="Yes"), 
 
 data.frame(
