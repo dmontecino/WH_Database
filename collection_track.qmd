@@ -1,0 +1,13 @@
+A **Collection Track** refers to the effort to find or document **Events** in linear features within a **Location** during a specific period of time. For example, the distance travelled by rangers during a conducted in a protected area where they find dead animals or a population monitoring transect. The effort also includes and the amount of time to cover the track. A **Location** can contain one or multiple **Collection Tracks**. Sources observed or sampled opportunistically are not tied to an effort, therefore, the **Collection Track** units do not apply.
+
+**Collection Tracks** are not nested in **Collection Areas** but both are nested under **Locations**. If a methodology involves **Events** nested in **Collection Tracks** and these tracks nested in **Collection Areas** then, the link between both types of **Collection** can be made through the spatial data and through **Tags** (see Complexities).
+
+Key attributes of a **Collection Track** include:
+
+* The spatial effort unit
+* The spatial effort (distance travelled)
+* The temporal effort unit
+* The temporal effort (period of time to travel the reported distance)
+* The spatial coordinates of the track
+
+If there are a **Collection Track** attributes that are not part of the current data model but are of interest to track, for example, specific environmental features, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Collection Tracks** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Collection Tracks** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity.

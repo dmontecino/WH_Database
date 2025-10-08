@@ -121,6 +121,18 @@ More complex relationships between the fundamental units of the data model, as w
 
 ```
 
+## Collection Area
+
+```{r child="collection_area.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
+## Collection Track 
+
+```{r child="collection_track.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
 ## Event
 
 ![](Pictures_and_diagrams/Picture6.png){width=100%}
@@ -129,7 +141,7 @@ More complex relationships between the fundamental units of the data model, as w
 
 ```
 
-## Collection
+## Collection Point
 
 ![](Pictures_and_diagrams/Picture7.png){width=100%}
 
@@ -137,7 +149,7 @@ More complex relationships between the fundamental units of the data model, as w
 
 ```
 
-eeeeeree## Source and Source Records
+## Source and Source Records
 
 ![](Pictures_and_diagrams/Picture8.png){width=100%}
 

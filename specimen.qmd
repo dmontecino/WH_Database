@@ -27,7 +27,7 @@ Key attributes of a **Specimen** include:
 * Ownership
 
 
-**Specimens** are stored, and their storage may change multiple times over time as they are transferred within and between facilities or because the amount of **Specimen** changes as it is used in a **Diagnostic**. Similarly, **Specimens** can be exported multiple times. Any storage changes related to an exportation must occur only after the exportation is completed, ensuring the Specimen is properly stored at the destination facility.
+**Specimens** are stored, and their storage may change multiple times as they are transferred within and between facilities or because the amount of **Specimen** changes as it is used in a **Diagnostic**. Similarly, **Specimens** can be exported multiple times. Any storage changes related to an exportation must occur only after the exportation is completed, ensuring the Specimen is properly stored at the destination facility.
 
 **Specimens** are stored and changes in the storage or movement of the **Specimens** from one storage facility to another can be multiple over time. Similarly, Specimens can be exported multiple times. Changes in storage associated with an exportation must occur after the exportation is completed and the Specimen can be stored in the destination facility.
 

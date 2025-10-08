@@ -1,6 +1,6 @@
 <!-- # Project {.unnumbered} -->
 
-A **Project** in the data model represents a surveillance initiative supported by specific entities. Examples include the PREDICT Project funded by USAID, a single cross-sectional study with one field visit to a specific location (e.g., sample collection in a market), or a national or local wildlife health surveillance network managed by a government agency.
+A **Project** in the data model represents a surveillance initiative supported by specific entities and lead by specific individuals. Examples include the PREDICT Project funded by USAID, a single cross-sectional study with one field visit to a specific location (e.g., sample collection in a market), or a national or local wildlife health surveillance network managed by a government agency.
 
 **Projects** serve as the highest hierarchical unit in the database and must contain at least one **Surveillance Activity**. They can be time-limited, spanning a single date, or ongoing for an extended period as needed.
 
@@ -13,6 +13,6 @@ Key properties of a **Project** include:
 * Project Leader
 * Project Funding Source
 
-Other attributes and provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html)
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html)
 
 
