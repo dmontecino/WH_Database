@@ -168,7 +168,7 @@ mouth_beak_table <- readRDS("Necropsy_anatomy/Tables for manual/mouth.RDS")
 
   mouth_beak_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -209,7 +209,7 @@ eye_table <- readRDS("Necropsy_anatomy/Tables for manual/eye.RDS")
 
   eye_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -223,7 +223,7 @@ eye_table <- readRDS("Necropsy_anatomy/Tables for manual/eye.RDS")
 
 ```{r necropsy nose, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
 
-source("Necropsy_anatomy/Necropsy_topology_nose.R")
+# source("Necropsy_anatomy/Necropsy_topology_nose.R")
 
 # saveRDS(nose_table, "Necropsy_anatomy/Tables for manual/nose.RDS")
 nose_table <- readRDS("Necropsy_anatomy/Tables for manual/nose.RDS")
@@ -249,7 +249,7 @@ nose_table <- readRDS("Necropsy_anatomy/Tables for manual/nose.RDS")
 
   nose_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -290,7 +290,7 @@ ear_table <- readRDS("Necropsy_anatomy/Tables for manual/ear.RDS")
 
   ear_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -332,7 +332,7 @@ sinuses_table <- readRDS("Necropsy_anatomy/Tables for manual/sinuses.RDS")
 
   sinuses_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -376,7 +376,7 @@ c("Eyelashes", NA, NA, NA)) |>
 
 integument_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -396,7 +396,7 @@ integument_table %>% bind_rows() |>
 # saveRDS(skin_table, "Necropsy_anatomy/Tables for manual/skin.RDS")
 skin_table <- readRDS("Necropsy_anatomy/Tables for manual/skin.RDS")
 
-
+skin_table<-
 rbind(
   skin_table,
   c("Scar", NA, NA, NA))|> 
@@ -420,7 +420,7 @@ rbind(
 
 skin_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -461,7 +461,7 @@ sc_fat_table <- readRDS("Necropsy_anatomy/Tables for manual/fat.RDS")
 
 sc_fat_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -503,7 +503,7 @@ muscle_table <- readRDS("Necropsy_anatomy/Tables for manual/muscle.RDS")
 
 muscle_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -543,7 +543,7 @@ body_cavities_table <- readRDS("Necropsy_anatomy/Tables for manual/body.RDS")
 
 body_cavities_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -557,7 +557,7 @@ body_cavities_table %>% bind_rows() |>
 
 ```{r necropsy cardio, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
 
-source("Necropsy_anatomy/Necropsy_topology_cardiovascular.R")
+# source("Necropsy_anatomy/Necropsy_topology_cardiovascular.R")
 
 # saveRDS(circulatory_table, "Necropsy_anatomy/Tables for manual/heart.RDS")
 circulatory_table <- readRDS("Necropsy_anatomy/Tables for manual/heart.RDS")
@@ -585,7 +585,7 @@ circulatory_table <- readRDS("Necropsy_anatomy/Tables for manual/heart.RDS")
 
 circulatory_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -600,7 +600,7 @@ circulatory_table %>% bind_rows() |>
 
 ```{r necropsy respiratory, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
 
-source("Necropsy_anatomy/Necropsy_topology_respiratory.R")
+# source("Necropsy_anatomy/Necropsy_topology_respiratory.R")
 
 # saveRDS(resp_table, "Necropsy_anatomy/Tables for manual/respiratory.RDS")
 resp_table <- readRDS("Necropsy_anatomy/Tables for manual/respiratory.RDS")
@@ -626,7 +626,7 @@ resp_table <- readRDS("Necropsy_anatomy/Tables for manual/respiratory.RDS")
 
 resp_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -668,7 +668,7 @@ digestive_table <- readRDS("Necropsy_anatomy/Tables for manual/gastro.RDS")
 
 digestive_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -681,9 +681,9 @@ digestive_table %>% bind_rows() |>
 
 ##### Urinary Tract
 
-```{r necropsy gastrointestinal, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
+```{r necropsy urinary, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
 
-source("Necropsy_anatomy/Necropsy_topology_urinary.R")
+# source("Necropsy_anatomy/Necropsy_topology_urinary.R")
 
 # saveRDS(urinary_table, "Necropsy_anatomy/Tables for manual/urinary.RDS")
 urinary_table <- readRDS("Necropsy_anatomy/Tables for manual/urinary.RDS")
@@ -709,7 +709,7 @@ urinary_table <- readRDS("Necropsy_anatomy/Tables for manual/urinary.RDS")
 
 urinary_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -722,7 +722,7 @@ urinary_table %>% bind_rows() |>
 
 ```{r necropsy reproductvie, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, cache=F}
 
-source("Necropsy_anatomy/Necropsy_topology_repro.R")
+# source("Necropsy_anatomy/Necropsy_topology_repro.R")
 
 # saveRDS(repro_table, "Necropsy_anatomy/Tables for manual/repro.RDS")
 repro_table <- readRDS("Necropsy_anatomy/Tables for manual/repro.RDS")
@@ -749,7 +749,7 @@ repro_table <- readRDS("Necropsy_anatomy/Tables for manual/repro.RDS")
 
 repro_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -790,7 +790,7 @@ lympha_table <- readRDS("Necropsy_anatomy/Tables for manual/lymph.RDS")
 
 lympha_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -832,7 +832,7 @@ endo_table <- readRDS("Necropsy_anatomy/Tables for manual/endo.RDS")
 
 endo_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -874,7 +874,7 @@ nervo_table <- readRDS("Necropsy_anatomy/Tables for manual/nervous.RDS")
 
 nervo_table %>% bind_rows() |> 
   gt::gt() %>%
-  gt::tab_options(table.font.size = 8) %>%
+  gt::tab_options(table.font.size = 12) %>%
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
                  Definition_NALT ~ gt::pct(30)) %>%
@@ -920,10 +920,10 @@ Key attributes of a **Arthropod Source** include:
 
 #### Arthropod Source Record
 
-**An Arthropod Source Record represents the set of arthropods collected from an Arthropod Source at time *t* using a specific method**. For example, the set of mosquitoes  at time *t* (**Arthropod Source Record**) from a site in the forest (**Arthropod Source**) captured using a CO₂ trap (**Collection Point**). This means that mosquitoes obtained using CO₂ traps and BG traps (**Collection Points**) at an **Arthropod Source** at time *t* represent the same **Arthropod Source Record**.
+**An Arthropod Source Record represents the set of arthropods collected from an Arthropod Source at time *t* using a specific method**. For example, the set of mosquitoes  at time *t* (**Arthropod Source Record**) from a site in the forest (**Arthropod Source**) captured using a CO₂ trap (**Collection Point**). This means that mosquitoes obtained using CO₂ traps and BG traps (**Collection Points**) at an **Arthropod Source** at time *t* belong to the same **Arthropod Source Record**.
 
 
-Key attributes of a **Arthropod Source** include:
+Key attributes of a **Arthropod Source Record** include:
 
 * Arthropod Source Record Number
 * Arthropod Species
