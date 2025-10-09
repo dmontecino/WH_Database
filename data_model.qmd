@@ -181,36 +181,42 @@ More complex relationships between the fundamental units of the data model, as w
 
 ```
 
+## Results
 
-# Complexities
+**Diagnostics** return results in the units of quantitative or qualitative value reported for the **Diagnostic**. For example, the value of a CT score in real-time PCR. Each **Diagnostic** can have multiple **Results** depending on the hazards targeted or it assess the hazard presence multiple times.  
+
+Each **Result** of a **Diagnostic** has a single **Interpretation**. The **Interpretation** is the qualification of the specific **Result** of a **Diagnostic** test as positive, negative, or inconclusive, based on case definitions for the diagnostic test reported in the **Surveillance Activity** metadata.
 
 ## Storage
 
-In the data model, Specimens from all Sources (including Diagnostic Products) and Carcasses of Animal Sources can be stored, their storage can be tracked, and changes in storage can be traced. 
+In the data model, **Specimens** from all **Sources** (including Diagnostic Products) and carcasses of **Group and Animal Sources** can be stored, the site of storage can be tracked, and changes in storage can be traced. The data recorded also allows to track the amount of **Specimen** currently available versus the original amount and the reason of the differences over time. Every change in the amount of **Specimen** and every change in the storage site should be recorded as a different **Storage** process.
 
-## Export
+## Shipments
 
-In the data model, Specimens from all Sources (including Diagnostic Products) and Carcasses of Animal Sources can be exported and exportations can be tracked.
+In the data model, **Specimens** from all Sources (including Diagnostic Products) and carcasses of **Group and Animal Sources** can be shipped to another facility. Partial amounts can also be shipped and the volume exported can be tracked as well as the remaining amounts of the original **Specimen** left at the storage site. Shipments that are currently "in transit" can also be tracked.
 
 ## Laboratories
 
-The data model includes Laboratory entities. Laboratories can conduct Diagnostics to test for hazards in Specimens or in full Source Records (Field-based Diagnostics or simple Diagnostics conducted by people are also possible in the data model. See Diagnostics). Laboratory properties include address, manager, name, Laboratory ID, among others (Data Dictionary). It is also possible to store data regarding Laboratory capabilities in terms of diagnostic tests and storage, and their certifications (Bio safety levels, etc.)
+The data model includes **Laboratory** entities. Laboratories can conduct **Diagnostics** to test for hazards. Laboratory properties include address, manager, name, Laboratory ID, among others (Data Dictionary). It is also possible to store data regarding laboratory capabilities in terms of diagnostic tests and storage, and their certifications (Bio safety levels, etc.)
 
-## Interpretation
+## Interpretation of Specimens
 
-#### Interpretation of a hazard's detection in a Diagnostic
+In the data model, a **Specimen** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Specimen** provided in the **Surveillance Activity** metadata. The **Interpretation** follows the **Results** from the **Diagnostics** conducted using the **Specimen** and their  interpretations. 
 
-In the data model, Interpretation of a Diagnostic is the conclusion regarding the detection of a hazard using a Diagnostic targeting that specific hazard, based on a case definition for a positive, negative, or undetermined result provided in the Surveillance Activity metadata. Each Diagnostic receives one Interpretation only.
+For example, it is possible that a single hazard is assessed in a **Specimen** using three different **Diagnostics** and two of them are interpreted as positive and the other one as negative. Based on these **Results**, the hazard status of the **Specimen** must be interpreted (positive, negative, inconclusive).
 
-#### Interpretation of a hazard's presence in a Specimen
+**Specimens** can receive multiple **Interpretations** if they are used in several **Diagnostics** targeting different hazards. 
 
-In the data model, Interpretation of a Hazard in a Specimen is the conclusion regarding the presence or absence of a specific hazard in a Specimen, based on a case definition for a positive, negative, or undetermined Specimen provided in the Surveillance Activity metadata. The interpretation follows the results from the Diagnostic(s) conducted using the Specimen and the corresponding Diagnostic(s) Interpretation(s). Specimens can receive multiple Interpretations if they are used to conduct several Diagnostics to assess several hazards or if the same hazard is assessed more than once in different diagnostics.
 
-#### Interpretation of a hazard's presence in a Source Record
+## Interpretation of Source Records
 
-In the data model, Interpretation of a Hazard in a Source Record is the conclusion regarding the presence or absence of a specific hazard in a Source Record, based on a case definition for a positive, negative, or undetermined Source Record provided in the Surveillance Activity metadata. The interpretation follows the results of the Diagnostic(s) conducted using the Source Record, the Source Record Specimen(s), the corresponding Diagnostic(s), anomalies in the Source Record at a Event, and Necropsy findings.
+In the data model, a **Source Record** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Source Record** provided in the **Surveillance Activity** metadata. The **Interpretation** for a specific hazard follows the **Results** and **Interpretations** of the **Diagnostics** conducted using **Specimens** of the **Source Records** and the **Interpretation** of the **Source Records**. 
 
-Source Records can receive multiple Interpretations if multiple hazards are assessed in them or the same hazard is assessed more than once. Sources can have many Interpretations through several Source Records if multiple hazards are assessed in them at time *t* (Source Record), if the same hazard is assessed more than once at time *t* (Source Record), or if different or the same hazard are assessed over time (several Source Records of the same Source over time).
+For example, it is possible that a single hazard is assessed in multiple  **Specimens** of a **Source Record** using three different **Diagnostics**. Two of these **Specimens** are interpreted as positive and the other one as negative. Based on these data, the hazard status of the **Source Record** must be interpreted (positive, negative, inconclusive).
+
+**Source Record** can receive multiple **Interpretations** if multiple hazards are assessed in them. 
+
+# Complexities
 
 ```{r child="groups.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -221,15 +227,6 @@ Source Records can receive multiple Interpretations if multiple hazards are asse
 
 ```
 
-
-# All Units in the Data Model
-
-Considering the details explained in the Complexities section, a summary of the relationships in the data model is provided in the following figure (the orange Units and connections apply to Animal Sources only. The green line apply to Group and Animal Source Records only):
-
-![](Pictures_and_diagrams/Relationships_All_Sources.png){width="680"}
-
-
-<!-- #Recommnedations for Standardization -->
 
 ```{r child="standardized_recommendations.qmd", echo=FALSE, eval=F, message=FALSE, cache=F}
 
