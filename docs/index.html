@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Diego Montecino-Latorre">
-<meta name="dcterms.date" content="2025-02-27">
+<meta name="dcterms.date" content="2025-10-09">
 
-<title>WildHealth Database (WHeDB)</title>
+<title>Health And Wildlife Knowledge (HAWK) Database</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,8 +90,10 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">WildHealth Database (WHeDB)</a> 
+      <a href="./">Health And Wildlife Knowledge (HAWK) Database</a> 
         <div class="sidebar-tools-main">
+    <a href="https://github.com/dmontecino/WH_Database" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Health-And-Wildlife-Knowledge--HAWK--Database.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -111,19 +113,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WildHealth Data Model</span></a>
+ <span class="menu-text">Data Model</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_dictionary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WildHealth Data Model Dictionary</span></a>
+ <span class="menu-text">Data Model Dictionary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WildHealth Database Manual</span></a>
+ <span class="menu-text">Manual</span></a>
   </div>
 </li>
     </ul>
@@ -137,6 +139,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#presentation" id="toc-presentation" class="nav-link active" data-scroll-target="#presentation">Presentation</a></li>
+  <li><a href="#why-use-hawk" id="toc-why-use-hawk" class="nav-link" data-scroll-target="#why-use-hawk">Why use HAWK?</a></li>
+  <li><a href="#documentation-content" id="toc-documentation-content" class="nav-link" data-scroll-target="#documentation-content">Documentation content</a></li>
   </ul>
 </nav>
     </div>
@@ -145,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">WildHealth Database (WHeDB)</h1>
+<h1 class="title">Health And Wildlife Knowledge (HAWK) Database</h1>
 </div>
 
 
@@ -162,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 27, 2025</p>
+      <p class="date">October 9, 2025</p>
     </div>
   </div>
   
@@ -193,23 +197,33 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <!-- ## Presentation {.unnumbered} -->
-<p>This documentation provides a comprehensive guide to the WildHealth Database (WHeDB), covering its data structure (data model), the web-based graphical user interface for general users, and the data dictionary. Our goal is to offer a clear understanding of WHeDB’s organization, functionality, and data semantics.</p>
-<p><strong>WHeDB</strong> is a versatile platform designed to manage wildlife health data from diverse surveillance efforts. These efforts include:</p>
-<ul>
-<li>Citizen observations of dead, injured, or sick animals</li>
-<li>Research studies focused on wildlife health</li>
-<li>National and local monitoring surveillance programs</li>
-<li>Outbreak investigations</li>
-<li>Global surveillance initiatives spanning multiple countries, hazards, and host species</li>
-</ul>
-<p>The version 1 of the data model structuring the data in <strong>WHeDB</strong> has been developed by the <strong>Wildlife Health Intelligence Network - Data Task Force</strong>. This Data Task Force is composed by members of the Wildlife Conservation Society, the World Organisation of Animal Health, the United Nations Food and Agriculture Administration, the University of Calgary, the Davis Arbovirus Research and Training (University of California - Davis), the Canadian Wildlife Health Cooperative, and the Global Biodiversity Information Facility. This collective expertise spans wildlife health surveillance activities conducted in numerous countries with several public and private partners using cross-sectional and longitudinal strategies; the establishment of wildlife health surveillance networks; assessment of diverse biological, chemical, and physical hazards; zoonotic disease research (e.g., Ebola, SARS-CoV-2); engagement of rangers in protected areas and nearby communities as key contributors to health surveillance; diagnostic development and testing, wildlife pathology, and wildlife data management using different information management systems.</p>
+<p>Wildlife health surveillance (WHS) is critical for addressing health hazards that threaten wildlife and undermine One Health. It involves a comprehensive set of activities aimed at continuously and rapidly generating and analyzing information on the health of wildlife and associated hazards to prevent, mitigate, control, or eliminate exposure to these hazards and support population resilience.</p>
+<p>WHS systems rely on diverse data, including information on environmental features, animal observations, specimens collected, necropsy findings, and diagnostic test results, generated by many actors through various methodologies targeting different hazards, vectors, and hosts. These diverse data need to be managed properly so they remain safe, secured, centralized, available, standardized, and comprehensible in the short- and long-term. In this manner, WHS data can be rapidly assessed, communicated, and responded to utilizing an evidence-based decision making process.</p>
+<p>Despite its relevance, WHS data management is a historical weakness that has impacted the response to health crises and the establishment of One Health surveillance systems. Furthermore, as ~50 % of countries report no WHS, collaborative networks among key in-country partners can be developed to expand its coverage. Efficient data management for this WHS expansion strategy is key to ensure their operation as a functionally cohesive unit.</p>
+<p>Well-designed databases promote and facilitate data safety, security, centralization, harmonization, quality, availability, communication, and sharing. Moreover, purpose-built databases are key for improving data governance and the implementation and operation of effective WHS systems.</p>
+<p>While a few databases exist, they are private, costly, restricted to specific agencies, or limited in scope. WHS is generally underfunded, limiting the development and maintenance of system-specific databases. In line with this reality, the World Organization for Animal Health (WOAH) recently reported that only 61 % of surveyed countries maintain wildlife health data in a “sustainable and reliable information system” and most WOAH national focal points for wildlife recently expressed the need for a wildlife centralized health national database.</p>
+<p>To address this gap, Wildlife Conservation Society (WCS) is coordinating the Wildlife Health Intelligence Network (WHIN), a broad community of practice supporting WHS implementation from local to global scales (https://wildlifehealthintelligence.net/), to develop the WHS purpose-built and accessible web-based <strong>Health and Wildlife Knowledge</strong> (HAWK) database. The engagement of a community of practice (WHIN) throughout the design resulted in a data model that incorporates real-world WHS data generation and management experiences. For example, HAWK contains elements of the Wildlife Health Intelligence Platform, a 30+ year-old database used by the Canadian Wildlife Health Cooperative to manage wildlife health information from across Canada, and VectorSurv, a data system used by more than 380 agencies in 36 states and territories of the United States of America to manage vector-borne disease surveillance information (https://vectorsurv.org/).</p>
+<p>Rather than serving as another data repository, HAWK functions as a data service that allows users to properly manage WHS data they generate or collate, applying self-defined methodologies to achieve objectives such as pathogen detection or establishing disease freedom.</p>
+</section>
+<section id="why-use-hawk" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-hawk">Why use HAWK?</h2>
+<p>HAWK is optimized to meet the needs of public agencies, private organizations, academia, and other interested actors conducting WHS or related monitoring of different hosts, hazards, and diseases, using variable methods, effectively managing diverse data. For example, an organization can structure and centralize data from mortality investigations, opportunistic findings, tested samples from handled or harvested animals, community-based or systematic monitoring (e.g., mortality recorded via iNaturalist, ranger patrols), collated news articles, and research projects using advanced designs (Fig. 2).</p>
+<p>HAWK’s data structure is compatible with repositories such as the Global Biodiversity Information Facility (GBIF) and WOAH’s World Animal Health Information System (WAHIS). Therefore, data in these repositories considered relevant for WHS can be brought into a HAWK account (for a Surveillance Activity), whilst data in a HAWK account relevant for global-level wildlife health reporting (e.g., WAHIS) or biodiversity monitoring (e.g., GBIF) could be shared with these platforms. WOAH’s early engagement with HAWK can enhance collaboration and synergies to support interoperability with future WOAH data systems and could help improve current limitations in global wildlife health reporting. The upcoming API will streamline interoperability and expand it to include WHS-relevant information collected or stored in widely distributed tools (e.g., Spatial Monitoring and Reporting Tool, District Health Information Software 2), allowing stakeholders to continue using their primary platforms. By structuring, harmonizing, centralizing, and securing a broader range of WHS information, including data that typically remain scattered, HAWK supports better decision-making within and across organizations, administrative units, or study areas (Fig. 2).</p>
+<p>Data safety, security, and ownership are safeguarded through strictly private organization accounts. Organizations have account-specific users with distinct permission levels as determined by organization account administrators, and two-factor authentication access.</p>
+<p>By facilitating WHS data safety, centralization, accessibility, and interoperability, plus its detailed metadata, HAWK supports FAIR and CARE principles compliance. Balance between data protection and availability is achieved by establishing data ownership and by organizations agreeing to comply with self-selected data embargoes, ranging from immediate data availability to obligatory long-term release under open license.</p>
+<p>HAWK is powered by WCS, a 130-year old independent nonprofit conservation organization with global presence and a longstanding mission that relies on worldwide distributed funding from public and private sources (https://www.wcs.org/about-us/literature/annual-reports). Through WCS institutional support, HAWK is being developed for long-term sustainability, with data safety and security independent of government regulations, political contexts, or national priorities. If needed, HAWK and its contents can be deployed in any country with Microsoft web services, while remaining under WCS hosting and oversight.</p>
+<p>HAWK is a ready-to-adopt global public good, available for any organization in any country, meant to encourage best data practices whose costs can be shared across many parties with funds allocated for data management and storage, alleviating the burden on isolated and resource-limited stakeholders. Critically, <strong>when local funding is unavailable, Global South and Indigenous communities users will have access to HAWK at no charge, within reasonable usage limits</strong>. This approach, together with multilanguage user interfaces and interoperability will foster a global WHS network.</p>
+<p>While numerous barriers to WHS remain (e.g., siloed actors, funding, and unclear policy frameworks), HAWK, slated for release in late 2025, aims to fill a historical gap in the availability of a sustainable purpose-built database to support the adequate management of WHS data. We invite the WHS and One Health communities to lay the foundation of their data practices on this database and contribute to its iterative improvement.</p>
+</section>
+<section id="documentation-content" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-content">Documentation content</h2>
+<p>This documentation provides a comprehensive guide to HAWK, covering its data structure (data model), the web-based graphical user interface for general users, the data dictionary, and the terms of use. Our goal is to offer a clear understanding of HAWK’s organization, functionality, and data semantics.</p>
 <p>The documentation is structured as follows:</p>
-<p><strong>Data Model</strong> – A detailed overview of <strong>WHeDB’s</strong> data structure, enabling users to effectively enter, navigate, and manage data in the database.</p>
-<p><strong>Data Dictionary</strong> – A reference guide listing and describing all data elements, including their names, types, and constraints, to ensure consistency and clarity.</p>
+<p><strong>Data Model</strong> – A detailed overview of <strong>HAWK’s</strong> data structure, enabling users to effectively enter, navigate, and manage data in the database.</p>
+<p><strong>Data Dictionary</strong> – A reference guide listing and describing all data elements, including their names, types, and URIs to their original vocabulary of origin (e.g., the National Agriculture Library Thesaurus, Medical, Medical Subject Headings, and AGROVOC), to advance data harmonization, comparability over time and space, comprehension, and interoperability.</p>
 <p><strong>Database Manual</strong> – Step-by-step guidance on using the graphical user interface to access, read, write, edit, delete, and manage data.</p>
-<p>Get Support</p>
-<p>We hope this documentation helps you maximize <strong>WHeDB’s</strong> potential. If you have any questions or need assistance, please contact our support team.</p>
-<p>We hope this documentation proves to be a valuable resource, enabling you to effectively utilize the WildHealthDB database. Should you have any further questions or require additional assistance, please don’t hesitate to reach out the support team.</p>
+<p><strong>Terms of Use</strong> - A comprehensive set of conditions to create a private <strong>Organization</strong> account, and the terms of use to be accepted prior to the creation of the account, including data embargoes and exceptions for Indigenous peoples.</p>
+<p>We hope this documentation helps you maximize <strong>HAWK’s</strong> potential. If you have any questions or need assistance, please contact our support team.</p>
 
 
 </section>
@@ -453,7 +467,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./data_model.html" class="pagination-link">
-        <span class="nav-page-text">WildHealth Data Model</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Data Model</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

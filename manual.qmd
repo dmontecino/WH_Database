@@ -1,4 +1,4 @@
-# Health and Wildlife Knowledge (HAWK) Data Service Manual {.unnumbered}
+# Manual {.unnumbered}
 
 ```{r, echo=FALSE}
 # htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
