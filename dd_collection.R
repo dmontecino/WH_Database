@@ -160,7 +160,7 @@ collection<-
       Mandatory="No"))
 
 collection<-
-  Collection |> 
+  collection |> 
   bind_rows() |> 
   gt::gt() |> 
   gt::tab_options(table.font.size = 8)  |> 

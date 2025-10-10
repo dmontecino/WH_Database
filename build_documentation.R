@@ -80,6 +80,6 @@ writeLines(html_content_cleaned, output_file)
 }
 
 
-# move the files to in _book to docs
+# move the files in _book to docs
 
 

@@ -5,10 +5,10 @@ project:
 cache: false
 
 book:
-  title: "WildHealth Database (WHeDB)"
+  title: "Health And Wildlife Knowledge (HAWK) Database"
   author: "Diego Montecino-Latorre"
   downloads: [pdf] 
-  date: "02/27/2025"
+  date: "10/09/2025"
   chapters:
     - index.qmd
     # - intro.qmd
@@ -22,7 +22,7 @@ book:
     # - diagnostics.qmd
     - data_model.qmd
     - data_dictionary.qmd
-    - data_model_options.qmd
+    # - data_model_options.qmd
     - manual.qmd
   search:
     type: textbox
