@@ -15,4 +15,4 @@ Key properties of a **Project** include:
 
 Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html)
 
-An example include the surveillance of New World Screwworm. This Project includes surveillance of adult flies trapped with baited devices, news sources reporting infestation cases in wildlife, and camera trap videos with wildlife showing wounds compatible with New World Screwworm infestation.
+*An example include the surveillance of New World Screwworm. This Project includes surveillance of adult flies trapped with baited devices, news sources reporting infestation cases in wildlife, and camera trap videos with wildlife showing wounds compatible with New World Screwworm infestation.*
