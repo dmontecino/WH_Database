@@ -1,13 +1,9 @@
-In the data model, **Collection** contains the information associated with the effort to obtain Sources in the field actively. In this case, **Collection Area** refers to the effort to find or document **Events** in an area during a specific period of time. For example, the surface covered in the search of dead birds, and the amount of time spent covering that area. The **Collection area** can be equivalent to the area of the **Location** (one **Collection Area** in the **Location**) or they can be smaller units within the **Location** (e.g., the Location is a full grid cell and each grid cell is explored with a different effort). Sources observed or sampled opportunistically are not tied to an effort, therefore, the **Collection Area** units do not apply.
-
-The meaning of a **Collection Area** depends on the methodology of the **Surveillance Activity**. For an outbreak, dead animals are actively searched for in a beach. The full beach can represent a single **Collection Area** within the beach (the **Location**) or multiple areas within the beach (the **Location**) can each represent a **Collection Area**.
+**Collection Area** refers to the effort to find or document **Events** in an area during a specific period of time. For example, the unit of area covered in a search for dead birds, and the amount of time spent covering that area. The **Collection Area** can be equivalent to the area of the **Location** (one **Collection Area** in the **Location**) or they can be smaller surfaces within the **Location**.
 
 Key attributes of a **Collection Area** include:
 
-* The spatial effort unit
-* The spatial effort (area covered)
-* The temporal effort unit
-* The temporal effort (period of time to cover the area)
+* The spatial effort unit (e.g., square meters)
+* The spatial effort (e.g., 100)
+* The temporal effort unit (e.g., hours)
+* The temporal effort (e.g., 6)
 * The spatial coordinates of the area
-
-If there are a **Collection Area** attributes that are not part of the current data model but are of interest to track, for example, specific environmental features, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Collection Area** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Collection Area** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity.
