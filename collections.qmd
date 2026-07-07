@@ -3,26 +3,25 @@ In the data model, a **Collection Point** represents the effort involved in obse
 
 Examples of **Collection Point** include:
 
-* The time spent by an observer at a fixed position to identify dead birds in a wetland.
-* The camera traps deployed at a specific site to photograph animals and the hours they were active.
-* The traps deployed during a period of time to obtain mosquitoes.
+* Observations made by an individual at a fixe position over a fixed time to identify dead birds in a wetland.
+* A camera trap deployed at a specific site to photograph animals and the hours it was active.
+* Traps deployed during a period of time to collect mosquitoes.
 
-**Collection Points** also allow to characterize problems during the search for **Sources**, such as camera traps running out of battery or stolen, torn mist nets, etc. 
-
-**A Collection Point can contain between zero and an unlimited number of Source Records**. For example, a capture effort that results in no animals caught.
+**A Collection Point can contain between zero (e.g., an unsucccesful capture effort where no animals are caught) and an unlimited number of Source Records**.
 
 **An Event might not include any Collection Point**. Examples include **Sources** found opportunistically (e.g., dead birds accidentally found in a beach) or sampling of the animals in a wet market. 
 
-A **Collection Point** typically contains a specific type of **Source Record**. This is because observations, capturing, and sampling efforts generally focus on a specific type of target, whether *Group*, *Animal*, *Environmental*, or *Arthropods*. However, a single **Event** can include multiple **Collection Points** targeting different **Specimen Sources**. For example, mosquito traps and an air filtration device can be linked to the same **Event**.
+<!-- A **Collection Point** will typically contains a specific type of **Source Record**. This is because observations, capturing, and sampling efforts generally focus on a specific type of target, whether *Group*, *Animal*, *Environmental*, or *Arthropods*. However, a single **Event** can include multiple **Collection Points** targeting different **Specimen Sources**. For example, mosquito traps and an air filtration device can be linked to the same **Event**. -->
 
-**Collections are defined by**: 
+Key attributes of a **Collection Point** include:
 
-* The **spatial effort** (e.g., "number of mist nets", "number of CO₂ traps", "number of Camera traps", "distance walked"; and "area scanned").
-* The **temporal effort** (e.g., "hour deployed").
+* The spatial effort unit (e.g., mist net)
+* The spatial effort (e.g., 1)
+* The temporal effort unit (e.g., hours)
+* The temporal effort (e.g., 2)
 
-When **Source Records** are not linked to a **Collection Point** (e.g., opportunist finding of dead animals), then the *Collection Point** is "NA".
 
-If there are **Collection Point** attributes that are not part of the current data model but are of interest to track, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Collection Points** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Collection Points** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity.
+<!-- If there are **Collection Point** attributes that are not part of the current data model but are of interest to track, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Collection Points** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Collection Points** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity. -->
 
 
 
