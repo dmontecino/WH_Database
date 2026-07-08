@@ -1,31 +1,33 @@
 <!-- # Event {.unnumbered} -->
 
-In the data model, an **Event** represents a distinct wildlife health event recorded at a specific longitude, latitude, and timestamp. Each **Event** is a point that can be associated with no active effort to collect data from the field up to an unlimited number of efforts (**Collection Points**).
+In the data model, an **Event** represents a distinct spatiotemporal coordinate where a health event occurs. The definition of a health event will vary depending on the particular unit of interest receiving the longitude, latitude, and temporal stamp in a Surveillance Activity. 
 
-The definition of a "wildlife health event", and therefore, what an **Event** represents in a **Surveillance Activity** will inevitably vary depending on the main epidemiological unit of interest receiving the longitude, latitude, and temporal stamp. Examples include:
+**Examples include:
 
-* A site where *Animals* are captured at time *t* to obtain **Specimens**
-* The position and time a dead animal is found during a ranger patrol
-* A position and time where water from a pond is sampled for analysis
-* A site where one or multiple traps for mosquitoes are deployed
+* *A site where animals are captured at time t to obtain Specimens*
+* *The position and time a dead animal is found during a ranger patrol*
+* *A position and time where water from a pond is sampled for analysis*
+* *A site where one or multiple traps for mosquitoes are deployed*
 
-Depending on the methodology employed, an **Event** can contain a single trap and, therefore, a single **Collection Point**, or it can contain multiple traps. In this case, the design implies assigning the same longitude and latitude to a set of traps and then each one of them could be recorded as individual **Collection Points**.
+An **Event** can include more than one **Source** type. For example, mosquito traps (*Arthropods*) and collection of wastewater under the spatiotemporal coordinate. 
 
-In the case of beached fish, an **Event** can represent the position and time of recording of each individual dead fish in one extreme, or the total count of dead fish across the beach reported as a single point in the other extreme. In the context of a wet market, the definition of **Event** can be applied to the market, to vendors, to the stalls of vendors, or to the cages in the stalls at time *t*. For study A, the **Event** could be the grid cell where traps are deployed, whilst for study B it could represent each trap within a grid cell. 
+An **Event** can include or not healthy animals. It will depend on the **Event** definition including healthy animals or not.
 
-When the collection of data from animals or sampling sites is opportunistic (no effort involved), for example, a dead animal found during a ranger patrol, then the position of that animal represents the **Event**.
+In the context of a wet market, a sampling **Event** unit could be the entire market or each vendor, or each stall of vendors, or each cage in the stalls of vendors.
 
-In active surveillance activities, an **Event might not have any data besides the effort, for example, when no animals are captured at time *t***.
 
-An **Event** can include or not healthy animals. In the example of the dead animal found by the ranger at time *t*, it could be possible that the **Event** definition includes the documentation of healthy animals at the same position.
+<!-- When **Event** are nested in **Collection Areas** or **Collection tracks** -->
+<!-- Depending on the methodology employed, an **Event** can contain a single trap and, therefore, a single **Collection Point**, or it can contain multiple traps. In this case, the design implies assigning the same longitude and latitude to a set of traps and then each one of them could be recorded as individual **Collection Points**. -->
 
-An **Event** can include more than one **Source** type. For example, mosquito traps (*Arthropods*) and *Environmental* sampling under the same **Event**.
+<!-- In the case of beached fish, an **Event** can represent the position and time of recording of each individual dead fish in one extreme, or the total count of dead fish across the beach reported as a single point in the other extreme. In the context of a wet market, the definition of **Event** can be applied to the market, to vendors, to the stalls of vendors, or to the cages in the stalls at time *t*. For study A, the **Event** could be the grid cell where traps are deployed, whilst for study B it could represent each trap within a grid cell.  -->
 
-It is possible that specific latitude and longitude coordinates are not of interest in a **Surveillance Activity**. For example, a set of mosquito tramps deployed in parcels whose specific spatial position within each parcel is not relevant, and the parcels are visited multiple times. In this case, the suggestion is to consider each parcel as a **Location**, the **Event** is a spatiotemporal point within the parcel area, and the traps are documented as specific **Collection Points** or as a single **Collection Point** depending on the granularity desired.
+<!-- When the collection of data from animals or sampling sites is opportunistic (no effort involved), for example, a dead animal found during a ranger patrol, then the position of that animal represents the **Event**. -->
+
+<!-- In active surveillance activities, an **Event might not have any data besides the effort, for example, when no animals are captured at time *t***. -->
 
 This flexibility allows HAWK to accommodate diverse surveillance strategies, ensuring meaningful and context-appropriate data representation.
 
-**It is up to the user to define if the Event is a unit of interest and what it represents, and to document this definition in the Surveillance Activity metadata. To ensure consistency, each Surveillance Activity must maintain a well-establish Event definition. We strongly suggest that an Event represents the minimal unit where Sources Records are contained in, for example, capturing, containing, or sampling points (mist-nets, cages, traps, position where water is obtained) or the position of dead animals**.
+**It is up to the user to define what an "Event" represents, and to document this definition in the Surveillance Activity metadata. To ensure consistency, each Surveillance Activity must maintain a well-establish Event definition.** We suggest to align the definition of an **Event** with the minimal spatiotemporal unit containing **Sources** in the sampling design, so it matches the spatiotemporal scale of interest for each **Surveillance Activity**.
 
 Key attributes of a **Event** include:
 
@@ -37,10 +39,12 @@ Key attributes of a **Event** include:
 * Longitude & Latitude
 * Coordinate Reference System (CRS) used
 
-If there are **Event** attributes that are not part of the current data model but are of interest to track, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Event** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Event** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity.
+<!-- If there are **Event** attributes that are not part of the current data model but are of interest to track, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Event** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Event** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity. -->
 
-When an Event encompasses Source Records that are recorded under the same point but they were actually distributed across an area, it is possible to add the area around the Event that encompassed these findings, for example, dead birds in a radius of 20 meters recorded as a single Event.
+When an **Event** encompasses **Source Records** that are recorded under the same point but they were actually distributed around the spatial point, it is possible to record the radius around the Event that encompassed these findings, for example, dead birds in a radius of 20 meters recorded as a single Event.
 
+
+Finally, it is possible that a spatial point is not of interest for a **Surveillance Activity**. For example, a set of mosquito tramps deployed in parcels where the specific spatial position of the traps within each parcel is not relevant. In this case, the **Event** must still be recorded within a **Location** (parcels) and the mosquitoes collected across all the traps set within that **Location** represent a single **Source Record**. 
 
 
 
