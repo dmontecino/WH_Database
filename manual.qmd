@@ -194,7 +194,7 @@ The “Details” tab (red frame below) contains the variables that characterize
 
 ![](Pictures_and_diagrams/Manual_pictures/details_tab.png){width=100%}
 
-Users navigate across this tab by scrolling up and down. The fields are editable (active) or not. Non-active fields are grey and cannot be editable (read only). Read only fields may occur when a user does not have edit permission or when only a single option can apply for a specific unit (i.e., environmental **Specimens** can only be collected from the field). See “Mandatory and Conditional Fields” below). Fields are logically ordered; the order is retained even as the **Workspace Panel** is modified. Compare the two images below:
+Users navigate across this tab by scrolling up and down. The fields are editable (active) or not. Non-active fields are grey and cannot be editable (read-only). Read only fields may occur when a user does not have edit permission or when only a single option can apply for a specific unit (i.e., environmental **Specimens** can only be collected from the field). See “Mandatory and Conditional Fields” below). Fields are logically ordered; the order is retained even as the **Workspace Panel** is modified. Compare the two images below:
 
 ![](Pictures_and_diagrams/Manual_pictures/numbered_fields_1.png){width=100%}
 ![](Pictures_and_diagrams/Manual_pictures/numbered_fields_2.png){width=100%}
@@ -457,7 +457,7 @@ These fields are text boxes and are used for long-form or free text written resp
 
 ## Active Fields
 
-Fields in the “Details” tab that can be edited are active. Not active or read only fields are grey in color. This may be the case if a user does not have edit permission, because only one answer applies and selection is not available, or because the system shows relevant information (e.g., fixed diagnostic test parameters). For example, the "Key URL" and "Key Citation" parameters for the diagnostic name "Minion Mk1D".
+Fields in the “Details” tab that can be edited are active. Not active or read-only fields are grey in color. This may be the case if a user does not have edit permission, because only one answer applies and selection is not available, or because the system shows relevant information (e.g., fixed diagnostic test parameters). For example, the "Key URL" and "Key Citation" parameters for the diagnostic name "Minion Mk1D".
 
 ![](Pictures_and_diagrams/Manual_pictures/read_only_fields.png){width=30%, fig-align=center}
 
@@ -604,76 +604,99 @@ To add a **Source Record** to an **Event**, it is necessary to choose the right 
 ![](Pictures_and_diagrams/Manual_pictures/greoup_source_record.png){width=100%, fig-align=center}
 
 
-For **Animal Source Records**, fields area available to complete specific information regarding vaccinations, data on a dead animal, and what is the fate of the carcass in those cases: 
+For **Animal Source Records**, fields request information to complete specific information regarding vaccinations, data of a dead animal, and what is the fate of the carcass in those cases: 
 
 ![](Pictures_and_diagrams/Manual_pictures/animal_source_record.png){width=80%, fig-align=center}
 
 
-For **Environmental Source Records**, the species of origin, the quantity metric, and the quantity are displayed and active (*under construction*):
+For **Environmental Source Records** fields are meant to request data on the current visit to the **Environmental Source**.
 
-For **Arthropod Source Records** the number of arthropods per age, sex, and condition of the females; and the accuracy of the number reported are displayed and active (*under construction*):
+![](Pictures_and_diagrams/Manual_pictures/env_source_record.png){width=80%, fig-align=center}
 
-## Adding a Carcass to a Necropsy
+For **Arthropod Source Records** the fields include the number of individuals per species, life status, sex, and condition. This information is completed using a pop-up window that adds rows to a table informing the total number of individuals. Click the "Add to the Arthropod Source Record" button:
 
-(*under construction*)
+![](Pictures_and_diagrams/Manual_pictures/arthro_source_record.png){width=100%, fig-align=center}
 
-## Adding a Necropsy to a Carcass
 
-(*under construction*)
+When the **Collection** containing an **Arthropod Source Record** does not require effort (not Track, Area, or Point Collection), the information regarding the retrieval of arthropods in the **Arthropod Source Record** is requested. For **Arthropod Source Record** under Track, Area, or Point Collection, that information can be inferred from the spatial effort reported (e.g., C02 trap).
+
+## Adding a Necropsy to an Animal Source Record
+
+A **Necropsy** can be added only to **Animal Source Records**. Just like with other units, to add a **Necropsy** the user needs to identify the "Necropsy" folder under the **Animal Source Record** receiving the necropsy data. Fields in the **Necropsy** unit include open text boxes per body system, condition of the carcass at necropsy, where the necropsy was conducted, and if the necropsy is full or partial, among others.
+
+More than one **Necropsy** can be added to each **Animal Source Record** in case a partial necropsy, a general necropsy, or a secondary necropsy are conducted on the same individual.
 
 ## Adding Specimens to a Source Record
 
-**Specimens** are used for **Diagnostics**. **Specimens** originate from the following:
+**Specimens** are used for **Diagnostics**. **Specimens** originate from sampling a **Group Source Record**, an **Animal Source Record**, and an **Environmental Source Record**, and from the arthropods in an **Arthropod Source Record**. 
+<!-- (i.e., an oral swab from an individual animal; the **Specimen** within the green boxes in figure below) -->
 
-* A sampled **Source Record** (i.e., an oral swab from an individual animal; the **Specimen** within the green boxes in figure below)
+* **Specimens** can also originate from a **Diagnostic**. The product of a **Diagnostic** can be used in further **Diagnostics** (i.e., metagenomics on amplified nucleic acids) (*under construction*).
 
-* A **Diagnostic Product** created by running a **Diagnostic** on a **Specimen** that can be used in further **Diagnostics** (i.e., cDNA created from RNA in a sample; the **Specimens** within the pink boxes in the figure below)
+* **Specimens** can also originate by pooling previous **Specimens** already recorded in the database (*Pooled Specimens*) (*under construction*):
 
-* **Other Specimens** (Pooled Specimen). For example, different **Specimens** from the same or multiple **Source Records** are mixed (grey boxes in figure below):
-
-![](Pictures_and_diagrams/Manual_pictures/specimens.png){width=60%, fig-align=center}
+<!-- ![](Pictures_and_diagrams/Manual_pictures/specimens.png){width=60%, fig-align=center} -->
 
 
-Notably, a **Specimen** that includes different tissue from the same **Source Record**, but the different tissues have not been entered in the database as individual **Specimens** is not a Pooled Specimen, but a **Specimen** of “mixed tissue” type.
+Notably, a **Specimen** that includes different types of tissue from the same **Source Record** is not a Pooled Specimen, but a **Specimen** of “mixed tissue” type.
 
-Each **Specimen** belongs to one or more **Source Record**(s) depending on its origin. In HAWK, **Specimens** originating directly from a **Source Record** are in the folder called “**Specimens** from **Source Records**” (*under construction*):
+<!-- Each **Specimen** belongs to one or more **Source Record**(s) depending on its origin.  -->
 
-**Specimens** originating from a **Diagnostic** Product are in the folder called “Specimen from **Diagnostic** Products” (*under construction*):
+In HAWK, **Specimens** originating directly from a **Source Record** are added in the folder “Specimens". 
 
-Pooled Specimens belong to each **Source Record** involved in their generation.  Consequently, in  HAWK, a Pooled Specimen can be found in the “Pooled Specimens” folder under either the “Specimens from Source Records” folder and/or “Specimen from Diagnostic Products” folder of each **Source Records** involved in the generation of the Pooled Specimen (*under construction*):
+<!-- **Specimens** originating from a **Diagnostic** Product are in the folder called “Specimen from **Diagnostic** Products” (*under construction*): -->
 
-**Specimens'** characteristics include the type (**Source Record**, **Diagnostic Product**, or Pooled Specimen), the tissue type, the quantity, and fields associated with its current storage and shipment processes:
+<!-- Pooled Specimens belong to each **Source Record** involved in their generation.  Consequently, in  HAWK, a Pooled Specimen can be found in the “Pooled Specimens” folder under either the “Specimens from Source Records” folder and/or “Specimen from Diagnostic Products” folder of each **Source Records** involved in the generation of the Pooled Specimen (*under construction*): -->
+
+**Specimens'** characteristics include the tissue type, the quantity, the medium, and field storage.
+
+**Specimens** belonging to an **Environmental Source Record** linked to a **Collection** without effort (not Track, Area, or Point Collection), require information regarding their retrieval (**Environmental Source Record** is a site at time *t* and, therefore, it is not retrievable; **Specimens** are). For **Environmental Source Record** under Track, Area, or Point Collection, that information can be inferred from the spatial effort reported (e.g., device to obtain particles from the air at the **Environmental Source**).
 
 ![](Pictures_and_diagrams/Manual_pictures/specimen_fields.png){width=100%, fig-align=center}
 
 
-### Adding Specimens to a Source Record – From Source Records
+<!-- ### Adding Specimens to a Source Record  -->
+<!-- <!-- – From Source Records --> -->
 
-**Specimens** are added to a **Source Record** data unit, specifically to the “**Specimens** from **Source Records**” folder if they were taken directly from the Source (i.e., “oral swab”). Navigate to the “**Specimens** from **Source Records**” folder under the corresponding **Specimen**, select the folder and then click “Add **Specimen**” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button.
+<!-- **Specimens** are added to a **Source Record** data unit, specifically to the “**Specimens** from **Source Records**” folder if they were taken directly from the Source (i.e., “oral swab”). Navigate to the “**Specimens** from **Source Records**” folder under the corresponding **Specimen**, select the folder and then click “Add **Specimen**” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. -->
 
-### Adding Specimens to a Source Record – From Diagnostic Products
+<!-- ### Adding Specimens to a Source Record – From Diagnostic Products (*under construction*) -->
 
-**Specimens** are added to a **Source Record** data unit, specifically to the “Specimens from Diagnostic Products” folder if they are a product of a **Diagnostic** conducted with a **Specimen** directly collected from a **Source Record** (i.e., cDNA generated after the genetic material in an “oral swab” is amplified after a RT-PCR **Diagnostic**). Navigate to the “Specimens from Diagnostic Products” folder under the corresponding **Specimen**, select the folder and then click “Add Specimen” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button (*under construction*).
+<!-- **Specimens** are added to a **Source Record** data unit, specifically to the “Specimens from Diagnostic Products” folder if they are a product of a **Diagnostic** conducted with a **Specimen** directly collected from a **Source Record** (i.e., cDNA generated after the genetic material in an “oral swab” is amplified after a RT-PCR **Diagnostic**). Navigate to the “Specimens from Diagnostic Products” folder under the corresponding **Specimen**, select the folder and then click “Add Specimen” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button (*under construction*). -->
 
-### Adding Pooled Specimens to a Source Record – Pooled Specimens
+<!-- ### Adding Pooled Specimens to a Source Record – Pooled Specimens (*under construction*) -->
 
-In the database, Pooled Specimen parents are the **Specimens** included in the Pooled Specimens. Therefore, a Pooled Specimen data unit must be added to the corresponding “Pool Specimen” folder of each **Specimens** from **Source Records** or from **Diagnostic Products** that provide content for the new pooled specimen. In the figure above, the Pooled Specimen (grey box) should be added to the “Specimens from Source Records” folder of the “Source Record” in the green box, and also to the “Specimens from Diagnostic Product” folder of this **Source Record** (the **Diagnostic Product Specimen** in the pink box also creates the Pooled Specimen).
+<!-- In the database, Pooled Specimen parents are the **Specimens** included in the Pooled Specimens. Therefore, a Pooled Specimen data unit must be added to the corresponding “Pool Specimen” folder of each **Specimens** from **Source Records** or from **Diagnostic Products** that provide content for the new pooled specimen. In the figure above, the Pooled Specimen (grey box) should be added to the “Specimens from Source Records” folder of the “Source Record” in the green box, and also to the “Specimens from Diagnostic Product” folder of this **Source Record** (the **Diagnostic Product Specimen** in the pink box also creates the Pooled Specimen). -->
 
-To add a Pooled Specimen, select the correct folder and then click “Add Pooled Specimen” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button (*under construction*).
+<!-- To add a Pooled Specimen, select the correct folder and then click “Add Pooled Specimen” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button (*under construction*). -->
 
 ## Adding Diagnostics to a Specimen
 
-To add a **Diagnostic** to a **Specimen**, navigate to the “Diagnostic” folder under either the “Specimens from Source Records”, “Specimens from Diagnostic Products”, or “Pooled Specimens” folder, select the folder and then click “Add Diagnostic” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. **Diagnostic** information includes the type and name of the **Diagnostic** test, the targeted hazard (i.e., “Virus”), and the hazard name (i.e, “SARS-CoV_2”; *under construction*):
+To add a **Diagnostic** to a **Specimen**, navigate and select the “Diagnostic” folder under the “Specimen” folder and then click “Add Diagnostic” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. **Diagnostic** information includes the type of diagnostic and based on this selection there is a subset of specific diagnostic names. Moreover, certain diagnostic names will reveal specific fields to provide parameters of specific diagnostics (e.g., metrics of the sequencing process through metagenomics). Diagnostics names also reveal read-only information. For example, key citation for the diagnostic name.
 
 ![](Pictures_and_diagrams/Manual_pictures/adding_diagnostics_to_specimen.png){width=100%, fig-align=center}
 
-Uploading a file to support the output of a **Diagnostic** is best practice and strongly encouraged. For example, an electrophoresis gel image of amplified genetic products, including negative and positive controls, alongside a ladder showing bands in the expected wells and sizes:
+
+
+## Adding Diagnostics to a Group, Animal, or Environmental Source Record
+
+A **Diagnostic** can be added directly to a **Group Source Record**, to an **Animal Source Record**, and to an **Environmental Source Record**. A group of frogs can be tested together, an individual can undergo an MRI or a clinical examination, and turbidity can be measure in the water at an **Envronmental Source Record**. To add a **Diagnostic** navigate to the “Diagnostics” folder linked to the **Source Record** directly, select the folder and then click “Add Diagnostic” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
+
+Just like with the **Diagnostics** for Specimens, **Diagnostic** information includes the type of diagnostic and based on this selection there is a subset of specific diagnostic names. Moreover, certain diagnostic names will reveal specific fields to provide parameters of specific diagnostics (e.g., metrics of the sequencing process through metagenomics). Diagnostics names also reveal read-only information. For example, key citation for the diagnostic name.
+
+## Adding a Result to a Diagnostic
+
+To add a Result to a **Diagnostic** navigate to the “Results” folder linked to the **Diagnostic**, select the folder and then click “Add Result” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
+
+Each **Result** reports the outcome of the parent **Diagnostic** test for one hazard. The hazard choices available are only those that the parent **Diagnostic** can detect. Moreover, it is possible that the **Result** requests more specific information. For example, the gene of a pathogen that a PCR can detect. The **Result** request the unit of the diagnostic outcome (e.g., ct curve) and the value of the outcome.
+
+![](Pictures_and_diagrams/Manual_pictures/result_to_diagnostic.png){width=100%, fig-align=center}
+
+
+
+Uploading a file to support the output of a **Result** is best practice and strongly encouraged. For example, an electrophoresis gel image of amplified genetic products, including negative and positive controls, alongside a ladder showing bands in the expected wells and sizes:
 
 ![](Pictures_and_diagrams/Manual_pictures/adding_diagnostics_to_specimen_2.png){width=100%, fig-align=center}
-
-## Adding Diagnostics to Group or Animal Source Records
-
-**Diagnostics** can be added directly to a *Group or Animal* **Source**. For example, a hazard can be evaluated in a group of toads (i.e., skin disease, other). An **Animal Source** can undergo an MRI or another **Diagnostic** based on a whole individual. To add a **Diagnostic** to a *Group or Animal* **Source Record**, navigate to the “Diagnostics” folder linked to the **Source Record** directly, select the folder and then click “Add Diagnostic” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button (*under construction*).
 
 ## Adding an Interpretation to a Diagnostic (*under construction*)
 
@@ -681,26 +704,28 @@ Uploading a file to support the output of a **Diagnostic** is best practice and 
 
 ## Adding an Interpretation to a Source Record (*under construction*)
 
-## Adding Existing Data Units to Other Surveillance Activities
+## Adding Existing Data Units to Other Surveillance Activities (*under construction*)
 
-**Surveillance Activities** might use existing data units that belong to other **Surveillance Activities**. For example, a new **Surveillance Activity** could test archived **Specimens** for SARS-CoV-2 from another **Surveillance Activity** that was originally only focused on HPAIV. In this case, the **Specimens** are added to this new **Surveillance Activity** (i.e., now testing the **Specimens** for SARS-CoV-2).
+## adding shipmens and storage (*under construction*)
 
-Another example is the sampling of the same bats but for two different objectives: different **Diagnostics** tests. In this case, a single **Field Visit**, **Location**, **Event**, **Collection**, **Source Record**, and **Specimen** belong to two different **Surveillance Activities**, whilst the **Diagnostics** for the first objective and the **Diagnostics** associated with the second objective belong to one of the **Surveillance Activities** (see “Complexities” in the Data Model Manual for more details).
+<!-- **Surveillance Activities** might use existing data units that belong to other **Surveillance Activities**. For example, a new **Surveillance Activity** could test archived **Specimens** for SARS-CoV-2 from another **Surveillance Activity** that was originally only focused on HPAIV. In this case, the **Specimens** are added to this new **Surveillance Activity** (i.e., now testing the **Specimens** for SARS-CoV-2). -->
 
-To add existing data units to a new **Surveillance Activity** (*under construction*):
+<!-- Another example is the sampling of the same bats but for two different objectives: different **Diagnostics** tests. In this case, a single **Field Visit**, **Location**, **Event**, **Collection**, **Source Record**, and **Specimen** belong to two different **Surveillance Activities**, whilst the **Diagnostics** for the first objective and the **Diagnostics** associated with the second objective belong to one of the **Surveillance Activities** (see “Complexities” in the Data Model Manual for more details). -->
 
-* Create the new **Surveillance Activity** that will use the existing data
-* Navigate to the new **Surveillance Activity** in the **Navigation Panel**
-* Navigate to the data unit folder corresponding to the data unit level to be added to the new **Surveillance Activity** (i.e., navigate to the "Specimen" folder under the new **Surveillance Activity**)
-* Select the corresponding folder
-* Select the activated button “Add [data unit name]” (i.e., “Add **Specimen**”) on the top left of the **Navigation Panel**
-* Start typing the **Specimen** Code of the archived **Specimen**
-* Select the correct **Specimen** Code
-* Save changes by selecting the “Save changes” button in the top left corner of the **Workspace Panel**
+<!-- To add existing data units to a new **Surveillance Activity** (*under construction*): -->
 
-### Adding a Source directly to a Surveillance Activity
+<!-- * Create the new **Surveillance Activity** that will use the existing data -->
+<!-- * Navigate to the new **Surveillance Activity** in the **Navigation Panel** -->
+<!-- * Navigate to the data unit folder corresponding to the data unit level to be added to the new **Surveillance Activity** (i.e., navigate to the "Specimen" folder under the new **Surveillance Activity**) -->
+<!-- * Select the corresponding folder -->
+<!-- * Select the activated button “Add [data unit name]” (i.e., “Add **Specimen**”) on the top left of the **Navigation Panel** -->
+<!-- * Start typing the **Specimen** Code of the archived **Specimen** -->
+<!-- * Select the correct **Specimen** Code -->
+<!-- * Save changes by selecting the “Save changes” button in the top left corner of the **Workspace Panel** -->
 
-If the **Surveillance Activity** involves a mark-recapture methodology, i.e., released marked *Animal* **Sources** that are then recaptured during **Field Visits** of the **Surveillance Activity**, it is possible that some marked **Sources** are never recaptured. In this case, the **Sources** will not be linked to any **Field Visit**, **Location**, **Event**, or **Collection** but they still need to be linked to the corresponding **Surveillance Activity**. To add a **Source** directly to a **Surveillance Activity** without any other data unit (no **Field Visit**, **Location**, **Event**, etc.), the user navigates to the “Source” folder under the corresponding **Surveillance Activity** and adds the corresponding **Source** data unit following the guidance in section “Adding a New Data Unit” (*under construction*).
+<!-- ### Adding a Source directly to a Surveillance Activity -->
+
+<!-- If the **Surveillance Activity** involves a mark-recapture methodology, i.e., released marked *Animal* **Sources** that are then recaptured during **Field Visits** of the **Surveillance Activity**, it is possible that some marked **Sources** are never recaptured. In this case, the **Sources** will not be linked to any **Field Visit**, **Location**, **Event**, or **Collection** but they still need to be linked to the corresponding **Surveillance Activity**. To add a **Source** directly to a **Surveillance Activity** without any other data unit (no **Field Visit**, **Location**, **Event**, etc.), the user navigates to the “Source” folder under the corresponding **Surveillance Activity** and adds the corresponding **Source** data unit following the guidance in section “Adding a New Data Unit” (*under construction*). -->
 
 # Cancelling the Addition of Data in HAWK
 
@@ -722,67 +747,106 @@ To cancel the addition of a specific file to a data unit,
 
 The file will be removed from the list.
 
-# Clustering Data Units in HAWK (*under construction*)
+# Further Clustering Data Units in HAWK using Tags
 
-## Clustering Locations
+It is possible that the methodology of a **Surveillance Activity** involves more units than the ones available in HAWK between **Location** and **Event**. For example, a full sampling design could involve animals within cages, cages within stalls, stalls within vendors, and vendors within markets. If the **Event** corresponds to the sampling of animals in a cage and the **Location** is the market, then stalls and vendors still need to be taking into account. The solution in HAWK is to tag the existing units. Tags  will allow to query data units and group them. In the example, **Events** can be tagged by stall and by vendor. Moreover, if the sampling is seasonal, then each **Event** can be tagged with a season. 
 
-If **Locations** are grouped in either spatial units, nested or non-nested, that are smaller than the corresponding **Field Visit**, or in temporal units, they can be assigned to **Clusters**.  The fields to add the **Location** to the corresponding **Clusters** will be active after reporting the grouping of **Locations** in the corresponding **Surveillance Activity**:
+## Creating Tags
 
-To include a **Location** in nested spatial **Clusters**
+To create tags in HAWK, click in the "Create tags" button on the top of the **Workspace Panel**. A pop-up window allows to name the tag and select if it is a spatial, temporal, or oher type of tag. Click save. 
 
-To include a **Location** in a non-nested spatial **Clusters**
+ADD!!
 
-To include a **Location** in nested temporal **Clusters**
+## Add Tags
 
-To include a **Location** in a non-nested temporal **Clusters**
+To add tags to a unit in HAWK, click in the "Select tags" button on the top of the **Workspace Panel**. The list of available tags will be displayed. To select one tag for the specific unit, click on the check box to the left of the tag. 
 
-## Clustering Events
+ADD!!
 
-If **Events** are grouped in either spatial units, nested or non-nested, that are smaller than the corresponding **Locations**, or in temporal units, they can be assigned to **Clusters**.  The fields to add the **Event** to the corresponding **Clusters** will be active after reporting the grouping of **Events** in the corresponding **Surveillance Activity**:
+## Nested Tags
 
-To include an **Event** in nested spatial **Clusters**
+Nested tags can be created to tag one unit with more than one level. For example, tag the cages of the example above by stall and vendor in one step instead of adding one tag for the stall and one tag for the vendor. To create a nested tag, first create the tag for the root of the nested units (in the example, the vendors) as explained in the section "Creating tags". Then find that tag under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear: 
 
-To include an **Event** in a non-nested spatial **Clusters**
+ADD!!
 
-To include an **Event** in nested temporal **Clusters**
+These icons are to delete the current tag (cross icon), to edit the current tag (pencil icon), and to add a nested tag (plus icon). Click on the plus icon and the system will allow you to name the nested tag:
 
-To include an **Event** in a non-nested temporal **Clusters**
+ADD!!
 
-## Clustering Source Records
+To tag a unit using a set of nested tags, it is only necessary to click the check box of the lowest level tag. Selecting higher level tags will only add the selected tag and its parents but not the further nested tags: 
 
-If **Source Records** are grouped in either spatial units, nested or non-nested, that are smaller than the corresponding **Event**, or in temporal units, they can be assigned to **Clusters**.  The fields to add the **Source Record** to the corresponding **Clusters** will be active after reporting the grouping of **Source Record** in the corresponding **Surveillance Activity**:
 
-**Clusters** of **Source Records** can contain **Source Records** of any type.
+ADD!!
 
-To include a **Source Record** in nested spatial **Clusters**
+## Edit Tags
 
-To include a **Source Record** in a non-nested spatial **Clusters**
+To edit a tag find the tag to edit under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear. Click in the pencil icon to edit the tag. Confirm the changes.
 
-To include a **Source Record** in nested temporal **Clusters**
+ADD!!
 
-To include a **Source Record** in a non-nested temporal **Clusters**
+## Delete Tags
+
+To delete a tag find the tag to delete under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear. Click in the cross icon to delete the tag and confirm. Deleting a parent tag also deletes the tags nested under them.
+
+ADD!!
+
+<!-- ## Clustering Events -->
+
+<!-- If **Events** are grouped in either spatial units, nested or non-nested, that are smaller than the corresponding **Locations**, or in temporal units, they can be assigned to **Clusters**.  The fields to add the **Event** to the corresponding **Clusters** will be active after reporting the grouping of **Events** in the corresponding **Surveillance Activity**: -->
+
+<!-- To include an **Event** in nested spatial **Clusters** -->
+
+<!-- To include an **Event** in a non-nested spatial **Clusters** -->
+
+<!-- To include an **Event** in nested temporal **Clusters** -->
+
+<!-- To include an **Event** in a non-nested temporal **Clusters** -->
+
+<!-- ## Clustering Source Records -->
+
+<!-- If **Source Records** are grouped in either spatial units, nested or non-nested, that are smaller than the corresponding **Event**, or in temporal units, they can be assigned to **Clusters**.  The fields to add the **Source Record** to the corresponding **Clusters** will be active after reporting the grouping of **Source Record** in the corresponding **Surveillance Activity**: -->
+
+<!-- **Clusters** of **Source Records** can contain **Source Records** of any type. -->
+
+<!-- To include a **Source Record** in nested spatial **Clusters** -->
+
+<!-- To include a **Source Record** in a non-nested spatial **Clusters** -->
+
+<!-- To include a **Source Record** in nested temporal **Clusters** -->
+
+<!-- To include a **Source Record** in a non-nested temporal **Clusters** -->
 
 # Viewing Data in HAWK
 
 To view specific data, navigate through the data units in the **Navigation Panel** until finding the data unit of interest. View either the data unit fields, files, the contextual information, or the spatial distribution of a specific data unit in the “Map and Tabular Data” tab of the **Workspace Panel**.
 
-# Quick Search (*under construction*)
+# Quick Search 
+
+To quickly search for a unit in HAWK, click on the magnifier icon on the top right corner of the **Navigation Panel**. 
+
+![](Pictures_and_diagrams/Manual_pictures/quick_search.png){width=100%, fig-align=center}
+
+
+A new window will pop-up. In this window there is a table to query units. Units can be searched using keywords written in the search bar. Results can be filtered by selecting a specific type of unit (**Surviellance Activity**, **Field Visits**, etc), a start date, or and end date for the period to search for. To go to a specific unit click on the cell in the second column containing the id of the unit of interest:
+
+
+![](Pictures_and_diagrams/Manual_pictures/quick_search_2.png){width=50%, fig-align=center}
 
 # Editing Data in HAWK
 
 ## Editing a Data Unit
 
-To edit the fields of a data unit or modify the files associated with a data unit, users with editing permissions navigate through the data units in the **Navigation Panel** until finding the data unit of interest. Then, follow the instructions provided in section “Adding a New Data Unit in HAWK”. Once the edits are completed, select the “Save Changes” button on the top left of the **Navigation Panel**. Edits made can be cancelled if the changes made have not been saved. To cancel follow the instructions provided in section “Cancelling the Addition of a Data Unit in HAWK”.
+Editing permissions are needed to edit the fields of a data unit or modify its files. If the permission is active, then follow the instructions provided in section “Adding a New Data Unit in HAWK”. Once the edits are completed, select the “Save Changes” button on the top left of the **Navigation Panel**. Edits can be cancelled if the changes made have not been saved. To cancel follow the instructions provided in section “Cancelling the Addition of a Data Unit in HAWK”.
 
 ## Editing Files of a Data Unit
 
-To add new or additional files to a data unit, follow the instructions provided in the section, “Adding Files to a Data Unit”. To cancel the addition of files, follow the instructions provided in the section “Cancelling the Addition of a File to a Data Unit in HAWK”. To delete files uploaded or saved to a data unit, see the next section.
+To add new or additional files to a data unit, follow the instructions provided in the section, “Adding Files to a Data Unit”. To cancel the addition of files, follow the instructions provided in the section “Cancelling the Addition of a File to a Data Unit in HAWK”. To delete files uploaded to a data unit, see the next section.
 
 # Deleting Data in HAWK
 
 ## Deleting a Data Unit
 
-To delete a data unit, navigate to the corresponding data unit using the **Navigation Panel** and select it. The **Workspace Panel** has an “Archived” button on the top right corner (red frame in the image below):
+To delete a data unit, navigate to the corresponding data unit and select it. The **Workspace Panel** has an “Archived” button on the top right corner (red frame in the image below):
 
 ![](Pictures_and_diagrams/Manual_pictures/deleting_data_units.png){width=100%, fig-align=center}
 
@@ -809,13 +873,13 @@ A window will pop-up to confirm or cancel the deletion of the data unit. Confirm
 
 # Exporting Data from HAWK (*under construction*)
 
-## Exporting Data Table
+<!-- ## Exporting Data Table -->
 
-Data from archived data units are not exported.
+<!-- Data from archived data units are not exported. -->
 
 ## Downloading Files
 
-Files associated with data units can be downloaded. To download files of data units, navigate to the corresponding data unit using the **Navigation Panel** and open Then, open the “Files” tab in the **Workspace Panel** and find the “Uploaded Files”.
+Files associated with data units can be downloaded. To download files of data units, navigate to the corresponding data unit adn select it. Then, open the “Files” tab in the **Workspace Panel** and find the “Uploaded Files”.
 
 To download a file, select the down arrow icon to the right of the file name:
 
@@ -823,31 +887,31 @@ To download a file, select the down arrow icon to the right of the file name:
 
 A window to browse the download **Location** and name the file will pop-up.
 
-# Closing an Organization Account
+<!-- # Closing an Organization Account (*under construction*) -->
 
-Organization Accounts can be closed for two reasons: i) one of the Account Administrator requests the Organization Account to be closed or ii) the Organization Account has been inactive for four years. In the first case, the **General Administrators** of HAWK will reach the second Account Administrator, if any, to confirm the account closure. In the second case, the **General Administrators** of HAWK will try to reach the Account Administrators to confirm or cancel the closing of the account.
+<!-- Organization Accounts can be closed for two reasons: i) one of the Account Administrator requests the Organization Account to be closed or ii) the Organization Account has been inactive for four years. In the first case, the **General Administrators** of HAWK will reach the second Account Administrator, if any, to confirm the account closure. In the second case, the **General Administrators** of HAWK will try to reach the Account Administrators to confirm or cancel the closing of the account. -->
 
-Data of closed accounts is archived and not deleted. Data from an Organization Account that is closed are embargoed following the details provided in the “FAIR and CARE” section below.
+<!-- Data of closed accounts is archived and not deleted. Data from an Organization Account that is closed are embargoed following the details provided in the “FAIR and CARE” section below. -->
 
-# Data Safety and Security
+# Data Safety and Security (*under construction*)
 
-* Data safety, security, and ownership are safeguarded through strict data compartmentalization across **Organization Accounts** administered by **Organization Administrators**.
-* **Organization Administrators** access the **Organization** account after a two-factor authentication access process.
-* **Organization Administrators** authorize **General Users** into **Organization** accounts.
-* **General User** accounts are also independent and accessed after a two-factor authentication access process.
-* **General Users** have different permissions granted by the **Organization Administrator** to view, edit, delete, and export data. These permissions are set by **Surveillance Activity**.
-* All changes made in the data units (addition, edition, deletion, file uploading) are automatically documented in logs that are accessible by the corresponding **Organization Administrators**(see “**HAWK Administrator Account Manual**”). If needed, the data can be reverted to a previous state by following these logs.
-* “Deleted” data is archived and not deleted from the system (not hard deletion). It is possible to restore data units. To accomplish the restoration, **Organization Administrators**need to contact HAWK **General Administrators** (see “**HAWK Administrator Account Manual**”).
+<!-- * Data safety, security, and ownership are safeguarded through strict data compartmentalization across **Organization Accounts** administered by **Organization Administrators**. -->
+<!-- * **Organization Administrators** access the **Organization** account after a two-factor authentication access process. -->
+<!-- * **Organization Administrators** authorize **General Users** into **Organization** accounts. -->
+<!-- * **General User** accounts are also independent and accessed after a two-factor authentication access process. -->
+<!-- * **General Users** have different permissions granted by the **Organization Administrator** to view, edit, delete, and export data. These permissions are set by **Surveillance Activity**. -->
+<!-- * All changes made in the data units (addition, edition, deletion, file uploading) are automatically documented in logs that are accessible by the corresponding **Organization Administrators**(see “**HAWK Administrator Account Manual**”). If needed, the data can be reverted to a previous state by following these logs. -->
+<!-- * “Deleted” data is archived and not deleted from the system (not hard deletion). It is possible to restore data units. To accomplish the restoration, **Organization Administrators**need to contact HAWK **General Administrators** (see “**HAWK Administrator Account Manual**”). -->
 
-Data is physically stored in (*under construction*).
+<!-- Data is physically stored in (*under construction*). -->
 
-Data in HAWK is under License X following the “**HAWK Organization Account Terms of Reference**” (*under construction*).
+<!-- Data in HAWK is under License X following the “**HAWK Organization Account Terms of Reference**” (*under construction*). -->
 
 # FAIR and CARE Principles
 
 ## General Aspects
 
-Beyond proper **Collection**, annotation, and archival, HAWK promotes data stewardship, the notion of "long-term care" of valuable digital assets, with the goal that they should be discovered and re-used for downstream investigations, either alone, or in combination with newly generated data. The **FAIR** (Findability, Accessibility, Interoperability, and Reusability) Principles ([here](https://www.nature.com/articles/sdata201618)) are a guideline for those wishing to enhance the reusability of their data holdings. Table 2 summarizes how HAWK supports the FAIR Principles:
+Beyond proper recording, annotation, and archival, HAWK promotes data stewardship, the notion of "long-term care" of valuable digital assets, with the goal that they should be discovered and re-used for downstream investigations, either alone, or in combination with newly generated data. The **FAIR** (Findability, Accessibility, Interoperability, and Reusability) Principles ([here](https://www.nature.com/articles/sdata201618)) are a guideline for those wishing to enhance the reusability of their data holdings. Table 2 summarizes how HAWK supports the FAIR Principles:
 
 
 
@@ -948,14 +1012,14 @@ care_table <- tribble(
 ```
 
 
-## Specific Aspects (*under construction*)
+<!-- ## Specific Aspects (*under construction*) -->
 
-**Organizations** share basic information about their **Surveillance Activities** in a public inventory on the HAWK website. The inventory contains the (objective, target species, study sites, the person responsible, and contact information.
+<!-- **Organizations** share basic information about their **Surveillance Activities** in a public inventory on the HAWK website. The inventory contains the (objective, target species, study sites, the person responsible, and contact information. -->
 
-Moreover, **Organizations** can decide to keep data of **Surveillance Activities**:
+<!-- Moreover, **Organizations** can decide to keep data of **Surveillance Activities**: -->
 
-* Restricted to themselves
-* Available to other selected individuals
-* Publicly available
+<!-- * Restricted to themselves -->
+<!-- * Available to other selected individuals -->
+<!-- * Publicly available -->
 
-**Organization** data will remain archived if the corresponding **Organization Account** is closed (see “Closing an Organization Account” above). The corresponding data are embargoed according to agreed terms of the **Organization** or for a maximum of number of years. When the embargo is lifted, the **Surveillance Activities** will be available in public inventory on the HAWK website and data from these **Surveillance Activities** can be provided to interested parties upon request to **HAWK General Administrators**. Special conditions apply for human identification data, if any, and indigenous data following the conditions outlined above (Table 3).
+<!-- **Organization** data will remain archived if the corresponding **Organization Account** is closed (see “Closing an Organization Account” above). The corresponding data are embargoed according to agreed terms of the **Organization** or for a maximum of number of years. When the embargo is lifted, the **Surveillance Activities** will be available in public inventory on the HAWK website and data from these **Surveillance Activities** can be provided to interested parties upon request to **HAWK General Administrators**. Special conditions apply for human identification data, if any, and indigenous data following the conditions outlined above (Table 3). -->
