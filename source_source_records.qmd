@@ -569,7 +569,7 @@ resp_table <- readRDS("Necropsy_anatomy/Tables for manual/respiratory.RDS")
 # source("Necropsy_anatomy/Necropsy_topology_sinuses.R")
 
 # saveRDS(sinuses_table, "Necropsy_anatomy/Tables for manual/sinuses.RDS")
-# sinuses_table <- readRDS("Necropsy_anatomy/Tables for manual/sinuses.RDS")
+sinuses_table <- readRDS("Necropsy_anatomy/Tables for manual/sinuses.RDS")
 
 # resp_sinuses_table<-bind_rows(resp_table, sinuses_table)  |>  distinct()
 
