@@ -34,26 +34,25 @@ htmltools::div(
 
 ## Introduction
 
-HAWK's **data model** is designed accommodate wildlife health data from various sources, including local to national wildlife health surveillance systems, research initiatives, and citizen-science based projects. 
+HAWK's **data model** is designed to accommodate wildlife, arthropod, and environmental health data from various sources, including local to national wildlife health surveillance systems, research initiatives, citizen-science based projects, or any other source of wildlife health information. We strongly recommend first learning about the core components of the data model: *Project* to *Results*, and *Interpretation*.
 
-HAWK structures wildlife health surveillance data following a hierarchy, capturing relevant epidemiological information at each step. The full hierarchy includes:
+HAWK structures surveillance data following a hierarchy, capturing relevant epidemiological information at each step. The full hierarchy includes:
 
-1. **Projects**: A set of *Surveillance Activities* with a common leader and organizer (e.g., a national wildlife health surveillance system).
-2. **Surveillance Activities**: Specific sets of surveillance goals and methodology (who, where, when, what, why, how) documented following a standard metadata format.
-3. **Field Visits**: Time period during which activities are conducted in the field.
-4. **Locations**: Specific areas where activities are conducted.
-5. **Collection Areas** and **Collection Points**: Effort units associated with the generation of data in a explored area (e.g., sector within protected area) and in a linear feature (e.g., transect or ranger patrol track), respectively.
-6. **Events**: Point epidemiological units with a spatiotemporal coordinate where wildlife health surveillance data is collected.
-7. **Point Collection**: Effort units associated with the generation of data in an **Event** (e.g., a set of mist nests placed during a specific period of time).
-8. **Sources**: Units that can provide Specimens for hazard detection or whose health is assessed (observed-only) at a specific time. There are four Source types:​
-      * *Group*: groups of animals of the same species.
-      * *Animal*: individual animals
-      * *Environmental*: environmental sampling sites (e.g., ponds or feces in the field).
-      * *Arthropod*: arthropod capture sites.
-9. **Source Records**: Records of the Sources at a specific time *t*.
-10. **Specimens**: Tissues taken from *Source Records*.
-11. **Diagnostics**: Tests conducted on *Sources* or collected *Specimens* to assess health hazards.
-12. **Results**: The result(s) of a *Diagnostic* for the targeted hazard(s) and the corresponding interpretation for each hazard.
+1. **Project**: A planned set surveillance operations with specific goals or a common topic, usually with a defined scope and set of tasks with a common leader and organizer (e.g., a national wildlife health surveillance system).
+2. **Surveillance Activity**: Specific surveillance goal and methodology (who, where, when, what, why, how) documented following a standard metadata format.
+3. **Field Visit**: A recorded interval during which fieldwork or data collection are conducted.
+4. **Location**: Areas where activities are conducted.
+5. **Collection Area**, **Collection Track**, and **Collection Point**: Units of effort associated with the generation of data in a defined area (e.g., sector within protected area) along in a linear feature (e.g., transect or ranger patrol track), or at spatial point (e.g., a set of mist nests placed during a specific period of time)., respectively.
+6. **Event**: Point epidemiological unit with a spatiotemporal coordinate (longitude and latitude) where wildlife health surveillance data are collected.
+8. **Source**: An observed, diagnosed, or sampled entity to assess their health status or health hazard presence. There are four Source types:​
+      * *Group*: more than one individual of the same taxa
+      * *Animal*: one individual
+      * *Environmental*: a site where measurements on environmental properties are made or samples are collected from (e.g., ponds or feces in the field)
+      * *Arthropod*: the population of arthropods at a site
+9. **Source Record**: A record of a *Source* at a specific time *t*.
+10. **Specimen**: A sample taken from a *Source*.
+11. **Diagnostic**: A test conducted on a *Source* or collected *Specimen* to assess health metrics.
+12. **Result**: The outcome of a *Diagnostic* for a specific health metric and the corresponding interpretation.
 12. **Interpretation**: The final status assigned to a *Specimen* or *Source Record* following documented case definitions.
  
 **The basic relationships among the basic units of the data model** are shown in Figure 1 below:
@@ -63,30 +62,32 @@ HAWK structures wildlife health surveillance data following a hierarchy, capturi
 
 **Figure 1**: Basic relationships among the basic units of the data model.
 
-HAWK employs a modular approach to the data model, enabling components to be added based on the specific WHS needs. When data comes from wildlife mortality reported by a community member through a mobile application:
+HAWK employs a modular approach to the data model, enabling components to be added based on specific user needs. 
 
-* The *Surveillance Activity* contains a description of the methodology.
-* The *Field Visit* could be defined annually to categorize reports by year.
-* The *Location* could be a county or zip code.
-* An *Event* is the epidemiological unit with latitude, longitude, and time representing the position where dead animals found.
-* The *Animal Source Records* describe the dead animals.
-* No Specimens, Diagnostics, or Laboratory data are generated.
-* No Collection effort is linked to the Events and the animals are found opportunistically.
+*When data comes from wildlife mortality reported by a community member through a mobile application*:
+
+* *The Surveillance Activity contains a description of the methodology.*
+* *The Field Visit is the time period the community member spent exploring.*
+* *The Location could be a county or zip code.*
+* *An Event is the epidemiological unit with latitude, longitude, and time representing the position where dead animals found.*
+* *The Animal Source Records describe the dead animals.*
+* *No Specimens, Diagnostics, or Laboratory data are generated.*
+* *No Collection effort is linked to the Events and the animals are found opportunistically*
 
 
 ![](Pictures_and_diagrams/simple_example.png){width=100%}
 
-**Figure 2**: Components of the data model to contain data from example 1.
+**Figure 2**: An illustration  of how case study 1 appears in the data model.
 
-This flexible structure ensures that the model remains efficient and scalable, adapting to different surveillance needs.
+This flexible structure means the model remains efficient and scalable, adapting to different users and surveillance needs.
 
 <!-- The next example is a series of surveys in wildlife farms to identify pathogens. Surveys are conducted every 3 months and each one of them include all the farms in the study. The farms are distributed in several counties. Each farm has several species that are distributed in barns, aisles, pens, and cages. Seasonal changes are assessed as well. All the animals of the cages will be sampled (rectal and oral swab each one). Fecal samples will be collected from the cages directly as well. Finally, each sample will be tested for 3 pathogens. In this example, there could be a single Surveillance Activity with the three pathogens included, or three Surveillance Activities with the same methods except the targeted hazards (one Surveillance Activity per pathogen is recommended). The data includes **Field Visits every three months**. Each one of these Field Visits includes all the counties were the farms are located. If each farm is a Location, then the Locations must be clustered by county. Also, if the Event within each farm is a cage with animals, then the Events must be clustered by pen, aisles, and barns. In the manner the structure of the data is Field Visit, county (cluster), farms (Location), barns (cluster), aisles (cluster), pens (cluster), and cages (Event). Depending on the number of cages per pen, there could be multiple or a unique Event per pen. Each Event will have as many Sources at time *t* as animals are per each cage. Continuing with the animals (Sources), two Specimens are collected from each one of them and they are tested for three pathogens for a total of six tests per individual. Furthermore, each cage Event also has a Group Source Record, corresponding to the animals that are in the cage as a group. This Group Source Record has a fecal Specimen associated also tested for three pathogens. -->
 
 <!-- # Figure first exaple -->
 
-The data model is **not designed for wildlife population monitoring**. However, it includes key identifiers that enable seamless integration between wildlife health and population data.
+The data model is **not designed for wildlife population monitoring**. However, it includes key identifiers that enable integration of wildlife health and population data.
 
-More complex relationships between the fundamental units of the data model, as well as additional details, are covered in the **Complexities** section. Before exploring these advanced topics, it is recommended to first understand the core components of the data model, from *Project* to *Diagnosis*, *Results*, and *Interpretation*, by continuing with this documentation. Use the menu in the top-right corner of this website to navigate to the relevant sections.
+Use the menu in the top-right corner of this website to navigate to the different sections of this manual.
 
 # Main Units of the Data Model
 
@@ -121,17 +122,33 @@ More complex relationships between the fundamental units of the data model, as w
 
 ```
 
-## Collection Area
+## Collection
 
+In the data model, **Collection** contains the information associated with the effort to obtain **Sources** in the field actively. 
+
+When **Source Records** are not linked to a **Collection** (e.g., opportunist finding of dead animals), then there is no *Collection* involved.
+
+![](Pictures_and_diagrams/Picture7.png){width=100%}
+
+### Collection Area 
 ```{r child="collection_area.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
 
-## Collection Track 
+### Collection Track 
 
 ```{r child="collection_track.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
+
+### Collection Point 
+
+```{r child="collections.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+
+```
+
+**Collections** fields also help capture issues encountered when searching for **Sources**, such as camera traps running out of power, being stolen, or damaged mist nets. 
+
 
 ## Event
 
@@ -141,13 +158,6 @@ More complex relationships between the fundamental units of the data model, as w
 
 ```
 
-## Collection Point
-
-![](Pictures_and_diagrams/Picture7.png){width=100%}
-
-```{r child="collections.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
-
-```
 
 ## Source and Source Records
 
@@ -183,9 +193,10 @@ More complex relationships between the fundamental units of the data model, as w
 
 ## Results
 
-**Diagnostics** return results in the units of quantitative or qualitative value reported for the **Diagnostic**. For example, the value of a CT score in real-time PCR. Each **Diagnostic** can have multiple **Results** depending on the hazards targeted or it assess the hazard presence multiple times.  
+A **Result** request information on the **Diagnostic** outcome, in quantitative or qualitative units, for the specific targets (e.g., pathogen) that the parent **diagnostic** can detect. A **Result** can be more specific, reporting the outcome with respect to a gene that the **Diagnostic** targets specifically. For example, a real-time PCR can target the detection of Influenza A nucleic acid by the amplification of a specific gene X. The **Result** reports the Ct value for the amplification of the gene X of Influenza A viruses. 
 
-Each **Result** of a **Diagnostic** has a single **Interpretation**. The **Interpretation** is the qualification of the specific **Result** of a **Diagnostic** test as positive, negative, or inconclusive, based on case definitions for the diagnostic test reported in the **Surveillance Activity** metadata.
+
+Each **Result** of a **Diagnostic** has a single **Interpretation**. The **Interpretation** is the qualification of the specific **Result** as positive, negative, or inconclusive for the target based on case definitions for the diagnostic test reported in the **Surveillance Activity** metadata.
 
 ## Storage
 

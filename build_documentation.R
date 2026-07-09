@@ -6,6 +6,7 @@ quarto_render(
   output_file = "documentation.docx"
 )
 
+list.files(pattern = "documentation.docx", recursive = TRUE)
 
 
 # Save the word in pdf using libreoffice 
@@ -13,14 +14,14 @@ quarto_render(
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # 
 # brew install --cask libreoffice
-# 
+
 # sudo ln -s /System/Volumes/Data/usr/local/Caskroom/libreoffice/24.8.4/LibreOffice.app/Contents/MacOS/soffice /System/Volumes/Data/usr/local/bin/libreoffice
-# 
+
 # libreoffice --version
 
 
 # Path to the Word file
-word_file <- "documentation.docx"
+word_file <- "docs/documentation.docx"
 output_dir <- "_book"  # Change to your desired output path
 
 command <- paste(
