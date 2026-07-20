@@ -54,6 +54,8 @@ In this manual, we Capitalize and bold nouns such as **Projects**, **Surveillanc
 
 **This manual focuses on general user functions. To learn more about administrator account, refer to the “HAWK Administrator Account Manual”** (*under construction*).
 
+If a specific section or explanation is missing in this manual, plese contact dmontecino@wcs.org
+
 # Structure of the health data in HAWK and data units
 
 This manual provides a summary of the data structure in HAWK For a full description, visit the website describing the data model [link](https://dmontecino.github.io/WH_Database/data_model.html). Briefly, HAWK has “data units”: **Project**, **Surveillance Activity**, **Field Visit**, **Location**, **Collection**, **Event**, **Source**, **Source Record**, **Specimen**, **Diagnostic**, **Result**, **Interpretation**, **Necropsy**, **Shipment**, and **Storage**. **Projects** identify a specific **Project** leader and information. Under **Projects** are **Surveillance Activities** that are executed following a methodology documented in a standard metadata format. **Surveillance Activities** are conducted through **Field Visits** that encompass a period during which **Locations** (i.e. study sites) are surveyed. These **Locations** contain **Events**, epidemiological units with a spatiotemporal coordinate that can contain four types of **Sources**: group of animals of the same taxon (*Group*), individual animals (*Animal*), arthropods population at a site (*Arthropod*), or a site where environmental measurements or specimens can be sampled from (i.e., water or feces; *Environmental*). **Sources** at time *t* are **Source Records**. The **Events** can be found, observed, or accomplished through a **Collection** that involves an effort to obtain data.
@@ -531,6 +533,27 @@ Alternatively, drag the files to upload from your computer and drop them in the 
 
 To add a new **Project** to an **Organization**, navigate to the **Project** folder under the corresponding **Organization**, select the folder and then click “Add Project” button in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. The definition of each field is provided in the online Data Dictionary [here](https://dmontecino.github.io/WH_Database/data_dictionary.html) or by hovering over the “i” icon to the right of the field names in the “Details” tab.
 
+### Selecting Surveillance Targets for the Project
+
+The selection of surveillance targets at the **Project**-level depends on the fields "Project Type", "Biological Hazards", "Chemical Hazards", "Physical Hazards", and "Physiological Hazards". 
+
+Selecting "General Surveillance" or "Outbreak Investigation" for "Project Type" does not allow to select specific targets to track and the fields "Biological", "Chemical", "Physical", and "Physiological Hazards" are automatically completed with the option "Not specific [Biological, Chemical, Physical, Physiological] target":
+
+![](Pictures_and_diagrams/Manual_pictures/Picture21.png){width=80%}
+
+
+Selecting "Targeted Surveillance" or "Outbreak Investigation" for "Project Type" allows to select specific targets to track, therefore, the fields "Biological", "Chemical", "Physical", and "Physiological Hazards" are open to select one or multiple options. The options include "No [Biological, Chemical, Physical, Physiological] Hazard" when the **Project** does not include a specific category of hazards (see image below); "Any [Biological, Chemical, Physical, Physiological] Hazard", when there is not a specific type of target to track within the general categories (e.g., metagenomics could sequence and detect the nucleic acids of any species); and specific subcategories displayed depending on other options selected. For example, it is possible to select "Virus" for "Biological Hazards" which will display a new field "Virus". Then, a specific virus species to track can be recorded:
+
+![](Pictures_and_diagrams/Manual_pictures/Picture19.png){width=100%}
+
+To track "viruses" in general, select "Virus" under "Biological Hazards" and "Any virus" under "Virus":
+
+![](Pictures_and_diagrams/Manual_pictures/Picture20.png){width=100%}
+
+Multiple options can be selected for the fields "Biological", "Chemical", "Physical", and "Physiological Hazards" and the corresponding conditional fields (e.g., multiple specific viral species can be added in the "Virus" field).
+
+The target(s) selected at the **Project** level determine the target choices available for the nested **Surveillance Activities**. So the selection of "Not [Chemical, Physical, Physiological] Hazard" for "Chemical", "Physical", "Physiological Hazard" fields at the **Project** level; selection of "Bacteria" for Biological Hazard"; and selection of "Any Bacteria" in the "Bacteria" leaves "Any Bacteria" as the only choice for the **Surveillance Activity** units (see "Selecting targets for the Surveillance Activity" below).
+
 ## Adding a New Surveillance Activity to a Project
 
 To add a new **Surveillance Activity** to a **Project**, navigate to the **Surveillance Activity** folder under the corresponding **Project**, select the folder and then click on the “Add Surveillance Activity” button on the top left corner of the **Navigation Panel**. The addition of a **Surveillance Activity** is the most time–consuming step of data entry. These fields are also the most important because they document the methods employed to conduct the activity, including **Source**-specific metadata.
@@ -550,6 +573,25 @@ The addition of a **Surveillance Activity** is broken into two parts. A general 
 <!-- **In the case of Locations**: (*under construction*) -->
 
 <!-- The data dictionary and the “i” or information icon provide additional guidance on completing the fields in part three. -->
+
+The answers provided in the Surveillance Activity determined the fields or options available within the Surveillance Activity and the folders, fields, or options of its nested units (**Field Visits**, **Locations**, etc). For example, if the answer to "..." is "No", then it is not possible to add "Environmental Sources" to the **Surveillance Activity**. Similarly, it is only possible to track those targets reported in **Surveillance Activity** (see below).
+
+### Selecting targets for the Surveillance Activity
+
+The surveillance targets at the **Surveillance Activity**-level depends on the target(s) selected in the parent **Project** and choice for the "Surveillance Activity Type" field in the **Surveillance Activity** unit. The options for "Surveillance Activity Type" depend on the choice(s) selected for "Project  Activity Type" field in the parent **Project** unit. 
+
+Selecting "General Surveillance" or "Outbreak Investigation" for "Surveillance Activity Type" does not allow to select specific targets to track and the field "Surveillance Activity Hazard Names"
+
+![](Pictures_and_diagrams/Manual_pictures/Picture21.png){width=80%}
+
+
+Selecting "Targeted Surveillance" or "Outbreak Investigation" for "Surveillance Activity Type" allows to select specific target(s) to track. The field "Surveillance Activity Hazard Names" will contain a list based on the selections at the **Project** level. For example, the option "Any virus" should be selected if any virus is targeted during a **Surveillance Activity**: 
+
+![](Pictures_and_diagrams/Manual_pictures/Picture22.png){width=80%}
+
+Multiple options can be selected for the field "Surveillance Activity Hazard Names".
+
+The target(s) selected at the ****Surveillance Activity**** level determine the target choices available for the nested **Interpretation** units.
 
 ## Adding a New Field Visit to a Surveillance Activity
 
@@ -631,14 +673,14 @@ More than one **Necropsy** can be added to each **Animal Source Record** in case
 **Specimens** are used for **Diagnostics**. **Specimens** originate from sampling a **Group Source Record**, an **Animal Source Record**, and an **Environmental Source Record**, and from the arthropods in an **Arthropod Source Record**. 
 <!-- (i.e., an oral swab from an individual animal; the **Specimen** within the green boxes in figure below) -->
 
-* **Specimens** can also originate from a **Diagnostic**. The product of a **Diagnostic** can be used in further **Diagnostics** (i.e., metagenomics on amplified nucleic acids) (*under construction*).
+<!-- * **Specimens** can also originate from a **Diagnostic**. The product of a **Diagnostic** can be used in further **Diagnostics** (i.e., metagenomics on amplified nucleic acids) (*under construction*). -->
 
-* **Specimens** can also originate by pooling previous **Specimens** already recorded in the database (*Pooled Specimens*) (*under construction*):
+<!-- * **Specimens** can also originate by pooling previous **Specimens** already recorded in the database (*Pooled Specimens*) (*under construction*): -->
 
 <!-- ![](Pictures_and_diagrams/Manual_pictures/specimens.png){width=60%, fig-align=center} -->
 
 
-Notably, a **Specimen** that includes different types of tissue from the same **Source Record** is not a Pooled Specimen, but a **Specimen** of “mixed tissue” type.
+<!-- Notably, a **Specimen** that includes different types of tissue from the same **Source Record** is not a Pooled Specimen, but a **Specimen** of “mixed tissue” type. -->
 
 <!-- Each **Specimen** belongs to one or more **Source Record**(s) depending on its origin.  -->
 
@@ -650,7 +692,7 @@ In HAWK, **Specimens** originating directly from a **Source Record** are added i
 
 **Specimens'** characteristics include the tissue type, the quantity, the medium, and field storage.
 
-**Specimens** belonging to an **Environmental Source Record** linked to a **Collection** without effort (not Track, Area, or Point Collection), require information regarding their retrieval (**Environmental Source Record** is a site at time *t* and, therefore, it is not retrievable; **Specimens** are). For **Environmental Source Record** under Track, Area, or Point Collection, that information can be inferred from the spatial effort reported (e.g., device to obtain particles from the air at the **Environmental Source**).
+**Specimens** belonging to an **Environmental Source Record** linked to a **Collection** without effort (not Track, Area, or Point Collection), require information regarding their retrieval (**Environmental Source Record** is a site at time *t* and, therefore, it is not retrievable). For **Environmental Source Record** under Track, Area, or Point Collection, that information for the corresponding **Specimens** can be inferred from the spatial effort reported (e.g., device to obtain particles from the air at the **Environmental Source**).
 
 ![](Pictures_and_diagrams/Manual_pictures/specimen_fields.png){width=100%, fig-align=center}
 
@@ -672,7 +714,7 @@ In HAWK, **Specimens** originating directly from a **Source Record** are added i
 
 ## Adding Diagnostics to a Specimen
 
-To add a **Diagnostic** to a **Specimen**, navigate and select the “Diagnostic” folder under the “Specimen” folder and then click “Add Diagnostic” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. **Diagnostic** information includes the type of diagnostic and based on this selection there is a subset of specific diagnostic names. Moreover, certain diagnostic names will reveal specific fields to provide parameters of specific diagnostics (e.g., metrics of the sequencing process through metagenomics). Diagnostics names also reveal read-only information. For example, key citation for the diagnostic name.
+To add a **Diagnostic** to a **Specimen**, navigate and select the “Diagnostic” folder under the “Specimen” folder and then click “Add Diagnostic” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. **Diagnostic** information includes the type of diagnostic and based on this selection there is a subset of specific diagnostic names. Moreover, certain diagnostic names will reveal diagnostic-specific parameters (e.g., metrics of the sequencing process completed through metagenomics techniques). Diagnostics names also reveal read-only information. For example, key citations for the diagnostic name.
 
 ![](Pictures_and_diagrams/Manual_pictures/adding_diagnostics_to_specimen.png){width=100%, fig-align=center}
 
@@ -682,13 +724,13 @@ To add a **Diagnostic** to a **Specimen**, navigate and select the “Diagnostic
 
 A **Diagnostic** can be added directly to a **Group Source Record**, to an **Animal Source Record**, and to an **Environmental Source Record**. A group of frogs can be tested together, an individual can undergo an MRI or a clinical examination, and turbidity can be measure in the water at an **Envronmental Source Record**. To add a **Diagnostic** navigate to the “Diagnostics” folder linked to the **Source Record** directly, select the folder and then click “Add Diagnostic” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
 
-Just like with the **Diagnostics** for Specimens, **Diagnostic** information includes the type of diagnostic and based on this selection there is a subset of specific diagnostic names. Moreover, certain diagnostic names will reveal specific fields to provide parameters of specific diagnostics (e.g., metrics of the sequencing process through metagenomics). Diagnostics names also reveal read-only information. For example, key citation for the diagnostic name.
+Just like with the **Diagnostics** for Specimens, **Diagnostic** information includes the type of diagnostic and based on this selection there is a subset of specific diagnostic names. Moreover, certain diagnostic names will reveal diagnostic-specific parameters (e.g., mode used in ultrasound diagnostic). Diagnostics names also reveal read-only information. For example, key citations for the diagnostic name.
 
 ## Adding a Result to a Diagnostic
 
-To add a Result to a **Diagnostic** navigate to the “Results” folder linked to the **Diagnostic**, select the folder and then click “Add Result” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
+To add a **Result** to a **Diagnostic** navigate to the “Results” folder linked to the **Diagnostic**, select the folder and then click “Add Result” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
 
-Each **Result** reports the outcome of the parent **Diagnostic** test for one hazard. The hazard choices available are only those that the parent **Diagnostic** can detect. Moreover, it is possible that the **Result** requests more specific information. For example, the gene of a pathogen that a PCR can detect. The **Result** request the unit of the diagnostic outcome (e.g., ct curve) and the value of the outcome.
+Each **Result** reports the outcome of the parent **Diagnostic** test for one hazard. The hazard choices available are specific for the parent **Diagnostic**. A **Result** can request specific information associated with the target detection. For example, the gene holding the nucleic acids amplified by a specific PCR assay. The **Result** request the unit of the diagnostic outcome (e.g., ct curve) and the value of the outcome.
 
 ![](Pictures_and_diagrams/Manual_pictures/result_to_diagnostic.png){width=100%, fig-align=center}
 
@@ -698,15 +740,34 @@ Uploading a file to support the output of a **Result** is best practice and stro
 
 ![](Pictures_and_diagrams/Manual_pictures/adding_diagnostics_to_specimen_2.png){width=100%, fig-align=center}
 
-## Adding an Interpretation to a Diagnostic (*under construction*)
+A **Result** can be interpreted as "Positive", "Negative", or "Undetermined" depending on the case definition for a specific target and diagnostic test. To provide the interpretation of the **Result**, the question "..." must be answered "Yes" and then a set of fields to provide an interpretation to the result will be displayed: 
 
-## Adding an Interpretation to a Specimen (*under construction*)
 
-## Adding an Interpretation to a Source Record (*under construction*)
+ADD!!
 
-## Adding Existing Data Units to Other Surveillance Activities (*under construction*)
+## Adding an Interpretation to a Specimen
 
-## adding shipmens and storage (*under construction*)
+To add an **Interpretation** to a **Specimen** navigate to the “Interpretation” folder linked to the **Specimen**, select the folder and then click “Add Interpretation” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
+
+The **Interpretation** categorizes a **Specimen** as "Positive", "Negative", or "Undetermined" for a specific target
+
+## Adding an Interpretation to a Source Record
+
+To add an **Interpretation** to a **Source Record** navigate to the “Interpretation” folder linked to the **Source Record**, select the folder and then click “Add Interpretation” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
+
+## Adding a Storage to a Specimen
+
+
+## Adding a Storage to a Group and Animal Source Record 
+
+## Adding a Shipment to a Specimen
+
+## Adding a Shipment to a Source Record
+
+
+<!-- ## Adding Existing Data Units to Other Surveillance Activities (*under construction*) -->
+
+
 
 <!-- **Surveillance Activities** might use existing data units that belong to other **Surveillance Activities**. For example, a new **Surveillance Activity** could test archived **Specimens** for SARS-CoV-2 from another **Surveillance Activity** that was originally only focused on HPAIV. In this case, the **Specimens** are added to this new **Surveillance Activity** (i.e., now testing the **Specimens** for SARS-CoV-2). -->
 
@@ -916,38 +977,38 @@ Beyond proper recording, annotation, and archival, HAWK promotes data stewardshi
 
 
 ```{r table_2, message=FALSE, warning=FALSE, echo=FALSE}
-#| tbl-cap: Table 2. Mapping of FAIR principles adapted from Wilkinson et al. to WHe-DB functionalities.
+#| tbl-cap: Table 2. Mapping of FAIR principles adapted from Wilkinson et al. to HAWK functionalities.
 
 library(flextable)
 library(tibble)
 
 fair_table <- tribble(
-  ~`FAIR Principle`, ~`FAIR Sub-Principle`, ~`How WHe-DB supports`,
+  ~`FAIR Principle`, ~`FAIR Sub-Principle`, ~`How HAWK supports`,
   
   # Findable
   "To be Findable", "(Meta)data* are assigned a globally unique and persistent identifier", "Surveillance Activity system-based identifier and user-based code",
   "To be Findable", "Data are described with rich metadata", "Surveillance Activity extensive metadata",
-  "To be Findable", "Metadata clearly and explicitly include the identifier of the data it describes", "WHe-DB complies with this sub-principle",
-  "To be Findable", "(Meta)data are registered or indexed in a searchable resource", "Data and metadata can be searched in WHe-DB using the Surveillance Activity Identifier or the Code",
+  "To be Findable", "Metadata clearly and explicitly include the identifier of the data it describes", "HAWK complies with this sub-principle",
+  "To be Findable", "(Meta)data are registered or indexed in a searchable resource", "Data and metadata can be searched in HAWK using the Surveillance Activity Identifier or the Code",
   
   # Accessible
-  "To be Accessible", "(Meta)data are retrievable by their identifier using a standardized communications protocol", "WHe-DB supports this sub-principle",
+  "To be Accessible", "(Meta)data are retrievable by their identifier using a standardized communications protocol", "HAWK supports this sub-principle",
   "To be Accessible", "The protocol is open, free, and universally implementable", "Yes, for Global South users without funding. API to be developed",
-  "To be Accessible", "The protocol allows for an authentication and authorization procedure, where necessary", "WHe-DB complies with this sub-principle",
+  "To be Accessible", "The protocol allows for an authentication and authorization procedure, where necessary", "HAWK complies with this sub-principle",
   "To be Accessible", "Metadata are accessible, even when the data are no longer available", "Yes, data is archived including its metadata",
   
   # Interoperable
   "To be Interoperable", "(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.", 
   "Long term goal is to develop such language for wildlife health surveillance through the Wildlife Health Intelligence Network including an ontology",
   "To be Interoperable", "(Meta)data use vocabularies that follow FAIR principles", "Yes, the data dictionary is available online",
-  "To be Interoperable", "(meta)data include qualified references to other (meta)data", "Yes, this is the goal of cross-identifier fields in WHe-DB data units",
+  "To be Interoperable", "(meta)data include qualified references to other (meta)data", "Yes, this is the goal of cross-identifier fields in HAWK data units",
   
   # Reusable
   "To be Reusable", "Meta(data) are richly described with a plurality of accurate and relevant attributes", 
   "Yes, as more metadata is provided at the Surveillance Activity level, it will be possible to identify and propose more accurate and relevant attributes",
   "To be Reusable", "(Meta)data are released with a clear and accessible data usage license", 
   "Yes, the metadata and data are accessible depending on their administrators. Data from closed accounts is available after embargo. The data license is established in the Surveillance Activity metadata",
-  "To be Reusable", "(Meta)data are associated with detailed provenance", "WHe-DB keeps record of all data changes and archives deleted data",
+  "To be Reusable", "(Meta)data are associated with detailed provenance", "HAWK keeps record of all data changes and archives deleted data",
   "To be Reusable", "(Meta)data meet domain-relevant community standards", "Metadata and data structure is supported by the Wildlife Health Intelligence Network"
 )
 
@@ -955,7 +1016,7 @@ fair_table <- tribble(
   merge_v(j="FAIR Principle") |>
   theme_box() |>
   width(j = "FAIR Sub-Principle", width=7, unit = "cm") |>
-  width(j = "How WHe-DB supports", width=10, unit = "cm")
+  width(j = "How HAWK supports", width=10, unit = "cm")
 
 
 ```
@@ -965,7 +1026,7 @@ The **CARE** (Collective Benefit, Authority to Control, Responsibility, and Ethi
 
 
 ```{r table_3, message=FALSE, warning=FALSE, echo=FALSE}
-#| tbl-cap: Table 3. Mapping of CARE principles adapted from Carroll et al. to WHe-DB functionalities.
+#| tbl-cap: Table 3. Mapping of CARE principles adapted from Carroll et al. to HAWK functionalities.
 #| 
 # library(knitr)
 # library(kableExtra)
@@ -973,7 +1034,7 @@ library(tibble)
 library(flextable)
 
 care_table <- tribble(
-  ~`CARE Principle`, ~`CARE Sub-Principle`, ~`How WHe-DB supports`,
+  ~`CARE Principle`, ~`CARE Sub-Principle`, ~`How HAWK supports`,
   
   # Collective Benefit
   "Collective Benefit", "For inclusive development and innovation", "NA",
@@ -983,21 +1044,21 @@ care_table <- tribble(
   # Authority to Control
   "Authority to Control", "Recognizing rights and interests", "NA",
   "Authority to Control", "Data for governance", 
-  "Data in WHe-DB that are relevant to Indigenous People world views and empower self-determination and effective self-governance are available and accessible to Indigenous nations and communities by requiring database users to accept specific condition in the Terms of Use",
+  "Data in HAWK that are relevant to Indigenous People world views and empower self-determination and effective self-governance are available and accessible to Indigenous nations and communities by requiring database users to accept specific condition in the Terms of Use",
   "Authority to Control", "Governance of data", 
-  "WHe-DB is free of cost for Indigenous Communities establishing their own *Organization Account*",
+  "HAWK is free of cost for Indigenous Communities establishing their own *Organization Account*",
 
   # Responsibility
   "Responsibility", "For positive relationships", "NA",
   "Responsibility", "For expanding capability and capacity", 
-  "WHe-DB is free of cost for Indigenous Communities establishing their own *Organization Account*",
+  "HAWK is free of cost for Indigenous Communities establishing their own *Organization Account*",
   "Responsibility", "For Indigenous languages and worldviews", 
-  "WHe-DB can be translated to any language",
+  "HAWK can be translated to any language",
   
   # Ethics
   "Ethics", "For minimizing harm and maximizing benefit", "NA",
   "Ethics", "For justice", "NA",
-  "Ethics", "For future use", "Availability of Indigenous data in WHe-DB, controlled under an *Organization Account* of an Indigenous Community or Individual depends on the corresponding Organization Account administrators\n
+  "Ethics", "For future use", "Availability of Indigenous data in HAWK, controlled under an *Organization Account* of an Indigenous Community or Individual depends on the corresponding Organization Account administrators\n
   Indigenous data not administered by an Indigenous Community or Individual can only be shared with the authorization of the Indigenous community sourcing the data\n
   Indigenous data from closed Organization Accounts can be embargoed by the indigenous communities that generated or that sourced the data\n
   The embargo can only be lifted by the corresponding community to be available for specific individuals, groups, other communities, or the general public"
@@ -1007,7 +1068,7 @@ care_table <- tribble(
   merge_v(j="CARE Principle") |>
   theme_box() |>
   width(j = "CARE Sub-Principle", width=7, unit = "cm") |>
-  width(j = "How WHe-DB supports", width=10, unit = "cm")
+  width(j = "How HAWK supports", width=10, unit = "cm")
 
 ```
 
