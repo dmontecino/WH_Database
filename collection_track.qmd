@@ -1,13 +1,22 @@
-A **Collection Track** refers to the effort to find or document **Events** in linear features within a **Location** during a specific period of time. For example, the route travelled by patrolling rangers in a protected area where dead animals are encountered or a population monitoring transect. The effort also includes the time required to complete the track. A **Location** can contain one or multiple **Collection Tracks**.
+A **Track Effort** refers to the spatial and temporal work to find or document **Events** in linear features (e.g., kilometers walked through a set of spatial coordinates in an x period of time) within a **Location**. The meaning of a **Track Effort** depends on the methodology of the Surveillance Activity. Users must define what a **Track Effort** represents and document it in the **Surveillance Activity** metadata. 
 
-**Collection Tracks** are not nested in **Collection Areas** but both are nested under **Locations**. If a methodology involves **Events** nested in **Collection Tracks** and these tracks nested in **Collection Areas** then, the link between both types of **Collection** can be made through the spatial data and through **Tags** (see Advanced).
-
-Key attributes of a **Collection Track** include:
+Key attributes of a **Track Effort** include:
 
 * The spatial effort unit (e.g., kilometers)
 * The spatial effort (e.g., 15)
 * The temporal effort unit (e.g., hours)
 * The temporal effort (e.g., 6)
 * The spatial coordinates of the track
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+::: {.callout-note title="Case Study 6"}
+
+Following the ranger-based wildlife morbidity and mortality surveillance described [here](https://conbio.onlinelibrary.wiley.com/doi/10.1111/cobi.70241), a sector within a protected area is the Location and the route traveled by patrolling rangers to find wildlife morbidity and mortality during a specific period of time represents a Track Effort.
+
+::: 
+
+**Track Efforts** are not nested in **Areas Efforts**. If a methodology involves **Events** nested in **Track Efforts** nested in **Area Efforts** then, the link between both types of **Effort** can be made through the spatial data and through **Tags** (see "Advanced").
+
 
 <!-- If there are a **Collection Track** attributes that are not part of the current data model but are of interest to track, for example, specific environmental features, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Collection Tracks** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Collection Tracks** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity. -->

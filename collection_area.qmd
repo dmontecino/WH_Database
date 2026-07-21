@@ -1,9 +1,17 @@
-**Collection Area** refers to the effort to find or document **Events** in an area during a specific period of time. For example, the unit of area covered in a search for dead birds, and the amount of time spent covering that area. The **Collection Area** can be equivalent to the area of the **Location** (one **Collection Area** in the **Location**) or they can be smaller surfaces within the **Location**.
+**Area Effort** refers to the spatial and temporal work to find or document **Events** within an area (e.g., square kilometers explored in x amount of time) within a **Location**. The meaning of **Area Effort** depends on the methodology of the Surveillance Activity. Users must define what a **Area Effort** represents and document it in the **Surveillance Activity** metadata. 
 
-Key attributes of a **Collection Area** include:
+Key attributes of a **Area Effort** include:
 
 * The spatial effort unit (e.g., square meters)
 * The spatial effort (e.g., 100)
 * The temporal effort unit (e.g., hours)
 * The temporal effort (e.g., 6)
 * The spatial coordinates of the area
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+::: {.callout-note title="Case Study 5"}
+
+Following recommendations [here](https://academic.oup.com/condor/advance-article/doi/10.1093/ornithapp/duag044/8658584), in an outbreak investigation, dead marine birds are actively searched in a beach. In this case, the beach is the Location and each area explored within the beach during a specific period of time represents an Area Effort
+
+::: 

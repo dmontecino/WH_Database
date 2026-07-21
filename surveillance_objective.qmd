@@ -2,22 +2,36 @@
 
 A **Surveillance Activity** in the data model refers to a coordinated set of activities aimed at detecting diseases, demonstrating disease freedom, measuring incidence or prevalence, or assessing trends in specific health metrics within defined populations. In general, a **Surveillance Activity** will be characterized by a specific objective, and corresponding methods.
 
-Each **Surveillance Activity** includes detailed metadata describing its objectives and methods, such as:
+Each **Surveillance Activity** includes metadata describing objectives and methods. Key properties of a **Surveillance Activity** include:
+
 
 * Targeted species, populations, and hazards
 * Samples and collection methods
 * Diagnostics conducted and case definitions
+* Start and End Dates
+* Biological, Chemical, Physical, and Physiological targets
+* Taxa included
+* Involved partners
+* Definitions of Locations, Events, and Sources
+* Source identification, Specimens, and Effort methods
+* Diagnostic techniques and case definitions
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
 
 A **Surveillance Activity** can span multiple **Field Visits**, **Locations**, and **Source** types (e.g., *Groups*, *Animals*, *Environmental* and *Arthropod* Sources).
 
-*For example, the [longitudinal assessment of coronavirus shedding in two Eidolon helvum bat roosts in Africa](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0274490) aimed understanding the patterns of coronavirus shedding through their reproductive cycle assessing common patterns in two roost separated by thousands of kilometers where the reproductive season do not match over time. The methods involved collecting a fixed number of fecal samples from the two bat roosts of the same species every month for 12 months, with subsequent testing for Coronaviridae sp. The Project in this case was USAID PREDICT, this study was a Surveillance Activity, the Field Visirs were each visit monthly, the Locations were the two roosts, the Source Records were the Group of bats at the sampling date each month, and the Specimens are the fecal samples taken from the roost*
+::: {.callout-note title="Case Study 2"}
 
+The [longitudinal assessment of coronavirus shedding in two Eidolon helvum bat roosts in Africa](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0274490) aimed understanding the patterns of coronavirus shedding through their reproductive cycle assessing common patterns in two roost separated by thousands of kilometers where the reproductive season do not match over time. The methods involved collecting a fixed number of fecal samples from the two bat roosts of the same species every month for 12 months, with subsequent testing for *Coronaviridae sp*. The Project in this case was USAID PREDICT and this study was a specific Surveillance Activity. Field Visits were each visit monthly to the roosts, the Locations were the two roosts, the Source Records were the bats at the sampling date each month, and the Specimens are the fecal samples taken from the roost
+
+::: 
 
 <!-- Generally, **a Surveillance Activity usually includes Field Visits, Locations, Events, Sources, Source Records, and Diagnostics**. However, exceptions exist (see Complexities section). -->
 
-### Outbreak Investigation
+::: {.callout-note title="Outbreak Investigation"}
 
-Each outbreak investigation is considered a **Surveillance Activity**. **Outbreak Surveillance Activities can encompass the initial Field Visit that led to the outbreak detection and subsequent Field Visits associated with the investigation and control**. The initial **Field Visit** that led to the outbreak detection may have already been part of another **Surveillance Activity** and also the **Outbreak Surveillance Activity** (e.g., routine monitoring of a particular area), and this relationship is maintained to allow traceability on the history of detections.
+Each outbreak investigation is considered a Surveillance Activity. An Outbreak Surveillance Activity can encompass the initial Field Visit that led to the outbreak detection and subsequent Field Visits associated with the investigation and control. The initial Field Visit that led to the outbreak detection may have already been part of another Surveillance Activity and also the Outbreak Surveillance Activity (e.g., routine monitoring of a particular area), and this relationship is maintained to allow traceability on the history of detections.
 
-For instance, an outbreak may first be detected during routine patrols by rangers. In such cases, the initial **Field Visit** and its components should belong to both the ranger patrol **Surveillance Activity** and also the **Outbreak Surveillance Activity**. Follow-up **Field Visits** (e.g., by veterinarians or public health officers investigating the outbreak) should be assigned exclusively to the outbreak **Surveillance Activity**.
-
+For instance, an outbreak may first be detected during routine patrols by rangers. In such cases, the initial ranger-conducted Field Visit and its components should belong to both the ranger patrol Surveillance Activity and also the outbreak Surveillance Activity. Follow-up Field Visits (e.g., by veterinarians or public health officers investigating the outbreak) should be assigned exclusively to the outbreak Surveillance Activity.
+::: 

@@ -1,12 +1,20 @@
 <!-- # Field Visit {.unnumbered} -->
 
-A **Field Visit** in the data model represents a defined time period—including a start and end date—during which **Locations** are visited, **Events** and **Sources** are identified and observed, and **Specimens** might be collected and documented.
+A **Field Visit** in the data model represents a defined time period—including a start and end date—during which **Locations** are visited, **Events** and **Sources** are conducted, identified, or observed, and **Specimens** might be collected and documented. The length of a **Field Visit** is flexible. The meaning of a **Field Visit** depends on the methodology of the Surveillance Activity. Users must define what a **Field Visit** represents and document it in the **Surveillance Activity** metadata. 
 
 <!-- A **Field Visit** may encompass multiple **Locations** within the same trip, such as markets, natural areas, rehabilitation centers, caves, and more. While each **Field Visit** must include at least one Location, there is no upper limit to the number of **Locations** that can be visited during the trip. The length of a **Field Visit** is flexible. -->
 
-The length of a **Field Visit** is flexible. Key properties of a **Field Visit** include:
+Key properties of a **Field Visit** include:
 
 * Start and End Date
 * Field Visit ID and Code
 * Field Visit Cross-Reference ID and Origin
 * Field Visit Leader
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+::: {.callout-note title="Case Study 3"}
+
+In the monitoring of wildlife anomalies through camera traps (for example, as described [here](https://conbio.onlinelibrary.wiley.com/doi/10.1111/cobi.70333?af=R)), a Field Visit refers to the period during which a set of camera traps was deployed in the field
+
+::: 

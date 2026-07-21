@@ -42,8 +42,8 @@ HAWK structures surveillance data following a hierarchy, capturing relevant epid
 2. **Surveillance Activity**: Specific surveillance goal and methodology (who, where, when, what, why, how) documented following a standard metadata format.
 3. **Field Visit**: A recorded interval during which fieldwork or data collection are conducted.
 4. **Location**: Areas where activities are conducted.
-5. **Collection Area**, **Collection Track**, and **Collection Point**: Units of effort associated with the generation of data in a defined area (e.g., sector within protected area) along in a linear feature (e.g., transect or ranger patrol track), or at spatial point (e.g., a set of mist nests placed during a specific period of time)., respectively.
-6. **Event**: Point epidemiological unit with a spatiotemporal coordinate (longitude and latitude) where wildlife health surveillance data are collected.
+5. **Area Effort**, **Track Effort**, and **Point Effort**: Units of effort associated with the collection of **Events** (see below) in a determined area (e.g., Events in a sector within protected area) along in a linear feature (e.g., Events in transect or ranger patrol track), or at spatial point (e.g., a set of mist nests placed during a specific period of time for a sampling Event), respectively. 
+6. **Event**: Point epidemiological unit with a spatiotemporal coordinate (longitude and latitude) where wildlife health surveillance data are collected from.
 8. **Source**: An observed, diagnosed, or sampled entity to assess their health status or health hazard presence. There are four Source types:​
       * *Group*: more than one individual of the same taxa
       * *Animal*: one individual
@@ -55,7 +55,7 @@ HAWK structures surveillance data following a hierarchy, capturing relevant epid
 12. **Result**: The outcome of a *Diagnostic* for a specific health metric and the corresponding interpretation.
 12. **Interpretation**: The final status assigned to a *Specimen* or *Source Record* following documented case definitions.
  
-**The basic relationships among the basic units of the data model** are shown in Figure 1 below:
+**The main relationships among the basic units of the data model** are shown in Figure 1 below:
 
 
 ![](Pictures_and_diagrams/relationship_data_model.png){width=100%}
@@ -64,20 +64,30 @@ HAWK structures surveillance data following a hierarchy, capturing relevant epid
 
 HAWK employs a modular approach to the data model, enabling components to be added based on specific user needs. 
 
-*When data comes from wildlife mortality reported by a community member through a mobile application*:
+::: {.callout-note title="Case Study 1"}
+When data comes from wildlife mortality reported by a community member through a mobile application:
 
-* *The Surveillance Activity contains a description of the methodology.*
-* *The Field Visit is the time period the community member spent exploring.*
-* *The Location could be a county or zip code.*
-* *An Event is the epidemiological unit with latitude, longitude, and time representing the position where dead animals found.*
-* *The Animal Source Records describe the dead animals.*
-* *No Specimens, Diagnostics, or Laboratory data are generated.*
-* *No Collection effort is linked to the Events and the animals are found opportunistically*
+The Surveillance Activity contains a description of the methodology
+
+The Field Visit could be a day when the mortality was found
+
+The Location could be the site where the mortality was found
+
+An Event is the epidemiological unit with latitude, longitude, and time representing the position 
+where dead animals were found
+
+The Animal Source Records describe the dead animals
+
+No Specimens, Diagnostics, or Results data are generated
+
+No Effort is involved as the animals are found opportunistically
 
 
 ![](Pictures_and_diagrams/simple_example.png){width=100%}
 
-**Figure 2**: An illustration  of how case study 1 appears in the data model.
+**Figure Case Study 1**: An illustration  of how case study 1 data is structured in the data model.
+
+:::
 
 This flexible structure means the model remains efficient and scalable, adapting to different users and surveillance needs.
 
@@ -85,9 +95,8 @@ This flexible structure means the model remains efficient and scalable, adapting
 
 <!-- # Figure first exaple -->
 
-The data model is **not designed for wildlife population monitoring**. However, it includes key identifiers that enable integration of wildlife health and population data.
+<!-- The data model is **not designed for wildlife population monitoring**. However, it includes key identifiers that enable integration of wildlife health and population data. -->
 
-Use the menu in the top-right corner of this website to navigate to the different sections of this manual.
 
 # Main Units of the Data Model
 
@@ -100,6 +109,7 @@ Use the menu in the top-right corner of this website to navigate to the differen
 ## Surveillance Activity 
 
 ![](Pictures_and_diagrams/Picture3.png){width=100%}
+**Figure 2**: Postition of Surveillance Activity in the data model.
 
 ```{r child="surveillance_objective.qmd" , echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -109,6 +119,7 @@ Use the menu in the top-right corner of this website to navigate to the differen
 ## Field Visit
 
 ![](Pictures_and_diagrams/Picture4.png){width=100%}
+**Figure 3**: Position of Field Visit in the data model.
 
 ```{r child="field_activity.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -117,37 +128,42 @@ Use the menu in the top-right corner of this website to navigate to the differen
 ## Location
 
 ![](Pictures_and_diagrams/Picture5.png){width=100%}
+**Figure 4**: Position of Location in the data model.
 
 ```{r child="location.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
 
-## Collection
+## Effort
 
-In the data model, **Collection** contains the information associated with the effort to obtain **Sources** in the field actively. 
+In the data model, **Effort** contains the information associated with the spatial and temporal metrics used to activel obtain **Sources** in the field. 
 
-When **Source Records** are not linked to a **Collection** (e.g., opportunist finding of dead animals), then there is no *Collection* involved.
+When **Source Records** are not linked to an **Effort** (e.g., opportunist finding of dead animals), then no **Effort** is involved.
 
 ![](Pictures_and_diagrams/Picture7.png){width=100%}
+**Figure 5**: Position of Effort in the data model.
 
-### Collection Area 
+### Area Effort
 ```{r child="collection_area.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
 
-### Collection Track 
+### Track Effort
 
 ```{r child="collection_track.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
 
-### Collection Point 
+### Point Effort
 
 ```{r child="collections.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
 ```
 
-**Collections** fields also help capture issues encountered when searching for **Sources**, such as camera traps running out of power, being stolen, or damaged mist nets. 
+**Area, Track and Point Effort** fields also help capture issues encountered when searching for **Sources**, such as camera traps running out of power, being stolen, or damaged mist nets. 
+
+**Efforts** can contain between zero (e.g., an unsuccessful capture where no animals are caught) and an unlimited number of Source Records**.
+
 
 
 ## Event

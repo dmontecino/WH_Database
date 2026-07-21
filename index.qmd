@@ -64,7 +64,7 @@ HAWK is a ready-to-adopt global public good, available for any organization in a
 
 While numerous barriers to WHS remain (e.g., siloed actors, funding, and unclear policy frameworks), HAWK, slated for release in late 2025, aims to fill a historical gap in the availability of a sustainable purpose-built database to support the adequate management of WHS data. We invite the WHS and One Health communities to lay the foundation of their data practices on this database and contribute to its iterative improvement.
 
-## Documentation content
+## Documentation Content
 
 This documentation provides a comprehensive guide to HAWK, covering its data structure (data model), the web-based graphical user interface for general users,  the data dictionary, and the terms of use. Our goal is to offer a clear understanding of HAWK’s organization, functionality, and data semantics.
 
@@ -74,9 +74,11 @@ The documentation is structured as follows:
 
 **Data Dictionary** – A reference guide listing and describing all data elements, including their names, types, and URIs to their original vocabulary of origin (e.g., the National Agriculture Library Thesaurus, Medical, Medical Subject Headings, and AGROVOC), to advance data harmonization, comparability over time and space, comprehension, and interoperability.
 
-**Database Manual** – Step-by-step guidance on using the graphical user interface to access, read, write, edit, delete, and manage data.
+**General User Application Manual** – Step-by-step guidance on using the graphical user interface to access, read, write, edit, delete, and manage data.
 
-**Terms of Use** - A comprehensive set of conditions to create a private  **Organization** account, and the terms of use to be accepted prior to the creation of the account, including data embargoes and exceptions for Indigenous peoples.
+**Terms of Use** - A comprehensive set of conditions to create a private  **Organization** account, and the terms of use to be accepted prior to the creation of the account, including data embargoes and exceptions for Indigenous peoples (*Under construction*).
+
+Use the menu in the top-right corner of this website to navigate to the different sections of this manual.
 
 We hope this documentation helps you maximize **HAWK's** potential. If you have any questions or need assistance, please contact our support team.
 

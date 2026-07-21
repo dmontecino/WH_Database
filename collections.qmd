@@ -1,24 +1,33 @@
+A **Point Effort** refers to the spatial and temporal work to find or document **Events** at a specific spatio-temporal coordinate (e.g., a device set up at a specific longitude and latitud for x amount of time to capture mosquitoes) within a **Location**.  The meaning of a **Point Effort** depends on the methodology of the Surveillance Activity. Users must define what a **Point Effort** represents and document it in the **Surveillance Activity** metadata. 
 
-In the data model, a **Collection Point** represents the effort involved in observing, detecting, capturing, or otherwise identifying Sources at an **Event**.
-
-Examples of **Collection Point** include:
-
-* Observations made by an individual at a fixe position over a fixed time to identify dead birds in a wetland.
-* A camera trap deployed at a specific site to photograph animals and the hours it was active.
-* Traps deployed during a period of time to collect mosquitoes.
-
-**A Collection Point can contain between zero (e.g., an unsucccesful capture effort where no animals are caught) and an unlimited number of Source Records**.
-
-**An Event might not include any Collection Point**. Examples include **Sources** found opportunistically (e.g., dead birds accidentally found in a beach) or sampling of the animals in a wet market. 
-
-<!-- A **Collection Point** will typically contains a specific type of **Source Record**. This is because observations, capturing, and sampling efforts generally focus on a specific type of target, whether *Group*, *Animal*, *Environmental*, or *Arthropods*. However, a single **Event** can include multiple **Collection Points** targeting different **Specimen Sources**. For example, mosquito traps and an air filtration device can be linked to the same **Event**. -->
-
-Key attributes of a **Collection Point** include:
+Key attributes of a **Point Effort** include:
 
 * The spatial effort unit (e.g., mist net)
 * The spatial effort (e.g., 1)
+* The spatial coordinates (longitud and latitude)
 * The temporal effort unit (e.g., hours)
 * The temporal effort (e.g., 2)
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+::: {.callout-note title="Case Study 7"}
+
+In the counting of dead birds at a wetland from a tower and using binoculars, the **Point Collection** is the position and number of observers recording dead birds from the tower during a specific period of time
+
+::: 
+
+::: {.callout-note title="Case Study 8"}
+
+In the monitoring of wildlife morbidity through camera traps, the **Point Collection** is the number camera traps deployed at a specific position to photograph animals and the hours or days active.
+
+:::
+
+
+<!-- **An Event might not include any Collection Point**. Examples include **Sources** found opportunistically (e.g., dead birds accidentally found in a beach) or sampling of the animals in a wet market.  -->
+
+<!-- A **Collection Point** will typically contains a specific type of **Source Record**. This is because observations, capturing, and sampling efforts generally focus on a specific type of target, whether *Group*, *Animal*, *Environmental*, or *Arthropods*. However, a single **Event** can include multiple **Collection Points** targeting different **Specimen Sources**. For example, mosquito traps and an air filtration device can be linked to the same **Event**. -->
+
+
 
 
 <!-- If there are **Collection Point** attributes that are not part of the current data model but are of interest to track, they must be reported in the **Surveillance Activity** metadata. It is recommended to maintain such additional attributes in a separate system, such as another database or an Excel sheet, for reference. Common extra **Collection Points** attributes can be added to the data model in the future. Missing options for single- and multi-selection attributes of **Collection Points** can be added as long as they maintain a controlled vocabulary to ensure consistency and data integrity. -->
