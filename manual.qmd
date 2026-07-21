@@ -83,7 +83,7 @@ HAWK has four types of accounts: **General Administration**, **Organization Admi
 
 These accounts are assigned internally by the Wildlife Conservation Society. There are two **General Administrators** (see HAWK website [*under construction*] to learn more). **General Administrators** support the maintenance of the database across all accounts linked to at least one **Organization** (see below), they authorize the creation of **Organization** accounts (see next), establish **Organization Administrators** based on requests (see below), and communicate with **Organization Administrators** to solve technical issues, report updates and bugs, etc.
 
-## Organization Account (*under construction*)
+## Organization Account
 
 The first step to begin using HAWK is to request an **Organization** account. **Organization** accounts contain as many **Projects** as needed, and they can only be accessed by authorized **Organization Administrators** and **General Users**. **Organization** accounts manage data for their **Surveillance Activities**.
 
@@ -558,7 +558,7 @@ The target(s) selected at the **Project** level determine the target choices ava
 
 To add a new **Surveillance Activity** to a **Project**, navigate to the **Surveillance Activity** folder under the corresponding **Project**, select the folder and then click on the “Add Surveillance Activity” button on the top left corner of the **Navigation Panel**. The addition of a **Surveillance Activity** is the most time–consuming step of data entry. These fields are also the most important because they document the methods employed to conduct the activity, including **Source**-specific metadata.
 
-The addition of a **Surveillance Activity** is broken into two parts. A general **Surveillance Activity** and then a "Metadata" folder. This second folder requests information about the methods to field data, the diagnostics used, and the case definitions (*under construction*).
+The addition of a **Surveillance Activity** is broken into two parts. A "Metadata" folder and a field data section that starts with a "Field Visit" folder. The first folder requests information about the methods to obtain field data, diagnostics used, and case definitions (*under construction*).
 
 <!-- Therefore, the addition of a **Surveillance Activity** is broken into three parts. The first part captures information about who, when, where, what, why, and how of the **Surveillance Activity** (*under construction*): -->
 
