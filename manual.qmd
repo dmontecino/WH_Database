@@ -1,4 +1,4 @@
-# Manual {.unnumbered}
+# General User Manual {.unnumbered}
 
 ```{r, echo=FALSE}
 # htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
@@ -578,12 +578,12 @@ The answers provided in the Surveillance Activity determined the fields or optio
 
 ### Selecting targets for the Surveillance Activity
 
-The surveillance targets at the **Surveillance Activity**-level depends on the target(s) selected in the parent **Project** and choice for the "Surveillance Activity Type" field in the **Surveillance Activity** unit. The options for "Surveillance Activity Type" depend on the choice(s) selected for "Project  Activity Type" field in the parent **Project** unit. 
+The surveillance targets at the **Surveillance Activity**-level depends on the target(s) selected in the parent **Project** and the choice for the "Surveillance Activity Type" field in the **Surveillance Activity** unit. The options for "Surveillance Activity Type" depend on the choice(s) selected for "Project Type" field in the parent **Project** unit. If "Project Type" only includes "Targeted Surveillance", then the only option available for "Surveillance Activity Type" is "Targeted Surveillance".
 
-Selecting "General Surveillance" or "Outbreak Investigation" for "Surveillance Activity Type" does not allow to select specific targets to track and the field "Surveillance Activity Hazard Names"
+Selecting "General Surveillance" or "Outbreak Investigation" for "Surveillance Activity Type" does not allow to select specific targets tracked and the field "Surveillance Activity Hazard Names" shows the options "Any Biological Hazard", "Any Chemical Hazard", "Any Physical Hazard", and "Any Physiological Hazard". The selection(s) should reflect the broad categories of targets to be tracked.
 
-![](Pictures_and_diagrams/Manual_pictures/Picture21.png){width=80%}
 
+![](Pictures_and_diagrams/Manual_pictures/Picture23.png){width=80%}
 
 Selecting "Targeted Surveillance" or "Outbreak Investigation" for "Surveillance Activity Type" allows to select specific target(s) to track. The field "Surveillance Activity Hazard Names" will contain a list based on the selections at the **Project** level. For example, the option "Any virus" should be selected if any virus is targeted during a **Surveillance Activity**: 
 
@@ -591,7 +591,7 @@ Selecting "Targeted Surveillance" or "Outbreak Investigation" for "Surveillance 
 
 Multiple options can be selected for the field "Surveillance Activity Hazard Names".
 
-The target(s) selected at the ****Surveillance Activity**** level determine the target choices available for the nested **Interpretation** units.
+The target(s) selected at the **Surveillance Activity** level determine the target choices available for the nested **Interpretation** units.
 
 ## Adding a New Field Visit to a Surveillance Activity
 
@@ -730,40 +730,55 @@ Just like with the **Diagnostics** for Specimens, **Diagnostic** information inc
 
 To add a **Result** to a **Diagnostic** navigate to the “Results” folder linked to the **Diagnostic**, select the folder and then click “Add Result” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
 
-Each **Result** reports the outcome of the parent **Diagnostic** test for one hazard. The hazard choices available are specific for the parent **Diagnostic**. A **Result** can request specific information associated with the target detection. For example, the gene holding the nucleic acids amplified by a specific PCR assay. The **Result** request the unit of the diagnostic outcome (e.g., ct curve) and the value of the outcome.
+Each **Result** reports an outcome of the parent **Diagnostic** test for one specific target. The hazard choices available are specific based on the selection of "Diagnostic Name" in the parent **Diagnostic**. A **Result** can request specific information associated with the target detection. For example, the gene holding the nucleic acids amplified by a specific PCR assay. The **Result** request the unit of the diagnostic outcome (e.g., ct curve) and the value of the outcome.
 
 ![](Pictures_and_diagrams/Manual_pictures/result_to_diagnostic.png){width=100%, fig-align=center}
-
-
 
 Uploading a file to support the output of a **Result** is best practice and strongly encouraged. For example, an electrophoresis gel image of amplified genetic products, including negative and positive controls, alongside a ladder showing bands in the expected wells and sizes:
 
 ![](Pictures_and_diagrams/Manual_pictures/adding_diagnostics_to_specimen_2.png){width=100%, fig-align=center}
 
-A **Result** can be interpreted as "Positive", "Negative", or "Undetermined" depending on the case definition for a specific target and diagnostic test. To provide the interpretation of the **Result**, the question "..." must be answered "Yes" and then a set of fields to provide an interpretation to the result will be displayed: 
+A **Result** can be interpreted as "Positive", "Negative", or "Undetermined" depending on the case definition for a specific target. To provide the interpretation of the **Result**, the question "[Source Record Specimen,  Source Record] Diagnostic Interpreted" must be answered "Yes". Then, a set of fields to provide an interpretation to the result will be displayed: 
 
 
-ADD!!
+![](Pictures_and_diagrams/Manual_pictures/Picture24.png){width=100%, fig-align=center}
+
 
 ## Adding an Interpretation to a Specimen
 
 To add an **Interpretation** to a **Specimen** navigate to the “Interpretation” folder linked to the **Specimen**, select the folder and then click “Add Interpretation” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
 
-The **Interpretation** categorizes a **Specimen** as "Positive", "Negative", or "Undetermined" for a specific target
+The **Interpretation** categorizes a **Specimen** as "Positive", "Negative", or "Undetermined" for a specific surveillance target based on the case definition. For example, a **Specimen** could have mixed **Results** for the same target (e.g., some positive and some negative). The final categorization for that **Specimen** is needed.
 
 ## Adding an Interpretation to a Source Record
 
 To add an **Interpretation** to a **Source Record** navigate to the “Interpretation” folder linked to the **Source Record**, select the folder and then click “Add Interpretation” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
 
+The **Interpretation** categorizes a **Source Record** as "Positive", "Negative", or "Undetermined" for a specific surveillance target based on the case definition. For example, a **Source Record** could have some **Specimens** considered positive for a target and some **Specimens** considered negative for the same target. The final categorization for that **Source Record** is needed.
+
 ## Adding a Storage to a Specimen
 
+**Storage** aims to keep track of the specific site of **Specimen** storage. The **Storage** collects information regarding the current amount of **Specimen** stored, the facility and the nested units building, room, freezer/refrigerator/other ("Storage Unit"), shelf, rack, box, and row where the **Specimen** is stored.
+
+To add an **Storage** to a **Specimen** navigate to the “Storage” folder linked to the **Specimen**, select the folder and then click “Add Storage” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
 
 ## Adding a Storage to a Group and Animal Source Record 
 
+**Storage** aims to keep track of the specific site of a **Source Record** storage. The **Storage** collects information regarding the the facility where a **Source Record** is stored, and the nested units building, room, freezer/refrigerator/other ("Storage Unit"), shelf, rack, box, and row where the **Source Record** is stored.
+
+To add an **Storage** to a **Source Record** navigate to the “Storage” folder linked to the **Source Record**, select the folder and then click “Add Storage” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
+
 ## Adding a Shipment to a Specimen
 
-## Adding a Shipment to a Source Record
+**Shipment** aims to keep track of the movements of a **Specimen** among facilities. The **Shipment** collects information regarding the amount of **Specimen** shipped, the origin, the destination, and the current **Shipment** status.
 
+To add an **Shipment** to a **Specimen** navigate to the “Shipment” folder linked to the **Specimen**, select the folder and then click “Add Shipment” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
+
+## Adding a Shipment to a Source
+
+**Shipment** aims to keep track of the movements of a **Source** among facilities (the carcasses of a **Group Source** or an **Animal Source** carcass. The **Shipment** collects information regarding the amount of **Source Record** shipped, the origin, the destination, and the current **Shipment** status.
+
+To add an **Shipment** to a **Source** navigate to the “Shipment” folder linked to the **Source**, select the folder and then click “Add Shipment” in the top left corner of the **Navigation Panel**. Complete the mandatory fields in the **Workspace Panel** and select the “Save Changes” button. 
 
 <!-- ## Adding Existing Data Units to Other Surveillance Activities (*under construction*) -->
 
@@ -810,46 +825,53 @@ The file will be removed from the list.
 
 # Further Clustering Data Units in HAWK using Tags
 
-It is possible that the methodology of a **Surveillance Activity** involves more units than the ones available in HAWK between **Location** and **Event**. For example, a full sampling design could involve animals within cages, cages within stalls, stalls within vendors, and vendors within markets. If the **Event** corresponds to the sampling of animals in a cage and the **Location** is the market, then stalls and vendors still need to be taking into account. The solution in HAWK is to tag the existing units. Tags  will allow to query data units and group them. In the example, **Events** can be tagged by stall and by vendor. Moreover, if the sampling is seasonal, then each **Event** can be tagged with a season. 
+It is possible that the design of a **Surveillance Activity** involves more spatial and temporal units than the ones available in HAWK between **Location** and **Event**. For example, a **Surveillance Activity** could involve the collection of samples from animals, the animals are within cages, the cages are within stalls, the stalls are within vendors, and the vendors are within markets, and markets are within cities. If the **Event** corresponds to the sampling of animals in a cage, its position (longitude/latitude) is the cage, and the **Location** is the market, then stalls, vendors, and cities still need to be taking into account. The solution in HAWK is to tag the existing units. Tags will allow to query data units and group them. In the example, **Events** can be tagged by stall and by vendor.  the **Location** could be. Moreover, the each **Event** and **Location** can be tagged with a season or any other grouping category.
+
+Tags are available for **Surveillance Activities** up to **Diagnostic**. 
 
 ## Creating Tags
 
-To create tags in HAWK, click in the "Create tags" button on the top of the **Workspace Panel**. A pop-up window allows to name the tag and select if it is a spatial, temporal, or oher type of tag. Click save. 
+To create tags in HAWK, open a data unit (e.g., an **Event**) by selecting it under one of the corresponding folder (e.g., the "Event" folder) and click in the "Create New Tag" button on the top of the **Workspace Panel**. A pop-up window allows to name the tag and select if it is a spatial, temporal, or other type of tag. Then click "Create New Tag": 
 
-ADD!!
+![](Pictures_and_diagrams/Manual_pictures/Picture25.png){width=100%, fig-align=center}
 
-## Add Tags
+To cancel the creation of a new tag, click the cancel button instead.
 
-To add tags to a unit in HAWK, click in the "Select tags" button on the top of the **Workspace Panel**. The list of available tags will be displayed. To select one tag for the specific unit, click on the check box to the left of the tag. 
+## Create Nested Tags
 
-ADD!!
+Nested tags can be added to an existing tag in order to categorize a unit (e.g. an **Event**) with more than one level, with each level having different groups. Following the market sample example above, an **Event** (the sampling of the animals in a cage) could be tagged by vendor and by the stall *within* the vendor. 
 
-## Nested Tags
+To create a nested tag, create the tag for the higher level first (in the example, the vendors) as explained in the section "Creating tags". Then find that tag under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear: 
 
-Nested tags can be created to tag one unit with more than one level. For example, tag the cages of the example above by stall and vendor in one step instead of adding one tag for the stall and one tag for the vendor. To create a nested tag, first create the tag for the root of the nested units (in the example, the vendors) as explained in the section "Creating tags". Then find that tag under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear: 
-
-ADD!!
-
-These icons are to delete the current tag (cross icon), to edit the current tag (pencil icon), and to add a nested tag (plus icon). Click on the plus icon and the system will allow you to name the nested tag:
-
-ADD!!
-
-To tag a unit using a set of nested tags, it is only necessary to click the check box of the lowest level tag. Selecting higher level tags will only add the selected tag and its parents but not the further nested tags: 
+![](Pictures_and_diagrams/Manual_pictures/Picture26.png){width=50%, fig-align=center}
 
 
-ADD!!
+These icons are to delete the current tag (X icon), to edit the current tag (pencil icon), and to add a nested tag (plus icon). Click on the plus icon and the system will allow you to name the nested tag. Then click "Create New Tag":
+
+![](Pictures_and_diagrams/Manual_pictures/Picture27.png){width=50%, fig-align=center}
+
+The nested tags will be available after clicking on "Selecte Tags" in **Workspace Panel**:
+
+![](Pictures_and_diagrams/Manual_pictures/Picture28.png){width=50%, fig-align=center}
+
+To cancel the creation of a nested tag, click the cancel button instead.
+
+## Adding Tags or Nested Tags
+
+To add tags to a unit in HAWK, click in the "Select tags" button on the top of the **Workspace Panel**. The list of available tags will be displayed. To add a specific tag for the specific unit, click on the check box to the left of the chosen tag. The selected tag will be displayed under the "tags" header:
+
+![](Pictures_and_diagrams/Manual_pictures/Picture29.png){width=50%, fig-align=center}
+Multiple tags can be added to the same unit.
+
+To tag a unit using a set of nested tags, it is only necessary to click the check box of the lowest level tag. Selecting higher level tags will only add the selected tag and its parents but not the further nested tags.
 
 ## Edit Tags
 
-To edit a tag find the tag to edit under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear. Click in the pencil icon to edit the tag. Confirm the changes.
-
-ADD!!
+To edit a tag find the tag to edit under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear (see "Create Nested Tags" above). Click in the pencil icon to edit the tag and confirm the changes. 
 
 ## Delete Tags
 
-To delete a tag find the tag to delete under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear. Click in the cross icon to delete the tag and confirm. Deleting a parent tag also deletes the tags nested under them.
-
-ADD!!
+To delete a tag find the tag to delete under the "Select a tag" button on the top of the **Workspace Panel** and hover in the area to the right of the tag name until three blue icons appear (see "Create Nested Tags" above). Click in the cross icon to delete the tag and confirm. Deleting a parent tag also deletes the tags nested under them.
 
 <!-- ## Clustering Events -->
 
