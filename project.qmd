@@ -2,7 +2,7 @@
 
 A **Project** in the data model represents a planned set surveillance operations with specific goals or a common topic, usually with a defined scope and set of tasks with a common leader and organizer (e.g., a national wildlife health surveillance system) supported by specific entities and lead by specific individuals.
 
-**Projects** serve as the highest hierarchical unit in the database and must contain at least one **Surveillance Activity**. They can be time-limited, spanning a single date, or ongoing for an extended period as needed.
+**Projects** serve as the first hierarchical unit in the database under an **Organization** and must contain at least one **Surveillance Activity**. They can be time-limited, spanning a single date, or ongoing for an extended period as needed.
 
 Key properties of a **Project** include:
 
@@ -11,8 +11,10 @@ Key properties of a **Project** include:
 * Project Cross-Reference ID
 * Project Cross-Reference Origin
 * Project Leader
-* Project Funding Source
+* Project Funding Sources
 
-Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html)
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
 
-*An example include the surveillance of New World Screwworm. This Project includes surveillance of adult flies trapped with baited devices, news sources reporting infestation cases in wildlife, and camera trap videos with wildlife showing wounds compatible with New World Screwworm infestation.*
+::: {.callout-note title="Example"}
+Surveillance of New World Screwworm. The Project includes surveillance of adult flies trapped with baited devices, news sources reporting infestation cases in wildlife, and camera trap videos with wildlife showing wounds compatible with New World Screwworm infestation.
+:::
