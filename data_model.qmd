@@ -186,6 +186,7 @@ When **Source Records** are not linked to an **Effort** (e.g., opportunist findi
 ## Specimen
 
 ![](Pictures_and_diagrams/Picture9.png){width=100%}
+**Figure 13**: Position of Specimens in the data model. 
 
 ```{r child="specimen.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 

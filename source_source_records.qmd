@@ -23,7 +23,7 @@ Identified **Sources** can be found at position *p* and time *t* in a single or 
 **A Group Source is a unit of individuals of the same taxa that belong to a common entity, such as a herd, roost, area, site, farm, cage, stall, or enclosure, forming a single epidemiological unit**. **Group Sources** can be observed, captured, diagnosed, and interpreted as a full unit, and provide collective **Specimens** if sampling is conducted. A **Group Source** can be shipped and stored when the individuals are dead.
 
 
-![](Pictures_and_diagrams/group_sources.png){width=80%}
+![](Pictures_and_diagrams/group_sources.png){width=100%}
 **Figure 9**: Detailed relationships of Group Source in the data model. 
 
 
@@ -77,7 +77,7 @@ The total number of animals of a specific taxon in an **Event** is the sum of th
 
 An **Animal Source represents a single individual**. **Animal Sources** can be observed, captured, tested, necropsied, interpreted, and provide **Specimens** directly or during a **Necropsy**. An **Animal Source** can be shipped and stored if the individual is dead.
 
-![](Pictures_and_diagrams/animal_sources.png){width=80%}
+![](Pictures_and_diagrams/animal_sources.png){width=100%}
 **Figure 10**: Detailed relationships of Animal Source in the data model. 
 
 <!-- Key attributes of an **Animal Source** include: -->
@@ -775,7 +775,7 @@ repro_table %>% bind_rows() |>
 # saveRDS(lympha_table, "Necropsy_anatomy/Tables for manual/lymph.RDS")
 lympha_table <- readRDS("Necropsy_anatomy/Tables for manual/lymph.RDS")
 
-lympha_table<-lympha_table[lympha_table!="Lymphatic system",]
+lympha_table<-lympha_table[lympha_table$Topography !="Lymphatic system",]
 
 # lympha_table |> 
 #   mutate(Topography = stringr::str_to_sentence(Topography)) |> 
@@ -899,7 +899,7 @@ nervo_table %>% bind_rows() |>
 
 An **Arthropod Source is a site where arthropods exist and can be taken** (e.g., a water fountain with mosquito larvae). An **Arthropod Source** can be observed, interpreted, and provide **Specimens**. An **Arthropod Source** cannot be diagnosed, shipped, or stored.
 
-![](Pictures_and_diagrams/arthropod_sources.png){width=80%}
+![](Pictures_and_diagrams/arthropod_sources.png){width=100%}
 
 **Figure 11**: Detailed relationships of Arthropod Source in the data model. 
 
@@ -938,7 +938,7 @@ When arthropods are collected without effort (**No Effort**), for example, oppor
 
 An **Environmental Source is a site where measurements on environmental properties can be made or samples can be collected from**. An **Environmental Source** can be observed, tested, and provide abiotic or biotic **Specimens**. An **Environmental Source** cannot be shipped or stored.
 
-![](Pictures_and_diagrams/environmental_sources.png){width=80%}
+![](Pictures_and_diagrams/environmental_sources.png){width=100%}
 **Figure 12**: Detailed relationships of Environmental Source in the data model. 
 
 <!-- Key attributes of a **Environmental Source** include: -->
