@@ -2,17 +2,16 @@
 
 ### General Overview
 
-In the data model, a **Source** is a unit of interest that can be observed, diagnosed, and provide **Specimens** for analysis. The data model manages four types of **Sources**: i) a group of individuals of the same taxa (*Group*), ii) individual animal (*Animal*), iii) the population of arthropods at a site (*Arthropod*), and iv) sites where environmental measurements or specimens can be obtained from (*Environmental*). A population of bats roosting in a cave is a **Group Source**, a collared individual would be an **Animal Source**, the population of mosquito larvae are collected from a specific site would be an **Arthropod Source** , and a pond where water, air, sediment, or feces whose animal of origin is unknown are collected would be an **Environmental Source**.  
+In the data model, a **Source** is an epidemiological unit of interest that can be observed, necropsied, diagnosed, or provide **Specimens** for analysis. The data model manages four types of **Sources**: i) a group of individuals of the same taxa (**Group Source**), ii) individual animal (**Animal Source**), iii) a site providing arthropods (**Arthropod Source**), and iv) a site providing environmental abiotic specimens (e.g., wastewater) or biotic specimens (e.g., feces not linked to a specific animal) or where metrics such are pH can be measured at (**Environmental Source**).
 
-<!-- **Sources** contain time-independent data only, such as the species of an animal in the case of a *Group* or *Animal* **Sources** (more below). -->
+Identified **Sources** can be found at position *p* and time *t* in a single or multiple **Events**.
 
-**Sources** can be identified and tracked over time if needed. *Environmental* and *Arthropod Sources* are site-specific, making them easier to track across different time points, whereas *Animal* and *Group* **Sources** may not always be identifiableand hence more difficult to track between time points. **Individually identified Sources can be tracked across multiple Events, even across different Surveillance Activities**.
 
 <!-- **A Source collected, or captured at time *t* can be linked to Events through a Point Collection or not (see previous section) via a Source Record, which represents the Source sampled or observed at a specific time *t**.  **Source Records** contain only time-dependent data, such as health status at time *t* for *Group* and *Animal* Sources** or the number of arthropods trapped at time *t* for *Arthropod Sources*. -->
 
 <!-- **Individually identified Sources can tracked across multiple Events, even across different Surveillance Activities**. For example, a bat (**Source**) captured in a mist net (**Collection**) deployed at a roost at time *t* (**Event**), individually identified, and later recaptured in another **Event** *t′*. This bat is linked to both the original capture **Event** and the recapture **Event**, with a unique **Source Record** for each occurrence. -->
 
-**A Source that are is not identified will be linked to a single Event**.
+<!-- **A Source that are is not identified will be linked to a single Event**. -->
 <!-- . For example, a bat (Source) that is captured (Collection Point) and sampled but not marked or a dead animal not identified found by a ranger during a patrol. The bat and the animal found are linked to a single Event, the one they were capture or observed.  -->
 
 <!-- **Sources found opportunistically are still linked to an Event, even if no effort is involved**. For example, a member of the public reports a dead animal (**Source Record**) found at time *t* (**Source Record**) at a beach (**Event**). -->
@@ -21,55 +20,75 @@ In the data model, a **Source** is a unit of interest that can be observed, diag
 
 ### Group Source
 
-**A Group Source is a unit of individuals of the same taxa that belong to a common entity, such as a herd, roost, area, site, farm, cage, stall, or enclosure, forming a single epidemiological unit**.  **Group Sources** can be observed, captured, diagnosed as a full unit, and provide  collective **Specimens ** if sampling is conducted.
+**A Group Source is a unit of individuals of the same taxa that belong to a common entity, such as a herd, roost, area, site, farm, cage, stall, or enclosure, forming a single epidemiological unit**. **Group Sources** can be observed, captured, diagnosed, and interpreted as a full unit, and provide collective **Specimens** if sampling is conducted. A **Group Source** can be shipped and stored when the individuals are dead.
 
-Key attributes of a **Group Source** include time independent variables:
 
-* Species
-* Group Source ID
-* Group Source Cross Reference ID
-* Collection Cross Reference Origin
+![](Pictures_and_diagrams/group_sources.png){width=80%}
+**Figure 9**: Detailed relationships of Group Source in the data model. 
 
-The primary purpose of a **Group Source** is to record individuals collectively rather than recording each animal separately. 
+
+<!-- Key attributes of a **Group Source** include time independent variables: -->
+
+<!-- * Species -->
+<!-- * Group Source ID -->
+<!-- * Group Source Cross Reference ID -->
+<!-- * Collection Cross Reference Origin -->
+
+<!-- Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction) -->
+
+<!-- The primary purpose of a **Group Source** is to record individuals collectively rather than recording each animal separately.  -->
+
 
 <!-- This approach is useful when herds are the unit of interest, when protected area rangers document multiple animals of the same species during a health event, or when animals in a market are grouped in cages or stalls without individual identification. For example, if a single cage contains animals from two different species and they are not tracked individually, they can be recorded as two separate **Group Sources**—one per species. -->
 
 #### Group Source Record
 
-**A Group Source Record documents the animals of a Group Source at time *t*, categorized by sex, age, and life status (e.g., live or dead)**. Additional attributes include:
+**A Group Source Record documents the animals of a Group Source at time *t*, categorized by sex, age, and life status (e.g., live or dead)**. 
 
+Key attributes of a **Group Source Record** include time independent variables:
+
+
+* Group Source ID
+* Record number
 * Observed anomalies
 * Potential causes of anomalies
 * Potential causes of death
 
-The additional attributes of a **Group Source Record** are recorded at the group level and multiple options can be reported for each attribute. For example, several anomalies may be listed for a **Group Source Record**, but their distribution across individuals cannot be recorded.
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
 
-A **Group Source Record can include a mix of dead and live individuals of the same species, or it may consist solely of one category if all individuals share the same status (e.g., all are dead)**. Additionally, depending on the **Event**’s definition, a **Group Source Record** may consisting of live animals only.
+Several attributes are recorded at the group level and, therefore, multiple options can be included. For example, several observed anomalies may be listed for a **Group Source Record**, but their distribution across individuals cannot be recorded.
+
+<!-- A **Group Source Record can include a mix of dead and live individuals of the same species, or it may consist solely of one category if all individuals share the same status (e.g., all are dead)**. Additionally, depending on the **Event**’s definition, a **Group Source Record** may consisting of live animals only. -->
 
 <!-- A **Group Source Record may contain a single individual**. For example, rangers patrolling a protected area might find one dead animal of species X and two dead animals of species Y at the same site (**Event**). The animals can be documented as distinct **Group Source Records** (one group per species). -->
 
 <!-- An **Event** can include multiple ***Group Source Records** of the same species. For example, if a vendor at a market keeps animals of the same species in two separate cages, and the **Event** is a vendor, then each cage could be considered a distinct unit. Consequently, there would be two **Group Source Records** for the same species under the same vendor (i.e., within the same **Event**). -->
 
-A **Group Source Record** can be directly used for a **Diagnostic** (e.g., assessing the body condition of a specific herd using a standardized metric). 
+A **Group Source Record** can be used for a **Diagnostic** (e.g., assessing the body condition of a specific herd using a standardized metric). 
 
 <!-- The data model supports **Diagnostics** applied to an entire group rather than just a **Specimen** taken from that **Group Source**. **Specimens** from **Group Sources** can be stored, exported, and used for **Diagnostics**. On the contrary, -->
-Carcasses of a **Group Source Record** can be recorded collectively (e.g., multiple dead frogs in a plastic bag) and they can be stored, shipped, and used collectively in a diagnostic test.
+Carcasses of a **Group Source Record** can be recorded collectively (e.g., multiple dead frogs in a plastic bag) and they can be stored, shipped, and used collectively in a diagnostic test (see "Storage", "Shipments", and "Diagnostic" below).
 
 Carcasses of a **Group Source Record** cannot have a collective necropsy. The individuals animals must be converted to **Animal Sources**.
 
-The total number of animals of a specific taxon in an **Event** is the sum of the individuals of the taxa in the **Group Source Record** and each individual animal of the same taxa recorded as **Animal Source Record**. For example, consider a herd of 20 cows illegally raised in a protected area whose health is assessed at time *t*. If two cows are sampled, the two sampled cows should be documented as two separate **Animal Source Records** (one per cow), while the remaining 18 cows are recorded as a single **Group Source Record**, categorized by sex, age, and health status. In this scenario, the total number of cows is 20—the 18 recorded in the **Group Source Record** plus the two documented as **Animal Source Records**. The "herd" identity of these 20 cows split in three **Source Records** can be maintained using a cluster (see Complexities). If, however, the **Group Source Record** incorrectly includes all 20 cows while two of them are also recorded as **Animal Source Record**, the total count would incorrectly sum to 22.
+The total number of animals of a specific taxon in an **Event** is the sum of the individuals of the taxa in the **Group Source Record** and each individual animal of the same taxa recorded as **Animal Source Record**. For example, consider a herd of 20 cows illegally raised in a protected area whose health is assessed at time *t*. If two cows are sampled, the two sampled cows should be documented as two separate **Animal Source Records** (one per cow), while the remaining 18 cows are recorded as a single **Group Source Record**, categorized by sex, age, and life status. In this scenario, the total number of cows is 20—the 18 recorded in the **Group Source Record** plus the two documented as **Animal Source Records**. The "herd" identity of these 20 cows split in three **Source Records** can be maintained using tags (see Complexities). If, however, the **Group Source Record** incorrectly includes all 20 cows while two of them are also recorded as **Animal Source Record**, the total count would incorrectly sum to 22.
 
 ### Animal Source
 
-**An Animal Source represents a single individual**. **Animal Sources** can be observed, captured, tested, necropsied, and provide **Specimens ** directly or during a **Necropsy**.
+An **Animal Source represents a single individual**. **Animal Sources** can be observed, captured, tested, necropsied, interpreted, and provide **Specimens** directly or during a **Necropsy**. An **Animal Source** can be shipped and stored if the individual is dead.
 
-Key attributes of a **Animal Source** include:
+![](Pictures_and_diagrams/animal_sources.png){width=80%}
+**Figure 10**: Detailed relationships of Animal Source in the data model. 
 
-* Species
-* Animal source ID
-* Animal source cross reference ID
-* Sex
-* Previous marking or tagging
+<!-- Key attributes of an **Animal Source** include: -->
+
+<!-- * Species -->
+<!-- * Animal source ID -->
+<!-- * Animal source cross reference ID -->
+<!-- * Sex -->
+<!-- * Previous marking or tagging -->
+
+<!-- Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction) -->
 
 <!-- For example, in a live animal market, if data is collected at the individual level, each animal—whether of the same or different species—must be recorded as a separate **Animal Source**. In contrast, if animals are documented collectively (e.g., by species in a shared cage), they would be classified under a **Group Source** rather than as individual **Animal Sources**. -->
 
@@ -81,37 +100,50 @@ An **Animal Source Record** represents an individual **Animal Source** at time *
 
 Key attributes of a **Animal Source Record** include:
 
+* Animal source ID
+* Record number
+* Species
+* Sex
 * Age
 * Life status
 * Observed anomalies
 * Potential causes of anomalies or death
 
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+
 Some properties of an **Animal Source Record** allow single or multiple selections. For instance, an animal's life status is recorded as one category (e.g., "live" or "dead"), whereas multiple anomalies may be reported for the same individual at time *t* (e.g., wounds, hair loss, diarrhea).
 
-An **Animal Source Record** can be categorized as dead or live at time *t*. A live animal can be part of an Event, depending on the Event's definition.
+An **Animal Source Record** can be categorized as dead or live at time *t*. A live animal at time *t* can be part of an Event, depending on the Event's definition.
 
-An **Animal Source Record** can be used directly for a **Diagnostic** (e.g., performing X-rays on an animal at time *t*).
+An **Animal Source Record** can be used directly for a **Diagnostic** (e.g., performing X-rays on an animal).
 
-Live **Animal Sources** cannot be removed from the field (ex-situ). Only **Carcasses** of **Animal Sources** can be transported, stored, an necropsied in a facility.
+<!-- The data model supports **Diagnostics** applied to an entire group rather than just a **Specimen** taken from that **Group Source**. **Specimens** from **Group Sources** can be stored, exported, and used for **Diagnostics**. On the contrary, -->
+
+Vaccinations administered to an **Animal Source Record** can be added ensuring that vaccination history accumulates.
+
+The carcass of an **Animal Source Record** can be stored, shipped, and used in a diagnostic test (see "Storage", "Shipments", and "Diagnostic" below). Live **Animal Sources** cannot can be shipped or stored.
+
+The carcass of an **Animal Source Record** can be used in a **Necropsy** (see "Necropsy" below).
 
 The total number of animals of a specific taxon in an **Event** is the sum of the individuals of the taxa in the **Group Source Record** and each individual animal of the same taxa recorded as **Animal Source Record**. For example, consider a herd of 20 cows illegally raised in a protected area whose health is assessed at time *t*. If two cows are sampled, the two sampled cows should be documented as two separate **Animal Source Records** (one per cow), while the remaining 18 cows are recorded as a single **Group Source Record**, categorized by sex, age, and health status. In this scenario, the total number of cows is 20—the 18 recorded in the **Group Source Record** plus the two documented as **Animal Source Records**. The "herd" identity of these 20 cows split in three **Source Records** can be maintained using a cluster (see Complexities). If, however, the **Group Source Record** incorrectly includes all 20 cows while two of them are also recorded as **Animal Source Record**, the total count would incorrectly sum to 22.
 
-#### Vaccination
+<!-- #### Vaccination -->
 
-The data model allows the inclusion of vaccinations administered to an **Animal Source Record**. Multiple vaccination records can be added to an **Animal Source Record** as needed, ensuring that vaccination history accumulates for the corresponding **Animal Source**.
+<!-- The data model allows the inclusion of vaccinations administered to an **Animal Source Record**. Multiple vaccination records can be added to an **Animal Source Record** as needed, ensuring that vaccination history accumulates. -->
 
-#### Dead Animal Source Record and carcass
+<!-- #### Dead Animal Source Record and carcass -->
 
-Key attributes of a dead animals and the carcass include:
+<!-- Key attributes of a dead animals and the carcass include: -->
 
-* Decomposition Condition
-* ID of the carcass (if different from the animal source record id)
-* Fate of the carcass
-* Storage Ex-situ
-* Owner
-* Availability
+<!-- * Decomposition Condition -->
+<!-- * ID of the carcass (if different from the animal source record id) -->
+<!-- * Fate of the carcass -->
+<!-- * Storage Ex-situ -->
+<!-- * Owner -->
+<!-- * Availability -->
 
-An **Animal Source**, its carcass, may undergo through multiple shipments among different facilities and changes in storage over time. Both, the initial storage and changes in storage as well as shipments can be added cumulatively so the full history is available.
+<!-- An **Animal Source**, its carcass, may undergo through multiple shipments among different facilities and changes in storage over time. Both, the initial storage and changes in storage as well as shipments can be added cumulatively so the full history is available. -->
 
 <!-- Carcasses do not provide **Specimens** directly; rather, **Specimens** are collected through the associated dead **Animal Source Record**. The origin of **Specimens** (primary necropsy, secondary necropsy, field, etc.) is tracked. Similarly, a **Carcass** is not directly used for **Diagnostics**. any diagnostic procedures that involve a full carcass, such as X-rays, applied to the corresponding dead **Animal Source Record** and documented accordingly. -->
 
@@ -126,7 +158,9 @@ Key attributes of a *Necropsy* include:
 * Necropsy Date
 * Findings per system
 
-Necropsies can be classified as partial field necropsy, full necropsy, primary, and secondary. A primary necropsy typically begins with an intact **Carcass** that has not been previously examined in a facility. In contrast, a secondary necropsy is usually performed by a veterinary pathologist using either photographs from the primary **Necropsy** or conducting the **Necropsy** again.
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+<!-- Necropsies can be classified as partial field necropsy, full necropsy, primary, and secondary. A primary necropsy typically begins with an intact **Carcass** that has not been previously examined in a facility. In contrast, a secondary necropsy is usually performed by a veterinary pathologist using either photographs from the primary **Necropsy** or conducting the **Necropsy** again. -->
 
 <!-- A **Necropsy** does not provide **Specimens** directly; rather, **Specimens** are provided through the dead **Animal Source Carcass**. -->
 
@@ -442,6 +476,7 @@ sc_fat_table %>% bind_rows() |>
 # saveRDS(muscle_table, "Necropsy_anatomy/Tables for manual/muscle.RDS")
 muscle_table <- readRDS("Necropsy_anatomy/Tables for manual/muscle.RDS")
 
+muscle_table<- muscle_table[muscle_table$Topography != "musculoskeletal system",]
 # 
 # muscle_table |> 
 #   mutate(Topography = stringr::str_to_sentence(Topography)) |> 
@@ -462,12 +497,12 @@ muscle_table <- readRDS("Necropsy_anatomy/Tables for manual/muscle.RDS")
 #   row_spec(0, bold = TRUE, font_size = 12) |>  # Header row styling
 #   scroll_box(width = "740px", height = "1000px")
 
-muscle_table %>% bind_rows() |> 
-  gt::gt() %>%
-  gt::tab_options(table.font.size = 12) %>%
+muscle_table |>  bind_rows() |> 
+  gt::gt() |> 
+  gt::tab_options(table.font.size = 12) |> 
   gt::cols_width(Topography ~ gt::pct(22),
                  Alternative_name ~ gt::pct(20),
-                 Definition_NALT ~ gt::pct(30)) %>%
+                 Definition_NALT ~ gt::pct(30)) |> 
   gt::tab_style(
     style = cell_text(size = px(15), weight = "bold"),
     locations = cells_column_labels())
@@ -523,6 +558,7 @@ body_cavities_table %>% bind_rows() |>
 # saveRDS(circulatory_table, "Necropsy_anatomy/Tables for manual/heart.RDS")
 circulatory_table <- readRDS("Necropsy_anatomy/Tables for manual/heart.RDS")
 
+circulatory_table<-circulatory_table[circulatory_table$Topography!="Cardiovascular system",]
 
 # circulatory_table |> 
 #   mutate(Topography = stringr::str_to_sentence(Topography)) |> 
@@ -566,10 +602,15 @@ circulatory_table %>% bind_rows() |>
 # saveRDS(resp_table, "Necropsy_anatomy/Tables for manual/respiratory.RDS")
 resp_table <- readRDS("Necropsy_anatomy/Tables for manual/respiratory.RDS")
 
+resp_table<-resp_table[resp_table$Topography!="Respiratory system",]
+
+
 # source("Necropsy_anatomy/Necropsy_topology_sinuses.R")
 
 # saveRDS(sinuses_table, "Necropsy_anatomy/Tables for manual/sinuses.RDS")
 sinuses_table <- readRDS("Necropsy_anatomy/Tables for manual/sinuses.RDS")
+
+sinuses_table<-sinuses_table[sinuses_table$Topography!="Respiratory system",]
 
 # resp_sinuses_table<-bind_rows(resp_table, sinuses_table)  |>  distinct()
 
@@ -608,6 +649,8 @@ resp_table |>
 
 # saveRDS(digestive_table, "Necropsy_anatomy/Tables for manual/gastro.RDS")
 digestive_table <- readRDS("Necropsy_anatomy/Tables for manual/gastro.RDS")
+
+digestive_table<- digestive_table[digestive_table$Topography !=  "Gastrointestinal system",]
 
 # digestive_table |> 
 #   mutate(Topography = stringr::str_to_sentence(Topography)) |> 
@@ -689,6 +732,8 @@ urinary_table %>% bind_rows() |>
 # saveRDS(repro_table, "Necropsy_anatomy/Tables for manual/repro.RDS")
 repro_table <- readRDS("Necropsy_anatomy/Tables for manual/repro.RDS")
 
+repro_table<-repro_table[!(repro_table$Topography %in% c("Female reproductive system", "Male reproductive system", "Reproductive system")),]
+
 
 # repro_table |> 
 #   mutate(Topography = stringr::str_to_sentence(Topography)) |> 
@@ -730,6 +775,7 @@ repro_table %>% bind_rows() |>
 # saveRDS(lympha_table, "Necropsy_anatomy/Tables for manual/lymph.RDS")
 lympha_table <- readRDS("Necropsy_anatomy/Tables for manual/lymph.RDS")
 
+lympha_table<-lympha_table[lympha_table!="Lymphatic system",]
 
 # lympha_table |> 
 #   mutate(Topography = stringr::str_to_sentence(Topography)) |> 
@@ -772,6 +818,7 @@ lympha_table %>% bind_rows() |>
 # saveRDS(endo_table, "Necropsy_anatomy/Tables for manual/endo.RDS")
 endo_table <- readRDS("Necropsy_anatomy/Tables for manual/endo.RDS")
 
+endo_table<- endo_table[endo_table$Topography != "Endocrine system",]
 
 # endo_table |> 
 #   mutate(Topography = stringr::str_to_sentence(Topography)) |> 
@@ -814,6 +861,7 @@ endo_table %>% bind_rows() |>
 # saveRDS(nervo_table, "Necropsy_anatomy/Tables for manual/nervous.RDS")
 nervo_table <- readRDS("Necropsy_anatomy/Tables for manual/nervous.RDS")
 
+nervo_table <- nervo_table[nervo_table$Topography != "Central nervous system", ]
 
 # nervo_table |> 
 #   mutate(Topography = stringr::str_to_sentence(Topography)) |> 
@@ -846,57 +894,73 @@ nervo_table %>% bind_rows() |>
 
 ```
 
-### Environmental Source
-
-**An Environmental Source is a site where measurements on environmental properties are made or samples are collected from.**
-
-Key attributes of a **Environmental Source** include:
-
-* Environmental Source ID
-* Environmental Source Cross Reference ID
-* Type (e.g., pond, grassland, landfill)
-
-#### Environmental Source Record
-
-An **Environmental Source Record** is a site where measurements on environmental properties are made or samples are collected from at time *t*. Many types of specimens can be obtained from a **Environmental Source Record**, for example, feces (with unknown animal origin), water, sediment, and air. Moreover, **Diagnostics** can be conducted on site without requiring the retrieval of specimens and, therefore, they apply to the **Environmental Source Record** directly. For example, measuring the turbidity of the water at the **Environmental Source** at time *t*. 
-
-ADD!! environmnetal diagnostic needs the tissue type
-
-Key attributes of a **Environmental Source Record** include:
-
-* Environmental Source Record ID
-* Record Number
-
-<!-- **If multiple tissue types are obtained a time t from an Environmental Source and each of them is associated with a particular active collection effort, then there will be multiple Collection Points under the same Event containing the same Environmental Source. In this case it is key to properly enter the Environmental Source Record IDs**. -->
 
 ### Arthropod Source
 
-**An Arthropod Source is the population of arthropods at a specific site** (e.g., a water fountain with mosquito larvae). 
+An **Arthropod Source is a site where arthropods exist and can be taken** (e.g., a water fountain with mosquito larvae). An **Arthropod Source** can be observed, interpreted, and provide **Specimens**. An **Arthropod Source** cannot be diagnosed, shipped, or stored.
 
-Key attributes of a **Arthropod Source** include:
+![](Pictures_and_diagrams/arthropod_sources.png){width=80%}
 
-* Source ID
-* Cross Reference ID
-* Cross Reference ID Origin
+**Figure 11**: Detailed relationships of Arthropod Source in the data model. 
 
-**If the interest of the Surveillance Activity is at the individual arthropod level (e.g., butterflies with problems in their wings or with parasites), then the user should consider these arthropods as Animal Sources. Arthropods from Animals Sources (attached ticks, lice, fleas, mites) are Specimens (see next section) from those Animal Source and not Arthropod Sources**.
+<!-- Key attributes of a **Arthropod Source** include: -->
+
+<!-- * Source ID -->
+<!-- * Cross Reference ID -->
+<!-- * Cross Reference ID Origin -->
+
+**If the interest of the Surveillance Activity is at the individual arthropod level (e.g., butterflies with problems in their wings or with parasites), then the user should consider these arthropods as Animal Sources. Arthropods from Animals Sources (attached ticks, lice, fleas, mites) are Specimens (see "Specimens") from those Animal Source and not Arthropod Sources**.
+
 
 
 #### Arthropod Source Record
 
-**An Arthropod Source Record represents the set of arthropods collected from an Arthropod Source at time *t* **. For example, mosquitoes captured using a CO₂ trap (**Collection Point**). 
+**An Arthropod Source Record represents the set of arthropods collected from an Arthropod Source at time *t* **. For example, mosquitoes captured using a CO₂ trap. 
 
 <!-- This means that mosquitoes obtained using CO₂ traps and BG traps (**Collection Points**) at an **Arthropod Source** at time *t* belong to the same **Arthropod Source Record**. -->
 
 
 Key attributes of a **Arthropod Source Record** include:
 
-* Number (full individual, head, thorax, or abdomen) by species, development stage, sex, and condition (females only).
+* Arthropod Source ID
+* Record Number
+* Number of individuals (full individual, head, thorax, or abdomen) by species, development stage, sex, and condition (for females only).
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
 
 <!-- **Similar to Environmental Sources, a key distinction between Arthropod Sources and Group or Animal Sources is that an Event can contain multiple Collection Points (e.g., each trap) containing the same Arthropod Record Record**. -->
 
-**A key characteristic of an Arthropods Source Record is that there can be several species under the Source Record level**. For example, mosquitoes collected from a specific site (**Source**) using CO₂ traps (**Collection Point**) will be identified and counted by species in the **Arthropod Source Record**. 
+**A key characteristic of an Arthropods Source Record is that there can be several species under the Source Record level**. For example, mosquitoes collected from a specific site (**Source**) will be identified and counted by species in the **Arthropod Source Record**. 
 
-When arthropods are collected with "No effort", then the sampling methodology is reported at the **Arthropod Source Record** level. The arthropod **Specimens** are just a division of the captured arthropods in the **Arthropod Source Record**. When the capturing of arthropods implies an effort, then the sampling methodology is inferred from the **Collection**.
+When arthropods are collected without effort (**No Effort**), for example, opportunistically using a brine shrimp net, then the collection method is reported at the **Arthropod Source Record** level. When the collection implies an effort, the methodology can be inferred from the **Point Collection**.
 
-If a **Collection Point** is deployed to collect mosquitoes at time *t* but fails, then the **Collection Point** and the **Event** itself are recorded, and an empty **Arthropod Source Record** is added (empty table with numbers per species, development, sex, and condition).
+### Environmental Source
+
+An **Environmental Source is a site where measurements on environmental properties can be made or samples can be collected from**. An **Environmental Source** can be observed, tested, and provide abiotic or biotic **Specimens**. An **Environmental Source** cannot be shipped or stored.
+
+![](Pictures_and_diagrams/environmental_sources.png){width=80%}
+**Figure 12**: Detailed relationships of Environmental Source in the data model. 
+
+<!-- Key attributes of a **Environmental Source** include: -->
+
+<!-- * Environmental Source ID -->
+<!-- * Environmental Source Cross Reference ID -->
+<!-- * Type (e.g., pond, grassland, landfill) -->
+
+#### Environmental Source Record
+
+An **Environmental Source Record** is a site where measurements on environmental properties are made or samples are collected at time *t*. Many types of samples can be obtained from a **Environmental Source Record**, for example, feces (with unknown animal origin), water, sediment, and air.
+
+**Diagnostics** can be conducted on site without requiring the retrieval of specimens and, therefore, they apply to the **Environmental Source Record** directly. For example, measuring the turbidity of the water at the **Environmental Source** at time *t*. The type of substratum used for these direct **Diagnostics** (e.g., water, air, etc) must be provided.
+
+Key attributes of a **Environmental Source Record** include:
+
+* Environmental Source ID
+* Record Number
+* Environmental type
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+<!-- **If multiple tissue types are obtained a time t from an Environmental Source and each of them is associated with a particular active collection effort, then there will be multiple Collection Points under the same Event containing the same Environmental Source. In this case it is key to properly enter the Environmental Source Record IDs**. -->
+
+

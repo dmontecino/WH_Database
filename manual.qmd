@@ -1,4 +1,4 @@
-# General User Manual {.unnumbered}
+# General User Application Manual {.unnumbered}
 
 ```{r, echo=FALSE}
 # htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 

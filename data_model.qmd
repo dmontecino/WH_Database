@@ -164,11 +164,10 @@ When **Source Records** are not linked to an **Effort** (e.g., opportunist findi
 
 **Efforts** can contain between zero (e.g., an unsuccessful capture where no animals are caught) and an unlimited number of Source Records**.
 
-
-
 ## Event
 
 ![](Pictures_and_diagrams/Picture6.png){width=100%}
+**Figure 6**: Position of Event in the data model. 
 
 ```{r child="incident.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -178,6 +177,7 @@ When **Source Records** are not linked to an **Effort** (e.g., opportunist findi
 ## Source and Source Records
 
 ![](Pictures_and_diagrams/Picture8.png){width=100%}
+**Figure 8**: Position of Source Records in the data model. 
 
 ```{r child="source_source_records.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -222,17 +222,17 @@ In the data model, **Specimens** from all **Sources** (including Diagnostic Prod
 
 In the data model, **Specimens** from all Sources (including Diagnostic Products) and carcasses of **Group and Animal Sources** can be shipped to another facility. Partial amounts can also be shipped and the volume exported can be tracked as well as the remaining amounts of the original **Specimen** left at the storage site. Shipments that are currently "in transit" can also be tracked.
 
-## Laboratories
+<!-- ## Laboratories -->
 
-The data model includes **Laboratory** entities. Laboratories can conduct **Diagnostics** to test for hazards. Laboratory properties include address, manager, name, Laboratory ID, among others (Data Dictionary). It is also possible to store data regarding laboratory capabilities in terms of diagnostic tests and storage, and their certifications (Bio safety levels, etc.)
+<!-- The data model includes **Laboratory** entities. Laboratories can conduct **Diagnostics** to test for hazards. Laboratory properties include address, manager, name, Laboratory ID, among others (Data Dictionary). It is also possible to store data regarding laboratory capabilities in terms of diagnostic tests and storage, and their certifications (Bio safety levels, etc.) -->
 
-## Interpretation of Specimens
+<!-- ## Interpretation of Specimens -->
 
-In the data model, a **Specimen** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Specimen** provided in the **Surveillance Activity** metadata. The **Interpretation** follows the **Results** from the **Diagnostics** conducted using the **Specimen** and their  interpretations. 
+<!-- In the data model, a **Specimen** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Specimen** provided in the **Surveillance Activity** metadata. The **Interpretation** follows the **Results** from the **Diagnostics** conducted using the **Specimen** and their  interpretations.  -->
 
-For example, it is possible that a single hazard is assessed in a **Specimen** using three different **Diagnostics** and two of them are interpreted as positive and the other one as negative. Based on these **Results**, the hazard status of the **Specimen** must be interpreted (positive, negative, inconclusive).
+<!-- For example, it is possible that a single hazard is assessed in a **Specimen** using three different **Diagnostics** and two of them are interpreted as positive and the other one as negative. Based on these **Results**, the hazard status of the **Specimen** must be interpreted (positive, negative, inconclusive). -->
 
-**Specimens** can receive multiple **Interpretations** if they are used in several **Diagnostics** targeting different hazards. 
+<!-- **Specimens** can receive multiple **Interpretations** if they are used in several **Diagnostics** targeting different hazards.  -->
 
 
 ## Interpretation of Source Records

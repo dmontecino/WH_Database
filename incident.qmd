@@ -29,21 +29,21 @@ A dead animal is found during a ranger patrol. In this case the **Event** is the
 
 ::: {.callout-note title="Case Study 10"}
 
-Injured animals are recorded using a camera trap. In this case the **Event** is each camera trap capture of animals and the **Event** receives the same spatial coordinates as the **Point Effort**. The **Point Effort** is the number of camera traps at a specific spatial position and the deployment time
+Injured animals are recorded using a camera trap. In this case the **Event** is each capture of animals by the camera trap and they receive the same spatial coordinates as the **Point Effort**. The **Point Effort** is the camera traps at a specific spatial position and the deployment time
 
 ::: 
 
 For more examples see [here](https://docs.google.com/document/d/1YVr_Ta9DJ6hf9hOnX6naeOV3_SIhog3YBr95PAr-B0k/edit?pli=1&tab=t.0#heading=h.r9tk5tq6rtgt)
 
-Other relevant characterisics of an **Event** include: 
+Other relevant characteristics of an **Event** include: 
 
-**An Event might not belong to a Area, Track, or Point Effort**. Examples include the position of dead birds accidentally found in a beach or sampling of the animals in cages in a wet market. 
+**An Event might not belong to a Area, Track, or Point Effort**. For example, the position of dead birds accidentally found in a beach or sampling of the animals in cages in a wet market. 
 
-An **Event** can include more than one **Source** type. For example, mosquito traps (*Arthropods*) and collection of wastewater at the same position *p* and time *t*. 
+An **Event** can include more than one **Source** type (see next section for a full description of **Sources**). For example, mosquito traps and collection of wastewater at the same position *p* and time *t*. 
 
 An **Event** can include or not at-observation normal ("healthy") animals depending on the definition of **Event**.
 
-An **Event** might not contain any **Source Records**. For example, when a mist net is deployed but it fails to capture any animal. The mist net (**Point Effort** is deployed, the sampling **Event** is conducted at time *t* but no animal is captured).
+An **Event** might not contain any **Source Records** (see next section for a full description of **Sources**). For example, when a mist net is deployed but it fails to capture any animal. The mist net (**Point Effort** is deployed, the sampling **Event** is conducted at time *t* but no animal is captured).
 
 <!-- When **Event** are nested in **Collection Areas** or **Collection tracks** -->
 <!-- Depending on the methodology employed, an **Event** can contain a single trap and, therefore, a single **Collection Point**, or it can contain multiple traps. In this case, the design implies assigning the same longitude and latitude to a set of traps and then each one of them could be recorded as individual **Collection Points**. -->
