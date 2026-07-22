@@ -14,20 +14,20 @@ Key attributes of a **Event** include:
 
 Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
 
-::: {.callout-note title="Case Study 8"}
+::: {.callout-note title="Case Study 9"}
 
 A pair of mist nets are deployed to capture bats and sample them. The **Event** in this case is the sampling of the bats captured at time t using the mist nets. The nets are part of a **Point Effort**. In this case, the **Event** receives the same spatial coordinates as the **Point Effort**
 
 ::: 
 
-::: {.callout-note title="Case Study 9"}
+::: {.callout-note title="Case Study 10"}
 
 A dead animal is found during a ranger patrol. In this case the **Event** is the position of the dead animal and the time of encounter
 
 ::: 
 
 
-::: {.callout-note title="Case Study 10"}
+::: {.callout-note title="Case Study 11"}
 
 Injured animals are recorded using a camera trap. In this case the **Event** is each capture of animals by the camera trap and they receive the same spatial coordinates as the **Point Effort**. The **Point Effort** is the camera traps at a specific spatial position and the deployment time
 
