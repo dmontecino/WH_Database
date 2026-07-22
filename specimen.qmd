@@ -24,6 +24,7 @@ Key attributes of a **Specimen** include:
 * Origin
 * Ownership
 
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
 
 **Specimens** can be stored, and their storage may change multiple times as they are transferred within and between facilities. Similarly, **Specimens** can be shipped multiple times. 
 

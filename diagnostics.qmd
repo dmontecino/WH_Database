@@ -9,6 +9,7 @@ Key attributes of a **Diagnostic** include:
 * Laboratory
 * Date Conducted
 
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
 
 <!-- In the data model, **each Diagnostic has a unit of measurement of its outcome that can either be qualitative or quantitative. For example, an agglutination test can report the minimum dilution that causes observable agglutination. A PCR can be reported as presence of bands compatible with the targeted genome sequence or genetic sequence compatible with targeted organism sequencing followed the genetic sequence amplification.The result of the diagnostic is reported as a value of those units** (see Results below). -->
 

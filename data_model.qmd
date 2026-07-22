@@ -192,9 +192,10 @@ When **Source Records** are not linked to an **Effort** (e.g., opportunist findi
 
 ```
 
-## Diagnostics
+## Diagnostic
 
 ![](Pictures_and_diagrams/Picture10.png){width=100%}
+**Figure 14**: Position of Diagnostic in the data model. 
 
 ```{r child="diagnostics.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -208,41 +209,109 @@ When **Source Records** are not linked to an **Effort** (e.g., opportunist findi
 
 ```
 
-## Results
+## Result
 
-A **Result** request information on the **Diagnostic** outcome, in quantitative or qualitative units, for the specific targets (e.g., pathogen) that the parent **diagnostic** can detect. A **Result** can be more specific, reporting the outcome with respect to a gene that the **Diagnostic** targets specifically. For example, a real-time PCR can target the detection of Influenza A nucleic acid by the amplification of a specific gene X. The **Result** reports the Ct value for the amplification of the gene X of Influenza A viruses. 
+![](Pictures_and_diagrams/Picture11.png){width=100%}
+**Figure 15**: Position of Result in the data model. 
 
+A **Result** request information on the **Diagnostic** outcome for a single target, in quantitative or qualitative units. A **Result** can be more specific, reporting the outcome with respect to a gene of a specific pathogen that the **Diagnostic** can detect. For example, a real-time PCR can target the detection of Influenza A nucleic acid by the amplification of genes X and Z. The **Result** reports the Ct value for the amplification of either gene X or Z of Influenza A viruses. 
 
-Each **Result** of a **Diagnostic** has a single **Interpretation**. The **Interpretation** is the qualification of the specific **Result** as positive, negative, or inconclusive for the target based on case definitions for the diagnostic test reported in the **Surveillance Activity** metadata.
+Key attributes of a **Result** include:
+
+* Target Name
+* Unit
+* Result
+* Interpretation
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+The **Result** of a **Diagnostic** can be interpreted as positive, negative, or undetermined, based on the case definition for the parent diagnostic test (reported in the **Surveillance Activity** metadata).
 
 ## Storage
 
-In the data model, **Specimens** from all **Sources** (including Diagnostic Products) and carcasses of **Group and Animal Sources** can be stored, the site of storage can be tracked, and changes in storage can be traced. The data recorded also allows to track the amount of **Specimen** currently available versus the original amount and the reason of the differences over time. Every change in the amount of **Specimen** and every change in the storage site should be recorded as a different **Storage** process.
+A **Storage** indicates the facility where carcasses of **Group Source Records**, the carcass of an **Animal Source** or **Specimens** are stored. The storage position can be as specific as the exact row of a cryo box in which a vial containing a **Specimen** is located. 
 
-## Shipments
+Key attributes of a **Storage** include:
 
-In the data model, **Specimens** from all Sources (including Diagnostic Products) and carcasses of **Group and Animal Sources** can be shipped to another facility. Partial amounts can also be shipped and the volume exported can be tracked as well as the remaining amounts of the original **Specimen** left at the storage site. Shipments that are currently "in transit" can also be tracked.
+* Quantity stored
+* Quantity unit
+* Storage type
+* Facility
+* Building 
+* Room
+* Storage Unit
+* Storage problems
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+Multiple **Storage** units can be added for each **Source** or **Specimen**. In the case of **Specimens**, the recorded **Storage** units allow to track the current amount available versus the original amount and the reason of the differences over time.
+
+
+
+
+
+## Shipment
+
+A **Shipment** indicates the movement of carcasses of **Group Source Records**, the carcass of an **Animal Source** or **Specimens** across facilities.  
+
+<!-- In the data model, **Specimens** from all Sources (including Diagnostic Products) and carcasses of **Group and Animal Sources** can be shipped to another facility. Partial amounts can also be shipped and the volume exported can be tracked as well as the remaining amounts of the original **Specimen** left at the storage site. Shipments that are currently "in transit" can also be tracked. -->
+
+Key attributes of a **Shipment** include:
+
+* Quantity shipped
+* Quantity unit
+* Origin
+* Destination
+* Storage method during shipment
+* Status
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
 
 <!-- ## Laboratories -->
 
 <!-- The data model includes **Laboratory** entities. Laboratories can conduct **Diagnostics** to test for hazards. Laboratory properties include address, manager, name, Laboratory ID, among others (Data Dictionary). It is also possible to store data regarding laboratory capabilities in terms of diagnostic tests and storage, and their certifications (Bio safety levels, etc.) -->
 
-<!-- ## Interpretation of Specimens -->
+## Interpretation
 
-<!-- In the data model, a **Specimen** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Specimen** provided in the **Surveillance Activity** metadata. The **Interpretation** follows the **Results** from the **Diagnostics** conducted using the **Specimen** and their  interpretations.  -->
+### Interpretation of Specimens
 
-<!-- For example, it is possible that a single hazard is assessed in a **Specimen** using three different **Diagnostics** and two of them are interpreted as positive and the other one as negative. Based on these **Results**, the hazard status of the **Specimen** must be interpreted (positive, negative, inconclusive). -->
+In the data model, a **Specimen** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Specimen** provided in the **Surveillance Activity** metadata. The **Interpretation** follows the **Results** from the **Diagnostics** conducted using the **Specimen** and their  interpretations.
 
-<!-- **Specimens** can receive multiple **Interpretations** if they are used in several **Diagnostics** targeting different hazards.  -->
+**Specimens** can receive multiple **Interpretations** if they are used in several **Diagnostics** targeting different hazards.
+
+::: {.callout-note title="Case Study 12"}
+The presence of a single target (e.g., SARS-CoV-2) is assessed in a **Specimen** using three different **Diagnostics**. The first and second **Diagnostic** are positive, whilst the **Result** for the third **Diagnostic** is negative. Based on these mixed **Results**, the SARS-CoV-2 status of the **Specimen** must be interpreted (positive, negative, inconclusive).
+::: 
 
 
-## Interpretation of Source Records
+### Interpretation of Source Records
 
-In the data model, a **Source Record** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Source Record** provided in the **Surveillance Activity** metadata. The **Interpretation** for a specific hazard follows the **Results** and **Interpretations** of the **Diagnostics** conducted using **Specimens** of the **Source Records** and the **Interpretation** of the **Source Records**. 
+In the data model, a **Source Record** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Source Record** provided in the **Surveillance Activity** metadata. An **Interpretation** for a **Source Record** depends on the field findings, **Interpretations** for the **Specimens** of the corresponding **Source Record**, **Results** of **Diagnostics** conducted with the **Source Records** (for **Group Source Records** and **Animal Source Records**) and **Necropsy** findings (for **Animal Source Records**).
 
-For example, it is possible that a single hazard is assessed in multiple  **Specimens** of a **Source Record** using three different **Diagnostics**. Two of these **Specimens** are interpreted as positive and the other one as negative. Based on these data, the hazard status of the **Source Record** must be interpreted (positive, negative, inconclusive).
+A **Source Record** can receive multiple **Interpretations** depending on the hazards targeted.
 
-**Source Record** can receive multiple **Interpretations** if multiple hazards are assessed in them. 
+
+<!-- In the data model, a **Source Record** can receive an **Interpretation** with respect to the hazards targeted in the corresponding **Surveillance Activity** based on a case definition for a positive, negative, or undetermined **Source Record** provided in the **Surveillance Activity** metadata. The **Interpretation** for a specific hazard follows the **Results** and **Interpretations** of the **Diagnostics** conducted using **Specimens** of the **Source Records** and the **Interpretation** of the **Source Records**.  -->
+
+::: {.callout-note title="Case Study 13"}
+The presence of a single target (e.g., Foot and mouth disease virus) is assessed in an **Animal Source Record** using three different **Diagnostics** completed with one **Specimen** and the results of a **Necropsy**. The **Results** for the first and second **Diagnostic** are positive, whilst the **Result** for the third **Diagnostic** is negative. The **Interpretation** for the **Specimen** is "posiive". Moreover, the **Necropsy** do not reveal any important lesions. Based on these **Results**, the Foot and mouth disease virus status of the **Animal Source Record** must be interpreted (positive, negative, inconclusive).
+::: 
+
+Key attributes of a **Interpretation** include:
+
+* Quantity shipped
+* Quantity unit
+* Origin
+* Destination
+* Storage method during shipment
+* Status
+
+Other attributes are provided in the [Data Dictionary](https://dmontecino.github.io/WH_Database/data_dictionary.html) (under construction)
+
+<!-- For example, it is possible that a single hazard is assessed in multiple  **Specimens** of a **Source Record** using three different **Diagnostics**. Two of these **Specimens** are interpreted as positive and the other one as negative. Based on these data, the hazard status of the **Source Record** must be interpreted (positive, negative, inconclusive). -->
+
+<!-- **Source Record** can receive multiple **Interpretations** if multiple hazards are assessed in them.  -->
 
 # Complexities
 
@@ -251,7 +320,7 @@ For example, it is possible that a single hazard is assessed in multiple  **Spec
 ```
 
 
-```{r child="complexities_surv_act.qmd", echo=FALSE, eval=T, message=FALSE, cache=F}
+```{r child="complexities_surv_act.qmd", echo=FALSE, eval=F, message=FALSE, cache=F}
 
 ```
 
