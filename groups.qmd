@@ -1,19 +1,25 @@
 
 ## Tagging Units
 
-The structure of the data model **could be enough to record the hierchical data**. For example, rangers collecting information during patrols (**Collection Tracks**) in Protected Areas (**Locations**) at specific points (**Events**) where dead animals (**Source Records**) are found at any given time. 
+The structure of the data model **could be enough to record the hierarchical data**. For example, rangers collecting information during patrols (**Tracks Effort**) in Protected Areas (**Locations**) at specific points (**Events**) where dead animals (**Source Records**) are found at any given time *t*. 
 
-However, the data in another **Surveillance Activity** could have the following data structure: 
+However, the data in another **Surveillance Activity** with animal captures could have the following data structure: 
 
 - Visit (**Field Visit**)
   - Protected area (**Location**), 
     - Zones within protected area (Spatial cluster level 1), 
       - Grid cells within each zone (Spatial cluster level 2), 
         - Capture site (**Event**) 
-          - Mist nets at the capture site (**Collection Points**), 
+          - Mist nets at the capture site (**Point Effort**), 
             - Bats captured (**Source Records**) 
 
-Another example is surveillance of wild animals in a live market. One potential option to structure these data is:
+<!-- Looking at the examples it is easy to understand that **what an Event represents depends on the Surveillance Activity** (See Event section above) as another Surveillance Activity can establish each Vendor as an Event. However, certain guidelines can be followed to promote standardization of Events (see Recommendations for Standardization below).  -->
+
+Looking at the examples above, **the units Location, Event, and Effort might not be enough to accommodate the data structure of certain designs**. To solve this limitation, the data model allows to tag units (from **Surveillance Activities** up to **Diagnosis**) with labels that allow to further group hem in different categories. 
+
+::: {.callout-note title="Case Study 3"}
+
+The following example shows a potential data structure for the sampling of animals in markets: 
 
 - Visit (**Field Visit**)
     - City (Spatial cluster level 1)
@@ -21,45 +27,45 @@ Another example is surveillance of wild animals in a live market. One potential 
         - Market (**Location**)
           - Vendor (Spatial cluster level 3)
             - Stalls (Spatial cluster level 4)
-              - Cage (**Event**)
-                - Animals (**Source Records**) 
+              - Sampling of animals in a cage (**Event**)
+                - Animal sampled (**Source Records**) 
                   - Rectal Swab (**Specimens**)
 
-<!-- Looking at the examples it is easy to understand that **what an Event represents depends on the Surveillance Activity** (See Event section above) as another Surveillance Activity can establish each Vendor as an Event. However, certain guidelines can be followed to promote standardization of Events (see Recommendations for Standardization below).  -->
 
-Looking at the examples above, it is straightforward to understand that **the units Location, Event, and Collections might not be enough to accommodate the data of all Surveillance Activities and other units** and therefore, it is necessary to tag units with standard labels that allow to group them in further units. *Tags** can group units spatially, temporally, or in another way. 
+In this case, tagging **Events** with the corresponding stall id and with the corresponding vendor id will group them by stall and vendor. **Locations** can be tagged with the corresponding neighborhood and city.
+:::
 
-The following example adds the categorization of the data by season, no matter the markets visited or how many years the **Surveillance Activity** lasts: 
+<!-- The following example adds the categorization of the data by season, no matter the markets visited or how many years the **Surveillance Activity** lasts:  -->
 
-  - **Season (Temporal cluster 1)**
-  - Visit (**Field Visit**)
-    - City (Spatial cluster level 1)
-      - Neighborhood (Spatial cluster level 2)
-        - Market (**Location**)
-          - Vendor (Spatial cluster level 3)
-            - Stalls (Spatial cluster level 4)
-              - Cage (**Event**)
-                - Animals (**Source Records**) 
-                  - Rectal Swab (**Specimens**)
+<!--   - **Season (Temporal cluster 1)** -->
+<!--     - Visit (**Field Visit**) -->
+<!--       - City (Spatial cluster level 1) -->
+<!--         - Neighborhood (Spatial cluster level 2) -->
+<!--           - Market (**Location**) -->
+<!--             - Vendor (Spatial cluster level 3) -->
+<!--               - Stalls (Spatial cluster level 4) -->
+<!--                 - Cage (**Event**) -->
+<!--                   - Animals (**Source Records**)  -->
+<!--                     - Rectal Swab (**Specimens**) -->
 
-The spatial **Tags** can be nested, non-nested, or a combination of both. Similarly, the temporal **Tags** can be nested, non-nested, or a combination of both.
+**Tags** can group units spatially, temporally, or in another way. **Tags** can be nested, non-nested, or a combination of both.
 
-Finally, the number of categories within each Cluster can also be different across Surveillance Activities. For example, two Surveillance Activities may include grid cells as one of their Clusters, however, the number of grid cells can be different. For example, one Surveillance Activity can include grid cells A to R, whilst the other Surveillance Activity can include grid cells A to W (more categories). In summary:
+<!-- Finally, the number of categories within each Cluster can also be different across Surveillance Activities. For example, two Surveillance Activities may include grid cells as one of their Clusters, however, the number of grid cells can be different. For example, one Surveillance Activity can include grid cells A to R, whilst the other Surveillance Activity can include grid cells A to W (more categories). In summary: -->
 
-- **Tags** are needed to classify units in further categories
-- The **Tags** across **Surveillance Activities** can be different
-- What these **Tags** grouped across **Surveillance Activities** can be different
-- The number of categories can be different among **Tags**, within and between **Surveillance Activities** 
-- Nested, Non-nested or both types of **Tags** can be needed
-- Spatial, temporal or both  types of **Tags** can be needed
+<!-- - **Tags** are needed to classify units in further categories -->
+<!-- - The **Tags** across **Surveillance Activities** can be different -->
+<!-- - What these **Tags** grouped across **Surveillance Activities** can be different -->
+<!-- - The number of categories can be different among **Tags**, within and between **Surveillance Activities**  -->
+<!-- - Nested, Non-nested or both types of **Tags** can be needed -->
+<!-- - Spatial, temporal or both  types of **Tags** can be needed -->
 
-#### **Tags** in the Data Model
+<!-- #### **Tags** in the Data Model -->
 
-To accommodate these needs in data structure, **the data model allows to flexibly tag different units. The data model also allows multiple tagging of a unit** 
+<!-- To accommodate these needs in data structure, **the data model allows to flexibly tag different units. The data model also allows multiple tagging of a unit**  -->
 
 <!-- **Environmental and Arthropod Source Records cannot be clustered in units smaller than Event** but the Locations and Events containing them can be clustered.  -->
 
-**Unavoidably, the number of Tags, what Tags represent, what they group, the number of categories that can be added, and the data to be recorded from each of these extra units will vary among Surveillance Activities. Therefore, Tag properties must be reported in the Surveillance Activity metadata. In the data model, the only default property for each Tags are the identifier, the cross identifier, the origin of the cross identifier, and the type**. Other potential properties must be documented in a separate file (e.g., an excel sheet) with common identifiers to allow joining the clusters with the corresponding data. In this example, stalls holding cages, the  cages, and the vendor are relevant units, but the **Location** is the market and the cage is the **Event**. In this case, a **Tag** can be used to either label the vendors holding the cage and a nested **Tag** is used to label the stall under each vendor. Furthermore, **Locations** could also be tagged to group the markets per neighborhood.
+**Unavoidably, the number of Tags, what Tags represent, what they group, the number of categories per group will vary among Surveillance Activities. Therefore, Tag properties must be reported in the Surveillance Activity metadata. In the data model, the only default property for each Tags are the name and the type**.
 
 
 
