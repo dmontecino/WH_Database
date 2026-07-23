@@ -1,12 +1,43 @@
 library(quarto)
 
-quarto_render(
-  input = "data_model.qmd", # Path to the .qmd file
-  output_format = "docx", # Specify Word output
-  output_file = "documentation.docx"
-)
+# quarto_render(
+#   input = "data_model.qmd", # Path to the .qmd file
+#   output_format = "docx", # Specify Word output
+#   output_file = "documentation.docx"
+# )
 
-list.files(pattern = "documentation.docx", recursive = TRUE)
+
+# for(i in c("index", "manual", "data_dictionary", "data_model")){
+  
+# quarto_render(
+#   input = paste0(i, ".qmd"),       # Path to the .qmd file
+#   output_format = "docx",         # Specify Word output
+#   quarto_args = c("--output", paste0("documentation_", i, ".docx"))  # Rename output file
+# )
+# }
+
+  quarto_render(
+    input = "index.qmd",
+    # output_format = "docx",
+    quarto_args = c("--output", "documentation_index.docx")) # <- forces synchronous execution, no background job
+
+  quarto_render(
+    input = "manual.qmd",
+    # output_format = "docx",
+    quarto_args = c("--output", "documentation_manual.docx")) # <- forces synchronous execution, no background job
+  
+  quarto_render(
+    input = "data_dictionary.qmd",
+    # output_format = "docx",
+    quarto_args = c("--output", "documentation_data_dictionary.docx")) # <- forces synchronous execution, no background job
+  
+  quarto_render(
+    input = "data_model.qmd",
+    # output_format = "docx",
+    quarto_args = c("--output", "documentation_data_model.docx")) # <- forces synchronous execution, no background job
+  
+  
+# list.files(pattern = "documentation.docx", recursive = TRUE)
 
 
 # Save the word in pdf using libreoffice 
@@ -20,8 +51,11 @@ list.files(pattern = "documentation.docx", recursive = TRUE)
 # libreoffice --version
 
 
-# Path to the Word file
-word_file <- "docs/documentation.docx"
+# Path to the Word file and convert to pdf
+
+for(i in c("index", "manual", "data_dictionary", "data_model")){
+  
+word_file <- paste0("_book/documentation_", i, ".docx")
 output_dir <- "_book"  # Change to your desired output path
 
 command <- paste(
@@ -33,7 +67,7 @@ command <- paste(
 
 # Execute the command
 system(command, intern = TRUE)
-
+}
 
 # render the book. This wil clean the book folder and fill it with new stuff
 quarto::quarto_render("index.qmd")
@@ -49,12 +83,12 @@ quarto::quarto_render("manual.qmd")
 
 library(stringr)
 
-for(i in c("index.html", "manual.html", "data_dictionary.html", "data_model.html")){
+for(i in c("index", "manual", "data_dictionary", "data_model")){
 
-input_file <- paste0("_book/", i)
+input_file <- paste0("_book/", i, ".html")
 original_html <- readLines(input_file, warn = FALSE)
 output_file <- input_file
-new_href <- "/documentation.pdf"
+new_href <- paste0("/documentation_", i, ".pdf")
 
 # Combine the read lines into a single string
 original_html_string <- paste(original_html, collapse = "\n")
