@@ -1,4 +1,4 @@
-# Data Model Dictionary {.unnumbered}
+# Data Model Dictionary (Under constriction) {.unnumbered}
 
 ```{r, echo=FALSE}
 # htmltools::img(src = knitr::image_uri("Pictures_and_diagrams/WCS_LOGOTYPE.png"), 
@@ -144,15 +144,15 @@ group_source
 
 ```
 
-#### Surveillance Activity - Group Source Records Clustering
+<!-- #### Surveillance Activity - Group Source Records Clustering -->
 
-```{r group source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r group source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_surv_act_clusters_group_source_records.R")
+<!-- source("dd_surv_act_clusters_group_source_records.R") -->
 
-cluster_group_source_records
+<!-- cluster_group_source_records -->
 
-```
+<!-- ``` -->
 
 ### Surveillance Activity - Animal Source 
 
@@ -164,15 +164,15 @@ animal_source
 
 ```
 
-#### Surveillance Activity - Animal Source Records Clustering
+<!-- #### Surveillance Activity - Animal Source Records Clustering -->
 
-```{r animal source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r animal source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_surv_act_clusters_animal_source_records.R")
+<!-- source("dd_surv_act_clusters_animal_source_records.R") -->
 
-cluster_animal_source_records
+<!-- cluster_animal_source_records -->
 
-```
+<!-- ``` -->
 
 ### Surveillance Activity - Environmental Source
 
@@ -184,15 +184,15 @@ environmental_source
 
 ```
 
-#### Surveillance Activity - Environmental Source Records Clustering
+<!-- #### Surveillance Activity - Environmental Source Records Clustering -->
 
-```{r environmental source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r environmental source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_surv_act_clusters_environmental_source.R")
+<!-- source("dd_surv_act_clusters_environmental_source.R") -->
 
-cluster_environmental_source_records
+<!-- cluster_environmental_source_records -->
 
-```
+<!-- ``` -->
 
 ### Surveillance Activity - Arthropod Source
 
@@ -204,25 +204,25 @@ arthro_source
 
 ```
 
-#### Surveillance Activity - Arthropod Source Records Clustering
+<!-- #### Surveillance Activity - Arthropod Source Records Clustering -->
 
-```{r arthropod source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r arthropod source clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_surv_act_clusters_arthropod_source_records.R")
+<!-- source("dd_surv_act_clusters_arthropod_source_records.R") -->
 
-cluster_arthropod_source_records
+<!-- cluster_arthropod_source_records -->
 
-```
+<!-- ``` -->
 
-### Surveillance Activity - Location Clustering
+<!-- ### Surveillance Activity - Location Clustering -->
 
-```{r location clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r location clustering metadata, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_surv_act_clusters_location.R")
+<!-- source("dd_surv_act_clusters_location.R") -->
 
-cluster_locations
+<!-- cluster_locations -->
 
-```
+<!-- ``` -->
 
 ### Surveillance Activity - Event Clustering
 
@@ -234,17 +234,15 @@ cluster_events
 
 ```
 
+<!-- ## Outbreak -->
 
+<!-- ```{r outbreak, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-## Outbreak
+<!-- source("dd_outbreak.R") -->
 
-```{r outbreak, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- outbreak -->
 
-source("dd_outbreak.R")
-
-outbreak
-
-```
+<!-- ``` -->
 
 ## Field Visit
 
@@ -266,15 +264,15 @@ location
 
 ```
 
-### Location Clustering
+<!-- ### Location Clustering -->
 
-```{r location clustering, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r location clustering, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_location_clustering.R")
+<!-- source("dd_location_clustering.R") -->
 
-location_clustering
+<!-- location_clustering -->
 
-```
+<!-- ``` -->
 
 ## Event
 
@@ -286,17 +284,17 @@ event
 
 ```
 
-### Event Clustering
+<!-- ### Event Clustering -->
 
-```{r event clustering, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r event clustering, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_event_clustering.R")
+<!-- source("dd_event_clustering.R") -->
 
-event_clustering
+<!-- event_clustering -->
 
-```
+<!-- ``` -->
 
-## Collection
+## Effort
 
 ```{r collection, echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -348,15 +346,15 @@ group_source_record
 
 ```
 
-#### Group Source Record - Clustering
+<!-- #### Group Source Record - Clustering -->
 
-```{r group source record clustering, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r group source record clustering, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_group_source_record_clustering.R")
+<!-- source("dd_group_source_record_clustering.R") -->
 
-group_source_record_clustering
+<!-- group_source_record_clustering -->
 
-```
+<!-- ``` -->
 
 ### Animal Source Record
 
@@ -368,7 +366,7 @@ animal_source_record
 
 ```
 
-#### Animal Source Record - Vaccination
+<!-- #### Animal Source Record - Vaccination -->
 
 ```{r vaccination, echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -378,7 +376,7 @@ animal_source_record_vaccination
 
 ```
 
-#### Animal Source Record - Carcass
+<!-- #### Animal Source Record - Carcass -->
 
 ```{r carcass, echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -398,15 +396,15 @@ animal_source_record_necropsy
 
 ```
 
-#### Animal Source Record - Clustering
+<!-- #### Animal Source Record - Clustering -->
 
-```{r animal source record clustering, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r animal source record clustering, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_animal_source_record_clustering.R")
+<!-- source("dd_animal_source_record_clustering.R") -->
 
-animal_source_record_clustering
+<!-- animal_source_record_clustering -->
 
-```
+<!-- ``` -->
 
 ### Environmental Source Record
 
@@ -418,15 +416,15 @@ environmental_source_record
 
 ```
 
-#### Environmental Source Record - Clustering
+<!-- #### Environmental Source Record - Clustering -->
 
-```{r environmental source record clustering, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r environmental source record clustering, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_environmental_source_record_clustering.R")
+<!-- source("dd_environmental_source_record_clustering.R") -->
 
-environmental_source_record_clustering
+<!-- environmental_source_record_clustering -->
 
-```
+<!-- ``` -->
 
 ### Arthropod Source Record
 
@@ -438,15 +436,15 @@ arthropod_source_record
 
 ```
 
-#### Arthropod Source Record - Clustering
+<!-- #### Arthropod Source Record - Clustering -->
 
-```{r Aathropod source record clustering, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r Aathropod source record clustering, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_arthropod_source_record_clustering.R")
+<!-- source("dd_arthropod_source_record_clustering.R") -->
 
-arthropod_source_record_clustering
+<!-- arthropod_source_record_clustering -->
 
-```
+<!-- ``` -->
 
 ## Specimen
 
@@ -470,7 +468,7 @@ storage
 
 ```
 
-## Export
+## Shipment
 
 ```{r export, echo=FALSE, eval=T, message=FALSE, cache=F}
 
@@ -490,37 +488,38 @@ diagnostic
 
 ```
 
-### Diagnostic Product
+## Result
+<!-- ### Diagnostic Product -->
 
-```{r diagnostic product, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r diagnostic product, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_diagnostic_product.R")
+<!-- source("dd_diagnostic_product.R") -->
 
-diagnostic_product
+<!-- diagnostic_product -->
 
-```
+<!-- ``` -->
 
-## Laboratory
+<!-- ## Laboratory -->
 
-```{r laboratory, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r laboratory, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_laboratory.R")
+<!-- source("dd_laboratory.R") -->
 
-laboratory
+<!-- laboratory -->
 
-```
+<!-- ``` -->
 
 ## Interpretation 
 
-### Diagnostic Interpretation
+<!-- ### Diagnostic Interpretation -->
 
-```{r diagnostic interpretation, echo=FALSE, eval=T, message=FALSE, cache=F}
+<!-- ```{r diagnostic interpretation, echo=FALSE, eval=T, message=FALSE, cache=F} -->
 
-source("dd_diagnostic_interpretation.R")
+<!-- source("dd_diagnostic_interpretation.R") -->
 
-diagnostic_interpretation
+<!-- diagnostic_interpretation -->
 
-```
+<!-- ``` -->
 
 ### Specimen Interpretation
 

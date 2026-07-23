@@ -32,7 +32,7 @@ htmltools::div(
 ```
 
 
-## Introduction
+<!-- # Introduction -->
 
 HAWK's **data model** is designed to accommodate wildlife, arthropod, and environmental health data from various sources, including local to national wildlife health surveillance systems, research initiatives, citizen-science based projects, or any other source of wildlife health information. We strongly recommend first learning about the core components of the data model: *Project* to *Results*, and *Interpretation*.
 
