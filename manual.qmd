@@ -75,57 +75,59 @@ For a detailed explanations of the data units visit the HAWK data model manual [
 
 We encourage a modular approach for each system implementing HAWK, starting with the foundational frame and only adding additional components as needed.
 
-# Account Types
+<!-- # Account Types -->
 
-HAWK has four types of accounts: **General Administration**, **Organization Administrator**, and **General User**.
+<!-- HAWK has four types of accounts: **General Administration**, **Organization Administrator**, and **General User**. -->
 
-## General Administrator Account (*under construction*)
+<!-- ## General Administrator Account (*under construction*) -->
 
-These accounts are assigned internally by the Wildlife Conservation Society. There are two **General Administrators** (see HAWK website [*under construction*] to learn more). **General Administrators** support the maintenance of the database across all accounts linked to at least one **Organization** (see below), they authorize the creation of **Organization** accounts (see next), establish **Organization Administrators** based on requests (see below), and communicate with **Organization Administrators** to solve technical issues, report updates and bugs, etc.
+<!-- These accounts are assigned internally by the Wildlife Conservation Society. There are two **General Administrators** (see HAWK website [*under construction*] to learn more). **General Administrators** support the maintenance of the database across all accounts linked to at least one **Organization** (see below), they authorize the creation of **Organization** accounts (see next), establish **Organization Administrators** based on requests (see below), and communicate with **Organization Administrators** to solve technical issues, report updates and bugs, etc. -->
 
-## Organization Account
+<!-- ## Organization Account -->
 
-The first step to begin using HAWK is to request an **Organization** account. **Organization** accounts contain as many **Projects** as needed, and they can only be accessed by authorized **Organization Administrators** and **General Users**. **Organization** accounts manage data for their **Surveillance Activities**.
+<!-- The first step to begin using HAWK is to request an **Organization** account. **Organization** accounts contain as many **Projects** as needed, and they can only be accessed by authorized **Organization Administrators** and **General Users**. **Organization** accounts manage data for their **Surveillance Activities**. -->
 
-## Organization Administrator (*under construction*)
+<!-- ## Organization Administrator (*under construction*) -->
 
-**Organization Administrators** can view, edit, delete, and export all data controlled by the corresponding **Organization** (all data across all **Organization Projects**). **Organization Administrators** can accept or reject **General Users** (see below) under the corresponding Organization. **Organization Administrators** can assign General User different data permissions (i.e. view, edit, delete, export) from **Projects** to **Interpretations** per **Surveillance Activity** within the **Organization** account. **Organization Administrators** can also modify these permissions, authorize the creation of new **Projects** under the corresponding **Organization** account, communicate with **General Administrators**, restore deleted data (see below), and access data changes logs (see below). Two **Organization Administrators** per Organization account are accepted. For more details see “HAWK Administrator Account Manual” (*under construction*).
+<!-- **Organization Administrators** can view, edit, delete, and export all data controlled by the corresponding **Organization** (all data across all **Organization Projects**). **Organization Administrators** can accept or reject **General Users** (see below) under the corresponding Organization. **Organization Administrators** can assign General User different data permissions (i.e. view, edit, delete, export) from **Projects** to **Interpretations** per **Surveillance Activity** within the **Organization** account. **Organization Administrators** can also modify these permissions, authorize the creation of new **Projects** under the corresponding **Organization** account, communicate with **General Administrators**, restore deleted data (see below), and access data changes logs (see below). Two **Organization Administrators** per Organization account are accepted. For more details see “HAWK Administrator Account Manual” (*under construction*). -->
 
-## General User (*under construction*)
+# General User
 
-General User accounts belong to specific individuals. **General Users** are granted data view, edit, delete, and export permissions from **Projects** to **Interpretations** per **Surveillance Activity** within the **Organization**, by **Organization Administrators**. **General Users** can also receive “Project Creation” permissions. Therefore, **General Users** can be granted data viewing permissions for **Surveillance Activity** 1 in **Project** A; export permissions for **Surveillance Activity** 2 in **Project** A; no access to **Project** B data; and have edit data permissions for all **Surveillance Activities** in **Project** C.
+General User accounts belong to specific individuals. **General Users** are granted data view, edit, delete, and export permissions from **Projects** to **Interpretations** per **Surveillance Activity** within the **Organization**, by **Organization Administrators**. *
+<!-- *General Users** can also receive “Project Creation” permissions. Therefore, **General Users** can be granted data viewing permissions for **Surveillance Activity** 1 in **Project** A; export permissions for **Surveillance Activity** 2 in **Project** A; no access to **Project** B data; and have edit data permissions for all **Surveillance Activities** in **Project** C. -->
 
-**General Users** must be granted access to an **Organization**; however, the same **General User** can be accepted in several **Organizations** and be upgraded to **Organization Administrator** by current **Organization Administrators**.
+**General Users** must be granted access to an **Organization**; however, the same **General User** can be accepted in several **Organizations** 
+<!-- and be upgraded to **Organization Administrator** by current **Organization Administrators**. -->
 
-# Creating and Modifying Accounts (*under construction*)
+<!-- # Creating and Modifying Accounts (*under construction*) -->
 
-## Organization Account
+<!-- ## Organization Account -->
 
-**General Administrators** review new **Organization** requests. To request a new **Organization**, a representative or individual completes the ‘Organization request form’ (*under construction*) which includes contact information for an **Organization Administrator**. The representative or individual requesting the **Organization** account will be contacted via email as soon as possible. Once created the **Organization Administrator** listed in the request form takes control of the **Organization** account.
+<!-- **General Administrators** review new **Organization** requests. To request a new **Organization**, a representative or individual completes the ‘Organization request form’ (*under construction*) which includes contact information for an **Organization Administrator**. The representative or individual requesting the **Organization** account will be contacted via email as soon as possible. Once created the **Organization Administrator** listed in the request form takes control of the **Organization** account. -->
 
-***HAWK is designed to remain accessible and sustainable as a public good to encourage widespread use. Critically, when local funding is unavailable, Global South users will be accommodated at no charge, subject to reasonable usage limits. Global South users with funding are encouraged to share their capacity to support database maintenance and ensure the long-term use and storage of data.***
+<!-- ***HAWK is designed to remain accessible and sustainable as a public good to encourage widespread use. Critically, when local funding is unavailable, Global South users will be accommodated at no charge, subject to reasonable usage limits. Global South users with funding are encouraged to share their capacity to support database maintenance and ensure the long-term use and storage of data.*** -->
 
-## Organization Administrator Account
+<!-- ## Organization Administrator Account -->
 
-These accounts are established by **General Administrators** based on petitions made by the Organization representative or individual requesting the new Organization Account (see above). **General Users** with access to the corresponding Organization can be upgraded to **Organization Administrators**by existing Organization Administrators. **Organization Administrators**can also be converted to **General Users**.
+<!-- These accounts are established by **General Administrators** based on petitions made by the Organization representative or individual requesting the new Organization Account (see above). **General Users** with access to the corresponding Organization can be upgraded to **Organization Administrators**by existing Organization Administrators. **Organization Administrators**can also be converted to **General Users**. -->
 
-Instructions to convert an **Organization Administrator** to a **General User** are given in “**HAWK Administrator Account Manual**” (*under construction*).
+<!-- Instructions to convert an **Organization Administrator** to a **General User** are given in “**HAWK Administrator Account Manual**” (*under construction*). -->
 
-## General User Account
+<!-- ## General User Account -->
 
-To create a new **General User** for a specific **Organization**, the individual interested in having a **General User** account completes the “Insert title of form (*under construction*)”. Once the form is submitted, the individual receives an email with the subject, “HAWK Organization Access Request Confirmation”. The request is reviewed by the corresponding **Organization Administrator**. Once approved by the **Administrator**, the new **General User** will receive a second email with the subject, “Your Access to the [**Organization** name] HAWK Account Has Been Accepted”. This second email confirms the account is ready to be used.
+<!-- To create a new **General User** for a specific **Organization**, the individual interested in having a **General User** account completes the “Insert title of form (*under construction*)”. Once the form is submitted, the individual receives an email with the subject, “HAWK Organization Access Request Confirmation”. The request is reviewed by the corresponding **Organization Administrator**. Once approved by the **Administrator**, the new **General User** will receive a second email with the subject, “Your Access to the [**Organization** name] HAWK Account Has Been Accepted”. This second email confirms the account is ready to be used. -->
 
-**General Users** can be authorized to access other **Organizations**. To obtain access authorization to other **Organizations**, **General Users** must follow these steps (*under construction*):
+<!-- **General Users** can be authorized to access other **Organizations**. To obtain access authorization to other **Organizations**, **General Users** must follow these steps (*under construction*): -->
 
-**General User** access and permission to each **Organization** are set by the respective **Organization Administrators**.
+<!-- **General User** access and permission to each **Organization** are set by the respective **Organization Administrators**. -->
 
-Instructions to upgrade a **General User** to an **Organization Administrator** are provided in the “**HAWK Administrator Account Manual**” (*under construction*).
+<!-- Instructions to upgrade a **General User** to an **Organization Administrator** are provided in the “**HAWK Administrator Account Manual**” (*under construction*). -->
 
 # General Users Navigating HAWK
 
 ## Logging in to the Web-based User Interface (*under construction*)
 
-**Organization Administrators**and approved **General Users** access HAWK by opening this [link](https://wildlifehealthintelligence.net/login) on a Chrome web browser and providing their username and password. HAWK software is optimized for Chrome and may not work on other browsers:
+**Organization Administrators** and approved **General Users** access HAWK by opening this [link](https://wildlifehealthintelligence.net/hawk) on a Chrome web browser and providing their username and password. HAWK software is optimized for Chrome and may not work properly on other browsers:
 
 ## Initial Screen
 
