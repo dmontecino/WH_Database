@@ -8,7 +8,7 @@ book:
   title: "Health And Wildlife Knowledge (HAWK) Database"
   author: "Diego Montecino-Latorre"
   downloads: [pdf] 
-  date: "10/09/2025"
+  date: "22/07/2026"
   chapters:
     - index.qmd
     # - intro.qmd
