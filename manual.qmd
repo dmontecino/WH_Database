@@ -442,12 +442,14 @@ These fields request a “Yes” or “No” answer. For example, the field “P
 These fields are completed by selecting one response from a list of fixed options. These fields have a down-arrow on the right that when selected open a list of options. Select a response from the list using the cursor. Alternatively, you can type a specific option, and the list will narrow to match what you've entered. For example, the “Project Leading Organization” field in **Project**:
 
 ![](Pictures_and_diagrams/Manual_pictures/single_choice.png){width=30%, fig-align=center}
+When the list is large, the options may not be automatically displayed. In this case, start typing your option.
 
 ## Multi-choice List
 
 These fields accommodate one or more responses from a list of fixed options. These fields have a down arrow icon on the right. After selecting that icon, a list of options appears. One or more responses can be selected using the cursor. For example, the “Project Funder Organization” field of **Project** (the red frame indicates the up and down arrow):
 
 ![](Pictures_and_diagrams/Manual_pictures/multi_choice.png){width=60%, fig-align=center}
+When the list is large, the options may not be automatically displayed. In this case, start typing your option.
 
 ## Text
 
@@ -898,6 +900,25 @@ To delete a tag find the tag to delete under the "Select a tag" button on the to
 <!-- To include a **Source Record** in nested temporal **Clusters** -->
 
 <!-- To include a **Source Record** in a non-nested temporal **Clusters** -->
+
+# Special Fields
+
+## Targets in a Project
+
+if "Targeted Surveillance" or "Research" are selected in the "Project Type", then it is possible to select specific biological, chemical, physical and physiological type of targets in a specific field (e.g., "Bacteria" for biological targets). Multiple options can be added. 
+
+The selections made at this first level trigger the display of new fields (e.g., "Bacteria") to select a more specific target (e.g., *Bordetella bronchiseptica* in the "Bacteria" field as the specific Bacteria species):
+
+![](Pictures_and_diagrams/Manual_pictures/Picture30.png){width=100%, fig-align=center}
+
+Because these target related field are mandatory when displayed, the require a selection. For this reason, these target fields have the options "Any [target]," and "No [target]".
+
+
+The "Project type" and targets selected at the **Project** level impact the targets available in the corresponding **Surveillance Activities** and **Interpretations**. When the "Project type" is "Targeted Surveillance" or "Research", the nested **Surveillance Activities** can only be "Targeted Surveillance" or "Research". In these cases, the target hazards in the nested **Surveillance Activities** only include the options selected in the "Project". Similarly, the **Interpretations** only include the target hazards selected in the "Project":
+
+![](Pictures_and_diagrams/Manual_pictures/Picture31.png){width=100%, fig-align=center}
+
+When the "Project type" is "General Surveillance" or "Outbreak Investigation", the nested **Surveillance Activities** can only be "General Surveillance" or "Outbreak Investigation". In these cases, any target hazards can be selected in the nested **Surveillance Activities** and in the **Interpretations**.
 
 # Viewing Data in HAWK
 

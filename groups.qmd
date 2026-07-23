@@ -15,9 +15,9 @@ However, the data in another **Surveillance Activity** with animal captures coul
 
 <!-- Looking at the examples it is easy to understand that **what an Event represents depends on the Surveillance Activity** (See Event section above) as another Surveillance Activity can establish each Vendor as an Event. However, certain guidelines can be followed to promote standardization of Events (see Recommendations for Standardization below).  -->
 
-Looking at the examples above, **the units Location, Event, and Effort might not be enough to accommodate the data structure of certain designs**. To solve this limitation, the data model allows to tag units (from **Surveillance Activities** up to **Diagnosis**) with labels that allow to further group hem in different categories. 
+Looking at the examples above, **the units Location, Event, and Effort might not be enough to accommodate the data structure of certain designs**. To solve this limitation, the data model allows to tag units (from **Surveillance Activities** up to **Diagnosis**) with labels that allow to further group them in different categories. 
 
-::: {.callout-note title="Case Study 3"}
+::: {.callout-note title="Case Study 14"}
 
 The following example shows a potential data structure for the sampling of animals in markets: 
 

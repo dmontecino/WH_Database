@@ -1,10 +1,28 @@
-## Surveillance Activities
+## Units Belong to more than One Surveillance Activity
 
-Initially, it was mentioned that "**Field Visits, Locations, Events, Sources, Source Records, and Diagnostics usually belong to a single Surveillance Activity**. This is the **Surveillance Activity** that lead to the Field Visits at different Locations to document **Events**, collect **Sources** and **Specimens**, perform **Diagnostics** for a specific hazard, and interpret the the results fo **Diagnostics** and hazard presence in **Specimens**, and **Sources**.
+**Field Visits, Locations, Events, Sources, Source Records, Specimens, and Diagnostics** usually belong to a single **Surveillance Activity**. This is the **Surveillance Activity** that lead to generate these data, creating **Events**, **Sources**, and **Specimens**.
 
-Furthermore, it was established that "**a Surveillance Activity usually includes Field Visits, Locations, Events, Sources, Source Records, and Diagnostics**". 
+However, units can belong to more than one **Surveillance Activity**:
 
-Here are the exceptions to these two general statements and how the data model can handle them. 
+* When a Surveillance Activity uses stored carcasses to test them for cardiomegaly and the carcasses were obtained through a previous Surveillance Activity 
+
+* When a Surveillance Activity uses stored specimens to test them for a health target an the carcasses were obtained through a previous Surveillance Activity 
+
+
+::: {.callout-note title="Case Study 15"}
+
+An agency decides to test stored deer samples for SARS-CoV-2. The blood samples have been stored for over a year. The current surveillance initiative is only recycling the samples already collected, its funding source is different, and its objectives and methods are different
+
+:::
+
+In the data model, a new **Surveillance Activity** is created documenting the new methods and objectives. Then, the **Source Records** or **Specimens** to be reused and their parent **Field Visits**, **Locations**, **Efforts**, and **Events** are added to this new **Surveillance Activity**. The exception is a field for **Field Visit** that request its origin. The **Field Activity** in the original **Surveillance Activity** has this field completed with "Current Surveillance Activity" whilst in the new **Surveillance Activity** it should be completed with "Previous Surveillance Activity". Moreover, **Field Visits** with origin as "Previous Surveillance Activity" need to report the original Surveillance Activity ID.
+
+New **Necropsy**, **Specimens**, **Diagnostic**, **Result**, and **Interpretation** units can be added under the new **Surveillance Activity**
+
+
+<!-- Furthermore, it was established that "**a Surveillance Activity usually includes Field Visits, Locations, Events, Sources, Source Records, and Diagnostics**".  -->
+
+<!-- Here are the exceptions how the data model can handle them.  -->
 
 <!-- #### **Field Visits** up to **Specimen** belong to two or more **Surveillance Activities** -->
 
@@ -51,56 +69,56 @@ Here are the exceptions to these two general statements and how the data model c
 
 <!-- ![](Pictures_and_diagrams/Picture18.png){width=100%} -->
 
-#### Surveillance Activity contains only Specimens and Diagnostics
+<!-- #### Surveillance Activity contains only Specimens and Diagnostics -->
 
-![](Pictures_and_diagrams/Picture19.png){width=100%}
+<!-- ![](Pictures_and_diagrams/Picture19.png){width=100%} -->
 
-This can happen when Surveillance Activity 2 uses **Specimens** collected as part of **Surveillance Activity** 1 to test them again for the same or different hazard. For example, **Specimens** from bats collected ten years ago will be used in a new study to test them for SARS-CoV-2. The **Specimen** belongs to both **Surveillance Activities**. The **Diagnostics** are the only new entity generated as part of **Surveillance Activity 2**, and it is clear that **Specimens** from **Surveillance Activity** 1 were used in **Surveillance Activity** 2.
+<!-- This can happen when Surveillance Activity 2 uses **Specimens** collected as part of **Surveillance Activity** 1 to test them again for the same or different hazard. For example, **Specimens** from bats collected ten years ago will be used in a new study to test them for SARS-CoV-2. The **Specimen** belongs to both **Surveillance Activities**. The **Diagnostics** are the only new entity generated as part of **Surveillance Activity 2**, and it is clear that **Specimens** from **Surveillance Activity** 1 were used in **Surveillance Activity** 2. -->
 
-#### Surveillance Activity contains only Source Records, Specimens, Diagnostics, and Diagnosis
+<!-- #### Surveillance Activity contains only Source Records, Specimens, Diagnostics, and Diagnosis -->
 
-![](Pictures_and_diagrams/Picture20.png){width=100%}
+<!-- ![](Pictures_and_diagrams/Picture20.png){width=100%} -->
 
 
-This can happen when **Surveillance Activity** 2 generates new **Specimens** from carcasses of **Source Records** collected as part of Surveillance Activity 1 and tests these new Specimens for a hazard. For example, carcasses of bats collected ten years ago will be used in a new study, **Surveillance Activity** 2, to get new **Specimens** and test them for SARS-CoV-2. The **Source Records** belong to both **Surveillance Activities**. The new **Specimens** and **Diagnostics** are the only new entities generated as part of **Surveillance Activity** 2, and it is clear that **Source Records** (the carcasses in this particular case) from **Surveillance Activity** 1 were used in **Surveillance Activity** 2.
+<!-- This can happen when **Surveillance Activity** 2 generates new **Specimens** from carcasses of **Source Records** collected as part of Surveillance Activity 1 and tests these new Specimens for a hazard. For example, carcasses of bats collected ten years ago will be used in a new study, **Surveillance Activity** 2, to get new **Specimens** and test them for SARS-CoV-2. The **Source Records** belong to both **Surveillance Activities**. The new **Specimens** and **Diagnostics** are the only new entities generated as part of **Surveillance Activity** 2, and it is clear that **Source Records** (the carcasses in this particular case) from **Surveillance Activity** 1 were used in **Surveillance Activity** 2. -->
 
 <!-- Moreover, Necropsies might be conducted as part of a secondary Surveillance Activity (on a Carcass that was collected under other Surveillance Activity) or new Specimens could be created from a previously unused Carcass as part of a new Surveillance Activity. In this case, the new data (Necropsy and Specimens) should receive the second Surveillance Activity only. Diagnostics using the new Specimens should receive the second Surveillance Activity only. The Carcass should receive the Surveillance Activity that lead to its collection only. -->
 
-#### Same Source in different Surveillance Activities
+<!-- #### Same Source in different Surveillance Activities -->
 
-The health of the same animal could be assessed under different **Surveillance Activities**. For example, a ranger finds a sick animal in a specific date and assess it health and potential cause of disease as part of **Surveillance Activity** 1. Then, the animal is taken to a rehabilitation center where its health is assessed again at admission and samples are collected for testing as part of **Surveillance Activity** 2. Finally, the animal health at the rehabilitation center is assessed again three months later and samples are collected again in order to learn what pathogens are circulating within the facility as part of **Surveillance Activity** 3. 
+<!-- The health of the same animal could be assessed under different **Surveillance Activities**. For example, a ranger finds a sick animal in a specific date and assess it health and potential cause of disease as part of **Surveillance Activity** 1. Then, the animal is taken to a rehabilitation center where its health is assessed again at admission and samples are collected for testing as part of **Surveillance Activity** 2. Finally, the animal health at the rehabilitation center is assessed again three months later and samples are collected again in order to learn what pathogens are circulating within the facility as part of **Surveillance Activity** 3.  -->
 
-In this case there are three potential **Projects**, **Surveillance Activities**, **Field Visits**, **Event**s, and **Collections Points** independently of each other. There are two **Locations**. The **Animal Source** belongs to three **Surveillance Activities**. The **Source Records** and **Specimens** belong to a single **Surveillance Activity** just like the **Diagnostics** completed in Surveillance in **Surveillance Activity** 2 and 3.
+<!-- In this case there are three potential **Projects**, **Surveillance Activities**, **Field Visits**, **Event**s, and **Collections Points** independently of each other. There are two **Locations**. The **Animal Source** belongs to three **Surveillance Activities**. The **Source Records** and **Specimens** belong to a single **Surveillance Activity** just like the **Diagnostics** completed in Surveillance in **Surveillance Activity** 2 and 3. -->
 
-![](Pictures_and_diagrams/Picture21.png){width=100%}
+<!-- ![](Pictures_and_diagrams/Picture21.png){width=100%} -->
 
-Therefore, **Surveillance Activities** can be interconnected through common units or the reuse of units generated by previous **Surveillance Activities**.
+<!-- Therefore, **Surveillance Activities** can be interconnected through common units or the reuse of units generated by previous **Surveillance Activities**. -->
 
-#### Sources in Surveillance Activity but not present in any Event
+<!-- #### Sources in Surveillance Activity but not present in any Event -->
 
-Studies that track marked individuals over time could succeed in capturing all individually identified animals, so all these **Sources** are included as **Source Records** at least once during the study period. However, it is also possible that only a proportion of the individualized **Sources** are captured or sight during the **Surveillance Activity**, so these Sources are not present as Source Record of any Event. For the second possibility, it is still important to track the **Sources** that were part of the sampling frame and censoring them when they were nor part of any **Event**. 
+<!-- Studies that track marked individuals over time could succeed in capturing all individually identified animals, so all these **Sources** are included as **Source Records** at least once during the study period. However, it is also possible that only a proportion of the individualized **Sources** are captured or sight during the **Surveillance Activity**, so these Sources are not present as Source Record of any Event. For the second possibility, it is still important to track the **Sources** that were part of the sampling frame and censoring them when they were nor part of any **Event**.  -->
 
-For this reason, the data model can assigned a **Surveillance Activity** to a **Source** without including any **Field Visits**, **Location**, **Event**, or **Collection Point**. When the study is completed, it will be possible to identify all the **Sources** involved in the study including those that were never captured (**Source** 3 in the figure below).
+<!-- For this reason, the data model can assigned a **Surveillance Activity** to a **Source** without including any **Field Visits**, **Location**, **Event**, or **Collection Point**. When the study is completed, it will be possible to identify all the **Sources** involved in the study including those that were never captured (**Source** 3 in the figure below). -->
 
-![](Pictures_and_diagrams/Picture22.png){width=100%}
+<!-- ![](Pictures_and_diagrams/Picture22.png){width=100%} -->
 
-#### Outbreak Investigation
+### Outbreak Investigation
 
-An outbreak can contains elements associated with two or more **Surveillance Activities**. For example, the first detection of the outbreak could have been done by a citizen or by rangers patrolling a protected area. The **Field Visit**, **Location**, **Event**, **Collection Point** (if any), **Source Records**, and **Specimens** collected when the outbreak is discovered belong to the "Citizen Science" or "Ranger Patrol" **Surveillance Activity**. However, they also belong to the outbreak investigation **Surveillance Activity**, together with **Field Visits** up to the **Diagnostics** associated exclusively with the outbreak investigation.
+As explained in the section "Surveillance Activity", an outbreak investigation is a **Surveillance Activity**. An outbreak can be first detected by rangers patrolling a protected area. Therefore, the **Field Visit**, **Location**, **Event**, and **Source Records** by the rangers belong to the Ranger Patrol" **Surveillance Activity** and also to the outbreak investigation **Surveillance Activity**. 
 
-![](Pictures_and_diagrams/Picture24.png){width=100%}
+<!-- ![](Pictures_and_diagrams/Picture24.png){width=100%} -->
 
-#### From Group Source to Animal Source
+<!-- #### From Group Source to Animal Source -->
 
-The data model can handle the conversion of an individual in a **Group Source** into an **Animal Source**. **Animal Sources** have a property to identify them as previous membership in a **Group Source**. 
+<!-- The data model can handle the conversion of an individual in a **Group Source** into an **Animal Source**. **Animal Sources** have a property to identify them as previous membership in a **Group Source**.  -->
 
-The decision to convert an individual of a **Group Source** into an **Animal Source** could occur because: i) it was decided to start recording animals of a **Group Source** at the individual level including their **Specimens** and **Diagnostics**, ii) field **Necropsies** are conducted with the carcasses of animals that belong to a **Group Source** (**Necropsy** data in the data model are linked to individual animals only), iii) all or some carcasses of a **Group Source** are collected and stored or exported (carcass data in the data model are linked to individual animals only), and iv) **Necropsies** are conducted with the carcasses of animals belonging to a **Group Source** in a facility and again, necropsy data in the data model are linked to individual animals only. The **data model accepts Diagnostics conducted directly on a Group Source or Diagnostics conducted using Group Source Specimens**, such as testing feces taken from a cage occupied by 2 animals of the same species. Therefore, in these cases, it is not necessary to convert individuals of a **Group Source** to **Animal Sources**. 
+<!-- The decision to convert an individual of a **Group Source** into an **Animal Source** could occur because: i) it was decided to start recording animals of a **Group Source** at the individual level including their **Specimens** and **Diagnostics**, ii) field **Necropsies** are conducted with the carcasses of animals that belong to a **Group Source** (**Necropsy** data in the data model are linked to individual animals only), iii) all or some carcasses of a **Group Source** are collected and stored or exported (carcass data in the data model are linked to individual animals only), and iv) **Necropsies** are conducted with the carcasses of animals belonging to a **Group Source** in a facility and again, necropsy data in the data model are linked to individual animals only. The **data model accepts Diagnostics conducted directly on a Group Source or Diagnostics conducted using Group Source Specimens**, such as testing feces taken from a cage occupied by 2 animals of the same species. Therefore, in these cases, it is not necessary to convert individuals of a **Group Source** to **Animal Sources**.  -->
 
-In the first case, all or some of the animals of a **Group Sourc**e could start being recorded at the individual level. If only some of the animals of a **Group Source** are recorded at the individual level, then it is possible to have an Event at time *t* with **Group Source Records** and **Animal Source Records** of animals that belonged to the **Group Source** at time *t'* that are considered **Animal Sources** at time *t*. The **Group Source Record** does not include the animals that are converted to **Animal Sources** since time *t*. Therefore, the count of individuals in the **Group Source Record** must not include the new **Animal Sources**. It is also possible that starting at time *t* in a new **Field Visit**, all the animals of a **Group Source** are recorded as Animal Sources. In this case there are no more records of the **Group Source** after time *t-1*. 
+<!-- In the first case, all or some of the animals of a **Group Sourc**e could start being recorded at the individual level. If only some of the animals of a **Group Source** are recorded at the individual level, then it is possible to have an Event at time *t* with **Group Source Records** and **Animal Source Records** of animals that belonged to the **Group Source** at time *t'* that are considered **Animal Sources** at time *t*. The **Group Source Record** does not include the animals that are converted to **Animal Sources** since time *t*. Therefore, the count of individuals in the **Group Source Record** must not include the new **Animal Sources**. It is also possible that starting at time *t* in a new **Field Visit**, all the animals of a **Group Source** are recorded as Animal Sources. In this case there are no more records of the **Group Source** after time *t-1*.  -->
 
-In the second case, a **Necropsy** conducted with the carcass of an animal of a **Group Source** leads to the same process explained in the previous paragraph. The animal must be documented at the individual level because, in the data model, **Necropsy data are tied to Animal Sources only**. 
+<!-- In the second case, a **Necropsy** conducted with the carcass of an animal of a **Group Source** leads to the same process explained in the previous paragraph. The animal must be documented at the individual level because, in the data model, **Necropsy data are tied to Animal Sources only**.  -->
 
-Lastly, the collection of a carcass of an animal of a **Group Source** and potential subsequent **Necropsies** also leads to the same process. The animal of a **Group Source** must be documented at the individual level because, in the data model, *carcass and Necropsy data are tied to Animal Sources only**. 
+<!-- Lastly, the collection of a carcass of an animal of a **Group Source** and potential subsequent **Necropsies** also leads to the same process. The animal of a **Group Source** must be documented at the individual level because, in the data model, *carcass and Necropsy data are tied to Animal Sources only**.  -->
 
-It is important to highlight that: **conversion from an individual of a Group Source to Animal Source is complete and irreversible**. This means that new **Animal Source Record** cannot be included in the count of animals in a **Group Source**, **Animal Sources** cannot be converted back to be part of the **Group Source**, and **Specimens** of the new **Animal Sources** are not **Specimens** of the original **Group Source**. Secondly, when it is decided that animals in a **Group Source** will be documented as **Animal Sources** there is a change of methodology and, most likely, the new **Animal Sources** should receive a new and single **Surveillance Activity**. It is possible to keep a connection between these **Surveillance Activities** in the data model (between the **Group Source** only one and the Groups Source - Animal Sources one). **Animal Sources** have a property to link them to their original **Group Source** also. It is possible that the original **Surveillance Activity** methodology included an eventual change in the recording of animals in a **Group Source** as **Animal Sources** and, consequently, only a common unique **Surveillance Activity** is enough. 
+<!-- It is important to highlight that: **conversion from an individual of a Group Source to Animal Source is complete and irreversible**. This means that new **Animal Source Record** cannot be included in the count of animals in a **Group Source**, **Animal Sources** cannot be converted back to be part of the **Group Source**, and **Specimens** of the new **Animal Sources** are not **Specimens** of the original **Group Source**. Secondly, when it is decided that animals in a **Group Source** will be documented as **Animal Sources** there is a change of methodology and, most likely, the new **Animal Sources** should receive a new and single **Surveillance Activity**. It is possible to keep a connection between these **Surveillance Activities** in the data model (between the **Group Source** only one and the Groups Source - Animal Sources one). **Animal Sources** have a property to link them to their original **Group Source** also. It is possible that the original **Surveillance Activity** methodology included an eventual change in the recording of animals in a **Group Source** as **Animal Sources** and, consequently, only a common unique **Surveillance Activity** is enough.  -->
 
